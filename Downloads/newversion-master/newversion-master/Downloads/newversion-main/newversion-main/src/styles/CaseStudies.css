@@ -1,0 +1,675 @@
+/* ==========================================================================
+   Case Studies Page Base Layout
+   ========================================================================== */
+.cs__wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Hero Section Base Component (Shared Framework Layout)
+   ========================================================================== */
+section.cs__hero,
+.cs__hero_merged {
+  position: relative !important;
+  background: radial-gradient(circle at 70% 60%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  color: #ffffff !important;
+  width: 100% !important;
+  
+  /* REBALANCED VERTICAL HEIGHT MATRIX */
+  min-height: 55vh !important;           
+  display: flex !important;              
+  align-items: center !important;        
+  justify-content: center !important;     
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  padding: 100px 24px 80px 24px !important;
+}
+
+/* Background resets */
+.cs__hero_bg {
+  display: none !important;
+}
+
+section.cs__hero .cs__hero_container,
+.cs__hero_merged .cs__hero_container {
+  width: 100% !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* ==========================================================================
+   Global UI Components & Portfolio Matrices
+   ========================================================================== */
+.cs__container {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.cs__heading {
+  font-weight: 800;
+  color: #004480;
+  text-align: center;
+}
+
+.cs__highlights_section {
+  background: linear-gradient(180deg, #ffffff 0%, #f5f3ff 100%);
+}
+
+.cs__highlights_intro {
+  color: #64748b;
+  text-align: center;
+}
+
+.cs__highlights_grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.cs__highlight_card {
+  background: #ffffff;
+  border: 2px solid #d5dcff;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cs__highlight_card:hover {
+  border-color: #5563f7;
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(168, 85, 247, 0.15);
+}
+
+.cs__highlight_icon {
+  display: block;
+}
+
+.cs__highlight_text {
+  color: #334155;
+  font-weight: 500;
+}
+
+.cs__highlights_footer {
+  text-align: center;
+  color: #000000;
+  font-weight: 600;
+}
+
+.cs__studies_section {
+  background: #ffffff;
+}
+
+/* Filtering System Tabs */
+.cs__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cs__filter_btn {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  color: #64748b;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cs__filter_btn:hover {
+  border-color: #a855f7;
+  color: #7c3aed;
+  transform: translateY(-2px);
+}
+
+.cs__filter_active {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  border-color: #7c3aed;
+  color: #ffffff;
+  box-shadow: 0 5px 20px rgba(124, 58, 237, 0.25);
+}
+
+.cs__filter_active:hover {
+  color: #ffffff;
+}
+
+/* Case Study Showcase Cards */
+.cs__studies_grid {
+  display: grid;
+}
+
+.cs__study_card {
+  background: #ffffff;
+  border: 2px solid #e9d5ff;
+  border-top: 5px solid;
+  border-radius: 15px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.cs__study_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
+  border-color: currentColor;
+}
+
+.cs__study_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cs__study_client {
+  color: #7c3aed;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cs__study_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cs__study_tag {
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.cs__study_title {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.cs__study_section_inner { 
+  margin-bottom: 2rem;
+}
+
+.cs__study_label {
+  color: #7c3aed;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cs__study_text {
+  color: #475569;
+}
+
+.cs__study_results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cs__study_results li {
+  position: relative;
+  color: #334155;
+  font-weight: 500;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cs__study_results li:last-child {
+  border-bottom: none;
+}
+
+.cs__study_results li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+}
+
+.cs__study_btn {
+  margin-top: auto;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.cs__study_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.cs__projects_grid {
+  display: grid;
+  gap: 24px;
+}
+
+.cs__project_card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+.cs__project_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 68, 143, 0.12);
+  border-color: #00448f;
+}
+
+.cs__project_image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f8faff;
+}
+
+.cs__project_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cs__project_card:hover .cs__project_image img {
+  transform: scale(1.04);
+}
+
+.cs__project_title {
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+.cs__project_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cs__project_tag {
+  background: #e8f0fb;
+  color: #00448f;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Interactive Component Systems (Badges, Buttons, CTAs)
+   ========================================================================== */
+section.cs__hero .cs__hero_badge_wrapper,
+.cs__hero_merged .cs__hero_badge_wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important; 
+  background-color: rgba(56, 189, 248, 0.08) !important; 
+  border: 1px solid rgba(56, 189, 248, 0.25) !important; 
+  border-radius: 9999px !important; 
+}
+
+section.cs__hero .cs__hero_badge_dot,
+.cs__hero_merged .cs__hero_badge_dot {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: #38bdf8 !important; 
+  border-radius: 50% !important;
+  display: inline-block !important;
+  position: relative !important;
+}
+
+section.cs__hero .cs__hero_badge_dot::after,
+.cs__hero_merged .cs__hero_badge_dot::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  background-color: #38bdf8 !important;
+  animation: csBadgePulse 2s infinite ease-in-out !important;
+}
+
+section.cs__hero .cs__hero_badge_text,
+.cs__hero_merged .cs__hero_badge_text {
+  color: #38bdf8 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1 !important;
+}
+
+section.cs__hero .cs__hero_title,
+.cs__hero_merged .cs__hero_title {
+  font-weight: 800 !important; 
+  color: #ffffff !important; 
+  margin-top: 0 !important;
+}
+
+section.cs__hero .cs__hero_title_highlight,
+.cs__hero_merged .cs__hero_title_highlight {
+  color: #38bdf8 !important; 
+  background-color: transparent !important; 
+  display: inline !important;
+}
+
+section.cs__hero .cs__hero_description,
+.cs__hero_merged .cs__hero_description {
+  color: rgba(255, 255, 255, 0.85) !important; 
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+@keyframes csBadgePulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Call To Action Lower Modules */
+.cs__cta_section {
+  width: 100%;
+  background-color: #001e3d; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.cs__cta_container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cs__cta_section h2 {
+  color: #ffffff;
+  font-weight: 100;
+}
+
+.cs__cta_subtitle {
+  color: #b0c4de;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cs__cta_buttons,
+.cs__hero_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.cs__btn_filled {
+  background-color: #38bdf8; 
+  color: #001e3d;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs__btn_filled:hover {
+  background-color: #0ea5e9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+}
+
+.cs__btn_outlined {
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cs__btn_outlined:hover {
+  background-color: rgba(56, 189, 248, 0.08);
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+.cs__btn_arrow {
+  transition: transform 0.2s ease;
+}
+
+.cs__btn_outlined:hover .cs__btn_arrow {
+  transform: translateX(4px);
+}
+
+.cs__cta_trust_text,
+.cs__hero_trust_text {
+  color: #64748b;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   ULTRA-RESPONSIVE MEDIA LAYER ENGINE
+   ========================================================================== */
+
+/* ─── TIER 1: ULTRA WIDE SCREENS & MONITORS (1440px and up) ─── */
+@media (min-width: 1440px) {
+  section.cs__hero, .cs__hero_merged { padding: 120px 0 !important; }
+  section.cs__hero .cs__hero_container { max-width: 1300px !important; }
+  .cs__hero_merged .cs__hero_container { max-width: 1100px !important; }
+  .cs__container { max-width: 1400px; padding: 0 2rem; }
+  
+  section.cs__hero .cs__hero_title, .cs__hero_merged .cs__hero_title { font-size: 68px !important; line-height: 1.15 !important; letter-spacing: -0.03em !important; margin-bottom: 24px !important; }
+  section.cs__hero .cs__hero_description, .cs__hero_merged .cs__hero_description { font-size: 1.25rem !important; max-width: 850px !important; margin-bottom: 48px !important; }
+  section.cs__hero .cs__hero_badge_wrapper, .cs__hero_merged .cs__hero_badge_wrapper { margin-bottom: 34px !important; padding: 7px 18px !important; }
+  
+  .cs__heading { font-size: 3.2rem; margin-bottom: 2rem; }
+  .cs__highlights_section { padding: 7.5rem 0; }
+  .cs__highlights_intro { font-size: 1.25rem; margin-bottom: 4rem; }
+  .cs__highlights_grid { grid-template-columns: repeat(4, 1fr); gap: 2.5rem; }
+  .cs__highlight_card { padding: 3rem 2rem; }
+  .cs__highlight_text { font-size: 1.15rem; line-height: 1.6; }
+  .cs__highlights_footer { font-size: 1.4rem; margin-top: 4rem; }
+  
+  .cs__studies_section { padding: 5rem 0; }
+  .cs__filters { gap: 1.25rem; margin-bottom: 4.5rem; }
+  .cs__filter_btn { padding: 0.9rem 2.2rem; font-size: 1.1rem; }
+  .cs__studies_grid { grid-template-columns: repeat(2, 1fr); gap: 3.5rem; }
+  .cs__study_card { padding: 3rem; }
+  .cs__study_title { font-size: 2rem; margin-bottom: 2.2rem; line-height: 1.3; }
+  .cs__study_text { font-size: 1.1rem; line-height: 1.75; }
+  .cs__study_results li { padding: 0.9rem 0 0.9rem 2.2rem; font-size: 1.1rem; }
+  .cs__study_btn { padding: 1.1rem 2.4rem; font-size: 1.1rem; }
+  
+  .cs__projects_grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .cs__project_info { padding: 28px; }
+  .cs__project_title { font-size: 20px; margin-bottom: 14px; }
+  .cs__project_tag { padding: 5px 14px; font-size: 13.5px; }
+  
+  .cs__cta_section { padding: 100px 0; }
+  .cs__cta_container { max-width: 950px; }
+  .cs__cta_section h2 { font-size: 2.5rem; margin-bottom: 24px; }
+  .cs__cta_subtitle { font-size: 1.2rem; line-height: 1.65; margin-bottom: 44px; }
+  .cs__btn_filled, .cs__btn_outlined { padding: 15px 36px; font-size: 1.05rem; }
+  .cs__cta_trust_text, .cs__hero_trust_text { font-size: 1rem; }
+}
+
+/* ─── TIER 2: STANDARD LAPTOPS & DESKTOPS (1025px to 1439px) ─── */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  section.cs__hero, .cs__hero_merged { padding: 95px 24px !important; }
+  section.cs__hero .cs__hero_container { max-width: 1140px !important; }
+  .cs__hero_merged .cs__hero_container { max-width: 900px !important; }
+  .cs__container { max-width: 1200px; padding: 0 2rem; }
+  
+  section.cs__hero .cs__hero_title, .cs__hero_merged .cs__hero_title { font-size: 60px !important; line-height: 1.15 !important; letter-spacing: -0.03em; margin-bottom: 18px !important; }
+  section.cs__hero .cs__hero_description, .cs__hero_merged .cs__hero_description { font-size: 1.15rem !important; max-width: 780px !important; margin-bottom: 40px !important; }
+  section.cs__hero .cs__hero_badge_wrapper, .cs__hero_merged .cs__hero_badge_wrapper { margin-bottom: 28px !important; padding: 6px 14px !important; }
+  
+  .cs__heading { font-size: 2.8rem; margin-bottom: 1.5rem; }
+  .cs__highlights_section { padding: 6rem 0; }
+  .cs__highlights_intro { font-size: 1.2rem; margin-bottom: 3rem; }
+  .cs__highlights_grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .cs__highlight_card { padding: 2.2rem 1.5rem; }
+  .cs__highlight_text { font-size: 1.05rem; line-height: 1.5; }
+  .cs__highlights_footer { font-size: 1.3rem; margin-top: 3rem; }
+  
+  .cs__studies_section { padding: 4rem 0; }
+  .cs__filters { gap: 1rem; margin-bottom: 4rem; }
+  .cs__filter_btn { padding: 0.8rem 2rem; font-size: 1.05rem; }
+  .cs__studies_grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+  .cs__study_card { padding: 2.5rem; }
+  .cs__study_title { font-size: 1.8rem; margin-bottom: 2rem; line-height: 1.3; }
+  .cs__study_text { font-size: 1.05rem; line-height: 1.7; }
+  .cs__study_results li { padding: 0.8rem 0 0.8rem 2rem; font-size: 1.05rem; }
+  .cs__study_btn { padding: 1rem 2rem; font-size: 1.05rem; }
+  
+  .cs__projects_grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .cs__project_info { padding: 24px; }
+  .cs__project_title { font-size: 18px; margin-bottom: 12px; }
+  .cs__project_tag { padding: 4px 12px; font-size: 13px; }
+  
+  .cs__cta_section { padding: 80px 24px; }
+  .cs__cta_container { max-width: 900px; }
+  .cs__cta_section h2 { font-size: 2.2rem; margin-bottom: 20px; }
+  .cs__cta_subtitle { font-size: 1.15rem; line-height: 1.6; margin-bottom: 40px; }
+  .cs__btn_filled, .cs__btn_outlined { padding: 14px 32px; font-size: 1rem; }
+  .cs__cta_trust_text, .cs__hero_trust_text { font-size: 0.95rem; }
+}
+
+/* ─── TIER 3: LANDSCAPE TABLETS & LARGE NETBOOKS (769px to 1024px) ─── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  section.cs__hero, .cs__hero_merged { padding: 80px 32px !important; min-height: 80vh !important; }
+  section.cs__hero .cs__hero_container, .cs__hero_merged .cs__hero_container { max-width: 100% !important; }
+  .cs__container { max-width: 100%; padding: 0 2.5rem; }
+  
+  section.cs__hero .cs__hero_title, .cs__hero_merged .cs__hero_title { font-size: 48px !important; line-height: 1.18 !important; letter-spacing: -0.02em; margin-bottom: 16px !important; }
+  section.cs__hero .cs__hero_description, .cs__hero_merged .cs__hero_description { font-size: 1.1rem !important; max-width: 680px !important; margin-bottom: 36px !important; }
+  section.cs__hero .cs__hero_badge_wrapper, .cs__hero_merged .cs__hero_badge_wrapper { margin-bottom: 24px !important; }
+  
+  .cs__heading { font-size: 2.5rem; margin-bottom: 1.3rem; }
+  .cs__highlights_section { padding: 5rem 0; }
+  .cs__highlights_intro { font-size: 1.15rem; margin-bottom: 2.5rem; }
+  .cs__highlights_grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .cs__highlight_card { padding: 2rem; }
+  .cs__highlights_footer { font-size: 1.25rem; margin-top: 2.5rem; }
+  
+  .cs__studies_section { padding: 3.5rem 0; }
+  .cs__filters { gap: 0.85rem; margin-bottom: 3rem; }
+  .cs__filter_btn { padding: 0.75rem 1.8rem; font-size: 1rem; }
+  .cs__studies_grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .cs__study_card { padding: 2rem; }
+  .cs__study_title { font-size: 1.6rem; margin-bottom: 1.8rem; }
+  .cs__study_text { font-size: 1rem; }
+  
+  .cs__projects_grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  
+  .cs__cta_section { padding: 70px 32px; }
+  .cs__cta_section h2 { font-size: 2rem; }
+  .cs__cta_subtitle { font-size: 1.1rem; margin-bottom: 32px; }
+  .cs__btn_filled, .cs__btn_outlined { padding: 13px 28px; font-size: 0.95rem; }
+}
+
+/* ─── TIER 4: PORTRAIT TABLETS & SMALL NETBOOKS (481px to 768px) ─── */
+@media (min-width: 481px) and (max-width: 768px) {
+  section.cs__hero, .cs__hero_merged { padding: 80px 24px !important; min-height: 75vh !important; }
+  .cs__container { padding: 0 1.5rem; }
+  
+  section.cs__hero .cs__hero_title, .cs__hero_merged .cs__hero_title { font-size: 40px !important; line-height: 1.2 !important; letter-spacing: -0.02em; padding-top: 0.5rem; }
+  section.cs__hero .cs__hero_description, .cs__hero_merged .cs__hero_description { font-size: 1.05rem !important; line-height: 1.6 !important; max-width: 100% !important; margin-bottom: 32px !important; }
+  
+  .cs__heading { font-size: 2.2rem; }
+  .cs__highlights_intro { font-size: 1.1rem; padding: 0 10px; }
+  .cs__highlights_grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .cs__highlight_card { padding: 2rem 1.5rem; }
+  
+  .cs__studies_section { padding: 3rem 0; }
+  .cs__filters { justify-content: flex-start; gap: 0.5rem; margin-bottom: 2.5rem; }
+  .cs__filter_btn { flex: 1; min-width: 140px; padding: 0.7rem 1.4rem; font-size: 0.95rem; text-align: center; }
+  .cs__studies_grid { grid-template-columns: 1fr; gap: 2rem; }
+  
+  .cs__projects_grid { grid-template-columns: 1fr; gap: 24px; }
+  
+  .cs__cta_section h2 { font-size: 1.8rem; }
+  .cs__cta_subtitle { font-size: 1.05rem; margin-bottom: 28px; }
+  
+  .cs__cta_buttons, .cs__hero_buttons { flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }
+  .cs__btn_filled, .cs__btn_outlined { width: 100%; padding: 14px 20px; font-size: 1rem; box-shadow: none; }
+}
+
+/* ─── TIER 5: LARGE SMARTPHONES & MOBILE PHONES (361px to 480px) ─── */
+@media (min-width: 361px) and (max-width: 480px) {
+  section.cs__hero, .cs__hero_merged { padding: 60px 16px !important; min-height: 70vh !important; }
+  .cs__container { padding: 0 1rem; }
+  
+  section.cs__hero .cs__hero_title, .cs__hero_merged .cs__hero_title { font-size: 32px !important; line-height: 1.25 !important; letter-spacing: -0.01em; }
+  section.cs__hero .cs__hero_description, .cs__hero_merged .cs__hero_description { font-size: 1rem !important; line-height: 1.55 !important; margin-bottom: 28px !important; }
+  section.cs__hero .cs__hero_badge_wrapper, .cs__hero_merged .cs__hero_badge_wrapper { margin-bottom: 20px !important; padding: 5px 12px !important; }
+  section.cs__hero .cs__hero_badge_text, .cs__hero_merged .cs__hero_badge_text { font-size: 0.775rem !important; }
+  
+  .cs__heading { font-size: 1.8rem; }
+  .cs__highlights_section { padding: 3.5rem 0; }
+  .cs__highlights_intro { font-size: 1rem; margin-bottom: 2rem; }
+  .cs__highlight_card { padding: 1.75rem 1.25rem; }
+  .cs__highlight_icon { font-size: 2.8rem; margin-bottom: 1rem; }
+  .cs__highlights_footer { font-size: 1.1rem; margin-top: 2rem; }
+  
+  .cs__filters { gap: 0.5rem; margin-bottom: 2rem; }
+  .cs__filter_btn { width: 100%; padding: 0.65rem 1rem; font-size: 0.9rem; }
+  .cs__study_card { padding: 1.75rem 1.25rem; }
+  .cs__study_header { flex-direction: column; gap: 0.75rem; }
+  .cs__study_title { font-size: 1.4rem; margin-bottom: 1.5rem; }
+  .cs__study_results li { padding: 0.65rem 0 0.65rem 1.75rem; font-size: 0.95rem; }
+  .cs__study_results li::before { font-size: 1rem; }
+  
+  .cs__projects_grid { margin-top: 32px; gap: 16px; }
+  .cs__project_info { padding: 16px; }
+  .cs__project_title { font-size: 16px; margin-bottom: 8px; }
+  
+  .cs__cta_section { padding: 50px 16px; }
+  .cs__cta_section h2 { font-size: 1.5rem; margin-bottom: 12px; }
+  .cs__cta_subtitle { font-size: 0.95rem; line-height: 1.5; margin-bottom: 24px; }
+  .cs__cta_buttons, .cs__hero_buttons { flex-direction: column; align-items: stretch; width: 100%; gap: 10px; margin-bottom: 24px; }
+  .cs__btn_filled, .cs__btn_outlined { width: 100%; padding: 12px 16px; font-size: 0.95rem; }
+  .cs__cta_trust_text, .cs__hero_trust_text { font-size: 0.85rem; }
+}
+
+/* ─── TIER 6: ULTRA SMALL SMARTPHONES (360px and below) ─── */
+@media (max-width: 360px) {
+  section.cs__hero, .cs__hero_merged { padding: 50px 12px !important; min-height: 65vh !important; }
+  .cs__container { padding: 0 0.75rem; }
+  
+  section.cs__hero .cs__hero_title, .cs__hero_merged .cs__hero_title { font-size: 28px !important; line-height: 1.25 !important; }
+  section.cs__hero .cs__hero_description, .cs__hero_merged .cs__hero_description { font-size: 0.95rem !important; margin-bottom: 24px !important; }
+  
+  .cs__heading { font-size: 1.6rem; }
+  .cs__highlight_card { padding: 1.5rem 1rem; }
+  .cs__study_card { padding: 1.5rem 1rem; }
+  .cs__study_title { font-size: 1.25rem; }
+  
+  .cs__cta_section h2 { font-size: 1.35rem; }
+  .cs__cta_subtitle { font-size: 0.9rem; }
+  .cs__btn_filled, .cs__btn_outlined { padding: 11px 14px; font-size: 0.9rem; }
+}

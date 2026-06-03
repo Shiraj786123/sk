@@ -1,0 +1,81 @@
+.grow-section {
+  padding: 100px 24px;
+  display: flex;
+  justify-content: center;
+  background: #f8faff;
+}
+
+.grow-box {
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  padding: 72px 64px;
+  border-radius: 24px;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 8px 40px rgba(0, 68, 143, 0.2);
+}
+
+.grow-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.grow-desc {
+  font-size: 18px;
+  margin-bottom: 36px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+}
+
+.grow-btn {
+  padding: 16px 40px;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #00448f;
+  background: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.grow-btn:hover {
+  background: #e8f0fb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .grow-section {
+    padding: 80px 20px;
+  }
+
+  .grow-box {
+    padding: 48px 32px;
+  }
+
+  .grow-title {
+    font-size: 28px;
+  }
+
+  .grow-desc {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grow-title {
+    font-size: 24px;
+  }
+
+  .grow-box {
+    padding: 40px 24px;
+  }
+}
