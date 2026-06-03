@@ -1,0 +1,640 @@
+/* ========================================================
+   GLOBAL VARIABLES & WRAPPERS
+   ======================================================== */
+:root {
+  --svc-bg: #ffffff;                       /* White background for standard page sections */
+  --svc-card-bg: #0a1128;                  /* Ultra Premium Night Navy for Cards & CTA Box */
+  --svc-card-border: rgba(56, 189, 248, 0.15); /* Soft sky blue border glow */
+  --svc-text-primary: #0a1128;            /* Deep Night Navy for standard page text on white */
+  --svc-text-muted: #475569;              /* Balanced Slate Gray for light section subtext */
+  --svc-brand-blue: #38bdf8;              /* Sky Blue Accent */
+  --svc-brand-hover: #0ea5e9;
+  --svc-gradient: linear-gradient(135deg, #38bdf8, #8b5cf6);
+  --svc-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Page Wrapper */
+.svc__wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--svc-bg);
+  color: var(--svc-text-primary);
+  font-family: var(--svc-font);
+  line-height: 1.6;
+}
+
+/* Page Width Container */
+.svc__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+/* ========================================================
+   SERVICES HERO WRAPPER (UNCHANGED MAIN STYLING, ADAPTIVE PADDING)
+   ======================================================== */
+.svc__hero {
+  position: relative !important;
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  color: #ffffff !important;
+  padding: 100px 24px 90px 24px !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  font-family: var(--svc-font) !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+.svc__hero_container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+}
+
+/* Pill Badge Label */
+.svc__hero_badge_wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 6px 14px !important;
+  background-color: rgba(56, 189, 248, 0.08) !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  border-radius: 9999px !important;
+  margin-bottom: 28px !important;
+}
+
+.svc__hero_badge_dot {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: #38bdf8 !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  position: relative !important;
+}
+
+.svc__hero_badge_dot::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  background-color: #38bdf8;
+  animation: svcBadgePulse 2s infinite ease-in-out !important;
+}
+
+@keyframes svcBadgePulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.svc__hero_badge_text {
+  color: #38bdf8 !important;
+  font-size: 0.825rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1 !important;
+}
+
+/* Typography & Accent Text */
+.svc__hero_title {
+  /* FIXED: Replaced rigid 64px with a fluid clamp to eliminate click-based layout scaling shifts */
+  font-size: clamp(2.5rem, 5vw, 64px) !important; 
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  color: #ffffff !important;
+  margin-bottom: 28px !important;
+  letter-spacing: -0.03em !important;
+  margin-top: 0 !important;
+}
+
+.svc__hero_title_highlight {
+  color: #38bdf8 !important;
+  background: transparent !important;
+  -webkit-text-fill-color: initial !important;
+  display: inline !important;
+}
+
+.svc__hero_text {
+  font-size: 1.15rem !important;
+  line-height: 1.65 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  max-width: 800px !important;
+  margin: 0 auto 36px auto !important;
+  display: block !important;
+}
+
+/* Hero CTA Buttons */
+.svc__hero_buttons {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  margin-bottom: 32px !important;
+  flex-wrap: wrap !important;
+}
+
+.svc__hero_buttons .btn-primary {
+  display: inline-block !important;
+  background-color: #38bdf8 !important;
+  color: #001f3f !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  padding: 14px 28px !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.svc__hero_buttons .btn-primary:hover {
+  background-color: #25aff2 !important;
+}
+
+.svc__hero_buttons .btn-secondary {
+  display: inline-block !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  padding: 14px 28px !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.5) !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease !important;
+}
+
+.svc__hero_buttons .btn-secondary:hover {
+  border-color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.08) !important;
+}
+
+/* ========================================================
+   NUMERIC STATS BAR (SOLID WHITE & NAVY)
+   ======================================================== */
+.svc__stats_bar {
+  background-color: #ffffff !important;               /* Solid White Background */
+  padding: 40px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid rgba(10, 17, 40, 0.08) !important;   /* Soft Navy Border */
+  border-bottom: 1px solid rgba(10, 17, 40, 0.08) !important;
+}
+
+.svc__stat_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 40px;
+  text-align: center;
+  min-width: 200px;
+}
+
+/* Divider line updated to show cleanly on white background */
+.svc__stat_item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background-color: rgba(10, 17, 40, 0.08) !important; /* Soft Navy Divider Line */
+}
+
+.svc__stat_number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #030f26 !important;                                    /* Premium Night Navy Text */
+  line-height: 1.2;
+}
+
+.svc__stat_label {
+  font-size: 0.875rem;
+  color: #475569 !important;                                    /* Soft Slate / Navy Gray Text */
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ========================================================
+   SECTION INTROS & HEADER OVERRIDES
+   ======================================================== */
+.svc__section_header {
+  padding: 80px 0 40px;
+  text-align: center;
+}
+
+.svc__section_tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--svc-brand-blue) !important;
+  background-color: rgba(56, 189, 248, 0.08);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  margin-bottom: 1rem;
+}
+
+.svc__heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--svc-text-primary) !important;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.svc__subtitle {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--svc-text-muted) !important;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ========================================================
+   GRID CARDS STYLES (RESPONSIVE MINMAX)
+   ======================================================== */
+a.svc__service_card_link {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex !important;
+}
+
+.svc__services_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* Adaptable grid base */
+  gap: 24px;
+  padding-bottom: 80px;
+}
+
+/* High specificity overrides to lock colors on standard cards */
+html body main.svc__services_grid .svc__service_card_link .svc__service_card,
+html body main.svc__services_grid .svc__service_card_link .svc__testimonial_card {
+  background-color: var(--svc-card-bg) !important;
+  border: 1px solid var(--svc-card-border) !important;
+  border-radius: 14px !important;
+  padding: 40px 32px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s ease, 
+              box-shadow 0.4s ease !important;
+}
+
+/* Card Hover Effects */
+html body main.svc__services_grid .svc__service_card_link:hover .svc__service_card,
+html body main.svc__services_grid .svc__service_card_link:hover .svc__testimonial_card {
+  transform: translateY(-6px) !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(10, 17, 40, 0.25), 
+              0 0 20px rgba(56, 189, 248, 0.05) !important;
+}
+
+/* Icons styling */
+.svc__icon_container {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--svc-card-border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+}
+
+/* Custom styles inside standard cards */
+html body main.svc__services_grid .svc__service_card_link h3.svc__service_title {
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-bottom: 12px !important;
+}
+
+html body main.svc__services_grid .svc__service_card_link p.svc__service_desc {
+  color: #cbd5e1 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 24px !important;
+}
+
+/* Bullets with inline-aligning flex lists */
+.svc__service_bullets {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 32px 0 !important;
+}
+
+.svc__bullet_item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  color: #ffffff !important;
+  margin-bottom: 12px !important;
+}
+
+html body main.svc__services_grid .svc__service_card_link .svc__bullet_arrow {
+  color: var(--svc-brand-blue) !important;
+  flex-shrink: 0 !important;
+  font-weight: bold !important;
+}
+
+/* Testimonial Quote specificity rules */
+html body main.svc__services_grid .svc__service_card_link p.svc__testimonial_quote {
+  font-size: 1.15rem !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+  font-style: italic !important;
+  margin: 0 0 16px 0 !important;
+}
+
+html body main.svc__services_grid .svc__service_card_link .svc__testimonial_author {
+  font-style: normal !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: var(--svc-brand-blue) !important;
+  letter-spacing: 0.03em !important;
+  display: block !important;
+  margin-bottom: 32px !important;
+}
+
+/* Interactive Learn More Trigger Links */
+html body main.svc__services_grid .svc__service_card_link .svc__learn_more {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  color: var(--svc-brand-blue) !important;
+}
+
+.svc__arrow_transition {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.svc__service_card_link:hover .svc__arrow_transition {
+  transform: translateX(5px) !important;
+}
+
+/* ================= WHY CHOOSE US & CTA SECTION ================= */
+.svc__why_section {
+  border-top: 1px solid rgba(10, 17, 40, 0.08);
+  padding: 80px 0;
+  text-align: center;
+}
+
+/* Call to Action Wrapper in Premium Night Navy */
+.svc__cta_section {
+  background-color: var(--svc-card-bg) !important;
+  border: 1px solid var(--svc-card-border) !important;
+  border-radius: 20px !important;
+  padding: 64px 32px !important;
+  text-align: center !important;
+  margin-bottom: 80px !important;
+}
+
+.svc__cta_title {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin-bottom: 16px !important;
+  letter-spacing: -0.01em !important;
+}
+
+.svc__cta_desc {
+  color: #cbd5e1 !important;
+  font-size: 1.1rem !important;
+  max-width: 650px !important;
+  margin: 0 auto 36px auto;
+  line-height: 1.7 !important;
+}
+
+/* CTA Primary Button Overrides */
+.svc__cta_section .btn-primary {
+  background-color: var(--svc-brand-blue) !important;
+  color: var(--svc-card-bg) !important;
+  font-weight: 700 !important;
+  padding: 16px 32px !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease-in-out !important;
+  text-decoration: none !important;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.svc__cta_section .btn-primary:hover {
+  background-color: var(--svc-brand-hover) !important;
+}
+
+/* Horizontal Feature Pills */
+.svc__pills_container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  margin-top: 36px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding-top: 24px !important;
+}
+
+.svc__pill_item {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 100px !important;
+  padding: 8px 18px !important;
+  font-size: 0.85rem !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.svc__checkmark {
+  color: var(--svc-brand-blue) !important;
+}
+
+/* SVG Icon Coloring Fallbacks */
+.svc__icon_container svg,
+.svc__icon_container svg path,
+.svc__icon_container svg circle {
+  fill: var(--svc-brand-blue) !important;
+  stroke: var(--svc-brand-blue) !important;
+}
+
+/* ========================================================
+   COMPREHENSIVE RESPONSIVE VIEWPORT QUERIES
+   ======================================================== */
+
+/* --- Medium Desktops & Laptops (Up to 1200px) --- */
+@media (max-width: 1200px) {
+  .svc__hero_title {
+    font-size: 54px !important;
+  }
+  .svc__heading {
+    font-size: 2.25rem !important;
+  }
+}
+
+/* --- Tablets & Large iPads (Up to 1024px) --- */
+@media (max-width: 1024px) {
+  .svc__hero {
+    padding: 80px 24px 70px 24px !important;
+  }
+  .svc__hero_title {
+    font-size: 46px !important;
+    line-height: 1.2 !important;
+  }
+  .svc__stats_bar {
+    justify-content: space-around;
+    gap: 24px;
+    padding: 30px 24px;
+  }
+  .svc__stat_item {
+    flex: 1 1 40%;                    /* Fits 2 stats per row perfectly on tablets */
+    padding: 10px;
+    min-width: 180px;
+  }
+  .svc__stat_item:nth-child(even)::after {
+    display: none !important;          /* Hide vertical dividers on right-side items */
+  }
+  .svc__section_header,
+  .svc__why_section {
+    padding: 60px 0 30px;
+  }
+}
+
+/* --- Small Tablets & Portrait viewports (Up to 768px) --- */
+@media (max-width: 768px) {
+  .svc__hero {
+    padding: 70px 16px 60px 16px !important;
+  }
+  .svc__hero_title {
+    font-size: 36px !important;
+    line-height: 1.2 !important;
+  }
+  .svc__hero_text {
+    font-size: 1.05rem !important;
+    margin-bottom: 28px !important;
+  }
+  .svc__stats_bar {
+    flex-direction: column !important;
+    gap: 0px !important;               /* Resets vertical gaps for precise border spacing */
+    padding: 24px 16px;
+  }
+  .svc__stat_item {
+    flex: 1 1 100% !important;
+    padding: 16px 0 !important;
+    width: 100%;
+  }
+  .svc__stat_item:not(:last-child) {
+    border-bottom: 1px solid rgba(10, 17, 40, 0.06); /* Adds clean horizontal dividers on mobile */
+  }
+  .svc__stat_item::after {
+    display: none !important;          /* Hides vertical desktop lines completely */
+  }
+  .svc__heading {
+    font-size: 30px !important;
+    line-height: 1.3 !important;
+  }
+  .svc__services_grid {
+    grid-template-columns: 1fr !important; /* Stacked layout for cards to prevent narrow squeeze */
+    gap: 20px;
+    padding-bottom: 60px;
+  }
+  html body main.svc__services_grid .svc__service_card_link .svc__service_card,
+  html body main.svc__services_grid .svc__service_card_link .svc__testimonial_card {
+    padding: 32px 24px !important;    /* Tightened card padding for reading space on small screens */
+  }
+  .svc__cta_section {
+    padding: 48px 24px !important;
+  }
+  .svc__cta_title {
+    font-size: 1.85rem !important;
+  }
+}
+
+/* --- Mobiles & Narrow screens (Up to 480px) --- */
+@media (max-width: 480px) {
+  .svc__hero {
+    padding: 60px 12px 50px 12px !important;
+  }
+  .svc__hero_title {
+    font-size: 30px !important;
+  }
+  .svc__hero_badge_wrapper {
+    margin-bottom: 20px !important;
+  }
+  .svc__hero_text {
+    font-size: 0.95rem !important;
+  }
+  .svc__stats_bar {
+    padding: 16px 12px;
+  }
+  .svc__stat_number {
+    font-size: 2rem;
+  }
+  .svc__stat_label {
+    font-size: 0.8rem;
+  }
+  .svc__heading {
+    font-size: 26px !important;
+  }
+  .svc__subtitle {
+    font-size: 0.95rem !important;
+  }
+  .svc__cta_section {
+    padding: 40px 16px !important;
+    margin-bottom: 60px !important;
+  }
+  .svc__cta_title {
+    font-size: 1.65rem !important;
+  }
+  .svc__cta_desc {
+    font-size: 0.95rem !important;
+    margin-bottom: 24px !important;
+  }
+  .svc__pills_container {
+    gap: 10px !important;
+    margin-top: 24px !important;
+    padding-top: 18px !important;
+  }
+  .svc__pill_item {
+    font-size: 0.75rem !important;
+    padding: 6px 12px !important;
+  }
+}
+
+/* --- Extra Small Devices (Up to 360px) --- */
+@media (max-width: 360px) {
+  .svc__hero_title {
+    font-size: 26px !important;
+  }
+  .svc__heading {
+    font-size: 22px !important;
+  }
+  .svc__cta_title {
+    font-size: 1.45rem !important;
+  }
+  html body main.svc__services_grid .svc__service_card_link .svc__service_card,
+  html body main.svc__services_grid .svc__service_card_link .svc__testimonial_card {
+    padding: 24px 16px !important;    /* Safely prevents text clipping on extremely narrow devices */
+  }
+}
