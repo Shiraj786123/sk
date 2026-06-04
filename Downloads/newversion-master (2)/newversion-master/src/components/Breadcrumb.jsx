@@ -127,16 +127,14 @@ const Breadcrumb = () => {
       <div className="breadcrumb-container">
         {crumbs.map((item, index) => (
           <React.Fragment key={index}>
-            {/* Logic: Link only if it has a link, is not the last item, AND is not "Services" */}
-            {item.link && 
-             item.link !== "#" && 
-             index !== crumbs.length - 1 && 
-             item.name !== "Services" ? (
+            {/* 
+              Logic: Render as a Link if it contains a valid URL 
+              and is not the active (last) item in the sequence.
+            */}
+            {item.link && item.link !== "#" && index !== crumbs.length - 1 ? (
               <Link href={item.link}>{item.name}</Link>
             ) : (
-              <span 
-                className={`${index === crumbs.length - 1 ? "active" : ""} ${item.name === "Services" ? "no-link-hover" : ""}`}
-              >
+              <span className={index === crumbs.length - 1 ? "active" : ""}>
                 {item.name}
               </span>
             )}

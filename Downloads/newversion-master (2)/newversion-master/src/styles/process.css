@@ -249,3 +249,55 @@ section.process-section .step-card:hover .step-card-indicator-line {
     width: 100% !important;
   }
 }
+
+
+
+
+
+
+
+
+section.process-section .aiwa__container {
+  width: 98% !important; /* Increase from standard container width */
+  max-width: 1400px !important; /* Increase this if you want more horizontal breathing room */
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+}
+
+
+
+/* ================= THEME TOKEN VARIABLES ================= */
+
+/* Discovery (Step 1) - Swapped to Red */
+section.process-section .step-card:nth-child(1) {
+  --theme-color: #f43f5e;
+  --theme-glow: rgba(244, 63, 94, 0.25);
+  --theme-bg-tint: rgba(244, 63, 94, 0.1);
+}
+
+section.process-section .step-card:nth-child(2) {
+  --theme-color: #a855f7;
+  --theme-glow: rgba(168, 85, 247, 0.25);
+  --theme-bg-tint: rgba(168, 85, 247, 0.1);
+}
+
+section.process-section .step-card:nth-child(3) {
+  --theme-color: #10b981;
+  --theme-glow: rgba(16, 185, 129, 0.25);
+  --theme-bg-tint: rgba(16, 185, 129, 0.1);
+}
+
+section.process-section .step-card:nth-child(4) {
+  --theme-color: #f59e0b;
+  --theme-glow: rgba(245, 158, 11, 0.25);
+  --theme-bg-tint: rgba(245, 158, 11, 0.1);
+}
+
+/* Growth (Step 5) - Swapped to Blue */
+section.process-section .step-card:nth-child(5) {
+  --theme-color: #2563eb;
+  --theme-glow: rgba(37, 99, 235, 0.25);
+  --theme-bg-tint: rgba(37, 99, 235, 0.1);
+}

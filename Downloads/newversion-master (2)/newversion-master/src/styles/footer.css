@@ -420,3 +420,61 @@ h6.footer-column-title {
   pointer-events: none; /* Prevents cursor trigger jitter */
   transform: translate3d(0, 0, 0) !important;
 }
+
+
+
+/* Vertical contact links container (stacked one after another) */
+.footer-contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+  align-items: flex-start; /* Keeps them aligned to the left */
+}
+
+/* Individual interactive contact row */
+.footer-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Clean circular design framework matching brand guidelines */
+.contact-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #00448f; /* Base brand royal blue */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* Hover state styling */
+.footer-contact-link:hover .contact-icon-circle {
+  background: #002b5c; /* Slightly darker navy blue when hovered */
+  transform: scale(1.05);
+}
+
+/* Specific button styles */
+.whatsapp-circle {
+  background: #00448f;
+}
+
+.email-circle {
+  background: #00448f;
+}
+
+/* Slate grey contact text with clean hover transitions */
+.contact-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155; /* Neutral dark grey slate */
+  transition: color 0.2s ease;
+}
+

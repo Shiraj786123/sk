@@ -62,45 +62,37 @@ const Footer = () => {
                 "Ready to speak with a marketing expert? Contact us via email or WhatsApp today."
               </h5>
 
-              {/* Icon Buttons Container */}
-              <div className="footer-contact-buttons">
-                {/* WhatsApp Link with Inline Static Force */}
+              {/* Vertical Contact Links Container */}
+              <div className="footer-contact-links">
+                {/* WhatsApp Link */}
                 <a
                   href="https://wa.me/94740309534"
-                  className="contact-icon-btn whatsapp-btn"
+                  className="footer-contact-link"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Contact via WhatsApp"
-                  style={{ transform: "none", transition: "none" }}
                 >
-                  <svg 
-                    className="wa-svg-icon" 
-                    viewBox="0 0 24 24" 
-                    width="22" 
-                    height="22"
-                    style={{ transform: "none", transition: "none", display: "block" }}
-                  >
-                    <path fill="currentColor" d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.459 3.475 1.332 4.991l-1.356 4.954 5.071-1.33c1.46.797 3.102 1.218 4.78 1.218h.004c5.502 0 9.983-4.482 9.983-9.988 0-2.668-1.039-5.176-2.928-7.065C17.18 3.039 14.68 2 12.012 2zm6.056 14.502c-.266.748-1.503 1.371-2.078 1.402-.519.027-1.196.064-3.411-.853-2.836-1.173-4.634-4.062-4.776-4.25-.138-.184-1.127-1.498-1.127-2.859 0-1.361.713-2.029.967-2.299.254-.27.553-.338.739-.338h.531c.17 0 .399-.064.623.473.23.553.784 1.91.853 2.051.069.141.116.305.021.495-.094.19-.142.308-.28.469-.138.162-.292.36-.417.483-.138.138-.283.289-.122.564.161.272.715 1.177 1.531 1.905.111.099.21.191.298.271.744.664 1.348.885 1.631.989.28.104.444.025.553-.099.111-.127.473-.553.6-.744.127-.19.254-.159.427-.095.173.064 1.096.516 1.285.61.189.094.316.142.363.223.047.081.047.473-.219 1.221z"/>
-                  </svg>
-                </a >
+                  <span className="contact-icon-circle whatsapp-circle">
+                    <svg className="wa-svg-icon" viewBox="0 0 24 24" width="20" height="20">
+                      <path fill="currentColor" d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.459 3.475 1.332 4.991l-1.356 4.954 5.071-1.33c1.46.797 3.102 1.218 4.78 1.218h.004c5.502 0 9.983-4.482 9.983-9.988 0-2.668-1.039-5.176-2.928-7.065C17.18 3.039 14.68 2 12.012 2zm6.056 14.502c-.266.748-1.503 1.371-2.078 1.402-.519.027-1.196.064-3.411-.853-2.836-1.173-4.634-4.062-4.776-4.25-.138-.184-1.127-1.498-1.127-2.859 0-1.361.713-2.029.967-2.299.254-.27.553-.338.739-.338h.531c.17 0 .399-.064.623.473.23.553.784 1.91.853 2.051.069.141.116.305.021.495-.094.19-.142.308-.28.469-.138.162-.292.36-.417.483-.138.138-.283.289-.122.564.161.272.715 1.177 1.531 1.905.111.099.21.191.298.271.744.664 1.348.885 1.631.989.28.104.444.025.553-.099.111-.127.473-.553.6-.744.127-.19.254-.159.427-.095.173.064 1.096.516 1.285.61.189.094.316.142.363.223.047.081.047.473-.219 1.221z"/>
+                    </svg>
+                  </span>
+                  <span className="contact-text">WhatsApp Us</span>
+                </a>
 
-                {/* Email Link with Inline Static Force */}
+                {/* Email Link */}
                 <a
                   href="mailto:info@zonzoctech.com"
-                  className="contact-icon-btn email-btn"
+                  className="footer-contact-link"
                   aria-label="Contact via Email"
-                  style={{ transform: "none", transition: "none" }}
                 >
-                  <svg 
-                    className="mail-svg-icon" 
-                    viewBox="0 0 24 24" 
-                    width="22" 
-                    height="22"
-                    style={{ transform: "none", transition: "none", display: "block" }}
-                  >
-                    <path fill="currentColor" d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a1.5 1.5 0 0 1-1.544 0L1.5 8.67z"/>
-                    <path fill="currentColor" d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908z"/>
-                  </svg>
+                  <span className="contact-icon-circle email-circle">
+                    <svg className="mail-svg-icon" viewBox="0 0 24 24" width="20" height="20">
+                      <path fill="currentColor" d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a1.5 1.5 0 0 1-1.544 0L1.5 8.67z"/>
+                      <path fill="currentColor" d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908z"/>
+                    </svg>
+                  </span>
+                  <span className="contact-text">info@zonzoctech.com</span>
                 </a>
               </div>
             </div>
