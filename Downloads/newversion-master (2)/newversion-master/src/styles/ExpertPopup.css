@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PREMIUM LIGHT VERSION POPUP MODULE
+   PREMIUM LIGHT VERSION POPUP MODULE (SCROLLBAR ELIMINATED & PERFECTLY BALANCED)
    ========================================================================== */
 
 .popup-overlay {
@@ -7,7 +7,7 @@
   inset: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  background: rgba(0, 15, 40, 0.4) !important; 
+  background: rgba(15, 23, 42, 0.4) !important; 
   z-index: 99999 !important;
   display: flex !important;
   justify-content: center !important;
@@ -17,19 +17,19 @@
   box-sizing: border-box !important;
 }
 
-/* Base Desktop Layout (Widescreens > 1024px) */
+/* Base Desktop Layout (Disables scrolling entirely, compact spacing) */
 .popup-container {
   width: 100% !important;
-  max-width: 980px !important;
+  max-width: 860px !important; /* Slightly narrower to balance aspect ratio to square-ish */
   background: #ffffff !important; 
-  border: 1px solid rgba(56, 189, 248, 0.3) !important;
-  border-radius: 20px !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 20px !important; /* Soft, premium rounded mockup borders */
   display: grid !important;
-  grid-template-columns: 1fr 1.35fr !important;
+  grid-template-columns: 1fr 1.15fr !important; /* Perfectly balanced panels ratio */
   position: relative !important;
   box-shadow: 0 25px 70px rgba(0, 44, 143, 0.08) !important;
-  overflow: hidden !important; 
-  animation: popupFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow: hidden !important; /* Disables container vertical scrolling on desktop */
+  animation: popupFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 @keyframes popupFade {
@@ -39,14 +39,14 @@
 
 .popup-close {
   position: absolute !important;
-  top: 16px !important;
-  right: 18px !important;
+  top: 14px !important;
+  right: 16px !important;
   background: none !important;
   border: none !important;
   font-size: 24px !important;
   cursor: pointer !important;
   color: #94a3b8 !important;
-  z-index: 10 !important;
+  z-index: 1010 !important;
   transition: color 0.2s ease !important;
 }
 
@@ -54,14 +54,14 @@
   color: #00448f !important;
 }
 
-/* LEFT PANEL */
+/* LEFT PANEL (Snug, compact layout matching height of right panel) */
 .popup-left {
-  background: linear-gradient(145deg, rgba(56, 189, 248, 0.08) 0%, rgba(255, 255, 255, 1) 100%) !important;
-  padding: 40px 36px !important;
+  background: #f8fafc !important; 
+  padding: 24px 22px !important; /* Compact padding prevents vertical stretching */
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
-  border-right: 1px solid rgba(56, 189, 248, 0.2) !important;
+  border-right: 1px solid #e2e8f0 !important;
 }
 
 .popup-left-top {
@@ -69,135 +69,201 @@
 }
 
 .popup-left h3 {
-  font-size: 24px !important;
-  margin-bottom: 8px !important;
+  font-size: 20px !important;
+  margin-bottom: 2px !important;
   color: #00448f !important;
   font-weight: 700 !important;
 }
 
-.popup-left p {
-  font-size: 14.5px !important;
+.popup-left-subtext {
+  font-size: 13px !important;
   color: #475569 !important;
+  margin-bottom: 16px !important;
 }
 
+/* Testimonial Card (Corrected Quote Position) */
 .popup-review {
-  margin: 32px 0 !important;
   background: #ffffff !important;
-  border: 1px solid rgba(56, 189, 248, 0.25) !important;
-  border-left: 4px solid #38bdf8 !important; 
-  padding: 18px !important;
-  border-radius: 12px;
-  font-size: 13.5px !important;
+  border: 1px solid #e2e8f0 !important; 
+  padding: 14px 16px !important;
+  border-radius: 12px !important; /* Rounded corners */
+  font-size: 12.5px !important;
   color: #475569 !important;
-  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.03) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  position: relative !important;
+  margin-bottom: 16px !important;
 }
 
-.popup-review strong {
+/* Double quote icon offset safely to avoid overlaps with "ZonzocTech" */
+.quote-mark {
+  font-size: 34px !important;
+  line-height: 1 !important;
+  color: #3b82f6 !important;
+  font-weight: 700 !important;
   display: block !important;
-  margin-bottom: 6px !important;
-  font-size: 14px !important;
-  color: #00448f !important;
+  margin-bottom: 6px !important; /* Pushes testimonial text down safely */
+  margin-top: -4px !important;
+  font-family: serif !important;
+  user-select: none !important;
 }
 
-.contactmedia {
-  margin: 24px 0 !important;
+.testimonial-text {
+  font-style: normal !important;
+  line-height: 1.5 !important;
+  margin-bottom: 10px !important;
+  color: #1e293b !important;
+  font-weight: 500 !important;
+}
+
+.testimonial-author {
   display: flex !important;
-  gap: 16px !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 10px !important;
 }
 
-.contactmedia i,
-.contactmedia svg {
-  transition: transform 0.2s ease !important;
+.author-avatar {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
 }
 
-.contactmedia i:hover,
-.contactmedia svg:hover {
-  transform: scale(1.15) !important;
+.author-meta h4 {
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin: 0 !important;
 }
 
-/* Left panel bottom contact info edge-to-edge alignment with margin adjustments */
+.author-meta p {
+  font-size: 10.5px !important;
+  color: #64748b !important;
+  margin: 1px 0 0 0 !important;
+}
+
+/* Google stars block */
+.google-rating {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  border-top: 1px solid #f1f5f9 !important;
+  padding-top: 8px !important;
+}
+
+.stars {
+  color: #fbbf24 !important; 
+  font-size: 12px !important;
+  letter-spacing: 0.5px !important;
+}
+
+.rating-text {
+  font-size: 11.5px !important;
+  color: #475569 !important;
+  font-weight: 600 !important;
+}
+
+.google-g {
+  margin-left: auto !important;
+}
+
+/* Checklist spacing */
+.popup-checklist {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.checklist-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+.icon-wrapper {
+  background: #eff6ff !important;
+  color: #00448f !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important; /* Soft corners */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.checklist-text h5 {
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin: 0 0 2px 0 !important;
+}
+
+.checklist-text p {
+  font-size: 11px !important;
+  color: #64748b !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+}
+
+/* Bottom contact wrapper */
 .popup-contact {
   margin-top: auto !important;
-  padding-top: 24px !important;
-  border-top: 1px solid rgba(56, 189, 248, 0.2) !important;
-  margin-left: -36px !important;
-  margin-right: -36px !important;
-  padding-left: 36px !important;
-  padding-right: 36px !important;
+  padding-top: 12px !important;
+  border-top: 1px solid #e2e8f0 !important;
+  margin-left: -22px !important;
+  margin-right: -22px !important;
+  padding-left: 22px !important;
+  padding-right: 22px !important;
 }
 
 .popup-contact span {
   display: flex !important;
   align-items: center !important;
-  font-size: 13.5px !important;
-  margin-bottom: 12px !important;
+  font-size: 12px !important;
+  margin-bottom: 8px !important;
   color: #475569 !important;
+  font-weight: 500 !important;
 }
 
-.popup-contact span i,
-.popup-contact span svg {
-  margin-right: 12px !important;
+.popup-contact span:last-child {
+  margin-bottom: 0 !important;
 }
 
 /* RIGHT PANEL */
 .popup-right {
-  padding: 40px !important;
+  padding: 24px 28px !important; 
   background: #ffffff !important; 
 }
 
 .popup-right h2 {
-  font-size: 26px !important;
-  margin-bottom: 8px !important;
+  font-size: 22px !important;
+  margin-bottom: 4px !important;
   color: #00448f !important;
   font-weight: 700 !important;
 }
 
 .popup-subtext {
-  font-size: 14.5px !important;
+  font-size: 13.5px !important;
   color: #475569 !important;
-  margin-bottom: 28px !important;
-}
-
-/* Form layout styles */
-.popup-form input,
-.popup-form select,
-.popup-form textarea {
-  width: 100% !important;
-  padding: 13px 16px !important;
-  border-radius: 10px !important;
-  background: #f8fafc !important; 
-  border: 1px solid rgba(0, 68, 143, 0.12) !important;
-  color: #0f172a !important; 
-  font-size: 14.5px !important;
   margin-bottom: 16px !important;
-  outline: none !important;
-  box-sizing: border-box !important;
-  transition: all 0.2s ease-in-out !important;
 }
 
-.popup-form input::placeholder,
-.popup-form textarea::placeholder {
-  color: #94a3b8 !important; 
+.highlight-text {
+  color: #00448f !important;
+  font-weight: 700 !important;
 }
 
-.popup-form input:focus,
-.popup-form select:focus,
-.popup-form textarea:focus {
-  border-color: #38bdf8 !important;
-  background: #ffffff !important; 
-  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12) !important;
-}
-
-/* Input Wrappers & Icon styling */
+/* Input Fields & Textareas (Mockup styling) */
 .popup-input-wrapper {
   position: relative !important;
   width: 100% !important;
-  margin-bottom: 16px !important;
 }
 
 .popup-input-wrapper .input-icon {
   position: absolute !important;
-  left: 14px !important;
+  left: 12px !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
   color: #94a3b8 !important;
@@ -206,19 +272,18 @@
 }
 
 .popup-input-wrapper.textarea-wrapper .input-icon {
-  top: 16px !important;
+  top: 12px !important;
   transform: none !important;
 }
 
-.popup-form input,
-.popup-form select {
+.popup-form input {
   width: 100% !important;
-  padding: 13px 16px 13px 44px !important;
-  border-radius: 10px !important;
-  background: #f8fafc !important; 
-  border: 1px solid rgba(0, 68, 143, 0.12) !important;
+  padding: 10px 14px 10px 38px !important; /* Snug vertical spacing */
+  border-radius: 10px !important; /* Rounded corners */
+  background: #ffffff !important; 
+  border: 1px solid #cbd5e1 !important;
   color: #0f172a !important; 
-  font-size: 14.5px !important;
+  font-size: 13px !important;
   margin-bottom: 0px !important;
   outline: none !important;
   box-sizing: border-box !important;
@@ -227,132 +292,250 @@
 
 .popup-form textarea {
   width: 100% !important;
-  padding: 14px 16px 14px 44px !important;
+  padding: 10px 14px 10px 38px !important;
   border-radius: 10px !important;
-  background: #f8fafc !important; 
-  border: 1px solid rgba(0, 68, 143, 0.12) !important;
+  background: #ffffff !important; 
+  border: 1px solid #cbd5e1 !important;
   color: #0f172a !important; 
-  font-size: 14.5px !important;
+  font-size: 13px !important;
   margin-bottom: 0px !important;
   outline: none !important;
   box-sizing: border-box !important;
   transition: all 0.2s ease-in-out !important;
-  min-height: 110px !important;
+  min-height: 65px !important; /* Low vertical footprint fits perfectly */
   resize: none !important;
+}
+
+.popup-form input::placeholder,
+.popup-form textarea::placeholder {
+  color: #94a3b8 !important; 
+}
+
+.popup-form input:focus,
+.popup-form textarea:focus,
+.custom-select-trigger:focus {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12) !important;
 }
 
 .form-grid {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
-  gap: 14px !important;
-  margin-bottom: 16px !important;
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Service Label */
+.select-label {
+  font-size: 12px !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+  color: #64748b !important;
+  font-weight: 600 !important;
+}
+
+/* ==========================================================================
+   CUSTOM DROP-DOWN SELECT MENU (Guaranteed downwards overlay layout)
+   ========================================================================== */
+.custom-select-container {
+  position: relative !important;
+  width: 100% !important;
+  margin-bottom: 12px !important;
+  z-index: 1000 !important;
+}
+
+.custom-select-trigger {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 10px 14px 10px 38px !important;
+  border-radius: 10px !important; /* Rounded corners */
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.custom-select-trigger .selected-value {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.custom-select-trigger .arrow-down {
+  position: absolute !important;
+  right: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #64748b !important;
+  transition: transform 0.2s ease !important;
+  pointer-events: none !important;
+}
+
+.custom-select-trigger.open {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12) !important;
+}
+
+/* Custom Dropdown always rendered downwards */
+.custom-select-options {
+  position: absolute !important;
+  top: calc(100% + 2px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  margin: 0 !important;
+  padding: 4px 0 !important;
+  list-style: none !important;
+  max-height: 150px !important; /* Perfect fit dropdown overlay */
+  overflow-y: auto !important;
+  z-index: 1005 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
+}
+
+.custom-select-options li {
+  padding: 8px 14px 8px 38px !important;
+  font-size: 13px !important;
+  color: #334155 !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+  text-align: left !important;
+}
+
+.custom-select-options li:hover {
+  background-color: #00448f !important;
+  color: #ffffff !important;
+}
+
+.custom-select-options .placeholder-option {
+  color: #94a3b8 !important;
+  font-weight: 500 !important;
+}
+
+/* ==========================================================================
+   BUDGET SLIDER TRACK & THUMB
+   ========================================================================== */
+.budget-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 4px !important;
 }
 
 .budget-label {
-  font-size: 14px !important;
-  margin: 12px 0 8px !important;
-  display: block !important;
-  color: #475569 !important;
-  font-weight: 600 !important;
+  font-size: 13px !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
 }
 
 .budget-value {
   color: #00448f !important;
   font-weight: 700 !important;
+  font-size: 13.5px !important;
 }
 
+/* Track slider line */
 input[type="range"] {
   -webkit-appearance: none !important;
   appearance: none !important;
   width: 100% !important;
-  height: 6px !important;
+  height: 5px !important;
   border-radius: 10px !important;
   outline: none !important;
-  margin-bottom: 24px !important;
+  margin-bottom: 14px !important;
+  cursor: pointer !important;
 }
 
+/* Budget slider circle thumb with borders/shadow */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none !important;
   appearance: none !important;
-  width: 20px !important;
-  height: 20px !important;
+  width: 18px !important;
+  height: 18px !important;
   border-radius: 50% !important;
   background: #00448f !important; 
   cursor: pointer !important;
-  border: 2px solid #ffffff !important;
-  box-shadow: 0 3px 10px rgba(0, 68, 143, 0.3) !important;
+  border: 3px solid #ffffff !important; /* White ring border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) !important; /* Soft depth shadow */
   transition: transform 0.15s ease !important;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-  transform: scale(1.2) !important;
+  transform: scale(1.15) !important;
 }
 
+input[type="range"]::-moz-range-thumb {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  background: #00448f !important;
+  cursor: pointer !important;
+  border: 3px solid #ffffff !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Actions button wrappers */
 .popup-actions {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
-  gap: 14px !important;
-  margin-top: 24px !important;
+  gap: 10px !important;
+  margin-top: 14px !important;
   width: 100% !important;
 }
 
 .popup-actions button {
-  padding: 13px 28px !important;
-  border-radius: 10px !important;
+  border-radius: 10px !important; /* Rounded corners */
   font-weight: 600 !important;
-  font-size: 15px !important;
+  font-size: 13.5px !important;
   cursor: pointer !important;
   transition: all 0.25s ease-in-out !important;
   box-sizing: border-box !important;
 }
 
-/* Primary actions buttons sizes */
-.popup-actions .cancel-btn, 
-.popup-actions .submit-btn {
-  padding: 13px 40px !important;
-  width: auto !important;
-  min-width: 140px !important;
-  height: auto !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 10px !important;
-  font-weight: 600 !important;
-  font-size: 15px !important;
-  box-sizing: border-box !important;
-}
-
-.popup-actions .submit-btn {
-  background: linear-gradient(135deg, #00448f 0%, #002d62 100%) !important;
-  color: #ffffff !important; 
-  border: none !important;
-  box-shadow: 0 4px 14px rgba(0, 68, 143, 0.2) !important;
-}
-
-.popup-actions .submit-btn:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3) !important;
-}
-
 .popup-actions .cancel-btn {
-  background: transparent !important;
+  background: #ffffff !important;
   color: #475569 !important;
-  border: 1px solid rgba(71, 85, 105, 0.2) !important;
+  border: 1px solid #cbd5e1 !important;
+  padding: 9px 20px !important;
 }
 
 .popup-actions .cancel-btn:hover {
-  background: rgba(0, 68, 143, 0.03) !important;
-  color: #00448f !important;
-  border-color: #00448f !important;
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+.popup-actions .submit-btn {
+  background: #00448f !important;
+  color: #ffffff !important; 
+  border: none !important;
+  padding: 9px 24px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.popup-actions .submit-btn:hover {
+  background: #002d62 !important;
+}
+
+.btn-icon {
+  margin-top: 1px !important;
 }
 
 .popup-right .alert {
-  padding: 14px 18px !important;
-  border-radius: 8px !important;
-  margin-bottom: 20px !important;
+  padding: 10px 14px !important;
+  border-radius: 6px !important;
+  margin-bottom: 12px !important;
   font-weight: 500 !important;
-  font-size: 14px !important;
+  font-size: 12.5px !important;
 }
 
 .popup-right .alert-success {
@@ -363,54 +546,42 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 
 /* ==========================================================================
-   COMPREHENSIVE ALL-SCREEN RESPONSIVE MEDIA QUERIES
+   COMPREHENSIVE ALL-SCREEN RESPONSIVE MEDIA QUERIES (FLUID LAYOUTS)
    ========================================================================== */
 
 /* --- 1. Small Laptops (Up to 1024px) --- */
 @media (max-width: 1024px) {
   .popup-container {
-    max-width: 900px !important;
+    max-width: 780px !important;
   }
   .popup-left {
-    padding: 36px 28px !important;
+    padding: 20px 16px !important;
   }
   .popup-right {
-    padding: 36px !important;
+    padding: 20px 24px !important;
   }
   .popup-contact {
-    margin-left: -28px !important;
-    margin-right: -28px !important;
-    padding-left: 28px !important;
-    padding-right: 28px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }
 
 /* --- 2. Landscape Tablets & Medium Viewports (Up to 991px) --- */
 @media (max-width: 991px) {
   .popup-container {
-    max-width: 740px !important;
+    max-width: 720px !important;
   }
   .popup-left h3 {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
   .popup-right h2 {
-    font-size: 22px !important;
-  }
-  .popup-left {
-    padding: 24px 20px !important;
-  }
-  .popup-right {
-    padding: 24px !important;
-  }
-  .popup-contact {
-    margin-left: -20px !important;
-    margin-right: -20px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    font-size: 19px !important;
   }
   .popup-review {
-    margin: 20px 0 !important;
-    padding: 14px !important;
+    margin-bottom: 12px !important;
+    padding: 10px !important;
   }
 }
 
@@ -418,33 +589,31 @@ input[type="range"]::-webkit-slider-thumb:hover {
 @media (max-width: 768px) {
   .popup-container {
     grid-template-columns: 1fr !important;
-    overflow-y: auto !important;
+    overflow-y: auto !important; /* Scrollbars are safely re-enabled ONLY on portrait tablets and phones */
     max-height: 90vh !important;
     width: 92% !important;
   }
   .popup-left {
     border-right: none !important;
-    border-bottom: 1px solid rgba(56, 189, 248, 0.2) !important;
-    padding: 30px 24px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 20px !important;
   }
   
-  /* Adjusted mobile padding to match narrower width layout */
   .popup-contact {
-    margin-left: -24px !important;
-    margin-right: -24px !important;
-    padding-left: 24px !important;
-    padding-right: 24px !important;
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
   
   .popup-right {
-    padding: 30px 24px !important;
+    padding: 20px !important;
   }
   .form-grid {
     grid-template-columns: 1fr !important;
     gap: 0 !important;
   }
   
-  /* Restores the side-by-side horizontal actions container without breaking widths */
   .popup-actions {
     display: flex !important;
     flex-direction: row !important;
@@ -466,33 +635,32 @@ input[type="range"]::-webkit-slider-thumb:hover {
   }
   .popup-container {
     width: 100% !important;
-    border-radius: 16px !important;
+    border-radius: 20px !important;
     max-height: 95vh !important;
   }
   .popup-left {
-    padding: 20px 16px !important;
+    padding: 16px 12px !important;
   }
   .popup-contact {
-    margin-left: -16px !important;
-    margin-right: -16px !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
   .popup-right {
-    padding: 24px 16px !important;
+    padding: 16px 12px !important;
   }
   .popup-left h3 {
-    font-size: 18px !important;
+    font-size: 17px !important;
   }
   .popup-right h2 {
-    font-size: 18px !important;
+    font-size: 17px !important;
   }
   .popup-review {
-    margin: 16px 0 !important;
-    padding: 12px !important;
+    margin-bottom: 12px !important;
+    padding: 10px !important;
   }
   
-  /* Stacks buttons vertically on ultra-small screens for comfortable tap targets */
   .popup-actions {
     flex-direction: column !important;
     gap: 10px !important;
@@ -500,16 +668,493 @@ input[type="range"]::-webkit-slider-thumb:hover {
   .popup-actions button,
   .popup-actions .cancel-btn, 
   .popup-actions .submit-btn {
-    width: 100% !important; /* Forces buttons to span full width */
-    padding: 12px 16px !important;
+    width: 100% !important; 
+    padding: 10px 16px !important;
     min-width: unset !important;
   }
 }
 
-/* --- 5. Short Heights Safety Query (For Desktop Screen Heights < 750px) --- */
+/* --- 5. Short Heights Safety Query --- */
 @media (max-height: 750px) {
   .popup-container {
     max-height: 90vh !important;
-    overflow-y: auto !important; /* Enables scrollbar internally inside modal wrapper */
+    overflow-y: auto !important; /* Enables scrollbar internally ONLY if the desktop viewport height is critically short */
   }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   TARGETED COMPRESSION FOR ZERO SCROLLBARS & PERFECT HEIGHT MATCH
+   ========================================================================== */
+@media (min-width: 1025px) {
+  /* 1. Disable scrollbar and cap the height of the modal container on desktop */
+  .popup-container {
+    overflow: hidden !important; 
+    max-height: 520px !important; /* Locks height to fit perfectly without any scrolling */
+  }
+
+  /* 2. Tighten Left Panel margins, padding, and elements */
+  .popup-left {
+    padding: 22px 20px !important;
+  }
+  .popup-left h3 {
+    font-size: 19px !important;
+  }
+  .popup-left-subtext {
+    font-size: 12.5px !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Compact Testimonial Card */
+  .popup-review {
+    padding: 12px 14px !important;
+    margin-bottom: 14px !important;
+  }
+  .quote-mark {
+    font-size: 28px !important;
+    margin-bottom: 2px !important;
+  }
+  .testimonial-text {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 8px !important;
+  }
+  .testimonial-author {
+    margin-bottom: 8px !important;
+    gap: 8px !important;
+  }
+  .author-avatar {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .google-rating {
+    padding-top: 8px !important;
+  }
+
+  /* Compact Checklist */
+  .popup-checklist {
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .checklist-item {
+    gap: 10px !important;
+  }
+  .icon-wrapper {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .checklist-text h5 {
+    font-size: 12px !important;
+  }
+  .checklist-text p {
+    font-size: 11px !important;
+  }
+
+  /* Compact Left Footer Contact spacing */
+  .popup-contact {
+    padding-top: 10px !important;
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .popup-contact span {
+    font-size: 12px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* 3. Tighten Right Panel spacing & form fields */
+  .popup-right {
+    padding: 22px 24px !important;
+  }
+  .popup-right h2 {
+    font-size: 21px !important;
+    margin-bottom: 4px !important;
+  }
+  .popup-subtext {
+    font-size: 13px !important;
+    margin-bottom: 14px !important;
+  }
+  .form-grid {
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .popup-form input {
+    padding: 9px 12px 9px 38px !important;
+    font-size: 13px !important;
+  }
+  .select-label {
+    font-size: 11.5px !important;
+    margin-bottom: 2px !important;
+  }
+  .custom-select-container {
+    margin-bottom: 10px !important;
+  }
+  .custom-select-trigger {
+    padding: 9px 12px 9px 38px !important;
+    font-size: 13px !important;
+  }
+  .budget-row {
+    margin-bottom: 4px !important;
+  }
+  input[type="range"] {
+    margin-bottom: 12px !important;
+  }
+  .popup-form textarea {
+    padding: 9px 12px 9px 38px !important;
+    font-size: 13px !important;
+    min-height: 60px !important; /* Perfectly balances textarea height */
+  }
+  .popup-actions {
+    margin-top: 12px !important;
+  }
+  .popup-actions .cancel-btn,
+  .popup-actions .submit-btn {
+    padding: 9px 20px !important;
+    font-size: 13px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   STRICT GEOMETRIC SQUARE CORNERS (SHARP 90-DEGREE EDGES)
+   ========================================================================== */
+
+/* 1. Sharp corners for the main centered container */
+.popup-container {
+  border-radius: 0px !important;
+}
+
+/* 2. Sharp corners for left-side testimonial card */
+.popup-review {
+  border-radius: 0px !important;
+}
+
+/* 3. Sharp corners for the checklist icon squares */
+.icon-wrapper {
+  border-radius: 0px !important;
+}
+
+/* 4. Sharp corners for input fields, selects, and textareas */
+.popup-form input {
+  border-radius: 0px !important;
+}
+
+.popup-form textarea {
+  border-radius: 0px !important;
+}
+
+.custom-select-trigger {
+  border-radius: 0px !important;
+}
+
+.custom-select-options {
+  border-radius: 0px !important;
+}
+
+/* 5. Sharp corners for both Cancel & Submit buttons */
+.popup-actions .cancel-btn {
+  border-radius: 0px !important;
+}
+
+.popup-actions .submit-btn {
+  border-radius: 0px !important;
+}
+
+/* 6. Sharp corners for any alert popups */
+.popup-right .alert {
+  border-radius: 0px !important;
+}
+
+
+
+
+
+
+@media (min-width: 1025px) {
+  /* 1. Expands the outer card dimensions on the screen (making it wider and taller) */
+  .popup-container {
+    width: 1120px !important; /* Increased from 1000px to expand outward */
+    height: 680px !important; /* Increased from 600px to expand outward */
+    max-height: 92vh !important;
+    border-radius: 20px !important;
+    overflow: hidden !important; /* Ensures strictly no scrollbar */
+    grid-template-columns: 1fr 1.35fr !important;
+  }
+
+  /* 2. Increased padding to cushion the left-side content, keeping the inner elements the same size */
+  .popup-left {
+    padding: 48px 40px !important; /* Increased top/bottom padding to fill the new height */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. Increased padding to cushion the right-side form, keeping input/button sizes identical */
+  .popup-right {
+    padding: 48px 48px !important; /* Increased padding to absorb the extra width/height */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .popup-form {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+  }
+
+  /* 4. Keep quote mark positioned cleanly */
+  .quote-mark {
+    margin-bottom: 8px !important;
+    margin-top: -4px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 1025px) {
+  .popup-container {
+    width: 1000px !important;
+    height: 640px !important; /* increased from 600px */
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    grid-template-columns: 1fr 1.35fr !important;
+  }
+
+  .popup-left {
+    padding: 36px 28px 0 28px !important; /* more top spacing */
+  }
+
+  .popup-right {
+    padding: 36px 32px !important; /* more top spacing */
+  }
+
+  .popup-contact {
+    padding-bottom: 40px !important; /* more bottom space */
+  }
+
+  .popup-form textarea,
+  .popup-form .message-field,
+  .popup-message textarea {
+    min-height: 110px !important; /* taller textarea */
+    height: 110px !important;
+  }
+}
+
+
+.popup-contact {
+  padding-bottom: 20px !important; /* was 30px */
+}
+
+
+
+
+/* Ensure the textarea placeholder is visible and matches other inputs */
+.popup-input-wrapper textarea::placeholder {
+  color: #94a3b8; /* Adjust this color code to match your input placeholder color */
+  opacity: 1;     /* Required for Firefox to display the color correctly */
+}
+
+/* Optional: Keep it visible or slightly lighter when the field is focused */
+.popup-input-wrapper textarea:focus::placeholder {
+  color: #cbd5e1; 
+}
+
+
+
+/* Increase the vertical height of the project description container */
+.popup-input-wrapper.textarea-wrapper textarea {
+  min-height: 120px; /* Adjust this value (e.g., 120px to 140px) to your liking */
+  padding-top: 12px; /* Ensures text starts cleanly below the top edge */
+}
+
+
+/* Option A: If your padding is controlled by the main wrapper */
+.popup-container {
+  padding-bottom: 30px; /* Increases spacing below the buttons and left footer */
+}
+
+/* Option B: If padding is controlled individually by the left and right panels */
+.popup-left, 
+.popup-right {
+  padding-bottom: 32px; /* Gives both sides an equal, balanced bottom margin */
+}
+
+/* Ensure the actions row doesn't stick to the very bottom */
+.popup-actions {
+  margin-bottom: 8px; /* Slight extra margin below the buttons if needed */
+}
+
+
+
+
+.popup-input-wrapper.textarea-wrapper textarea {
+  min-height: 190px; /* Increased to make the box taller */
+}
+
+
+.popup-actions {
+  margin-top: 24px; /* Adjust this value to push the buttons further down */
+}
+
+
+/* If padding is handled by the main card wrapper */
+.popup-container {
+  padding-bottom: 40px; /* Adjust as needed to ensure a healthy gap below the buttons */
+}
+
+/* If padding is handled by the column panels, use this instead: */
+.popup-right {
+  padding-bottom: 40px; 
+}
+.popup-left {
+  padding-bottom: 40px; /* Keeps both columns visually aligned */
+}
+
+
+/* 1. Force the textarea to be taller */
+.popup-input-wrapper.textarea-wrapper textarea {
+  height: 150px !important; /* Forces a fixed height of 150px */
+}
+
+/* 2. Force the buttons to move down by adding space above them */
+.popup-actions {
+  margin-top: 25px !important; /* Forces spacing between the textarea and buttons */
+}
+
+/* 3. Make the main card height flexible so it can expand downwards */
+.popup-container {
+  height: auto !important;          /* Overrides any fixed height limiting the card */
+  min-height: 680px !important;     /* Ensures the modal maintains a good minimum size */
+  padding-bottom: 40px !important;  /* Forces the bottom breathing area */
+}
+
+/* 4. Ensure the left and right columns expand naturally together */
+.popup-left, 
+.popup-right {
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+
+
+/* ==========================================
+   BORDER RADIUS & BORDER STYLE ALIGNMENT
+   ========================================== */
+
+/* 1. Main Modal Card */
+.popup-container {
+  border-radius: 24px !important;
+  overflow: hidden !important; /* Critical so the left-panel background doesn't bleed past the rounded corners */
+}
+
+/* 2. Form Inputs (Name, Company, Phone, Email) & Textarea */
+.popup-input-wrapper input,
+.popup-input-wrapper textarea {
+  border-radius: 8px !important;
+  border: 1px solid #e2e8f0 !important; /* Light, clean border color as seen in the image */
+}
+
+/* 3. Dropdown Trigger Selector */
+.custom-select-trigger {
+  border-radius: 8px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* 4. Dropdown Options List Container */
+.custom-select-options {
+  border-radius: 8px !important;
+  overflow: hidden !important; /* Ensures the top/bottom options match the corner rounding */
+  border: 1px solid #e2e8f0 !important;
+  margin-top: 4px !important; /* Subtle separation gap */
+}
+
+/* 5. Cancel and Get Free Consultation Buttons */
+.cancel-btn,
+.submit-btn {
+  border-radius: 8px !important;
+}
+
+/* 6. Testimonial Card (James Turner box on the left) */
+.popup-review {
+  border-radius: 12px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* 7. Left Panel Icon Containers (Soft rounded squares) */
+.icon-wrapper {
+  border-radius: 8px !important;
+}
+
+
+
+/* ==========================================
+   VISIBILITY & SCREEN-FIT OVERRIDES
+   ========================================== */
+
+/* 1. Center the modal on the screen and prevent it from touching the edges */
+.popup-overlay {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important; /* Keeps a safe margin around the modal */
+  box-sizing: border-box !important;
+}
+
+/* 2. Prevent the modal from going off-screen at the bottom */
+.popup-container {
+  max-height: 92vh !important; /* Keeps the modal within the viewport height */
+  overflow-y: auto !important;  /* Allows inner scrolling if the screen is too small */
+  border-radius: 24px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 3. Make all input, textarea, and dropdown borders clearly visible */
+.popup-input-wrapper input,
+.popup-input-wrapper textarea,
+.custom-select-trigger {
+  border: 1px solid #cbd5e1 !important; /* Slightly darker gray for crisp visibility */
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+}
+
+/* 4. Style the Cancel Button to make its border and shape visible */
+.cancel-btn {
+  border: 1px solid #cbd5e1 !important; /* Gives the Cancel button its visible border */
+  background-color: #ffffff !important;
+  color: #475569 !important; /* Clean slate-gray text color */
+  padding: 10px 24px !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.cancel-btn:hover {
+  background-color: #f8fafc !important; /* Soft hover effect */
+  border-color: #94a3b8 !important;
 }

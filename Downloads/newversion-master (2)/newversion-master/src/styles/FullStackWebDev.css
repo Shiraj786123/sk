@@ -399,3 +399,35 @@
 
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+
+
+
+
+/* Mobile adjustments (for screens 768px wide or smaller) */
+@media (max-width: 768px) {
+  
+  /* 1. Reduce the top padding of the hero section container */
+  .fswd__bar_hero {
+    padding-top: 30px !important; /* Adjust this to decrease/increase the gap */
+    padding-bottom: 40px !important;
+    min-height: auto !important; /* Prevents container from stretching too tall */
+  }
+
+  /* 2. Remove any excessive top margin inside the hero's inner wrapper */
+  .fswd__hero_content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* 3. If your Breadcrumb component has its own top spacing, reduce it here */
+  /* (Replace '.breadcrumb' with the actual class name used inside your Breadcrumb component if needed) */
+  .breadcrumb, 
+  .breadcrumb__wrapper {
+    margin-top: 0 !important;
+    padding-top: 5px !important;
+  }
+}

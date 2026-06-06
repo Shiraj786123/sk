@@ -1,27 +1,25 @@
+
 /* ==========================================================================
    FOOTER BASE LAYOUT
    ========================================================================== */
 .footer {
-  background: white;
-  color: #000000;
+  background: #f8fafc; /* Premium off-white background */
+  color: #0f172a;
   border-top: 1px solid #e2e8f0;
-}
-
-.footer-top, .line { 
-  display: none; 
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .footer-main {
-  padding: 80px 24px 60px;
+  padding: 80px 24px 48px;
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
   gap: 40px;
-  align-items: flex-start;
+  align-items: flex-start; /* Aligns all column containers to the top */
 }
 
 /* ==========================================================================
@@ -31,197 +29,360 @@
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
+  justify-content: flex-start !important;
   text-align: left !important;
+  gap: 16px !important; 
+  height: auto !important;
+  align-self: flex-start !important; 
+  
+  /* ADJUSTMENT: Pulls the entire section up to align with the headers */
+  margin-top: -45px !important; /* Change this value slightly if you need to fine-tune */
 }
 
-/* Flex frame for logo image and title text side-by-side */
 .footer-logo {
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
-  margin-bottom: 8px !important;
-  width: auto !important;
-  height: 40px !important; 
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  height: auto !important;
 }
 
-/* Favicon graphic properties */
 .footer-logo-img {
-  width: 220px !important;
-  height: 400px !important;
-  margin-left: -30px !important;
+  width: 180px !important;
+  height: auto !important;
   object-fit: contain !important;
-  display: inline-block !important;
-  flex-shrink: 0 !important;
+  display: block !important;
 }
 
-/* Typographic branding title (Colored Navy for visibility on light footer) */
-.footer-logo-text {
-  font-size: 1.6rem !important;
-  font-weight: 800 !important;
-  color: #0a2558 !important;
-  letter-spacing: -0.03em !important;
-  font-family: 'Poppins', system-ui, sans-serif !important;
-  line-height: 1 !important;
-  text-transform: none !important;
-}
-
-/* Subtitle layout directly underneath logo row */
-.footer-tagline {
-  font-size: 0.85rem !important;
-  font-weight: 700 !important;
-  color: #1e3a8a !important; 
-  letter-spacing: 0.08em !important;
-  margin-top: 0 !important;
-  margin-bottom: 20px !important;
-}
-
-/* Main text paragraph descriptions */
 .footer-description {
-  font-size: 0.95rem !important;
+  font-size: 14px !important;
   line-height: 1.6 !important;
-  color:  #1e3a8a !important; 
+  color: #475569 !important;
   margin-top: 0 !important;
-  margin-bottom: 36px !important;
+  margin-bottom: 4px !important;
   max-width: 320px !important;
 }
 
-/* Contact box container formatting */
-.footer-contact-box {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  gap: 18px !important;
-  width: 100% !important;
-  margin-top: 0 !important;
+.footer-contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 4px;
 }
 
-.contact-heading {
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-  font-weight: 700 !important;
-  color: #0a2558 !important;
-  margin: 0 !important;
-  max-width: 290px !important;
+.footer-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
-/* Interactive WhatsApp Button */
-.phone-button {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 10px !important;
-  background-color: #0046ae !important;
-  color: #ffffff !important;
-  padding: 12px 24px !important;
-  border-radius: 8px !important;
-  text-decoration: none !important;
-  font-weight: 600 !important;
-  font-size: 0.95rem !important;
-  transition: background-color 0.2s ease, transform 0.2s ease !important;
-  margin: 0 !important;
-  border: none !important;
+.contact-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2563eb; /* Royal Blue */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
-.phone-button:hover {
-  background-color: #00338d !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 15px rgba(0, 68, 143, 0.3);
+.footer-contact-link:hover .contact-icon-circle {
+  background: #1d4ed8;
+  transform: scale(1.05);
 }
 
-.wa-svg-icon {
-  fill: #ffffff;
-  display: block;
+.contact-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Brand Section Social links */
+.footer-brand-socials {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.brand-social-link {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.brand-social-link:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Highlights Checklist Styling */
+.footer-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.highlight-row-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.highlight-row-icon {
+  color: #2563eb;
+  width: 16px;
+  text-align: center;
 }
 
 /* ==========================================================================
-   FOOTER NAVIGATION COLUMNS & LINKS
+   FOOTER NAVIGATION COLUMNS & ROW LINKS
    ========================================================================== */
+.footer-column {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  height: auto !important;
+  align-self: flex-start !important;
+}
+
 h6.footer-column-title {
-  font-size: 15px !important;
+  margin: 0 !important; /* Removes default browser top/bottom margins */
+  padding-top: 0 !important;
+  font-size: 14px !important;
   font-weight: 700 !important;
-  color: #0a2558 !important;
-  margin-bottom: 24px !important;
+  color: #0f172a !important;
   text-transform: uppercase !important;
-  height: 24px !important;
+  letter-spacing: 0.5px;
+}
+
+.footer-header-underline {
+  width: 28px;
+  height: 2px;
+  background-color: #2563eb;
+  margin-top: 8px; /* Space between title and blue line */
+  margin-bottom: 20px; /* Space between blue line and first link */
+  border-radius: 2px;
 }
 
 .footer-links {
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto !important;
 }
 
 .footer-links li {
-  margin-bottom: 12px !important;
+  border-bottom: 1px solid #e2e8f0;
 }
 
-.footer-links a {
-  color: #1e3a8a !important; /* Clean slate link color */
+.footer-row-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding: 12px 0 !important;
+  color: #475569 !important;
   text-decoration: none !important;
-  font-size: 14px !important;
-  transition: color 0.2s ease, transform 0.2s ease !important;
-  display: inline-block !important;
+  font-size: 13.5px !important;
+  font-weight: 500;
+  transition: all 0.22s ease !important;
+  box-sizing: border-box;
 }
 
-.footer-links a:hover {
-  color: #38bdf8 !important; /* Sky-blue accent on hover */
-  transform: translateX(4px) !important;
+.link-row-arrow {
+  font-size: 11px;
+  color: #94a3b8;
+  transition: transform 0.22s ease, color 0.22s ease;
+}
+
+.footer-row-link:hover {
+  color: #2563eb !important;
+}
+
+.footer-row-link:hover .link-row-arrow {
+  color: #2563eb;
+  transform: translateX(3px);
 }
 
 /* ==========================================================================
-   FOOTER BOTTOM BAR
+   MID-CTA BANNER CARD
+   ========================================================================== */
+.footer-cta-container {
+  max-width: 1440px;
+  margin: 48px auto 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.footer-cta-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 32px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.cta-left-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cta-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.cta-text-box h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+.cta-text-box p {
+  font-size: 13.5px;
+  color: #475569;
+  margin: 0;
+}
+
+.cta-book-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.cta-book-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.cta-btn-arrow {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.cta-book-btn:hover .cta-btn-arrow {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   FOOTER BOTTOM BAR (Dark Navy)
    ========================================================================== */
 .footer-bottom {
-  padding: 30px 24px !important;
-  background-color: #002b58;
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 24px !important;
+  background-color: #001a3d;
+  border-top: none !important;
 }
 
 .footer-bottom-container {
-  max-width: 1200px !important;
+  max-width: 1440px !important;
   margin: 0 auto !important;
+  padding: 0 24px !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
+  box-sizing: border-box;
 }
 
 .copyright {
   color: #ffffff !important;
-  font-size: 14px !important;
+  font-size: 13.5px !important;
   margin: 0 !important;
+}
+
+.bottom-serving-clients {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #ffffff;
+}
+
+.serving-globe-icon {
+  color: #3b82f6;
+  font-size: 14px;
+}
+
+.bottom-follow-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.follow-us-text {
+  font-size: 13.5px;
+  color: #ffff;
+  font-weight: 500;
 }
 
 .social-icons {
   display: flex !important;
-  gap: 16px !important;
+  gap: 10px !important;
 }
 
 .social-icon {
-  width: 38px !important;
-  height: 38px !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  width: 32px !important;
+  height: 32px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
   border-radius: 50% !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  transition: all 0.3s ease !important;
+  color: #ffffff !important;
+  transition: all 0.25s ease !important;
   cursor: pointer !important;
-}
-
-.social-icon svg {
-  fill: #ffffff !important;
-  display: block !important;
-  transition: all 0.3s ease !important;
+  text-decoration: none;
 }
 
 .social-icon:hover {
   background: #ffffff !important;
-  transform: translateY(-3px) !important;
-}
-
-.social-icon:hover svg {
-  fill: #00448f !important;
+  border-color: #ffffff !important;
+  color: #001a3d !important;
+  transform: translateY(-2px) !important;
 }
 
 /* ==========================================================================
@@ -233,89 +394,78 @@ h6.footer-column-title {
   }
 
   .footer-container {
-    grid-template-columns: 1fr !important; /* Vertical stacking */
+    grid-template-columns: 1fr !important;
     gap: 48px !important;
     text-align: center !important;
   }
 
-  /* Center alignment for Brand container elements */
   .footer-brand {
     align-items: center !important;
     text-align: center !important;
-    padding-right: 0 !important;
     margin: 0 auto !important;
+    align-self: center !important;
+    
+    /* RESET: Removes the negative margin-top so columns stack cleanly */
+    margin-top: 0 !important;
   }
 
   .footer-logo {
     justify-content: center !important;
-    margin-bottom: 12px !important;
-  }
-
-  /* Reset margin-left offset for favicon when centering */
-  .footer-logo-img {
-    margin-left: 0 !important; 
-  }
-
-  .footer-tagline {
-    margin-bottom: 16px !important;
-    text-align: center !important;
+    padding-top: 0 !important;
   }
 
   .footer-description {
-    margin-bottom: 28px !important;
     text-align: center !important;
-    max-width: 450px !important; /* Slightly wider boundaries for readability */
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
-  /* Center alignments for contact block */
-  .footer-contact-box {
+  .footer-contact-links {
     align-items: center !important;
-    gap: 14px !important;
   }
 
-  .contact-heading {
-    text-align: center !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+  .footer-brand-socials {
+    justify-content: center !important;
   }
 
-  .phone-button {
-    margin: 0 auto !important;
+  .footer-highlights-list {
+    align-items: center !important;
   }
 
-  /* Center alignments for column navigation & link items */
   .footer-column {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
+    align-self: center !important;
   }
 
-  h6.footer-column-title {
-    text-align: center !important;
-    margin-bottom: 16px !important;
-    height: auto !important;
+  .footer-header-underline {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .footer-links {
-    display: flex !important;
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+
+  .footer-cta-container {
+    padding: 0 20px;
+  }
+
+  .footer-cta-card {
     flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  .footer-links li {
+    gap: 20px !important;
     text-align: center !important;
+    padding: 24px !important;
   }
 
-  /* Disable translate effect on touch devices */
-  .footer-links a:hover {
-    transform: none !important;
+  .cta-left-content {
+    flex-direction: column !important;
+    gap: 12px !important;
   }
 
-  /* Center copyright & social buttons on bottom bar */
   .footer-bottom-container {
     flex-direction: column !important;
     gap: 20px !important;
@@ -325,49 +475,20 @@ h6.footer-column-title {
   }
 }
 
-/* Container holding the buttons */
-.footer-contact-buttons {
+
+
+.footer-brand {
   display: flex !important;
-  gap: 12px !important;
-  margin-top: 15px !important;
-}
-
-/* Base button styles - strictly static */
-.contact-icon-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: 50% !important;
-  background-color: #0047ab !important; /* Your branding blue */
-  color: #ffffff !important;
-  text-decoration: none !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  gap: 16px !important; 
+  height: auto !important;
+  align-self: flex-start !important; 
   
-  /* Disable any movement/transitions entirely */
-  transform: none !important;
-  transition: none !important;
-}
-
-/* Force static hover state */
-.contact-icon-btn:hover {
-  transform: none !important;
-  background-color: #0047ab !important; /* Retains static background color */
-}
-
-/* Force inner SVGs to remain static */
-.contact-icon-btn svg {
-  display: block !important;
-  transform: none !important;
-  transition: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Target WhatsApp class specifically to neutralize other animations */
-.wa-svg-icon {
-  transform: none !important;
-  transition: none !important;
+  /* Pushes the section up slightly more to align with the red line */
+  margin-top: -69px !important; 
 }
 
 
@@ -376,105 +497,435 @@ h6.footer-column-title {
 
 
 
+/* ==========================================================================
+   RESPONSIVE LAYOUT (TABLET & MOBILE CENTERING)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .footer-main {
+    padding: 60px 20px 40px !important;
+  }
 
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+    text-align: center !important;
+  }
 
-/* Container holding the buttons */
-.footer-contact-buttons {
-  display: flex !important;
-  gap: 12px !important;
-  margin-top: 15px !important;
+  /* 1. Center the entire Brand Column */
+  .footer-brand {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;      /* Centers child elements horizontally */
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    align-self: center !important;
+    margin-top: 0 !important;            /* Removes desktop offset */
+    width: 100% !important;
+  }
+
+  /* 2. Center the Logo */
+  .footer-logo {
+    justify-content: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    padding-top: 0 !important;
+  }
+
+  /* 3. Center the Description Text */
+  .footer-description {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 4. Center Contact Links (WhatsApp & Email) */
+  .footer-contact-links {
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .footer-contact-link {
+    justify-content: center !important;
+    width: auto !important;
+  }
+
+  /* 5. Center the Social Media Icons */
+  .footer-brand-socials {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* 6. Center the Highlights Checklist Box */
+  .footer-highlights-list {
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* 7. Center text/icon alignment inside each checklist row */
+  .highlight-row-item {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* ==========================================================
+     Center remaining columns & CTA card
+     ========================================================== */
+  .footer-column {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    align-self: center !important;
+  }
+
+  .footer-header-underline {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .footer-links {
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+
+  .footer-cta-container {
+    padding: 0 20px;
+  }
+
+  .footer-cta-card {
+    flex-direction: column !important;
+    gap: 20px !important;
+    text-align: center !important;
+    padding: 24px !important;
+  }
+
+  .cta-left-content {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
 }
 
-/* Base button styles */
-.contact-icon-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: 50% !important;
-  background-color: #0047ab !important; /* Your branding blue */
-  color: #ffffff !important;
-  text-decoration: none !important;
+
+
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT (TABLET & MOBILE CENTERING WITH LEFT-ALIGNED TEXT)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .footer-main {
+    padding: 60px 20px 40px !important;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+    text-align: center !important;
+  }
+
+  /* 1. Center the Brand Column container on the screen */
+  .footer-brand {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;      /* Centers the blocks on the page */
+    justify-content: center !important;
+    text-align: left !important;         /* Keeps base text alignment left-aligned */
+    margin: 0 auto !important;
+    align-self: center !important;
+    margin-top: 0 !important;            /* Removes desktop offset */
+    width: 100% !important;
+  }
+
+  /* 2. Center the Logo */
+  .footer-logo {
+    justify-content: center !important;
+    margin: 0 auto !important;
+    width: auto !important;
+    padding-top: 0 !important;
+  }
+
+  /* 3. Center the Description block but keep its text left-aligned */
+  .footer-description {
+    text-align: left !important;         /* Keeps text left-aligned */
+    margin-left: auto !important;        /* Centers the paragraph block on the page */
+    margin-right: auto !important;
+    max-width: 320px !important;         /* Restricts width so it centers cleanly */
+  }
+
+  /* 4. Center the Contact Block, but keep WhatsApp & Email left-aligned together */
+  .footer-contact-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* Left-aligns the vertical line of icons */
+    justify-content: flex-start !important;
+    width: auto !important;             /* Shrinks container to fit content for centering */
+    margin: 0 auto !important;          /* Centers the block on the page */
+  }
+
+  .footer-contact-link {
+    justify-content: flex-start !important; /* Keeps icon next to text */
+    width: auto !important;
+  }
+
+  /* 5. Center the Social Media Icons row */
+  .footer-brand-socials {
+    justify-content: center !important;
+    width: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* 6. Center the Checklist Block, but keep checkmarks left-aligned together */
+  .footer-highlights-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* Left-aligns the vertical line of checkmarks */
+    justify-content: flex-start !important;
+    width: auto !important;             /* Shrinks container to fit content for centering */
+    margin: 0 auto !important;          /* Centers the block on the page */
+  }
+
+  .highlight-row-item {
+    justify-content: flex-start !important; /* Keeps checkmark icons next to text */
+    text-align: left !important;
+    width: auto !important;
+  }
+
+  /* ==========================================================
+     Center remaining columns & CTA card
+     ========================================================== */
+  .footer-column {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    align-self: center !important;
+  }
+
+  .footer-header-underline {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .footer-links {
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+
+  .footer-cta-container {
+    padding: 0 20px;
+  }
+
+  .footer-cta-card {
+    flex-direction: column !important;
+    gap: 20px !important;
+    text-align: center !important;
+    padding: 24px !important;
+  }
+
+  .cta-left-content {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT (TABLET & MOBILE CENTERING WITH LEFT-ALIGNED TEXT)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .footer-main {
+    padding: 60px 20px 40px !important;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+    text-align: center !important;
+  }
+
+  /* 1. Center the Brand Column container on the screen */
+  .footer-brand {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;      /* Centers child elements horizontally */
+    justify-content: center !important;
+    text-align: left !important;         /* Keeps base text alignment left-aligned */
+    margin: 0 auto !important;
+    align-self: center !important;
+    margin-top: 0 !important;            /* Removes desktop offset */
+    width: 100% !important;
+  }
+
+  /* 2. Center the Logo */
+  .footer-logo {
+    justify-content: center !important;
+    margin: 0 auto !important;
+    width: auto !important;
+    padding-top: 0 !important;
+  }
+
+  /* 3. Center the Description block but keep its text left-aligned */
+  .footer-description {
+    text-align: left !important;         /* Keeps text left-aligned */
+    margin-left: auto !important;        /* Centers the paragraph block on the page */
+    margin-right: auto !important;
+    max-width: 320px !important;         /* Restricts width so it centers cleanly */
+  }
+
+  /* 4. Center Contact Block (WhatsApp & Email) with neat left-alignment */
+  .footer-contact-links {
+    display: inline-flex !important;    /* Shrinks the box to exactly fit the longest email text */
+    flex-direction: column !important;
+    align-items: flex-start !important; /* Left-aligns the vertical line of icons */
+    width: fit-content !important;      /* Prevents stretching to 100% screen width */
+    margin: 0 auto !important;          /* Centers this wrapped box on the screen */
+  }
+
+  .footer-contact-link {
+    justify-content: flex-start !important; /* Keeps icon next to text */
+    width: auto !important;
+  }
+
+  /* 5. Center the Social Media Icons row */
+  .footer-brand-socials {
+    justify-content: center !important;
+    width: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* 6. Center the Checklist Block with neat left-alignment */
+  .footer-highlights-list {
+    display: inline-flex !important;    /* Shrinks the box to exactly fit the checklist text */
+    flex-direction: column !important;
+    align-items: flex-start !important; /* Left-aligns the vertical line of checkmarks */
+    width: fit-content !important;      /* Prevents stretching to 100% screen width */
+    margin: 0 auto !important;          /* Centers this wrapped box on the screen */
+  }
+
+  .highlight-row-item {
+    justify-content: flex-start !important; /* Keeps checkmark icons next to text */
+    text-align: left !important;
+    width: auto !important;
+  }
+
+  /* ==========================================================
+     Center remaining columns & CTA card
+     ========================================================== */
+  .footer-column {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    align-self: center !important;
+  }
+
+  .footer-header-underline {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .footer-links {
+    width: 100% !important;
+    max-width: 320px !important;
+  }
+
+  .footer-cta-container {
+    padding: 0 20px;
+  }
+
+  .footer-cta-card {
+    flex-direction: column !important;
+    gap: 20px !important;
+    text-align: center !important;
+    padding: 24px !important;
+  }
+
+  .cta-left-content {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+
+
+
+
+/* Keeps text left-aligned but balances the left/right margins on mobile */
+  .footer-description {
+    text-align: left !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 320px !important;
+    padding-left: 10px !important;       /* Shifts the text block slightly to the right to balance the gap */
+    padding-right: 10px !important;
+    line-height: 1.6 !important;
+  }
+
+
+
+
+
+  @media (max-width: 1024px) {
+  /* 1. Hide the serving clients and follow us sections */
+  .bottom-serving-clients {
+    display: none !important;
+  }
   
-  /* Configure smooth scale animation */
-  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1) !important;
-  transform: scale(1) translate3d(0, 0, 0) !important;
-  transform-origin: center center !important;
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: antialiased;
-}
+  .bottom-follow-box {
+    display: none !important;
+  }
 
-/* Slight zoom on hover without altering the background color */
-.contact-icon-btn:hover {
-  transform: scale(1.08) translate3d(0, 0, 0) !important; /* Zooms up by 8% */
-  background-color: #0047ab !important; 
-}
+  /* 2. Shrink the vertical height/padding of the navy bar */
+  .footer-bottom {
+    padding: 12px 16px !important; /* Shrunk vertical padding to make it compact */
+  }
 
-/* Ensure inner SVGs scale with the parent container smoothly */
-.contact-icon-btn svg {
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  pointer-events: none; /* Prevents cursor trigger jitter */
-  transform: translate3d(0, 0, 0) !important;
+  /* 3. Reset container spacing since only copyright text remains */
+  .footer-bottom-container {
+    flex-direction: column !important;
+    gap: 0 !important; /* Removes vertical space gaps */
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
 }
 
 
 
-/* Vertical contact links container (stacked one after another) */
-.footer-contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 20px;
-  align-items: flex-start; /* Keeps them aligned to the left */
-}
 
-/* Individual interactive contact row */
-.footer-contact-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: inherit;
+@media (max-width: 767px) {
+  /* Targets floating WhatsApp widgets only on mobile screens (below 768px wide) */
+  [class*="whatsapp" i], 
+  [class*="joinchat" i], 
+  [class*="whats-app" i],
+  .whatsApp {
+    right: 18px !important; /* Shifts it left. Increase this number to push it further left. */
+  }
 }
-
-/* Clean circular design framework matching brand guidelines */
-.contact-icon-circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #00448f; /* Base brand royal blue */
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  flex-shrink: 0;
-}
-
-/* Hover state styling */
-.footer-contact-link:hover .contact-icon-circle {
-  background: #002b5c; /* Slightly darker navy blue when hovered */
-  transform: scale(1.05);
-}
-
-/* Specific button styles */
-.whatsapp-circle {
-  background: #00448f;
-}
-
-.email-circle {
-  background: #00448f;
-}
-
-/* Slate grey contact text with clean hover transitions */
-.contact-text {
-  font-size: 14px;
-  font-weight: 600;
-  color: #334155; /* Neutral dark grey slate */
-  transition: color 0.2s ease;
-}
-

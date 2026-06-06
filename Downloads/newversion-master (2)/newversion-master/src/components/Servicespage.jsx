@@ -130,14 +130,14 @@ const ServicesPage = () => {
 
             <div className="svc__hero_buttons">
               <Link href="/contact" className="btn-primary">
-                Get a Free Proposal →
+                Get Free Consultation
               </Link>
               <Link href="/case-studies" className="btn-secondary">
-                View Case Studies ↓
+                View Our Works &rarr;
               </Link>
             </div>
-          </div>
-        </section>
+          </div> {/* Closes svc__hero_container */}
+        </section> {/* Closes svc__hero */}
 
         {/* Stats Section */}
         <section className="svc__stats_bar">
@@ -245,8 +245,8 @@ const ServicesPage = () => {
                 <span className="svc__checkmark">✓</span> 4.9★ rated agency
               </span>
             </div>
-          </div>
-        </section>
+          </div> {/* Closes svc__cta_section */}
+        </section> {/* Closes svc__container */}
 
         <Footer />
       </div>
