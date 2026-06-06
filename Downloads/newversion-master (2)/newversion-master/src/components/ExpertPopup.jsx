@@ -17,7 +17,7 @@ import {
 import "../styles/ExpertPopup.css";
 
 const ExpertPopup = ({ open, onClose, preSelectedService }) => {
-  const [budget, setBudget] = useState(2500); 
+  const [budget, setBudget] = useState(500); // Maintained starting budget at $500
   const [selectedService, setSelectedService] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -112,8 +112,8 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
           project: ""
         });
         setSelectedService("");
-        setBudget(2500); 
-        
+        setBudget(500); // Maintained reset budget at $500
+      
         setTimeout(() => {
           onClose();
           setSubmitStatus("");
@@ -152,6 +152,71 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
         boxSizing: "border-box"
       }}
     >
+      {/* High-priority injected style sheet to force scrolling, visibility, and hover colors */}
+      <style>{`
+        /* Custom Dropdown Styling */
+        .custom-select-options {
+          display: block !important;
+          max-height: 220px !important;    /* Forces height boundaries */
+          height: auto !important;
+          overflow-y: auto !important;     /* Forces vertical scrolling */
+          background-color: #ffffff !important;
+          border: 1px solid #cbd5e1 !important;
+          border-radius: 8px !important;
+          position: absolute !important;
+          z-index: 99999 !important;       /* Prevents overlapping/clipping */
+          width: 100% !important;
+          box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.05) !important;
+          padding: 0 !important;
+          margin: 4px 0 0 0 !important;
+          list-style: none !important;
+        }
+        .custom-select-options li {
+          padding: 10px 16px !important;
+          cursor: pointer !important;
+          background-color: #ffffff !important;
+          color: #334155 !important;
+          transition: background-color 0.15s ease, color 0.15s ease !important;
+        }
+        .custom-select-options li:hover {
+          background-color: #00448f !important; /* Matches the Get Free Consultation button color */
+          color: #ffffff !important;            /* Pure white text for high contrast readability */
+        }
+        .custom-select-options .placeholder-option {
+          color: #94a3b8 !important;
+          font-weight: 500 !important;
+        }
+        .custom-select-options .placeholder-option:hover {
+          color: #ffffff !important;            /* Keeps placeholder readable on hover */
+        }
+
+        /* Mobile Layout & Visibility Rules */
+        @media (max-width: 768px) {
+          .popup-container {
+            flex-direction: column !important; /* Stacks panels vertically */
+            overflow-y: auto !important;       /* Enables modal scrolling on mobile */
+            overflow-x: hidden !important;
+            height: auto !important;
+            max-height: 92vh !important;
+          }
+          .popup-left, 
+          .popup-right {
+            width: 100% !important;
+            display: block !important;
+            box-sizing: border-box !important;
+          }
+          .popup-left-top {
+            display: block !important;
+            visibility: visible !important;
+          }
+          .popup-left h3,
+          .popup-left-subtext {
+            display: block !important;         /* Forces the heading to remain visible */
+            visibility: visible !important;
+          }
+        }
+      `}</style>
+
       <div 
         className="popup-container" 
         onClick={(e) => e.stopPropagation()}
@@ -339,7 +404,7 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
               </div>
               
               {isDropdownOpen && (
-                <ul className="custom-select-options" style={{ borderRadius: "8px", border: "1px solid #cbd5e1" }}>
+                <ul className="custom-select-options">
                   <li className="placeholder-option" onClick={() => selectOption("")}>
                     Select a Service
                   </li>

@@ -1158,3 +1158,172 @@ input[type="range"]::-moz-range-thumb {
   background-color: #f8fafc !important; /* Soft hover effect */
   border-color: #94a3b8 !important;
 }
+
+
+
+
+/* ==========================================================================
+   MOBILE SCROLLABILITY & HEADING VISIBILITY FIX
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Stack the panels vertically and allow them to take natural auto height */
+  .popup-container {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+
+  .popup-left, 
+  .popup-right {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* 2. Prevent the left column's top wrapper from being collapsed or hidden */
+  .popup-left-top {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* 3. Explicitly force visibility of the left panel's heading and subtext */
+  .popup-left h3,
+  .popup-left-top h3,
+  .popup-left-subtext {
+    display: block !important;
+    visibility: visible !important;
+  }
+}
+
+
+
+
+
+/* 1. Ensure the popup is fully visible and scrollable */
+.popup-container {
+  width: 95vw !important; /* Use relative width */
+  max-width: 500px;       /* Ensure it doesn't get too wide */
+  max-height: 90vh !important; 
+  overflow-y: auto;       /* This enables scrolling for the whole content */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 15px;          /* Ensure padding exists inside the border */
+  box-sizing: border-box; /* Crucial: includes padding in element size */
+}
+
+/* 2. Fix the header/content positioning */
+.popup-left {
+  padding-top: 10px;      /* Add top space */
+}
+
+/* 3. Handle mobile specifically */
+@media (max-width: 600px) {
+  .popup-container {
+    padding: 10px;        /* Reduce padding slightly for very small screens */
+    margin: 5px;          /* Ensure no overflow against screen edges */
+  }
+
+  /* Force headers to wrap and not push content out */
+  h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.2;
+    margin-top: 0 !important; /* Remove top margin pushing it up */
+  }
+}
+
+
+
+
+
+/* ==========================================================================
+   EXPERT POPUP - RESPONSTRUCT & VERTICAL SCROLL ENFORCEMENT
+   ========================================================================== */
+
+/* --- Base/Desktop Styles --- */
+.popup-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(15, 23, 42, 0.6) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  box-sizing: border-box !important;
+  z-index: 100000 !important;
+}
+
+.popup-container {
+  background-color: #ffffff !important;
+  border-radius: 24px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  width: 950px !important;
+  max-width: 100% !important;
+  max-height: 90vh !important;       /* Confines popup to viewport safely */
+  position: relative !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+.popup-left {
+  width: 45% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.popup-right {
+  width: 55% !important;
+  box-sizing: border-box !important;
+}
+
+/* --- Tablet & Mobile Responsiveness (992px and down) --- */
+@media (max-width: 992px) {
+  .popup-overlay {
+    padding: 16px !important;
+  }
+
+  .popup-container {
+    flex-direction: column !important; /* Stacks panels vertically so nothing gets cut off */
+    width: 100% !important;
+    max-width: 550px !important;       /* Comfortable stacked column width */
+    max-height: 92vh !important;
+  }
+
+  .popup-left,
+  .popup-right {
+    width: 100% !important;            /* Forces panels to take full stacked width */
+    height: auto !important;
+  }
+
+  .popup-left {
+    border-bottom: 1px solid #f1f5f9 !important;
+    padding-bottom: 24px !important;
+  }
+
+  /* Explicitly force visibility of left header on mobile stacking */
+  .popup-left-top {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .popup-left h3,
+  .popup-left-top h3,
+  .popup-left-subtext {
+    display: block !important;
+    visibility: visible !important;
+  }
+}
+
+/* --- Tiny Mobile Screens (480px and down) --- */
+@media (max-width: 480px) {
+  .popup-overlay {
+    padding: 8px !important;
+  }
+
+  .popup-container {
+    border-radius: 16px !important;   /* Cleaner layout for tight screens */
+    max-height: 95vh !important;       /* Makes maximum use of small screens */
+  }
+}
