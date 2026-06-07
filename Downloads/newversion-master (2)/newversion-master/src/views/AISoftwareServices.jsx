@@ -1,560 +1,476 @@
 'use client';
-import React, { useEffect, useState } from "react";
+
+import React, { useState } from "react";
+import {
+  Bot, Brain, Workflow, BarChart4, Database, Cog,
+  CheckCircle2, Layers, Plug, RefreshCw, Rocket,
+  Building2, ShoppingCart, HeartPulse, Briefcase,
+  GraduationCap, Truck, Megaphone, Globe, BarChart3,
+  Search, Bell, Target, FileBarChart, UserCheck, Cpu,
+  Sparkles, Activity, Shield, Code2, Layout,
+  Plus, Minus, Zap, Settings
+} from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import "../styles/AISoftwareServices.css";
 import Breadcrumb from "../components/Breadcrumb";
-import {
-  Trash2,
-  Users,
-  BarChart3,
-  ShieldCheck,
-  Bot,
-  Brain,
-  Workflow,
-  BarChart4,
-  Database,
-  Cog,
-  CheckCircle,
-  Layers,
-  Plug,
-  Wallet,
-  RefreshCw,
-  Building2,
-  ShoppingCart,
-  Network,
-  Rocket
-} from "lucide-react";
+import "../styles/AISoftwareServices.css";
 
-const technologies = [
+/* ─── DATA ──────────────────────────────────────────── */
+
+const stats = [
+  { number: "150+",  label: "Projects Delivered" },
+  { number: "120+",  label: "Happy Clients"       },
+  { number: "10+",   label: "Years Experience"    },
+  { number: "4.9★",  label: "Client Rating"       },
+  { number: "100%",  label: "Secure Solutions"    },
+  { number: "24/7",  label: "Support"             },
+];
+
+const aiChecklist = [
+  "Automate repetitive business tasks",
+  "Process and analyze large datasets",
+  "Improve operational efficiency",
+  "Generate intelligent insights",
+  "Enhance customer experiences",
+  "Support scalable automation workflows",
+];
+
+const services = [
+  { icon: <Bot size={28} />,       title: "AI Chatbot Development",           desc: "Build intelligent chatbots and virtual assistants for customer support, lead generation, and automation." },
+  { icon: <Brain size={28} />,     title: "OpenAI & GPT Integration",         desc: "Integrate OpenAI, ChatGPT, and AI APIs into your existing systems and workflows." },
+  { icon: <Workflow size={28} />,  title: "Business Process Automation",      desc: "Automate repetitive tasks, approvals, notifications, reporting systems, and operational processes." },
+  { icon: <BarChart4 size={28} />, title: "AI Analytics & Data Intelligence", desc: "Transform raw data into real-time insights, dashboards, reports, and predictive analytics." },
+  { icon: <Database size={28} />,  title: "CRM & ERP AI Integration",         desc: "Integrate AI-powered automation and smart workflows into CRM, ERP, and internal management systems." },
+  { icon: <Cog size={28} />,       title: "Custom Enterprise AI Systems",     desc: "Develop scalable AI software tailored to your business operations and long-term goals." },
+  { icon: <Zap size={28} />,       title: "AI Workflow Automation",           desc: "Create automated systems to streamline communication, task execution, and operational processes." },
+  { icon: <Plug size={28} />,      title: "AI Integration & API Development", desc: "Integrate third-party platforms, APIs, cloud services, and payment gateways into your ecosystem." },
+];
+
+const whyChoose = [
+  { icon: <Rocket size={22} />,    title: "Business-Focused AI Solutions",         desc: "We build solutions around your workflows, challenges, and business growth objectives.",        color: "wc-blue"   },
+  { icon: <Layers size={22} />,    title: "Scalable & Future-Ready Architecture",  desc: "Flexible and scalable systems designed for growth and expansion.",                             color: "wc-purple" },
+  { icon: <Brain size={22} />,     title: "AI & Automation Expertise",             desc: "We combine AI technologies and automation to deliver smart solutions.",                         color: "wc-cyan"   },
+  { icon: <Shield size={22} />,    title: "Secure & High Performance",             desc: "Built with security, speed, and reliability to support enterprise-level operations.",            color: "wc-green"  },
+  { icon: <Plug size={22} />,      title: "Seamless Integrations",                 desc: "We integrate AI tools, APIs, CRMs, cloud platforms, and automation systems.",                  color: "wc-orange" },
+  { icon: <RefreshCw size={22} />, title: "Dedicated Support & Maintenance",       desc: "Ongoing support, updates, and optimization to keep your systems running.",                     color: "wc-teal"   },
+];
+
+const industries = [
+  { icon: <ShoppingCart size={26} />,  label: "Ecommerce"             },
+  { icon: <HeartPulse size={26} />,    label: "Healthcare"            },
+  { icon: <BarChart3 size={26} />,     label: "Finance"               },
+  { icon: <Building2 size={26} />,     label: "Real Estate"           },
+  { icon: <Truck size={26} />,         label: "Logistics"             },
+  { icon: <GraduationCap size={26} />, label: "Education"             },
+  { icon: <Rocket size={26} />,        label: "SaaS Companies"        },
+  { icon: <Megaphone size={26} />,     label: "Marketing Agencies"    },
+  { icon: <Globe size={26} />,         label: "Enterprise Operations" },
+  { icon: <Briefcase size={26} />,     label: "Service Businesses"    },
+];
+
+const techGroups = [
   {
     category: "AI & Machine Learning",
-    items: ["OpenAI GPT-4", "Claude API", "Google Gemini", "LangChain", "PyTorch"]
-  },
-  {
-    category: "Automation & APIs",
-    items: ["Zapier", "Make (Integromat)", "REST APIs", "Webhooks", "GraphQL"]
+    items: [
+      { name: "OpenAI APIs",  icon: null,                                                                                                       color: "#10a37f" },
+      { name: "LangChain",    icon: null,                                                                                                       color: "#1c3c59" },
+      { name: "Python",       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",                     color: "#3776ab" },
+      { name: "TensorFlow",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",             color: "#ff6f00" },
+      { name: "Scikit-learn", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg",           color: "#f7931e" },
+    ],
   },
   {
     category: "Backend & Cloud",
-    items: ["Node.js", "Python FastAPI", "AWS", "Docker", "PostgreSQL"]
-  }
+    items: [
+      { name: "Node.js",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",                       color: "#339933" },
+      { name: "Laravel",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",                     color: "#ff2d20" },
+      { name: "AWS",       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg", color: "#ff9900" },
+      { name: "Firebase",  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",                   color: "#ffca28" },
+      { name: "GraphQL",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg",                        color: "#e10098" },
+    ],
+  },
+  {
+    category: "Automation & APIs",
+    items: [
+      { name: "Zapier",          icon: null,                                                                                                     color: "#ff4a00" },
+      { name: "Make",            icon: null,                                                                                                     color: "#6d00cc" },
+      { name: "Webhooks",        icon: null,                                                                                                     color: "#003070" },
+      { name: "REST APIs",       icon: null,                                                                                                     color: "#003070" },
+      { name: "Docker",          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",                  color: "#2496ed" },
+    ],
+  },
 ];
 
+const processSteps = [
+  { step: "01", icon: <Search size={26} />,   title: "Business Analysis & AI Strategy",  desc: "We identify automation opportunities, bottlenecks, and AI integration possibilities." },
+  { step: "02", icon: <Layout size={26} />,   title: "Solution Architecture & Planning", desc: "We design scalable software structures, workflows, integrations, and technical roadmaps." },
+  { step: "03", icon: <Sparkles size={26} />, title: "UI/UX & System Design",            desc: "Modern interface design focused on usability and seamless workflows." },
+  { step: "04", icon: <Code2 size={26} />,    title: "Development & AI Integration",     desc: "Custom software development combined with AI models, automation systems, and APIs." },
+  { step: "05", icon: <Activity size={26} />, title: "Testing & Optimization",           desc: "Security testing, workflow validation, AI optimization, and performance monitoring." },
+  { step: "06", icon: <Rocket size={26} />,   title: "Deployment & Ongoing Support",     desc: "Deployment, monitoring, updates, AI improvements, and long-term technical support." },
+];
+
+const aiFeatures = [
+  { icon: <Bot size={26} />,          label: "AI Chatbots"                   },
+  { icon: <Zap size={26} />,          label: "GPT-Powered Automation"        },
+  { icon: <Bell size={26} />,         label: "Smart Notifications"           },
+  { icon: <Workflow size={26} />,     label: "Workflow Automation"           },
+  { icon: <Activity size={26} />,     label: "Predictive Analytics"          },
+  { icon: <Search size={26} />,       label: "AI Search Systems"             },
+  { icon: <Target size={26} />,       label: "Lead Qualification Systems"    },
+  { icon: <FileBarChart size={26} />, label: "Automated Reporting"           },
+  { icon: <Database size={26} />,     label: "CRM Automation"                },
+  { icon: <Sparkles size={26} />,     label: "AI Content Assistance"         },
+  { icon: <UserCheck size={26} />,    label: "User Behavior Tracking"        },
+  { icon: <BarChart3 size={26} />,    label: "Data Visualization Dashboards" },
+];
+
+const faqs = [
+  { question: "How much does AI software development cost in the USA, UK, or UAE?",  answer: "Pricing depends on the software scope, AI integrations, automation complexity, and technical requirements. Contact us for a free tailored quote with no hidden fees." },
+  { question: "Can you integrate OpenAI or ChatGPT into existing systems?",           answer: "Yes. We integrate OpenAI APIs, ChatGPT, automation tools, and AI workflows into existing software platforms with minimal disruption to your operations." },
+  { question: "Do you develop enterprise AI software solutions?",                     answer: "Yes. We build scalable AI-powered enterprise systems designed for automation, analytics, integrations, and operational efficiency at any scale." },
+  { question: "Can AI automate business processes?",                                  answer: "Yes. AI software can automate repetitive workflows, customer interactions, reporting systems, and operational tasks — freeing your team for high-value work." },
+  { question: "How long does it take to build custom AI software?",                   answer: "A simple chatbot or automation tool can be delivered in 4–8 weeks. Complex multi-system AI platforms typically take 3–5 months with clear milestones." },
+  { question: "Do you provide ongoing support and maintenance?",                      answer: "Yes. We provide updates, monitoring, optimization, AI model improvements, and long-term technical support as your business needs evolve." },
+];
+
+/* ─── COMPONENT ─────────────────────────────────────── */
 const AISoftwareServices = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-  const stats = [
-    { number: "150+", label: "Projects Delivered" },
-    { number: "120+", label: "Clients Served" },
-    { number: "10+", label: "Years Experience" },
-    { number: "4.9★", label: "Client Rating" },
-  ];
-
-  const businessCase = [
-    { title: "Replace Manual Repetitive Work", description: "Every hour your team spends on repetitive tasks — data entry, report generation, email responses, scheduling — is an hour not spent on high-value work. Custom AI software automates these tasks completely, freeing your team to focus on what only humans can do." },
-    { title: "Scale Without Hiring", description: "AI software handles growing workloads without growing headcount. As your business scales, your AI systems scale with it — processing more data, handling more queries and managing more tasks without additional staff costs." },
-    { title: "Faster, Smarter Decisions", description: "Custom AI tools analyse your business data in real time — surfacing insights, flagging anomalies and recommending actions faster than any manual process. Better information leads to better decisions." },
-    { title: "Competitive Advantage", description: "Businesses that automate intelligently move faster, serve customers better and operate more efficiently than competitors still relying on manual processes. Custom AI software is increasingly the difference between market leaders and those falling behind." },
-  ];
-
-  const services = [
-    { title: "AI Chatbot Development UK", description: "We build custom AI chatbots for businesses across the UK and USA — intelligent conversational assistants that handle customer enquiries, qualify leads, answer product questions, book appointments and escalate complex issues to human agents. Our chatbots are trained on your specific business data and integrated directly into your website, app or internal tools." },
-    { title: "GPT Integration & Custom GPT Tools", description: "We integrate OpenAI GPT, Claude, Gemini and other large language models into your business software — building custom GPT-powered tools for content generation, document analysis, customer support, internal knowledge bases and intelligent search. We go beyond simple API calls to build fully functional, production-ready GPT applications." },
-    { title: "Business Process Automation", description: "We build AI-powered automation systems that eliminate manual, repetitive business processes — from data collection and processing to report generation, invoice handling, inventory management and customer communication workflows. Our automation solutions integrate with your existing tools and deliver measurable time and cost savings from day one." },
-    { title: "Workflow Automation Software", description: "We design and build custom workflow automation software that connects your business tools, automates handoffs between teams and eliminates the manual coordination that slows operations down. Built specifically around how your business works — not a generic template." },
-    { title: "AI-Powered Data Analysis Tools", description: "We build custom data analysis and reporting tools that use AI to process large datasets, identify patterns, generate insights and surface the business intelligence your team needs — automatically and in real time. No more manual spreadsheets or waiting for weekly reports." },
-    { title: "CRM & System AI Integration", description: "We integrate AI capabilities into your existing CRM, ERP and business software — adding intelligent lead scoring, automated follow-up sequences, predictive analytics and smart data enrichment without requiring a full system replacement." },
-    { title: "AI Document Processing", description: "We build AI systems that automatically read, extract, classify and process information from documents — invoices, contracts, forms, reports and emails — eliminating manual data entry and accelerating document-heavy workflows." },
-    { title: "Custom AI API Development", description: "We build secure, scalable AI APIs that power your products and platforms — enabling other systems to access AI capabilities, process requests and return intelligent responses reliably at scale." },
-  ];
-
-  const whyChoose = [
-    { title: "✅ Business-First AI Development", description: "We start every project by understanding your business problem — not by recommending the latest AI technology. We only build AI solutions where they create genuine value and measurable ROI for your business." },
-    { title: "✅ Full-Stack AI Engineering", description: "We cover the complete AI development stack — from model selection and training to API development, frontend interfaces and system integrations. One team, full ownership, no gaps." },
-    { title: "✅ Seamless Integration", description: "Our AI software integrates with your existing tools and systems — CRMs, ERPs, communication platforms, databases and third-party APIs — without disrupting your current operations." },
-    { title: "✅ Affordable for UK Small Business", description: "As an offshore AI software development company we offer the technical expertise of a premium UK studio at a fraction of the cost — making custom AI software accessible to small and medium businesses across the UK and USA." },
-    { title: "✅ Ongoing Support & Improvement", description: "AI software improves with use and requires ongoing monitoring and refinement. We provide long-term support — updating models, improving accuracy and adding features as your business needs evolve." },
-  ];
-
-  const processSteps = [
-    { number: "01", title: "Business Analysis & AI Scoping", description: "We analyse your business workflows, identify the highest-value automation opportunities and define exactly what AI software will and will not do — setting realistic expectations before any development begins." },
-    { number: "02", title: "Solution Design & Architecture", description: "We design the AI system architecture — model selection, data flows, integration points, user interfaces and security controls — creating a clear technical blueprint before writing a single line of code." },
-    { number: "03", title: "Development & Integration", description: "We build your AI software in sprints with regular demos and check-ins — integrating with your existing systems and testing real-world scenarios throughout the development process." },
-    { number: "04", title: "Testing & Accuracy Optimisation", description: "We test AI software extensively for accuracy, edge cases, security and real-world performance — refining models and logic until the system performs reliably in production." },
-    { number: "05", title: "Deployment & Ongoing Support", description: "We deploy your AI software, provide full documentation and offer ongoing monitoring, model updates and feature development as your business and data evolve." },
-  ];
-
-  const whoFor = [
-    { title: "✓ Small & Medium Businesses UK & USA", description: "Who want to automate manual processes, reduce operational costs and compete more effectively — without enterprise-level AI budgets." },
-    { title: "✓ Customer-Facing Businesses", description: "Who need AI chatbots and virtual assistants to handle customer enquiries, qualify leads and book appointments — around the clock without additional staff." },
-    { title: "✓ Data-Heavy Operations", description: "That process large volumes of documents, forms, reports or customer data manually — and need intelligent automation to handle it faster and more accurately." },
-    { title: "✓ Businesses Using Multiple Disconnected Tools", description: "Who need AI to connect their systems, automate handoffs and create a unified intelligent workflow — rather than managing everything manually." },
-    { title: "✓ Companies Building AI Products", description: "Startups and established businesses building AI-powered software products that need an experienced technical partner to design and develop the AI layer." },
-  ];
-
-  const faqs = [
-    { question: "How much does custom AI software development cost in the UK?", answer: "The cost depends on the complexity of the AI system, integrations required and development timeline. As an offshore AI software development company we are significantly more affordable than UK studios — without any compromise on quality or communication. Contact us for a free consultation and quote." },
-    { question: "How long does it take to build custom AI software?", answer: "A simple AI chatbot or automation tool can be delivered in 4 to 8 weeks. A complex multi-system AI automation platform typically takes 3 to 5 months. We provide a clear timeline and milestones before any work begins." },
-    { question: "Can you build AI chatbots for UK businesses?", answer: "Yes. AI chatbot development is one of our most popular services for UK and USA businesses. We build custom chatbots trained on your specific business data — integrated into your website, CRM or internal tools." },
-    { question: "Can you integrate GPT into my existing software?", answer: "Yes. GPT and LLM integration is a core part of what we do. We integrate OpenAI GPT, Claude and other models into existing business software — adding intelligent content generation, smart search, automated responses and AI-driven workflows." },
-    { question: "Is custom AI software secure?", answer: "Yes. Security is built into every stage of our development process — including data handling, access control, API security and deployment configuration. We follow best practices for AI system security and data privacy compliance." },
-    { question: "Do you offer AI automation for small businesses?", answer: "Yes. We specialise in making custom AI automation accessible and affordable for small and medium businesses across the UK and USA — building practical, high-impact solutions that deliver fast ROI without enterprise-level budgets." },
-  ];
-  const audience = [
-    {
-      icon: Building2,
-      title: "Small & Medium Businesses",
-      desc: "Looking to reduce manual work and scale operations efficiently."
-    },
-    {
-      icon: ShoppingCart,
-      title: "Customer-Facing Companies",
-      desc: "Need AI chatbots and automation for sales and support."
-    },
-    {
-      icon: Database,
-      title: "Data-Heavy Businesses",
-      desc: "Process large volumes of data, documents or transactions."
-    },
-    {
-      icon: Network,
-      title: "Multi-System Businesses",
-      desc: "Need integration across multiple tools and workflows."
-    },
-    {
-      icon: Rocket,
-      title: "AI Product Startups",
-      desc: "Building AI-powered SaaS products and platforms."
-    }
-  ];
-
-  function FAQItem({ item, isOpen, onClick }) {
-    return (
-      <div className="aiss__faq-item">
-        <button className="aiss__faq-question" onClick={onClick}>
-          {item.question}
-          <span>{isOpen ? "−" : "+"}</span>
-        </button>
-
-        {isOpen && (
-          <div className="aiss__faq-answer">
-            {item.answer}
-          </div>
-        )}
-      </div>
-    );
-  }
+  const [activeFaq, setActiveFaq] = useState(null);
 
   return (
-    <>
-      <div className="aiss__wrapper">
-        <Navbar />
+    <div className="aiss__wrapper">
+      <Navbar />
 
-        {/* ================= HERO SECTION ================= */}
-        <section className="aiss__hero">
-          <div className="aiss__hero_gradient"></div>
-
-          <div className="aiss__hero_container">
-            {/* MOVED BREADCRUMB HERE: Renders inside the dark container above the badge */}
-            <Breadcrumb />
-
-            {/* Top Label / Pill Badge */}
-            <span className="aiss__hero_badge">
-              AI Software Development Company for UK & USA Businesses
-            </span>
-
-            <h1 className="aiss__hero_title">
-              Custom AI Software Development That Automates Operations and{" "}
-              <span className="aiss__hero_title_accent">Accelerates Growth</span>
-            </h1>
-
-            {/* Supporting Text */}
-            <p className="aiss__hero_text">
-              We design and build intelligent AI software solutions including custom
-              chatbots, workflow automation systems, GPT-powered tools, and business
-              integrations that reduce manual work, improve decision-making, and scale
-              with your business.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="hero-buttons">
-              <a href="/contact" className="btn-primary">
-                Get Free AI Consultation →
-              </a>
-
-             <a href="/case-studies" className="aiwd-btn-secondary">
-    View Our Works →
-  </a>
-            </div>
-
-            {/* Trust Text */}
-            <p className="aiss__hero_trust">
-              Trusted by 120+ businesses across the UK, USA & Europe
-            </p>
+      {/* ═══════════════════════════════════════
+          HERO — UNCHANGED
+      ═══════════════════════════════════════ */}
+      <section className="aiss__hero">
+        <div className="aiss__hero_gradient"></div>
+        <div className="aiss__hero_container">
+          <Breadcrumb />
+          <span className="aiss__hero_badge">
+            AI Software Development Company for UK &amp; USA Businesses
+          </span>
+          <h1 className="aiss__hero_title">
+            Custom AI Software Development That Automates Operations and{" "}
+            <span className="aiss__hero_title_accent">Accelerates Growth</span>
+          </h1>
+          <p className="aiss__hero_text">
+            We design and build intelligent AI software solutions including custom chatbots,
+            workflow automation systems, GPT-powered tools, and business integrations that
+            reduce manual work, improve decision-making, and scale with your business.
+          </p>
+          <div className="aiss-hero-actions">
+            <a href="/contact" className="aiss-btn-primary">Get Free AI Consultation →</a>
+            <a href="/case-studies" className="aiss-btn-secondary">View Our Works →</a>
           </div>
-        </section>
+          <p className="aiss__hero_trust">Trusted by 120+ businesses across the UK, USA &amp; Europe</p>
+        </div>
+      </section>
 
-        {/* Stats Bar */}
-        <section className="stats-bar" id="aiss-work">
-          {stats.map((stat, i) => (
-            <div key={i} className="stat-item">
-              <span className="stat-number">{stat.number}</span>
-              <span className="stat-label">{stat.label}</span>
+      {/* ═══════════════════════════════════════
+          STATS BAR
+      ═══════════════════════════════════════ */}
+      <section className="aiss-stats-section">
+        <div className="aiss-stats-inner">
+          {stats.map((s, i) => (
+            <div key={i} className="aiss-stat-item">
+              <span className="aiss-stat-num">{s.number}</span>
+              <span className="aiss-stat-lbl">{s.label}</span>
             </div>
           ))}
-        </section>
-        
-        {/* SECTION 1 - WHAT IS AI SOFTWARE */}
-        <section className="aiss__section aiss__section--features">
-          <div className="aiss__container">
+        </div>
+      </section>
 
-            <div className="aiss__section-header">
-              <h2 className="aiss__heading">
-                What Is Custom AI Software Development?
+      {/* ═══════════════════════════════════════
+          SECTION 1 — What Is AI Software Dev?
+      ═══════════════════════════════════════ */}
+      <section className="aiss-intro-section">
+        <div className="aiss-container">
+          <div className="aiss-intro-layout">
+
+            {/* Left — illustration */}
+            <div className="aiss-intro-visual">
+              <div className="aiss-visual-inner">
+                <div className="aiss-visual-brain">
+                  <Brain size={48} className="aiss-brain-icon" />
+                </div>
+                <div className="aiss-visual-nodes">
+                  <div className="aiss-node n1"><Bot size={18} /></div>
+                  <div className="aiss-node n2"><Zap size={18} /></div>
+                  <div className="aiss-node n3"><Database size={18} /></div>
+                  <div className="aiss-node n4"><BarChart4 size={18} /></div>
+                </div>
+                <div className="aiss-visual-code">
+                  <span className="aiss-code-line cl1">&lt;AI /&gt;</span>
+                  <span className="aiss-code-line cl2">{"{ automate }"}</span>
+                  <span className="aiss-code-line cl3">{"[ predict ]"}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Middle — text */}
+            <div className="aiss-intro-text">
+              <span className="aiss-intro-tag">What Is AI Software Development?</span>
+              <h2 className="aiss-intro-title">
+                Smarter Software for{" "}
+                <span className="aiss-blue">Modern Businesses</span>
               </h2>
-
-              <p className="aiss__text">
-                Custom AI software development is the process of building intelligent systems tailored to your business workflows — automating tasks, improving decisions, and integrating with your existing tools.
+              <p className="aiss-intro-desc">
+                Custom AI software development involves building intelligent systems
+                tailored to automate business operations, improve decision-making,
+                reduce manual workloads, and integrate seamlessly with existing
+                platforms and workflows.
               </p>
             </div>
 
-            <div className="aiss__grid aiss__grid--features">
-
-              <div className="aiss__card aiss__card--feature">
-                <div className="aiss__icon">
-                  <Trash2 size={26} />
-                </div>
-                <h3>Replace Manual Work</h3>
-                <p>Automate repetitive tasks like data entry, emails, reporting and scheduling.</p>
-              </div>
-
-              <div className="aiss__card aiss__card--feature">
-                <div className="aiss__icon">
-                  <Users size={26} />
-                </div>
-                <h3>Scale Without Hiring</h3>
-                <p>Handle growing workloads without increasing headcount or operational cost.</p>
-              </div>
-
-              <div className="aiss__card aiss__card--feature">
-                <div className="aiss__icon">
-                  <BarChart3 size={26} />
-                </div>
-                <h3>Faster Decisions</h3>
-                <p>AI analyzes your data in real time and delivers actionable insights instantly.</p>
-              </div>
-
-              <div className="aiss__card aiss__card--feature">
-                <div className="aiss__icon">
-                  <ShieldCheck size={26} />
-                </div>
-                <h3>Competitive Advantage</h3>
-                <p>Move faster than competitors by automating key business processes.</p>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-        
-        {/* SECTION 2 - SERVICES */}
-        <section className="aiss__section aiss__section--services">
-          <div className="aiss__container">
-
-            <div className="aiss__section-header">
-              <h2 className="aiss__heading">
-                Our AI Software Development Services
-              </h2>
-
-              <p className="aiss__text">
-                We build end-to-end AI systems that automate business processes, improve decision-making and integrate seamlessly into your existing tools.
-              </p>
-            </div>
-
-            <div className="aiss__grid aiss__grid--services">
-
-              <div className="aiss__card aiss__card--service">
-                <div className="aiss__icon">
-                  <Bot size={24} />
-                </div>
-                <h3>AI Chatbot Development</h3>
-                <p>Intelligent chatbots for customer support, lead generation and automation.</p>
-              </div>
-
-              <div className="aiss__card aiss__card--service">
-                <div className="aiss__icon">
-                  <Brain size={24} />
-                </div>
-                <h3>GPT Integration</h3>
-                <p>Integrate GPT, Claude and Gemini into your business workflows and tools.</p>
-              </div>
-
-              <div className="aiss__card aiss__card--service">
-                <div className="aiss__icon">
-                  <Workflow size={24} />
-                </div>
-                <h3>Process Automation</h3>
-                <p>Automate repetitive business operations and reduce manual workload.</p>
-              </div>
-
-              <div className="aiss__card aiss__card--service">
-                <div className="aiss__icon">
-                  <BarChart4 size={24} />
-                </div>
-                <h3>AI Data Analysis</h3>
-                <p>Transform raw data into real-time insights and business intelligence.</p>
-              </div>
-
-              <div className="aiss__card aiss__card--service">
-                <div className="aiss__icon">
-                  <Database size={24} />
-                </div>
-                <h3>CRM AI Integration</h3>
-                <p>Add AI-powered intelligence into your CRM and ERP systems.</p>
-              </div>
-
-              <div className="aiss__card aiss__card--service">
-                <div className="aiss__icon">
-                  <Cog size={24} />
-                </div>
-                <h3>Custom AI Systems</h3>
-                <p>Fully tailored AI platforms built specifically for your business needs.</p>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-        {/* SECTION 3 - WHY CHOOSE US */}
-        <section className="aiss__section aiss__section--why">
-          <div className="aiss__container aiss__why-layout">
-
-            {/* LEFT SIDE */}
-            <div className="aiss__why-left">
-              <h2 className="aiss__heading">
-                Why Businesses Choose Us for AI Development
-              </h2>
-
-              <p className="aiss__text">
-                We don’t just build AI software — we design business-driven systems that deliver measurable ROI, integrate seamlessly, and scale with your operations.
-              </p>
-
-              <div className="aiss__why-highlight">
-                Built for real business impact — not experimental AI prototypes.
-              </div>
-            </div>
-
-            {/* RIGHT SIDE */}
-            <div className="aiss__why-right">
-
-              <div className="aiss__why-item">
-                <CheckCircle size={20} />
-                <p>Business-first AI strategy focused on ROI</p>
-              </div>
-
-              <div className="aiss__why-item">
-                <Layers size={20} />
-                <p>Full-stack AI engineering from model to UI</p>
-              </div>
-
-              <div className="aiss__why-item">
-                <Plug size={20} />
-                <p>Seamless integration with your existing systems</p>
-              </div>
-
-              <div className="aiss__why-item">
-                <Wallet size={20} />
-                <p>Cost-effective offshore development model</p>
-              </div>
-
-              <div className="aiss__why-item">
-                <RefreshCw size={20} />
-                <p>Ongoing optimization and long-term support</p>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-        {/* SECTION 4 - TECHNOLOGIES */}
-        <section className="aiss__section aiss__section--tech">
-          <div className="aiss__container">
-
-            <div className="aiss__section-header">
-              <h2 className="aiss__heading">
-                Technologies We Use
-              </h2>
-
-              <p className="aiss__text">
-                We use modern AI, backend and cloud technologies to build scalable, production-ready systems.
-              </p>
-            </div>
-
-            <div className="aiss__tech-grid">
-
-              {technologies.map((group, i) => (
-                <div key={i} className="aiss__tech-card">
-
-                  <h3 className="aiss__tech-title">
-                    {group.category}
-                  </h3>
-
-                  <div className="aiss__tech-pills">
-                    {group.items.map((item, j) => (
-                      <span key={j} className="aiss__tech-pill">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-
+            {/* Right — checklist */}
+            <div className="aiss-intro-checklist">
+              {aiChecklist.map((item, i) => (
+                <div key={i} className="aiss-check-row">
+                  <CheckCircle2 size={17} className="aiss-check-icon" />
+                  <span>{item}</span>
                 </div>
               ))}
-
             </div>
 
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* SECTION 5 - PROCESS */}
-        <section className="aiss__section aiss__section--process">
-          <div className="aiss__container">
-
-            <div className="aiss__section-header">
-              <h2 className="aiss__heading">
-                Our AI Development Process
-              </h2>
-
-              <p className="aiss__text">
-                A structured, transparent workflow from idea to deployment.
-              </p>
-            </div>
-
-            <div className="aiss__timeline">
-
-              {processSteps.map((step, i) => (
-                <div key={i} className="aiss__timeline-item">
-
-                  <div className="aiss__timeline-left">
-                    <div className="aiss__timeline-number">
-                      {step.number}
-                    </div>
-
-                    {i !== processSteps.length - 1 && (
-                      <div className="aiss__timeline-line"></div>
-                    )}
-                  </div>
-
-                  <div className="aiss__timeline-content">
-                    <h3>{step.title}</h3>
-                    <p>{step.description}</p>
-                  </div>
-
-                </div>
-              ))}
-
-            </div>
-
+      {/* ═══════════════════════════════════════
+          SECTION 2 — Services 4-column grid
+      ═══════════════════════════════════════ */}
+      <section className="aiss-services-section">
+        <div className="aiss-container">
+          <div className="aiss-section-head">
+            <span className="aiss-pill">Our AI Software Development Services</span>
+            <h2 className="aiss-section-title">
+              Intelligent Solutions. Smarter Operations. Better Results.
+            </h2>
           </div>
-        </section>
-
-        {/* SECTION 6 - WHO IT’S FOR */}
-        <section className="aiss__section aiss__section--audience">
-          <div className="aiss__container">
-
-            <div className="aiss__section-header">
-              <h2 className="aiss__heading">
-                Who Our AI Solutions Are Built For
-              </h2>
-
-              <p className="aiss__text">
-                We design AI systems for businesses that want to automate operations, reduce costs and scale intelligently.
-              </p>
-            </div>
-
-            <div className="aiss__audience-grid">
-
-              {audience.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <div key={i} className="aiss__audience-card">
-
-                    <div className="aiss__audience-icon">
-                      <Icon size={22} />
-                    </div>
-
-                    <div>
-                      <h3>{item.title}</h3>
-                      <p>{item.desc}</p>
-                    </div>
-
-                  </div>
-                );
-              })}
-
-            </div>
-
-          </div>
-        </section>
-
-        {/* SECTION 7 - FAQ */}
-        <section className="aiss__section aiss__section--faq">
-          <div className="aiss__container">
-            <div className="aiss__section-header">
-              <h2 className="aiss__heading">
-                Frequently Asked Questions
-              </h2>
-              <p className="aiss__text">
-                Everything you need to know before starting your AI project.
-              </p>
-            </div>
-
-            <div className="aiss__faq-wrapper">
-              {faqs.map((item, i) => (
-                <FAQItem
-                  key={i}
-                  item={item}
-                  isOpen={openIndex === i}
-                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FINAL CTA */}
-        <section className="aiss__cta-section">
-          <div className="aiss__container">
-            <div className="aiss__cta-card">
-              <h2 className="aiss__cta-title">
-                Ready to Automate and Scale Your Business with AI?
-              </h2>
-
-              <p className="aiss__cta-text">
-                Tell us about your business processes and we will put together a free
-                AI software consultation — showing you exactly where AI can save time,
-                reduce costs and help you grow.
-              </p>
-
-              <div className="cta-buttons">
-                <a href="/contact" className="btn-primary">
-                  Get Free AI Consultation →
-                </a>
-                <a href="/case-studies" className="aiwd-btn-secondary">
-  See Our Works 
-</a>
+          <div className="aiss-services-grid">
+            {services.map((svc, i) => (
+              <div key={i} className="aiss-service-card">
+                <div className="aiss-service-icon">{svc.icon}</div>
+                <h3>{svc.title}</h3>
+                <p>{svc.desc}</p>
               </div>
-
-              <p className="aiss__cta-small-text">
-                No commitment. No spam. Just results.
-              </p>
-            </div>
+            ))}
           </div>
-        </section>
-        <Footer />
-      </div>
-    </>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          SECTION 3 — Why Businesses Choose Us (dark)
+      ═══════════════════════════════════════ */}
+      <section className="aiss-why-section">
+        <div className="aiss-container">
+          <div className="aiss-section-head">
+            <span className="aiss-pill-white">Why Businesses Choose ZonzocTech</span>
+          </div>
+          <div className="aiss-why-grid">
+            {whyChoose.map((item, i) => (
+              <div key={i} className={`aiss-why-card ${item.color}`}>
+                <div className="aiss-why-icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          SECTION 4 — Industries + Technologies (split)
+      ═══════════════════════════════════════ */}
+      <section className="aiss-split-section">
+        <div className="aiss-container">
+          <div className="aiss-split-layout">
+
+            {/* Left — Industries */}
+            <div className="aiss-split-col">
+              <span className="aiss-split-label">Industries We Support</span>
+              <div className="aiss-industry-grid">
+                {industries.map((ind, i) => (
+                  <div key={i} className="aiss-industry-item">
+                    <div className="aiss-industry-icon">{ind.icon}</div>
+                    <span>{ind.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="aiss-split-divider" />
+
+            {/* Right — Technologies with icons */}
+            <div className="aiss-split-col">
+              <span className="aiss-split-label">Technologies We Use</span>
+              <div className="aiss-tech-groups">
+                {techGroups.map((group, i) => (
+                  <div key={i} className="aiss-tech-group">
+                    <h4>{group.category}</h4>
+                    <div className="aiss-tech-pills">
+                      {group.items.map((tech, j) => (
+                        <div key={j} className="aiss-tech-pill">
+                          <div className="aiss-tech-icon-wrap">
+                            {tech.icon ? (
+                              <img
+                                src={tech.icon}
+                                alt={tech.name}
+                                className="aiss-tech-img"
+                                onError={e => {
+                                  e.target.style.display = 'none';
+                                  e.target.nextSibling.style.display = 'flex';
+                                }}
+                              />
+                            ) : null}
+                            <span
+                              className="aiss-tech-fallback"
+                              style={{ background: tech.color, display: tech.icon ? 'none' : 'flex' }}
+                            >
+                              {tech.name.charAt(0)}
+                            </span>
+                          </div>
+                          <span className="aiss-tech-name">{tech.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          SECTION 5 — Process (6 steps)
+      ═══════════════════════════════════════ */}
+      <section className="aiss-process-section">
+        <div className="aiss-container">
+          <div className="aiss-section-head">
+            <span className="aiss-pill">Our AI Software Development Process</span>
+            <h2 className="aiss-section-title">Our AI Software Development Process</h2>
+          </div>
+          <div className="aiss-process-row">
+            {processSteps.map((step, i) => (
+              <div key={i} className="aiss-process-col">
+                {i < processSteps.length - 1 && <div className="aiss-process-connector" />}
+                <div className="aiss-process-circle">{step.icon}</div>
+                <span className="aiss-process-num">{step.step}</span>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          SECTION 6 — AI Features icon grid
+      ═══════════════════════════════════════ */}
+      <section className="aiss-features-section">
+        <div className="aiss-container">
+          <div className="aiss-section-head">
+            <span className="aiss-pill">AI Features We Can Integrate</span>
+          </div>
+          <div className="aiss-features-grid">
+            {aiFeatures.map((f, i) => (
+              <div key={i} className="aiss-feature-item">
+                <div className="aiss-feature-icon">{f.icon}</div>
+                <span className="aiss-feature-label">{f.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          SECTION 7 — FAQ 2-column
+      ═══════════════════════════════════════ */}
+      <section className="aiss-faq-section">
+        <div className="aiss-container">
+          <div className="aiss-section-head">
+            <h2 className="aiss-section-title">Frequently Asked Questions</h2>
+          </div>
+          <div className="aiss-faq-2col">
+            {faqs.map((faq, i) => (
+              <div
+                key={i}
+                className={`aiss-faq-item ${activeFaq === i ? "active" : ""}`}
+                onClick={() => setActiveFaq(activeFaq === i ? null : i)}
+              >
+                <div className="aiss-faq-q">
+                  <span>{faq.question}</span>
+                  {activeFaq === i ? <Minus size={17} /> : <Plus size={17} />}
+                </div>
+                {activeFaq === i && (
+                  <div className="aiss-faq-a"><p>{faq.answer}</p></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          SECTION 8 — CTA (dark, with AI visual)
+      ═══════════════════════════════════════ */}
+      <section className="aiss-cta-section">
+        <div className="aiss-container">
+          <div className="aiss-cta-inner">
+
+            {/* Left */}
+            <div className="aiss-cta-left">
+              <span className="aiss-cta-tag">Let's Build Something Amazing</span>
+              <h2 className="aiss-cta-title">
+                Ready to Automate and{" "}
+                <span className="aiss-cta-blue">Scale Your Business with AI?</span>
+              </h2>
+              <p className="aiss-cta-desc">
+                Let's build intelligent AI software solutions that automate operations,
+                improve efficiency, and support long-term business growth.
+              </p>
+              <div className="aiss-cta-actions">
+                <a href="/contact" className="aiss-btn-primary">Get Free Consultation →</a>
+                <a href="/case-studies" className="aiss-btn-secondary">View Our Works →</a>
+              </div>
+              <div className="aiss-cta-trust">
+                <CheckCircle2 size={15} className="aiss-trust-icon" />
+                <span>We usually respond within 1–3 business hours. No commitment.</span>
+              </div>
+            </div>
+
+            {/* Right — AI visual */}
+            <div className="aiss-cta-visual">
+              <div className="aiss-cta-visual-inner">
+                <div className="aiss-cta-brain-wrap">
+                  <Brain size={80} className="aiss-cta-brain" />
+                </div>
+                <div className="aiss-cta-stats">
+                  <div className="aiss-cta-stat">
+                    <strong>150+</strong><span>Projects</span>
+                  </div>
+                  <div className="aiss-cta-stat">
+                    <strong>10+</strong><span>Years Exp.</span>
+                  </div>
+                  <div className="aiss-cta-stat">
+                    <strong>24/7</strong><span>Support</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
   );
 };
 

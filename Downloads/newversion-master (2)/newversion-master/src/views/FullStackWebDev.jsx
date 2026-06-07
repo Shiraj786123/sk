@@ -1,267 +1,389 @@
 'use client';
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Breadcrumb from "../components/Breadcrumb";
 import "../styles/FullStackWebDev.css";
 
 const FullStackWebDev = () => {
+  const [openFaq, setOpenFaq] = useState(null);
+
+  /* ── DATA ─────────────────────────────────────── */
   const stats = [
-    { number: "150+", label: "Projects Delivered" },
-    { number: "120+", label: "Clients Served" },
-    { number: "10+", label: "Years Experience" },
-    { number: "4.9★", label: "Client Rating" },
+    { icon: "🏆", number: "150+", label: "Projects Delivered" },
+    { icon: "❤️", number: "98%",  label: "Client Satisfaction" },
+    { icon: "👨‍💻", number: "50+",  label: "Expert Developers" },
+    { icon: "📅", number: "10+",  label: "Years Experience" },
+    { icon: "🕐", number: "24/7", label: "Support Available" },
+    { icon: "✅", number: "100%", label: "On-Time Delivery" },
   ];
 
-  const whatIsItems = [
-    { i: "🎨", title: "Frontend Development", description: "Everything the user sees — designed for speed, clarity and conversion." },
-    { i: "⚙️", title: "Backend Development", description: "The logic, data and APIs that power your application — built for reliability and scale." },
-    { i: "🗄️", title: "Database Architecture", description: "Structured, optimised data systems that keep your application fast as it grows." },
-    { i: "🔌", title: "API & Integrations", description: "Seamless connections between your app and third-party tools, payment systems and data sources." },
-    { i: "☁️", title: "Cloud Deployment", description: "Secure, scalable hosting and deployment on AWS or Google Cloud with full CI/CD setup." },
-    { i: "🖌️", title: "UI/UX Design", description: "User-centric design systems that ensure your product is intuitive, beautiful, and highly engaging." },
+  const whyChecklist = [
+    "Scalable & secure application architecture",
+    "Modern technologies for high performance",
+    "Clean, maintainable & future-ready code",
+    "Agile development & transparent communication",
+    "Ongoing support & long-term partnership",
   ];
 
   const services = [
-    { i: "💻", t: "Custom Web Application Development", points: ["Bespoke architectures.", "User-focused workflows.", "Scalable codebases.", "Performance-first design."] },
-    { i: "🚀", t: "MVP Development for Startups", points: ["Lean feature sets.", "Fast-track timeline.", "User validation ready.", "Cost-efficient build."] },
-    { i: "☁️", t: "SaaS Platform Development", points: ["Multi-tenant architecture.", "Subscription billing engines.", "Role-based access control.", "Advanced analytics suites."] },
-    { i: "⚛️", t: "React & Next.js Specialists", points: ["Server-side rendering.", "SEO-optimized builds.", "Fast component architecture.", "Scalable frontend logic."] },
-    { i: "⚙️", t: "Backend & API Development", points: ["Secure REST & GraphQL APIs.", "High-concurrency logic.", "Robust database design.", "Third-party integrations."] },
-    { i: "🔄", t: "Legacy System Modernisation", points: ["Refactoring legacy code.", "Performance bottlenecks fix.", "Seamless data migration.", "Cloud-native transformation."] },
+    { icon: "💻", title: "Custom Web Applications",  desc: "Tailored solutions to match your business workflows and goals.",                    link: "/web-development" },
+    { icon: "🚀", title: "SaaS Development",          desc: "Scalable SaaS platforms with multi-tenancy, subscriptions and dashboards.",          link: "/saas-development" },
+    { icon: "🎨", title: "Frontend Development",      desc: "Interactive, responsive and fast user interfaces built with modern frameworks.",      link: "/frontend-development" },
+    { icon: "⚙️", title: "Backend Development",       desc: "Robust server-side logic, authentication, databases and business APIs.",             link: "/backend-development" },
+    { icon: "🔌", title: "API Development",           desc: "RESTful & GraphQL APIs and third-party service integrations.",                        link: "/api-development" },
+    { icon: "☁️", title: "Cloud & DevOps",            desc: "Deployment, CI/CD, monitoring and scalable cloud infrastructures.",                   link: "/cloud-devops" },
   ];
 
   const techStack = [
-    { c: "Frontend", icon: "https://img.icons8.com/color/96/react-native.png", items: ["React & Next.js", "TypeScript", "Tailwind CSS", "Redux"] },
-    { c: "Backend", icon: "https://img.icons8.com/color/96/nodejs.png", items: ["Node.js & Express", "Java Spring Boot", "Python Django", "GraphQL"] },
-    { c: "Databases", icon: "https://img.icons8.com/color/96/database.png", items: ["PostgreSQL & MySQL", "MongoDB", "Firebase", "Redis"] },
-    { c: "Cloud & DevOps", icon: "https://img.icons8.com/color/96/amazon-web-services.png", items: ["AWS & Google Cloud", "Docker & Kubernetes", "CI/CD Pipelines", "Vercel"] },
-  ];
-
-  const whyChoose = [
-    { i: "✅", t: "Affordable Without Cutting Corners", points: ["Premium UK quality.", "Senior developer talent.", "Clean, maintainable code.", "Transparent cost model."] },
-    { i: "⚛️", t: "React & Next.js Specialists", points: ["Deep stack expertise.", "High-performance builds.", "Scalable architecture.", "SEO-ready logic."] },
-    { i: "🤝", t: "One Team, Full Ownership", points: ["Zero outsourcing.", "Dedicated project teams.", "Direct communication.", "End-to-end accountability."] },
-    { i: "🚀", t: "Built for Growth", points: ["Scalable infrastructure.", "Start-up friendly budget.", "Fast MVP timelines.", "Growth-aligned support."] },
-    { i: "🔍", t: "SEO & Performance First", points: ["Server-side rendering.", "Core Web Vitals optimized.", "Structured data implementation.", "Technical SEO foundation."] },
-    { i: "🛠️", t: "24/7 Support & Maintenance", points: ["Continuous monitoring.", "Rapid bug resolution.", "Ongoing security patches.", "Growth-oriented scaling."] }
+    {
+      category: "Frontend",
+      techs: [
+        { name: "React",       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+        { name: "Next.js",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+        { name: "Vue.js",      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" },
+        { name: "TypeScript",  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+        { name: "Tailwind CSS",icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+      ],
+    },
+    {
+      category: "Backend",
+      techs: [
+        { name: "Node.js",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+        { name: "Laravel",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" },
+        { name: "Python",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+        { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" },
+        { name: "PHP",        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" },
+      ],
+    },
+    {
+      category: "Databases",
+      techs: [
+        { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+        { name: "MongoDB",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+        { name: "MySQL",      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+        { name: "Redis",      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" },
+        { name: "Firebase",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" },
+      ],
+    },
+    {
+      category: "Cloud & DevOps",
+      techs: [
+        { name: "AWS",        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+        { name: "Docker",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+        { name: "Vercel",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" },
+        { name: "Cloudflare", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg" },
+        { name: "GitHub",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" },
+      ],
+    },
   ];
 
   const processSteps = [
-    { n: "01", t: "Discovery & Requirements", d: "We define your business goals, identify target users, and establish the complete technical requirements for the project." },
-    { n: "02", t: "Architecture & UI Design", d: "We design the system architecture, database structure, API blueprints, and UI/UX wireframes for a robust system build." },
-    { n: "03", t: "Agile Development", d: "We build in two-week sprints with regular demos and check-ins to ensure total transparency and early user feedback." },
-    { n: "04", t: "Testing & QA", d: "Every feature undergoes rigorous functionality, performance, security, and cross-browser compatibility validation." },
-    { n: "05", t: "Deployment & Support", d: "We manage production deployment, system monitoring, documentation, and ongoing maintenance to ensure success." },
+    { n: "01", icon: "🔍", title: "Discovery & Planning",    desc: "We analyze your idea, requirements and goals to create the right strategy." },
+    { n: "02", icon: "🎨", title: "Architecture & Design",   desc: "We plan the system architecture, database structure and UI/UX experience." },
+    { n: "03", icon: "</>", title: "Development",            desc: "We build the frontend, backend, APIs and integrations with clean and scalable code." },
+    { n: "04", icon: "🛡️", title: "Testing & QA",           desc: "We test performance, security, compatibility and ensure bug-free delivery." },
+    { n: "05", icon: "🚀", title: "Deployment",              desc: "We deploy your application on a secure and scalable cloud environment." },
+    { n: "06", icon: "🎧", title: "Support & Growth",        desc: "We provide ongoing maintenance, updates and performance optimization." },
+  ];
+
+  const caseStudies = [
+    {
+      title: "SaaS Analytics Platform",
+      desc: "Custom dashboard for a SaaS startup to track analytics & user insights.",
+      stats: [{ val: "+42%", label: "User Engagement" }, { val: "+35%", label: "Performance Boost" }],
+      color: "#4f46e5",
+      emoji: "📊",
+    },
+    {
+      title: "Ecommerce Management System",
+      desc: "Full stack solution for order, inventory and customer management.",
+      stats: [{ val: "+60%", label: "Operational Efficiency" }, { val: "+28%", label: "Revenue Growth" }],
+      color: "#0891b2",
+      emoji: "🛒",
+    },
+    {
+      title: "Healthcare Booking Portal",
+      desc: "Secure booking & appointment management system for healthcare.",
+      stats: [{ val: "+48%", label: "Faster Appointments" }, { val: "+32%", label: "User Satisfaction" }],
+      color: "#059669",
+      emoji: "🏥",
+    },
   ];
 
   const faqs = [
-    { q: "How much does full stack development cost in the UK?", a: "The cost depends on complexity and features. We offer offshore pricing with UK-level quality. Contact us for a transparent quote." },
-    { q: "How long does it take to build a web application?", a: "A simple MVP takes 6 to 10 weeks. Complex SaaS platforms take 3 to 6 months. We provide clear timelines before we start." },
-    { q: "Can I hire a full stack developer for my UK company?", a: "Yes. We offer dedicated developer engagement models." },
-    { q: "Do you build MVPs for startups?", a: "Yes. We build lean, functional products fast to help startups test ideas and attract early investment." },
-    { q: "Can you upgrade my existing application?", a: "Yes. We modernise legacy systems, refactor code, and improve performance for existing applications." },
+    { q: "What is full stack web development?",                    a: "Full stack development covers both frontend (what users see) and backend (server logic, databases, APIs) of a web application — handled by one team end-to-end." },
+    { q: "How long does it take to build a web application?",      a: "A simple MVP takes 6–10 weeks. Complex SaaS platforms take 3–6 months. We provide a clear timeline before any work begins." },
+    { q: "What technologies do you use?",                          a: "We use modern stacks including React, Next.js, Node.js, Python, PostgreSQL, MongoDB, AWS, Docker, and more — chosen to fit your project requirements." },
+    { q: "Do you provide ongoing support and maintenance?",        a: "Yes. We offer updates, monitoring, optimization, security patches, and long-term maintenance services for all projects." },
+    { q: "Can you integrate third-party services and APIs?",       a: "Yes. We integrate payment gateways, CRM systems, automation platforms, REST/GraphQL APIs, and any third-party services your business needs." },
   ];
+
+  const codeSnippet = `// Building scalable applications
+const app = express();
+
+app.get('/api/health', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Application is running smoothly 🚀'
+  });
+});`;
 
   return (
     <div className="fswd__wrapper">
       <Navbar />
 
-      {/* HERO SECTION */}
+      {/* ── HERO — UNTOUCHED ─────────────────────────── */}
       <section className="fswd__bar_hero">
         <div className="fswd__container">
           <div className="fswd__hero_content">
-            {/* MOVED BREADCRUMB HERE: Renders inside the dark container above the badge */}
             <Breadcrumb />
-
-            <span className="fswd__hero_label">
-              Full Stack Web Development Agency
-            </span>
-
+            <span className="fswd__hero_label">Full Stack Web Development Agency</span>
             <h1 className="fswd__heading">
               Full Stack Web Development Agency for{" "}
               <span className="text_light_blue">UK & USA Businesses</span>
             </h1>
-
             <p className="fswd__hero_text_white">
               Bespoke, high-performance web applications, MVPs and SaaS platforms
               built to scale. We combine senior engineering talent with clean,
               maintainable code and conversion-focused UI/UX.
             </p>
-
-            {/* CTA BUTTONS */}
-            <div className="fswd__hero_actions">
-              <a
-                href="/contact"
-                className="fswd__hero_btn fswd__hero_btn--primary"
-              >
-                Get Free Consultation
-              </a>
-
-              {/* Updated Portfolio Button */}
-              <a
-                href="https://zonzoc-tech.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="fswd__hero_btn fswd__hero_btn--secondary"
-              >
-                View Portfolio→
-              </a>
-            </div>
-
-            {/* TRUST TEXT */}
-            <p className="fswd__hero_trust">
-              Trusted by 120+ businesses across the UK, USA & Europe
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="fswd__stats_section">
-        <div className="fswd__container">
-          <div className="fswd__stats_border_box">
-            {stats.map((s, i) => (
-              <div key={i} className="stat_item">
-                <span className="stat_num">{s.number}</span>
-                <span className="stat_lbl">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="fswd__section white_bar">
-        <div className="fswd__container">
-          <h2 className="fswd__title_dark">What Is Full Stack Web Development?</h2>
-          <div className="fswd__intro_content">
-            <p>Full stack web development covers both sides of a web application — the frontend that users see and interact with, and the backend that powers the logic, data and integrations behind the scenes.</p>
-            <p>For businesses in the UK and USA, working with a full stack development agency means one team handles everything — from database architecture and API development to user interface design and cloud deployment.</p>
-          </div>
-          <div className="fswd__grid_3">
-            {whatIsItems.map((item, i) => (
-              <div key={i} className="fswd__service_box hover_lift">
-                <div className="fswd__box_icon_circle">{item.i}</div>
-                <h4 className="fswd__box_title">{item.title}</h4>
-                <p className="fswd__justify_text">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="fswd__section grey_bar">
-        <div className="fswd__container">
-          <h2 className="fswd__title_dark">Our Full Stack Web Development Services</h2>
-          <div className="fswd__grid_3">
-            {services.map((s, i) => (
-              <div key={i} className="fswd__service_box hover_lift">
-                <div className="fswd__box_icon">{s.i}</div>
-                <h4 className="fswd__box_title">{s.t}</h4>
-                <ul className="fswd__card_bullets">
-                  {s.points.map((p, idx) => <li key={idx}><span>›</span> {p}</li>)}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="fswd__section white_bar">
-        <div className="fswd__container">
-          <h2 className="fswd__title_dark">Technologies We Use</h2>
-          <div className="fswd__grid_4">
-            {techStack.map((t, i) => (
-              <div key={i} className="tech_box_full hover_lift">
-                <div className="tech_box_head">
-                  <img src={t.icon} alt={t.c} style={{ width: '32px', height: '32px', objectFit: 'contain' }} />
-                  {t.c}
-                </div>
-                <div className="tech_pills_wrap">
-                  {t.items.map((item, j) => <span key={j} className="tech_pill">{item}</span>)}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="fswd__section grey_bar">
-        <div className="fswd__container">
-          <h2 className="fswd__title_dark">Why UK & USA Businesses Hire ZonzocTech</h2>
-          <div className="fswd__grid_3">
-            {whyChoose.map((w, i) => (
-              <div key={i} className="fswd__service_box hover_lift">
-                <div className="fswd__box_icon">{w.i}</div>
-                <h4 className="fswd__box_title">{w.t}</h4>
-                <ul className="fswd__card_bullets">
-                  {w.points.map((p, idx) => <li key={idx}><span>›</span> {p}</li>)}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="fswd__section white_bar">
-        <div className="fswd__container">
-          <h2 className="fswd__title_dark">Development Process</h2>
-          <div className="fswd__roadmap_grid">
-            {processSteps.map((step, i) => (
-              <div key={i} className="fswd__roadmap_card">
-                <div className="roadmap_node">
-                  <div className="roadmap_circle">{step.n}</div>
-                </div>
-                <div className="roadmap_content_box hover_lift">
-                  <h4>{step.t}</h4>
-                  <p className="fswd__justify_text">{step.d}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="fswd__section grey_bar">
-        <div className="fswd__container">
-          <h2 className="fswd__title_dark">Frequently Asked Questions</h2>
-          <div className="fswd__faq_narrow">
-            {faqs.map((f, i) => (
-              <details key={i} className="faq_item">
-                <summary><div><span>{i + 1}.</span> {f.q}</div> <span className="faq_plus">+</span></summary>
-                <div className="faq_ans fswd__justify_text">{f.a}</div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* MID CTA SECTION */}
-      <section className="fswd__section fswd__cta_section">
-        <div className="fswd__container">
-          <div className="fswd__cta_card">
-            <h2 className="fswd__cta_heading">
-              Ready to Build a High-Performance Web Application?
-            </h2>
-
-            <p className="fswd__cta_text">
-              Let’s turn your idea into a scalable full-stack system with clean architecture,
-              modern UI/UX, and production-ready performance.
-            </p>
-
             <div className="fswd__hero_actions">
               <a href="/contact" className="fswd__hero_btn fswd__hero_btn--primary">
-                Get Free Consultation →
+                Get Free Consultation
               </a>
+              <a href="https://zonzoc-tech.netlify.app/" target="_blank" rel="noopener noreferrer" className="fswd__hero_btn fswd__hero_btn--secondary">
+                View Portfolio →
+              </a>
+            </div>
+            <p className="fswd__hero_trust">Trusted by 120+ businesses across the UK, USA & Europe</p>
+          </div>
+        </div>
+      </section>
 
-              {/* Updated Portfolio Button in Mid CTA */}
-              <a 
-                href="https://zonzoc-tech.netlify.app/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="fswd__hero_btn fswd__hero_btn--secondary"
-              >
-                View Work →
-              </a>
+      {/* ── STATS BAR — 6 items ───────────────────────── */}
+      <section className="fswd-stats-section">
+        <div className="fswd__container">
+          <div className="fswd-stats-box">
+            {stats.map((s, i) => (
+              <div key={i} className="fswd-stat-cell">
+                <span className="fswd-stat-icon">{s.icon}</span>
+                <span className="fswd-stat-num">{s.number}</span>
+                <span className="fswd-stat-lbl">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 1 — WHY + SERVICES ───────────────── */}
+      <section className="fswd-why-section">
+        <div className="fswd__container">
+          <div className="fswd-why-grid">
+
+            {/* Left */}
+            <div className="fswd-why-left">
+              <span className="fswd-eyebrow">Why Businesses Choose Us</span>
+              <h2 className="fswd-section-heading">
+                End-to-End Development That Powers Real Business Growth
+              </h2>
+              <p className="fswd-why-desc">
+                From idea to deployment, we build robust, scalable and future-ready web applications that drive automation, efficiency and long-term success.
+              </p>
+              <ul className="fswd-checklist">
+                {whyChecklist.map((item, i) => (
+                  <li key={i} className="fswd-check-item">
+                    <span className="fswd-check-dot">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right — 2×3 services grid */}
+            <div className="fswd-services-grid">
+              {services.map((svc, i) => (
+                <div key={i} className="fswd-service-card">
+                  <div className="fswd-service-icon-box">{svc.icon}</div>
+                  <h3 className="fswd-service-title">{svc.title}</h3>
+                  <p className="fswd-service-desc">{svc.desc}</p>
+                  <a href={svc.link} className="fswd-learn-more">Learn More →</a>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── TECH STACK ────────────────────────────────── */}
+      <section className="fswd-tech-section">
+        <div className="fswd__container">
+          <div className="fswd-section-center">
+            <span className="fswd-eyebrow">Technologies We Use</span>
+            <h2 className="fswd-section-heading">Modern Tech Stack for Modern Applications</h2>
+          </div>
+
+          <div className="fswd-tech-grid">
+            {techStack.map((col, ci) => (
+              <div key={ci} className="fswd-tech-col">
+                <div className="fswd-tech-col-head">{col.category}</div>
+                <div className="fswd-tech-icons-row">
+                  {col.techs.map((t, ti) => (
+                    <div key={ti} className="fswd-tech-icon-item">
+                      <div className="fswd-tech-icon-wrap">
+                        <img
+                          src={t.icon}
+                          alt={t.name}
+                          className="fswd-tech-img"
+                          onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
+                        />
+                        <span className="fswd-tech-fallback" style={{ display: 'none' }}>
+                          {t.name.charAt(0)}
+                        </span>
+                      </div>
+                      <span className="fswd-tech-name">{t.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PROCESS — Dark bg, 6 steps ───────────────── */}
+      <section className="fswd-process-section">
+        <div className="fswd__container">
+          <div className="fswd-section-center">
+            <span className="fswd-eyebrow fswd-eyebrow--light">Our Development Process</span>
+            <h2 className="fswd-section-heading fswd-white">A Clear Process. Predictable Results.</h2>
+          </div>
+
+          <div className="fswd-process-track">
+            {processSteps.map((step, i) => (
+              <div key={i} className="fswd-process-step">
+                <div className="fswd-process-node-wrap">
+                  <div className="fswd-process-circle">
+                    <span className="fswd-process-circle-icon">{step.icon}</span>
+                  </div>
+                  {i < processSteps.length - 1 && <div className="fswd-process-connector"></div>}
+                </div>
+                <span className="fswd-process-num">{step.n}</span>
+                <h4 className="fswd-process-title">{step.title}</h4>
+                <p className="fswd-process-desc">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CASE STUDIES ─────────────────────────────── */}
+      <section className="fswd-cases-section">
+        <div className="fswd__container">
+          <div className="fswd-section-center">
+            <span className="fswd-eyebrow">Real Results. Real Impact.</span>
+            <h2 className="fswd-section-heading">Solutions That Deliver Real Business Impact</h2>
+          </div>
+
+          <div className="fswd-cases-grid">
+            {caseStudies.map((c, i) => (
+              <div key={i} className="fswd-case-card">
+                {/* Mock device preview */}
+                <div className="fswd-case-preview" style={{ '--brand-color': c.color }}>
+                  <div className="fswd-case-preview-inner">
+                    <span className="fswd-case-emoji">{c.emoji}</span>
+                    <div className="fswd-case-preview-bar">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <div className="fswd-case-preview-lines">
+                      <div></div><div></div><div></div><div style={{ width: '60%' }}></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="fswd-case-body">
+                  <h4 className="fswd-case-title">{c.title}</h4>
+                  <p className="fswd-case-desc">{c.desc}</p>
+                  <div className="fswd-case-stats">
+                    {c.stats.map((st, si) => (
+                      <div key={si} className="fswd-case-stat">
+                        <span className="fswd-case-stat-val" style={{ color: c.color }}>{st.val}</span>
+                        <span className="fswd-case-stat-lbl">{st.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <a href="/case-studies" className="fswd-view-case">View Case Study →</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ + CODE BLOCK ─────────────────────────── */}
+      <section className="fswd-faq-section">
+        <div className="fswd__container">
+          <div className="fswd-faq-grid">
+
+            {/* Left — accordion */}
+            <div className="fswd-faq-left">
+              <span className="fswd-eyebrow">Frequently Asked Questions</span>
+              <h2 className="fswd-section-heading">Got Questions? We've Got Answers.</h2>
+              <div className="fswd-faq-list">
+                {faqs.map((faq, i) => (
+                  <div
+                    key={i}
+                    className={`fswd-faq-item ${openFaq === i ? 'fswd-faq-item--open' : ''}`}
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  >
+                    <div className="fswd-faq-q">
+                      <span>{faq.q}</span>
+                      <span className="fswd-faq-toggle">{openFaq === i ? '−' : '+'}</span>
+                    </div>
+                    {openFaq === i && (
+                      <div className="fswd-faq-a"><p>{faq.a}</p></div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — code card */}
+            <div className="fswd-code-card">
+              <h3 className="fswd-code-heading">Clean Code. Scalable Solutions.</h3>
+              <p className="fswd-code-subtext">
+                We follow best practices to build secure, maintainable and high-performance applications.
+              </p>
+              <div className="fswd-code-block">
+                <div className="fswd-code-dots">
+                  <span className="fswd-dot fswd-dot--red"></span>
+                  <span className="fswd-dot fswd-dot--yellow"></span>
+                  <span className="fswd-dot fswd-dot--green"></span>
+                </div>
+                <pre className="fswd-code-pre"><code>{codeSnippet}</code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA BOTTOM ───────────────────────────────── */}
+      <section className="fswd-cta-section">
+        <div className="fswd__container">
+          <div className="fswd-cta-inner">
+            <h2 className="fswd-cta-title">Ready to Build Your Next Big Application?</h2>
+            <p className="fswd-cta-desc">
+              Let's turn your idea into a powerful, scalable and future-ready web application.
+            </p>
+            <div className="fswd-cta-buttons">
+              <a href="/contact" className="fswd-cta-btn-primary">Get Free Consultation →</a>
+              <a href="/case-studies" className="fswd-cta-btn-secondary">View Our Work</a>
+            </div>
+            <div className="fswd-cta-pills">
+              <span>✓ No Obligation</span>
+              <span>✓ Quick Response (1–3 Hours)</span>
+              <span>✓ 100% Confidential</span>
             </div>
           </div>
         </div>

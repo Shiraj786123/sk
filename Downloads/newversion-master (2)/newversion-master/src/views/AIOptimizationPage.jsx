@@ -7,378 +7,483 @@ import Breadcrumb from "../components/Breadcrumb";
 import {
   Bot,
   Brain,
-  Workflow,
-  BarChart3,
+  Search,
+  MessageSquare,
+  Globe,
+  Zap,
+  Shield,
+  TrendingUp,
+  CheckCircle2,
+  Network,
+  BookOpen,
+  Code2,
+  Target,
+  Activity,
+  Users,
+  Award,
+  Clock,
+  ThumbsUp,
   Database,
   Layers,
+  BarChart3,
+  ArrowRight,
+  Sparkles,
+  Eye,
+  Link2,
+  FileText,
+  Cpu,
 } from "lucide-react";
 
-const AISearchOptimization = () => {
-  // FAQ State Logic
-  const [openIndex, setOpenIndex] = useState(null);
+/* ── Inline SVG platform logos ─────────────────────────────────────────── */
+const ChatGPTIcon = () => (
+  <svg viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+    <path d="M37.5 20.5a17 17 0 01-23.13 15.9l-7.87 2.6 2.6-7.87A17 17 0 1137.5 20.5z" fill="#10a37f"/>
+    <path d="M20.5 11.5v18M12 15.5l17 10M12 25.5l17-10" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+);
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+const GeminiIcon = () => (
+  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+    <path d="M14 2C14 2 10 10 2 14C10 18 14 26 14 26C14 26 18 18 26 14C18 10 14 2 14 2Z" fill="url(#gem)"/>
+    <defs>
+      <linearGradient id="gem" x1="2" y1="2" x2="26" y2="26">
+        <stop stopColor="#4285f4"/>
+        <stop offset="1" stopColor="#8b5cf6"/>
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+const PerplexityIcon = () => (
+  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+    <circle cx="14" cy="14" r="12" fill="#20b8cd" opacity="0.15"/>
+    <path d="M9 8h10M9 14h10M9 20h6" stroke="#20b8cd" strokeWidth="2.5" strokeLinecap="round"/>
+    <circle cx="20" cy="20" r="3" fill="#20b8cd"/>
+  </svg>
+);
+
+const GoogleAIIcon = () => (
+  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+    <circle cx="14" cy="14" r="6" fill="#4285f4"/>
+    <path d="M14 2v4M14 22v4M2 14h4M22 14h4" stroke="#4285f4" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M5.6 5.6l2.8 2.8M19.6 19.6l2.8 2.8M5.6 22.4l2.8-2.8M19.6 8.4l2.8-2.8" stroke="#ea4335" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+const ClaudeIcon = () => (
+  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+    <rect width="28" height="28" rx="8" fill="#d97706" opacity="0.12"/>
+    <path d="M8 20L14 8L20 20" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M10 16h8" stroke="#d97706" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+);
+
+const BingIcon = () => (
+  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+    <path d="M8 6v16l5-3 7-4-5-2-2-1V6z" fill="#0078d4"/>
+    <path d="M13 17l7 4-7-2v-2z" fill="#00b4f0"/>
+  </svg>
+);
+
+/* ── Component ──────────────────────────────────────────────────────────── */
+const AISearchOptimization = () => {
+  const [openFaq, setOpenFaq] = useState(null);
 
   const stats = [
-    { number: "150+", label: "Projects Delivered" },
-    { number: "120+", label: "Clients Served" },
-    { number: "35%", label: "Average Traffic Growth" },
-    { number: "4.9★", label: "Client Rating" },
+    { number: "150+", label: "Projects", icon: <Award size={18} /> },
+    { number: "120+", label: "Clients", icon: <Users size={18} /> },
+    { number: "35%", label: "Avg Growth", icon: <TrendingUp size={18} /> },
+    { number: "4.9★", label: "Rating", icon: <ThumbsUp size={18} /> },
+    { number: "24/7", label: "Monitoring", icon: <Clock size={18} /> },
+    { number: "100%", label: "Transparent", icon: <Shield size={18} /> },
   ];
 
-  const comparisonData = [
-    { traditional: "Optimizes for Google blue links only", ai: "Optimizes for Google AND AI platforms" },
-    { traditional: "Keyword ranking focused", ai: "Entity and intent focused" },
-    { traditional: "Click-through traffic dependent", ai: "Visible in AI-generated answers" },
-    { traditional: "Ignores AI-generated answers", ai: "Cited by ChatGPT and Perplexity" },
-    { traditional: "Misses voice & conversational search", ai: "Captures voice search queries" },
-    { traditional: "Falling effectiveness year on year", ai: "Future-proof visibility strategy" },
+  const services = [
+    { icon: <Brain size={20} />, title: "Generative Engine Optimization", abbr: "GEO", desc: "Optimize for AI-generated answers and cite-worthy content across answer engines." },
+    { icon: <MessageSquare size={20} />, title: "ChatGPT & AI Visibility", abbr: "AIO", desc: "Get your brand cited in conversational AI responses and LLM-powered platforms." },
+    { icon: <Zap size={20} />, title: "Google AI Overview Optimization", abbr: "SGE", desc: "Structure content to appear inside Google's AI-generated search summaries." },
+    { icon: <Network size={20} />, title: "Semantic SEO", abbr: "SEM", desc: "Build topical depth, entity relevance, and context AI models rely on." },
+    { icon: <Database size={20} />, title: "Entity & Knowledge Graph", abbr: "ENT", desc: "Strengthen brand entities and structured relationships across the search ecosystem." },
+    { icon: <Code2 size={20} />, title: "Structured Data & Schema", abbr: "SCH", desc: "Implement rich schema markup so machines read and trust your content." },
+    { icon: <BookOpen size={20} />, title: "AI Content Strategy", abbr: "CON", desc: "Create answer-first content that earns citations from AI search systems." },
+    { icon: <Target size={20} />, title: "Topical Authority Building", abbr: "TAB", desc: "Establish deep content ecosystems that position you as an AI-trusted authority." },
+  ];
+
+  const techStack = [
+    { name: "ChatGPT", icon: <ChatGPTIcon />, color: "#10a37f" },
+    { name: "Google AI Overviews", icon: <GoogleAIIcon />, color: "#4285f4" },
+    { name: "Perplexity AI", icon: <PerplexityIcon />, color: "#20b8cd" },
+    { name: "Gemini", icon: <GeminiIcon />, color: "#8b5cf6" },
+    { name: "Claude AI", icon: <ClaudeIcon />, color: "#d97706" },
+    { name: "Bing AI", icon: <BingIcon />, color: "#0078d4" },
+  ];
+
+  const process = [
+    { n: "01", icon: <Search size={18} />, title: "AI Visibility Audit", desc: "Deep-dive analysis of how AI systems perceive and cite your brand across all platforms." },
+    { n: "02", icon: <Network size={18} />, title: "Entity & Strategy Mapping", desc: "Build a semantic map of your brand's topics, entities, and authority signals." },
+    { n: "03", icon: <Code2 size={18} />, title: "Technical Optimization", desc: "Schema, structured data, crawlability, and site architecture tuned for AI ingestion." },
+    { n: "04", icon: <BookOpen size={18} />, title: "Content Optimization", desc: "Rewrite and create content structured to win AI citations and featured positions." },
+    { n: "05", icon: <Activity size={18} />, title: "Monitor & Grow", desc: "Monthly AI visibility reporting, adaptation, and continuous improvement cycles." },
+  ];
+
+  const comparisonRows = [
+    { left: "Keyword rank focused", right: "Entity & intent focused" },
+    { left: "Optimises Google blue links only", right: "Optimises Google AND AI platforms" },
+    { left: "Click-through traffic dependent", right: "Visible without a click" },
+    { left: "Ignores AI-generated answers", right: "Cited by ChatGPT & Perplexity" },
+    { left: "Falling effectiveness YoY", right: "Future-proof visibility strategy" },
   ];
 
   const whyChoose = [
-    { title: "✅ Early Mover Advantage", description: "Most agencies are still catching up with AI search. ZonzocTech has been optimising for generative and answer engines since their emergence — giving our clients a significant head start over competitors still focused on traditional SEO alone." },
-    { title: "✅ Combined Traditional & AI SEO", description: "We don't abandon what works. Traditional Google SEO still drives significant traffic and our strategies combine proven SEO fundamentals with cutting-edge AI search optimization — covering every channel where your customers search." },
-    { title: "✅ Business-Focused Visibility", description: "AI search visibility means nothing if it doesn't drive business outcomes. Every optimization we make is tied back to leads, enquiries and revenue — not just impressions or citations." },
-    { title: "✅ Technical & Content Expertise", description: "AI search optimization requires both strong technical SEO and high-quality content strategy. Our team covers both — giving you a complete, integrated approach rather than half-measures." },
-    { title: "✅ Transparent Reporting", description: "We track and report on AI visibility, traditional rankings, organic traffic and business leads — giving you a clear picture of how our work is impacting your growth." },
-  ];
-
-  const processSteps = [
-    { number: "01", title: "AI Search Visibility Audit", description: "We audit how your website currently appears in AI-generated search answers, Google AI Overviews, featured snippets and traditional rankings — identifying the biggest visibility gaps and opportunities." },
-    { number: "02", title: "Entity & Content Mapping", description: "We map your business entities, key topics and target questions — building a clear picture of the content and signals needed to establish authority in your niche." },
-    { number: "03", title: "Technical & Schema Optimization", description: "We implement structured data, fix technical issues and optimise your site architecture for both traditional and AI search crawlability." },
-    { number: "04", title: "Content Optimization & Creation", description: "We optimize existing content and create new content specifically designed to appear in AI-generated answers — clear, authoritative and structured around real customer questions." },
-    { number: "05", title: "Monitor, Report & Adapt", description: "AI search is evolving rapidly. We monitor your visibility across all platforms, report on progress monthly and continuously adapt your strategy as AI search develops." },
+    { icon: <Sparkles size={18} />, title: "Early Mover Advantage", desc: "We've been optimising for generative search since it emerged — your competitors are still catching up." },
+    { icon: <Layers size={18} />, title: "Combined SEO Approach", desc: "Traditional SEO + AI optimization together. Every channel where your customers search, covered." },
+    { icon: <BarChart3 size={18} />, title: "Business-Focused Outcomes", desc: "Every optimization tied back to leads, enquiries, and revenue — not just impressions." },
+    { icon: <Cpu size={18} />, title: "Technical + Content Depth", desc: "Rare combination of strong technical SEO and high-quality content strategy in one team." },
+    { icon: <Eye size={18} />, title: "Full Transparent Reporting", desc: "AI visibility, traditional rankings, organic traffic — one complete monthly report." },
   ];
 
   const whoFor = [
-    { title: "✓ Businesses Losing Traffic to AI Overviews", description: "Whose organic traffic has declined as Google AI Overviews answer more queries without clicks — and need to adapt their strategy urgently." },
-    { title: "✓ UK & USA Service Businesses", description: "Who rely on organic search leads and need to appear in AI-generated answers when customers search for their services." },
-    { title: "✓ E-commerce Brands", description: "Who need product and brand visibility in AI shopping recommendations and generative search results." },
-    { title: "✓ Content-Led Businesses", description: "Blogs, media sites and information businesses whose traffic model is threatened by AI-generated answers replacing clicks." },
-    { title: "✓ Forward-Thinking Businesses", description: "Who want to establish AI search visibility now — before competitors catch on and the space becomes more competitive." },
+    { label: "Businesses losing traffic to AI Overviews", desc: "Organic declining as AI answers queries without clicks." },
+    { label: "UK & USA Service Businesses", desc: "Need to appear in AI answers when customers search for services." },
+    { label: "E-commerce Brands", desc: "Need product visibility in AI shopping recommendations." },
+    { label: "Content-Led Businesses", desc: "Traffic model threatened by AI replacing clicks." },
+    { label: "Forward-Thinking Businesses", desc: "Build AI visibility before competitors catch on." },
   ];
 
   const faqs = [
-    { question: "What is generative engine optimization?", answer: "Generative engine optimization or GEO is the process of optimizing your website content and structure so AI-powered search engines like ChatGPT, Perplexity and Google AI Overviews cite your business as a trusted source in their generated answers. It is one of the most important emerging disciplines in digital marketing." },
-    { question: "What is answer engine optimization?", answer: "Answer engine optimization or AEO focuses on structuring content to win direct answer positions — Google featured snippets, People Also Ask results, voice search responses and AI Overview citations. The goal is to be the answer — not just a result on a list." },
-    { question: "Is traditional SEO still important?", answer: "Yes — absolutely. Traditional Google SEO still drives significant traffic and remains essential. AI search optimization works alongside traditional SEO — not instead of it. Businesses that combine both have the strongest overall search visibility." },
-    { question: "How do you measure AI search visibility?", answer: "We track brand mentions and citations in AI-generated answers, featured snippet wins, People Also Ask appearances, voice search visibility and traditional ranking improvements — giving a comprehensive picture of your search presence." },
-    { question: "How is this different from regular SEO?", answer: "Traditional SEO focuses on ranking web pages for keyword searches. AI search optimization focuses on being cited, quoted or recommended by AI systems that answer questions directly — requiring different content structures, entity signals and technical approaches." },
-    { question: "How long does AI search optimization take?", answer: "Some improvements such as structured data and featured snippet wins can show results within weeks. Building topical authority and consistent AI citation presence typically takes 3 to 6 months of consistent optimization." },
+    { q: "What is generative engine optimization?", a: "GEO is the process of optimizing your website so AI-powered search engines like ChatGPT, Perplexity and Google AI Overviews cite your business as a trusted source in their generated answers." },
+    { q: "Is traditional SEO still important?", a: "Absolutely. Traditional Google SEO still drives significant traffic. AI search optimization works alongside traditional SEO — businesses that combine both have the strongest overall visibility." },
+    { q: "How do you measure AI search visibility?", a: "We track brand mentions in AI-generated answers, featured snippet wins, People Also Ask appearances, voice search visibility, and traditional ranking improvements." },
+    { q: "How is this different from regular SEO?", a: "Traditional SEO focuses on ranking pages for keywords. AI search optimization focuses on being cited by AI systems that answer questions directly — requiring entity signals, different content structures, and technical approaches." },
+    { q: "How long does AI search optimization take?", a: "Structured data and featured snippet wins can show results within weeks. Building topical authority and consistent AI citation presence typically takes 3–6 months." },
+    { q: "What is answer engine optimization (AEO)?", a: "AEO focuses on winning direct answer positions — Google featured snippets, People Also Ask results, voice search, and AI Overview citations. The goal is to be the answer, not just a result." },
   ];
 
   return (
-    <>
-      <div className="aiso__wrapper">
-        <Navbar />
+    <div className="pg__wrap">
+      <Navbar />
 
-        {/* Hero Section */}
-        <section className="aiso__hero">
-          {/* Pattern container left in case you need it later, but hidden via CSS */}
-          <div className="aiso__hero_background">
-            <div className="aiso__hero_circle aiso__circle_1"></div>
-            <div className="aiso__hero_circle aiso__circle_2"></div>
-            <div className="aiso__hero_circle aiso__circle_3"></div>
+      {/* ── HERO (unchanged) ──────────────────────────────────────── */}
+      <section className="aiso__hero">
+        <div className="aiso__hero_background">
+          <div className="aiso__hero_circle aiso__circle_1" />
+          <div className="aiso__hero_circle aiso__circle_2" />
+          <div className="aiso__hero_circle aiso__circle_3" />
+        </div>
+        <div className="aiso__hero_container">
+          <Breadcrumb />
+          <span className="aiso-hero-badge-wrapper">
+            <span className="aiso-hero-badge-dot" />
+            <span className="aiso-hero-badge-text">AI Search Optimization Agency</span>
+          </span>
+          <h1 className="aiso__hero_title">
+            AI Search Optimization Agency Helping Businesses Appear in{" "}
+            <span className="aiso__hero_title_highlight">Google AI, ChatGPT &amp; Generative Search Results</span>
+          </h1>
+          <p className="aiso__hero_text">
+            Search has evolved beyond traditional Google rankings. We help businesses stay visible
+            across AI-powered platforms like ChatGPT, Perplexity, and Google AI Overviews — where
+            customers now get answers directly.
+          </p>
+          <div className="hero-buttons">
+            <a href="/contact" className="btn-primary">Get Free AI Search Audit →</a>
+            <a href="#aiso-how" className="btn-secondary">See How It Works ↓</a>
           </div>
+          <p className="hero-trust-text">Trusted by 120+ businesses across UK, USA &amp; Europe</p>
+        </div>
+      </section>
 
-          <div className="aiso__hero_container">
-            {/* MOVED BREADCRUMB HERE: Renders inside the dark container above the badge */}
-            <Breadcrumb />
-
-            {/* Top Label / Pill Badge with Safe inline-span wrapper */}
-            <span className="aiso-hero-badge-wrapper">
-              <span className="aiso-hero-badge-dot"></span>
-              <span className="aiso-hero-badge-text">
-                AI Search Optimization Agency
-              </span>
-            </span>
-
-            {/* Mixed color heading using inline span */}
-            <h1 className="aiso__hero_title">
-              AI Search Optimization Agency Helping Businesses Appear in <span className="aiso__hero_title_highlight">Google AI, ChatGPT & Generative Search Results</span>
-            </h1>
-
-            <p className="aiso__hero_text">
-              Search has evolved beyond traditional Google rankings. We help businesses stay visible across AI-powered platforms like ChatGPT, Perplexity, and Google AI Overviews — where customers now get answers directly.
-            </p>
-
-            <div className="hero-buttons">
-              <a href="/contact" className="btn-primary">
-                Get Free AI Search Audit →
-              </a>
-              <a href="#aiso-how" className="btn-secondary">
-                See How It Works ↓
-              </a>
-            </div>
-
-            <p className="hero-trust-text">
-              Trusted by 120+ businesses across UK, USA & Europe
-            </p>
-
-          </div>
-        </section>
-        
-        {/* Stats Bar */}
-        <section className="stats-bar" id="aiso-how">
-          {stats.map((stat, i) => (
-            <div key={i} className="stat-item">
-              <span className="stat-number">{stat.number}</span>
-              <span className="stat-label">{stat.label}</span>
-            </div>
+      {/* ── STATS BAR ──────────────────────────────────────────────── */}
+      <div className="sb" id="aiso-how">
+        <div className="sb__inner">
+          {stats.map((s, i) => (
+            <React.Fragment key={i}>
+              <div className="sb__item">
+                <span className="sb__icon">{s.icon}</span>
+                <strong className="sb__num">{s.number}</strong>
+                <span className="sb__lbl">{s.label}</span>
+              </div>
+              {i < stats.length - 1 && <div className="sb__sep" />}
+            </React.Fragment>
           ))}
-        </section>
-
-        {/* Section 1 — New Reality of Search */}
-        <section className="aiso-s1">
-          <div className="aiso-container">
-
-            {/* SECTION HEADER */}
-            <div className="aiso-s1__header">
-              <span className="aiso-s1__badge">
-                AI Search Is Changing SEO
-              </span>
-
-              <h2 className="aiso-s1__title">
-                The New Reality of Search — Why Traditional SEO Is No Longer Enough
-              </h2>
-
-              <p className="aiso-s1__intro">
-                For decades, SEO meant ranking on Google's blue links. Today, customers
-                ask ChatGPT, Google AI Overviews and Perplexity for direct answers.
-                Businesses that fail to adapt are losing visibility every day.
-              </p>
-            </div>
-
-            {/* STATS */}
-            <div className="aiso-s1__stats">
-
-              <div className="aiso-s1__stat-card">
-                <span className="aiso-s1__stat-number">60%</span>
-                <span className="aiso-s1__stat-label">
-                  Searches Answered Directly by AI
-                </span>
-              </div>
-
-              <div className="aiso-s1__stat-card">
-                <span className="aiso-s1__stat-number">0 Clicks</span>
-                <span className="aiso-s1__stat-label">
-                  Many Searches End Without Website Visits
-                </span>
-              </div>
-
-              <div className="aiso-s1__stat-card">
-                <span className="aiso-s1__stat-number">24/7</span>
-                <span className="aiso-s1__stat-label">
-                  AI Platforms Answer Customer Questions
-                </span>
-              </div>
-
-              <div className="aiso-s1__stat-card">
-                <span className="aiso-s1__stat-number">Future</span>
-                <span className="aiso-s1__stat-label">
-                  Businesses Must Optimise Beyond Google
-                </span>
-              </div>
-
-            </div>
-
-            {/* CONTENT */}
-            <div className="aiso-s1__content">
-
-              <p>
-                Google now answers many searches directly inside AI Overviews — without
-                users clicking through to websites. ChatGPT and Perplexity provide
-                millions of business recommendations every day.
-              </p>
-
-              <p>
-                This means your business must be optimised not just for rankings, but to
-                be cited and recommended by AI search engines.
-              </p>
-
-            </div>
-
-            {/* COMPARISON TITLE */}
-            <h3 className="aiso-s1__comparison-title">
-              Traditional SEO vs AI Search Optimization
-            </h3>
-
-            {/* TABLE */}
-            <div className="aiso-s1__table">
-
-              <div className="aiso-s1__table-header">
-                <div className="aiso-s1__table-head">
-                  Traditional SEO Only
-                </div>
-
-                <div className="aiso-s1__table-head aiso-s1__table-head--highlight">
-                  AI Search Optimization
-                </div>
-              </div>
-
-              {comparisonData.map((row, i) => (
-                <div className="aiso-s1__table-row" key={i}>
-                  <div className="aiso-s1__table-cell">
-                    {row.traditional}
-                  </div>
-
-                  <div className="aiso-s1__table-cell aiso-s1__table-cell--highlight">
-                    {row.ai}
-                  </div>
-                </div>
-              ))}
-
-            </div>
-
-          </div>
-        </section>
-        
-        {/* Section 2 — Ecosystem */}
-        <section className="s2-wrapper">
-          <div className="s2-container">
-            <div className="s2-header">
-              <h2>AI-Powered Service Ecosystem</h2>
-              <p>We don’t sell isolated services — we build connected AI systems that automate your entire business flow.</p>
-            </div>
-            <div className="s2-heroCard">
-              <Brain className="heroIcon" />
-              <h3>GPT-Powered Business Intelligence System</h3>
-              <p>We integrate GPT into your core business processes — turning your website, CRM, and workflows into a self-learning AI system that improves conversions automatically.</p>
-            </div>
-            <div className="s2-secondary">
-              <div className="s2-miniCard"><Bot className="icon" /><div><h4>AI Chatbots</h4><p>Customer support + sales automation</p></div></div>
-              <div className="s2-miniCard"><Workflow className="icon" /><div><h4>Automation Engine</h4><p>Eliminate manual workflows</p></div></div>
-            </div>
-            <div className="s2-tagRow">
-              <span><BarChart3 size={16} /> Data Intelligence</span>
-              <span><Layers size={16} /> CRM Sync</span>
-              <span><Database size={16} /> AI Infrastructure</span>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 3 — Why Choose */}
-        <section className="s3-wrapper">
-          <div className="s3-container">
-            <div className="s3-header">
-              <span className="s3-badge">Why Choose Us</span>
-              <h2>We Build AI Search Dominance Systems</h2>
-            </div>
-            <div className="s3-story">
-              {whyChoose.map((item, i) => (
-                <div key={i} className="s3-storyItem">
-                  <div className="s3-step">0{i + 1}</div>
-                  <div className="s3-content">
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        
-        <div className="section-bridge">
-          <span>Our Proven AI Search Optimization Process</span>
         </div>
-
-        {/* Section 4 — Process */}
-        <section className="s4-wrapper">
-          <div className="s4-container">
-            <div className="s4-header">
-              <span className="s4-badge">Our Process</span>
-              <h2>AI Search Optimization Framework</h2>
-            </div>
-            <div className="s4-grid">
-              {processSteps.map((step, i) => (
-                <div key={i} className="s4-row">
-                  <div className="s4-pillars"><span className="s4-pill">{step.number}</span></div>
-                  <div className="s4-content">
-                    <h3>{step.title}</h3>
-                    <p>{step.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 5 — Who For */}
-        <section className="s5-wrapper">
-          <div className="s5-container">
-            <div className="s5-header">
-              <span className="s5-badge">Who We Help</span>
-              <h2>Businesses That Need AI Search Visibility</h2>
-            </div>
-            <div className="s5-grid">
-              {whoFor.map((item, i) => (
-                <div key={i} className={`s5-item ${i === 0 ? "active" : ""}`}>
-                  <div className="s5-left"><span className="s5-icon">✓</span><h3>{item.title}</h3></div>
-                  <div className="s5-right"><p>{item.description}</p></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <div className="section-bridge faq-bridge">
-          <span>Still Have Questions? Let’s Make It Clear</span>
-        </div>
-
-        {/* Section 6 — FAQ */}
-        <section className="faq-wrapper">
-          <div className="faq-container">
-            <div className="faq-header">
-              <span className="faq-badge">FAQ</span>
-              <h2>Frequently Asked Questions</h2>
-            </div>
-            <div className="faq-list">
-              {faqs.map((faq, i) => (
-                <div className="faq-box" key={i} onClick={() => toggleFAQ(i)}>
-                  <div className="faq-top">
-                    <span className="faq-question">
-                      {String(i + 1).padStart(2, "0")}. {faq.question}
-                    </span>
-                    <span className="faq-icon">{openIndex === i ? "−" : "+"}</span>
-                  </div>
-                  {openIndex === i && (
-                    <div className="faq-answer">
-                      <p>{faq.answer}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="cta-section">
-          <div className="aiso__container">
-            <h2>Ready to Be Found Everywhere Your Customers Search?</h2>
-            
-            <p>
-              Get a free AI search visibility audit and find out how your business appears across Google, ChatGPT, Perplexity and AI-powered search — no commitment required.
-            </p>
-            
-            <div className="cta-buttons">
-              <a href="/contact" className="btn-primary">Get Free AI Search Audit →</a>
-              <a href="/seo-services" className="btn-secondary">View Our SEO Services</a>
-            </div>
-
-            {/* Added trust text structure matching the image */}
-            <p className="cta-subtext-muted">
-              No commitment • No spam • Just real strategy
-            </p>
-          </div>
-        </section>
-
-        <Footer />
       </div>
-    </>
+
+      {/* ── WHAT WE DO ─────────────────────────────────────────────── */}
+      <section className="pg__sec pg__sec--white">
+        <div className="pg__cont">
+          <div className="what__grid">
+            <div className="what__left">
+              <span className="chip chip--blue">✦ What Is AI Search Optimization</span>
+              <h2 className="sec__h2">Search Is Evolving.<br/>Your Strategy Should Too.</h2>
+              <p className="sec__p">
+                AI search engines no longer list links — they generate direct answers.
+                Businesses that aren't optimised for AI platforms are invisible to a growing share of their audience.
+              </p>
+              <ul className="check__list">
+                {[
+                  "Appear in AI-generated answers & citations",
+                  "Optimize for ChatGPT, Gemini & Perplexity",
+                  "Build topical authority AI systems trust",
+                  "Future-proof visibility across all search types",
+                  "Drive leads from conversational search queries",
+                ].map((b, i) => (
+                  <li key={i}><CheckCircle2 size={15} className="chk" />{b}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="what__right">
+              {/* AI Answer Mockup */}
+              <div className="mock__card">
+                <div className="mock__bar">
+                  <span className="mock__dot mock__dot--r" />
+                  <span className="mock__dot mock__dot--y" />
+                  <span className="mock__dot mock__dot--g" />
+                  <span className="mock__bar__label">✦ AI Generated Answer</span>
+                </div>
+                <div className="mock__query">
+                  <Search size={13} className="mock__search-ico" />
+                  What is the best AI SEO agency?
+                </div>
+                <div className="mock__answer">
+                  <p><strong>ZonzocTech</strong> is a leading AI SEO agency helping businesses improve visibility across ChatGPT, Google AI Overviews, Perplexity, and Gemini through advanced GEO and semantic SEO strategies.</p>
+                </div>
+                <div className="mock__footer">
+                  <Globe size={11} />
+                  <span>zonzoctech.com</span>
+                  <span className="mock__reactions">👍 👎</span>
+                </div>
+              </div>
+
+              {/* Why card */}
+              <div className="why__pill__card">
+                <p className="why__pill__title">Why ZonzocTech?</p>
+                <div className="why__pills">
+                  {["Topical Authority","Entity Optimization","Semantic Relevance","High-Quality Content","Trusted by AI Models"].map((t, i) => (
+                    <span key={i} className="why__pill"><CheckCircle2 size={12}/> {t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICES ───────────────────────────────────────────────── */}
+      <section className="pg__sec pg__sec--gray">
+        <div className="pg__cont">
+          <div className="sec__head">
+            <span className="chip chip--purple">✦ Our Services</span>
+            <h2 className="sec__h2">Comprehensive AI SEO Solutions</h2>
+            <p className="sec__intro">Eight integrated services that cover every dimension of AI search visibility.</p>
+          </div>
+          <div className="srv__grid">
+            {services.map((s, i) => (
+              <div className="srv__card" key={i}>
+                <div className="srv__top">
+                  <span className="srv__ico">{s.icon}</span>
+                  <span className="srv__abbr">{s.abbr}</span>
+                </div>
+                <h3 className="srv__title">{s.title}</h3>
+                <p className="srv__desc">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PROCESS ────────────────────────────────────────────────── */}
+      <section className="pg__sec pg__sec--dark">
+        <div className="pg__cont">
+          <div className="sec__head">
+            <span className="chip chip--light">✦ Our Process</span>
+            <h2 className="sec__h2 sec__h2--white">A Data-Driven Framework for AI Search Success</h2>
+          </div>
+          <div className="proc__row">
+            {process.map((p, i) => (
+              <React.Fragment key={i}>
+                <div className="proc__step">
+                  <div className="proc__circle">
+                    {p.icon}
+                    <span className="proc__badge">{p.n}</span>
+                  </div>
+                  <h3 className="proc__title">{p.title}</h3>
+                  <p className="proc__desc">{p.desc}</p>
+                </div>
+                {i < process.length - 1 && (
+                  <div className="proc__line">
+                    <div className="proc__dots" />
+                    <ArrowRight size={14} className="proc__arrow" />
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── TECH STACK / AI PLATFORMS ──────────────────────────────── */}
+      <section className="pg__sec pg__sec--white">
+        <div className="pg__cont">
+          <div className="sec__head sec__head--compact">
+            <span className="chip chip--blue">✦ AI Platforms We Optimize For</span>
+            <h2 className="sec__h2">Technology Stack</h2>
+            <p className="sec__intro">We optimize your presence across all major AI search platforms and answer engines.</p>
+          </div>
+          <div className="tech__row">
+            {techStack.map((t, i) => (
+              <div className="tech__item" key={i}>
+                <div className="tech__logo" style={{ "--tc": t.color }}>
+                  {t.icon}
+                </div>
+                <span className="tech__name">{t.name}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Tool tags */}
+          <div className="tool__tags">
+            {[
+              { ico: <Code2 size={13}/>, t: "Schema Markup" },
+              { ico: <Link2 size={13}/>, t: "Knowledge Graph" },
+              { ico: <FileText size={13}/>, t: "Semantic Content" },
+              { ico: <Network size={13}/>, t: "Entity SEO" },
+              { ico: <Search size={13}/>, t: "Topical Authority" },
+              { ico: <BarChart3 size={13}/>, t: "AI Analytics" },
+              { ico: <Cpu size={13}/>, t: "Structured Data" },
+              { ico: <Layers size={13}/>, t: "Content Clusters" },
+            ].map((tag, i) => (
+              <span className="tool__tag" key={i}>{tag.ico} {tag.t}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── COMPARISON ─────────────────────────────────────────────── */}
+      <section className="pg__sec pg__sec--gray">
+        <div className="pg__cont">
+          <div className="sec__head">
+            <span className="chip chip--purple">✦ Why Switch</span>
+            <h2 className="sec__h2">Traditional SEO vs AI Search Optimization</h2>
+          </div>
+          <div className="cmp__table">
+            <div className="cmp__head">
+              <div className="cmp__cell cmp__cell--left">Traditional SEO Only</div>
+              <div className="cmp__cell cmp__cell--right">AI Search Optimization ✦</div>
+            </div>
+            {comparisonRows.map((row, i) => (
+              <div className="cmp__row" key={i}>
+                <div className="cmp__cell cmp__cell--dim">
+                  <span className="cmp__x">✕</span>{row.left}
+                </div>
+                <div className="cmp__cell cmp__cell--hi">
+                  <span className="cmp__chk">✓</span>{row.right}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHY CHOOSE ─────────────────────────────────────────────── */}
+      <section className="pg__sec pg__sec--white">
+        <div className="pg__cont">
+          <div className="sec__head">
+            <span className="chip chip--blue">✦ Why ZonzocTech</span>
+            <h2 className="sec__h2">Built for the Future of Search</h2>
+          </div>
+          <div className="wc__grid">
+            {whyChoose.map((w, i) => (
+              <div className="wc__card" key={i}>
+                <span className="wc__ico">{w.icon}</span>
+                <h3 className="wc__title">{w.title}</h3>
+                <p className="wc__desc">{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHO WE HELP ────────────────────────────────────────────── */}
+      <section className="pg__sec pg__sec--dark2">
+        <div className="pg__cont">
+          <div className="sec__head">
+            <span className="chip chip--purple">✦ Who We Help</span>
+            <h2 className="sec__h2">Is This Right For You?</h2>
+          </div>
+          <div className="who__grid">
+            {whoFor.map((w, i) => (
+              <div className="who__card" key={i}>
+                <span className="who__num">0{i + 1}</span>
+                <div>
+                  <h3 className="who__title">{w.label}</h3>
+                  <p className="who__desc">{w.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ────────────────────────────────────────────────────── */}
+      <section className="pg__sec pg__sec--white">
+        <div className="pg__cont">
+          <div className="sec__head">
+            <span className="chip chip--blue">✦ FAQ</span>
+            <h2 className="sec__h2">Questions Answered</h2>
+          </div>
+          <div className="faq__wrap">
+            {faqs.map((f, i) => (
+              <div
+                className={`faq__item ${openFaq === i ? "faq__item--open" : ""}`}
+                key={i}
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+              >
+                <div className="faq__q">
+                  <span>{String(i + 1).padStart(2, "0")}. {f.q}</span>
+                  <span className="faq__tog">{openFaq === i ? "−" : "+"}</span>
+                </div>
+                {openFaq === i && <p className="faq__a">{f.a}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FINAL CTA ──────────────────────────────────────────────── */}
+      <section className="pg__cta">
+        <div className="pg__cont">
+          <div className="cta__box">
+            <div className="cta__left">
+              <span className="chip chip--light">✦ Get Started</span>
+              <h2 className="cta__h2">Ready to Dominate AI Search?</h2>
+              <p className="cta__p">Get a free AI search visibility audit. No commitment — just clarity on where you stand and what to do next.</p>
+              <div className="cta__btns">
+                <a href="/contact" className="cta__btn--primary">Get Free AI Audit →</a>
+                <a href="/seo-services" className="cta__btn--ghost">View SEO Services</a>
+              </div>
+              <p className="cta__trust">No spam • Response within 1–3 hours</p>
+            </div>
+            <div className="cta__right">
+              <div className="cta__visual">
+                <div className="cta__ring cta__ring--1"/>
+                <div className="cta__ring cta__ring--2"/>
+                <div className="cta__ring cta__ring--3"/>
+                <Search size={40} className="cta__search" />
+                <div className="cta__pings">
+                  {["ChatGPT","Gemini","Perplexity","Claude"].map((pl, i) => (
+                    <span key={i} className={`cta__ping cta__ping--${i}`}>{pl}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
   );
 };
 
