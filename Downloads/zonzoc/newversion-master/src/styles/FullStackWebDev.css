@@ -1,0 +1,1770 @@
+/* ═══════════════════════════════════════════════════════
+   FULL STACK WEB DEVELOPMENT PAGE — STYLES
+   Font scale (original preserved):
+     Section headings: 32px · Card h3: 18px · Body: 14–16px
+     Tech pill: 12px · Stat num: 28px
+     Hero: clamp(2.5rem,5vw,4.5rem) · CTA: clamp(2rem,3.5vw,3rem)
+═══════════════════════════════════════════════════════ */
+
+:root {
+  --navy: #002d62;
+  --blue: #00448f;
+  --bg-grey: #f8fafc;
+  --border: #e2e8f0;
+  --accent: #60a5fa;
+  --white: #ffffff;
+  --silver: #cbd5e1;
+}
+
+/* ── Wrapper & shared ─────────────────────────────── */
+.fswd__wrapper {
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+  overflow-x: hidden;
+  background: #fff;
+}
+
+.fswd__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   HERO — ORIGINAL, FULLY UNTOUCHED
+═══════════════════════════════════════════════════════ */
+.fswd__bar_hero {
+  background: linear-gradient(135deg, #001e3c 0%, #00448f 100%);
+  padding: 110px 0 90px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.fswd__hero_content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.fswd__hero_label {
+  display: inline-block;
+  padding: 0.5rem 1.125rem;
+  margin-bottom: 1.5rem;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.fswd__heading {
+  font-size: clamp(2rem, 4.5vw, 3.5rem) !important; 
+  line-height: 1.1;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.text_light_blue { color: #38bdf8; }
+
+.fswd__hero_text_white {
+  max-width: 820px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.92);
+font-size: 18px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.fswd__hero_actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  flex-wrap: nowrap;
+}
+
+.fswd__hero_btn {
+  width: 220px;
+  height: 56px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.fswd__hero_btn--primary {
+  background: #38bdf8;
+  color: #001e3c;
+  border: 2px solid #38bdf8;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
+}
+.fswd__hero_btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(56, 189, 248, 0.35);
+}
+
+.fswd__hero_btn--secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+.fswd__hero_btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+.fswd__hero_trust {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .fswd__bar_hero { padding: 90px 0 70px; }
+  .fswd__hero_actions { flex-wrap: wrap; gap: 0.875rem; }
+  .fswd__hero_btn { width: 100%; max-width: 320px; }
+  .fswd__hero_trust { font-size: 0.875rem; }
+}
+
+@media (max-width: 480px) {
+  .fswd__bar_hero { padding-top: 30px !important; padding-bottom: 40px !important; }
+  .fswd__hero_content { margin-top: 0 !important; padding-top: 0 !important; }
+  .breadcrumb, .breadcrumb__wrapper { margin-top: 0 !important; padding-top: 5px !important; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   SHARED HELPERS (new sections)
+═══════════════════════════════════════════════════════ */
+.fswd-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.fswd-eyebrow::before { content: '✦ '; opacity: .6; }
+.fswd-eyebrow--light  { color: #93c5fd; }
+
+.fswd-section-center { text-align: center; margin-bottom: 48px; }
+
+.fswd-section-heading {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.fswd-white { color: #fff !important; }
+
+/* ═══════════════════════════════════════════════════════
+   STATS BAR — 6 items, icon + num + label
+═══════════════════════════════════════════════════════ */
+.fswd-stats-section {
+  background: #fff;
+  padding: 0 20px;
+}
+
+.fswd-stats-box {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 8px 36px rgba(0, 45, 98, .09);
+  transform: translateY(-34px);
+  background: #fff;
+  overflow: hidden;
+}
+
+.fswd-stat-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 10px 18px;
+  border-right: 1px solid var(--border);
+  gap: 3px;
+  transition: background .18s;
+}
+.fswd-stat-cell:last-child { border-right: none; }
+.fswd-stat-cell:hover { background: #f8faff; }
+
+.fswd-stat-icon { font-size: 17px; margin-bottom: 4px; }
+.fswd-stat-num  { font-size: 28px; font-weight: 800; color: var(--blue); line-height: 1; }
+.fswd-stat-lbl  { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; text-align: center; }
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 1 — WHY + SERVICES 2×3 GRID
+   Style: 2-col split, left checklist, right card grid
+═══════════════════════════════════════════════════════ */
+.fswd-why-section {
+  padding: 20px 0 90px;
+  background: #fff;
+}
+
+.fswd-why-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.fswd-why-left .fswd-eyebrow { margin-bottom: 14px; }
+
+.fswd-why-desc {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.fswd-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fswd-check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.fswd-check-dot {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Services 2×3 grid */
+.fswd-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.fswd-service-card {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all .22s;
+  position: relative;
+  overflow: hidden;
+}
+
+.fswd-service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--navy), var(--blue));
+  opacity: 0;
+  transition: opacity .22s;
+}
+
+.fswd-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 40px rgba(0, 45, 98, .12);
+  border-color: #a8c4f0;
+}
+.fswd-service-card:hover::after { opacity: 1; }
+
+.fswd-service-icon-box {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 5px 16px rgba(0, 45, 98, .2);
+}
+
+.fswd-service-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.fswd-service-desc {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 14px;
+}
+
+.fswd-learn-more {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+  transition: gap .18s;
+}
+.fswd-learn-more:hover { gap: 8px; }
+
+/* ═══════════════════════════════════════════════════════
+   TECH STACK — 4 col, icon grid
+═══════════════════════════════════════════════════════ */
+.fswd-tech-section {
+  padding: 90px 0;
+  background: var(--bg-grey);
+}
+
+.fswd-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1.5px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.fswd-tech-col {
+  padding: 28px 20px 32px;
+  border-right: 1px solid var(--border);
+}
+.fswd-tech-col:last-child { border-right: none; }
+
+.fswd-tech-col-head {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e4eaf6;
+  text-align: center;
+  letter-spacing: .03em;
+}
+
+.fswd-tech-icons-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.fswd-tech-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: default;
+  transition: transform .2s;
+}
+.fswd-tech-icon-item:hover { transform: translateY(-3px); }
+
+.fswd-tech-icon-wrap {
+  width: 44px;
+  height: 44px;
+  background: var(--bg-grey);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: box-shadow .2s, border-color .2s;
+}
+.fswd-tech-icon-item:hover .fswd-tech-icon-wrap {
+  box-shadow: 0 4px 14px rgba(0, 45, 98, .13);
+  border-color: #a8c4f0;
+}
+
+.fswd-tech-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.fswd-tech-fallback {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  color: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fswd-tech-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 52px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   PROCESS — Dark bg, 6 horizontal steps with connectors
+═══════════════════════════════════════════════════════ */
+.fswd-process-section {
+  padding: 90px 0;
+  background: linear-gradient(160deg, #010c22 0%, #001245 55%, var(--navy) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.fswd-process-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 50%, rgba(96, 165, 250, .06) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(0, 68, 143, .1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.fswd-process-section .fswd-section-center { position: relative; z-index: 1; }
+
+.fswd-process-track {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.fswd-process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 6px;
+}
+
+.fswd-process-node-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.fswd-process-circle {
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), #1d5fad);
+  border: 3px solid rgba(255, 255, 255, .15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .3);
+  position: relative;
+  z-index: 1;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.fswd-process-step:hover .fswd-process-circle {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 14px 38px rgba(56, 189, 248, .25);
+}
+
+.fswd-process-circle-icon { font-size: 22px; }
+
+.fswd-process-connector {
+  position: absolute;
+  top: 32px;
+  left: calc(50% + 32px);
+  width: calc(100% - 32px);
+  height: 2px;
+  border-top: 2px dashed rgba(255, 255, 255, .2);
+  z-index: 0;
+}
+
+.fswd-process-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: #93c5fd;
+  letter-spacing: .06em;
+  margin-bottom: 6px;
+}
+
+.fswd-process-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.fswd-process-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, .55);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   CASE STUDIES — 3 cards with mock device + stat pairs
+═══════════════════════════════════════════════════════ */
+.fswd-cases-section {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.fswd-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.fswd-case-card {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all .22s;
+}
+
+.fswd-case-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 50px rgba(0, 45, 98, .12);
+  border-color: #a8c4f0;
+}
+
+.fswd-case-preview {
+  height: 140px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--brand-color) 15%, #0d1b3e), color-mix(in srgb, var(--brand-color) 35%, #0d1b3e));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.fswd-case-preview-inner {
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 8px;
+  width: 80%;
+  height: 100px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fswd-case-emoji {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  opacity: .8;
+}
+
+.fswd-case-preview-bar {
+  display: flex;
+  gap: 4px;
+}
+.fswd-case-preview-bar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .3);
+}
+
+.fswd-case-preview-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+.fswd-case-preview-lines div {
+  height: 5px;
+  width: 100%;
+  background: rgba(255, 255, 255, .18);
+  border-radius: 3px;
+}
+
+.fswd-case-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.fswd-case-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.fswd-case-desc {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.fswd-case-stats {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.fswd-case-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fswd-case-stat-val {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.fswd-case-stat-lbl {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.fswd-view-case {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap .18s;
+}
+.fswd-view-case:hover { gap: 8px; }
+
+/* ═══════════════════════════════════════════════════════
+   FAQ — 2-col: accordion left + dark code card right
+═══════════════════════════════════════════════════════ */
+.fswd-faq-section {
+  padding: 90px 0;
+  background: var(--bg-grey);
+}
+
+.fswd-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 60px;
+  align-items: start;
+}
+
+.fswd-faq-left .fswd-eyebrow { margin-bottom: 12px; }
+
+.fswd-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.fswd-faq-item {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color .18s, box-shadow .18s;
+}
+
+.fswd-faq-item--open,
+.fswd-faq-item:hover {
+  border-color: var(--blue);
+  box-shadow: 0 4px 18px rgba(0, 45, 98, .08);
+}
+
+.fswd-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 22px;
+  user-select: none;
+}
+
+.fswd-faq-q span:first-child {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+}
+
+.fswd-faq-toggle {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  background: #eef3ff;
+  color: var(--blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.fswd-faq-a { padding: 0 22px 18px; }
+.fswd-faq-a p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  margin: 0;
+}
+
+/* Code card */
+.fswd-code-card {
+  background: linear-gradient(160deg, #010c22 0%, #001245 60%, var(--navy) 100%);
+  border-radius: 18px;
+  padding: 32px 28px;
+  color: #fff;
+  position: sticky;
+  top: 24px;
+}
+
+.fswd-code-heading {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.fswd-code-subtext {
+  font-size: 14px;
+  color: rgba(255, 255, 255, .65);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.fswd-code-block {
+  background: #0d1b3e;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.fswd-code-dots {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px 8px;
+  background: rgba(255, 255, 255, .03);
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+
+.fswd-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.fswd-dot--red    { background: #ef4444; }
+.fswd-dot--yellow { background: #f59e0b; }
+.fswd-dot--green  { background: #22c55e; }
+
+.fswd-code-pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+.fswd-code-pre code {
+  font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #93c5fd;
+  white-space: pre;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════
+   CTA BOTTOM — Dark gradient, centered
+═══════════════════════════════════════════════════════ */
+.fswd-cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #001e3c 0%, var(--blue) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.fswd-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, .06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.fswd-cta-inner {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.fswd-cta-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.18;
+  margin-bottom: 14px;
+}
+
+.fswd-cta-desc {
+  font-size: 18px;
+  color: rgba(255, 255, 255, .78);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fswd-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.fswd-cta-btn-primary {
+  display: inline-block;
+  background: #38bdf8;
+  color: #001e3c;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all .2s;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, .3);
+}
+.fswd-cta-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(56, 189, 248, .42);
+}
+
+.fswd-cta-btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, .4);
+  transition: all .2s;
+}
+.fswd-cta-btn-secondary:hover {
+  background: rgba(255, 255, 255, .1);
+  border-color: #fff;
+}
+
+.fswd-cta-pills {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.fswd-cta-pills span {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, .7);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .fswd-stats-box    { grid-template-columns: repeat(3, 1fr); transform: translateY(-24px); }
+  .fswd-tech-grid    { grid-template-columns: repeat(2, 1fr); }
+  .fswd-tech-col     { border-bottom: 1px solid var(--border); }
+  .fswd-process-track{ grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .fswd-process-connector { display: none; }
+}
+
+@media (max-width: 1024px) {
+  .fswd-why-grid     { grid-template-columns: 1fr; }
+  .fswd-faq-grid     { grid-template-columns: 1fr; }
+  .fswd-code-card    { position: static; }
+  .fswd-cases-grid   { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .fswd-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .fswd-stats-box     { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .fswd-stats-box     { grid-template-columns: repeat(2, 1fr); transform: translateY(-20px); }
+  .fswd-services-grid { grid-template-columns: 1fr; }
+  .fswd-cases-grid    { grid-template-columns: 1fr; }
+  .fswd-process-track { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .fswd-section-heading { font-size: 26px; }
+  .fswd-cta-title     { font-size: 1.75rem; }
+}
+
+@media (max-width: 540px) {
+  .fswd-stats-box     { grid-template-columns: repeat(2, 1fr); transform: translateY(-14px); }
+  .fswd-tech-grid     { grid-template-columns: 1fr; }
+  .fswd-process-track { grid-template-columns: 1fr; }
+}
+
+
+
+
+/* Desktop Size */
+.fswd__hero_title {
+  font-size: 35px !important; /* Adjust this value for desktop size */
+}
+
+/* Mobile Size */
+@media (max-width: 768px) {
+  .fswd__hero_title {
+    font-size: 32px !important; /* Adjust this value for mobile size */
+  }
+}
+
+
+
+
+/* ==========================================================================
+   FULLY RESPONSIVE MEDIA QUERIES FOR FULLSTACKWEBDEV
+   ========================================================================== */
+
+/* ---------------------------------------------------------
+   1. Laptop Viewports (max-width: 1200px)
+   - Scales down the stats layout from 6 to 3 columns.
+   - Adjusts tech grid and case study grids to 2 columns.
+   - Tweaks horizontal process connectors.
+   --------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .fswd-stats-box {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .fswd-tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fswd-cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fswd-process-track {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 24px;
+  }
+
+  /* Adjust/hide specific connectors as rows wrap on desktop scale */
+  .fswd-process-connector {
+    right: -24px;
+  }
+  
+  .fswd-process-step:nth-child(3) .fswd-process-connector,
+  .fswd-process-step:nth-child(6) .fswd-process-connector {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   2. Medium Tablet Viewports (max-width: 992px)
+   - Stacks split grid structures (Why Us block & FAQ/Code block)
+     to single vertical columns.
+   --------------------------------------------------------- */
+@media (max-width: 992px) {
+  .fswd-why-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .fswd-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ---------------------------------------------------------
+   3. Portrait Tablet & Phablet Viewports (max-width: 768px)
+   - Automatically reflows the process tracking elements from 
+     horizontal boxes into a perfectly aligned vertical timeline [1].
+   - Restructures hero buttons to stack vertically.
+   - Scales down clamp headers and reduces grid cells.
+   --------------------------------------------------------- */
+@media (max-width: 768px) {
+  section.fswd__bar_hero {
+    padding: 80px 0 60px 0;
+  }
+
+  /* Centered stacking on hero buttons */
+  .fswd__hero_actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 340px;
+    margin: 0 auto 24px auto;
+  }
+
+  .fswd__hero_btn {
+    text-align: center;
+  }
+
+  /* Stack main services list */
+  .fswd-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reflow statistics to 2 columns */
+  .fswd-stats-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Stack case cards to full width */
+  .fswd-cases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reflow horizontal timeline dynamically to a vertical track [1] */
+  .fswd-process-track {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .fswd-process-step {
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .fswd-process-node-wrap {
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  /* Pivots the pointer connector to align vertically [1] */
+  .fswd-process-connector {
+    top: 44px;
+    left: 21px;
+    width: 2px;
+    height: 48px;
+    border-left: 2px dotted rgba(255, 255, 255, 0.15);
+    border-top: none;
+    right: auto;
+  }
+}
+
+/* ---------------------------------------------------------
+   4. Portrait Small Mobiles (max-width: 480px)
+   - Minimizes metrics, tech cells, and container paddings
+     to prevent horizontal overflow on tiny screens.
+   --------------------------------------------------------- */
+@media (max-width: 480px) {
+  .fswd-stats-box {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .fswd-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fswd-cta-inner {
+    padding: 40px 20px;
+    border-radius: 20px;
+  }
+}
+
+
+/* 1. Global Box-Sizing Safety Check
+   Ensures borders and padding are calculated within widths rather than expanding them */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Container Mobile Optimization
+   Tighter padding on small devices to prevent content squishing */
+.fswd__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px; /* Generous 16px padding inside mobile viewports */
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .fswd__container {
+    padding: 0 24px;
+  }
+}
+
+/* 3. The Grid Shrinkage Bug Fix
+   Explicitly use minmax(0, ...) instead of 1fr. This tells CSS Grid to allow 
+   the columns to shrink to 0 when space is constrained, instead of expanding to fit code content */
+.fswd-faq-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 60px;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .fswd-faq-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+    width: 100%;
+  }
+}
+
+/* 4. Column Safety Limits
+   Forces both grid child containers to respect maximum widths */
+.fswd-faq-left,
+.fswd-code-card {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fswd-faq-list,
+.fswd-faq-item {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 5. Safe Code Card Wrapping & Scroll behavior
+   Limits the <pre> block size to prevent horizontal container blowing on smaller devices */
+.fswd-code-block {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.fswd-code-pre {
+  margin: 0;
+  max-width: 100%;
+  overflow-x: auto; /* Restricts overflow to scroll internally within the card */
+  white-space: pre; /* Keeps code structure formatted, but scroll-contained */
+}
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. Track Container */
+  .fswd-process-track {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px; /* Consistent gap between steps */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 2. Step Container Grid Reflow
+     Replaces flexbox with a grid. Column 1 hosts the circle icon (56px wide), 
+     and Column 2 hosts the vertical stack of text elements */
+  .fswd-process-step {
+    display: grid !important;
+    grid-template-columns: 56px minmax(0, 1fr) !important;
+    grid-template-rows: auto auto auto;
+    gap: 4px 16px !important;
+    text-align: left;
+    align-items: start;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 3. Icon Node Wrap (Col 1)
+     Spans all 3 rows on the left side to sit next to the stacked text */
+  .fswd-process-node-wrap {
+    grid-column: 1 !important;
+    grid-row: 1 / span 3 !important;
+    height: 100% !important;
+    width: auto !important;
+    margin-bottom: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    position: relative !important;
+  }
+
+  /* 4. Content Placements (Col 2) */
+  .fswd-process-num {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin-bottom: 0 !important;
+    display: inline-block !important;
+  }
+
+  .fswd-process-title {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    margin: 0 !important;
+  }
+
+  .fswd-process-desc {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    line-height: 1.6 !important;
+    word-wrap: break-word !important;
+  }
+
+  /* 5. Vertical Connector Line
+     Spans from under the active circle down to meet the top of the next circle */
+  .fswd-process-connector {
+    position: absolute !important;
+    top: 44px !important; /* Starts below the 44px circle */
+    bottom: -40px !important; /* Matches the track container gap */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 2px !important;
+    height: auto !important; /* Auto-height calculated from grid-span */
+    border-left: 2px dotted rgba(255, 255, 255, 0.15) !important;
+    border-top: none !important;
+    right: auto !important;
+  }
+}
+
+
+
+
+/* ==========================================================================
+   STATS BAR MOBILE OPTIMIZATIONS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* 1. Pull the container snugly over the hero and align paddings */
+  .fswd-stats-section {
+    padding: 0 16px !important;
+    margin-top: -30px !important; /* Subtle float offset matching desktop design */
+    background: transparent !important; /* Let container handle the white background card look */
+  }
+
+  /* 2. Responsive 2-Column Grid Card
+     Pivots the layout to 3 rows of 2 columns, preventing massive vertical height stretching */
+  .fswd-stats-box {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 12px !important; /* Tighter spacing (row-gap column-gap) */
+    padding: 24px 16px !important; /* Compact internal card margins */
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    height: auto !important; /* Resets inherited heights to auto-wrap content naturally */
+    min-height: 0 !important;
+    align-content: start !important; /* Keeps grid rows packed tightly */
+  }
+
+  /* 3. Stat Cell Layout
+     Forces cells to shrink-wrap tight around their content elements */
+  .fswd-stat-cell {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px 6px !important; /* Compact cell margins */
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 4. Text and Icon Sizing adjustments for small screens */
+  .fswd-stat-icon {
+    font-size: 20px !important;
+    margin-bottom: 6px !important;
+    line-height: 1 !important;
+  }
+
+  .fswd-stat-num {
+    font-size: 22px !important; /* Snugger, highly readable numerical text */
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin-bottom: 2px !important;
+    line-height: 1.1 !important;
+  }
+
+  .fswd-stat-lbl {
+    font-size: 11px !important; /* Snugger labeled description */
+    color: #64748b !important;
+    line-height: 1.3 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+}
+
+
+
+
+
+/* ============================================================
+   MOBILE RESPONSIVE STYLES (Max-width: 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* 1. HERO SECTION - Center and Maintain Font Size */
+  .fswd__bar_hero {
+    padding-top: 40px !important; /* Reduces gap from navbar */
+    padding-bottom: 40px !important;
+    text-align: center;
+    min-height: auto !important;
+  }
+
+  .fswd__container {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fswd__hero_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .fswd__heading {
+    font-size: 32px !important; /* Maintained large font size */
+    line-height: 1.2 !important;
+    text-align: center;
+    margin-top: 15px !important;
+  }
+
+  .fswd__hero_text_white {
+    text-align: center;
+    margin: 15px auto 25px auto !important;
+  }
+
+  /* Hero Buttons: Uniform width and centered */
+  .fswd__hero_actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .fswd__hero_btn {
+    width: 100% !important;
+    max-width: 320px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+  }
+
+  /* 2. STATS BAR - Grid layout for mobile */
+  .fswd-stats-box {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 stats per row */
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .fswd-stat-cell {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* 3. WHY + SERVICES SECTION */
+  .fswd-why-grid {
+    grid-template-columns: 1fr !important; /* Stack left text and right grid */
+    gap: 40px;
+  }
+
+  .fswd-why-left {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fswd-checklist {
+    align-items: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .fswd-services-grid {
+    grid-template-columns: 1fr !important; /* 1 service card per row */
+    gap: 15px;
+  }
+
+  .fswd-service-card {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 4. TECH STACK SECTION */
+  .fswd-tech-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+  }
+
+  .fswd-tech-col {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fswd-tech-icons-row {
+    justify-content: center;
+  }
+
+  /* 5. PROCESS SECTION - Vertical Timeline */
+  .fswd-process-track {
+    flex-direction: column !important;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .fswd-process-step {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fswd-process-connector {
+    display: none; /* Hide horizontal lines */
+  }
+
+  .fswd-process-node-wrap {
+    margin-bottom: 10px;
+  }
+
+  /* 6. CASE STUDIES */
+  .fswd-cases-grid {
+    grid-template-columns: 1fr !important;
+    gap: 25px;
+  }
+
+  /* 7. FAQ + CODE BLOCK SECTION */
+  .fswd-faq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+
+  .fswd-faq-left {
+    order: 1; /* Keep FAQ on top */
+  }
+
+  .fswd-code-card {
+    order: 2; /* Code block below */
+    padding: 20px;
+  }
+
+  .fswd-code-pre {
+    font-size: 12px; /* Smaller font for mobile code blocks */
+    overflow-x: auto;
+  }
+
+  /* 8. BOTTOM CTA SECTION */
+  .fswd-cta-inner {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .fswd-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .fswd-cta-btn-primary,
+  .fswd-cta-btn-secondary {
+    width: 100% !important;
+    max-width: 320px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fswd-cta-pills {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  /* General Center Heading fix for all sections */
+  .fswd-section-center, .fswd-section-heading {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. Set the step container to a 2-column grid */
+  .fswd-process-step {
+    display: grid !important;
+    grid-template-columns: 80px 1fr; /* Column 1 for icon, Column 2 for text */
+    text-align: left !important;    /* Align text to the left */
+    align-items: start;            /* Align icon and text to the top */
+    gap: 0 15px;                   /* Gap between icon and text */
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  /* 2. Force the Icon to stay in the first column and span all rows */
+  .fswd-process-node-wrap {
+    grid-column: 1;
+    grid-row: 1 / 5; /* Spans across Num, Title, and Desc rows */
+    display: flex;
+    justify-content: center;
+    padding-top: 5px; /* Adjust this to align circle with the first line of text */
+  }
+
+  /* 3. Force all text elements to the second column */
+  .fswd-process-num, 
+  .fswd-process-title, 
+  .fswd-process-desc {
+    grid-column: 2;
+    margin-left: 0 !important;
+    text-align: left !important;
+  }
+
+  /* 4. Adjust the Circle size for the side-by-side look */
+  .fswd-process-circle {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px;
+    margin: 0 !important;
+  }
+
+  /* 5. Icon inside the circle sizing */
+  .fswd-process-circle-icon {
+    font-size: 20px !important;
+  }
+
+  /* 6. Text Spacing adjustments */
+  .fswd-process-num {
+    font-size: 14px;
+    margin-bottom: 4px !important;
+  }
+
+  .fswd-process-title {
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .fswd-process-desc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* 7. Hide the desktop connector line */
+  .fswd-process-connector {
+    display: none !important;
+  }
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. Reduce the outer section padding */
+  .fswd-cta-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* 2. Reduce the inner container padding */
+  .fswd-cta-inner {
+    padding: 30px 20px !important; /* Top/Bottom: 30px, Left/Right: 20px */
+    min-height: auto !important;
+  }
+
+  /* 3. Tighten the space above the main title */
+  .fswd-cta-title {
+    margin-top: 0 !important;
+    font-size: 26px !important; /* Slightly smaller to save more vertical space */
+    line-height: 1.2;
+    margin-bottom: 12px !important;
+  }
+
+  /* 4. Reduce margin below the description */
+  .fswd-cta-desc {
+    margin-bottom: 25px !important;
+    font-size: 15px !important;
+  }
+
+  /* 5. Reduce space between buttons and the checkmark pills */
+  .fswd-cta-buttons {
+    margin-bottom: 20px !important;
+  }
+
+  /* 6. Tighten the vertical gap between the checkmark pills */
+  .fswd-cta-pills {
+    gap: 8px !important;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. Reduce top/bottom gaps and center the hero section */
+  .fswd__bar_hero {
+    padding-top: 30px !important; /* Reduces space under the Navbar */
+    padding-bottom: 40px !important;
+    text-align: center;
+    min-height: auto !important; /* Prevents unwanted empty vertical space */
+  }
+
+  /* 2. Center the container and internal content */
+  .fswd__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .fswd__hero_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* 3. Center Breadcrumbs */
+  .fswd__hero_content > :first-child {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  /* 4. Center the Label (the "Agency" tag) */
+  .fswd__hero_label {
+    margin: 0 auto 15px auto !important;
+    display: inline-block;
+    text-align: center;
+  }
+
+  /* 5. MAINTAIN LARGE FONT SIZE for the Heading */
+  .fswd__heading {
+    font-size: 32px !important; /* Large and bold as requested */
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    text-align: center;
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+    letter-spacing: -0.02em;
+  }
+
+  /* 6. Center the Description Text */
+  .fswd__hero_text_white {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    text-align: center;
+    max-width: 100% !important;
+    margin: 0 auto 25px auto !important;
+  }
+
+  /* 7. Center and Stack the Buttons (Same Width & Height) */
+  .fswd__hero_actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+
+  .fswd__hero_btn {
+    width: 100% !important;
+    max-width: 320px; /* Perfect width for mobile screens */
+    height: 55px; /* Consistent height for both buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    font-size: 16px;
+  }
+
+  /* 8. Center the "Trusted by" text at the bottom */
+  .fswd__hero_trust {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+}

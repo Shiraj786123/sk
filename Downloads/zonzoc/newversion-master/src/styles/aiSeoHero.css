@@ -1,0 +1,394 @@
+/* AI SEO Hero Section */
+.ai-seo-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 80px;
+  overflow: hidden;
+}
+
+/* Animated Network Canvas Background */
+.network-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.ai-seo-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Badge */
+.ai-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 18px 24px;
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Main Title */
+.ai-hero-title {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 30px 0;
+  color: #ff6b35;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  text-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+}
+
+.white-text {
+  color: #ffffff;
+  display: block;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Subtitle */
+.ai-hero-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 45px 0;
+  font-weight: 400;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* CTA Button */
+.ai-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #ff6b35;
+  color: #ffffff;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 30px rgba(255, 107, 53, 0.4);
+  margin-bottom: 60px;
+  animation: fadeInUp 1.2s ease-out 0.6s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.ai-cta-btn:hover::before {
+  left: 100%;
+}
+
+.ai-cta-btn:hover {
+  background: #ff5722;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6);
+}
+
+.ai-cta-btn i {
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+
+.ai-cta-btn:hover i {
+  transform: translateX(5px);
+}
+
+/* Social Proof Section */
+.ai-social-proof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  animation: fadeInUp 1.4s ease-out 0.8s both;
+}
+
+.proof-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin: 0;
+}
+
+.proof-text strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+/* Client Logos */
+.client-logos {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+  transform: translateY(-5px);
+}
+
+.logo-text {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.logo-item:hover .logo-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.teamout-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.orange-dot {
+  width: 12px;
+  height: 12px;
+  background: #ff6b35;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Trustpilot Rating */
+.trustpilot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.trustpilot:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.stars i {
+  color: #00b67a;
+  font-size: 16px;
+  animation: starTwinkle 2s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+.stars i:nth-child(1) { --i: 0; }
+.stars i:nth-child(2) { --i: 1; }
+.stars i:nth-child(3) { --i: 2; }
+.stars i:nth-child(4) { --i: 3; }
+.stars i:nth-child(5) { --i: 4; }
+
+.rating-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.rating-text strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.rotating-badge {
+  height: 22px;
+  overflow: hidden;
+  position: relative;
+}
+
+.badge-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  animation: smoothScroll 3s linear infinite;
+}
+
+.badge-text {
+  color: #fff;
+  font-size: 14px;
+  line-height: 32px;
+  white-space: nowrap;
+}
+
+/* Smooth continuous scroll — NO JUMP */
+@keyframes smoothScroll {
+  100% { transform: translateY(0); }
+  0% { transform: translateY(-66px); } 
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .ai-hero-title {
+    font-size: 56px;
+  }
+
+  .ai-hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .ai-seo-hero {
+    padding-top: 15px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-seo-hero {
+    padding: 100px 20px 60px;
+  }
+
+  .ai-hero-title {
+    font-size: 42px;
+  }
+
+  .ai-hero-subtitle {
+    font-size: 15px;
+  }
+
+  .ai-hero-subtitle br {
+    display: none;
+  }
+
+  .ai-cta-btn {
+    padding: 16px 32px;
+    font-size: 15px;
+  }
+
+  .client-logos {
+    gap: 30px;
+  }
+
+  .logo-text {
+    font-size: 16px;
+  }
+  
+  /* Mobile badge fix - keep text in one line */
+  .ai-badge {
+    padding: 10px 16px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: auto;
+    max-width: 90%;
+  }
+  
+  .rotating-badge {
+    height: 20px;
+  }
+  
+  .badge-text {
+    font-size: 10px;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  @keyframes smoothScroll {
+    100% { transform: translateY(0); }
+    0% { transform: translateY(-60px); }
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-hero-title {
+    font-size: 36px;
+  }
+
+  .ai-badge {
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+
+  .ai-hero-subtitle {
+    font-size: 14px;
+  }
+
+  .client-logos {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .trustpilot {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* Extra small screens */
+  .badge-text {
+    font-size: 9px;
+  }
+}
