@@ -1,0 +1,631 @@
+:root {
+  --navy: #003070;
+  --blue: #00448f;
+  --bg-grey: #f8fafc;
+  --border: #e2e8f0;
+  --accent: #60a5fa;
+  --white: #ffffff;
+  --silver: #cbd5e1;
+}
+
+.abt__wrapper { 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif; 
+  color: #1e293b; 
+  overflow-x: hidden; 
+}
+
+.abt__container { 
+  width: 100%;
+  max-width: 1400px; 
+  margin: 0 auto; 
+  padding: 0 2rem; 
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. Hero Section (Synchronized to Case Studies Premium Layout)
+   ========================================================================== */
+.abt__bar_hero { 
+  position: relative !important;
+  /* EXACT GRADIENT REPLICA FROM CASE STUDIES */
+  background: radial-gradient(circle at 70% 60%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  color: #ffffff !important;
+  width: 100% !important;
+  
+  /* UNIFIED STRUCTURAL MATRIX */
+  min-height: 95vh !important;           
+  display: flex !important;              
+  align-items: center !important;        
+  justify-content: center !important;     
+  
+  padding: 80px 24px !important;         
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Scopes container within Hero */
+.abt__bar_hero .abt__container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+/* Premium Header Styling Layout */
+.abt__heading { 
+  font-size: 64px !important; 
+  font-weight: 800 !important; 
+  line-height: 1.15 !important; 
+  color: #ffffff !important; 
+  margin-bottom: 18px !important; 
+  letter-spacing: -0.03em !important; 
+  margin-top: 0 !important;
+}
+
+.text_light_blue { 
+  color: #38bdf8 !important; /* Matches sky-blue highlight color token precisely */
+  background-color: transparent !important;
+  display: inline !important;
+}
+
+.abt__hero_text_white { 
+  font-size: 1.15rem !important;
+  line-height: 1.65 !important;
+  color: rgba(255, 255, 255, 0.85) !important; 
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+/* ==========================================================================
+   PILL BADGE COMPONENT FOR ABOUT HERO
+   ========================================================================== */
+.abt__bar_hero .abt__hero_badge_wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important; 
+  padding: 6px 14px !important;
+  background-color: rgba(56, 189, 248, 0.08) !important; 
+  border: 1px solid rgba(56, 189, 248, 0.25) !important; 
+  border-radius: 9999px !important; 
+  margin-bottom: 28px !important;
+}
+
+.abt__bar_hero .abt__hero_badge_dot {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: #38bdf8 !important; 
+  border-radius: 50% !important;
+  display: inline-block !important;
+  position: relative !important;
+}
+
+.abt__bar_hero .abt__hero_badge_dot::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  background-color: #38bdf8 !important;
+  animation: abtBadgePulse 2s infinite ease-in-out !important;
+}
+
+.abt__bar_hero .abt__hero_badge_text {
+  color: #38bdf8 !important;
+  font-size: 0.825rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1 !important;
+}
+
+@keyframes abtBadgePulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ==========================================================================
+   2. Stats Floating Panel Matrix
+   ========================================================================== */
+.abt__stats_section { 
+  margin-top: -45px; 
+  padding-bottom: 20px; 
+  position: relative; 
+  z-index: 5; 
+}
+
+.abt__stats_border_box { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  background: white; 
+  border: 1px solid var(--border); 
+  border-radius: 10px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
+  overflow: hidden; 
+}
+
+.stat_item { 
+  padding: 25px; 
+  text-align: center; 
+  border-right: 1px solid var(--border); 
+  transition: 0.3s; 
+}
+
+.stat_item:last-child { 
+  border-right: none; 
+}
+
+.stat_item:hover { 
+  background: #f0f7ff; 
+}
+
+.stat_num { 
+  display: block; 
+  font-size: 30px; 
+  font-weight: 800; 
+  color: var(--blue); 
+}
+
+.stat_lbl { 
+  font-size: 11px; 
+  text-transform: uppercase; 
+  font-weight: 700; 
+  color: #64748b; 
+}
+
+/* Page Section Content Containers */
+.abt__section { 
+  padding: 60px 0; 
+}
+
+.white_bar { 
+  background: #fff; 
+}
+
+.grey_bar { 
+  background: var(--bg-grey); 
+}
+
+.abt__title_dark { 
+  text-align: center; 
+  font-size: 32px; 
+  font-weight: 800; 
+  color: var(--navy); 
+  margin-bottom: 40px; 
+  width: 100%; 
+}
+
+/* ==========================================================================
+   3 & 4. Horizontal Content Phase Rows
+   ========================================================================== */
+.abt__story_wrapper { 
+  max-width: 1100px; 
+  margin: 0 auto; 
+}
+
+.abt__bar_row { 
+  display: flex; 
+  align-items: stretch; 
+  margin-bottom: 20px; 
+  border: 1px solid var(--border); 
+  border-radius: 12px; 
+  overflow: hidden; 
+  background: #fff; 
+  transition: 0.3s ease; 
+}
+
+.abt__bar_row:hover { 
+  transform: translateX(10px); 
+  border-color: var(--blue); 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+}
+
+.abt__bar_num { 
+  width: 18%; 
+  background: var(--navy); 
+  color: #fff; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 30px; 
+  transition: 0.3s; 
+}
+
+.abt__bar_row:hover .abt__bar_num { 
+  background: var(--blue); 
+}
+
+.abt__bar_num h2 { 
+  font-size: 45px; 
+  font-weight: 800; 
+  margin: 0; 
+  color: var(--accent); 
+}
+
+.abt__bar_content { 
+  width: 82%; 
+  padding: 30px 45px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  text-align: left; 
+}
+
+.abt__bar_content h2 { 
+  font-size: 24px; 
+  font-weight: 800; 
+  color: var(--navy); 
+  margin-bottom: 12px; 
+  text-align: left; 
+}
+
+.abt__bar_content p { 
+  font-size: 15.5px; 
+  color: #475569; 
+  line-height: 1.7; 
+  margin: 0; 
+  text-align: left; 
+}
+
+.abt__bullet_list_left { 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px; 
+  text-align: left; 
+}
+
+.abt__bullet_list_left li { 
+  font-size: 15px; 
+  color: #475569; 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 10px; 
+}
+
+.abt__bullet_list_left li span { 
+  color: var(--blue); 
+  font-weight: 900; 
+}
+
+/* ==========================================================================
+   5, 6 & 7. Core Feature & Value Grid Architectures
+   ========================================================================== */
+.abt__services_grid, 
+.abt__values_grid { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px; 
+}
+
+.abt__service_box, 
+.abt__value_box { 
+  background: white; 
+  border: 1px solid var(--border); 
+  border-radius: 15px; 
+  padding: 30px 25px; 
+  transition: 0.3s; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  box-sizing: border-box;
+}
+
+.hover_lift:hover { 
+  transform: translateY(-10px); 
+  border-color: var(--blue); 
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08); 
+}
+
+.abt__node_wrapper { 
+  position: relative; 
+  width: 100%; 
+  display: flex; 
+  justify-content: flex-start; 
+  margin-bottom: 15px; 
+}
+
+.abt__circle { 
+  width: 45px; 
+  height: 45px; 
+  background: var(--blue); 
+  color: #fff; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-weight: 800; 
+  z-index: 2; 
+  border: 4px solid white; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+.abt__connector { 
+  position: absolute; 
+  height: 2px; 
+  background: var(--border); 
+  width: 150%; 
+  left: 50%; 
+  top: 50%; 
+  z-index: 1; 
+}
+
+.abt__check_circle { 
+  width: 40px; 
+  height: 40px; 
+  background: #f0f7ff; 
+  color: var(--blue); 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-weight: 900; 
+  font-size: 18px; 
+  margin-bottom: 15px; 
+}
+
+.abt__box_title_left { 
+  min-height: 50px; 
+  display: flex; 
+  align-items: center; 
+  font-weight: 800; 
+  color: var(--navy); 
+  margin-bottom: 12px; 
+  font-size: 17px; 
+  text-align: left; 
+}
+
+.abt__card_bullets_left { 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  width: 100%; 
+  text-align: left; 
+}
+
+.abt__card_bullets_left li { 
+  font-size: 13.5px; 
+  color: #64748b; 
+  line-height: 1.6; 
+  margin-bottom: 6px; 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 8px; 
+  min-height: 22px; 
+}
+
+.abt__card_bullets_left li span { 
+  color: var(--blue); 
+  font-weight: 900; 
+  font-size: 16px; 
+  margin-top: -1px; 
+}
+
+.abt__value_icon_left { 
+  font-size: 35px; 
+  margin-bottom: 12px; 
+  transition: 0.3s; 
+  align-self: flex-start; 
+}
+
+.abt__value_box:hover .abt__value_icon_left { 
+  transform: scale(1.15) translateX(5px); 
+}
+
+/* ==========================================================================
+   8. CTA SECTION (EXACT SYNCED REPLICA INTERFACE)
+   ========================================================================== */
+.abt__cta_image_style { 
+  width: 100%;
+  background: radial-gradient(circle at 70% 60%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  padding: 80px 20px; 
+  text-align: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.abt__cta_content_box {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.abt__cta_content_box h2 { 
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.abt__cta_content_box p { 
+  color: #b0c4de;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 750px;
+  margin: 0 auto 40px auto;
+}
+
+.abt__cta_btn_row { 
+  display: flex; 
+  gap: 20px; 
+  justify-content: center; 
+  align-items: center;
+  margin-bottom: 35px; 
+  flex-wrap: wrap; 
+}
+
+.abt__cta_btn_solid { 
+  background-color: #38bdf8; /* Vibrant light blue matching Case Studies button style */
+  color: #001e3d;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.abt__cta_btn_solid:hover { 
+  background-color: #0ea5e9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+}
+
+.abt__cta_btn_outline { 
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 13px 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.abt__cta_btn_outline:hover { 
+  background-color: rgba(56, 189, 248, 0.08);
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+.abt__cta_small_text { 
+  display: block; 
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   ULTRA-RESPONSIVE DEVICE MEDIAS ENGINE
+   ========================================================================== */
+
+/* ─── TIER 1: LARGE SCREEN DISPLAY WORKSTATIONS (1440px and up) ─── */
+@media (min-width: 1440px) {
+  .abt__bar_hero { padding: 120px 0 !important; }
+  .abt__container { max-width: 1400px; padding: 0 2rem; }
+  .abt__heading { font-size: 68px !important; line-height: 1.15 !important; }
+  .abt__hero_text_white { font-size: 1.25rem !important; max-width: 850px !important; }
+  
+  .abt__services_grid, .abt__values_grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .abt__cta_content_box h2 { font-size: 2.5rem; }
+  .abt__cta_content_box p { font-size: 1.2rem; }
+}
+
+/* ─── TIER 2: STANDARD LAPTOPS & MONITOR DISPLAYS (1025px to 1439px) ─── */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .abt__bar_hero { padding: 95px 24px !important; }
+  .abt__container { max-width: 1200px; padding: 0 2rem; }
+  .abt__heading { font-size: 60px !important; }
+  
+  .abt__services_grid, .abt__values_grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+}
+
+/* ─── TIER 3: TABLETS IN LANDSCAPE ORIENTATION (769px to 1024px) ─── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .abt__bar_hero { padding: 80px 32px !important; min-height: 80vh !important; }
+  .abt__container { padding: 0 2.5rem; }
+  .abt__heading { font-size: 48px !important; line-height: 1.18 !important; }
+  .abt__hero_text_white { font-size: 1.1rem !important; max-width: 680px !important; }
+  
+  .abt__stats_border_box { grid-template-columns: repeat(2, 1fr); }
+  .stat_item:nth-child(2) { border-right: none; }
+  .stat_item:nth-child(even) { border-bottom: 1px solid var(--border); }
+  
+  .abt__services_grid, .abt__values_grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .abt__connector { display: none; }
+  
+  .abt__cta_content_box h2 { font-size: 2rem; }
+  .abt__cta_content_box p { font-size: 1.1rem; }
+}
+
+/* ─── TIER 4: PORTRAIT TABLETS & LARGE MOBILE VIEWS (481px to 768px) ─── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .abt__bar_hero { padding: 80px 24px !important; min-height: 75vh !important; }
+  .abt__container { padding: 0 1.5rem; }
+  .abt__heading { font-size: 40px !important; line-height: 1.2 !important; }
+  .abt__hero_text_white { font-size: 1.05rem !important; line-height: 1.6 !important; }
+  
+  .abt__stats_border_box { grid-template-columns: repeat(2, 1fr); }
+  .stat_item:nth-child(2) { border-right: none; }
+  
+  .abt__bar_row { flex-direction: column; }
+  .abt__bar_num { width: 100%; padding: 20px; }
+  .abt__bar_content { width: 100%; padding: 25px; text-align: center; }
+  .abt__bar_content h2, .abt__bar_content p { text-align: center; }
+  .abt__bullet_list_left { grid-template-columns: 1fr; }
+  
+  .abt__services_grid, .abt__values_grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .abt__connector { display: none; }
+  
+  .abt__cta_content_box h2 { font-size: 1.8rem; }
+  .abt__cta_btn_row { flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }
+  .abt__cta_btn_solid, .abt__cta_btn_outline { width: 100%; padding: 14px 20px; font-size: 1rem; box-shadow: none; }
+}
+
+/* ─── TIER 5: COMPACT MOBILE SMARTPHONES (361px to 480px) ─── */
+@media (min-width: 361px) and (max-width: 480px) {
+  .abt__bar_hero { padding: 60px 16px !important; min-height: 70vh !important; }
+  .abt__container { padding: 0 1rem; }
+  .abt__heading { font-size: 32px !important; line-height: 1.25 !important; }
+  .abt__hero_text_white { font-size: 1rem !important; line-height: 1.55 !important; }
+  
+  .abt__stats_border_box { grid-template-columns: 1fr; }
+  .stat_item { border-right: none; border-bottom: 1px solid var(--border); }
+  .stat_item:last-child { border-bottom: none; }
+  
+  .abt__bar_row { flex-direction: column; }
+  .abt__bar_num { width: 100%; padding: 20px; }
+  .abt__bar_content { width: 100%; padding: 20px 15px; text-align: center; }
+  .abt__bar_content h2, .abt__bar_content p { text-align: center; }
+  .abt__bullet_list_left { grid-template-columns: 1fr; }
+  
+  .abt__services_grid, .abt__values_grid { grid-template-columns: 1fr; gap: 16px; }
+  .abt__connector { display: none; }
+  
+  .abt__cta_image_style { padding: 50px 16px; }
+  .abt__cta_content_box h2 { font-size: 1.5rem; margin-bottom: 12px; }
+  .abt__cta_content_box p { font-size: 0.95rem; line-height: 1.5; margin-bottom: 24px; }
+  .abt__cta_btn_row { flex-direction: column; align-items: stretch; width: 100%; gap: 10px; margin-bottom: 24px; }
+  .abt__cta_btn_solid, .abt__cta_btn_outline { width: 100%; padding: 12px 16px; font-size: 0.95rem; }
+}
+
+/* ─── TIER 6: ULTRA PORTABLE MINI DEVICES (360px and below) ─── */
+@media (max-width: 360px) {
+  .abt__bar_hero { padding: 50px 12px !important; min-height: 65vh !important; }
+  .abt__container { padding: 0 0.75rem; }
+  .abt__heading { font-size: 28px !important; }
+  .abt__hero_text_white { font-size: 0.95rem !important; }
+  
+  .abt__stats_border_box, .abt__services_grid, .abt__values_grid { grid-template-columns: 1fr; }
+  .abt__connector { display: none; }
+  
+  .abt__cta_content_box h2 { font-size: 1.35rem; }
+  .abt__cta_btn_solid, .abt__cta_btn_outline { padding: 11px 14px; font-size: 0.9rem; }
+}

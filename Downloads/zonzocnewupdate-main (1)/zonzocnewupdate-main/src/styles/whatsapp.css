@@ -1,0 +1,75 @@
+/* WRAPPER */
+.whatsapp-wrapper{
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 9999;
+}
+
+/* BUTTON */
+.whatsapp-btn{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.whatsapp-btn:hover{
+  transform: scale(1.1);
+}
+
+/* FLOAT ANIMATION */
+.whatsapp-btn{
+  animation: floatBtn 2.5s ease-in-out infinite;
+}
+
+@keyframes floatBtn{
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* MESSAGE BOX (ABOVE ICON) */
+.whatsapp-message-box{
+  position: absolute;
+  bottom: 80px; /* ABOVE ICON */
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* MESSAGE */
+.whatsapp-message{
+  background: #f1f1f1;
+  padding: 12px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  white-space: nowrap;
+}
+
+/* CLOSE BUTTON */
+.whatsapp-close{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.whatsapp-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}

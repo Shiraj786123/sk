@@ -1,0 +1,240 @@
+/* ==========================================================================
+   WHO WE ARE SECTION (3-ROW PILL MARQUEE)
+   ========================================================================== */
+
+.whoweare-section {
+  background: #f8faff;
+  padding: 100px 0;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.whoweare-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.whoweare-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.whoweare-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.whoweare-title .highlight {
+  color: #00448f;
+}
+
+.whoweare-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.technologystack {
+  font-size: 13px;
+  color: #00448f;
+  padding-top: 40px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   MARQUEE CONTAINER & OVERLAYS
+   ========================================================================== */
+
+.marquee-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Vertical gap between rows */
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+/* Premium gradient fades to blend elements at browser edges */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15%;
+  max-width: 250px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #f8faff 20%, rgba(248, 250, 255, 0) 100%);
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #f8faff 20%, rgba(248, 250, 255, 0) 100%);
+}
+
+/* Base Horizontal Lane styling */
+.marquee-track {
+  display: flex;
+  gap: 20px; /* Horizontal gap between pill badges */
+  width: max-content;
+  will-change: transform;
+}
+
+/* Left-moving lane animation */
+.marquee-track-left {
+  animation: scroll-left 40s linear infinite;
+}
+
+/* Right-moving lane animation */
+.marquee-track-right {
+  animation: scroll-right 40s linear infinite;
+}
+
+/* Pause flow on track hover */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ==========================================================================
+   PILL BADGE UI STYLING
+   ========================================================================== */
+
+.tech-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px 28px;
+  height: 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              border-color 0.3s ease, 
+              transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* Hover state elevation */
+.tech-pill:hover {
+  box-shadow: 0 10px 24px rgba(0, 68, 143, 0.06);
+  border-color: #00448f;
+  transform: translateY(-2px);
+}
+
+.tech-pill-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.tech-pill-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155; /* Neutral slate tone for text contrast */
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   MARQUEE TRANSLATION KEYFRAMES
+   ========================================================================== */
+
+@keyframes scroll-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT SCALING
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .whoweare-section {
+    padding: 60px 0;
+  }
+
+  .whoweare-title {
+    font-size: 28px;
+  }
+
+  .whoweare-description {
+    font-size: 15px;
+  }
+
+  .tech-pill {
+    padding: 12px 20px;
+    height: 52px;
+    gap: 10px;
+  }
+
+  .tech-pill-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .tech-pill-label {
+    font-size: 13px;
+  }
+
+  .marquee-wrapper {
+    gap: 16px;
+  }
+
+  .marquee-track {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whoweare-title {
+    font-size: 24px;
+  }
+}
+
+
+
+
+
+.whoweare-section {
+  background: #f8faff;
+  /* 
+     Change from: padding: 100px 0; 
+     To: 100px top padding, 0 left/right, and 10px bottom padding 
+  */
+  padding: 100px 0 10px; 
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}

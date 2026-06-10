@@ -1,0 +1,1858 @@
+/* ═══════════════════════════════════════════════════════
+   WEBSITE MAINTENANCE PAGE — STYLES
+   Font scale: section-title 38px · card-h3 18px · body 16px
+               checklist 15px · pill/label 13px · FAQ-q 18px
+═══════════════════════════════════════════════════════ */
+
+/* ── Wrapper ──────────────────────────────────────────── */
+.wm__wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+/* ── Shared container ─────────────────────────────────── */
+.wm-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Shared helpers ───────────────────────────────────── */
+.wm-section-head {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.wm-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #003070;
+  margin-bottom: 14px;
+}
+
+.wm-eyebrow::before {
+  content: '— ';
+  opacity: .5;
+}
+
+.wm-eyebrow::after {
+  content: ' —';
+  opacity: .5;
+}
+
+.wm-eyebrow--blue {
+  color: #003070;
+}
+
+.wm-eyebrow--light {
+  color: #93c5fd;
+}
+
+.wm-section-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0b1120;
+  line-height: 1.22;
+  margin: 0 0 14px;
+}
+
+.wm-section-sub {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.75;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.wm-body-text {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.wm-white       { color: #fff !important; }
+.wm-sub-light   { color: rgba(255,255,255,.65) !important; }
+
+/* ═══════════════════════════════════════════════════════
+   HERO — ORIGINAL, UNTOUCHED
+═══════════════════════════════════════════════════════ */
+.wm__hero {
+  position: relative;
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px;
+  overflow: hidden;
+}
+
+.wm__hero_pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255,255,255,.03) 20px, rgba(255,255,255,.03) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255,255,255,.03) 20px, rgba(255,255,255,.03) 40px);
+}
+
+.wm__hero_container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.wm-hero-badge-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  background: rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: .75rem 1.8rem;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255,255,255,.3);
+}
+
+.wm-hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(74,222,128,.3);
+}
+
+.wm__hero_title {
+  font-size: 52px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.wm__hero_title_highlight { color: #93c5fd; }
+
+.wm__hero_text {
+  font-size: 20px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.wm__hero_trust {
+  margin-top: 2rem;
+  font-size: 14px;
+  color: rgba(255,255,255,.65);
+  font-weight: 500;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #fff;
+  color: #003070;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all .2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,.45);
+  transition: all .2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+
+/* ═══════════════════════════════════════════════════════
+   STATS BAR
+   Style: White card strip, 5 items, icons + big numbers
+═══════════════════════════════════════════════════════ */
+.wm-stats-bar {
+  background: #fff;
+  padding: 0 24px;
+}
+
+.wm-stats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1.5px solid #e4eaf6;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,48,112,.1);
+  transform: translateY(-36px);
+  background: #fff;
+  overflow: hidden;
+}
+
+.wm-stat-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 16px 24px;
+  border-right: 1px solid #e4eaf6;
+  gap: 4px;
+  transition: background .2s;
+}
+.wm-stat-cell:last-child { border-right: none; }
+.wm-stat-cell:hover { background: #f8faff; }
+
+.wm-stat-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.wm-stat-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: #003070;
+  line-height: 1;
+}
+
+.wm-stat-lbl {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 1 — WHY MAINTENANCE
+   Style: 2-col, left text+checklist, right device + floating cards
+═══════════════════════════════════════════════════════ */
+.wm-why-section {
+  padding: 40px 0 90px;
+  background: #fff;
+}
+
+.wm-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Left */
+.wm-why-left .wm-eyebrow { margin-bottom: 14px; }
+.wm-why-left .wm-section-title { font-size: 34px; text-align: left; margin-bottom: 18px; }
+
+.wm-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wm-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.wm-check-icon {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  background: linear-gradient(135deg, #003070, #00448f);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* Right — device visual */
+.wm-why-right {
+  display: flex;
+  justify-content: center;
+}
+
+.wm-device-wrap {
+  position: relative;
+  width: 360px;
+  height: 340px;
+}
+
+.wm-device {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 280px;
+  background: linear-gradient(145deg, #001850 0%, #003070 100%);
+  border-radius: 16px;
+  box-shadow: 0 28px 70px rgba(0,48,112,.4);
+  overflow: hidden;
+}
+
+.wm-device-bar {
+  height: 28px;
+  background: rgba(0,0,0,.25);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+}
+
+.wm-device-bar span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.2);
+}
+.wm-device-bar span:first-child  { background: rgba(255,100,100,.6); }
+.wm-device-bar span:nth-child(2) { background: rgba(255,200,80,.6); }
+.wm-device-bar span:nth-child(3) { background: rgba(80,200,120,.6); }
+
+.wm-device-body {
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.wm-device-shield {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wm-shield-emoji {
+  font-size: 72px;
+  line-height: 1;
+  filter: brightness(1.3) drop-shadow(0 0 16px rgba(96,165,250,.6));
+}
+
+.wm-shield-check {
+  position: absolute;
+  bottom: 4px;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  background: #4ade80;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(74,222,128,.5);
+}
+
+/* Floating cards */
+.wm-float-card {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #e4eaf6;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 28px rgba(0,48,112,.14);
+  font-size: 12px;
+  min-width: 158px;
+  z-index: 2;
+}
+
+.wm-float-card strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0b1120;
+  white-space: nowrap;
+}
+
+.wm-float-card span {
+  font-size: 12px;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.wm-float-icon {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  background: linear-gradient(135deg, #003070, #00448f);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.wm-float-card.fc1 { top: 0;    right: -10px; animation: wm-float 2.8s ease-in-out infinite; }
+.wm-float-card.fc2 { top: 100px; right: -20px; animation: wm-float 3.2s ease-in-out infinite .4s; }
+.wm-float-card.fc3 { bottom: 80px; left: -10px; animation: wm-float 3s ease-in-out infinite .8s; }
+.wm-float-card.fc4 { bottom: 0; right: -5px;  animation: wm-float 2.6s ease-in-out infinite 1.2s; }
+
+@keyframes wm-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-7px); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 2 — SERVICES
+   Style: 4-col icon grid cards
+═══════════════════════════════════════════════════════ */
+.wm-services-section {
+  padding: 90px 0;
+  background: #f8faff;
+}
+
+.wm-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.wm-service-card {
+  background: #fff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 16px;
+  padding: 28px 22px;
+  transition: all .22s;
+  position: relative;
+  overflow: hidden;
+}
+
+.wm-service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  box-shadow: 0 0 0 2px #003070;
+  opacity: 0;
+  transition: opacity .22s;
+  pointer-events: none;
+}
+
+.wm-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,48,112,.12);
+}
+
+.wm-service-card:hover::after { opacity: 1; }
+
+.wm-service-icon-box {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #003070, #00448f);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 18px rgba(0,48,112,.25);
+}
+
+.wm-service-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b1120;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.wm-service-desc {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 3 — CARE PLANS
+   Style: 4 pricing cards, one highlighted (MOST POPULAR)
+═══════════════════════════════════════════════════════ */
+.wm-plans-section {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.wm-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.wm-plan-card {
+  background: #fff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 20px;
+  padding: 32px 24px 28px;
+  position: relative;
+  transition: all .22s;
+  box-shadow: 0 4px 18px rgba(0,0,0,.06);
+}
+
+.wm-plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 50px rgba(0,48,112,.13);
+  border-color: #a8c4f0;
+}
+
+.wm-plan-card--popular {
+  background: linear-gradient(160deg, #003070 0%, #00448f 100%);
+  border-color: transparent;
+  box-shadow: 0 16px 48px rgba(0,48,112,.35);
+  transform: translateY(-8px);
+}
+
+.wm-plan-card--popular:hover {
+  transform: translateY(-14px);
+}
+
+.wm-plan-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f59e0b;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.wm-plan-top {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e4eaf6;
+}
+
+.wm-plan-card--popular .wm-plan-top {
+  border-bottom-color: rgba(255,255,255,.2);
+}
+
+.wm-plan-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b1120;
+  margin-bottom: 6px;
+}
+
+.wm-plan-card--popular .wm-plan-name { color: #fff; }
+
+.wm-plan-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.wm-plan-card--popular .wm-plan-desc { color: rgba(255,255,255,.65); }
+
+.wm-plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wm-plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.wm-plan-card--popular .wm-plan-features li { color: rgba(255,255,255,.85); }
+
+.wm-plan-check {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  background: #eef3ff;
+  color: #003070;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.wm-plan-card--popular .wm-plan-check {
+  background: rgba(255,255,255,.2);
+  color: #86efac;
+}
+
+.wm-plan-btn {
+  display: block;
+  text-align: center;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  background: #f0f5ff;
+  color: #003070;
+  border: 1.5px solid #d8e4ff;
+  transition: all .18s;
+}
+
+.wm-plan-btn:hover {
+  background: #003070;
+  color: #fff;
+  border-color: #003070;
+}
+
+.wm-plan-btn--pop {
+  background: #fff;
+  color: #003070;
+  border-color: transparent;
+}
+
+.wm-plan-btn--pop:hover {
+  background: rgba(255,255,255,.85);
+}
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 4 — PROCESS
+   Style: Dark navy bg, 5 horizontal circles with connectors
+═══════════════════════════════════════════════════════ */
+.wm-process-section {
+  padding: 90px 0;
+  background: linear-gradient(160deg, #010c22 0%, #001245 60%, #003070 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.wm-process-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(96,165,250,.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(0,68,143,.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.wm-process-section .wm-section-head {
+  position: relative;
+  z-index: 1;
+}
+
+.wm-process-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.wm-process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 10px;
+  position: relative;
+}
+
+.wm-process-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.wm-process-icon {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.1);
+  border: 1.5px solid rgba(255,255,255,.25);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  position: relative;
+  z-index: 1;
+  transition: all .22s;
+}
+
+.wm-process-step:hover .wm-process-icon {
+  background: rgba(255,255,255,.18);
+  transform: scale(1.08);
+  box-shadow: 0 0 0 10px rgba(255,255,255,.05);
+}
+
+.wm-process-connector {
+  position: absolute;
+  top: 36px;
+  left: calc(50% + 36px);
+  width: calc(100% - 36px);
+  height: 2px;
+  border-top: 2px dashed rgba(255,255,255,.2);
+  z-index: 0;
+}
+
+.wm-process-num {
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(255,255,255,.45);
+  letter-spacing: .06em;
+  margin-bottom: 8px;
+}
+
+.wm-process-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #e0eaff;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.wm-process-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 5 — WHO IT'S FOR
+   Style: Light, horizontal icon tile grid 5×2
+═══════════════════════════════════════════════════════ */
+.wm-who-section {
+  padding: 90px 0;
+  background: #f8faff;
+}
+
+.wm-who-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.wm-who-tile {
+  background: #fff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 14px;
+  padding: 22px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: default;
+  transition: all .2s;
+}
+
+.wm-who-tile:hover {
+  border-color: #003070;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0,48,112,.12);
+  background: #fff;
+}
+
+.wm-who-icon {
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, #003070, #00448f);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 6px 18px rgba(0,48,112,.22);
+  transition: transform .2s;
+}
+
+.wm-who-tile:hover .wm-who-icon {
+  transform: scale(1.08);
+}
+
+.wm-who-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 6 — FAQ
+   Style: Left 3D bubble + right accordion
+═══════════════════════════════════════════════════════ */
+.wm-faq-section {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.wm-faq-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* Left visual */
+.wm-faq-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  position: sticky;
+  top: 100px;
+}
+
+.wm-faq-bubble {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #0055c4, #003070 60%, #001640);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 20px 60px rgba(0,48,112,.45),
+    inset 0 -8px 20px rgba(0,0,0,.25),
+    inset 0 8px 16px rgba(255,255,255,.12);
+}
+
+.wm-faq-qmark {
+  font-size: 80px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  display: block;
+  text-shadow: 0 4px 12px rgba(0,0,0,.3);
+}
+
+.wm-faq-visual-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b1120;
+  line-height: 1.4;
+}
+
+.wm-faq-visual-text span { color: #003070; }
+
+.wm-faq-cta-link {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #003070;
+  text-decoration: none;
+  border-bottom: 2px solid #003070;
+  padding-bottom: 2px;
+  transition: opacity .18s;
+}
+.wm-faq-cta-link:hover { opacity: .7; }
+
+/* Right accordion */
+.wm-faq-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wm-faq-item {
+  background: #fff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color .18s, box-shadow .18s;
+}
+
+.wm-faq-item--open,
+.wm-faq-item:hover {
+  border-color: #003070;
+  box-shadow: 0 6px 24px rgba(0,48,112,.09);
+}
+
+.wm-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  user-select: none;
+}
+
+.wm-faq-q span:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b1120;
+  line-height: 1.35;
+}
+
+.wm-faq-chevron {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: #eef3ff;
+  color: #003070;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.wm-faq-a {
+  padding: 0 24px 20px;
+}
+
+.wm-faq-a p {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.75;
+  border-top: 1px solid #e4eaf6;
+  padding-top: 16px;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   CTA — Dark gradient + animated shield
+═══════════════════════════════════════════════════════ */
+.wm-cta-section {
+  padding: 90px 0;
+  background: linear-gradient(135deg, #010c22 0%, #001245 60%, #003070 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.wm-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 60%, rgba(96,165,250,.06) 0%, transparent 55%),
+    radial-gradient(circle at 75% 20%, rgba(0,68,143,.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.wm-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.wm-cta-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.22;
+  margin-bottom: 16px;
+}
+
+.wm-cta-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.75;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.wm-cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.wm-btn-primary {
+  display: inline-block;
+  background: #fff;
+  color: #003070;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all .2s;
+  box-shadow: 0 6px 20px rgba(0,0,0,.2);
+}
+.wm-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.3); }
+
+.wm-btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border: 2px solid rgba(255,255,255,.4);
+  transition: all .2s;
+}
+.wm-btn-secondary:hover { background: rgba(255,255,255,.08); border-color: #fff; transform: translateY(-3px); }
+
+.wm-cta-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wm-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.75);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+
+/* Shield visual */
+.wm-cta-visual { flex-shrink: 0; }
+
+.wm-cta-shield-wrap {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wm-cta-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(96,165,250,.2);
+  animation: wm-ring-pulse 3s ease-in-out infinite;
+}
+
+.wm-cta-ring1 { width: 140px; height: 140px; }
+.wm-cta-ring2 { width: 210px; height: 210px; animation-delay: 1s; }
+
+@keyframes wm-ring-pulse {
+  0%, 100% { opacity: .8; transform: scale(1); }
+  50%       { opacity: .2; transform: scale(1.05); }
+}
+
+.wm-cta-shield-core {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wm-cta-shield-icon {
+  font-size: 90px;
+  filter: drop-shadow(0 0 28px rgba(96,165,250,.55));
+  line-height: 1;
+}
+
+.wm-cta-shield-check {
+  position: absolute;
+  bottom: 6px;
+  right: -4px;
+  width: 32px;
+  height: 32px;
+  background: #4ade80;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(74,222,128,.5);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — hero mobile queries kept identical
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .wm-stats-inner    { grid-template-columns: repeat(5, 1fr); }
+  .wm-services-grid  { grid-template-columns: repeat(2, 1fr); }
+  .wm-plans-grid     { grid-template-columns: repeat(2, 1fr); }
+  .wm-process-track  { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .wm-process-connector { display: none; }
+  .wm-who-grid       { grid-template-columns: repeat(5, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .wm-why-grid       { grid-template-columns: 1fr; }
+  .wm-device-wrap    { display: none; }
+  .wm-faq-layout     { grid-template-columns: 1fr; }
+  .wm-faq-visual     { display: none; }
+  .wm-cta-inner      { grid-template-columns: 1fr; }
+  .wm-cta-visual     { display: none; }
+  .wm-who-grid       { grid-template-columns: repeat(4, 1fr); }
+  .wm-stats-inner    { grid-template-columns: repeat(3, 1fr); transform: translateY(-20px); }
+}
+
+@media (max-width: 768px) {
+  .wm__hero_title    { font-size: 34px; }
+  .wm-section-title  { font-size: 28px; }
+  .wm-services-grid  { grid-template-columns: 1fr; }
+  .wm-plans-grid     { grid-template-columns: 1fr; }
+  .wm-process-track  { grid-template-columns: 1fr; gap: 28px; }
+  .wm-who-grid       { grid-template-columns: repeat(2, 1fr); }
+  .wm-stats-inner    { grid-template-columns: repeat(2, 1fr); transform: translateY(-20px); }
+  .wm-plan-card--popular { transform: none; }
+  .wm-cta-title      { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .wm__hero_title    { font-size: 28px; }
+  .wm-who-grid       { grid-template-columns: repeat(2, 1fr); }
+  .wm-stats-inner    { grid-template-columns: repeat(2, 1fr); transform: translateY(-12px); }
+}
+
+
+
+
+
+/* ==========================================================================
+   WEBSITE MAINTENANCE HERO SECTION LAYOUT & STYLING
+   ========================================================================== */
+
+/* Outer Section Wrapper */
+.wm__hero {
+  position: relative;
+  /* Glowing radial gradient background exactly as specified */
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  color: #ffffff;
+  padding: 100px 24px 80px 24px; /* Standard premium layout spacing */
+  text-align: center;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Hide background pattern to maintain the clean radial glow */
+.wm__hero_pattern {
+  display: none !important;
+}
+
+/* Centered Content Container */
+.wm__hero_container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= BREADCRUMB OVERRIDES ================= */
+.wm__hero_container .breadcrumb {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ================= BADGE STYLING ================= */
+.wm-hero-badge-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 18px;
+  margin-bottom: 28px;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.35); /* Semi-transparent blue border */
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.wm-hero-badge-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+.wm-hero-badge-text {
+  color: #38bdf8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+}
+
+/* ================= TITLE & HIGHLIGHT ================= */
+.wm__hero_title {
+  font-size: clamp(2.5rem, 5.2vw, 4.25rem); /* Responsive typography */
+  font-weight: 800; /* Extra bold */
+  line-height: 1.15; /* Tight line spacing */
+  color: #ffffff;
+  margin: 0 auto 28px auto;
+  max-width: 900px;
+  letter-spacing: -0.03em; /* Tight letter spacing like screenshot */
+}
+
+.wm__hero_title_highlight {
+  color: #38bdf8 !important; /* Sky Blue highlight text */
+  background-color: transparent !important;
+  display: inline !important;
+}
+
+/* ================= SUBTEXT ================= */
+.wm__hero_text {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85); /* Soft premium white text */
+  max-width: 800px;
+  margin: 0 auto 36px auto;
+  font-weight: 400;
+}
+
+/* ================= BUTTONS ================= */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+/* Same size button layout constraints */
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;            /* Standardized height */
+  padding: 0 28px;         /* Standardized padding */
+  border-radius: 10px;     /* Smooth rounded corners */
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;     /* Avoid wrapping of text */
+  box-sizing: border-box;  /* Consistent heights rendering */
+  transition: all 0.2s ease;
+}
+
+/* Primary Button (Solid Sky Blue with high-contrast text) */
+.hero-buttons .btn-primary {
+  background-color: #38bdf8 !important;
+  color: #001f3f !important; /* Deep Blue text */
+  border: 1.5px solid transparent !important;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: #25aff2 !important;
+  transform: translateY(-2px);
+}
+
+/* Secondary Button (Semi-transparent Outlined style) */
+.hero-buttons .btn-secondary {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.5) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-buttons .btn-secondary:hover {
+  border-color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.08) !important;
+  transform: translateY(-2px);
+}
+
+/* ================= TRUST TEXT ================= */
+.wm__hero_trust {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5); /* Muted slate-gray */
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ================= RESPONSIVE MOBILE ADJUSTMENTS ================= */
+@media (max-width: 768px) {
+  .wm__hero {
+    padding: 80px 16px 60px 16px;
+  }
+
+  .wm__hero_title {
+    font-size: 2.3rem; /* Compact heading size for mobile */
+  }
+
+  .wm__hero_text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    max-width: 340px; /* Constrains buttons width on mobile screens */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100%; /* Spans full width inside mobile container */
+  }
+}
+
+
+
+.wm__hero_title {
+  font-size: clamp(2rem, 4.5vw, 3.5rem) !important; /* Min 32px, scales dynamically, Max 56px */
+}
+
+
+
+
+
+/* ============================================================
+   MOBILE RESPONSIVE STYLES (Max-width: 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* 1. HERO BUTTONS ONLY (No text changes) */
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-top: 25px !important;
+  }
+
+  .btn-primary, 
+  .btn-secondary,
+  .wm-plan-btn,
+  .wm-btn-primary,
+  .wm-btn-secondary {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+  }
+
+  /* 2. STATS BAR - 2 Column Grid */
+  .wm-stats-inner {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    padding: 30px 15px !important;
+  }
+
+  .wm-stat-cell {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* 3. WHY SECTION - Stacked Layout */
+  .wm-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .wm-why-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wm-checklist {
+    text-align: left;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 20px auto 0;
+  }
+
+  .wm-why-right {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .wm-device-wrap {
+    transform: scale(0.9); /* Scales down the visual to fit mobile */
+  }
+
+  /* 4. SERVICES GRID - Single Column */
+  .wm-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .wm-service-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 5. CARE PLANS - Single Column */
+  .wm-plans-grid {
+    grid-template-columns: 1fr !important;
+    gap: 25px;
+  }
+
+  /* 6. PROCESS SECTION - Side-by-Side (Icon Left, Text Right) */
+  .wm-process-track {
+    flex-direction: column !important;
+    gap: 35px !important;
+  }
+
+  .wm-process-step {
+    display: grid !important;
+    grid-template-columns: 70px 1fr !important; /* Icon stays left, Text right */
+    text-align: left !important;
+    align-items: start !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
+  .wm-process-node {
+    grid-column: 1;
+    grid-row: 1 / 4; /* Spans number, title, and desc */
+    margin: 0 !important;
+    justify-self: center;
+  }
+
+  .wm-process-num, 
+  .wm-process-title, 
+  .wm-process-desc {
+    grid-column: 2;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+
+  .wm-process-connector {
+    display: none !important; /* Hide horizontal lines */
+  }
+
+  /* 7. WHO FOR - 2 Column Grid */
+  .wm-who-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+  }
+
+  /* 8. FAQ - Stacked Layout */
+  .wm-faq-layout {
+    flex-direction: column !important;
+    gap: 40px;
+  }
+
+  .wm-faq-visual {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .wm-faq-right {
+    width: 100%;
+  }
+
+  /* 9. FINAL CTA - Stacked and Centered */
+  .wm-cta-section {
+    padding: 40px 0 !important;
+  }
+
+  .wm-cta-inner {
+    flex-direction: column !important;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .wm-cta-left {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wm-cta-actions {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .wm-cta-trust {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 15px;
+    text-align: left;
+  }
+
+  .wm-cta-visual {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Global section header centering */
+  .wm-section-head {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  /* 1. THE HEADING - Increased to 48px for a massive, bold look */
+  .wm__hero_title {
+    font-size: 48px !important;    /* Power size for mobile */
+    font-weight: 900 !important;    /* Maximum boldness */
+    line-height: 1.0 !important;    /* Tight spacing to keep it solid */
+    letter-spacing: -0.05em !important; /* Premium character squeeze */
+    text-align: center !important;
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+    width: 100%;
+    display: block;
+  }
+
+  /* Target the highlight part specifically if needed */
+  .wm__hero_title_highlight {
+    display: block; /* Forces secondary part of title to new line */
+    font-size: 0.75em; /* Scaled slightly for rhythm */
+  }
+
+  /* 2. THE DESCRIPTION - Reduced to 14px for better contrast */
+  .wm__hero_text {
+    font-size: 14px !important;     /* Smaller and cleaner */
+    line-height: 1.6 !important;    /* Breathing room for readability */
+    text-align: center !important;
+    max-content: 90% !important;
+    margin: 0 auto 30px auto !important;
+    opacity: 0.85 !important;        /* Slightly faded to focus attention on title */
+  }
+
+  /* 3. BREADCRUMB & BADGE CENTERING */
+  .wm__hero_container > :first-child {
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 5px !important;
+  }
+
+  .wm-hero-badge-wrapper {
+    margin: 0 auto 10px auto !important;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. THE HEADING - Unified massive font size for the entire block */
+  .wm__hero_title {
+    font-size: 46px !important;    /* Massive uniform size */
+    font-weight: 900 !important;    /* Maximum thickness */
+    line-height: 1.0 !important;    /* Ultra-tight line spacing */
+    letter-spacing: -0.05em !important; 
+    text-align: center !important;
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+    width: 100%;
+    display: block;
+    word-break: break-word;        /* Prevents long words from breaking layout */
+  }
+
+  /* 2. THE HIGHLIGHT SPAN - Force it to inherit the same size */
+  .wm__hero_title_highlight {
+    font-size: 1em !important;      /* Force to match the parent 46px exactly */
+    display: inline !important;    /* Allows text to flow as one continuous block */
+    color: inherit;                /* Keeps your blue color but matches size */
+  }
+
+  /* 3. THE DESCRIPTION - Kept smaller for clear contrast */
+  .wm__hero_text {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    margin: 0 auto 30px auto !important;
+    opacity: 0.85;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  /* 1. HERO SECTION WRAPPER - Minimal top gap for that clean look */
+  .aiss__hero, .aiwa__hero_section, .fswd__bar_hero, .ecd__hero, .aiso__hero, .seo-hero, .wm__hero {
+    padding-top: 20px !important;
+    padding-bottom: 40px !important;
+    min-height: auto !important;
+    text-align: center !important;
+  }
+
+  /* 2. BREADCRUMBS & BADGES - Perfectly centered at the top */
+  .aiss__hero_container > :first-child,
+  .aiwa__container > :first-child,
+  .fswd__container > :first-child,
+  .ecd__hero_container > :first-child,
+  .seo-container > :first-child,
+  .wm__hero_container > :first-child {
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* The Pill-shaped Badge */
+  .aiss__hero_badge, .aiwa__hero_badge_wrapper, .fswd__hero_label, .ecd__hero_badge_wrapper, .seo-hero-badge-wrapper, .wm-hero-badge-wrapper {
+    margin: 0 auto 15px auto !important;
+    display: inline-flex !important;
+    padding: 6px 16px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    border-radius: 100px !important; /* Makes it a perfect pill */
+  }
+
+  /* 3. THE GIANT HEADING - Matches your screenshot exactly */
+  .aiss__hero_title, 
+  .aiwa__heading, 
+  .fswd__heading, 
+  .ecd__hero_title, 
+  .aiso__hero_title, 
+  .seo-hero-title, 
+  .wm__hero_title {
+    font-size: 42px !important;    /* Massive Impact */
+    font-weight: 900 !important;    /* Maximum Boldness */
+    line-height: 1.0 !important;    /* Tight and Clean spacing */
+    letter-spacing: -0.04em !important; /* Premium character squeeze */
+    text-align: center !important;
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+    width: 100%;
+    word-break: break-word;
+  }
+
+  /* Handle the blue text highlights inside headings */
+  .aiss__hero_title_accent, 
+  .aiwa-text-blue, 
+  .text_light_blue, 
+  .ecd__hero_title_highlight, 
+  .aiso__hero_title_highlight, 
+  .seo_title_sky_blue, 
+  .wm__hero_title_highlight {
+    font-size: 1em !important;
+    color: #3b82f6 !important; /* Or your specific brand blue */
+  }
+
+  /* 4. THE CLEAN DESCRIPTION - Small but very readable */
+  .aiss__hero_text, 
+  .aiwa__hero_text_white, 
+  .fswd__hero_text_white, 
+  .ecd__hero_text, 
+  .aiso__hero_text, 
+  .seo-desc, 
+  .wm__hero_text {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    max-width: 90% !important;
+    margin: 0 auto 30px auto !important;
+    opacity: 0.8 !important; /* Faded to let the heading pop */
+    font-weight: 400 !important;
+  }
+
+  /* 5. HERO BUTTONS - Equal Width, Tall, and Centered */
+  .aiss-hero-actions, .aiwa__hero_actions, .fswd__hero_actions, .hero-buttons, .wm__cta-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .aiss-btn-primary, .aiss-btn-secondary,
+  .aiwa__btn_primary, .aiwa__btn_secondary,
+  .fswd__hero_btn,
+  .btn-primary, .btn-secondary,
+  .wm-btn-primary, .wm-btn-secondary {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 12px !important; /* Matching the rounded buttons in your image */
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+  }
+}
+
+
+
+/* --- Desktop Equal Height Fix for Pricing Cards --- */
+@media (min-width: 1024px) {
+  /* 1. Ensure the grid container allows items to stretch */
+  .wm-plans-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust based on your column count */
+    align-items: stretch; /* This forces all grid items to the same height */
+    gap: 24px;
+  }
+
+  /* 2. Make the card itself a flex container that fills the height */
+  .wm-plan-card {
+    height: 100%; /* Fill the grid cell */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This pushes the 'Get Started' button to the very bottom */
+  }
+
+  /* 3. Allow the features list to grow and fill the empty space */
+  .wm-plan-features {
+    flex-grow: 1; /* This pushes the button down even if there are fewer features */
+    margin-bottom: 30px; /* Space between last feature and button */
+  }
+
+  /* 4. Optional: If you want the 'Performance Plan' to look slightly taller (as a highlight) 
+     but keep others aligned, you can use padding instead of height differences */
+  .wm-plan-card--popular {
+    transform: scale(1.05); /* Keeps it highlighted without breaking the alignment */
+    z-index: 2;
+  }
+}
+
+
+/* Separation for the Bottom Sections */
+.wm-cta-section {
+  margin-top: 100px; /* Adjust this value (e.g., 80px or 120px) to get the perfect gap */
+}
+
+/* Ensure the gap remains clean on mobile as well */
+@media (max-width: 768px) {
+  .wm-cta-section {
+    margin-top: 60px; /* Slightly smaller gap for mobile screens */
+  }
+}
+
+
+
+
+
+
+
+/* 1. Fix the layout alignment to the top */
+.wm-faq-layout {
+  display: flex;
+  align-items: flex-start; /* CRITICAL: Prevents the left side from moving when the right side grows */
+  gap: 60px;
+  position: relative;
+}
+
+/* 2. Make the "?" visual stay in one spot */
+.wm-faq-visual {
+  position: sticky;
+  top: 100px; /* Adjust this based on your navbar height */
+  flex: 0 0 350px; /* Keeps the width fixed so it doesn't shrink */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 3. Ensure the accordion side grows independently */
+.wm-faq-right {
+  flex: 1;
+  min-height: 500px; /* Optional: prevents the bottom section from jumping too much */
+}
+
+/* 4. Smooth out the opening of the FAQ */
+.wm-faq-a {
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mobile Adjustment: On mobile, we stack them, so sticky isn't needed */
+@media (max-width: 768px) {
+  .wm-faq-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .wm-faq-visual {
+    position: relative;
+    top: 0;
+    margin-bottom: 30px;
+  }
+}

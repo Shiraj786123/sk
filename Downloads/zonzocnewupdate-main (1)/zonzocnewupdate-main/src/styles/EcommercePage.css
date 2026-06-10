@@ -1,0 +1,1644 @@
+/* ═══════════════════════════════════════════════════════
+   ECOMMERCE DEVELOPMENT PAGE — STYLES
+   Font scale: heading 40px · card-h3 18px · body 16px
+               sub-text 14px · pill/label 13px · FAQ-q 18px
+               CTA title 44px
+═══════════════════════════════════════════════════════ */
+
+:root {
+  --section-padding: 70px;
+  --ecd-blue: #003070;
+  --ecd-blue2: #00448f;
+  --ecd-dark: #010c22;
+  --ecd-light: #f8faff;
+}
+
+/* ── Wrapper ──────────────────────────────────────────── */
+.ecd__wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Shared container ─────────────────────────────────── */
+.ecd__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Shared helpers ───────────────────────────────────── */
+.ecd-section-head {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.ecd-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ecd-blue);
+  margin-bottom: 14px;
+}
+
+.ecd-eyebrow::before { content: '— '; opacity: .5; }
+.ecd-eyebrow::after  { content: ' —'; opacity: .5; }
+.ecd-eyebrow--center { display: block; text-align: center; }
+.ecd-eyebrow--light  { color: #93c5fd; }
+
+.ecd__heading {
+  font-size: 30px;
+  font-weight: 800;
+  color: #0a0a0a;
+  line-height: 1.22;
+  margin-bottom: 14px;
+  font-family: 'Inter', sans-serif;
+}
+
+.ecd__subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.75;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.ecd__description {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.ecd-white { color: #fff !important; }
+
+/* ── Hero buttons ─────────────────────────────────────── */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #fff;
+  color: var(--ecd-blue);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all .2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,.45);
+  transition: all .2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+
+/* ═══════════════════════════════════════════════════════
+   HERO — ORIGINAL, UNTOUCHED
+═══════════════════════════════════════════════════════ */
+.ecd__hero {
+  position: relative;
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px;
+  overflow: hidden;
+}
+
+.ecd__hero_pattern {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+  animation: ecd__pattern_move 60s linear infinite;
+}
+
+@keyframes ecd__pattern_move {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(70px); }
+}
+
+.ecd__hero_container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.ecd__hero_badge_wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  background: rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: .75rem 1.8rem;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255,255,255,.3);
+}
+
+.ecd__hero_badge_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(74,222,128,.3);
+}
+
+.ecd__hero_title {
+  font-size: 52px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.ecd__hero_title_highlight { color: #93c5fd; }
+
+.ecd__hero_text {
+  font-size: 20px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.ecd__hero_trust {
+  margin-top: 2rem;
+  font-size: 14px;
+  color: rgba(255,255,255,.65);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════
+   STATS BAR — 6 items with icon + number + label
+═══════════════════════════════════════════════════════ */
+.ecd-stats-bar {
+  background: #fff;
+  padding: 0 24px;
+}
+
+.ecd-stats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border: 1.5px solid #e4eaf6;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,48,112,.1);
+  transform: translateY(-36px);
+  background: #fff;
+  overflow: hidden;
+}
+
+.ecd-stat-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 12px 20px;
+  border-right: 1px solid #e4eaf6;
+  gap: 4px;
+  transition: background .2s;
+}
+.ecd-stat-cell:last-child { border-right: none; }
+.ecd-stat-cell:hover { background: #f8faff; }
+
+.ecd-stat-icon {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.ecd-stat-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ecd-blue);
+  line-height: 1;
+}
+
+.ecd-stat-lbl {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 1 — WHY STORES UNDERPERFORM
+   Style: 2-col — left text+checklist, right comparison card
+═══════════════════════════════════════════════════════ */
+.ecd-why-section {
+  padding: 40px 0 90px;
+  background: #fff;
+}
+
+.ecd-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.ecd-why-left .ecd-eyebrow { margin-bottom: 14px; }
+
+.ecd-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.ecd-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.ecd-check-dot {
+  width: 9px;
+  height: 9px;
+  min-width: 9px;
+  border-radius: 50%;
+  background: var(--ecd-blue);
+}
+
+/* Comparison card */
+.ecd-comparison-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,48,112,.12);
+  border: 1.5px solid #e4eaf6;
+}
+
+.ecd-compare-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.ecd-compare-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ecd-head-bad {
+  background: #fff0f0;
+  color: #ef4444;
+  border-bottom: 1px solid #fecaca;
+}
+
+.ecd-head-good {
+  background: #f0fdf4;
+  color: #16a34a;
+  border-bottom: 1px solid #bbf7d0;
+  border-left: 1px solid #e4eaf6;
+}
+
+.ecd-compare-icon { font-size: 16px; }
+
+.ecd-compare-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.ecd-row-bad  { color: #374151; background: #fff; }
+.ecd-row-good { color: #374151; background: #fafffe; border-left: 1px solid #e4eaf6; }
+
+.ecd-row-x {
+  color: #ef4444;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.ecd-row-check {
+  color: #16a34a;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SECTION 2 — SERVICES
+   Style: 4-col grid with icon, title, desc, "Learn More →"
+═══════════════════════════════════════════════════════ */
+.ecd-services-section {
+  padding: 90px 0;
+  background: #f8faff;
+}
+
+.ecd-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.ecd-service-card {
+  background: #fff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 16px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: all .22s;
+  position: relative;
+  overflow: hidden;
+}
+
+.ecd-service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  box-shadow: 0 0 0 2px var(--ecd-blue);
+  opacity: 0;
+  transition: opacity .22s;
+  pointer-events: none;
+}
+
+.ecd-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,48,112,.12);
+}
+
+.ecd-service-card:hover::before { opacity: 1; }
+
+.ecd-service-icon-box {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--ecd-blue), var(--ecd-blue2));
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 18px rgba(0,48,112,.22);
+}
+
+.ecd-service-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.ecd-service-desc {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.ecd-learn-more {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ecd-blue);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap .18s;
+  margin-top: auto;
+}
+.ecd-learn-more:hover { gap: 8px; }
+
+/* ═══════════════════════════════════════════════════════
+   PLATFORMS STRIP
+   Style: White bg, icon + name cards in a flex row
+═══════════════════════════════════════════════════════ */
+.ecd-platforms-section {
+  padding: 40px 0 56px;
+  background: #fff;
+  border-top: 1px solid #e4eaf6;
+  border-bottom: 1px solid #e4eaf6;
+}
+
+.ecd-platforms-strip {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+/* Each platform tile */
+.ecd-platform-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  cursor: default;
+  transition: transform .2s;
+}
+
+.ecd-platform-card:hover { transform: translateY(-4px); }
+
+/* Icon wrapper — rounded square */
+.ecd-platform-icon-wrap {
+  width: 64px;
+  height: 64px;
+  background: #f8faff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.ecd-platform-card:hover .ecd-platform-icon-wrap {
+  border-color: #a8c4f0;
+  box-shadow: 0 6px 20px rgba(0,48,112,.13);
+}
+
+/* Actual devicon image */
+.ecd-platform-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+/* Letter fallback for platforms without a devicon */
+.ecd-platform-fallback {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Platform name label */
+.ecd-platform-name {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* "More" tile */
+.ecd-platform-more-card .ecd-more-icon {
+  font-size: 22px;
+  font-weight: 800;
+  color: #6b7280;
+  background: #f1f5f9;
+  border-color: #e4eaf6;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SUCCESS RESULTS — Dark bg with 4 metric cards
+═══════════════════════════════════════════════════════ */
+.ecd-results-section {
+  padding: 90px 0;
+  background: linear-gradient(160deg, #010c22 0%, #001245 55%, #003070 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ecd-results-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(96,165,250,.05) 0%, transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(0,68,143,.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ecd-results-section .ecd-section-head {
+  position: relative;
+  z-index: 1;
+}
+
+.ecd-results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.ecd-result-card {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  transition: background .2s, transform .2s;
+  backdrop-filter: blur(6px);
+}
+
+.ecd-result-card:hover {
+  background: rgba(255,255,255,.12);
+  transform: translateY(-4px);
+}
+
+.ecd-result-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.ecd-result-stat {
+  font-size: 40px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.ecd-result-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255,255,255,.9);
+  line-height: 1.3;
+}
+
+.ecd-result-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════
+   PROCESS — Light bg, horizontal 5-step flow
+═══════════════════════════════════════════════════════ */
+.ecd-process-section {
+  padding: 90px 0;
+  background: #f8faff;
+}
+
+.ecd-process-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+
+.ecd-process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.ecd-process-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.ecd-process-icon {
+  width: 68px;
+  height: 68px;
+  min-width: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ecd-blue), var(--ecd-blue2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 8px 28px rgba(0,48,112,.25);
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-weight: 700;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.ecd-process-step:hover .ecd-process-icon {
+  transform: translateY(-4px) scale(1.07);
+  box-shadow: 0 16px 40px rgba(0,48,112,.32);
+}
+
+.ecd-process-dash {
+  position: absolute;
+  top: 34px;
+  left: calc(50% + 34px);
+  width: calc(100% - 34px);
+  height: 2px;
+  border-top: 2px dashed #c7d8f8;
+  z-index: 0;
+}
+
+.ecd-process-num {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ecd-blue);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.ecd-process-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   WHO FOR — Icon tile grid
+═══════════════════════════════════════════════════════ */
+.ecd-who-section {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.ecd-who-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.ecd-who-tile {
+  background: #f8faff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 14px;
+  padding: 22px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: default;
+  transition: all .2s;
+}
+
+.ecd-who-tile:hover {
+  border-color: var(--ecd-blue);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0,48,112,.12);
+  background: #fff;
+}
+
+.ecd-who-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--ecd-blue), var(--ecd-blue2));
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 5px 16px rgba(0,48,112,.2);
+  transition: transform .2s;
+}
+
+.ecd-who-tile:hover .ecd-who-icon { transform: scale(1.08); }
+
+.ecd-who-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ═══════════════════════════════════════════════════════
+   FAQ — Accordion
+═══════════════════════════════════════════════════════ */
+.ecd-faq-section {
+  padding: 90px 0;
+  background: #f8faff;
+}
+
+.ecd-faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ecd-faq-item {
+  background: #fff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color .18s, box-shadow .18s;
+}
+
+.ecd-faq-item--open,
+.ecd-faq-item:hover {
+  border-color: var(--ecd-blue);
+  box-shadow: 0 6px 24px rgba(0,48,112,.09);
+}
+
+.ecd-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  user-select: none;
+}
+
+.ecd-faq-q span:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a0a0a;
+  line-height: 1.35;
+}
+
+.ecd-faq-chevron {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: #eef3ff;
+  color: var(--ecd-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ecd-faq-a { padding: 0 24px 20px; }
+
+.ecd-faq-a p {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.75;
+  border-top: 1px solid #e4eaf6;
+  padding-top: 16px;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   CTA — Dark gradient left + white contact form right
+═══════════════════════════════════════════════════════ */
+.ecd-cta-section {
+  padding: 90px 0;
+  background: linear-gradient(135deg, #010c22 0%, #001245 55%, var(--ecd-blue) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ecd-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 60%, rgba(96,165,250,.06) 0%, transparent 55%),
+    radial-gradient(circle at 75% 20%, rgba(0,68,143,.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ecd-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left */
+.ecd-cta-title {
+  font-size: 44px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.18;
+  margin-bottom: 16px;
+}
+
+.ecd-cta-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,.78);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.ecd-cta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ecd-cta-pills span {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.8);
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 5px 14px;
+  border-radius: 100px;
+}
+
+/* Right — form card */
+.ecd-cta-form-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
+.ecd-form-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 24px;
+}
+
+.ecd-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.ecd-form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #0a0a0a;
+  background: #f8faff;
+  outline: none;
+  transition: border-color .18s;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.ecd-form-input::placeholder { color: #9ca3af; }
+.ecd-form-input:focus { border-color: var(--ecd-blue); background: #fff; }
+
+.ecd-form-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 6px;
+  background: linear-gradient(135deg, var(--ecd-blue), var(--ecd-blue2));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 6px 20px rgba(0,48,112,.3);
+}
+
+.ecd-form-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,48,112,.4);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — original mobile queries preserved
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .ecd-stats-inner  { grid-template-columns: repeat(3, 1fr); transform: translateY(-24px); }
+  .ecd-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .ecd-results-grid  { grid-template-columns: repeat(2, 1fr); }
+  .ecd-process-track { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .ecd-process-dash  { display: none; }
+  .ecd-who-grid      { grid-template-columns: repeat(5, 1fr); }
+}
+
+@media (max-width: 1024px) {
+  .ecd__hero         { padding: 80px 24px; }
+  .ecd__hero_title   { font-size: 42px; }
+  .ecd__heading      { font-size: 32px; }
+  .ecd-cta-inner     { grid-template-columns: 1fr; }
+  .ecd-cta-form-card { max-width: 520px; margin: 0 auto; }
+}
+
+@media (max-width: 900px) {
+  .ecd-why-grid     { grid-template-columns: 1fr; }
+  .ecd-cta-inner    { grid-template-columns: 1fr; }
+  .ecd-who-grid     { grid-template-columns: repeat(4, 1fr); }
+  .ecd-stats-inner  { grid-template-columns: repeat(3, 1fr); transform: translateY(-20px); }
+}
+
+@media (max-width: 768px) {
+  .ecd__hero         { padding: 60px 20px; }
+  .ecd__hero_title   { font-size: 36px; }
+  .ecd__heading      { font-size: 28px; }
+  .ecd-services-grid { grid-template-columns: 1fr; }
+  .ecd-results-grid  { grid-template-columns: 1fr; }
+  .ecd-process-track { grid-template-columns: 1fr; gap: 28px; }
+  .ecd-who-grid      { grid-template-columns: repeat(2, 1fr); }
+  .ecd-stats-inner   { grid-template-columns: repeat(2, 1fr); transform: translateY(-20px); }
+  .ecd-cta-title     { font-size: 30px; }
+  .ecd-form-row      { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .ecd__hero_title   { font-size: 28px; }
+  .ecd-who-grid      { grid-template-columns: repeat(2, 1fr); }
+  .ecd-stats-inner   { grid-template-columns: repeat(2, 1fr); transform: translateY(-12px); }
+  .ecd-cta-form-card { padding: 28px 20px; }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   ECOMMERCE HERO SECTION LAYOUT & STYLING
+   ========================================================================== */
+
+/* Outer Section Wrapper */
+.ecd__hero {
+  position: relative;
+  /* Exact beautiful glowing radial gradient specified */
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  color: #ffffff;
+  padding: 100px 24px 80px 24px; /* Balanced standard spacing */
+  text-align: center;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Hide background grid/noise pattern to maintain the clean glow */
+.ecd__hero_pattern {
+  display: none !important;
+}
+
+/* Centered Content Container */
+.ecd__hero_container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= BREADCRUMB OVERRIDES ================= */
+.ecd__hero_container .breadcrumb {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ================= BADGE STYLING ================= */
+.ecd__hero_badge_wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 18px;
+  margin-bottom: 28px;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.35); /* Semi-transparent blue border */
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.ecd__hero_badge_dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+.ecd__hero_badge_text {
+  color: #38bdf8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+}
+
+/* ================= TITLE & HIGHLIGHT ================= */
+.ecd__hero_title {
+  font-size: clamp(2.5rem, 5.2vw, 4.25rem); /* Responsive heading sizing */
+  font-weight: 800; /* Extra bold */
+  line-height: 1.15; /* Tight vertical line spacing */
+  color: #ffffff;
+  margin: 0 auto 28px auto;
+  max-width: 900px;
+  letter-spacing: -0.03em; /* Tight letter spacing like screenshot */
+}
+
+.ecd__hero_title_highlight {
+  color: #38bdf8 !important; /* Sky Blue highlight */
+  background-color: transparent !important;
+  display: inline !important;
+}
+
+/* ================= SUBTEXT ================= */
+.ecd__hero_text {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85); /* Soft, high-readability white text */
+  max-width: 800px;
+  margin: 0 auto 36px auto;
+  font-weight: 400;
+}
+
+/* ================= BUTTONS ================= */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+/* Common properties to make both buttons identical in height/dimensions */
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;            /* Standardized height */
+  padding: 0 28px;         /* Standardized padding */
+  border-radius: 10px;     /* Smooth rounded corners */
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;     /* Avoid wrapping of text */
+  box-sizing: border-box;  /* Correct heights rendering */
+  transition: all 0.2s ease;
+}
+
+/* Primary Button (Solid Sky Blue with high-contrast text) */
+.hero-buttons .btn-primary {
+  background-color: #38bdf8 !important;
+  color: #001f3f !important; /* Rich Dark Navy */
+  border: 1.5px solid transparent !important;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: #25aff2 !important;
+  transform: translateY(-2px);
+}
+
+/* Secondary Button (Semi-transparent Outlined style) */
+.hero-buttons .btn-secondary {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.5) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-buttons .btn-secondary:hover {
+  border-color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.08) !important;
+  transform: translateY(-2px);
+}
+
+/* ================= TRUST TEXT ================= */
+.ecd__hero_trust {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5); /* Muted slate-gray */
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ================= RESPONSIVE MOBILE ADJUSTMENTS ================= */
+@media (max-width: 768px) {
+  .ecd__hero {
+    padding: 80px 16px 60px 16px;
+  }
+
+  .ecd__hero_title {
+    font-size: 3.3rem; /* Compact heading size for mobile */
+  }
+
+  .ecd__hero_text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    max-width: 340px; /* Constrains buttons width on mobile screens */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100%; /* Spans full width inside mobile container */
+  }
+}
+
+
+
+
+
+/* Decreased Desktop Size */
+section.ecd__hero h1.ecd__hero_title,
+section.ecd__hero .ecd__hero_title,
+h1.ecd__hero_title {
+  font-size: 52px !important; /* Decreased desktop size */
+}
+
+/* Decreased Mobile Size */
+@media (max-width: 768px) {
+  section.ecd__hero h1.ecd__hero_title,
+  section.ecd__hero .ecd__hero_title,
+  h1.ecd__hero_title {
+    font-size: 28px !important; /* Decreased mobile size */
+  }
+}
+
+
+
+
+
+
+
+/* ============================================================
+   MOBILE RESPONSIVE STYLES (Max-width: 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* 1. HERO SECTION - Center and Font Fix */
+  .ecd__hero {
+    padding-top: 30px !important; /* Reduces gap from navbar */
+    padding-bottom: 40px !important;
+    text-align: center;
+    min-height: auto !important;
+  }
+
+  .ecd__hero_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  /* Maintain 32px Font for Hero */
+  .ecd__hero_title {
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    text-align: center;
+    margin-top: 15px !important;
+  }
+
+  .ecd__hero_text {
+    text-align: center;
+    margin: 15px auto 25px auto !important;
+    font-size: 16px;
+  }
+
+  /* Hero Buttons: Uniform and Stacked */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100% !important;
+    max-width: 320px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+  }
+
+  /* 2. STATS BAR - 2x3 Grid */
+  .ecd-stats-inner {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .ecd-stat-cell {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* 3. WHY STORES UNDERPERFORM - Stacking the Comparison */
+  .ecd-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+
+  .ecd-why-left {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ecd__heading, .ecd__description {
+    text-align: center !important;
+  }
+
+  .ecd-comparison-card {
+    grid-template-columns: 1fr !important; /* Stack bad vs good vertically */
+  }
+
+  /* 4. SERVICES GRID - Single Column */
+  .ecd-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .ecd-service-card {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 5. PLATFORMS - Flex wrapping */
+  .ecd-platforms-strip {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* 6. DARK STATS (Results Section) */
+  .ecd-results-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  /* 7. PROCESS SECTION - Side-by-Side (Icon Left, Text Right) */
+  .ecd-process-track {
+    flex-direction: column !important;
+    gap: 35px;
+  }
+
+  .ecd-process-step {
+    display: grid !important;
+    grid-template-columns: 70px 1fr; /* Icon column and Text column */
+    text-align: left !important;
+    align-items: start;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .ecd-process-node {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    display: flex;
+    justify-content: center;
+    margin: 0 !important;
+  }
+
+  .ecd-process-num, .ecd-process-desc {
+    grid-column: 2;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+
+  .ecd-process-dash {
+    display: none !important; /* Hide connector lines */
+  }
+
+  /* 8. WHO FOR - 2 Column Grid */
+  .ecd-who-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+  }
+
+  /* 9. FAQ - Full Width */
+  .ecd-faq-list {
+    width: 100%;
+  }
+
+  /* 10. CTA SECTION - Stacking Text and Form */
+  .ecd-cta-section {
+    padding: 40px 0 !important;
+  }
+
+  .ecd-cta-inner {
+    flex-direction: column !important;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .ecd-cta-left {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ecd-cta-pills {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .ecd-cta-form-card {
+    width: 100%;
+    padding: 25px 15px;
+  }
+
+  .ecd-form-row {
+    flex-direction: column !important;
+    gap: 0;
+  }
+
+  .ecd-form-input {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .ecd-form-btn {
+    width: 100%;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. THE HEADING - Matching your screenshot exactly */
+  .aiss__hero_title, 
+  .aiwa__heading, 
+  .fswd__heading, 
+  .ecd__hero_title {
+    font-size: 36px !important; /* The 'Giant' size from your image */
+    font-weight: 900 !important; /* Extra bold/black weight */
+    line-height: 1.1 !important; /* Very tight spacing between lines */
+    text-align: center !important;
+    letter-spacing: -0.03em !important; /* Tightens the characters for that premium look */
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+    width: 100%;
+    display: block;
+  }
+
+  /* 2. THE DESCRIPTION - Keeping it readable but secondary */
+  .aiss__hero_text, 
+  .aiwa__hero_text_white, 
+  .fswd__hero_text_white, 
+  .ecd__hero_text {
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    margin-bottom: 30px !important;
+    padding: 0 10px !important;
+    opacity: 0.9;
+  }
+
+  /* 3. THE BUTTONS - Same width and centered as requested before */
+  .aiss-hero-actions, 
+  .aiwa__hero_actions, 
+  .fswd__hero_actions, 
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 15px !important;
+  }
+
+  .aiss-btn-primary, .aiss-btn-secondary,
+  .aiwa__btn_primary, .aiwa__btn_secondary,
+  .fswd__hero_btn,
+  .btn-primary, .btn-secondary {
+    width: 100% !important;
+    max-width: 340px !important; /* Matches the width in your screenshot */
+    height: 58px !important;     /* Slightly taller for better touch targets */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important; /* Matches the rounded corners in your image */
+    margin: 0 !important;
+  }
+
+  /* 4. REMOVE TOP GAP - Pulls the giant title up */
+  .aiss__hero, 
+  .aiwa__hero_section, 
+  .fswd__bar_hero, 
+  .ecd__hero {
+    padding-top: 20px !important;
+    min-height: auto !important;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. INCREASE HEADING - Making it massive and impactful */
+  .aiss__hero_title, 
+  .aiwa__heading, 
+  .fswd__heading, 
+  .ecd__hero_title {
+    font-size: 42px !important;    /* Increased size for "Giant" look */
+    font-weight: 900 !important;    /* Maximum thickness */
+    line-height: 1.05 !important;   /* Extremely tight line spacing */
+    letter-spacing: -0.04em !important; /* Tight character spacing for premium feel */
+    text-align: center !important;
+    margin-bottom: 15px !important;
+    margin-top: 10px !important;
+    width: 100%;
+  }
+
+  /* 2. DECREASE DESCRIPTION - Creating high contrast hierarchy */
+  .aiss__hero_text, 
+  .aiwa__hero_text_white, 
+  .fswd__hero_text_white, 
+  .ecd__hero_text {
+    font-size: 14px !important;    /* Reduced size as requested */
+    line-height: 1.6 !important;    /* More breathing room for small text */
+    text-align: center !important;
+    max-width: 90% !important;      /* Keeps lines short and readable */
+    margin: 0 auto 30px auto !important;
+    opacity: 0.8 !important;        /* Slightly faded to make title pop more */
+    padding: 0 10px;
+  }
+
+  /* 3. BUTTONS - Centered and Large */
+  .aiss-hero-actions, 
+  .aiwa__hero_actions, 
+  .fswd__hero_actions, 
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .aiss-btn-primary, .aiss-btn-secondary,
+  .aiwa__btn_primary, .aiwa__btn_secondary,
+  .fswd__hero_btn,
+  .btn-primary, .btn-secondary {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+    border-radius: 10px !important;
+  }
+
+  /* 4. REDUCE TOP GAP - Bringing the content higher */
+  .aiss__hero, 
+  .aiwa__hero_section, 
+  .fswd__bar_hero, 
+  .ecd__hero {
+    padding-top: 15px !important;
+    padding-bottom: 40px !important;
+    min-height: auto !important;
+  }
+
+  /* 5. CENTER BREADCRUMBS & BADGES */
+  .aiss__hero_container > :first-child,
+  .aiwa__container > :first-child,
+  .fswd__container > :first-child,
+  .ecd__hero_container > :first-child {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+    margin-bottom: 5px !important;
+  }
+
+  .aiss__hero_badge,
+  .aiwa__hero_badge_wrapper,
+  .fswd__hero_label,
+  .ecd__hero_badge_wrapper {
+    margin: 0 auto 10px auto !important;
+    display: inline-flex !important;
+    justify-content: center;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  /* 1. THE HEADING - Increased to 48px for maximum impact */
+  .aiss__hero_title, 
+  .aiwa__heading, 
+  .fswd__heading, 
+  .ecd__hero_title {
+    font-size: 48px !important;    /* Even larger "Power" size */
+    font-weight: 900 !important;    /* Maximum boldness */
+    line-height: 1.0 !important;    /* Ultra-tight line height to keep it compact */
+    letter-spacing: -0.05em !important; /* Tighter letter spacing for a premium look */
+    text-align: center !important;
+    margin-bottom: 15px !important;
+    margin-top: 5px !important;
+    width: 100%;
+    display: block;
+    word-break: break-word;        /* Prevents long words from cutting off */
+  }
+
+  /* 2. THE DESCRIPTION - Kept small to maintain the hierarchy contrast */
+  .aiss__hero_text, 
+  .aiwa__hero_text_white, 
+  .fswd__hero_text_white, 
+  .ecd__hero_text {
+    font-size: 14px !important;     /* Small and clean */
+    line-height: 1.6 !important;
+    text-align: center !important;
+    max-width: 85% !important;      /* Slightly narrower for better reading rhythm */
+    margin: 0 auto 30px auto !important;
+    opacity: 0.8 !important;
+  }
+
+  /* 3. HERO CONTAINER - Bringing everything higher up */
+  .aiss__hero, 
+  .aiwa__hero_section, 
+  .fswd__bar_hero, 
+  .ecd__hero {
+    padding-top: 10px !important;   /* Minimal gap at the top */
+    padding-bottom: 30px !important;
+    min-height: auto !important;
+  }
+
+  /* 4. BUTTONS - Centered and thick */
+  .aiss-btn-primary, .aiss-btn-secondary,
+  .aiwa__btn_primary, .aiwa__btn_secondary,
+  .fswd__hero_btn,
+  .btn-primary, .btn-secondary {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 56px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+  }
+}

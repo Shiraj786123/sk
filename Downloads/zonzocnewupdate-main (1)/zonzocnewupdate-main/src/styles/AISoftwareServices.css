@@ -1,0 +1,1607 @@
+/* ═══════════════════════════════════════════════════
+   HERO — ORIGINAL, UNTOUCHED
+═══════════════════════════════════════════════════ */
+.aiss__hero {
+  position: relative;
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px;
+  overflow: hidden;
+}
+
+.aiss__hero_gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,.05) 0%, transparent 50%);
+  animation: aiss__gradient_shift 15s ease-in-out infinite;
+}
+
+@keyframes aiss__gradient_shift {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .7; }
+}
+
+.aiss__hero_container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.aiss__hero_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  background: rgba(255,255,255,.2);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: .8rem 2rem;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255,255,255,.3);
+}
+
+.aiss__hero_title {
+  font-size: 52px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.aiss__hero_title_accent {
+  color: #60a5fa;
+}
+
+.aiss__hero_text {
+  font-size: 20px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.aiss__hero_trust {
+  margin-top: 2rem;
+  font-size: 14px;
+  color: rgba(255,255,255,.7);
+  font-weight: 500;
+}
+
+/* hero CTA buttons */
+.aiss-hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.aiss-btn-primary {
+  display: inline-block;
+  background: #fff;
+  color: #003070;
+  padding: 14px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all .2s;
+  box-shadow: 0 6px 20px rgba(0,0,0,.2);
+}
+.aiss-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.3); }
+
+.aiss-btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border: 2px solid rgba(255,255,255,.5);
+  transition: all .2s;
+}
+.aiss-btn-secondary:hover { background: rgba(255,255,255,.1); border-color: #fff; transform: translateY(-3px); }
+
+/* ═══════════════════════════════════════════════════
+   STATS BAR
+═══════════════════════════════════════════════════ */
+.aiss-stats-section {
+  background: #fff;
+  border-bottom: 1px solid #e8eef8;
+  padding: 0 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.06);
+}
+
+.aiss-stats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.aiss-stat-item {
+  flex: 1;
+  min-width: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 12px;
+  border-right: 1px solid #e8eef8;
+  gap: 6px;
+}
+.aiss-stat-item:last-child { border-right: none; }
+
+.aiss-stat-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: #003070;
+  line-height: 1;
+}
+
+.aiss-stat-lbl {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION SHARED HELPERS
+═══════════════════════════════════════════════════ */
+.aiss-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.aiss-section-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.aiss-pill {
+  display: inline-block;
+  background: linear-gradient(90deg, #003070 0%, #00448f 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+.aiss-pill-white {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+  backdrop-filter: blur(6px);
+}
+
+.aiss-section-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0b1120;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION 1 — INTRO (3-column)
+═══════════════════════════════════════════════════ */
+.aiss-intro-section {
+  padding: 90px 0;
+  background: #f8faff;
+}
+
+.aiss-intro-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* — Visual illustration — */
+.aiss-intro-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aiss-visual-inner {
+  width: 260px;
+  height: 260px;
+  background: linear-gradient(135deg, #001850 0%, #003070 60%, #00448f 100%);
+  border-radius: 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(0,48,112,.35);
+  overflow: hidden;
+}
+
+.aiss-visual-brain {
+  width: 88px;
+  height: 88px;
+  background: rgba(96,165,250,.18);
+  border: 2px solid rgba(96,165,250,.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.aiss-brain-icon { color: #60a5fa; }
+
+.aiss-visual-nodes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.aiss-node {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: rgba(96,165,250,.18);
+  border: 1.5px solid rgba(96,165,250,.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #93c5fd;
+  animation: aiss-float 3s ease-in-out infinite;
+}
+
+.aiss-node.n1 { top: 24px;  left: 24px;  animation-delay: 0s; }
+.aiss-node.n2 { top: 24px;  right: 24px; animation-delay: .7s; }
+.aiss-node.n3 { bottom: 24px; left: 24px; animation-delay: 1.4s; }
+.aiss-node.n4 { bottom: 24px; right: 24px; animation-delay: 2.1s; }
+
+@keyframes aiss-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-7px); }
+}
+
+.aiss-visual-code {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: max-content;
+}
+
+.aiss-code-line {
+  font-size: 11px;
+  font-family: monospace;
+  color: #7dd3fc;
+  background: rgba(0,0,0,.25);
+  border-radius: 4px;
+  padding: 2px 8px;
+  opacity: .8;
+  text-align: center;
+}
+
+/* — Middle text — */
+.aiss-intro-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: #003070;
+  margin-bottom: 14px;
+}
+
+.aiss-intro-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0b1120;
+  line-height: 1.22;
+  margin-bottom: 18px;
+}
+
+.aiss-blue { color: #003070; }
+
+.aiss-intro-desc {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.75;
+}
+
+/* — Right checklist — */
+.aiss-intro-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.aiss-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: #374151;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.aiss-check-icon { color: #003070; flex-shrink: 0; margin-top: 2px; }
+
+/* ═══════════════════════════════════════════════════
+   SECTION 2 — SERVICES GRID (4-col × 2 rows)
+═══════════════════════════════════════════════════ */
+.aiss-services-section {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.aiss-services-section .aiss-section-title {
+  font-size: 32px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.aiss-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.aiss-service-card {
+  background: #fff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 16px;
+  padding: 28px 22px;
+  transition: all .22s;
+  box-shadow: 0 2px 12px rgba(0,0,0,.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.aiss-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #003070, #00448f);
+  opacity: 0;
+  transition: opacity .22s;
+}
+
+.aiss-service-card:hover {
+  border-color: #003070;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,48,112,.13);
+}
+
+.aiss-service-card:hover::before { opacity: 1; }
+
+.aiss-service-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.aiss-service-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b1120;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.aiss-service-card p {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION 3 — WHY CHOOSE (dark, 6-card row)
+═══════════════════════════════════════════════════ */
+.aiss-why-section {
+  padding: 90px 0;
+  background: linear-gradient(160deg, #010c22 0%, #001245 60%, #003070 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.aiss-why-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(96,165,250,.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(0,68,143,.12) 0%, transparent 50%);
+}
+
+.aiss-why-section .aiss-section-head { position: relative; z-index: 1; }
+
+.aiss-why-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.aiss-why-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  padding: 28px 18px;
+  text-align: left;
+  backdrop-filter: blur(8px);
+  transition: all .22s;
+}
+
+.aiss-why-card:hover {
+  background: rgba(255,255,255,.11);
+  transform: translateY(-5px);
+  border-color: rgba(255,255,255,.25);
+}
+
+.aiss-why-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+/* icon accent colours */
+.wc-blue   .aiss-why-icon { background: rgba(59,130,246,.25);  border: 1px solid rgba(59,130,246,.4);  }
+.wc-purple .aiss-why-icon { background: rgba(139,92,246,.25);  border: 1px solid rgba(139,92,246,.4);  }
+.wc-cyan   .aiss-why-icon { background: rgba(6,182,212,.25);   border: 1px solid rgba(6,182,212,.4);   }
+.wc-green  .aiss-why-icon { background: rgba(34,197,94,.25);   border: 1px solid rgba(34,197,94,.4);   }
+.wc-orange .aiss-why-icon { background: rgba(249,115,22,.25);  border: 1px solid rgba(249,115,22,.4);  }
+.wc-teal   .aiss-why-icon { background: rgba(20,184,166,.25);  border: 1px solid rgba(20,184,166,.4);  }
+
+.aiss-why-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e0eaff;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.aiss-why-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.65;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION 4 — INDUSTRIES + TECHNOLOGIES (split)
+═══════════════════════════════════════════════════ */
+.aiss-split-section {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.aiss-split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.aiss-split-divider {
+  background: #e4eaf6;
+  height: 100%;
+  min-height: 320px;
+}
+
+.aiss-split-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #003070;
+  margin-bottom: 28px;
+}
+
+/* — Industries grid — */
+.aiss-industry-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.aiss-industry-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: default;
+}
+
+.aiss-industry-icon {
+  width: 54px;
+  height: 54px;
+  background: #f0f5ff;
+  border: 1.5px solid #d8e4ff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #003070;
+  transition: all .2s;
+}
+
+.aiss-industry-item:hover .aiss-industry-icon {
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,48,112,.2);
+}
+
+.aiss-industry-item span {
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ═══════════════════════════════════════════════════
+   TECHNOLOGIES — Icon + name pills
+═══════════════════════════════════════════════════ */
+.aiss-tech-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.aiss-tech-group h4 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+.aiss-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Each technology card — icon square + name */
+.aiss-tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #f0f5ff;
+  border: 1.5px solid #d8e4ff;
+  color: #003070;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px 6px 6px;
+  border-radius: 10px;
+  transition: all .18s;
+  cursor: default;
+}
+
+.aiss-tech-pill:hover {
+  background: #fff;
+  border-color: #003070;
+  box-shadow: 0 4px 16px rgba(0,48,112,.12);
+  transform: translateY(-2px);
+}
+
+/* Icon wrapper inside the pill */
+.aiss-tech-icon-wrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: #fff;
+  border: 1px solid #e4eaf6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* Devicon image */
+.aiss-tech-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* Letter fallback for tools without a devicon */
+.aiss-tech-fallback {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tech name label */
+.aiss-tech-name {
+  line-height: 1;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION 5 — PROCESS (6-step row with connectors)
+═══════════════════════════════════════════════════ */
+.aiss-process-section {
+  padding: 90px 0;
+  background: #f8faff;
+}
+
+.aiss-process-section .aiss-section-title { font-size: 38px; }
+
+.aiss-process-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 8px;
+}
+
+.aiss-process-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 10px;
+  position: relative;
+}
+
+/* dashed connector */
+.aiss-process-connector {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  border-top: 2px dashed #c8d8f5;
+  z-index: 0;
+}
+
+.aiss-process-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0,48,112,.25);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 12px;
+  transition: transform .22s;
+}
+
+.aiss-process-col:hover .aiss-process-circle { transform: scale(1.08); }
+
+.aiss-process-num {
+  font-size: 13px;
+  font-weight: 800;
+  color: #003070;
+  margin-bottom: 10px;
+  letter-spacing: .04em;
+}
+
+.aiss-process-col h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0b1120;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.aiss-process-col p {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION 6 — AI FEATURES (icon grid)
+═══════════════════════════════════════════════════ */
+.aiss-features-section {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.aiss-features-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.aiss-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 12px;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 16px;
+  text-align: center;
+  cursor: default;
+  transition: all .2s;
+  background: #fff;
+}
+
+.aiss-feature-item:hover {
+  border-color: #003070;
+  background: #f0f5ff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0,48,112,.1);
+}
+
+.aiss-feature-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.aiss-feature-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  line-height: 1.35;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION 7 — FAQ (2-column accordion)
+═══════════════════════════════════════════════════ */
+.aiss-faq-section {
+  padding: 90px 0;
+  background: #f8faff;
+}
+
+.aiss-faq-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.aiss-faq-item {
+  background: #fff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color .18s, box-shadow .18s;
+}
+
+.aiss-faq-item.active,
+.aiss-faq-item:hover {
+  border-color: #003070;
+  box-shadow: 0 6px 24px rgba(0,48,112,.09);
+}
+
+.aiss-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+}
+
+.aiss-faq-q span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b1120;
+  line-height: 1.35;
+}
+
+.aiss-faq-q svg {
+  flex-shrink: 0;
+  color: #003070;
+}
+
+.aiss-faq-a {
+  padding: 0 24px 20px;
+}
+
+.aiss-faq-a p {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.75;
+  border-top: 1px solid #e4eaf6;
+  padding-top: 16px;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTION 8 — CTA (dark)
+═══════════════════════════════════════════════════ */
+.aiss-cta-section {
+  padding: 90px 0;
+  background: linear-gradient(135deg, #010c22 0%, #001245 60%, #003070 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.aiss-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 60%, rgba(96,165,250,.07) 0%, transparent 55%),
+    radial-gradient(circle at 75% 20%, rgba(0,68,143,.12) 0%, transparent 50%);
+}
+
+.aiss-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.aiss-cta-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin-bottom: 14px;
+}
+
+.aiss-cta-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.22;
+  margin-bottom: 16px;
+}
+
+.aiss-cta-blue { color: #60a5fa; }
+
+.aiss-cta-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  max-width: 500px;
+}
+
+.aiss-cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.aiss-cta-section .aiss-btn-primary {
+  background: #fff;
+  color: #003070;
+}
+
+.aiss-cta-section .aiss-btn-secondary {
+  border-color: rgba(255,255,255,.4);
+  color: #fff;
+}
+
+.aiss-cta-trust {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  font-weight: 500;
+}
+
+.aiss-trust-icon { color: #4ade80; flex-shrink: 0; }
+
+/* — Visual — */
+.aiss-cta-visual { flex-shrink: 0; }
+
+.aiss-cta-visual-inner {
+  width: 280px;
+  height: 280px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.aiss-cta-brain-wrap {
+  width: 100px;
+  height: 100px;
+  background: rgba(96,165,250,.12);
+  border: 2px solid rgba(96,165,250,.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aiss-cta-brain { color: #60a5fa; }
+
+.aiss-cta-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.aiss-cta-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.aiss-cta-stat strong {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.aiss-cta-stat span {
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .aiss-why-grid      { grid-template-columns: repeat(3, 1fr); }
+  .aiss-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .aiss-features-grid { grid-template-columns: repeat(4, 1fr); }
+  .aiss-process-row   { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .aiss-process-connector { display: none; }
+}
+
+@media (max-width: 900px) {
+  .aiss-intro-layout  { grid-template-columns: 1fr; gap: 32px; }
+  .aiss-intro-visual  { display: none; }
+  .aiss-split-layout  { grid-template-columns: 1fr; }
+  .aiss-split-divider { display: none; }
+  .aiss-industry-grid { grid-template-columns: repeat(5, 1fr); }
+  .aiss-cta-inner     { grid-template-columns: 1fr; }
+  .aiss-cta-visual    { display: none; }
+  .aiss-faq-2col      { grid-template-columns: 1fr; }
+  .aiss-why-grid      { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .aiss__hero_title   { font-size: 34px; }
+  .aiss-section-title { font-size: 28px; }
+  .aiss-stats-inner   { gap: 0; }
+  .aiss-stat-item     { min-width: 50%; border-right: none; border-bottom: 1px solid #e8eef8; }
+  .aiss-services-grid { grid-template-columns: 1fr; }
+  .aiss-why-grid      { grid-template-columns: 1fr; }
+  .aiss-features-grid { grid-template-columns: repeat(2, 1fr); }
+  .aiss-industry-grid { grid-template-columns: repeat(2, 1fr); }
+  .aiss-process-row   { grid-template-columns: 1fr; gap: 28px; }
+  .aiss-cta-title     { font-size: 28px; }
+}
+
+
+
+
+
+/* ==========================================================================
+   AI SOFTWARE HERO SECTION STYLES
+   ========================================================================== */
+
+section.aiss__hero {
+  position: relative;
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  color: #ffffff;
+  padding: 100px 24px 80px 24px;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Hide overlapping decorative structures to let the radial gradient define the tone */
+.aiss__hero_gradient {
+  display: none !important;
+}
+
+.aiss__hero_container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centered Breadcrumbs spacing */
+.aiss__hero_container .breadcrumb-wrapper,
+.aiss__hero_container .breadcrumb {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Premium Rounded Pill Badge Layout */
+.aiss__hero_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #38bdf8;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+
+/* Simulated blue-teal active status dot inside badge */
+.aiss__hero_badge::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Bold Main Title Typography */
+.aiss__hero_title {
+  font-size: clamp(2.2rem, 5vw, 4rem); /* Responsive typography base */
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 980px;
+  margin: 0 auto 24px auto;
+  text-align: center;
+}
+
+/* Sky-Blue accent span */
+.aiss__hero_title_accent {
+  color: #38bdf8;
+  display: inline;
+}
+
+/* Soft-white descriptive text */
+.aiss__hero_text {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 840px;
+  margin: 0 auto 36px auto;
+  text-align: center;
+}
+
+/* Centered Action Button Block */
+.aiss-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Primary Button (Solid Sky Blue / High Contrast Dark Text) */
+.aiss-btn-primary {
+  display: inline-block;
+  background-color: #38bdf8;
+  color: #001b3a;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
+}
+
+.aiss-btn-primary:hover {
+  background-color: #25aff2;
+  transform: translateY(-1px);
+}
+
+/* Secondary Button (Outlined White) */
+.aiss-btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border: 1.5px solid rgba(56, 189, 248, 0.4);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.aiss-btn-secondary:hover {
+  border-color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Footer Trust Note */
+.aiss__hero_trust {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN ADAPTATIONS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  section.aiss__hero {
+    padding: 80px 20px 60px 20px;
+  }
+  
+  .aiss-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 340px;
+    margin: 0 auto 24px auto;
+  }
+  
+  .aiss-btn-primary, 
+  .aiss-btn-secondary {
+    text-align: center;
+  }
+}
+
+
+
+
+
+/* Mobile Styles for CTA Buttons */
+@media (max-width: 768px) {
+  .aiss-cta-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;    /* Center buttons horizontally */
+    gap: 16px;              /* Space between buttons */
+    width: 100%;            /* Ensure container takes full width */
+    margin: 0 auto;
+  }
+
+  .aiss-btn-primary,
+  .aiss-btn-secondary {
+    width: 100%;            /* Make both buttons same width */
+    max-width: 320px;       /* Optional: prevents buttons from becoming too wide */
+    height: 55px;           /* Set a fixed height for both */
+    display: flex;          /* Use flex to center text inside buttons */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;             /* Reset padding to ensure height is exact */
+    box-sizing: border-box;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  /* Stack the two columns (text and visual) and center them */
+  .aiss-cta-inner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 40px; /* Adds space between the text and the brain graphic */
+    padding: 40px 20px;
+  }
+
+  /* Ensure the left side content takes full width and centers children */
+  .aiss-cta-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Center the buttons and make them uniform */
+  .aiss-cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .aiss-btn-primary,
+  .aiss-btn-secondary {
+    width: 100%;
+    max-width: 300px; /* Limits width so buttons don't touch screen edges */
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important; /* Removes any existing desktop margins */
+  }
+
+  /* Center the "No commitment" trust line */
+  .aiss-cta-trust {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  /* Center the Brain/Stats graphic */
+  .aiss-cta-visual {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. Stack the layout vertically and center everything */
+  .aiss-intro-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px; /* Space between the visual box, text, and checklist */
+    padding: 20px;
+  }
+
+  /* 2. Ensure the visual box is centered */
+  .aiss-intro-visual {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* 3. Center the text content */
+  .aiss-intro-text {
+    width: 100%;
+  }
+
+  /* 4. Center the checklist block */
+  .aiss-intro-checklist {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Keeps text aligned with checkmarks */
+    width: fit-content;      /* Shrinks container to fit the list */
+    margin: 0 auto;          /* Centers the whole list block */
+    text-align: left;        /* Keeps individual list items readable */
+  }
+
+  /* Optional: Adjust individual check rows for better mobile spacing */
+  .aiss-check-row {
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. Center the main section container and labels */
+  .aiss-split-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the heading and the grid/list */
+    text-align: center;
+    width: 100%;
+  }
+
+  .aiss-split-label {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    display: block;
+  }
+
+  /* 2. Industries Content: Center the icons and text */
+  .aiss-industry-grid {
+    justify-content: center; /* Centers the grid items horizontally */
+    gap: 20px;
+    width: 100%;
+  }
+
+  .aiss-industry-item {
+    align-items: center; /* Centers icon and text within the item */
+    text-align: center;
+  }
+
+  /* 3. Technologies Content: Center the groups and pills */
+  .aiss-tech-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .aiss-tech-group h4 {
+    text-align: center;
+    width: 100%;
+  }
+
+  .aiss-tech-pills {
+    justify-content: center; /* Centers the technology pills */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Remove the vertical divider line on mobile */
+  .aiss-split-divider {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. Center the main container and text */
+  .aiss__hero_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px; /* Adjust spacing for mobile */
+  }
+
+  /* 2. Center the Badge */
+  .aiss__hero_badge {
+    margin: 0 auto 15px auto;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  /* 3. Adjust Title and Text width for better centering */
+  .aiss__hero_title {
+    font-size: 28px; /* Slightly smaller for mobile screens */
+    line-height: 1.3;
+    max-width: 100%;
+  }
+
+  .aiss__hero_text {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 4. Center and stack the Buttons */
+  .aiss-hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    margin: 25px 0;
+  }
+
+  /* Make Hero buttons same length and height */
+  .aiss-hero-actions .aiss-btn-primary,
+  .aiss-hero-actions .aiss-btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  /* 5. Center the Trust text at the bottom */
+  .aiss__hero_trust {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. Reduce the main padding of the hero section */
+  .aiss__hero {
+    padding-top: 40px !important; /* Adjust this number until it looks perfect */
+    padding-bottom: 40px !important;
+    min-height: auto !important; /* Prevents the section from being forced too tall */
+  }
+
+  /* 2. Remove extra top padding from the internal container */
+  .aiss__hero_container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* 3. Adjust the Breadcrumb spacing if it has a top margin */
+  .aiss__hero_container > :first-child {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* 4. Ensure the badge doesn't have a massive top margin */
+  .aiss__hero_badge {
+    margin-top: 5px !important;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  /* 1. Reduce the top gap and center the hero section */
+  .aiss__hero {
+    padding-top: 30px !important; /* Reduces space below Navbar */
+    padding-bottom: 40px !important;
+    text-align: center;
+    min-height: auto !important; /* Prevents awkward empty vertical space */
+  }
+
+  /* 2. Center the container and Breadcrumb */
+  .aiss__hero_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  /* Ensure Breadcrumb component is centered */
+  .aiss__hero_container > :first-child {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  /* 3. Center the Badge */
+  .aiss__hero_badge {
+    margin: 0 auto 15px auto !important;
+    display: inline-block;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  /* 4. MAINTAIN LARGE FONT SIZE for the Title */
+  .aiss__hero_title {
+    font-size: 32px !important; /* Large impactful size as requested */
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    text-align: center;
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+    letter-spacing: -0.02em;
+  }
+
+  .aiss__hero_title_accent {
+    display: block; /* Puts the accent text on its own line for better mobile rhythm */
+  }
+
+  /* 5. Center and adjust the description text */
+  .aiss__hero_text {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    text-align: center;
+    max-width: 100% !important;
+    margin: 0 auto 25px auto !important;
+    padding: 0 5px;
+  }
+
+  /* 6. Center and stack the Buttons (Equal length) */
+  .aiss-hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .aiss-btn-primary,
+  .aiss-btn-secondary {
+    width: 100% !important;
+    max-width: 320px; /* Standard button width for mobile */
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    font-size: 16px;
+  }
+
+  /* 7. Center the "Trusted by" text */
+  .aiss__hero_trust {
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+}
