@@ -1593,3 +1593,930 @@ html body .aiss__wrapper .sp-hero-split .breadcrumb-wrap * {
     text-align: left !important;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   DESKTOP ONLY: MAXIMUM HERO IMAGE EXTRA-LARGE SIZING BUMP
+   ========================================================================== */
+@media (min-width: 1024px) {
+    
+    /* 1. Shift the grid balance to give the image section more breathing room (55% vs 45%) */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid,
+    html body section.sp-hero-split div.sp-hero-split-grid {
+        grid-template-columns: 45% 55% !important; 
+        gap: 0px !important; /* Reduces gap so the larger image doesn't wrap */
+        align-items: center !important;
+    }
+
+    /* 2. Force the image wrapper container to overflow cleanly without clipping */
+    html body div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap,
+    html body div[class*="sp-hero-image-wrap"] {
+        display: flex !important;
+        justify-content: flex-end !important; /* Aligns it beautifully to the right margin */
+        width: 125% !important;               /* Widens the internal box scale */
+        max-width: none !important;
+        overflow: visible !important;          /* Prevents parent clipping */
+    }
+
+    /* 3. Scale up the image asset to massive proportions */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap img.sp-hero-image[class*="sp-hero-image"],
+    html body img.sp-hero-image[src*="softwareservice"] {
+        width: 145% !important;        /* Scales the asset up significantly past its original box */
+        max-width: 850px !important;   /* Highly elevated desktop cap limit */
+        height: auto !important;       /* Maintains perfect original proportions */
+        object-fit: contain !important;
+        display: block !important;
+        transform: scale(1.15) !important; /* Uses hardware acceleration for crisp extra scaling */
+        transform-origin: right center !important;
+    }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   DESKTOP PC ZOOM BUMP (EXCLUSIVELY FOR MONITOR SCREEN LAYOUTS)
+   ========================================================================== */
+@media (min-width: 1024px) {
+    
+    /* 1. Use the most specific possible chained tag selector to force the zoom scaling */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap img.sp-hero-image[class*="sp-hero-image"] {
+        /* Boost width and max-width thresholds to give it room to expand */
+        width: 160% !important;        
+        max-width: 950px !important;   
+        height: auto !important;
+        object-fit: contain !important;
+        
+        /* Apply a clean 1.25x scale matrix boost */
+        transform: scale(1.25) !important; 
+        
+        /* Anchor the zoom to the right side so it expands cleanly into the dark space without hitting text */
+        transform-origin: right center !important; 
+        
+        display: block !important;
+    }
+
+    /* 2. Overhaul parent wrapper parameters so the enlarged asset doesn't get masked/clipped */
+    html body div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap {
+        width: 125% !important;
+        overflow: visible !important; /* Crucial: overrides framework containment layout bounds */
+        display: flex !important;
+        justify-content: flex-end !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   PERFECT CENTER ZOOM (NO RIGHT-SHIFTING)
+   ========================================================================== */
+@media (min-width: 1024px) {
+
+    /* 1. Force the parent wrapper to hold the image perfectly dead-center */
+    html body div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap {
+        display: flex !important;
+        justify-content: center !important; /* Locks it to the exact horizontal center */
+        align-items: center !important;
+        width: 100% !important;
+        max-width: none !important;
+        overflow: visible !important;       /* Allows the zoom to expand past the edges */
+        margin: 0px !important;             /* Clears out any old pushing margins */
+    }
+
+    /* 2. Zoom the image flawlessly right from its center core */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap img.sp-hero-image[class*="sp-hero-image"],
+    html body img.sp-hero-image[src*="softwareservice"] {
+        width: 100% !important; /* Resets base width constraint */
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        
+        /* THE ZOOM: Increase this decimal (e.g., 1.35) if you want it even bigger */
+        transform: scale(1.30) !important; 
+        
+        /* CRUCIAL: Forces the zoom to expand evenly in all directions from the center */
+        transform-origin: center center !important; 
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MAXIMUM SIZE AND WIDTH EXPANSION (DESKTOP PC VIEW)
+   ========================================================================== */
+@media (min-width: 1024px) {
+
+    /* 1. Expand the base width properties to let the image canvas stretch out */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap img.sp-hero-image[class*="sp-hero-image"],
+    html body img.sp-hero-image[src*="softwareservice"] {
+        width: 125% !important;         /* Forces the physical canvas layout width up */
+        max-width: 1100px !important;   /* Completely lifts the pixel ceiling restriction */
+        height: auto !important;        /* Maintains perfect original aspect ratio */
+        object-fit: contain !important;
+        display: block !important;
+        
+        /* 2. Layer an aggressive zoom factor on top of the increased width */
+        transform: scale(1.45) !important; 
+        
+        /* Keeps the expansion balanced equally on all sides from the center core */
+        transform-origin: center center !important; 
+    }
+
+    /* 3. Keep the parent container completely open so it doesn't throttle the new width */
+    html body div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap {
+        width: 100% !important;
+        max-width: none !important;
+        overflow: visible !important;   /* Stops parent edges from cutting off the massive size */
+        display: flex !important;
+        justify-content: center !important; 
+        align-items: center !important;
+        margin: 0px !important;
+    }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   SHIFT ZOOMED IMAGE SLIGHTLY LEFT (PC VIEW)
+   ========================================================================== */
+@media (min-width: 1024px) {
+
+    /* Target the image directly to nudge its position leftward */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap img.sp-hero-image[class*="sp-hero-image"],
+    html body img.sp-hero-image[src*="softwareservice"] {
+        
+        /* Keep your large size and width parameters intact */
+        width: 125% !important;        
+        max-width: 1100px !important;   
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        
+        /* THE ZOOM + LEFT SHIFT COMBINATION */
+        /* translateX(-40px) pulls the image exactly 40 pixels to the left */
+        transform: scale(1.45) translateX(-40px) !important; 
+        
+        /* Keeps the zoom anchor central so it doesn't distort */
+        transform-origin: center center !important; 
+    }
+
+    /* Keep parent boundaries completely clear and open */
+    html body div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap {
+        width: 100% !important;
+        max-width: none !important;
+        overflow: visible !important;   
+        display: flex !important;
+        justify-content: center !important; 
+        align-items: center !important;
+        
+        /* Pull the parent container slightly left as a secondary anchor hook */
+        margin-left: 48px !important; 
+    }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE VIEW ONLY: MAXIMUM FORCE RESPONSIVE OVERRIDE (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* 1. Force the layout grid to stack into a single column so the image drops neatly below the text */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid,
+    html body section.sp-hero-split div.sp-hero-split-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Forces vertical layout stack */
+        gap: 30px !important;                 /* Separates the content block and the image box */
+        width: 100% !important;
+    }
+
+    /* 2. Break open the mobile image wrapper container constraints */
+    html body div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0px auto !important;          /* Keeps it perfectly centered on the smartphone screen */
+        overflow: visible !important;         /* Allows clean canvas boundaries */
+        display: flex !important;
+        justify-content: center !important; 
+        align-items: center !important;
+    }
+
+    /* 3. Force the image to scale naturally without spilling off the screen edges */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap img.sp-hero-image[class*="sp-hero-image"],
+    html body img.sp-hero-image[src*="softwareservice"] {
+        width: 100% !important;         /* Matches mobile phone container margins */
+        max-width: 480px !important;    /* Balanced pixel ceiling profile for mobile viewports */
+        height: auto !important;        /* Prevents aspect ratio crushing or flattening */
+        object-fit: contain !important;
+        display: block !important;
+        
+        /* Clear out the desktop zoom transformations and left translations so it stays in context */
+        transform: scale(1.0) translateX(0px) !important; 
+        transform-origin: center center !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   POWERFUL MOBILE STYLES: BOOST IMAGE SIZE (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* 1. Unshackle the parent containers so they don't squeeze the graphic down */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap,
+    html body div[class*="sp-hero-image-wrap"] {
+        width: 100% !important;
+        max-width: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: visible !important;   /* Crucial: stops the edges from getting hidden */
+        margin-top: 25px !important;    /* Adds clean space between text content and the graphic */
+        margin-bottom: 25px !important;
+    }
+
+    /* 2. Force the illustration itself to break out and expand across the layout */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap img.sp-hero-image[class*="sp-hero-image"],
+    html body img.sp-hero-image[src*="softwareservice"] {
+        /* Boost width properties past the tight framework constraints */
+        width: 135% !important;         /* Pushes the edges wider than the text boundary lines */
+        max-width: 520px !important;    /* Clean maximum pixel limit ceiling for taller phone screens */
+        height: auto !important;        /* Guarantees the aspect ratio won't flatten */
+        object-fit: contain !important;
+        display: block !important;
+        
+        /* Apply a clean center zoom to maximize visibility natively */
+        transform: scale(1.15) !important;
+        transform-origin: center center !important;
+    }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE VIEW ONLY: CENTERED WITH A SLIGHT LEFT NUDGE (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* 1. Target the image directly to increase size and pull it slightly left */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap img.sp-hero-image[class*="sp-hero-image"],
+    html body img.sp-hero-image[src*="softwareservice"] {
+        width: 120% !important;         /* Keeps the enlarged canvas size */
+        max-width: 460px !important;    
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto !important;      
+        
+        /* THE ZOOM + RESPONSIVE LEFT NUDGE */
+        /* translateX(-15px) gently nudges the centered image 15 pixels to the left */
+        transform: scale(1.15) translateX(-15px) !important;
+        
+        /* Keeps the zoom expansion anchored symmetrically */
+        transform-origin: center center !important; 
+    }
+
+    /* 2. Maintain strict container centering parameters */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap,
+    html body div[class*="sp-hero-image-wrap"] {
+        width: 100% !important;
+        max-width: none !important;
+        display: flex !important;
+        justify-content: center !important; 
+        align-items: center !important;     
+        margin-left: auto !important;       
+        margin-right: auto !important;      
+        overflow: visible !important;       /* Allows the nudged/zoomed edges to bleed out cleanly */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE CRUNCH: BREADCRUMB REDUCTION & HEADING CENTERING (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* 1. Target the breadcrumb container and links to reduce font size */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-breadcrumb,
+    html body div.sp-hero-breadcrumb,
+    html body .sp-hero-breadcrumb a,
+    html body [class*="breadcrumb"] {
+        font-size: 11px !important;       /* Clean, compact sizing for mobile screens */
+        letter-spacing: 0.5px !important;
+        text-align: center !important;     /* Keeps the breadcrumb row uniform if it wraps */
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* 2. Target the main hero heading text to force strict horizontal centering */
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container h1,
+    html body section.sp-hero-split h1,
+    html body section.sp-hero-split .sp-hero-title,
+    html body [class*="sp-hero-split"] h1 {
+        text-align: center !important;     /* Forces all lines of the headline to center core */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* 3. Also center the sub-badge ("AI SOFTWARE DEVELOPMENT COMPANY") above it just in case */
+    html body section.sp-hero-split div.aiwd-container div.sp-hero-badge,
+    html body [class*="hero-badge"],
+    html body [class*="company-badge"] {
+        text-align: center !important;
+        margin: 0 auto 15px auto !important; /* Centers the pill box container horizontally */
+        display: table !important;           /* Keeps the border contour tight around the text */
+    }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   1. BASE HERO LAYOUT (Desktop - 1025px and above)
+   Using body chaining to guarantee style priority over global overrides
+   ========================================================================== */
+
+/* Hero container wrapper */
+body div.aiss__wrapper .service-hero {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 8.5rem 2rem 5rem 2rem;
+  background-color: #080c14; /* Deep premium dark background */
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 70%, rgba(168, 85, 247, 0.1) 0%, transparent 45%);
+  overflow: hidden;
+}
+
+/* Subtle tech grid background pattern */
+body div.aiss__wrapper .service-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Inner alignment grid */
+body div.aiss__wrapper .service-hero-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Text Content Column */
+body div.aiss__wrapper .service-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Uppercase decorative badge */
+body div.aiss__wrapper .service-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.1rem;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #a5b4fc;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+/* Heading Structure */
+body div.aiss__wrapper .service-hero-title {
+  font-size: 3.5rem;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+}
+
+body div.aiss__wrapper .service-hero-accent {
+  display: block;
+  background: linear-gradient(135deg, #6366f1 10%, #a855f7 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0.5rem;
+}
+
+/* Hero description paragraph */
+body div.aiss__wrapper .service-hero-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #9ca3af;
+  margin-bottom: 2.5rem;
+  max-width: 620px;
+}
+
+/* Features checklist block */
+body div.aiss__wrapper .service-hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+body div.aiss__wrapper .service-hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+body div.aiss__wrapper .service-hero-feature-icon {
+  color: #10b981; /* Premium Emerald Accent for Trust Icons */
+  flex-shrink: 0;
+}
+
+/* Right-side Media/Graphic Column */
+body div.aiss__wrapper .service-hero-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Image framing container */
+body div.aiss__wrapper .service-hero-img-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body div.aiss__wrapper .service-hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Decorative backdrop blur effect */
+body div.aiss__wrapper .service-hero-media::after {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+  z-index: -1;
+  filter: blur(50px);
+}
+
+
+/* ==========================================================================
+   2. TABLET RESPONSIVENESS (max-width: 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  body div.aiss__wrapper .service-hero {
+    padding-top: 7.5rem;
+    padding-bottom: 4.5rem;
+  }
+  
+  body div.aiss__wrapper .service-hero-title {
+    font-size: 2.85rem;
+  }
+  
+  body div.aiss__wrapper .service-hero-container {
+    gap: 3rem;
+  }
+}
+
+
+/* ==========================================================================
+   3. PERFECTED MOBILE RESPONSIVENESS (max-width: 768px)
+   Adapts grid to a stacked vertical flow optimized for mobile reading.
+   ========================================================================== */
+@media (max-width: 768px) {
+  body div.aiss__wrapper .service-hero {
+    padding-top: 6.5rem; /* Safe padding spacing for header/navbar */
+    padding-bottom: 3.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  body div.aiss__wrapper .service-hero-container {
+    grid-template-columns: 1fr; /* Switch columns to a single stack */
+    gap: 2.5rem; /* Clean vertical spacing between segments */
+    text-align: center;
+  }
+
+  body div.aiss__wrapper .service-hero-content {
+    align-items: center; /* Center badge, headers, and text */
+    text-align: center;
+  }
+
+  body div.aiss__wrapper .service-hero-badge {
+    font-size: 0.75rem;
+    padding: 0.45rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  body div.aiss__wrapper .service-hero-title {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 550px;
+  }
+
+  body div.aiss__wrapper .service-hero-subtitle {
+    font-size: 0.975rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Repositioning the image above description and features for better flow */
+  body div.aiss__wrapper .service-hero-media {
+    order: -1; /* Elevates the hero image above the text on mobile view */
+  }
+
+  body div.aiss__wrapper .service-hero-img-wrapper {
+    max-width: 380px; /* Constrains visual block size on typical mobile screen sizes */
+    border-radius: 16px;
+  }
+
+  /* Optimized Features List on Mobile */
+  body div.aiss__wrapper .service-hero-features {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    margin: 0 auto;
+    display: inline-flex; /* Centers the feature block while keeping list left-aligned */
+    text-align: left;
+  }
+
+  body div.aiss__wrapper .service-hero-feature-item {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ==========================================================================
+   4. MICRO-SCREENS OPTIMIZATION (max-width: 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  body div.aiss__wrapper .service-hero {
+    padding-top: 5.75rem;
+    padding-bottom: 2.5rem;
+  }
+
+  body div.aiss__wrapper .service-hero-title {
+    font-size: 1.85rem;
+    letter-spacing: -0.01em;
+  }
+
+  body div.aiss__wrapper .service-hero-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  body div.aiss__wrapper .service-hero-img-wrapper {
+    max-width: 100%; /* Spans full width of container margin boundaries */
+    border-radius: 12px;
+  }
+
+  body div.aiss__wrapper .service-hero-features {
+    width: 100%;
+  }
+
+  body div.aiss__wrapper .service-hero-feature-item {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE VIEW ONLY: CENTER HEADING AND DESCRIPTION TEXT (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* 1. Perfect horizontal center alignment for the main heading */
+    html body div#__next section.sp-hero-split div.aiwd-container h1,
+    html body section.sp-hero-split h1,
+    html body section.sp-hero-split .sp-hero-title,
+    html body [class*="sp-hero-split"] h1 {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* 2. Perfect horizontal center alignment for the description paragraph */
+    html body div#__next section.sp-hero-split div.aiwd-container p,
+    html body section.sp-hero-split p,
+    html body section.sp-hero-split .sp-hero-desc,
+    html body [class*="sp-hero-split"] p {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+        width: 100% !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE CRITICAL OVERRIDES: CENTER HERO LABEL & SHRINK BREADCRUMBS TO 8PX
+   Targeting max-width: 768px for clean smartphone rendering
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* 1. FORCE THE HERO LABEL/BADGE TO REMAIN CENTERED */
+    html body div.aiss__wrapper .service-hero-badge,
+    html body div.aiss__wrapper .aiss__hero_badge,
+    html body section.sp-hero-split div.aiwd-container div.sp-hero-badge,
+    html body [class*="hero-badge"],
+    html body [class*="company-badge"],
+    html body [class*="hero_badge"] {
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        float: none !important;
+        text-align: center !important;
+    }
+
+    /* 2. FORCE BREADCRUMBS AND ALL NESTED LINKS/SEPARATORS TO 8PX */
+    html body div.aiss__wrapper div.sp-hero-split div.breadcrumb-wrap,
+    html body div.aiss__wrapper div.sp-hero-split div.breadcrumb-wrap *,
+    html body .aiss__wrapper .sp-hero-split .breadcrumb-wrap,
+    html body .aiss__wrapper .sp-hero-split .breadcrumb-wrap *,
+    html body div[class*="aiss__wrapper"] section[class*="sp-hero-split"] div[class*="breadcrumb-wrap"],
+    html body div[class*="aiss__wrapper"] section[class*="sp-hero-split"] div[class*="breadcrumb-wrap"] *,
+    html body .breadcrumb-wrapper,
+    html body .breadcrumb-wrapper *,
+    html body .breadcrumb,
+    html body .breadcrumb *,
+    html body .sp-hero-breadcrumb,
+    html body .sp-hero-breadcrumb *,
+    html body [class*="breadcrumb"],
+    html body [class*="breadcrumb"] * {
+        font-size: 8px !important;
+    }
+}
+
+
+
+
+
+/* ==========================================================================
+   FORCE HERO LABEL (BADGE) PERFECT CENTERING (ALL SCREENS & VIEWPORTS)
+   Applies high specificity to override parent container alignment
+   ========================================================================== */
+html body div.aiss__wrapper .service-hero-badge,
+html body div.aiss__wrapper .aiss__hero_badge,
+html body section.sp-hero-split div.aiwd-container div.sp-hero-badge,
+html body [class*="hero-badge"],
+html body [class*="hero_badge"],
+html body [class*="company-badge"] {
+    /* Set alignment context */
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    
+    /* Centers the badge if the parent is a standard block/grid container */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    /* Centers the badge if the parent is a Flexbox container (e.g. flex-start) */
+    align-self: center !important;
+    
+    /* Clear floats */
+    float: none !important; 
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE VIEW ONLY: SHIFT BREADCRUMBS & HERO LABEL SLIGHTLY RIGHT (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* 1. Shift Breadcrumbs slightly to the right */
+    html body div.aiss__wrapper div.sp-hero-split div.breadcrumb-wrap,
+    html body .aiss__wrapper .sp-hero-split .breadcrumb-wrap,
+    html body div[class*="aiss__wrapper"] div[class*="sp-hero-split"] div[class*="breadcrumb-wrap"],
+    html body div.breadcrumb-wrap,
+    html body .breadcrumb-wrap,
+    html body div[class*="breadcrumb-wrap"] {
+        display: flex !important;
+        justify-content: flex-start !important;  /* Aligns flow to the left */
+        align-items: center !important;
+        width: calc(100% - 32px) !important;
+        margin: 0 0 16px 0 !important;           
+        padding-left: 32px !important;           /* Comfortably pushes breadcrumbs rightward */
+        padding-right: 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. Shift Hero Label (Badge) slightly to the right to line up perfectly */
+    html body div.aiss__wrapper .service-hero-badge,
+    html body div.aiss__wrapper .aiss__hero_badge,
+    html body section.sp-hero-split div.aiwd-container div.sp-hero-badge,
+    html body [class*="hero-badge"],
+    html body [class*="hero_badge"],
+    html body [class*="company-badge"] {
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        
+        /* Align label container to the left side of its parent */
+        align-self: flex-start !important;
+        
+        /* Comfortably pushes the label rightward and clears right margins */
+        margin-left: 39px !important;            
+        margin-right: auto !important;
+        
+        float: none !important;
+    }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE VIEW: SHIFT HERO SPLIT BADGE SLIGHTLY RIGHT (< 768px)
+   Targets the specific span.sp-hero-split-badge element
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    html body div.aiss__wrapper span.sp-hero-split-badge,
+    html body .sp-hero-split-badge,
+    span.sp-hero-split-badge {
+        display: inline-flex !important;
+        align-self: flex-start !important; /* Prevents horizontal stretching or centering */
+        margin-left: 20px !important;      /* Shifts the badge comfortably to the right */
+        margin-right: auto !important;     /* Restricts width growth to fit the text content */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE VIEW: SHIFT BREADCRUMBS SLIGHTLY RIGHT (< 768px)
+   Enforces left-alignment and applies a comfortable rightward shift
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    html body div.aiss__wrapper div.sp-hero-split div.breadcrumb-wrap,
+    html body .aiss__wrapper .sp-hero-split .breadcrumb-wrap,
+    html body div[class*="aiss__wrapper"] div[class*="sp-hero-split"] div[class*="breadcrumb-wrap"],
+    html body div.breadcrumb-wrap,
+    html body .breadcrumb-wrap,
+    html body div[class*="breadcrumb-wrap"],
+    html body div.sp-hero-breadcrumb,
+    html body .sp-hero-breadcrumb,
+    html body [class*="breadcrumb"] {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important;  /* Disables center positioning */
+        align-items: center !important;
+        text-align: left !important;             /* Overrides text-centering rules */
+        
+        width: calc(100% - 44px) !important;     
+        margin: 0 0 16px 0 !important;           /* Resets centering auto-margins */
+        
+        /* Shift: Adjust this value to shift it further right or left */
+        padding-left: 44px !important;           
+        padding-right: 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Enforce left alignment on nested link/text children */
+    html body [class*="breadcrumb"] *,
+    html body .sp-hero-breadcrumb * {
+        text-align: left !important;
+        justify-content: flex-start !important;
+    }
+}

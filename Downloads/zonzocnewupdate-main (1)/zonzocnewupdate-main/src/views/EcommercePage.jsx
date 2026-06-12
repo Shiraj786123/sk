@@ -8,10 +8,7 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
-import { serviceImages } from "../data/serviceImages";
 import "../styles/EcommercePage.css";
-
-const imgs = serviceImages['ecommerce'];
 
 const EcommerceDev = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -44,7 +41,6 @@ const EcommerceDev = () => {
     "More Revenue & Growth",
   ];
 
-  // Modern colorful items for the horizontally moving sitemap cards
   const introItems = [
     { title: "Slow loading speeds lead to higher bounce rates",     icon: <Zap size={32} />,        colorClass: "pink-purple" },
     { title: "Poor mobile experience reduces conversions",          icon: <Smartphone size={32} />, colorClass: "cyan-blue" },
@@ -55,8 +51,8 @@ const EcommerceDev = () => {
   ];
 
   const services = [
-    { icon: "🛍️", title: "Shopify Development",         description: "Custom Shopify stores built for performance, scalability, and high conversions.",       link: "/shopify-development" },
-    { icon: "🧩", title: "WooCommerce Development",      description: "Powerful WooCommerce solutions for growing brands and online businesses.",              link: "/woocommerce-development" },
+    { icon: "🛍️", title: "Shopify Development",         description: "Custom Shopify stores built for performance, scalability, and high conversions.",     link: "/shopify-development" },
+    { icon: "🧩", title: "WooCommerce Development",      description: "Powerful WooCommerce solutions for growing brands and online businesses.",            link: "/woocommerce-development" },
     { icon: "🎨", title: "Ecommerce Design",             description: "Modern, conversion-focused designs that enhance customer experience.",                   link: "/ecommerce-design" },
     { icon: "📈", title: "Conversion Optimization",      description: "Improve product pages, checkout flows, and user journeys to increase sales.",            link: "/cro" },
     { icon: "📱", title: "Mobile Optimization",          description: "Mobile-first ecommerce experiences that drive more mobile conversions.",                  link: "/mobile-optimization" },
@@ -65,16 +61,17 @@ const EcommerceDev = () => {
     { icon: "⚙️", title: "Integrations & Automation",   description: "Payment gateways, CRM, inventory, marketing automation & third-party integrations.",    link: "/integrations" },
   ];
 
-const platforms = [
+  const platforms = [
     { name: "Shopify",      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/shopify/shopify-original.svg",         color: "#96bf48" },
     { name: "WooCommerce",  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/woocommerce/woocommerce-original.svg", color: "#7f54b3" },
     { name: "WordPress",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg",     color: "#21759b" },
     { name: "Stripe",       icon: "https://cdn.simpleicons.org/stripe",                                                             color: "#635bff" },
     { name: "PayPal",       icon: "https://cdn.simpleicons.org/paypal",                                                             color: "#003087" },
-    { name: "Klaviyo",      icon: null,                                                                                              color: "#1b7f3b" },
-    { name: "NX Commerce",  icon: null,                                                                                              color: "#003070" },
-    { name: "Headless",     icon: null,                                                                                              color: "#0d1b3e" },
+    { name: "Klaviyo",      icon: null,                                                                                             color: "#1b7f3b" },
+    { name: "NX Commerce",  icon: null,                                                                                             color: "#003070" },
+    { name: "Headless",     icon: null,                                                                                             color: "#0d1b3e" },
   ];
+
   const results = [
     { stat: "+42%", label: "Increase in Conversion Rate",    sub: "After redesign & CRO Implementation",         icon: "📈" },
     { stat: "+65%", label: "Mobile Performance Boost",       sub: "Faster load times and better mobile experience", icon: "📱" },
@@ -116,20 +113,22 @@ const platforms = [
       <div className="ecd__wrapper">
         <Navbar />
 
-        {/* ── HERO ── */}
-        <ServicePageHero
-          badge="ECOMMERCE DEVELOPMENT & OPTIMIZATION"
-          title="High-Converting Ecommerce Stores Built for"
-          titleAccent="Performance, Scalability & Revenue Growth"
-          subtitle="We design and develop conversion-focused ecommerce stores that turn traffic into revenue. From Shopify and WooCommerce to fully custom platforms — we build scalable, fast, and sales-driven online stores engineered for growth."
-          features={["Conversion-Focused Design", "Shopify & WooCommerce Experts", "Speed & SEO Optimized"]}
-          primaryCta={{ href: "/contact", label: "Get Free Ecommerce Audit →" }}
-          secondaryCta={{ href: "/case-studies", label: "See Our Works →" }}
-          heroImage={imgs.hero}
-          heroAlt={imgs.heroAlt}
-        />
+        {/* ── HERO CONTEXT WRAPPER FOR PRECISE VISUAL POSITIONING ── */}
+        <div className="ecd-hero-custom-context">
+          <ServicePageHero
+            badge="ECOMMERCE DEVELOPMENT & OPTIMIZATION"
+            title="High-Converting Ecommerce Stores Built for"
+            titleAccent="Performance, Scalability & Revenue Growth"
+            subtitle="We design and develop conversion-focused ecommerce stores that turn traffic into revenue. From Shopify and WooCommerce to fully custom platforms — we build scalable, fast, and sales-driven online stores engineered for growth."
+            features={["Conversion-Focused Design", "Shopify & WooCommerce Experts", "Speed & SEO Optimized"]}
+            primaryCta={{ href: "/contact", label: "Get Free Ecommerce Audit →" }}
+            secondaryCta={{ href: "/case-studies", label: "See Our Works →" }}
+            heroImage="/images/ecommerce.png"
+            heroAlt="E-commerce Sales Performance Dashboard Analytics Grid"
+          />
+        </div>
 
-        {/* ── STATS BAR — 6 items with icons ──────────── */}
+        {/* ── STATS BAR ── */}
         <section className="ecd-stats-bar" id="ecd-work">
           <div className="ecd-stats-inner">
             {stats.map((s, i) => (
@@ -142,12 +141,10 @@ const platforms = [
           </div>
         </section>
 
-        {/* ── SECTION 1 — WHY STORES UNDERPERFORM (WITH INF SCRICKER) ── */}
+        {/* ── WHY STORES UNDERPERFORM ── */}
         <section className="ecd-why-section">
           <div className="ecd__container">
             <div className="ecd-why-grid">
-
-              {/* Left — text */}
               <div className="ecd-why-left">
                 <span className="ecd-eyebrow">Why Stores Underperform</span>
                 <h2 className="ecd__heading" style={{ textAlign: 'left', marginBottom: '16px' }}>
@@ -158,7 +155,6 @@ const platforms = [
                 </p>
               </div>
 
-              {/* Right — comparison table */}
               <div className="ecd-comparison-card">
                 <div className="ecd-compare-col ecd-compare-bad">
                   <div className="ecd-compare-head ecd-head-bad">
@@ -185,10 +181,9 @@ const platforms = [
                   ))}
                 </div>
               </div>
-
             </div>
 
-            {/* Sitemap Cards Horizontal Marquee Ticker */}
+            {/* Sitemap Ticker */}
             <div className="ecd-intro-marquee-wrapper">
               <div className="ecd-intro-marquee-track">
                 {[...introItems, ...introItems].map((item, idx) => (
@@ -204,29 +199,24 @@ const platforms = [
                           <CheckCircle2 size={16} className="ecd-intro-check-icon" />
                           <h4 className="ecd-intro-sitemap-card-title">{item.title}</h4>
                         </div>
-                        
-                        {/* Modern Colorful Icon container */}
                         <div className={`ecd-intro-icon-box ${item.colorClass}`}>
                           {item.icon}
                         </div>
-                        
                         <div className="ecd-intro-sitemap-card-footer">
                           <span>Explore</span>
                           <ArrowRight size={14} className="ecd-intro-card-arrow" />
                         </div>
                       </div>
                     </div>
-                    {/* Dotted vertical sitemap connector line */}
                     <div className="ecd-intro-sitemap-line"></div>
                   </div>
                 ))}
               </div>
             </div>
-
           </div>
         </section>
 
-        {/* ── SECTION 2 — SERVICES GRID ─────────────────── */}
+        {/* ── SERVICES GRID ── */}
         <section className="ecd-services-section">
           <div className="ecd__container">
             <div className="ecd-section-head">
@@ -236,7 +226,6 @@ const platforms = [
                 Complete ecommerce solutions — from new store builds to performance optimization and conversion improvements.
               </p>
             </div>
-
             <div className="ecd-services-grid">
               {services.map((svc, i) => (
                 <div key={i} className="ecd-service-card">
@@ -250,7 +239,7 @@ const platforms = [
           </div>
         </section>
 
-        {/* ── PLATFORMS STRIP ───────────────────────────── */}
+        {/* ── PLATFORMS STRIP ── */}
         <section className="ecd-platforms-section">
           <div className="ecd__container">
             <span className="ecd-eyebrow ecd-eyebrow--center">Platforms We Work With</span>
@@ -284,7 +273,7 @@ const platforms = [
           </div>
         </section>
 
-        {/* ── SUCCESS RESULTS — Dark bg stats ───────────── */}
+        {/* ── SUCCESS RESULTS ── */}
         <section className="ecd-results-section">
           <div className="ecd__container">
             <div className="ecd-section-head">
@@ -304,7 +293,7 @@ const platforms = [
           </div>
         </section>
 
-        {/* ── PROCESS — Horizontal 5 steps ──────────────── */}
+        {/* ── PROCESS ── */}
         <section className="ecd-process-section">
           <div className="ecd__container">
             <div className="ecd-section-head">
@@ -314,7 +303,6 @@ const platforms = [
                 A proven process that takes you from strategy to a live, high-performing ecommerce store.
               </p>
             </div>
-
             <div className="ecd-process-track">
               {processSteps.map((step, i) => (
                 <div key={i} className="ecd-process-step">
@@ -330,7 +318,7 @@ const platforms = [
           </div>
         </section>
 
-        {/* ── WHO FOR — Icon tile grid ───────────────────── */}
+        {/* ── WHO FOR ── */}
         <section className="ecd-who-section">
           <div className="ecd__container">
             <div className="ecd-section-head">
@@ -348,7 +336,7 @@ const platforms = [
           </div>
         </section>
 
-        {/* ── FAQ — FULLY RESTORED ORIGINAL ACCORDION WITH ANIMATEPRESENCE ── */}
+        {/* ── FAQ ── */}
         <section className="ecd-faq-section">
           <div className="ecd__container">
             <div className="ecd-section-head">
@@ -385,12 +373,10 @@ const platforms = [
           </div>
         </section>
 
-        {/* ── CTA — SPLIT ORIGINAL CTA WITH FULL FORM CONTROLS ── */}
+        {/* ── CTA WITH FORM ── */}
         <section className="ecd-cta-section">
           <div className="ecd__container">
             <div className="ecd-cta-inner">
-
-              {/* Left */}
               <div className="ecd-cta-left">
                 <h2 className="ecd-cta-title">
                   Ready to Build a High-Converting Ecommerce Store?
@@ -406,7 +392,6 @@ const platforms = [
                 </div>
               </div>
 
-              {/* Right — contact form */}
               <div className="ecd-cta-form-card">
                 <h3 className="ecd-form-heading">Get Free Consultation</h3>
                 <div className="ecd-form-row">
@@ -443,7 +428,6 @@ const platforms = [
                 </div>
                 <button className="ecd-form-btn">Send Message →</button>
               </div>
-
             </div>
           </div>
         </section>

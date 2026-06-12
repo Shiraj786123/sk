@@ -1619,3 +1619,177 @@ h1.ecd__hero_title {
     max-width: 100% !important;
   }
 }
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   TARGETED HERO ENGINE: /44.png ORIENTATION STYLES
+   ========================================================================== */
+
+/* Anti-Jitter Lock across the viewport */
+.ecd__wrapper {
+  overflow-x: hidden !important;
+  position: relative;
+  width: 100%;
+}
+
+/* ── MOBILE VIEW PRESETS (Under 991px Viewport) ── */
+@media (max-width: 991px) {
+  .ecd-hero-custom-context img[src*="44.png"] {
+    width: 145% !important;        /* Scales structural presence */
+    max-width: 145% !important;    
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 2rem auto 0 auto !important;
+
+    /* ZOOMS IN AND SHIFTS SLIGHTLY TO THE RIGHT EDGE */
+    transform: scale(1.35) translateX(12%) !important; 
+    transform-origin: center center !important;
+  }
+  
+  /* Forces internal parent layout nodes to accept overflowing image elements */
+  .ecd-hero-custom-context div[class*="-image-wrap"],
+  .ecd-hero-custom-context div[class*="image"],
+  .ecd-hero-custom-context .div\.sp-hero-image-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important; 
+    padding: 0 !important;
+    display: block !important;
+  }
+}
+
+/* ── DESKTOP VIEW PRESETS (992px Viewport & Above) ── */
+@media (min-width: 992px) {
+  .ecd-hero-custom-context img[src*="44.png"] {
+    width: 165% !important;
+    max-width: none !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+    
+    /* Matches original design: shifted right, magnified, raised slightly */
+    transform: scale(1.38) translateX(14%) translateY(-4%) !important;
+    transform-origin: right center !important;
+    border-radius: 0px !important;
+  }
+
+  /* Unclogs desktop layout wrappers */
+  .ecd-hero-custom-context div[class*="-image-wrap"] {
+    overflow: visible !important;
+  }
+}
+
+
+
+
+
+
+
+/* Highly specific selector to target the Ecommerce hero image and override base styles */
+@media (min-width: 992px) {
+    div.ecd-hero-custom-context div[class*="-image-wrap"] img[src*="ecommerce"],
+    div.ecd-hero-custom-context div[class*="-image-wrap"] img[src*="44"] {
+        width: 150% !important;
+        max-width: none !important;
+        height: auto !important;
+        object-fit: contain !important;
+        margin: 0 !important;
+        
+        /* Forces the magnification, shifts it right, and lifts it slightly */
+        transform: scale(1.38) translateX(14%) translateY(-4%) !important;
+        transform-origin: right center !important;
+        border-radius: 0px !important;
+    }
+
+    /* Ensures the parent wrapper doesn't crop the magnified image */
+    div.ecd-hero-custom-context div[class*="-image-wrap"] {
+        overflow: visible !important;
+    }
+}
+
+
+
+
+
+/* ==========================================================================
+   HYPER-ISOLATED SELECTOR (TARGETS ONLY THE E-COMMERCE HERO IMAGE)
+   ========================================================================== */
+
+/* --- Desktop Layout (Min-width: 992px) --- */
+@media (min-width: 992px) {
+    /* Chains Section Class + Wrap Class + Explicit Filename Attributes */
+    section.ecd-hero-custom-context div.sp-hero-image-wrap img[src*="ecommerce"],
+    section.ecd-hero-custom-context div.sp-hero-image-wrap img[src*="44"] {
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        object-fit: contain !important;
+        margin: 0 !important;
+        
+        /* Apply exact scale and positional offsets */
+        transform: scale(1.38) translateX(14%) translateY(-4%) !important;
+        transform-origin: right center !important;
+        border-radius: 0px !important;
+    }
+
+    /* Unclogs the parent wrapper containment box just for this instance */
+    section.ecd-hero-custom-context div.sp-hero-image-wrap {
+        overflow: visible !important;
+    }
+}
+
+/* --- Mobile/Tablet Layout (Max-width: 991px) --- */
+@media (max-width: 991px) {
+    section.ecd-hero-custom-context div.sp-hero-image-wrap img[src*="ecommerce"],
+    section.ecd-hero-custom-context div.sp-hero-image-wrap img[src*="44"] {
+        width: 140% !important;
+        max-width: 140% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        margin: 1.5rem auto 0 auto !important;
+        display: block !important;
+        
+        /* Mobile-specific scale adjustments */
+        transform: scale(1.1) translateX(-5%) !important;
+        transform-origin: center center !important;
+    }
+    
+    section.ecd-hero-custom-context div.sp-hero-image-wrap {
+        overflow: visible !important;
+    }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   THE ABSOLUTE MAXIMUM SPECIFICITY OVERRIDE FOR BREADCRUMB FONT
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Targets the inner spans, text nodes, and active links inside the breadcrumb */
+    html body div#__next div[class*="ecd__wrapper"] section.sp-hero-split div.sp-hero-split-content div.breadcrumb-wrap,
+    html body div#__next div[class*="ecd__wrapper"] section.sp-hero-split div.sp-hero-split-content div.breadcrumb-wrap *,
+    html body div#__next div[class*="ecd__wrapper"] section[class*="sp-hero-split"] div[class*="breadcrumb-wrap"] span,
+    html body div div.breadcrumb-wrap span.active,
+    span.active {
+        font-size: 9px !important;
+        white-space: nowrap !important;
+        letter-spacing: 0px !important;
+    }
+}
+
+
+
+
+

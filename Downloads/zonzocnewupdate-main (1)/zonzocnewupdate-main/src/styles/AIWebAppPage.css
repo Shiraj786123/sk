@@ -1253,3 +1253,170 @@ html body .aiwa__wrapper .sp-hero-split .breadcrumb-wrap * {
     font-weight: 700 !important;
   }
 }
+
+
+
+
+
+
+.sp-hero-image {
+  width: 100%;
+  height: auto; /* Ensures aspect ratio is maintained */
+  border-radius: 16px;
+  object-fit: contain; /* Ensures the whole image is visible without cropping */
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35));
+}
+
+
+
+
+
+
+/* Targets your specific image file, scales it to 160%, and lifts it upward */
+img[src*="webbapp.png"] {
+  width: 160% !important;
+  max-width: none !important;
+  height: auto !important;
+  object-fit: contain !important;
+  
+  /* scale(1.35) maintains your visual sharpness
+    translateX(12%) keeps it beautifully flush to the right edge
+    translateY(-5%) is what lifts the image UP slightly
+  */
+  transform: scale(1.35) translateX(12%) translateY(-5%) !important;
+  transform-origin: right center !important;
+  border-radius: 0px !important;
+}
+
+
+
+
+
+/* ==========================================================================
+   RESPONSIVE HERO IMAGE OVERRIDES (Option 2 - Attribute Match)
+   ========================================================================== */
+
+/* 1. GLOBAL MOBILE & TABLET STYLES (Under 992px Viewport) */
+img[src*="webbapp.png"] {
+  width: 100% !important;
+  max-width: 450px !important; /* Prevents the image from getting abnormally huge on tablets */
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 2rem auto 0 auto !important; /* Centers the image nicely below the text on mobile */
+  display: block !important;
+  transform: none !important; /* Resets any desktop scaling/shifting on mobile */
+}
+
+/* 2. POWERFUL DESKTOP ONLY STYLES (992px Viewport and Up) */
+@media (min-width: 992px) {
+  /* Prevent horizontal scrollbars when the image scales past the screen edge */
+  body, html, .aiwa__wrapper {
+    overflow-x: hidden !important;
+  }
+
+  img[src*="webbapp.png"] {
+    width: 160% !important;
+    max-width: none !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+    
+    /* Perfect Desktop Configuration:
+       - scale(1.35) handles the heavy magnification
+       - translateX(12%) flushes it to the right edge
+       - translateY(-5%) lifts it upward slightly
+    */
+    transform: scale(1.35) translateX(12%) translateY(-5%) !important;
+    transform-origin: right center !important;
+    border-radius: 0px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   PERFECT RESPONSIVE IMAGE HANDLER (Strict Isolation)
+   ========================================================================== */
+
+/* 1. MOBILE ONLY STYLES (Only applies between 0px and 991px screen width) */
+@media (max-width: 991px) {
+  img[src*="webbapp.png"] {
+    width: 140% !important;        /* Forces it to stretch wider on mobile screens */
+    max-width: 140% !important;    /* Overrides any default max-width limits */
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    
+    /* Center it visually and give it a slight scale boost to fit edge-to-edge */
+    margin: 1.5rem auto 0 auto !important;
+    transform: scale(1.1) translateX(-5%) !important; 
+    transform-origin: center center !important;
+  }
+  
+  /* Forces the mobile parent wrapper to step aside and allow the image to grow */
+  .div\.sp-hero-image-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important; /* Prevents the container from clipping your image sides */
+    padding: 0 !important;
+  }
+}
+
+/* 2. DESKTOP ONLY STYLES (Only applies from 992px screen width and up) */
+@media (min-width: 992px) {
+  body, html, .aiwa__wrapper {
+    overflow-x: hidden !important;
+  }
+
+  img[src*="webbapp.png"] {
+    width: 160% !important;
+    max-width: none !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+    
+    /* Your perfect desktop positioning coordinates */
+    transform: scale(1.35) translateX(12%) translateY(-5%) !important;
+    transform-origin: right center !important;
+    border-radius: 0px !important;
+  }
+}
+
+
+
+
+
+/* ==========================================================================
+   UPDATED MOBILE SPECIFIC CONFIGURATION (Under 991px)
+   ========================================================================== */
+@media (max-width: 991px) {
+  img[src*="webbapp.png"] {
+    width: 140% !important;        
+    max-width: 140% !important;    
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 1.5rem auto 0 auto !important;
+
+    /* - scale(1.25) bumps the zoom up significantly on mobile screens
+       - translateX(8%) pushes the graphic slightly towards the right edge
+    */
+    transform: scale(1.25) translateX(2%) !important; 
+    transform-origin: center center !important;
+  }
+  
+  /* Keeps parent containers open so the zoomed graphic can break past boundaries */
+  .div\.sp-hero-image-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important; 
+    padding: 0 !important;
+  }
+}

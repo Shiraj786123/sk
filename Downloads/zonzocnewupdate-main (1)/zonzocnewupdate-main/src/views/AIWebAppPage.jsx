@@ -32,7 +32,7 @@ const AIWebAppDev = () => {
   ];
 
   const services = [
-    { icon: <Layers size={28} />,       title: "Custom SaaS Development",                   desc: "Scalable SaaS platforms with multi-tenant architecture, subscriptions, and secure user management." },
+    { icon: <Layers size={28} />,       title: "Custom SaaS Development",                  desc: "Scalable SaaS platforms with multi-tenant architecture, subscriptions, and secure user management." },
     { icon: <BarChart3 size={28} />,    title: "AI Dashboard Development",                  desc: "Real-time dashboards with powerful analytics, reporting, and data visualization." },
     { icon: <Settings size={28} />,     title: "Workflow Automation Systems",                desc: "Automate business processes, approvals, notifications, and internal workflows." },
     { icon: <Bot size={28} />,          title: "AI Chatbot & Virtual Assistant Integration", desc: "Integrate smart AI assistants to enhance customer support and automate interactions." },
@@ -43,7 +43,7 @@ const AIWebAppDev = () => {
   ];
 
   const whyChoose = [
-    { icon: <Layers size={22} />,  title: "Scalable Architecture",      desc: "Built for performance, flexibility, and long-term growth.",                           colorClass: "wc-cyan"   },
+    { icon: <Layers size={22} />,  title: "Scalable Architecture",      desc: "Built for performance, flexibility, and long-term growth.",                       colorClass: "wc-cyan"   },
     { icon: <Cpu size={22} />,     title: "AI & Automation Expertise",  desc: "Smart solutions that automate and optimize business processes.",                      colorClass: "wc-purple" },
     { icon: <Layout size={22} />,  title: "Modern UI/UX Design",        desc: "Clean, intuitive, and user-focused interfaces that engage.",                          colorClass: "wc-blue"   },
     { icon: <Shield size={22} />,  title: "Secure & High Performance",  desc: "Security-first development with fast, reliable, and optimized applications.",         colorClass: "wc-green"  },
@@ -88,17 +88,17 @@ const AIWebAppDev = () => {
   ];
 
   const technologies = [
-    { name: "React",      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",                              color: "#61dafb" },
-    { name: "Next.js",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",                            color: "#000000" },
-    { name: "Node.js",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",                            color: "#339933" },
-    { name: "Laravel",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",                          color: "#ff2d20" },
-    { name: "Python",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",                            color: "#3776ab" },
+    { name: "React",      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",                          color: "#61dafb" },
+    { name: "Next.js",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",                         color: "#000000" },
+    { name: "Node.js",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",                         color: "#339933" },
+    { name: "Laravel",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",                        color: "#ff2d20" },
+    { name: "Python",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",                         color: "#3776ab" },
     { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",                    color: "#336791" },
-    { name: "MongoDB",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",                          color: "#47a248" },
+    { name: "MongoDB",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",                        color: "#47a248" },
     { name: "AWS",        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg", color: "#ff9900" },
-    { name: "Firebase",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",                        color: "#ffca28" },
-    { name: "Docker",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",                            color: "#2496ed" },
-    { name: "REST APIs",  icon: null,                                                                                                               color: "#002d62" },
+    { name: "Firebase",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",                      color: "#ffca28" },
+    { name: "Docker",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",                         color: "#2496ed" },
+    { name: "REST APIs",  icon: null,                                                                                                          color: "#002d62" },
   ];
 
   const faqs = [
@@ -114,15 +114,15 @@ const AIWebAppDev = () => {
     <div className="aiwa__wrapper">
       <Navbar />
 
-      {/* ═══ HERO — KEPY AS IS ═══ */}
+      {/* ═══ HERO — CONFIGURABLE PNG REPLACEMENT ═══ */}
       <ServicePageHero
         badge="AI Web Application Development"
         title="Custom AI Web Applications Built for"
         titleAccent="Automation, Scalability & Growth"
         subtitle="We design and build intelligent AI web applications that automate workflows, process data, and scale with your business — serving companies across the UK, USA, and worldwide."
         features={["AI Powered Solutions", "Scalable Architecture", "Secure & Reliable"]}
-        heroImage={imgs.hero}
-        heroAlt={imgs.heroAlt}
+        heroImage="/images/aiwebbapp.png" 
+        heroAlt={imgs.heroAlt || "AI Web Application Development"}
       />
 
       {/* ═══ CUSTOM INTRO SECTION WITH HORIZONTAL MARQUEE TRACK ═══ */}
@@ -137,10 +137,8 @@ const AIWebAppDev = () => {
               AI web application development combines powerful web technologies with artificial intelligence and automation to create smart, data-driven applications that improve efficiency and user experiences.
             </p>
             
-            {/* Seamless Horizontally Moving Grid wrapper */}
             <div className="aiwa-intro-marquee-wrapper">
               <div className="aiwa-intro-marquee-track">
-                {/* Duplicated list once to ensure infinite loop consistency */}
                 {[...introItems, ...introItems].map((item, idx) => (
                   <div key={idx} className="aiwa-intro-sitemap-col">
                     <div className="aiwa-intro-sitemap-card">
@@ -155,7 +153,6 @@ const AIWebAppDev = () => {
                           <h4 className="aiwa-intro-sitemap-card-title">{item.title}</h4>
                         </div>
                         
-                        {/* Modern Colorful Icon container replacing the wireframe */}
                         <div className={`aiwa-intro-icon-box ${item.colorClass}`}>
                           {item.icon}
                         </div>
@@ -166,7 +163,6 @@ const AIWebAppDev = () => {
                         </div>
                       </div>
                     </div>
-                    {/* Dotted connecting line below each card */}
                     <div className="aiwa-intro-sitemap-line"></div>
                   </div>
                 ))}

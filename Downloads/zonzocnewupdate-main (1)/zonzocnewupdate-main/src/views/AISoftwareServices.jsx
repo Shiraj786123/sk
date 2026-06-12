@@ -14,10 +14,7 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
-import { serviceImages } from "../data/serviceImages";
 import "../styles/AISoftwareServices.css";
-
-const imgs = serviceImages['ai-software'];
 
 /* ─── DATA ──────────────────────────────────────────── */
 
@@ -31,7 +28,7 @@ const stats = [
 ];
 
 const services = [
-  { icon: <Bot size={28} />,       title: "AI Chatbot Development",           desc: "Build intelligent chatbots and virtual assistants for customer support, lead generation, and automation." },
+  { icon: <Bot size={28} />,       title: "AI Chatbot Development",         desc: "Build intelligent chatbots and virtual assistants for customer support, lead generation, and automation." },
   { icon: <Brain size={28} />,     title: "OpenAI & GPT Integration",         desc: "Integrate OpenAI, ChatGPT, and AI APIs into your existing systems and workflows." },
   { icon: <Workflow size={28} />,  title: "Business Process Automation",      desc: "Automate repetitive tasks, approvals, notifications, reporting systems, and operational processes." },
   { icon: <BarChart4 size={28} />, title: "AI Analytics & Data Intelligence", desc: "Transform raw data into real-time insights, dashboards, reports, and predictive analytics." },
@@ -42,7 +39,7 @@ const services = [
 ];
 
 const whyChoose = [
-  { icon: <Rocket size={22} />,    title: "Business-Focused AI Solutions",         desc: "We build solutions around your workflows, challenges, and business growth objectives.",        color: "wc-blue"   },
+  { icon: <Rocket size={22} />,    title: "Business-Focused AI Solutions",         desc: "We build solutions around your workflows, challenges, and business growth objectives.",         color: "wc-blue"   },
   { icon: <Layers size={22} />,    title: "Scalable & Future-Ready Architecture",  desc: "Flexible and scalable systems designed for growth and expansion.",                             color: "wc-purple" },
   { icon: <Brain size={22} />,     title: "AI & Automation Expertise",             desc: "We combine AI technologies and automation to deliver smart solutions.",                         color: "wc-cyan"   },
   { icon: <Shield size={22} />,    title: "Secure & High Performance",             desc: "Built with security, speed, and reliability to support enterprise-level operations.",            color: "wc-green"  },
@@ -67,8 +64,8 @@ const techGroups = [
   {
     category: "AI & Machine Learning",
     items: [
-      { name: "OpenAI APIs",  icon: null,                                                                                                       color: "#10a37f" },
-      { name: "LangChain",    icon: null,                                                                                                       color: "#1c3c59" },
+      { name: "OpenAI APIs",  icon: null,                                                                                                     color: "#10a37f" },
+      { name: "LangChain",    icon: null,                                                                                                     color: "#1c3c59" },
       { name: "Python",       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",                     color: "#3776ab" },
       { name: "TensorFlow",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",             color: "#ff6f00" },
       { name: "Scikit-learn", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg",           color: "#f7931e" },
@@ -77,7 +74,7 @@ const techGroups = [
   {
     category: "Backend & Cloud",
     items: [
-      { name: "Node.js",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",                       color: "#339933" },
+      { name: "Node.js",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",                      color: "#339933" },
       { name: "Laravel",   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",                     color: "#ff2d20" },
       { name: "AWS",       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg", color: "#ff9900" },
       { name: "Firebase",  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",                   color: "#ffca28" },
@@ -87,10 +84,10 @@ const techGroups = [
   {
     category: "Automation & APIs",
     items: [
-      { name: "Zapier",          icon: null,                                                                                                     color: "#ff4a00" },
-      { name: "Make",            icon: null,                                                                                                     color: "#6d00cc" },
-      { name: "Webhooks",        icon: null,                                                                                                     color: "#003070" },
-      { name: "REST APIs",       icon: null,                                                                                                     color: "#003070" },
+      { name: "Zapier",          icon: null,                                                                                                      color: "#ff4a00" },
+      { name: "Make",            icon: null,                                                                                                      color: "#6d00cc" },
+      { name: "Webhooks",        icon: null,                                                                                                      color: "#003070" },
+      { name: "REST APIs",       icon: null,                                                                                                      color: "#003070" },
       { name: "Docker",          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",                  color: "#2496ed" },
     ],
   },
@@ -124,18 +121,17 @@ const faqs = [
   { question: "How much does AI software development cost in the USA, UK, or UAE?",  answer: "Pricing depends on the software scope, AI integrations, automation complexity, and technical requirements. Contact us for a free tailored quote with no hidden fees." },
   { question: "Can you integrate OpenAI or ChatGPT into existing systems?",           answer: "Yes. We integrate OpenAI APIs, ChatGPT, automation tools, and AI workflows into existing software platforms with minimal disruption to your operations." },
   { question: "Do you develop enterprise AI software solutions?",                     answer: "Yes. We build scalable AI-powered enterprise systems designed for automation, analytics, integrations, and operational efficiency at any scale." },
-  { question: "Can AI automate business processes?",                                  answer: "Yes. AI software can automate repetitive workflows, customer interactions, reporting systems, and operational tasks — freeing your team for high-value work." },
+  { question: "Can AI automate business processes?",                                answer: "Yes. We software can automate repetitive workflows, customer interactions, reporting systems, and operational tasks — freeing your team for high-value work." },
   { question: "How long does it take to build custom AI software?",                   answer: "A simple chatbot or automation tool can be delivered in 4–8 weeks. Complex multi-system AI platforms typically take 3–5 months with clear milestones." },
-  { question: "Do you provide ongoing support and maintenance?",                      answer: "Yes. We provide updates, monitoring, optimization, AI model improvements, and long-term technical support as your business needs evolve." },
+  { question: "Do you provide ongoing support and maintenance?",                    answer: "Yes. We provide updates, monitoring, optimization, AI model improvements, and long-term technical support as your business needs evolve." },
 ];
 
 const AISoftwareServices = () => {
   const [activeFaq, setActiveFaq] = useState(null);
 
-  // Re-created horizontal sitemap list items with custom colorful icons
   const introItems = [
     { title: "Automate repetitive business tasks",     icon: <RefreshCw size={32} />,  colorClass: "pink-purple" },
-    { title: "Process and analyze large datasets",      icon: <Database size={32} />,   colorClass: "cyan-blue" },
+    { title: "Process and analyze large datasets",     icon: <Database size={32} />,   colorClass: "cyan-blue" },
     { title: "Improve operational efficiency",          icon: <Settings size={32} />,   colorClass: "lime-green" },
     { title: "Generate intelligent insights",           icon: <Sparkles size={32} />,   colorClass: "orange-yellow" },
     { title: "Enhance customer experiences",            icon: <UserCheck size={32} />,  colorClass: "purple-indigo" },
@@ -146,18 +142,17 @@ const AISoftwareServices = () => {
     <div className="aiss__wrapper">
       <Navbar />
 
-      {/* ═══ HERO — KEPT AS IS ═══ */}
+      {/* ═══ HERO SECTION (PASSED DIRECT AS CLEAN IMMUTABLE STATIC STRING PATH) ═══ */}
       <ServicePageHero
         badge="AI Software Development Company"
         title="Custom AI Software Development That"
         titleAccent="Automates Operations & Accelerates Growth"
         subtitle="We design and build intelligent AI software solutions including custom chatbots, workflow automation systems, GPT-powered tools, and business integrations that reduce manual work and scale with your business."
         features={["Trusted in USA, UK & UAE", "5-Star Client Rating", "Enterprise-Ready Solutions"]}
-        heroImage={imgs.hero}
-        heroAlt={imgs.heroAlt}
+        heroImage="/images/softwareservice.png"
       />
 
-      {/* ═══ STATS BAR — KEPT AS IS ═══ */}
+      {/* ═══ STATS BAR ═══ */}
       <section className="aiss-stats-section">
         <div className="aiss-stats-inner">
           {stats.map((s, i) => (
@@ -169,7 +164,7 @@ const AISoftwareServices = () => {
         </div>
       </section>
 
-      {/* ═══ CUSTOM INTRO SECTION WITH HORIZONTAL MARQUEE TRACK (NO IMAGE) ═══ */}
+      {/* ═══ CUSTOM INTRO SECTION WITH HORIZONTAL MARQUEE TRACK ═══ */}
       <section className="aiss-intro-section">
         <div className="aiss-container">
           <div className="aiss-intro-content">
@@ -181,7 +176,6 @@ const AISoftwareServices = () => {
               Custom AI software development involves building intelligent systems tailored to automate business operations, improve decision-making, reduce manual workloads, and integrate seamlessly with existing platforms and workflows.
             </p>
             
-            {/* Horizontal ticker flow */}
             <div className="aiss-intro-marquee-wrapper">
               <div className="aiss-intro-marquee-track">
                 {[...introItems, ...introItems].map((item, idx) => (
@@ -198,7 +192,6 @@ const AISoftwareServices = () => {
                           <h4 className="aiss-intro-sitemap-card-title">{item.title}</h4>
                         </div>
                         
-                        {/* Modern Colorful Icon container */}
                         <div className={`aiss-intro-icon-box ${item.colorClass}`}>
                           {item.icon}
                         </div>
@@ -209,7 +202,6 @@ const AISoftwareServices = () => {
                         </div>
                       </div>
                     </div>
-                    {/* Vertical connecting line */}
                     <div className="aiss-intro-sitemap-line"></div>
                   </div>
                 ))}
@@ -220,7 +212,7 @@ const AISoftwareServices = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — Services 4-column grid ═══ */}
+      {/* ═══ SERVICES GRID ═══ */}
       <section className="aiss-services-section">
         <div className="aiss-container">
           <div className="aiss-section-head">
@@ -241,7 +233,7 @@ const AISoftwareServices = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — Why Businesses Choose Us ═══ */}
+      {/* ═══ WHY CHOOSE US ═══ */}
       <section className="aiss-why-section">
         <div className="aiss-container">
           <div className="aiss-section-head">
@@ -259,7 +251,7 @@ const AISoftwareServices = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — Industries + Technologies (split) ═══ */}
+      {/* ═══ INDUSTRIES + TECHNOLOGIES SPLIT ═══ */}
       <section className="aiss-split-section">
         <div className="aiss-container">
           <div className="aiss-split-layout">
@@ -280,7 +272,7 @@ const AISoftwareServices = () => {
             {/* Divider */}
             <div className="aiss-split-divider" />
 
-            {/* Right — Technologies with icons */}
+            {/* Right — Technologies */}
             <div className="aiss-split-col">
               <span className="aiss-split-label">Technologies We Use</span>
               <div className="aiss-tech-groups">
@@ -322,7 +314,7 @@ const AISoftwareServices = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 — Process (6 steps) ═══ */}
+      {/* ═══ PROCESS SECTION ═══ */}
       <section className="aiss-process-section">
         <div className="aiss-container">
           <div className="aiss-section-head">
@@ -343,7 +335,7 @@ const AISoftwareServices = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — AI Features icon grid ═══ */}
+      {/* ═══ AI FEATURES GRID ═══ */}
       <section className="aiss-features-section">
         <div className="aiss-container">
           <div className="aiss-section-head">
@@ -360,7 +352,7 @@ const AISoftwareServices = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 7 — FAQ 2-column with Framer Motion height slide ═══ */}
+      {/* ═══ FAQ SECTION ═══ */}
       <section className="aiss-faq-section">
         <div className="aiss-container">
           <div className="aiss-section-head">
@@ -396,7 +388,7 @@ const AISoftwareServices = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 8 — CTA (dark, with AI visual) ═══ */}
+      {/* ═══ CTA SECTION ═══ */}
       <section className="aiss-cta-section">
         <div className="aiss-container">
           <div className="aiss-cta-inner">
@@ -422,7 +414,7 @@ const AISoftwareServices = () => {
               </div>
             </div>
 
-            {/* Right — AI visual */}
+            {/* Right */}
             <div className="aiss-cta-visual">
               <div className="aiss-cta-visual-inner">
                 <div className="aiss-cta-brain-wrap">

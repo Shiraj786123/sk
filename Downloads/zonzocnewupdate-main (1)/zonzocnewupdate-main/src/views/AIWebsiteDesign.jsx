@@ -13,10 +13,10 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
-import { serviceImages } from "../data/serviceImages";
 import "../styles/AIWebsiteDesign.css";
 
-const imgs = serviceImages['ai-website-design'];
+// Re-imported the working static reference (2 levels up from src/views/)
+import heroImg from "../../public/images/aiwebdesign.jpeg";
 
 const AIWebsiteDesign = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -66,7 +66,7 @@ const AIWebsiteDesign = () => {
     { title: "Landing Page Design",             icon: <Rocket size={30} />,     description: "High-converting landing pages built to increase leads, inquiries, and conversions." },
     { title: "Ecommerce Website Development",   icon: <Zap size={30} />,        description: "Modern ecommerce websites designed to improve user experience and increase sales." },
     { title: "Website Redesign Services",       icon: <RefreshCw size={30} />,  description: "Transform outdated websites into modern, high-performing digital platforms." },
-    { title: "Smart Automation Integration",    icon: <Settings size={30} />,   description: "Automate forms, lead capture, notifications, workflows, and customer communication." },
+    { title: "Smart Automation Integration",    icon: <Settings size={30} />,   description: "Automate forms, lead canvas, notifications, workflows, and customer communication." },
     { title: "Ongoing Support & Maintenance",   icon: <ShieldCheck size={30} />,description: "We keep your website secure, updated, and performing at its best all the time." },
   ];
 
@@ -116,6 +116,83 @@ const AIWebsiteDesign = () => {
 
   return (
     <div className="aiwd-master-wrapper">
+      
+      {/* SAFE INJECTED CSS THAT RESOLVES SERVER-SIDE HYDRATION MISMATCHES */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        /* 1. Make the hero container wider to let the image grow to its full size */
+        .aiwd-master-wrapper .aiwd-hero .aiwd-container,
+        .aiwd-master-wrapper .sp-hero-split .aiwd-container {
+          max-width: 1400px !important;
+          width: 100% !important;
+        }
+
+        /* 2. Balance the columns: Allocate 45% to text and 55% to the image */
+        @media (min-width: 1025px) {
+          .aiwd-master-wrapper .sp-hero-split-grid {
+            display: grid !important;
+            grid-template-columns: 45% 55% !important; 
+            align-items: center !important;
+            gap: 10px !important; /* Kept tight to keep laptop close to text */
+          }
+          
+          /* Pull the image wrapper to the left closer to the description text */
+          .aiwd-master-wrapper .sp-hero-image-wrap {
+            justify-content: flex-start !important; 
+            margin-left: -100px !important; 
+          }
+        }
+
+        /* 3. Increase vertical padding of the hero to give the layout breathing room */
+        .aiwd-master-wrapper .sp-hero-split {
+          padding: 120px 0 100px !important;
+        }
+
+        /* 4. Complete reset of any borders, backgrounds, shadows, or rounded corners on the wrapper */
+        .aiwd-master-wrapper .sp-hero-image-wrap {
+          max-width: 100% !important;         
+          width: 100% !important;
+          height: auto !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+          border-radius: 0 !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          overflow: visible !important;
+          isolation: isolate !important;
+        }
+
+        /* 5. Scale up the image, blend seamlessly, and keep central area completely sharp */
+        .aiwd-master-wrapper .sp-hero-image-wrap img,
+        .aiwd-master-wrapper [class*="hero-image-wrap"] img {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          display: block !important;
+          border-radius: 0 !important;
+          border: none !important;
+          box-shadow: none !important;
+          object-fit: contain !important;
+          
+          /* Force GPU rendering in Chrome to activate blend modes correctly */
+          transform: translate3d(0, 0, 0) !important;
+          will-change: transform !important;
+          
+          /* Blends the image background into absolute transparency */
+          mix-blend-mode: screen !important;
+          
+          /* FIXED: Restored balanced contrast filters to push the dark blue-gray JPEG background to absolute transparent black */
+          filter: brightness(0.85) contrast(1.2) !important;
+          
+          /* FIXED: Soft, wide elliptical mask (95% horizontal, 85% vertical) with solid center up to 60% to completely eliminate "eyebrow" lines */
+          mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%) !important;
+          -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%) !important;
+        }
+      ` }} />
+
       <Navbar />
 
       {/* ═══ HERO ═══ */}
@@ -125,8 +202,8 @@ const AIWebsiteDesign = () => {
         titleAccent="Converts Visitors Into Customers"
         subtitle="We build high-performing AI-powered websites for businesses in the UK, USA, and worldwide — combining modern design, smart automation, and conversion-focused development to turn traffic into real results."
         features={heroFeatures}
-        heroImage={imgs.hero}
-        heroAlt={imgs.heroAlt}
+        heroImage={heroImg} 
+        heroAlt="AI Website Design & Development"
       />
 
       {/* ═══ CUSTOM INTRO SECTION WITH HORIZONTAL MARQUEE TRACK ═══ */}
@@ -144,7 +221,6 @@ const AIWebsiteDesign = () => {
             {/* Seamless Horizontally Moving Grid wrapper */}
             <div className="aiwd-intro-marquee-wrapper">
               <div className="aiwd-intro-marquee-track">
-                {/* Duplicated list once to ensure infinite loop consistency */}
                 {[...introItems, ...introItems].map((item, idx) => (
                   <div key={idx} className="aiwd-intro-sitemap-col">
                     <div className="aiwd-intro-sitemap-card">
@@ -159,7 +235,6 @@ const AIWebsiteDesign = () => {
                           <h4 className="aiwd-intro-sitemap-card-title">{item.title}</h4>
                         </div>
                         
-                        {/* Modern Colorful Icon container replacing the wireframe */}
                         <div className={`aiwd-intro-icon-box ${item.colorClass}`}>
                           {item.icon}
                         </div>
@@ -170,7 +245,6 @@ const AIWebsiteDesign = () => {
                         </div>
                       </div>
                     </div>
-                    {/* Dotted connecting line below each card */}
                     <div className="aiwd-intro-sitemap-line"></div>
                   </div>
                 ))}
@@ -181,7 +255,7 @@ const AIWebsiteDesign = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 1 — What Makes AI-Powered Websites Different? ═══ */}
+      {/* ═══ SECTION 1 ═══ */}
       <section className="aiwd-diff-section">
         <div className="aiwd-container">
           <div className="aiwd-diff-layout">
@@ -213,7 +287,7 @@ const AIWebsiteDesign = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — Services 4-column grid ═══ */}
+      {/* ═══ SECTION 2 ═══ */}
       <section className="aiwd-services-section">
         <div className="aiwd-container">
           <div className="aiwd-section-head">
@@ -236,7 +310,7 @@ const AIWebsiteDesign = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — Why Businesses Choose Us (dark) ═══ */}
+      {/* ═══ SECTION 3 ═══ */}
       <section className="aiwd-why-section">
         <div className="aiwd-container">
           <div className="aiwd-section-head">
@@ -254,7 +328,7 @@ const AIWebsiteDesign = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — Our Website Design Process (Standard numbered layout) ═══ */}
+      {/* ═══ SECTION 4 ═══ */}
       <section className="aiwd-process-section">
         <div className="aiwd-container">
           <div className="aiwd-section-head">
@@ -274,7 +348,7 @@ const AIWebsiteDesign = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 — AI Features We Can Integrate ═══ */}
+      {/* ═══ SECTION 5 ═══ */}
       <section className="aiwd-features-section">
         <div className="aiwd-container">
           <div className="aiwd-section-head">
@@ -291,7 +365,7 @@ const AIWebsiteDesign = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — FAQ 2-column ═══ */}
+      {/* ═══ SECTION 6 ═══ */}
       <section className="aiwd-faq-section">
         <div className="aiwd-container">
           <div className="aiwd-section-head">
@@ -327,7 +401,7 @@ const AIWebsiteDesign = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 7 — CTA with form ═══ */}
+      {/* ═══ SECTION 7 ═══ */}
       <section className="aiwd-cta-section">
         <div className="aiwd-container">
           <div className="aiwd-cta-inner">
