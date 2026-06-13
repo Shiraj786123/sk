@@ -2617,3 +2617,54 @@ html body .pg__wrap .sp-hero-split .breadcrumb-wrap * {
 
 
 
+
+
+
+/* ==========================================================================
+   MOBILE HERO FEATURES CHECKLIST OVERRIDE
+   Forces the checklist row to wrap cleanly and center on small viewports
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Target the outer checklist container and force wrapping */
+  html body div.pg__wrap [class*="sp-hero-split-features"],
+  html body div.pg__wrap .sp-hero-split-features,
+  html body div.pg__wrap [class*="features"] {
+    display: flex !important;
+    flex-direction: row !important;       /* Lay out horizontally as a row */
+    flex-wrap: wrap !important;           /* Wrap items when they hit the screen edge */
+    justify-content: center !important;   /* Horizontally center all wrapped lines */
+    align-items: center !important;       /* Vertically align icons and text */
+    gap: 10px 18px !important;            /* Spacing gap between items */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px auto 0 !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Style each individual checklist item (icon + text block) */
+  html body div.pg__wrap [class*="sp-hero-split-features"] > *,
+  html body div.pg__wrap .sp-hero-split-features > *,
+  html body div.pg__wrap [class*="features"] > * {
+    display: inline-flex !important;
+    flex-direction: row !important;       /* Keeps icon next to text */
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;               /* Keeps items inline instead of stacking to 100% */
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;       /* Prevents single words from breaking awkwardly */
+    margin: 0 !important;
+    gap: 6px !important;                  /* Spacing between checkmark and text */
+  }
+
+  /* 3. Slightly reduce text and checkmark scale on small viewports */
+  html body div.pg__wrap [class*="sp-hero-split-features"] span,
+  html body div.pg__wrap [class*="sp-hero-split-features"] svg {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+  }
+}
+
+
+
+

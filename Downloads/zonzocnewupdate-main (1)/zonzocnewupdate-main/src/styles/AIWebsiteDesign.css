@@ -515,7 +515,7 @@
   font-size: 16px;
   font-weight: 700;
   color: var(--navy);
-  margin: 0 0 8px;
+  margin: 0;
 }
 
 .aiwd-diff-card p {
@@ -808,6 +808,11 @@
     width: 100% !important;
     max-width: 100% !important;
     overflow: hidden !important; 
+  }
+
+  /* Speed up the sitemap cards slider animation on mobile screens */
+  html body .aiwd-intro-marquee-track {
+    animation-duration: 18s !important; /* Sped up from 35s */
   }
 
   /* 1. HERO SECTION - Reduce gap and center content */
@@ -1447,5 +1452,59 @@ html body .aiwd-master-wrapper .sp-hero-split .breadcrumb-wrap * {
   html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"] *,
   html body div.aiwd-master-wrapper div.breadcrumb-wrap * {
     font-size: 10px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE HERO CHECKLIST 2x2 GRID (2 LINES)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Force the checklist container into a centered 2x2 grid layout */
+  html body div.aiwd-master-wrapper div[class*="sp-hero-split-features"],
+  html body .aiwd-master-wrapper .sp-hero-split-features,
+  html body [class*="sp-hero-split-features"] {
+    display: grid !important;
+    /* Defines exactly 2 columns of equal, flexible width */
+    grid-template-columns: repeat(2, minmax(130px, max-content)) !important;
+    gap: 12px 20px !important; /* Row gap and Column gap */
+    justify-content: center !important; /* Centers the entire 2x2 block on the screen */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px auto 0 auto !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Style each item inside so that icons and text align nicely on the left inside their grid cells */
+  html body div.aiwd-master-wrapper div[class*="sp-hero-split-features"] > *,
+  html body .aiwd-master-wrapper .sp-hero-split-features > *,
+  html body [class*="sp-hero-split-features"] > * {
+    display: inline-flex !important;
+    flex-direction: row !important; /* Keeps the checkmark icon next to the text */
+    align-items: center !important;
+    justify-content: flex-start !important; /* Left-align items inside grid cells */
+    width: auto !important;
+    margin: 0 !important;
+    gap: 8px !important; /* Spacing between icon and label text */
+    white-space: nowrap !important; /* Prevents text wrapping within the grid cells */
+  }
+
+  /* 3. Scale down text and icon dimensions slightly for smaller mobile devices */
+  html body [class*="sp-hero-split-features"] span,
+  html body [class*="sp-hero-split-features"] svg {
+    font-size: 11px !important;
+    font-weight: 700 !important;
   }
 }

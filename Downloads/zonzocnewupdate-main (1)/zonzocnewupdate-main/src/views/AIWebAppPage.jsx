@@ -112,6 +112,54 @@ const AIWebAppDev = () => {
 
   return (
     <div className="aiwa__wrapper">
+      {/* ── HIGH-PRIORITY INLINE STYLE OVERRIDES FOR MOBILE HERO CHECKLIST ── */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 768px) {
+          /* 1. Force the checklist container into a 2-column grid */
+          html body .aiwa__wrapper .sp-hero-split-features,
+          html body .aiwa__wrapper [class*="sp-hero-split-features"] {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(130px, max-content)) !important;
+            gap: 12px 20px !important;
+            justify-content: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 20px auto 0 auto !important;
+            padding: 0 16px !important;
+            box-sizing: border-box !important;
+          }
+
+          /* 2. Style individual items to left-align within their grid cells */
+          html body .aiwa__wrapper .sp-hero-split-features > *,
+          html body .aiwa__wrapper [class*="sp-hero-split-features"] > * {
+            display: inline-flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            width: auto !important;
+            margin: 0 !important;
+            gap: 8px !important;
+            white-space: nowrap !important;
+          }
+
+          /* 3. Center the 3rd item (last child) on the second line */
+          html body .aiwa__wrapper .sp-hero-split-features > *:last-child,
+          html body .aiwa__wrapper [class*="sp-hero-split-features"] > *:last-child {
+            grid-column: span 2 !important;
+            justify-self: center !important;
+          }
+
+          /* 4. Optimize checklist typography for mobile */
+          html body .aiwa__wrapper .sp-hero-split-features span,
+          html body .aiwa__wrapper .sp-hero-split-features svg,
+          html body .aiwa__wrapper [class*="sp-hero-split-features"] span,
+          html body .aiwa__wrapper [class*="sp-hero-split-features"] svg {
+            font-size: 11px !important;
+            font-weight: 700 !important;
+          }
+        }
+      `}} />
+
       <Navbar />
 
       {/* ═══ HERO — CONFIGURABLE PNG REPLACEMENT ═══ */}

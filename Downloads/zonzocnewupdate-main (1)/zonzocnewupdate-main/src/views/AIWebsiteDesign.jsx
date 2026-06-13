@@ -191,6 +191,51 @@ const AIWebsiteDesign = () => {
           mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%) !important;
           -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%) !important;
         }
+
+        /* ═══ HIGH-PRIORITY INLINE MEDIA QUERY OVERRIDES FOR MOBILE ═══ */
+        @media (max-width: 768px) {
+          /* Force any container with features inside .sp-hero-split-content into a centered 2x2 grid */
+          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"],
+          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="Features"],
+          html body .aiwd-master-wrapper div.sp-hero-split-content .sp-hero-split-features,
+          html body .aiwd-master-wrapper div.sp-hero-split-content > div:last-child,
+          html body .aiwd-master-wrapper div.sp-hero-split-content > ul:last-child {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(130px, max-content)) !important;
+            gap: 12px 20px !important;
+            justify-content: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 20px auto 0 auto !important;
+            padding: 0 16px !important;
+            box-sizing: border-box !important;
+          }
+
+          /* Force individual features items inside the grid to stay horizontal as row cells */
+          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"] > *,
+          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="Features"] > *,
+          html body .aiwd-master-wrapper div.sp-hero-split-content .sp-hero-split-features > *,
+          html body .aiwd-master-wrapper div.sp-hero-split-content > div:last-child > *,
+          html body .aiwd-master-wrapper div.sp-hero-split-content > ul:last-child > * {
+            display: inline-flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            width: auto !important;
+            margin: 0 !important;
+            gap: 8px !important;
+            white-space: nowrap !important;
+          }
+
+          /* Mobile scale optimization for checkmark icons and labels */
+          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"] span,
+          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"] svg,
+          html body .aiwd-master-wrapper div.sp-hero-split-content > div:last-child span,
+          html body .aiwd-master-wrapper div.sp-hero-split-content > div:last-child svg {
+            font-size: 11px !important;
+            font-weight: 700 !important;
+          }
+        }
       ` }} />
 
       <Navbar />
