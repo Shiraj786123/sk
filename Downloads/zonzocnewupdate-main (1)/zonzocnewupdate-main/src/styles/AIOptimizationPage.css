@@ -2668,3 +2668,40 @@ html body .pg__wrap .sp-hero-split .breadcrumb-wrap * {
 
 
 
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE HERO IMAGE SIZE OPTIMIZATION
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Allow the image container column to span fully and prevent clipping */
+  html body .pg__wrap .sp-hero-image-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    overflow: visible !important; /* Ensures the scaled up image is not cut off */
+    padding-top: 15px !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Increase both layout boundaries and scale of the 3D robot hero image */
+  html body .pg__wrap img.sp-hero-image,
+  html body .pg__wrap img[src*="aiseo.png"] {
+    width: 115% !important;          /* Widen past standard container constraints */
+    max-width: 115% !important;      /* Force override of default max-width limits */
+    height: auto !important;         /* Preserve correct proportions */
+    transform: scale(1.15) !important; /* Scale up visual presentation on mobile screen */
+    transform-origin: center top !important;
+    margin-top: -55px !important;
+    margin-bottom: 20px !important;  /* Add balanced padding below the image block */
+  }
+}
+

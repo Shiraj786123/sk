@@ -1807,3 +1807,182 @@ h1.ecd__hero_title {
     line-height: 1.2 !important;
   }
 }
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   FULL RESPONSIVE ECOMMERCE HERO OPTIMIZATIONS (DESKTOP & MOBILE)
+   ========================================================================== */
+
+/* ── 1. DESKTOP VIEWPORTS (769px and Up) ────────────────────────────────── */
+@media (min-width: 769px) {
+  /* Precise left alignment for breadcrumbs inside the custom hero wrapper */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="breadcrumb"],
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="breadcrumb-wrap"] {
+    font-size: 8px !important;
+    margin-left: 0 !important;   /* Aligns cleanly with the container default layout edge */
+    padding-left: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Force breadcrumb inner labels to fit correctly on desktop */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="breadcrumb"] *,
+  html body .ecd-hero-custom-context div.breadcrumb-wrap * {
+    font-size: 10px !important;
+  }
+
+  /* Pull the hero badge label to align perfectly with the left axis */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div.sp-hero-badge,
+  html body .ecd-hero-custom-context div.sp-hero-split-content [class*="badge"] {
+    margin-left: -55px !important; /* Forces the badge over to hit the left alignment axis */
+    margin-right: auto !important;
+    display: flex !important;
+    max-width: max-content !important;
+    justify-content: flex-start !important;
+  }
+}
+
+/* ── 2. MOBILE VIEWPORTS (768px and Down) ────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Prevent horizontal bleeding inside the hero container on mobile */
+  html body .ecd-hero-custom-context,
+  html body .ecd-hero-custom-context * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Compress empty vertical gaps around the hero section */
+  html body .ecd-hero-custom-context .aiwd__hero_section,
+  html body .ecd-hero-custom-context section.sp-hero-split {
+    padding-top: 35px !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* Center heading, subtitles and descriptions on mobile viewports */
+  html body .ecd-hero-custom-context section.sp-hero-split h1,
+  html body .ecd-hero-custom-context section.sp-hero-split h1 span,
+  html body .ecd-hero-custom-context section.sp-hero-split p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Reduce massive empty gap below description */
+  html body .ecd-hero-custom-context [class*="sp-hero-split-content"] {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Center and size the mobile heading cleanly */
+  html body .ecd-hero-custom-context h1[class*="heading"] {
+    font-size: clamp(26px, 6.5vw, 32px) !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+  }
+
+  /* Centering and formatting of the breadcrumbs */
+  html body .ecd-hero-custom-context div.breadcrumb-wrap,
+  html body .ecd-hero-custom-context div.breadcrumb-container,
+  html body .ecd-hero-custom-context div[class*="breadcrumb-wrap"] {
+    display: flex !important;
+    flex-direction: row !important;       /* Lay out horizontally */
+    flex-wrap: wrap !important;           /* Wrap on small screens */
+    justify-content: center !important;   /* Centers horizontally */
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+  }
+
+  /* Force breadcrumb inner labels to be inline and clear any text wrapping */
+  html body .ecd-hero-custom-context div[class*="breadcrumb"] * {
+    display: inline-flex !important;      /* Align elements next to each other */
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    font-size: 11px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Centering the hero badge/pill */
+  html body .ecd-hero-custom-context section.sp-hero-split div.sp-hero-badge,
+  html body .ecd-hero-custom-context section.sp-hero-split [class*="badge"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transform: translateX(6px) !important; /* Micro-nudge right while staying centered */
+    display: flex !important;
+    max-width: max-content !important;
+  }
+
+  /* Force the checklist container into a clean centered 2x2 grid */
+  html body .ecd-hero-custom-context div[class*="sp-hero-split-features"],
+  html body .ecd-hero-custom-context .sp-hero-split-features,
+  html body .ecd-hero-custom-context [class*="sp-hero-split-features"] {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(130px, max-content)) !important; /* Perfect 2x2 grid */
+    gap: 12px 20px !important;            /* Spacing between grid rows and columns */
+    justify-content: center !important;   /* Centers the grid block horizontally */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px auto 0 auto !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Keep checkmarks and label text inline within each grid cell */
+  html body .ecd-hero-custom-context .sp-hero-split-features > *,
+  html body .ecd-hero-custom-context [class*="sp-hero-split-features"] > * {
+    display: inline-flex !important;
+    flex-direction: row !important;       /* Keeps icon next to text */
+    align-items: center !important;
+    justify-content: flex-start !important; /* Left-align content inside cells */
+    width: auto !important;
+    margin: 0 !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Scale down checklist fonts slightly on small mobile devices */
+  html body .ecd-hero-custom-context .sp-hero-split-features span,
+  html body .ecd-hero-custom-context .sp-hero-split-features svg {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+  }
+
+  /* Shrink top padding and pull the image container upwards closer to the text column */
+  html body .ecd-hero-custom-context .sp-hero-image-wrap {
+    margin-top: -35px !important;         /* Pulls image container upward */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    overflow: visible !important;
+  }
+
+  /* Scale the hero image larger on mobile devices */
+  html body .ecd-hero-custom-context img.sp-hero-image,
+  html body .ecd-hero-custom-context img[src*="ecommerce.png"] {
+    width: 115% !important;
+    max-width: 115% !important;
+    height: auto !important;
+    transform: scale(1.22) !important;
+    transform-origin: center top !important;
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+  }
+}
