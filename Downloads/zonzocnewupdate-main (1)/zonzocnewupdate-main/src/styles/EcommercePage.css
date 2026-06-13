@@ -1793,3 +1793,17 @@ h1.ecd__hero_title {
 
 
 
+
+
+/* ==========================================================================
+   POWERFUL SELECTOR OVERRIDE: FORCES MOBILE BREADCRUMB FONT DOWN SIZES
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  html body div.ecd__wrapper div.ecd-hero-custom-context div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+  html body div.ecd__wrapper div.ecd-hero-custom-context div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container *,
+  html body div.ecd__wrapper div.ecd-hero-custom-context span.active {
+    font-size: 8px !important;
+    white-space: normal !important; /* Permits wrapping if screen real-estate runs out */
+    line-height: 1.2 !important;
+  }
+}

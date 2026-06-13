@@ -1775,3 +1775,235 @@ html body .fswd__wrapper .sp-hero-split .breadcrumb-wrap * {
     gap: 0 !important;
   }
 }
+
+
+
+
+
+
+/* ==========================================================================
+   RESET WIDTH TO 100% AND APPLY A SLIGHT RIGHT SHIFT
+   ========================================================================== */
+
+/* --- Desktop View Controls --- */
+@media (min-width: 1024px) {
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap img.sp-hero-image[class*="sp-hero-image"],
+    html body img.sp-hero-image[src*="fullstack"] {
+        /* Restrict base canvas layout properties directly to flat container width */
+        width: 100% !important;        
+        max-width: 100% !important;   
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        
+        /* THE NUDGE FORCE: Clears previous left values and pushes it right via translateX */
+        transform: scale(1.4) translateX(25px) !important; 
+        transform-origin: center center !important; 
+    }
+}
+
+/* --- Mobile View Controls --- */
+@media (max-width: 768px) {
+    html body div#__next div.aiss__wrapper section.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-image-wrap img.sp-hero-image[class*="sp-hero-image"],
+    html body img.sp-hero-image[src*="fullstack"] {
+        /* Restrict base mobile canvas limits cleanly back to perfect alignment width */
+        width: 100% !important;         
+        max-width: 100% !important;    
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto !important;
+        
+        /* THE MOBILE NUDGE FORCE: Shifts the asset slightly right on small screens */
+        transform: scale(1.15) translateX(15px) !important;
+        transform-origin: center center !important; 
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   ULTRA-POWERFUL DEEP SELECTOR: MOBILE EYEBROW RIGHT SHIFT (< 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* Aggressive multi-attribute matching targeting the unique badge element layout */
+    html body div#__next section[class*="sp-hero"] div[class*="container"] div[class*="badge"],
+    html body section.sp-hero-split div.aiwd-container div.sp-hero-badge,
+    html body [class*="sp-hero"] [class*="badge"],
+    html body div.sp-hero-badge {
+        
+        /* Wipe out centered margin defaults */
+        margin-left: 0px !important;
+        margin-right: auto !important;
+
+        /* Force left alignment behavior so the transformation has a clean baseline */
+        text-align: left !important;
+        display: inline-table !important;
+
+        /* Apply a powerful translate push to shift the badge beautifully to the right */
+        transform: translateX(25px) !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Full responsive media queries for the hero section */
+
+/* Base styles for the hero section are assumed from the existing CSS */
+/* You'll need to integrate these into your FullStackWebDev.css file */
+
+/* -------------------------------------------------------------------------- */
+/*  MEDIA QUERIES */
+/* -------------------------------------------------------------------------- */
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  .service-page-hero__wrapper {
+    padding: 60px 20px 40px; /* Adjust padding for smaller screens */
+    text-align: center; /* Center align content */
+  }
+
+  .service-page-hero__badge {
+    font-size: 0.75rem; /* Smaller badge font */
+    padding: 6px 10px;
+    margin: 0 auto 15px; /* Center badge */
+  }
+
+  .service-page-hero__title {
+    font-size: 2rem; /* Smaller main title */
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  .service-page-hero__subtitle {
+    font-size: 0.9rem; /* Smaller subtitle */
+    max-width: 100%; /* Use full width */
+    margin-bottom: 25px;
+  }
+
+  .service-page-hero__features {
+    flex-direction: column; /* Stack features vertically */
+    align-items: center; /* Center features */
+    gap: 10px; /* Adjust gap */
+    margin-bottom: 30px;
+  }
+
+  .service-page-hero__feature-item {
+    font-size: 0.85rem; /* Smaller feature text */
+  }
+
+  .service-page-hero__cta-group {
+    flex-direction: column; /* Stack CTA buttons vertically */
+    gap: 15px; /* Adjust gap between buttons */
+  }
+
+  .service-page-hero__cta-primary,
+  .service-page-hero__cta-secondary {
+    width: 100%; /* Full width buttons */
+    padding: 12px 20px; /* Adjust button padding */
+    font-size: 0.95rem; /* Adjust button font size */
+  }
+
+  .service-page-hero__hero-image-wrapper {
+    margin-top: 40px; /* Adjust spacing for image */
+  }
+
+  .service-page-hero__hero-image {
+    max-height: 250px; /* Smaller image height */
+  }
+}
+
+/* Medium devices (tablets, 601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .service-page-hero__wrapper {
+    padding: 80px 30px 60px;
+    text-align: center; /* Center align content */
+  }
+
+  .service-page-hero__badge {
+    margin: 0 auto 20px; /* Center badge */
+  }
+
+  .service-page-hero__title {
+    font-size: 2.8rem; /* Slightly smaller main title */
+    margin-bottom: 20px;
+  }
+
+  .service-page-hero__subtitle {
+    font-size: 1rem;
+    max-width: 700px; /* Constrain subtitle width */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+
+  .service-page-hero__features {
+    justify-content: center; /* Center features */
+    margin-bottom: 40px;
+  }
+
+  .service-page-hero__cta-group {
+    justify-content: center; /* Center CTA buttons */
+    gap: 20px;
+  }
+
+  .service-page-hero__hero-image-wrapper {
+    margin-top: 50px;
+  }
+
+  .service-page-hero__hero-image {
+    max-height: 350px; /* Medium image height */
+  }
+}
+
+/* Large devices (desktops, 901px to 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .service-page-hero__wrapper {
+    padding: 100px 40px 80px;
+  }
+
+  .service-page-hero__title {
+    font-size: 3.5rem; /* Maintain large title but adjust slightly */
+  }
+
+  .service-page-hero__subtitle {
+    max-width: 800px; /* Slightly wider subtitle */
+  }
+
+  .service-page-hero__hero-image {
+    max-height: 450px; /* Adjust image height */
+  }
+}
+
+/* Extra large devices (large desktops, 1201px and up) - No specific changes needed usually as base is for this */
+/* @media (min-width: 1201px) {
+  .service-page-hero__wrapper {
+    padding: 120px 50px 100px;
+  }
+
+  .service-page-hero__title {
+    font-size: 4rem;
+  }
+
+  .service-page-hero__subtitle {
+    max-width: 900px;
+  }
+
+  .service-page-hero__hero-image {
+    max-height: 500px;
+  }
+} */

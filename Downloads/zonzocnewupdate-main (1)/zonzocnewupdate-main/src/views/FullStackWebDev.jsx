@@ -13,6 +13,11 @@ import "../styles/FullStackWebDev.css";
 
 const imgs = serviceImages['full-stack'];
 
+/* ==========================================================================
+   FORCE LOCAL ASSET OVERRIDE
+   ========================================================================== */
+const customHeroImage = "/images/fullstack.png";
+
 const FullStackWebDev = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -36,7 +41,7 @@ const FullStackWebDev = () => {
   ];
 
   const services = [
-    { icon: "💻", title: "Custom Web Applications",  desc: "Tailored solutions to match your business workflows and goals.",                    link: "/web-development" },
+    { icon: "💻", title: "Custom Web Applications",  desc: "Tailored solutions to match your business workflows and goals.",                  link: "/web-development" },
     { icon: "🚀", title: "SaaS Development",          desc: "Scalable SaaS platforms with multi-tenancy, subscriptions and dashboards.",          link: "/saas-development" },
     { icon: "🎨", title: "Frontend Development",      desc: "Interactive, responsive and fast user interfaces built with modern frameworks.",      link: "/frontend-development" },
     { icon: "⚙️", title: "Backend Development",       desc: "Robust server-side logic, authentication, databases and business APIs.",             link: "/backend-development" },
@@ -142,7 +147,7 @@ app.get('/api/health', (req, res) => {
     <div className="fswd__wrapper">
       <Navbar />
 
-      {/* ── HERO — KEPT AS IS ─────────────────────────── */}
+      {/* ── HERO SECTION WITH DIRECT CUSTOM ASSET PASS-THROUGH ── */}
       <ServicePageHero
         badge="FULL STACK WEB DEVELOPMENT"
         title="Custom Full Stack Web Applications Built for"
@@ -150,8 +155,8 @@ app.get('/api/health', (req, res) => {
         subtitle="We design and build bespoke, high-performance web applications, MVPs and SaaS platforms built to scale. We combine senior engineering talent with clean, maintainable code and conversion-focused UI/UX."
         features={["Scalable Architecture", "Modern Tech Stack", "On-Time Delivery"]}
         secondaryCta={{ href: "https://zonzoc-tech.netlify.app/", label: "View Portfolio →" }}
-        heroImage={imgs.hero}
-        heroAlt={imgs.heroAlt}
+        heroImage={customHeroImage}
+        heroAlt="Zonzoc Tech Full Stack Web Development Illustration"
       />
 
       {/* ── STATS BAR — 6 items ───────────────────────── */}
@@ -345,7 +350,7 @@ app.get('/api/health', (req, res) => {
         </div>
       </section>
 
-      {/* ── FAQ + CODE BLOCK — FULLY RESTORED ─────────── */}
+      {/* ── FAQ + CODE BLOCK ─────────────────────────── */}
       <section className="fswd-faq-section">
         <div className="fswd__container">
           <div className="fswd-faq-grid">
@@ -403,7 +408,7 @@ app.get('/api/health', (req, res) => {
         </div>
       </section>
 
-      {/* ── CTA BOTTOM — FULLY RESTORED ───────────────── */}
+      {/* ── CTA BOTTOM ───────────────────────────────── */}
       <section className="fswd-cta-section">
         <div className="fswd__container">
           <div className="fswd-cta-inner">

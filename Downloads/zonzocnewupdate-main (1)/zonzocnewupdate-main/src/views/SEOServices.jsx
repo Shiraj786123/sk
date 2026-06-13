@@ -27,7 +27,7 @@ const SEOServices = () => {
 
   // Modern colorful items for the horizontally moving sitemap cards
   const introItems = [
-    { title: "Improve search visibility and brand awareness",     icon: <Search size={32} />,          colorClass: "pink-purple" },
+    { title: "Improve search visibility and brand awareness",     icon: <Search size={32} />,       colorClass: "pink-purple" },
     { title: "Drive qualified organic traffic that converts",       icon: <TrendingUp size={32} />,      colorClass: "cyan-blue" },
     { title: "Build trust and credibility with higher rankings",    icon: <Shield size={32} />,          colorClass: "lime-green" },
     { title: "Outrank competitors and dominate your niche",         icon: <Target size={32} />,          colorClass: "orange-yellow" },
@@ -121,8 +121,8 @@ const SEOServices = () => {
           primaryCta={{ href: "/contact", label: "Get Your Free SEO Audit →" }}
           secondaryCta={{ href: "#seo-results", label: "See Our Results ↓" }}
           features={["Higher Rankings", "Qualified Organic Traffic", "Transparent Reporting"]}
-          heroImage={imgs.hero}
-          heroAlt={imgs.heroAlt}
+          heroImage="/images/seo.png"
+          heroAlt="Search Engine Optimization Analytics and Targeted Growth Interface"
         />
 
         {/* ── STATS BAR ──────────────────────────────────────────── */}
@@ -183,7 +183,7 @@ const SEOServices = () => {
                         <div className="ss-result-title">Your Website</div>
                       </div>
                     </div>
-                    <div className="ss-result-badge">Position #1</div>
+                    <div className="ss-google-result-badge">Position #1</div>
                   </div>
                   <div className="ss-google-chart">
                     {[40, 55, 50, 65, 60, 80, 75, 95].map((h, i) => (

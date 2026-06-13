@@ -11,10 +11,7 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
-import { serviceImages } from "../data/serviceImages";
 import "../styles/AIOptimizationPage.css";
-
-const imgs = serviceImages['ai-seo'];
 
 /* ── Inline SVG platform logos ─────────────────────────────────────────── */
 const ChatGPTIcon = () => (
@@ -163,8 +160,8 @@ const AISearchOptimization = () => {
         primaryCta={{ href: "/contact", label: "Get Free AI Search Audit →" }}
         secondaryCta={{ href: "#aiso-how", label: "See How It Works ↓" }}
         features={["GEO & AEO Expertise", "AI Platform Visibility", "Future-Proof Strategy"]}
-        heroImage={imgs.hero}
-        heroAlt={imgs.heroAlt}
+        heroImage="/images/aiseo.png"
+        heroAlt="AI Search Optimization and Generative Engine Optimization Diagnostics Setup"
       />
 
       {/* ── STATS BAR ──────────────────────────────────────────────── */}
