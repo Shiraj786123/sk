@@ -2075,3 +2075,85 @@ h1.ecd__hero_title {
     gap: 8px !important;                  /* Spacing between icon and text */
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE HERO UPDATES: VERTICAL CENTER-LEFT ALIGNMENT & IMAGE SHIFT
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Tighten the overall empty vertical spacing of the hero container */
+  html body .pg__wrap .aiwd__hero_section,
+  html body .pg__wrap section.sp-hero-split {
+    padding-bottom: 20px !important;
+  }
+
+  /* 2. Center the entire checklist group while keeping items left-aligned inside */
+  html body .pg__wrap .sp-hero-split-features,
+  html body .pg__wrap [class*="sp-hero-split-features"],
+  html body .pg__wrap div.sp-hero-split-content .sp-hero-split-features,
+  html body .pg__wrap div.sp-hero-split-content [class*="sp-hero-split-features"] {
+    display: flex !important;
+    flex-direction: column !important;     /* Stack items vertically */
+    align-items: flex-start !important;     /* Left-align checkmarks and text to the same vertical axis */
+    justify-content: center !important;
+    width: max-content !important;          /* Shrink container size to perfectly fit content */
+    max-width: 100% !important;
+    
+    /* Centering & Spacing:
+       - margin-left/right: auto centers the block horizontally
+       - margin-top: 15px pushes the block downward below the CTA button
+    */
+    margin: 15px auto 0 auto !important;   
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. Ensure checkmarks and label text stay inline and do not wrap */
+  html body .pg__wrap .sp-hero-split-features > *,
+  html body .pg__wrap [class*="sp-hero-split-features"] > *,
+  html body .pg__wrap div.sp-hero-split-content .sp-hero-split-features > *,
+  html body .pg__wrap div.sp-hero-split-content [class*="sp-hero-split-features"] > * {
+    display: inline-flex !important;
+    flex-direction: row !important;       /* Keeps icon next to text */
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: auto !important;
+    margin: 0 !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+  }
+
+  /* 4. Optimize checklist typography scale for mobile devices */
+  html body .pg__wrap .sp-hero-split-features span,
+  html body .pg__wrap .sp-hero-split-features svg,
+  html body .pg__wrap [class*="sp-hero-split-features"] span,
+  html body .pg__wrap [class*="sp-hero-split-features"] svg {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+  }
+
+  /* 5. Pull the 3D robot image container upward to close the vertical empty gap */
+  html body .pg__wrap .sp-hero-image-wrap {
+    margin-top: -35px !important;         /* Shift the image column upward */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    overflow: visible !important;          /* Prevents clipping of the scaled image */
+  }
+}

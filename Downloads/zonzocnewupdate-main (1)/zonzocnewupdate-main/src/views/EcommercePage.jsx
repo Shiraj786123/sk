@@ -111,6 +111,55 @@ const EcommerceDev = () => {
   return (
     <>
       <div className="ecd__wrapper">
+      {/* ── HIGH-PRIORITY INLINE STYLES FOR EXACT DESKTOP & MOBILE HERO LAYOUT OVERRIDES ── */}
+<style dangerouslySetInnerHTML={{ __html: `
+  /* 1. Reset/Standardize container */
+  .ecd-hero-custom-context .sp-hero-split .ecd__container {
+    max-width: 1400px !important;
+    width: 100% !important;
+    margin: 0 auto;
+  }
+
+  /* ─── DESKTOP VIEWPORTS (769px and Up) ─── */
+  @media (min-width: 769px) {
+    .ecd-hero-custom-context [class*="sp-hero-split-grid"] {
+      display: grid !important;
+      grid-template-columns: 45% 55% !important; 
+      align-items: center !important;
+      gap: 0px !important; 
+    }
+    
+    .ecd-hero-custom-context .sp-hero-image-wrap {
+      display: flex !important;
+      justify-content: flex-start !important; 
+      /* INCREASE THIS NEGATIVE VALUE TO PULL IMAGE CLOSER TO TEXT */
+      margin-left: -80px !important; 
+      overflow: visible !important;
+    }
+
+    .ecd-hero-custom-context img.sp-hero-image {
+      /* REDUCE THESE TO SHRINK THE IMAGE SIZE */
+      width: 90% !important;             
+      max-width: 90% !important;         
+      height: auto !important;
+      object-fit: contain !important;
+      /* ANCHOR TO THE LEFT SO IT STAYS NEAR THE TEXT */
+      transform-origin: center left !important;
+      transform: scale(0.9) !important; 
+    }
+  }
+
+  /* ─── MOBILE VIEWPORTS (768px and Down) ─── */
+  @media (max-width: 768px) {
+    .ecd-hero-custom-context .sp-hero-image-wrap {
+      margin-top: 20px !important;
+    }
+    .ecd-hero-custom-context img.sp-hero-image {
+      width: 100% !important;
+      transform: scale(0.85) !important;
+    }
+  }
+` }} />
         <Navbar />
 
         {/* ── HERO CONTEXT WRAPPER FOR PRECISE VISUAL POSITIONING ── */}
