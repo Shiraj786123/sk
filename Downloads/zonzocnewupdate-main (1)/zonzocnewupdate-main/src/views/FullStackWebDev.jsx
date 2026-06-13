@@ -145,6 +145,23 @@ app.get('/api/health', (req, res) => {
 
   return (
     <div className="fswd__wrapper">
+      {/* ── HIGH PRIORITY STYLES FOR BREADCRUMBS ON BOTH DESKTOP & MOBILE VIEWPORTS ── */}
+      <style>{`
+        /* Desktop Viewports Override */
+        html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-wrap,
+        html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-wrap * {
+          font-size: 10px !important;
+        }
+
+        /* Mobile Viewports Override */
+        @media (max-width: 768px) {
+          html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-wrap,
+          html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-wrap * {
+            font-size: 10px !important;
+          }
+        }
+      `}</style>
+
       <Navbar />
 
       {/* ── HERO SECTION WITH DIRECT CUSTOM ASSET PASS-THROUGH ── */}

@@ -1382,3 +1382,139 @@ html body [class*="breadcrumb"] span {
         line-height: 1.2 !important;
     }
 }
+
+
+
+
+
+/* ==========================================================================
+   POWERFUL SELECTOR OVERRIDE: CENTER ONLY THE HERO BADGE LABEL
+   ========================================================================== */
+html body div.aiwa__wrapper div.sp-hero-split-content span.subtitle,
+html body div.aiwa__wrapper div.sp-hero-split-content .hero-badge,
+html body div.aiwa__wrapper div.sp-hero-split-content span[class*="badge"] {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  width: max-content !important;
+  max-width: 100% !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Desktop specific updates: 8px breadcrumbs & shift hero badge left */
+@media (min-width: 769px) {
+  /* 1. Force the breadcrumb container and text down to exactly 8px */
+  html body div.aiwa__wrapper div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+  html body div.aiwa__wrapper div.sp-hero-split-content div[class*="breadcrumb"],
+  html body div.aiwa__wrapper div.sp-hero-split-content div[class*="breadcrumb-wrap"],
+  html body div.aiwa__wrapper div.sp-hero-split-content div[class*="breadcrumb"] *,
+  html body div.aiwa__wrapper div.breadcrumb-wrap * {
+    font-size: 8px !important;
+  }
+
+  /* 2. Nudge the hero badge label to the left instead of the breadcrumb */
+  html body div.aiwa__wrapper div.sp-hero-split-content div.sp-hero-badge,
+  html body div.aiwa__wrapper div.sp-hero-split-content [class*="badge"] {
+    margin-left: -20px !important; /* Adjust this value if you need it shifted further left */
+    margin-right: auto !important;
+    display: flex !important;
+    max-width: max-content !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Desktop layout alignment for breadcrumbs and hero badge labels */
+@media (min-width: 769px) {
+  
+  /* 1. Reset and precisely align the breadcrumb block to the yellow line margin */
+  html body div.aiwa__wrapper div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+  html body div.aiwa__wrapper div.sp-hero-split-content div[class*="breadcrumb"],
+  html body div.aiwa__wrapper div.sp-hero-split-content div[class*="breadcrumb-wrap"] {
+    font-size: 8px !important;
+    margin-left: 0 !important;   /* Aligns cleanly with the container default layout edge */
+    padding-left: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Keep all internal breadcrumb texts explicitly at 8px */
+  html body div.aiwa__wrapper div.sp-hero-split-content div[class*="breadcrumb"] *,
+  html body div.aiwa__wrapper div.breadcrumb-wrap * {
+    font-size: 10px !important;
+  }
+
+  /* 2. Pull the hero badge label back to align perfectly with the yellow line */
+  html body div.aiwa__wrapper div.sp-hero-split-content div.sp-hero-badge,
+  html body div.aiwa__wrapper div.sp-hero-split-content [class*="badge"] {
+    margin-left: -55px !important; /* Forces the badge over to hit the left alignment axis */
+    margin-right: auto !important;
+    display: flex !important;
+    max-width: max-content !important;
+    justify-content: flex-start !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Target the badge precisely on desktop to keep it in the red marked area */
+@media (min-width: 769px) {
+
+  /* 1. Reset font size for breadcrumbs */
+  div.breadcrumb-wrap,
+  div.breadcrumb-container,
+  div[class*="breadcrumb"],
+  div[class*="breadcrumb-wrap"],
+  div[class*="breadcrumb"] *,
+  div.breadcrumb-wrap * {
+    font-size: 8px !important;
+  }
+
+  /* 2. Break the center lock and align the badge to the red circled area */
+  html body div.aiwa__wrapper div.sp-hero-split-content span.sp-hero-split-badge,
+  html body div.aiwa__wrapper div.sp-hero-split-content span[class*="badge"],
+  html body span.sp-hero-split-badge {
+    display: inline-block !important; /* Changes from block to inline-block to allow standard spacing */
+    text-align: left !important;      /* Overrides the text-align: center rule */
+    margin-left: 0 !important;        /* Clears the auto margin locking it in the center */
+    margin-right: auto !important;     /* Forces the bounding block to align left */
+    
+    /* Perfect horizontal alignment spacing matching the red marked area */
+    padding-left: 16px !important;     
+    padding-right: 16px !important;
+    
+    /* Structural adjustments */
+    width: max-content !important;
+    align-self: flex-start !important;
+  }
+}

@@ -1367,3 +1367,180 @@ html body .aiwa__wrapper .sp-hero-split .breadcrumb-wrap * {
 }
 
 /* ... (rest of your CSS) ... */
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  /* Ultra-specific selector chain to permanently override Next.js dynamic stylesheets */
+  html body div.aiwd-master-wrapper div.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+  html body div.aiwd-master-wrapper div.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-split-content div[class*="breadcrumb"],
+  html body div.aiwd-master-wrapper div.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-split-content div[class*="breadcrumb-wrap"],
+  html body div.aiwd-master-wrapper div[class*="breadcrumb"] {
+    font-size: 8px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  /* Deep force-override for text tokens, anchors, spans, or active classes inside the breadcrumb */
+  html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"] span,
+  html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"] a,
+  html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"] *,
+  html body div.aiwd-master-wrapper div.breadcrumb-wrap * {
+    font-size: 8px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 6. Mobile specific responsive alignment & typography reductions */
+        @media (max-width: 768px) {
+          /* Reduce the massive top empty space above the breadcrumbs */
+          html body div.aiwd-master-wrapper section.sp-hero-split {
+            padding-top: 40px !important;
+            padding-bottom: 40px !important;
+          }
+
+          /* Move the hero badge label a little bit to the right */
+          html body div.aiwd-master-wrapper section.sp-hero-split div.sp-hero-badge,
+          html body div.aiwd-master-wrapper section.sp-hero-split [class*="badge"] {
+            margin-left: 12px !important;
+            display: inline-flex !important;
+            justify-content: flex-start !important;
+          }
+
+          /* Powerful structural selector query targeted to beat out late Next.js components injection classes */
+          html body div.aiwd-master-wrapper div.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+          html body div.aiwd-master-wrapper div.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-split-content div[class*="breadcrumb"],
+          html body div.aiwd-master-wrapper div.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-split-content div[class*="breadcrumb-wrap"],
+          html body div.aiwd-master-wrapper div[class*="breadcrumb"] {
+            font-size: 8px !important;
+            letter-spacing: 0.3px !important;
+            line-height: 1.2 !important;
+          }
+          
+          /* Catch all deep element tags inside Next.js breadcrumb components */
+          html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"] span,
+          html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"] a,
+          html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"] *,
+          html body div.aiwd-master-wrapper div.breadcrumb-wrap * {
+            font-size: 8px !important;
+          }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* 6. Mobile specific responsive alignment & typography reductions */
+        @media (max-width: 768px) {
+          /* Reduce the massive top empty space above the breadcrumbs */
+          html body div.aiwd-master-wrapper section.sp-hero-split {
+            padding-top: 40px !important;
+            padding-bottom: 40px !important;
+          }
+
+          /* Center-align the main heading and description text elements */
+          html body div.aiwd-master-wrapper section.sp-hero-split h1,
+          html body div.aiwd-master-wrapper section.sp-hero-split h1 span,
+          html body div.aiwd-master-wrapper section.sp-hero-split p {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+
+          /* Move the hero badge label a little bit to the right and keep it horizontally centered */
+          html body div.aiwd-master-wrapper section.sp-hero-split div.sp-hero-badge,
+          html body div.aiwd-master-wrapper section.sp-hero-split [class*="badge"] {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            transform: translateX(6px) !important; /* Micro-nudge right while staying layout-centered */
+            display: flex !important;
+            max-width: max-content !important;
+          }
+
+          /* Center the bullet point tags or inline features list below description if needed */
+          html body div.aiwd-master-wrapper section.sp-hero-split ul,
+          html body div.aiwd-master-wrapper section.sp-hero-split [class*="features"] {
+            justify-content: center !important;
+          }
+
+          /* Powerful structural selector query targeted to beat out late Next.js components injection classes */
+          html body div.aiwd-master-wrapper div.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+          html body div.aiwd-master-wrapper div.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-split-content div[class*="breadcrumb"],
+          html body div.aiwd-master-wrapper div.sp-hero-split div.aiwd-container div.sp-hero-split-grid div.sp-hero-split-content div[class*="breadcrumb-wrap"],
+          html body div.aiwd-master-wrapper div[class*="breadcrumb"] {
+            font-size: 8px !important;
+            letter-spacing: 0.3px !important;
+            line-height: 1.2 !important;
+            justify-content: center !important; /* Centers the breadcrumb path line item */
+            text-align: center !important;
+          }
+          
+          /* Catch all deep element tags inside Next.js breadcrumb components */
+          html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"] span,
+          html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"] a,
+          html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"] *,
+          html body div.aiwd-master-wrapper div.breadcrumb-wrap * {
+            font-size: 8px !important;
+          }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Desktop specific breadcrumb micro-adjustments */
+        @media (min-width: 769px) {
+          html body div.aiwd-master-wrapper div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+          html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"],
+          html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb-wrap"] {
+            font-size: 14px !important; /* Reduces desktop font size slightly */
+            margin-left: 5px !important; /* Nudges breadcrumbs left to perfectly align with the badge */
+            padding-left: 0 !important;
+            justify-content: flex-start !important;
+          }
+
+          /* Force shrink inner text strings and links */
+          html body div.aiwd-master-wrapper div.sp-hero-split-content div[class*="breadcrumb"] *,
+          html body div.aiwd-master-wrapper div.breadcrumb-wrap * {
+            font-size: 10px !important;
+          }
+        }

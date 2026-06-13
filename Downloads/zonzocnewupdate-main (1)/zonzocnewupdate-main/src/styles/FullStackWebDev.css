@@ -2007,3 +2007,155 @@ html body .fswd__wrapper .sp-hero-split .breadcrumb-wrap * {
     max-height: 500px;
   }
 } */
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE HERO FIXES: CENTER BADGE LABEL & SHRINK BREADCRUMB TEXT
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Target and center only the structural Hero Badge element */
+  html body div.fswd__wrapper div.sp-hero-split-content span.subtitle,
+  html body div.fswd__wrapper div.sp-hero-split-content .hero-badge,
+  html body div.fswd__wrapper div.sp-hero-split-content span[class*="badge"] {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    width: max-content !important;
+    max-width: 100% !important;
+  }
+
+  /* 2. Target the breadcrumbs wrapper to decrease text size safely */
+  html body div.fswd__wrapper div.sp-hero-split-content div[class*="breadcrumb"] {
+    font-size: 10px !important; /* Slightly smaller to fit layout cleanly */
+    letter-spacing: 0.5px !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Clear line bounds if elements inherit text-align changes */
+  html body div.fswd__wrapper div.sp-hero-split-content div[class*="breadcrumb"] * {
+    font-size: 8px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE HERO ADJUSTMENTS: SHIFT HERO BADGE LEFT & SHRINK BREADCRUMB
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Target, center, and slightly offset the hero badge to the left */
+  html body div.fswd__wrapper div.sp-hero-split-content span.subtitle,
+  html body div.fswd__wrapper div.sp-hero-split-content .hero-badge,
+  html body div.fswd__wrapper div.sp-hero-split-content span[class*="badge"],
+  html body div.fswd__wrapper span.sp-hero-split-badge {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    
+    /* Shifts the badge slightly to the left for better alignment balance */
+    transform: translateX(-12px) !important; 
+  }
+
+  /* 2. Style the breadcrumbs to keep them small and strictly left-aligned */
+  html body div.fswd__wrapper div.sp-hero-split-content div[class*="breadcrumb"],
+  html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-wrap {
+    font-size: 10px !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+  
+  html body div.fswd__wrapper div.sp-hero-split-content div[class*="breadcrumb"] * {
+    font-size: 8px !important;
+  }
+}
+
+
+
+
+
+/* Definite override for Next.js rendered breadcrumbs on Desktop */
+@media (min-width: 769px) {
+  html body #__next [class*="sp-hero-split-content" i] div[class*="breadcrumb" i] span,
+  html body #__next [class*="sp-hero-split-content" i] div[class*="breadcrumb" i] a,
+  html body #__next [class*="sp-hero-split-content" i] div[class*="breadcrumb" i] div,
+  html body #__next [class*="sp-hero-split-content" i] div[class*="breadcrumb" i] [class*="icon"],
+  html body #__next [class*="sp-hero-split-content" i] div[class*="breadcrumb" i] * {
+    font-size: 10px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1. Desktop Font Size Override */
+html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-wrap,
+html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-wrap * {
+  font-size: 14px !important;
+}
+
+/* 2. Force Left Alignment on Desktop (Aligns with the red marked area) */
+html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-wrap,
+html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-container {
+  display: flex !important;
+  justify-content: flex-start !important; /* Force flex alignment to the left */
+  text-align: left !important;             /* Clear any text-align: center styles */
+  padding-left: 0 !important;
+  margin-left: 0 !important;              /* Strip any left auto-margins */
+  margin-right: auto !important;           /* Push any remaining container space to the right */
+  width: 100% !important;                  /* Span full container width to align properly */
+}
+
+/* 3. Mobile Viewports Override */
+@media (max-width: 768px) {
+  html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-wrap,
+  html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-wrap * {
+    font-size: 11px !important;
+  }
+  
+  html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-wrap,
+  html body div.fswd__wrapper div.sp-hero-split-content div.breadcrumb-container {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+}
