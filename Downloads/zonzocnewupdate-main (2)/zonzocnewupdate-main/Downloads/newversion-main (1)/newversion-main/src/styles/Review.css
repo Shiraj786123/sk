@@ -1,0 +1,191 @@
+.reviews-section { background: #f8faff; padding: 80px 24px; }
+.reviews-container { max-width: 1100px; margin: 0 auto; }
+
+.reviews-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.rating-box { display: flex; flex-direction: column; align-items: center; }
+.rating-number { font-size: 56px; font-weight: 800; color: #00448f; margin: 0; line-height: 1; }
+.rating-stars { font-size: 20px; margin: 5px 0; color: #f59e0b; }
+.reviews-count { font-size: 13px; font-weight: 600; color: #6b7280; }
+
+.reviews-heading-box { max-width: 500px; }
+.reviews-heading { font-size: 36px; font-weight: 800; margin: 0 0 10px 0; color: #1a202c; }
+.reviews-sub { color: #6b7280; margin: 0; line-height: 1.6; }
+
+.review-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.review-card { background: #ffffff; border-radius: 16px; padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.quote { font-size: 40px; color: #00448f; opacity: 0.2; }
+.review-text { font-size: 15px; line-height: 1.6; color: #4a5568; margin: 10px 0 24px 0; }
+.reviewer-info { display: flex; align-items: center; gap: 12px; border-top: 1px solid #edf2f7; padding-top: 16px; }
+.reviewer-photo { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid #f8faff; }
+.name { font-weight: 700; font-size: 14px; margin: 0; color: #2d3748; }
+.username { font-size: 12px; color: #718096; margin: 0; }
+
+@media (max-width: 768px) {
+  .reviews-top-row { flex-direction: column; text-align: center; gap: 20px; }
+  .review-cards-grid { grid-template-columns: 1fr; }
+}
+
+/* ... existing styles ... */
+
+.review-cards-grid { 
+  display: grid; 
+  /* 4 columns on large screens */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .review-cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .reviews-top-row { flex-direction: column; text-align: center; gap: 20px; }
+  .review-cards-grid { grid-template-columns: 1fr; }
+}
+
+/* Ensure cards look good in 4-column layout */
+.review-card { 
+  background: #ffffff; 
+  border-radius: 16px; 
+  padding: 24px; /* Slightly reduced padding for tighter fit */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+}
+
+.review-text { 
+  font-size: 14px; /* Slightly smaller text for 4-column layout */
+  line-height: 1.5; 
+  color: #4a5568; 
+  margin: 10px 0 20px 0; 
+}
+
+/* ... existing styles ... */
+
+.review-card {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease; /* Smooth transition */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover Effect: Light background color */
+.review-card:hover {
+  background-color: #f0f7ff;
+  border-color: #bee3f8;
+  transform: translateY(-5px);
+}
+
+.card-stars {
+  font-size: 14px;
+  margin-bottom: 12px;
+  transition: transform 0.2s;
+}
+
+/* Hover Effect: Stars scale up slightly */
+.review-card:hover .card-stars {
+  transform: scale(1.1);
+}
+
+.review-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4a5568;
+  margin-bottom: 24px;
+  /* Constraint: 4 lines height */
+  height: 4.8em; 
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+/* ... keep your media queries ... */
+
+
+
+.reviews-section {
+  padding: clamp(60px, 8vw, 100px) 24px;
+  background: #f8faff;
+}
+
+.reviews-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reviews-top-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(30px, 5vw, 60px);
+  margin-bottom: clamp(40px, 6vw, 80px);
+}
+
+.rating-number {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  color: #00448f;
+  margin: 0;
+}
+
+.reviews-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.reviews-sub {
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  color: #6b7280;
+  max-width: 500px;
+}
+
+.review-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.review-card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card:hover {
+  background-color: #f0f7ff;
+  border-color: #bee3f8;
+  transform: translateY(-8px);
+}
+
+.review-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  height: 6.4em; /* Enforces 4 lines */
+  margin: 15px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.reviewer-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}

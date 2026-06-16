@@ -1,0 +1,179 @@
+/* ==========================================================================
+   TOPBAR UNIFORM FONT ENFORCEMENT
+   ========================================================================== */
+.topbar,
+.topbar *,
+.topbar-left,
+.topbar-left span,
+.topbar-right,
+.topbar-link {
+  font-family: var(--font-b), 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+/* --- Base Topbar Styles (Desktop default) --- */
+.topbar {
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  color: #fff;
+  font-size: 13px;
+  width: 100%;
+}
+
+.topbar-inner {
+  max-width: 1440px; /* Matches navbar max-width */
+  width: 100%;
+  margin: 0 auto;
+  /* 24px padding aligns exactly with the logo in your navbar-inner */
+  padding: 8px 24px; 
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.topbar-left { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+  /* Use this to pull the text away from the very edge of the screen */
+  /* Increase or decrease this number until it aligns perfectly with your logo */
+  padding-left: 40px; 
+}
+
+/* Keeps the globe icon inline and vertically centered with the text line */
+.topbar-left svg {
+  display: inline-block;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+}
+
+.topbar-left span {
+  display: inline;
+}
+
+.sky-blue {
+  color: #00aeef; /* Adjust to match your precise brand sky blue if needed */
+  font-weight: 600;
+}
+
+.topbar-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px; /* Spacing between social links */
+}
+
+.topbar-link {
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.topbar-link:hover {
+  opacity: 0.85;
+}
+
+/* --- Tablet / Mobile Screens (768px and down) --- */
+@media (max-width: 768px) {
+  .topbar {
+    font-size: 12px;
+  }
+
+  .topbar-inner {
+    flex-direction: column; /* Stack text above icons to save horizontal space */
+    justify-content: center !important;
+    align-items: center;
+    gap: 15px;               /* Vertical spacing between the text and icon groups */
+    padding: 8px 16px;
+  }
+
+  .topbar-left {
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;        /* Allows text wrapping inline without breaking the icon flow */
+    padding-left: 0 !important; /* FIXED: Overrides desktop padding-left so text is centered */
+    width: 100%;
+  }
+
+  .topbar-right {
+    justify-content: center;
+    gap: 25px;
+  }
+}
+
+/* --- Tiny Mobile Screens (480px and down) --- */
+@media (max-width: 480px) {
+  .topbar-link span {
+    display: none; /* Keeps icons only on very narrow screens */
+  }
+  
+  /* FIXED: Switched 20px to 11px so text scales down appropriately instead of getting larger */
+  .topbar-left span {
+    font-size: 10px; 
+  }
+}
+
+/* Target the FontAwesome SVGs in the topbar */
+.topbar-left svg,
+.topbar-right svg {
+  font-size: 14px !important;     /* Scales icons naturally using font-size */
+  height: 1.1em !important;       /* Lets height scale dynamically relative to font-size */
+  width: auto !important;         /* Prevents horizontal distortion */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* --- Bulletproof Uniform Height Fix for Topbar Icons --- */
+.topbar-left svg.svg-inline--fa,
+.topbar-right svg.svg-inline--fa,
+.topbar-left svg,
+.topbar-right svg,
+.topbar-link svg {
+  height: 14px !important;          /* Force all icons to be exactly 14px tall */
+  width: auto !important;            /* Allow widths to adjust naturally to prevent vertical squishing */
+  max-width: none !important;
+  max-height: none !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+/* --- High-Priority Layer Controls for the Topbar --- */
+.topbar {
+  position: relative !important;
+  z-index: 10005 !important;       /* Forces the topbar to the absolute highest layer (above the 9999 navbar) */
+  pointer-events: auto !important;  /* Ensures click/touch events are explicitly enabled */
+}
+
+.topbar-right {
+  position: relative !important;
+  z-index: 10006 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.topbar-link {
+  cursor: pointer !important;      /* Forces the mouse cursor to turn into a pointing hand on PC */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: auto !important; /* Allows links to accept clicks */
+  padding: 8px !important;          /* Enlarges the touch target area for mobile users */
+  margin: -8px !important;         /* Offsets padding so adjacent layouts do not shift */
+}
+
+/* Force the FontAwesome SVG icons to ignore click hits, passing them directly to the <a> tag */
+.topbar-link svg {
+  pointer-events: none !important;
+}
+
+/* ==========================================================================
+   TOPBAR FONT BINDING (Forced inheritance via Next.js Document variables)
+   ========================================================================== */
+.topbar,
+.topbar * {
+  font-family: var(--font-b), 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+}

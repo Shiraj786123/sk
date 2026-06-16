@@ -1,0 +1,773 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --navy: #002d62;
+  --blue: #00448f;
+  --bg-grey: #f8fafc;
+  --border: #e2e8f0;
+  --accent: #38bdf8;
+  --white: #ffffff;
+  --silver: #cbd5e1;
+}
+
+/* ==========================================================================
+   GLOBAL FRAMEWORK STRUCTURE
+   ========================================================================== */
+.cp__wrapper { 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif; 
+  color: #1e293b; 
+  overflow-x: hidden; 
+}
+
+.cp__container { 
+  width: 100%;
+  max-width: 1400px; 
+  margin: 0 auto; 
+  padding: 0 2rem; 
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. HERO COMPONENT
+   ========================================================================== */
+section.cp__bar_hero {
+  position: relative !important;
+  background: radial-gradient(circle at 70% 60%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  color: #ffffff !important;
+  width: 100% !important;
+  min-height: 95vh !important;           
+  display: flex !important;              
+  align-items: center !important;        
+  justify-content: center !important;     
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  padding: 80px 24px !important;
+}
+
+section.cp__bar_hero .cp__container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+section.cp__bar_hero .cp__heading {
+  font-size: 64px !important; 
+  font-weight: 800 !important; 
+  line-height: 1.15 !important; 
+  color: #ffffff !important;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+  letter-spacing: -0.03em !important;
+}
+
+section.cp__bar_hero .text_light_blue {
+  color: var(--accent) !important; 
+  background-color: transparent !important;
+  display: inline !important;
+}
+
+section.cp__bar_hero .cp__hero_text_white {
+  font-size: 1.15rem !important;
+  line-height: 1.65 !important;
+  color: rgba(255, 255, 255, 0.85) !important; 
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+/* Base Structural Layout Elements */
+.grey_bar { 
+  background: var(--bg-grey); 
+  padding: 60px 0; 
+}
+
+.white_bar { 
+  background: #ffffff; 
+  padding: 60px 0; 
+}
+
+.cp__title_dark { 
+  text-align: center; 
+  font-size: 32px; 
+  font-weight: 800; 
+  color: var(--navy); 
+  margin-bottom: 35px; 
+  width: 100%; 
+}
+
+/* ==========================================================================
+   2 & 3. SPLIT COMPONENT LAYOUT (FORM & SIDE CARDS)
+   ========================================================================== */
+section.cp__contact_section.grey_bar {
+  background-color: #f8fafc !important; 
+  padding: 80px 24px !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+section.cp__contact_section .cp__container {
+  max-width: 1280px !important; 
+}
+
+.cp__bar_info { 
+  margin-top: -45px; 
+  padding-bottom: 35px; 
+  position: relative; 
+  z-index: 5; 
+}
+
+section.cp__contact_section .cp__contact_wrapper {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr !important; 
+  gap: 24px !important; 
+  align-items: stretch !important; 
+  width: 100% !important;
+}
+
+section.cp__contact_section .cp__form_box {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  padding: 40px !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.015) !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important; 
+}
+
+section.cp__contact_section .cp__form_actual {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+section.cp__contact_section .form_row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 16px !important;
+  margin-bottom: 16px !important;
+}
+
+section.cp__contact_section input,
+section.cp__contact_section select,
+section.cp__contact_section textarea {
+  width: 100% !important;
+  padding: 14px 16px !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  background-color: #ffffff !important;
+  outline: none !important;
+  font-size: 0.95rem !important;
+  color: var(--navy) !important; 
+  box-sizing: border-box !important;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif !important;
+}
+
+section.cp__contact_section input:focus,
+section.cp__contact_section select:focus,
+section.cp__contact_section textarea:focus {
+  border-color: #1296ec !important; 
+}
+
+section.cp__contact_section select {
+  margin-bottom: 16px !important;
+  cursor: pointer !important;
+}
+
+/* Range Budget Sliders */
+section.cp__contact_section .budget_wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 20px !important;
+  text-align: left !important;
+}
+
+section.cp__contact_section .budget_wrap label {
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  color: #00336b !important;
+  margin-bottom: 8px !important;
+}
+
+/* Container for the slider */
+input[type=range] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    margin: 15px 0;
+}
+
+/* The track */
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 5px;
+}
+
+/* The thumb (The handle that is invisible) */
+input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background: var(--blue);
+    cursor: pointer;
+    margin-top: -7px; /* Centers the thumb on the track */
+    border: 3px solid white;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+
+/* Firefox support */
+input[type=range]::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: var(--blue);
+    cursor: pointer;
+    border: 3px solid white;
+}
+/* ==========================================================================
+   DEFAULT PC DESKTOP: SPECIFIC CONTROLS FOR PROJECT BOX & BUTTON
+   ========================================================================== */
+section.cp__contact_section textarea {
+  resize: none !important;
+  min-height: 180px !important;     /* Enlarged input room */
+  margin-bottom: 28px !important;
+}
+
+section.cp__contact_section .submit_btn {
+  display: block !important;
+  clear: both !important;
+  width: 40% !important;
+  max-width: 380px !important;       /* Perfectly optimized button width */
+  padding: 14px 28px !important;     /* Perfectly optimized button height */
+  margin: 0 auto !important;         /* Forces perfect horizontal alignment */
+  background-color: var(--blue) !important; 
+  color: #ffffff !important; 
+  border: none !important;
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: capitalize !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+ margin-left:20px;
+}
+
+section.cp__contact_section .submit_btn:hover {
+  background-color: var(--navy) !important; 
+  transform: translateY(-1px) !important;
+}
+
+/* Card Column Layout */
+section.cp__contact_section .cp__button_column {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important; 
+  height: 100% !important; 
+}
+
+section.cp__contact_section .cp__btn_card {
+  flex: 1 !important; 
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.015) !important;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+section.cp__contact_section .cp__btn_card:not(.no_hover):hover {
+  transform: translateY(-3px) !important;
+  border-color: #1296ec !important; 
+  box-shadow: 0 8px 16px rgba(18, 150, 236, 0.05) !important;
+}
+
+section.cp__contact_section .cp__card_icon {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 50% !important;
+  background-color: rgba(18, 150, 236, 0.08) !important; 
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.35rem !important;
+  margin-bottom: 14px !important; 
+  flex-shrink: 0 !important;
+}
+
+section.cp__contact_section .cp__card_content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+section.cp__contact_section .cp__card_content h3 {
+  margin: 0 !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #1e293b !important; 
+  margin-bottom: 6px !important;
+  text-transform: uppercase !important; 
+  letter-spacing: 0.06em !important;
+}
+
+section.cp__contact_section .cp__card_content p {
+  margin: 0 !important;
+  font-size: 0.9rem !important;
+  color: #64748b !important; 
+}
+
+section.cp__contact_section .cp__btn_card.no_hover {
+  cursor: default !important;
+}
+
+/* ==========================================================================
+   4 & 5. GRID SYSTEMS & CARD ALIGNMENTS
+   ========================================================================== */
+.cp__grid_4 { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px; 
+}
+
+.cp__aligned_card { 
+  background: white; 
+  padding: 35px 20px; 
+  border-radius: 15px; 
+  border: 1px solid var(--border); 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+  transition: 0.3s; 
+  box-sizing: border-box;
+}
+
+.hover_effect_card:hover { 
+  transform: translateY(-10px); 
+  border-color: var(--blue); 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+}
+
+.card_title { 
+  min-height: 55px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-weight: 800; 
+  color: var(--navy); 
+  margin-bottom: 15px; 
+  font-size: 18px; 
+}
+
+.center_desc_wrapper { 
+  width: 100%; 
+  min-height: 115px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.card_desc_aligned { 
+  font-size: 14.5px; 
+  color: #64748b; 
+  line-height: 1.6; 
+  max-width: 240px; 
+  margin: 0 auto; 
+}
+
+.node_ui { 
+  position: relative; 
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  margin-bottom: 20px; 
+}
+
+.circle { 
+  width: 45px; 
+  height: 45px; 
+  background: var(--blue); 
+  color: white; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-weight: 800; 
+  z-index: 2; 
+  border: 4px solid white; 
+}
+
+.line { 
+  position: absolute; 
+  height: 2px; 
+  background: var(--border); 
+  width: 100%; 
+  left: 50%; 
+  top: 50%; 
+  z-index: 1; 
+}
+
+.card_icon_real { 
+  font-size: 40px; 
+  margin-bottom: 15px; 
+}
+
+/* ==========================================================================
+   6. FAQ MODULAR INTERFACE
+   ========================================================================== */
+.cp__faq_narrow_container { 
+  max-width: 800px; 
+  margin: 0 auto; 
+}
+
+.faq_item { 
+  background: #fff; 
+  border: 1px solid var(--border); 
+  border-radius: 10px; 
+  margin-bottom: 12px; 
+  overflow: hidden; 
+  transition: 0.3s; 
+}
+
+.faq_item summary { 
+  padding: 20px; 
+  cursor: pointer; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  font-weight: 700; 
+  list-style: none; 
+  font-size: 17px; 
+  color: var(--navy); 
+}
+
+.faq_item summary::-webkit-details-marker { 
+  display: none; 
+}
+
+.faq_q_text span { 
+  color: var(--blue); 
+  margin-right: 5px; 
+}
+
+.plus_icon { 
+  color: var(--blue); 
+  font-size: 24px; 
+  transition: 0.3s; 
+}
+
+.faq_item[open] .plus_icon { 
+  transform: rotate(45deg); 
+  color: #ef4444; 
+}
+
+.faq_ans { 
+  padding: 0 20px 20px 52px; 
+  color: #64748b; 
+  border-top: 1px solid #f1f5f9; 
+  background: #fafbfc; 
+  line-height: 1.6; 
+}
+
+/* Notifications & Modals */
+.success_container { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; 
+  padding: 40px 20px; 
+}
+
+.success_icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.resend_btn { 
+  background: var(--navy); 
+  color: white; 
+  border: none; 
+  padding: 12px 30px; 
+  border-radius: 50px; 
+  font-weight: 700; 
+  cursor: pointer; 
+  margin-top: 20px; 
+  transition: background-color 0.2s;
+}
+
+.resend_btn:hover {
+  background-color: #000066;
+}
+
+@media (min-width: 361px) and (max-width: 680px) {
+  /* Force the form's layout engine to stretch all its children edge-to-edge */
+  section.cp__contact_section .cp__form_actual {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important; 
+  }
+
+  section.cp__contact_section .submit_btn { 
+    width: 100% !important; 
+    max-width: 100% !important;   
+    min-width: 100% !important; /* Force a fallback bottom width layer */
+    padding: 14px 20px !important; 
+    margin: 0 !important;       /* Clear side auto margins */
+  }
+}
+
+
+
+
+
+/* ==========================================================================
+   COMPLETE MEDIA QUERY ENGINE (ALL HARDWARE BREAKPOINTS)
+   ========================================================================== */
+
+/* ─── TIER 1: LARGE DESKTOP & WIDE SCREENS (1440px and up) ─── */
+@media (min-width: 1440px) {
+  section.cp__bar_hero { padding: 120px 0 !important; }
+  .cp__container { max-width: 1400px; padding: 0 2rem; }
+  section.cp__bar_hero .cp__heading { font-size: 68px !important; line-height: 1.15 !important; }
+  section.cp__bar_hero .cp__hero_text_white { font-size: 1.25rem !important; max-width: 850px !important; }
+  .cp__grid_4 { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  
+  /* Project Box & Button scaling for ultra-wide setups */
+  section.cp__contact_section textarea { min-height: 200px !important; }
+  section.cp__contact_section .submit_btn { max-width: 420px !important; padding: 16px 32px !important; }
+}
+
+/* ─── TIER 2: STANDARD LAPTOPS & DESKTOPS (1025px to 1439px) ─── */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  section.cp__bar_hero { padding: 95px 24px !important; }
+  .cp__container { max-width: 1200px; padding: 0 2rem; }
+  section.cp__bar_hero .cp__heading { font-size: 60px !important; }
+  .cp__grid_4 { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+}
+
+/* ─── TIER 3: TABLETS IN LANDSCAPE VIEW (901px to 1024px) ─── */
+@media (min-width: 901px) and (max-width: 1024px) {
+  section.cp__bar_hero { padding: 80px 32px !important; min-height: 80vh !important; }
+  .cp__container { padding: 0 2.5rem; }
+  section.cp__bar_hero .cp__heading { font-size: 48px !important; }
+  section.cp__bar_hero .cp__hero_text_white { font-size: 1.1rem !important; max-width: 680px !important; }
+  .cp__grid_4 { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .line { display: none; }
+  
+  /* Safe scaling down for landscape tablets */
+  section.cp__contact_section textarea { min-height: 160px !important; }
+  section.cp__contact_section .submit_btn { max-width: 350px !important; padding: 13px 26px !important; }
+}
+
+/* ─── TIER 4: TABLETS IN PORTRAIT VIEW (681px to 900px) ─── */
+@media (min-width: 681px) and (max-width: 900px) {
+  section.cp__bar_hero { padding: 80px 24px !important; min-height: 75vh !important; }
+  .cp__container { padding: 0 1.5rem; }
+  section.cp__bar_hero .cp__heading { font-size: 44px !important; }
+  
+  section.cp__contact_section .cp__contact_wrapper {
+    grid-template-columns: 1fr !important; /* Stack columns vertically */
+    gap: 32px !important;
+  }
+  
+  section.cp__contact_section .cp__btn_card {
+    flex: none !important; 
+    padding: 24px !important;
+  }
+  
+  .cp__grid_4 { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .line { display: none; }
+
+  /* Keep core box elements centered and functional in standard view */
+  section.cp__contact_section textarea { min-height: 160px !important; }
+  section.cp__contact_section .submit_btn { max-width: 360px !important; }
+}
+/* ==========================================================================
+   UPDATED MOBILE RESPONSIVE LAYOUT ENGINE (PLACE AT VERY BOTTOM OF FILE)
+   ========================================================================== */
+
+/* ─── TIER 5: SMARTPHONES & MOBILES (361px to 680px) ─── */
+@media (max-width: 680px) {
+  section.cp__bar_hero { padding: 60px 16px !important; min-height: 70vh !important; }
+  .cp__container { padding: 0 1rem; }
+  section.cp__bar_hero .cp__heading { font-size: 36px !important; line-height: 1.2 !important; }
+  section.cp__bar_hero .cp__hero_text_white { font-size: 1rem !important; line-height: 1.55 !important; }
+  
+  section.cp__contact_section .cp__contact_wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  
+  section.cp__contact_section .cp__form_box {
+    padding: 28px 20px !important; 
+  }
+  
+  section.cp__contact_section .form_row {
+    grid-template-columns: 1fr !important; 
+    gap: 16px !important;
+    margin-bottom: 0 !important;
+  }
+  
+  section.cp__contact_section input {
+    margin-bottom: 16px !important; 
+  }
+  
+  section.cp__contact_section .cp__btn_card {
+    flex: none !important;
+    padding: 20px !important;
+  }
+  
+  .cp__grid_4 { grid-template-columns: 1fr; gap: 16px; }
+  .line { display: none; }
+  .faq_item summary { padding: 16px; font-size: 15px; }
+  .faq_ans { padding: 0 16px 16px 36px; }
+
+  /* 1. Force the parent form layout system to stretch elements out edge-to-edge */
+  section.cp__contact_section .cp__form_actual {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+
+  section.cp__contact_section textarea { 
+    min-height: 150px !important; 
+    margin-bottom: 24px !important; 
+  }
+  
+  /* 2. Overwrite desktop properties to style this exactly like the popup action CTA buttons */
+  section.cp__contact_section .submit_btn { 
+    width: 100% !important; 
+    max-width: 100% !important;        /* Breaks the 380px lock constraint completely */
+    min-width: 100% !important;
+    height: 50px !important;            /* Matching popup action button heights */
+    border-radius: 40px !important;     /* Changes block box edges to clean rounded capsules */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    padding: 0 24px !important; 
+    margin: 0 auto !important;          /* Keeps elements anchored safely inside columns */
+  }
+}
+
+/* ─── TIER 6: COMPACT HANDSETS (360px and below) ─── */
+@media (max-width: 360px) {
+  section.cp__bar_hero { padding: 50px 12px !important; min-height: 65vh !important; }
+  .cp__container { padding: 0 0.75rem; }
+  section.cp__bar_hero .cp__heading { font-size: 28px !important; }
+  section.cp__bar_hero .cp__hero_text_white { font-size: 0.95rem !important; }
+  section.cp__contact_section .cp__form_box { padding: 20px 12px !important; }
+  
+  section.cp__contact_section .form_row {
+    grid-template-columns: 1fr !important; 
+    gap: 12px !important;
+    margin-bottom: 0 !important;
+  }
+  
+  section.cp__contact_section input {
+    margin-bottom: 12px !important; 
+  }
+  
+  .cp__grid_4 { grid-template-columns: 1fr; }
+  .line { display: none; }
+  section.cp__contact_section textarea { min-height: 130px !important; }
+  
+  /* Forces the layout container to conform on small screen sizes */
+  section.cp__contact_section .submit_btn { 
+    width: 100% !important;
+    max-width: 100% !important; 
+    min-width: 100% !important;
+    height: 48px !important;
+    border-radius: 40px !important;     /* Clean capsule matching design */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    padding: 0 16px !important; 
+    font-size: 0.9rem !important; 
+    margin: 0 auto !important;
+  }
+}
+
+
+
+
+
+/* ==========================================================================
+   ONLY ADJUSTS THE SUBMIT BUTTON SIZE ON MOBILE VIEW
+   ========================================================================== */
+@media (max-width: 680px) {
+  section.cp__contact_section .submit_btn { 
+    width: 100% !important; 
+    max-width: 280px !important;       /* Limits the width to your exact yellow box size */
+    height: 50px !important;            /* Keeps a balanced height */
+    border-radius: 40px !important;     /* Matches your capsule pill design preference */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;          /* Keeps it perfectly centered inside the form box */
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   FORCE SPECIFIC SUBMIT BUTTON WIDTH IN MOBILE VIEW ONLY
+   ========================================================================== */
+@media (max-width: 680px) {
+  section.cp__contact_section .submit_btn { 
+    width: 100% !important; 
+    max-width: 280px !important;       /* Restricts the width size to your yellow box */
+    align-self: center !important;      /* BREAKS the flex column stretch so it can shrink */
+    height: 50px !important;            
+    border-radius: 40px !important;     /* Clean capsule shape look */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;          /* Keeps it completely centered */
+  }
+}
+
+
+
+
+
+.button-container {
+    text-align: left !important;
+    display: block !important;
+}

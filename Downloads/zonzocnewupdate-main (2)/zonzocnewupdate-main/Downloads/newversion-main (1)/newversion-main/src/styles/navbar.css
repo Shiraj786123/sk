@@ -1,0 +1,829 @@
+/* Force all navigation text, buttons, and links to maintain your font choice */
+.navbar,
+.navbar * {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* ==========================================================================
+   1. GLOBAL RESET & FONT ENFORCEMENT
+   ========================================================================== */
+
+/* Enforces 'Poppins' font family globally across all navbar elements 
+   and state transitions to prevent any flickering */
+.navbar, 
+.navbar *, 
+.navbar a,
+.navbar a:visited,
+.navbar a:active,
+.navbar a:focus,
+.nav-link,
+.nav-link a,
+.nav-links-list a,
+.nav-links-list a:visited,
+.nav-links-list a:active,
+.nav-links-list a:focus,
+.topbar, 
+.topbar *,
+.mega-menu-rect, 
+.mega-menu-rect *,
+.mega-menu-rect a,
+.get-proposal-button,
+.mobile-navbar-home,
+.mobile-drawer-item-row,
+.mobile-drawer-item-row:visited,
+.mobile-drawer-item-row:active,
+.mobile-drawer-item-row:focus {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.navbar,
+.navbar *,
+.nav-link,
+.nav-link a,
+.nav-links-list a,
+.mobile-navbar-home,
+.get-proposal-button,
+.mobile-drawer-item-row {
+  font-weight: 500 !important;
+}
+
+.navbar a,
+.navbar a:hover,
+.navbar a:focus,
+.nav-link,
+.nav-link:hover,
+.nav-link a,
+.nav-link a:hover,
+.mega-col a,
+.mega-col a:hover {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+}
+
+.nav-link a:focus,
+.nav-link a:active,
+.nav-link a:visited,
+.nav-link:focus,
+.nav-link:active,
+.nav-links-list a:focus,
+.nav-links-list a:active,
+.nav-links-list a.active,
+.mobile-navbar-home:focus,
+.mobile-navbar-home:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.nav-link,
+.nav-link a,
+.nav-links-list a {
+  transition: color 0.25s ease, background-color 0.25s ease !important;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+
+/* ==========================================================================
+   2. NAVBAR BASE LAYOUT (DESKTOP)
+   ========================================================================== */
+.navbar {
+  background: transparent;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  overflow: visible !important;
+}
+
+.navbar.scrolled {
+  background: #ffffff !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-inner {
+  max-width: 1440px;          
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: visible !important;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 0px;           
+}
+
+
+/* ==========================================================================
+   3. DESKTOP LINKS & BUTTONS
+   ========================================================================== */
+.nav-container {
+  flex: 1 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.nav-links-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 15px;
+  color: #111827;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-link a {
+  color: inherit;
+}
+
+.nav-link:hover,
+.nav-link a:hover {
+  color: #00448f !important;
+}
+
+.get-proposal-button {
+  /* Aligned directly to Poppins font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  background: #00448f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.get-proposal-button:hover {
+  background: #00336b;
+  transform: translateY(-1px);
+}
+
+
+/* ==========================================================================
+   4. DROPDOWN MENUS (MEGA MENU)
+   ========================================================================== */
+.dropdown-parent {
+  position: relative;
+}
+
+.dropdown-trigger-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-parent:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.mega-menu-rect {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 750px; 
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 20px; 
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+  z-index: 9999;
+}
+
+.mega-menu-rect::before {
+  content: "";
+  position: absolute;
+  top: -30px; 
+  left: 0;
+  right: 0;
+  height: 30px; 
+  background: transparent !important; 
+  pointer-events: auto !important;    
+  z-index: 99999;                     
+}
+
+.dropdown-parent:hover .mega-menu-rect {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.mega-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1; 
+}
+
+.mega-heading {
+  font-size: 13px; 
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: #00448f;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mega-col a {
+  font-size: 13.5px; 
+  color: #475569;
+  display: block; 
+  padding: 8px 12px; 
+  margin: 0 -12px; 
+  border-radius: 6px;
+  line-height: 1.5;
+  transition: all 0.25s ease;
+}
+
+.mega-col a:hover {
+  color: #00448f !important;
+  background-color: #f1f5f9; 
+  transform: translateX(4px); 
+}
+
+
+/* ==========================================================================
+   5. MOBILE ENGINE (1024PX AND BELOW)
+   ========================================================================== */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #00448f;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mobile-navbar-home,
+.mobile-nav-cta,
+.mobile-email-bar,
+.mobile-nav-drawer {
+  display: none;
+}
+
+.sky-blue {
+  color: #00aeef;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .desktop-cta,
+  .desktop-only-home-link,
+  .desktop-nav-only {
+    display: none !important;
+  }
+
+  .navbar {
+    height: 80px;
+    width: 100%;
+    z-index: 10000;
+  }
+
+  .navbar-inner {
+    width: 92%;
+    max-width: 92%;
+    height: 60px;
+    padding: 0 16px !important;
+    background: #ffffff;
+    border-radius: 12px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    overflow: visible !important;
+  }
+
+  .navbar-logo img {
+    width: 130px !important;
+  }
+
+  .navbar-mobile-controls {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+    margin-left: auto !important;
+  }
+
+  .mobile-navbar-home {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 8px 12px !important;
+    background: #f1f5f9 !important;
+    border-radius: 6px !important;
+    color: #00448f !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    min-height: 38px;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+  
+  .mobile-navbar-home:hover {
+    background: #e2e8f0 !important;
+    color: #00336b !important;
+  }
+
+  .mobile-nav-cta {
+    display: block !important;
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .hamburger {
+    display: block !important;
+  }
+
+  .mobile-nav-drawer {
+    display: block !important;
+    position: absolute !important;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    border: 1px solid #f1f5f9;
+    border-top: none;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-nav-drawer.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  .mobile-drawer-scroll-box {
+    max-height: calc(100vh - 180px) !important;
+    overflow-y: auto !important;
+    padding: 24px;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+  }
+
+  .mobile-drawer-item-row {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #111827;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+  }
+  
+  .mobile-drawer-item-row.link-redirect {
+    color: #111827 !important;
+  }
+
+  .mobile-arrow-icon {
+    font-size: 14px;
+    color: #475569;
+    transition: transform 0.25s ease;
+  }
+
+  .mobile-arrow-icon.rotated {
+    transform: rotate(180deg);
+  }
+
+  .mobile-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), opacity 0.2s ease;
+    padding-left: 14px;
+    background: #f8fafc;
+    border-radius: 8px;
+  }
+
+  .mobile-accordion-body.expanded {
+    max-height: 1200px;
+    opacity: 1;
+    visibility: visible;
+    padding-top: 10px;
+    padding-bottom: 14px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  .mobile-accordion-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+  }
+
+  .mobile-accordion-section h5 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #00448f;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+  }
+
+  .mobile-accordion-section a {
+    font-size: 14px;
+    color: #475569 !important;
+    padding: 8px 0;
+    display: block;
+  }
+
+  .mobile-drawer-footer-email {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 24px;
+    padding: 12px;
+    background: #f1f5f9;
+    color: #00448f !important;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .mobile-drawer-scroll-box::-webkit-scrollbar {
+    width: 4px;
+  }
+  .mobile-drawer-scroll-box::-webkit-scrollbar-thumb {
+    background: rgba(0, 68, 143, 0.2);
+    border-radius: 10px;
+  }
+}
+
+
+/* ==========================================================================
+   6. SMALL DEVICE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .mobile-navbar-home {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important; 
+  }
+
+  .navbar-mobile-controls div, 
+  .navbar-mobile-controls span,
+  [class*="home-wrapper"], 
+  [class*="home-container"] {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-inner {
+    padding: 0 10px !important;
+  }
+
+  .navbar-logo img {
+    width: 110px !important;
+  }
+
+  .navbar-mobile-controls {
+    gap: 6px !important;
+  }
+
+  .mobile-navbar-home {
+    padding: 8px 10px !important;
+    font-size: 13px !important;
+  }
+
+  .mobile-nav-cta {
+    font-size: 11px !important;
+    padding: 7px 10px !important;
+  }
+}
+
+
+/* ==========================================================================
+   7. HERO & CALL-TO-ACTION BUTTONS RESPONSIVENESS
+   ========================================================================== */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .hero-buttons {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 14px !important;
+    margin-top: 24px !important;
+    text-align: center !important;
+  }
+
+  .hero-buttons a,
+  .hero-buttons button,
+  .hero-buttons .btn {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    min-width: 170px !important;
+    max-width: 220px !important;
+    padding: 14px 20px !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .hero-buttons a,
+  .hero-buttons button,
+  .hero-buttons .btn {
+    width: 90% !important;
+    max-width: 320px !important;
+    min-width: unset !important;
+    font-size: 14px !important;
+    padding: 14px 18px !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    width: 100% !important;
+    padding: 0 16px !important;
+    gap: 10px !important;
+  }
+
+  .hero-buttons a,
+  .hero-buttons button,
+  .hero-buttons .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 13px !important;
+    padding: 13px 16px !important;
+  }
+}
+
+
+/* ==========================================================================
+   8. TOPBAR LAYOUT - ALIGNED TO EDGES
+   ========================================================================== */
+.topbar {
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  color: #fff;
+  font-size: 13px;
+  width: 100% !important;
+  z-index: 10005 !important;
+}
+
+.topbar-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 24px;
+  display: flex !important;
+  justify-content: space-between !important; 
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.topbar-left { display: flex; align-items: center; gap: 8px; }
+.topbar-right { display: flex !important; align-items: center !important; gap: 18px; flex-shrink: 0; }
+
+.topbar-link {
+  color: #fff;
+  display: flex !important;
+  align-items: center;
+  cursor: pointer !important;
+  padding: 8px;
+  margin: -8px;
+}
+
+@media (max-width: 768px) {
+  .topbar-inner { padding: 8px 16px; }
+  .topbar-right { gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .topbar-left span { font-size: 11px; }
+  .topbar-link span { display: none; }
+}
+
+/* ==========================================================================
+   FONTS & PERFORMANCE ANTI-FLICKER RENDERING
+   ========================================================================== */
+.navbar,
+.navbar *,
+.nav-link,
+.nav-link a,
+.nav-links-list a,
+.mobile-navbar-home,
+.get-proposal-button,
+.mobile-drawer-item-row {
+  /* Enforces 'Poppins' */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-weight: 500 !important;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.nav-link a:focus,
+.nav-link a:active,
+.nav-link a:visited,
+.nav-link:focus,
+.nav-link:active,
+.nav-links-list a:focus,
+.nav-links-list a:active,
+.nav-links-list a.active,
+.mobile-navbar-home:focus,
+.mobile-navbar-home:active {
+  font-weight: 500 !important;
+  outline: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+.nav-link,
+.nav-link a,
+.nav-links-list a {
+  transition: color 0.25s ease, background-color 0.25s ease !important;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+  .mobile-navbar-home {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important; 
+  }
+
+  .navbar-mobile-controls div, 
+  .navbar-mobile-controls span,
+  [class*="home-wrapper"], 
+  [class*="home-container"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
+
+.mega-col a {
+  font-size: 13.5px;
+  color: #475569;
+  display: block; 
+  padding: 8px 12px; 
+  margin: 0 -12px; 
+  border-radius: 6px;
+  line-height: 1.5;
+  transition: all 0.25s ease;
+}
+
+.mega-col a:hover {
+  color: #00448f !important;
+  background-color: #f1f5f9; 
+  text-decoration: none !important;
+  transform: translateX(4px); 
+}
+
+/* ==========================================================================
+   SURGICAL HOVER FIX (DOES NOT AFFECT THE LAYOUT STRUCTURE)
+   ========================================================================== */
+
+.mega-menu-rect {
+  position: absolute;
+}
+
+.mega-menu-rect::before {
+  content: "";
+  position: absolute;
+  top: -30px; 
+  left: 0;
+  right: 0;
+  height: 30px; 
+  background: transparent !important; 
+  pointer-events: auto !important;    
+  z-index: 99999;                     
+}
+
+/* ==========================================================================
+   DESKTOP NAVBAR & DROPDOWN FONT BINDING
+   ========================================================================== */
+
+/* Forces the navbar, links, and mega-menu dropdowns to use Poppins */
+.navbar, 
+.navbar *, 
+.mega-menu-rect, 
+.mega-menu-rect *,
+.mega-menu-rect a {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+/* ==========================================================================
+   FORCE FONT ENFORCEMENT ON ALL LINK STATES (FIXES CLICK-FLICKER)
+   ========================================================================== */
+.navbar a:visited,
+.navbar a:active,
+.navbar a:focus,
+.nav-links-list a:visited,
+.nav-links-list a:active,
+.nav-links-list a:focus,
+.mobile-drawer-item-row:visited,
+.mobile-drawer-item-row:active,
+.mobile-drawer-item-row:focus {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+
+/* Find your .dropdown-parent or .nav-link container */
+.dropdown-parent {
+  position: relative;
+  /* Add explicit padding to the bottom so the hover zone extends down */
+  padding-bottom: 15px; 
+  margin-bottom: -15px;
+}
+
+/* Adjust your mega menu placement */
+.mega-menu-rect {
+  position: absolute;
+  top: 100%; /* Positions right at the bottom edge of the parent padding */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* Smooth visibility toggle */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  
+  z-index: 999;
+}
+
+/* Keep it open when hovering either the trigger text OR the dropdown itself */
+.dropdown-parent:hover .mega-menu-rect {
+  opacity: 1;
+  visibility: visible;
+}

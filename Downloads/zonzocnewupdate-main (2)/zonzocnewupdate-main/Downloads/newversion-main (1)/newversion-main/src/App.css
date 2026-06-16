@@ -1,0 +1,118 @@
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY SYSTEM (FIXED - Poppins + Syne)
+   ========================================================================== */
+
+/* Base font (Poppins) */
+html,
+body,
+#__next {
+  font-family: var(--font-b), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* REMOVE font switching on random elements (SAFE reset only) */
+p,
+span,
+div,
+a,
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* Headings use Syne */
+h1, h2, h3, h4, h5, h6,
+.mega-heading {
+  font-family: var(--font-h), sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Prevent link/button font shifts (NO need for !important everywhere) */
+a,
+button {
+  font-family: inherit;
+}
+
+/* Only keep important where browsers override (safe minimal usage) */
+a:visited,
+a:active,
+a:hover,
+a:focus,
+button:hover,
+button:active,
+button:focus {
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   BOILERPLATE STYLES (UNCHANGED)
+   ========================================================================== */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   NAVBAR & DROPDOWN STRUCTURES
+   ========================================================================== */
+
+.dropdown { 
+  position: relative; 
+}
+
+.navbar, 
+.nav-container, 
+.nav-links { 
+  overflow: visible; 
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999;
+}
+
+/* Hover bridge (kept) */
+.dropdown-content::before {
+  content: "";
+  position: absolute;
+  top: -12px; 
+  left: 0; 
+  right: 0;
+  height: 12px;
+}

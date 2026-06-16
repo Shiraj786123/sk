@@ -1,0 +1,119 @@
+.project-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+  font-family: Poppins;
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+  margin-bottom: 30px;
+
+  background: #0047ab;
+  color: #fff;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.back-btn:hover {
+  background: #003a8c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 71, 171, 0.3);
+}
+
+/* ACTIVE CLICK */
+.back-btn:active {
+  transform: scale(0.95);
+}
+
+/* HERO */
+.hero img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+/* DESCRIPTION */
+.description-box {
+  margin-bottom: 60px;
+}
+
+/* GRID LAYOUT (IMPORTANT FIX) */
+.section-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 100px;
+}
+
+/* REVERSE (FOR SOLUTION) */
+.section-row.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.section-row.reverse img {
+  order: 1;
+}
+
+.section-row.reverse .text {
+  order: 2;
+}
+
+/* TEXT */
+.text h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.text p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+/* IMAGE */
+.section-row img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  justify-self: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .section-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ✅ FORCE ALL SECTIONS SAME ORDER */
+  .section-row .text {
+    order: 1 !important;
+  }
+
+  .section-row img {
+    order: 2 !important;
+  }
+
+  /* 🚨 VERY IMPORTANT: OVERRIDE DESKTOP REVERSE */
+  .section-row.reverse img {
+    order: 2 !important;
+  }
+
+  .section-row.reverse .text {
+    order: 1 !important;
+  }
+}

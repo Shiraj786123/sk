@@ -1,0 +1,422 @@
+/* ==========================================================================
+   FOOTER BASE LAYOUT
+   ========================================================================== */
+.footer {
+  background: white;
+  color: #000000;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-top, .line { 
+  display: none; 
+}
+
+.footer-main {
+  padding: 80px 24px 60px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* ==========================================================================
+   BRAND COLUMN (Left Area)
+   ========================================================================== */
+.footer-brand {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+/* Flex frame for logo image and title text side-by-side */
+.footer-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 8px !important;
+  width: auto !important;
+  height: 40px !important; 
+}
+
+/* Favicon graphic properties */
+.footer-logo-img {
+  width: 220px !important;
+  height: 400px !important;
+  margin-left: -30px !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+}
+
+/* Typographic branding title (Colored Navy for visibility on light footer) */
+.footer-logo-text {
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  color: #0a2558 !important;
+  letter-spacing: -0.03em !important;
+  font-family: 'Poppins', system-ui, sans-serif !important;
+  line-height: 1 !important;
+  text-transform: none !important;
+}
+
+/* Subtitle layout directly underneath logo row */
+.footer-tagline {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #1e3a8a !important; 
+  letter-spacing: 0.08em !important;
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+}
+
+/* Main text paragraph descriptions */
+.footer-description {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  color:  #1e3a8a !important; 
+  margin-top: 0 !important;
+  margin-bottom: 36px !important;
+  max-width: 320px !important;
+}
+
+/* Contact box container formatting */
+.footer-contact-box {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 18px !important;
+  width: 100% !important;
+  margin-top: 0 !important;
+}
+
+.contact-heading {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  font-weight: 700 !important;
+  color: #0a2558 !important;
+  margin: 0 !important;
+  max-width: 290px !important;
+}
+
+/* Interactive WhatsApp Button */
+.phone-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  background-color: #0046ae !important;
+  color: #ffffff !important;
+  padding: 12px 24px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.phone-button:hover {
+  background-color: #00338d !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(0, 68, 143, 0.3);
+}
+
+.wa-svg-icon {
+  fill: #ffffff;
+  display: block;
+}
+
+/* ==========================================================================
+   FOOTER NAVIGATION COLUMNS & LINKS
+   ========================================================================== */
+h6.footer-column-title {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #0a2558 !important;
+  margin-bottom: 24px !important;
+  text-transform: uppercase !important;
+  height: 24px !important;
+}
+
+.footer-links {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-links li {
+  margin-bottom: 12px !important;
+}
+
+.footer-links a {
+  color: #1e3a8a !important; /* Clean slate link color */
+  text-decoration: none !important;
+  font-size: 14px !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+  display: inline-block !important;
+}
+
+.footer-links a:hover {
+  color: #38bdf8 !important; /* Sky-blue accent on hover */
+  transform: translateX(4px) !important;
+}
+
+/* ==========================================================================
+   FOOTER BOTTOM BAR
+   ========================================================================== */
+.footer-bottom {
+  padding: 30px 24px !important;
+  background-color: #002b58;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.footer-bottom-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.copyright {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+}
+
+.social-icons {
+  display: flex !important;
+  gap: 16px !important;
+}
+
+.social-icon {
+  width: 38px !important;
+  height: 38px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.social-icon svg {
+  fill: #ffffff !important;
+  display: block !important;
+  transition: all 0.3s ease !important;
+}
+
+.social-icon:hover {
+  background: #ffffff !important;
+  transform: translateY(-3px) !important;
+}
+
+.social-icon:hover svg {
+  fill: #00448f !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT (TABLET & MOBILE CENTERING)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .footer-main {
+    padding: 60px 20px 40px !important;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr !important; /* Vertical stacking */
+    gap: 48px !important;
+    text-align: center !important;
+  }
+
+  /* Center alignment for Brand container elements */
+  .footer-brand {
+    align-items: center !important;
+    text-align: center !important;
+    padding-right: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .footer-logo {
+    justify-content: center !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Reset margin-left offset for favicon when centering */
+  .footer-logo-img {
+    margin-left: 0 !important; 
+  }
+
+  .footer-tagline {
+    margin-bottom: 16px !important;
+    text-align: center !important;
+  }
+
+  .footer-description {
+    margin-bottom: 28px !important;
+    text-align: center !important;
+    max-width: 450px !important; /* Slightly wider boundaries for readability */
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Center alignments for contact block */
+  .footer-contact-box {
+    align-items: center !important;
+    gap: 14px !important;
+  }
+
+  .contact-heading {
+    text-align: center !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .phone-button {
+    margin: 0 auto !important;
+  }
+
+  /* Center alignments for column navigation & link items */
+  .footer-column {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  h6.footer-column-title {
+    text-align: center !important;
+    margin-bottom: 16px !important;
+    height: auto !important;
+  }
+
+  .footer-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .footer-links li {
+    text-align: center !important;
+  }
+
+  /* Disable translate effect on touch devices */
+  .footer-links a:hover {
+    transform: none !important;
+  }
+
+  /* Center copyright & social buttons on bottom bar */
+  .footer-bottom-container {
+    flex-direction: column !important;
+    gap: 20px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+/* Container holding the buttons */
+.footer-contact-buttons {
+  display: flex !important;
+  gap: 12px !important;
+  margin-top: 15px !important;
+}
+
+/* Base button styles - strictly static */
+.contact-icon-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background-color: #0047ab !important; /* Your branding blue */
+  color: #ffffff !important;
+  text-decoration: none !important;
+  
+  /* Disable any movement/transitions entirely */
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Force static hover state */
+.contact-icon-btn:hover {
+  transform: none !important;
+  background-color: #0047ab !important; /* Retains static background color */
+}
+
+/* Force inner SVGs to remain static */
+.contact-icon-btn svg {
+  display: block !important;
+  transform: none !important;
+  transition: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Target WhatsApp class specifically to neutralize other animations */
+.wa-svg-icon {
+  transform: none !important;
+  transition: none !important;
+}
+
+
+
+
+
+
+
+
+
+/* Container holding the buttons */
+.footer-contact-buttons {
+  display: flex !important;
+  gap: 12px !important;
+  margin-top: 15px !important;
+}
+
+/* Base button styles */
+.contact-icon-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background-color: #0047ab !important; /* Your branding blue */
+  color: #ffffff !important;
+  text-decoration: none !important;
+  
+  /* Configure smooth scale animation */
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  transform: scale(1) translate3d(0, 0, 0) !important;
+  transform-origin: center center !important;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Slight zoom on hover without altering the background color */
+.contact-icon-btn:hover {
+  transform: scale(1.08) translate3d(0, 0, 0) !important; /* Zooms up by 8% */
+  background-color: #0047ab !important; 
+}
+
+/* Ensure inner SVGs scale with the parent container smoothly */
+.contact-icon-btn svg {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none; /* Prevents cursor trigger jitter */
+  transform: translate3d(0, 0, 0) !important;
+}

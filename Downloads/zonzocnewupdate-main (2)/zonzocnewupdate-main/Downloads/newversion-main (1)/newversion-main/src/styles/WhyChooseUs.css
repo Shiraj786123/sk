@@ -1,0 +1,451 @@
+/* ==========================================================================
+   Global Mobile Baseline & Layout Styles
+   ========================================================================== */
+.why-us-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+}
+
+.why-us-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.why-us-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  color: #1e3a8a;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.why-us-title {
+  color: #0f172a;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.highlight-text-blue {
+  color: #2563eb;
+}
+
+.why-us-description {
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.desktop-only {
+  display: none;
+}
+
+/* Timeline Components Baseline */
+.why-us-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+}
+
+.timeline-card-row {
+  display: flex;
+  gap: 16px;
+}
+
+.timeline-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 36px;
+}
+
+.timeline-circle-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #eff6ff;
+  color: #2563eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timeline-dashed-line {
+  width: 2px;
+  flex-grow: 1;
+  border-left: 2px dashed #cbd5e1;
+  margin-top: 8px;
+}
+
+.timeline-info-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  border-radius: 12px;
+  flex-grow: 1;
+}
+
+.info-card-title {
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.info-card-desc {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Right Side Graphic Base Setup */
+.dashboard-visual-canvas {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+}
+
+.dashboard-main-img {
+  width: 140%;
+  height: auto;;
+  border-radius: 8px;
+  display: block;
+}
+
+
+/* Floating Component Widget Card */
+.top-rated-floating-widget {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  width: 110px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.widget-icon-circle {
+  width: 28px;
+  height: 28px;
+  background: #fef3c7;
+  color: #d97706;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 6px;
+}
+
+.widget-heading {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.widget-subheading {
+  font-size: 9px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.widget-stars {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  color: #f59e0b;
+}
+
+/* Metrics Quad Panel Base Layout */
+.analytics-metrics-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.stats-quad-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-grid-cell {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.stat-icon-wrapper {
+  color: #2563eb;
+  margin-bottom: 8px;
+}
+
+.stat-metric-number {
+  color: #0f172a;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.stat-metric-label {
+  color: #64748b;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* NEW: Business Commitments Grid (Mobile Stacking Default) */
+.business-commitments-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 20px;
+  margin-top: 4px;
+}
+
+.commitment-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.commitment-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #eff6ff;
+  color: #2563eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.commitment-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.commitment-text strong {
+  display: block;
+  font-size: 13px;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.commitment-text p {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Desktop Responsive Viewports System
+   ========================================================================== */
+@media (min-width: 1025px) {
+  .why-us-section {
+    padding: 100px 48px;
+  }
+  
+  /* Layout columns align perfectly at matching height */
+  .why-us-container {
+    display: flex;
+    flex-direction: row;  
+    align-items: stretch; /* Both columns have the exact same physical height */
+    gap: 64px;
+  }
+
+  .why-us-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Keeps right column items tight, allowing footer layout room to land properly */
+  .why-us-right {
+    flex: 1.15;            
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 24px;                  
+  }
+
+  /* Distributes timeline cards dynamically to match right side bottom edge */
+  .why-us-timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Restored: Guarantees the left side ends on the exact same line as the right side */
+    flex-grow: 1;          
+    margin-top: 32px;               /* Sits naturally under description text with no massive gap */
+  }
+
+  /* Dashboard inner image layout metrics */
+  .dashboard-visual-canvas {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 32px;  
+    min-height: 280px;   
+  }
+
+  .dashboard-main-img {
+    height: 100%;
+    object-fit: cover;   
+  }
+
+  .analytics-metrics-panel {
+    padding: 32px;       
+  }
+
+  /* NEW: Desktop 3-Column Footer Layout Initialization */
+  .business-commitments-grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 16px;
+    padding-top: 24px;
+  }
+
+  /* Typographic Desktop Upgrades to naturally fill height and eliminate empty gaps */
+  .timeline-rail {
+    width: 48px;        /* Increased slightly from 44px to balance larger cards */
+    padding-top: 8px;
+  }
+  
+  .why-us-title {
+    font-size: 42px;    /* Scaled up slightly */
+    margin-bottom: 24px; /* Increased margin to consume space naturally */
+  }
+  
+  .desktop-only {
+    display: inline;
+  }
+  
+  .why-us-description {
+    font-size: 17px;    /* Scaled up slightly */
+    margin-bottom: 40px; /* Increased margin to consume space naturally */
+  }
+  
+  .timeline-card-row {
+    gap: 24px;          /* Balanced space between icon rail and card */
+  }
+  
+  .timeline-circle-icon {
+    width: 48px;        /* Enlarged icons to fit desktop scale */
+    height: 48px;       
+  }
+  
+  .timeline-info-card {
+    padding: 24px;      /* Increased internal card padding to naturally fill vertical height */
+  }
+  
+  .info-card-title {
+    font-size: 18px;    /* Scaled up slightly */
+  }
+  
+  .info-card-desc {
+    font-size: 15px;    /* Scaled up slightly */
+  }
+  
+  .stats-quad-grid {
+    gap: 20px;
+  }
+  
+  .stat-metric-number {
+    font-size: 36px;
+  }
+  
+  .commitment-text strong {
+    font-size: 13.5px;
+  }
+
+  .top-rated-floating-widget {
+    top: 24px;
+    right: 24px;
+    padding: 20px 16px;
+    width: 125px;
+  }
+}
+
+
+
+
+
+@media (min-width: 1025px) {
+  /* Ensure the parent column doesn't squeeze the visual side */
+  .why-us-right {
+    flex: 1.15;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0; 
+  }
+
+  /* Force the canvas to maintain its footprint */
+  .dashboard-visual-canvas {
+    flex-shrink: 0;      
+    flex-grow: 1;        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    min-height: 400px;   /* Restored: Original tall image height */
+    position: relative;
+  }
+
+  /* Ensure the image fills the canvas without distortion */
+  .dashboard-main-img {
+    width: 100%;
+    height: 100%;
+    /* 'contain' keeps the full graphic visible inside the border */
+    /* 'cover' fills the space but might crop edges if aspect ratios differ */
+    object-fit: contain; 
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   SCOPED 2x2 GRID FOR WHY CHOOSE US METRIC PANEL
+   ========================================================================== */
+@media (min-width: 1025px) {
+  /* Targets only the metrics panel in the Why Choose column to prevent boundary overflows */
+  .why-us-right .stats-quad-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Locks into a perfect 2x2 grid */
+    gap: 16px !important;
+    margin-bottom: 0 !important;
+  }
+}

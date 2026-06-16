@@ -1,0 +1,116 @@
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY
+   ========================================================================== */
+
+html,
+body,
+#__next,
+main,
+div,
+span,
+p,
+a,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-b), 'Poppins', sans-serif !important;
+}
+
+/* Poppins for all headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.mega-heading {
+  font-family: var(--font-b), 'Poppins', sans-serif !important;
+}
+
+/* Maintain font on all states */
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus,
+button:hover,
+button:active,
+button:focus,
+.navbar *,
+.mobile-nav-drawer * {
+  font-family: inherit !important;
+}
+
+/* ==========================================================================
+   BOILERPLATE STYLES
+   ========================================================================== */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   NAVBAR & DROPDOWN STRUCTURES
+   ========================================================================== */
+.dropdown { 
+  position: relative; 
+}
+
+.navbar, 
+.nav-container, 
+.nav-links { 
+  overflow: visible; 
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0;
+  z-index: 9999;
+}
+
+/* Hover bridge wrapper */
+.dropdown-content::before {
+  content: "";
+  position: absolute;
+  top: -12px; 
+  left: 0; 
+  right: 0;
+  height: 12px;
+}

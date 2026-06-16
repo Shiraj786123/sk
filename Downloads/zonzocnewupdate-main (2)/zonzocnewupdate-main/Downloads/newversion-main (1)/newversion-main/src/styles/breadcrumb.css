@@ -1,0 +1,214 @@
+/* ================= BREADCRUMBS IN-HERO STYLE ================= */
+
+.breadcrumb-wrap {
+  background: transparent !important; /* Strips the white full-width panel background */
+  border-bottom: none !important; /* Strips the bottom divider line */
+  padding: 0 !important; /* Reset padding to group tightly with h1 */
+  margin-bottom: 24px !important; /* Perfect visual spacing above the main title */
+  display: block !important;
+  width: 100% !important;
+}
+
+.breadcrumb-container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; /* Horizontally centers the breadcrumbs above your titles */
+  gap: 8px !important;
+
+  font-size: 0.85rem !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  text-transform: uppercase !important; /* Clean premium casing */
+  letter-spacing: 0.05em !important;
+}
+
+/* Clickable Parent Links */
+.breadcrumb-container a {
+  color: rgba(255, 255, 255, 0.6) !important; /* Soft legible gray-white */
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  transition: color 0.22s ease !important;
+}
+
+/* Sky-Blue Glow on Hover */
+.breadcrumb-container a:hover {
+  color: #38bdf8 !important; /* Brand sky blue hover */
+  text-decoration: none !important;
+}
+
+/* Separator character (›) */
+.breadcrumb-container .separator {
+  color: rgba(255, 255, 255, 0.3) !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  user-select: none !important;
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+}
+
+/* Unclickable parent spans */
+.breadcrumb-container span:not(.active):not(.separator) {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 700 !important;
+}
+
+/* Active current-page item (Highlighted in Sky Blue) */
+.breadcrumb-container .active {
+  color: #38bdf8 !important; /* High contrast sky blue */
+  font-weight: 700 !important;
+}
+
+/* ================= MOBILE ADJUSTMENTS ================= */
+
+@media (max-width: 768px) {
+  .breadcrumb-container {
+    width: 94% !important;
+    font-size: 0.75rem !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important; /* Prevents overflow clipping on mobile screens */
+  }
+}
+
+/* ================= BREADCRUMBS IN-HERO STYLE ================= */
+
+.breadcrumb-wrap {
+  background: transparent !important; /* Strips the white full-width panel background */
+  border-bottom: none !important; /* Strips the bottom divider line */
+  padding: 0 !important; /* Reset padding to group tightly with h1 */
+  margin-bottom: 24px !important; /* Visual spacing above the main title */
+  display: block !important;
+  width: 100% !important;
+}
+
+.breadcrumb-container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; /* Horizontally centers the breadcrumbs above your titles */
+  gap: 8px !important;
+
+  font-size: 0.85rem !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  text-transform: uppercase !important; /* Clean premium casing */
+  letter-spacing: 0.05em !important;
+}
+
+/* Clickable Parent Links */
+.breadcrumb-container a {
+  color: rgba(255, 255, 255, 0.6) !important; /* Soft legible gray-white on dark backgrounds */
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  transition: color 0.22s ease !important;
+}
+
+/* Sky-Blue Glow on Hover */
+.breadcrumb-container a:hover {
+  color: #38bdf8 !important;
+  text-decoration: none !important;
+}
+
+/* ================= FORCE STRIP GLOBAL BACKGROUND CONFLICTS ================= */
+/* This block strips away any inherited white blocks, circles, or padding on spans */
+.breadcrumb-container span {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important; /* Strips the white circles and pills */
+  display: inline-block !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+/* Separator character (›) */
+.breadcrumb-container .separator {
+  color: rgba(255, 255, 255, 0.3) !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  user-select: none !important;
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+  
+  /* Additional structural resets for the separator */
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Unclickable parent spans */
+.breadcrumb-container span:not(.active):not(.separator) {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 700 !important;
+}
+
+/* Active current-page item */
+.breadcrumb-container .active {
+  color: #38bdf8 !important; /* Sky Blue */
+  font-weight: 700 !important;
+  
+  /* Additional structural resets for the active text */
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* ================= MOBILE ADJUSTMENTS ================= */
+
+@media (max-width: 768px) {
+  .breadcrumb-container {
+    width: 94% !important;
+    font-size: 0.75rem !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+
+
+
+
+/* Style for the non-link "Services" breadcrumb */
+.no-link {
+    cursor: default !important;   /* Keeps the arrow cursor */
+    text-decoration: none !important;
+    pointer-events: none;         /* Disables clickability */
+    color: inherit;               /* Keeps your standard text color */
+}
+
+/* Optional: Add a subtle hover effect if you want it to look interactive */
+.no-link:hover {
+    color: #00448f;               /* Change color on hover without it being a link */
+    transition: color 0.2s ease;
+}
+
+
+
+
+
+
+.no-link-hover {
+    cursor: default !important;   /* Standard arrow cursor */
+    pointer-events: auto;         /* Allows hover events to trigger */
+    transition: color 0.3s ease;  /* Smooth transition */
+    color: #64748b;               /* Your default text color */
+}
+
+.no-link-hover:hover {
+    color: #00448f !important;    /* Change to your desired hover color */
+}

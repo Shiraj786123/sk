@@ -1,0 +1,228 @@
+/* ===== COLORS ===== */
+:root {
+  --cu-dark-navi: #040712;
+  --cu-white: #ffffff;
+  --cu-light-purple: #7a3fff;
+  --cu-pink-purple: #c026d3;
+  --cu-card-bg: rgba(255, 255, 255, 0.03);
+}
+
+.contact__wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  font-family: Poppins;
+}
+
+/* ===== PAGE WRAPPER ===== */
+.contactus-page {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #0f0b25, #040712 70%);
+  padding: 10px 20px;
+  /* margin-top: 140px; */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== GLOW CIRCLES ===== */
+.cu-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+}
+
+.cu-glow-1 {
+  width: 350px;
+  height: 350px;
+  background: var(--cu-light-purple);
+  top: 150px;
+  left: -100px;
+}
+
+.cu-glow-2 {
+  width: 350px;
+  height: 350px;
+  background: var(--cu-pink-purple);
+  top: 200px;
+  right: -100px;
+}
+
+.cu-glow-3 {
+  width: 250px;
+  height: 250px;
+  background: var(--cu-light-purple);
+  bottom: 50px;
+  left: 40%;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.contactus-container {
+  max-width: 1100px;
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+}
+
+/* ===== HEADING ===== */
+.contactus-heading h1 {
+  font-size: 48px;
+  color: var(--cu-white);
+  font-weight: 700;
+}
+
+.contactus-heading h1 span {
+  color: var(--cu-light-purple);
+}
+
+.contactus-heading p {
+  color: #cfcfcf;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+/* ===== CONTACT CARD ===== */
+.contactus-card {
+  margin-top: 20px;
+  display: flex;
+  gap: 25px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(25px);
+}
+
+/* ===== FORM AREA ===== */
+.cu-form-area {
+  flex: 1;
+  text-align: left;
+  color: var(--cu-white);
+}
+
+.cu-form-area h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.cu-form-area p {
+  font-size: 13px;
+  color: #bbb;
+  margin-bottom: 25px;
+}
+
+/* ===== FORM INPUTS ===== */
+.cu-input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.cu-form-area input,
+.cu-form-area textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px;
+  color: var(--cu-white);
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.cu-form-area textarea {
+  height: 110px;
+  resize: none;
+}
+
+.cu-form-area button {
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--cu-light-purple);
+  color: var(--cu-white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cu-form-area button:hover {
+  background: var(--cu-pink-purple);
+}
+
+/* ===== ASTRONAUT SIDE ===== */
+.cu-astronaut-box {
+  flex: 1;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cu-astronaut-box img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cu-astro-quote {
+  margin-top: 15px;
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .contactus-card {
+    flex-direction: column;
+  }
+}
+
+
+
+/* Ensure the input container acts as the absolute baseline context */
+.form-group {
+  position: relative;
+  width: 100%;
+}
+
+/* Absolute positioning for the SVG input icons */
+.form-group .input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8; /* Modern neutral gray color */
+  pointer-events: none; /* Allows user clicks to pass right through the icon into the input */
+  z-index: 5;
+  transition: color 0.2s ease;
+}
+
+/* Specific vertical offset alignment for the textarea icon */
+.form-group.textarea-group .textarea-icon {
+  top: 18px; /* Places the icon near the top of the message box instead of the center */
+  transform: none;
+}
+
+/* Indent input text so that it doesn't overlap the icon */
+.form-group input {
+  padding-left: 44px !important; /* Forces standard padding on the left side of text */
+  box-sizing: border-box;
+}
+
+/* Indent textarea message text so that it doesn't overlap the icon */
+.form-group textarea {
+  padding-left: 44px !important;
+  padding-top: 16px !important;
+  box-sizing: border-box;
+}
+
+/* Highlight icon color on focus */
+.form-group input:focus + .input-icon,
+.form-group textarea:focus + .input-icon {
+  color: #2563eb; /* Matches your active brand blue color on input focus */
+}

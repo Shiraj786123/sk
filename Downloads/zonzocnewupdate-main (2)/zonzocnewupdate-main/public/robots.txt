@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin-dashboard
+Disallow: /login
+Disallow: /signup
+Disallow: /user-profile
+Disallow: /node_modules/
+
+# ChatGPT crawler
+User-agent: GPTBot
+Allow: /
+
+# Claude / Anthropic crawler
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity crawler
+User-agent: PerplexityBot
+Allow: /
+
+# Common AI research crawlers
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://zonzoctech.com/sitemap.xml

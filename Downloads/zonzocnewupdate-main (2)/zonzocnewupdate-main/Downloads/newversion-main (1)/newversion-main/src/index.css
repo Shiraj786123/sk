@@ -1,0 +1,129 @@
+:root {
+  --color-primary: #00448f;
+  --color-primary-dark: #003070;
+  --color-primary-light: #e8f0fb;
+  --color-white: #ffffff;
+  --color-black: #0a0a0a;
+  --color-grey: #6b7280;
+  --color-border: #e2e8f0;
+  --color-bg-light: #f8faff;
+
+  /* FIXED: use Next.js font variables instead of Inter */
+  --font-b: 'Poppins', sans-serif;
+  --font-h: 'Syne', sans-serif;
+  --font-dm: 'DM Sans', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 40px rgba(0,68,143,0.12);
+
+  --transition: 0.2s ease;
+
+  --container-width: 1200px;
+  --section-padding: 100px;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* GLOBAL BODY FONT */
+body {
+  font-family: var(--font-b), sans-serif;
+  color: var(--color-black);
+  background: var(--color-white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HEADINGS FONT */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-h), sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-black);
+}
+
+/* FONT SIZES */
+h1 { font-size: 56px; }
+h2 { font-size: 40px; }
+h3 { font-size: 24px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-grey);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* CONTAINER */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* SECTIONS */
+section {
+  padding: var(--section-padding) 0;
+}
+
+/* CODE FONT */
+code {
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1280px) {
+  .container { padding: 0 32px; }
+  h1 { font-size: 48px; }
+}
+
+@media (max-width: 1024px) {
+  section { padding: 80px 0; }
+  h1 { font-size: 42px; }
+  h2 { font-size: 32px; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  section { padding: 60px 0; }
+  h1 { font-size: 36px; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 20px; }
+  p  { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  section { padding: 40px 0; }
+  h1 { font-size: 28px; }
+  h2 { font-size: 24px; }
+}
+
+/* HERO TEXT OVERRIDES */
+.hero h1,
+.service-hero h1,
+.hero-content h1,
+.hero-text h1 {
+  color: #ffffff;
+}

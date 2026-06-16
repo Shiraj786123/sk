@@ -1,0 +1,2459 @@
+/* ═══════════════════════════════════════════════════════
+   ECOMMERCE DEVELOPMENT PAGE — STYLES
+   Font scale: heading 40px · card-h3 18px · body 16px
+               sub-text 14px · pill/label 13px · FAQ-q 18px
+               CTA title 44px
+═══════════════════════════════════════════════════════ */
+
+:root {
+  --section-padding: 70px;
+  --ecd-blue: #003070;
+  --ecd-blue2: #00448f;
+  --ecd-dark: #010c22;
+  --ecd-light: #f8faff;
+}
+
+/* Global Box-Sizing Safety Check */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ── Wrapper ──────────────────────────────────────────── */
+.ecd__wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ── Shared container ─────────────────────────────────── */
+.ecd__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Shared helpers ───────────────────────────────────── */
+.ecd-section-head {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.ecd-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ecd-blue);
+  margin-bottom: 14px;
+}
+
+.ecd-eyebrow::before { content: '— '; opacity: .5; }
+.ecd-eyebrow::after  { content: ' —'; opacity: .5; }
+.ecd-eyebrow--center { display: block; text-align: center; }
+.ecd-eyebrow--light  { color: #93c5fd; }
+
+.ecd__heading {
+  font-size: 30px;
+  font-weight: 800;
+  color: #0a0a0a;
+  line-height: 1.22;
+  margin-bottom: 14px;
+  font-family: 'Inter', sans-serif;
+}
+
+.ecd__subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.75;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.ecd__description {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.ecd-white { color: #fff !important; }
+
+/* ── Hero buttons ─────────────────────────────────────── */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #fff;
+  color: var(--ecd-blue);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all .2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,.45);
+  transition: all .2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+
+/* ═══════════════════════════════════════
+   HERO — DESKTOP STYLES
+═══════════════════════════════════════ */
+.ecd__hero {
+  position: relative;
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px;
+  overflow: hidden;
+}
+
+.ecd__hero_pattern {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px),
+    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+  animation: ecd__pattern_move 60s linear infinite;
+}
+
+@keyframes ecd__pattern_move {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(70px); }
+}
+
+.ecd__hero_container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.ecd__hero_badge_wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  background: rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: .75rem 1.8rem;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255,255,255,.3);
+}
+
+.ecd__hero_badge_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(74,222,128,.3);
+}
+
+.ecd__hero_title {
+  font-size: 52px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.ecd__hero_title_highlight { color: #93c5fd; }
+
+.ecd__hero_text {
+  font-size: 20px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.ecd__hero_trust {
+  margin-top: 2rem;
+  font-size: 14px;
+  color: rgba(255,255,255,.65);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════
+   DESKTOP BREADCRUMB ALIGNMENT OVERRIDES (.ecd__wrapper)
+═══════════════════════════════════════════════════════ */
+html body div[class*="ecd__wrapper"] section[class*="sp-hero-split"] div[class*="breadcrumb-wrap"],
+html body div.ecd__wrapper section.sp-hero-split div.breadcrumb-wrap,
+html body .ecd__wrapper .sp-hero-split .breadcrumb-wrap {
+  margin-left: -60px !important;
+  padding-left: 0 !important;
+  font-size: 11px !important;
+}
+
+html body div[class*="ecd__wrapper"] section[class*="sp-hero-split"] div[class*="breadcrumb-wrap"] *,
+html body div.ecd__wrapper section.sp-hero-split div.breadcrumb-wrap *,
+html body .ecd__wrapper .sp-hero-split .breadcrumb-wrap * {
+  font-size: 11px !important;
+}
+
+/* ═══════════════════════════════════════════════════
+   STATS BAR — Desktop Default
+═══════════════════════════════════════════════════ */
+.ecd-stats-bar {
+  background: #fff;
+  padding: 0 24px;
+}
+
+.ecd-stats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border: 1.5px solid #e4eaf6;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,48,112,.1);
+  background: #fff;
+  overflow: hidden;
+  transform: none !important;
+  margin-top: 10px !important;
+  margin-bottom: 0 !important;
+}
+
+.ecd-stat-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 12px 20px;
+  border-right: 1px solid #e4eaf6;
+  gap: 4px;
+  transition: background .2s;
+}
+.ecd-stat-cell:last-child { border-right: none; }
+.ecd-stat-cell:hover { background: #f8faff; }
+
+.ecd-stat-icon {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.ecd-stat-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ecd-blue);
+  line-height: 1;
+}
+
+.ecd-stat-lbl {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════
+   CUSTOM INTRO SECTION (SITEMAP ROW)
+═══════════════════════════════════════ */
+.ecd-why-section {
+  padding: 40px 0 90px;
+  background: #fff;
+}
+
+.ecd-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.ecd-why-left .ecd-eyebrow { margin-bottom: 14px; }
+
+/* Sitemap Cards Row Grid */
+.ecd-intro-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 24px 0 10px;
+  margin-top: 40px;
+  box-sizing: border-box;
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.ecd-intro-marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: marqueeScrollTech 35s linear infinite;
+}
+
+/* Pause animation on hover */
+.ecd-intro-marquee-wrapper:hover .ecd-intro-marquee-track {
+  animation-play-state: paused;
+}
+
+.ecd-intro-sitemap-col {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Card Styling */
+.ecd-intro-sitemap-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 68, 143, 0.05);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  min-height: 270px;
+}
+
+.ecd-intro-sitemap-card:hover {
+  transform: translateY(-6px);
+  border-color: #2563eb;
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.12);
+}
+
+/* Sitemap Top Header - Colored #00448f */
+.ecd-intro-sitemap-header-bar {
+  background: #00448f;
+  height: 12px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.ecd-intro-browser-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Card Body */
+.ecd-intro-sitemap-body {
+  flex: 1;
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  background: #ffffff;
+  text-align: left;
+}
+
+.aiwa-intro-card-left-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ecd-intro-sitemap-card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ecd-blue);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ecd-intro-check-icon {
+  color: #2563eb;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Custom Modern Colorful Icon Containers */
+.ecd-intro-icon-box {
+  height: 75px;
+  width: 100%;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.ecd-intro-icon-box.pink-purple {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+  color: #db2777;
+  border: 1px dashed rgba(236, 72, 153, 0.3);
+}
+
+.ecd-intro-icon-box.cyan-blue {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(59, 130, 246, 0.15) 100%);
+  color: #0891b2;
+  border: 1px dashed rgba(6, 182, 212, 0.3);
+}
+
+.ecd-intro-icon-box.lime-green {
+  background: linear-gradient(135deg, rgba(132, 204, 22, 0.15) 0%, rgba(34, 197, 94, 0.15) 100%);
+  color: #16a34a;
+  border: 1px dashed rgba(132, 204, 22, 0.3);
+}
+
+.ecd-intro-icon-box.orange-yellow {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.15) 0%, rgba(234, 179, 8, 0.15) 100%);
+  color: #ea580c;
+  border: 1px dashed rgba(249, 115, 22, 0.3);
+}
+
+.ecd-intro-icon-box.purple-indigo {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(79, 70, 229, 0.15) 100%);
+  color: #7c3aed;
+  border: 1px dashed rgba(168, 85, 247, 0.3);
+}
+
+.ecd-intro-icon-box.blue-accent {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.15) 100%);
+  color: #2563eb;
+  border: 1px dashed rgba(56, 189, 248, 0.3);
+}
+
+/* Footer of the sitemap card with arrow animation */
+.ecd-intro-sitemap-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-top: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.25s ease;
+}
+
+.ecd-intro-card-arrow { transition: transform 0.25s ease; }
+.ecd-intro-sitemap-card:hover .ecd-intro-sitemap-card-footer { color: #2563eb; }
+.ecd-intro-sitemap-card:hover .ecd-intro-card-arrow { transform: translateX(4px); }
+
+.ecd-intro-sitemap-line {
+  width: 2px;
+  height: 40px;
+  border-left: 2px dashed #cbd5e1;
+  margin-top: 12px;
+}
+
+/* Infinite Marquee Scroll Keyframes Animation */
+@keyframes marqueeScrollTech {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Comparison card */
+.ecd-comparison-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,48,112,.12);
+  border: 1.5px solid #e4eaf6;
+}
+
+.ecd-compare-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.ecd-compare-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ecd-head-bad {
+  background: #fff0f0;
+  color: #ef4444;
+  border-bottom: 1px solid #fecaca;
+}
+
+.ecd-head-good {
+  background: #f0fdf4;
+  color: #16a34a;
+  border-bottom: 1px solid #bbf7d0;
+  border-left: 1px solid #e4eaf6;
+}
+
+.ecd-compare-icon { font-size: 16px; }
+
+.ecd-compare-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.ecd-row-bad  { color: #374151; background: #fff; }
+.ecd-row-good { color: #374151; background: #fafffe; border-left: 1px solid #e4eaf6; }
+
+.ecd-row-x {
+  color: #ef4444;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.ecd-row-check {
+  color: #16a34a;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ── SECTION 2 — SERVICES ──────────────────────────────── */
+.ecd-services-section {
+  padding: 90px 0;
+  background: #f8faff;
+}
+
+.ecd-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.ecd-service-card {
+  background: #fff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 16px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: all .22s;
+  position: relative;
+  overflow: hidden;
+}
+
+.ecd-service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  box-shadow: 0 0 0 2px var(--ecd-blue);
+  opacity: 0;
+  transition: opacity .22s;
+  pointer-events: none;
+}
+
+.ecd-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,48,112,.12);
+}
+
+.ecd-service-card:hover::before { opacity: 1; }
+
+.ecd-service-icon-box {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--ecd-blue), var(--ecd-blue2));
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 18px rgba(0,48,112,.22);
+}
+
+.ecd-service-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.ecd-service-desc {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.ecd-learn-more {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ecd-blue);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap .18s;
+  margin-top: auto;
+}
+.ecd-learn-more:hover { gap: 8px; }
+
+/* ── PLATFORMS STRIP ───────────────────────────────────── */
+.ecd-platforms-section {
+  padding: 40px 0 56px;
+  background: #fff;
+  border-top: 1px solid #e4eaf6;
+  border-bottom: 1px solid #e4eaf6;
+}
+
+.ecd-platforms-strip {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+/* Each platform tile */
+.ecd-platform-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  cursor: default;
+  transition: transform .2s;
+}
+
+.ecd-platform-card:hover { transform: translateY(-4px); }
+
+/* Icon wrapper — rounded square */
+.ecd-platform-icon-wrap {
+  width: 64px;
+  height: 64px;
+  background: #f8faff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.ecd-platform-card:hover .ecd-platform-icon-wrap {
+  border-color: #a8c4f0;
+  box-shadow: 0 6px 20px rgba(0,48,112,.13);
+}
+
+/* Actual devicon image */
+.ecd-platform-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+/* Letter fallback for platforms without a devicon */
+.ecd-platform-fallback {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Platform name label */
+.ecd-platform-name {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* "More" tile */
+.ecd-platform-more-card .ecd-more-icon {
+  font-size: 22px;
+  font-weight: 800;
+  color: #6b7280;
+  background: #f1f5f9;
+  border-color: #e4eaf6;
+}
+
+/* ── SUCCESS RESULTS ───────────────────────────────────── */
+.ecd-results-section {
+  padding: 90px 0;
+  background: linear-gradient(160deg, #010c22 0%, #001245 55%, #003070 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ecd-results-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(96,165,250,.05) 0%, transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(0,68,143,.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ecd-results-section .ecd-section-head {
+  position: relative;
+  z-index: 1;
+}
+
+.ecd-results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.ecd-result-card {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  transition: background .2s, transform .2s;
+  backdrop-filter: blur(6px);
+}
+
+.ecd-result-card:hover {
+  background: rgba(255,255,255,.12);
+  transform: translateY(-4px);
+}
+
+.ecd-result-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.ecd-result-stat {
+  font-size: 40px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.ecd-result-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255,255,255,.9);
+  line-height: 1.3;
+}
+
+.ecd-result-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.5;
+}
+
+/* ── PROCESS ───────────────────────────────────────────── */
+.ecd-process-section {
+  padding: 90px 0;
+  background: #f8faff;
+}
+
+.ecd-process-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+
+.ecd-process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.ecd-process-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.ecd-process-icon {
+  width: 68px;
+  height: 68px;
+  min-width: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ecd-blue), var(--ecd-blue2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 8px 28px rgba(0,48,112,.25);
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-weight: 700;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.ecd-process-step:hover .ecd-process-icon {
+  transform: translateY(-4px) scale(1.07);
+  box-shadow: 0 16px 40px rgba(0,48,112,.32);
+}
+
+.ecd-process-dash {
+  position: absolute;
+  top: 34px;
+  left: calc(50% + 34px);
+  width: calc(100% - 34px);
+  height: 2px;
+  border-top: 2px dashed #c7d8f8;
+  z-index: 0;
+}
+
+.ecd-process-num {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ecd-blue);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.ecd-process-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── WHO FOR ───────────────────────────────────────────── */
+.ecd-who-section {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.ecd-who-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.ecd-who-tile {
+  background: #f8faff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 14px;
+  padding: 22px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: default;
+  transition: all .2s;
+}
+
+.ecd-who-tile:hover {
+  border-color: var(--ecd-blue);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0,48,112,.12);
+  background: #fff;
+}
+
+.ecd-who-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--ecd-blue), var(--ecd-blue2));
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 5px 16px rgba(0,48,112,.2);
+  transition: transform .2s;
+}
+
+.ecd-who-tile:hover .ecd-who-icon { transform: scale(1.08); }
+
+.ecd-who-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── FAQ ───────────────────────────────────────────────── */
+.ecd-faq-section {
+  padding: 90px 0;
+  background: #f8faff;
+}
+
+.ecd-faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ecd-faq-item {
+  background: #fff;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 14px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color .18s, box-shadow .18s;
+}
+
+.ecd-faq-item--open,
+.ecd-faq-item:hover {
+  border-color: var(--ecd-blue);
+  box-shadow: 0 6px 24px rgba(0,48,112,.09);
+}
+
+.ecd-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  user-select: none;
+}
+
+.ecd-faq-q span:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a0a0a;
+  line-height: 1.35;
+}
+
+.ecd-faq-chevron {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: #eef3ff;
+  color: var(--ecd-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ecd-faq-a { padding: 0 24px 20px; }
+
+.ecd-faq-a p {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.75;
+  border-top: 1px solid #e4eaf6;
+  padding-top: 16px;
+  margin: 0;
+}
+
+/* ── CTA ───────────────────────────────────────────────── */
+.ecd-cta-section {
+  padding: 90px 0;
+  background: linear-gradient(135deg, #010c22 0%, #001245 55%, var(--ecd-blue) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ecd-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 60%, rgba(96,165,250,.06) 0%, transparent 55%),
+    radial-gradient(circle at 75% 20%, rgba(0,68,143,.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ecd-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left */
+.ecd-cta-title {
+  font-size: 44px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.18;
+  margin-bottom: 16px;
+}
+
+.ecd-cta-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,.78);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.ecd-cta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ecd-cta-pills span {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.8);
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 5px 14px;
+  border-radius: 100px;
+}
+
+/* Right — form card */
+.ecd-cta-form-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
+.ecd-form-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 24px;
+}
+
+.ecd-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.ecd-form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #0a0a0a;
+  background: #f8faff;
+  outline: none;
+  transition: border-color .18s;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.ecd-form-input::placeholder { color: #9ca3af; }
+.ecd-form-input:focus { border-color: var(--ecd-blue); background: #fff; }
+
+.ecd-form-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 6px;
+  background: linear-gradient(135deg, var(--ecd-blue), var(--ecd-blue2));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 6px 20px rgba(0,48,112,.3);
+}
+
+.ecd-form-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,48,112,.4);
+}
+
+/* ═══════════════════════════════════════════════════════
+   GLOBAL RESPONSIVE BREAKS (UNIFIED & OVERLAP FREE)
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .ecd-stats-inner  { grid-template-columns: repeat(3, 1fr); transform: translateY(-24px); }
+  .ecd-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .ecd-results-grid  { grid-template-columns: repeat(2, 1fr); }
+  .ecd-process-track { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .ecd-process-dash  { display: none; }
+  .ecd-who-grid      { grid-template-columns: repeat(5, 1fr); }
+}
+
+@media (max-width: 1024px) {
+  .ecd__hero         { padding: 80px 24px; }
+  .ecd__heading      { font-size: 32px; }
+  .ecd-cta-inner     { grid-template-columns: 1fr; }
+  .ecd-cta-form-card { max-width: 520px; margin: 0 auto; }
+}
+
+@media (max-width: 900px) {
+  .ecd-why-grid     { grid-template-columns: 1fr; }
+  .ecd-cta-inner    { grid-template-columns: 1fr; }
+  .ecd-who-grid     { grid-template-columns: repeat(4, 1fr); }
+  .ecd-stats-inner  { grid-template-columns: repeat(3, 1fr); transform: translateY(-20px); }
+}
+
+/* Decreased Desktop Title Scaling */
+section.ecd__hero h1.ecd__hero_title,
+section.ecd__hero .ecd__hero_title,
+h1.ecd__hero_title {
+  font-size: 52px !important;
+}
+
+/* ═══════════════════════════════════════════════════════
+   UNIFIED & BULLETPROOF MOBILE OVERRIDES (Max-width: 768px)
+═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* 1. Prevent parent flexbox stretching & lock viewports */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .ecd__wrapper {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .ecd__hero {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    min-height: auto !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Target both theme classes and wildcard variants */
+  .ecd__hero_container,
+  .sp-hero-split-grid,
+  [class*="sp-hero-split-grid"],
+  .sp-hero-split-content,
+  [class*="sp-hero-split-content"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  /* Force override standard container margins and inner paddings */
+  .ecd__container,
+  .aiwd-container,
+  div[class*="aiwd-container"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  /* 2. Headline & Hero Text Centering Overrides */
+  .sp-hero-split-title,
+  .ecd__hero_title,
+  [class*="sp-hero-split-title"],
+  h1[class*="hero-split-title"] {
+    font-size: 28px !important;              /* Clean responsive scale to prevent cut-offs */
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    letter-spacing: -0.02em !important;
+    margin-top: 10px !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .sp-hero-split-accent {
+    display: inline !important;
+    text-align: center !important;
+  }
+
+  .ecd__hero_text,
+  .sp-hero-split-content p,
+  p[class*="hero-split-text"] {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 24px auto !important;
+    padding: 0 4px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. Center Breadcrumbs Row-wise without wrapping */
+  html body div.ecd__wrapper div.sp-hero-split div.breadcrumb-wrap,
+  html body .ecd__wrapper .sp-hero-split .breadcrumb-wrap,
+  html body div[class*="ecd__wrapper"] div[class*="sp-hero-split"] div[class*="breadcrumb-wrap"],
+  html body div.breadcrumb-wrap,
+  html body .breadcrumb-wrap,
+  html body div[class*="breadcrumb-wrap"] {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 16px auto !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  html body div.ecd__wrapper div.sp-hero-split div.breadcrumb-wrap > div,
+  html body .ecd__wrapper .sp-hero-split .breadcrumb-wrap > div,
+  html body div[class*="ecd__wrapper"] div[class*="sp-hero-split"] div[class*="breadcrumb-wrap"] > div,
+  html body div.breadcrumb-wrap > div,
+  html body .breadcrumb-wrap > div,
+  html body div[class*="breadcrumb-wrap"] > div {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    gap: 4px !important;
+  }
+
+  html body div.ecd__wrapper div.sp-hero-split div.breadcrumb-wrap *,
+  html body .ecd__wrapper .sp-hero-split .breadcrumb-wrap *,
+  html body div[class*="ecd__wrapper"] div[class*="sp-hero-split"] div[class*="breadcrumb-wrap"] *,
+  html body div.breadcrumb-wrap *,
+  html body .breadcrumb-wrap *,
+  html body div[class*="breadcrumb-wrap"] * {
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    font-size: 11px !important;
+  }
+
+  /* 4. Force Badge/Eyebrow centering */
+  .sp-hero-split-badge,
+  .ecd__hero_badge_wrapper,
+  [class*="sp-hero-split-badge"] {
+    display: block !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    margin: 0 auto 16px auto !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 5. Fix checklist container layouts causing screen stretching */
+  html body .sp-hero-split-features,
+  html body [class*="sp-hero-split-features"] {
+    display: flex !important;
+    flex-flow: row wrap !important;          /* Allow wrapping to prevent width stretching */
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 6. Stack and Center Hero Buttons */
+  .hero-buttons,
+  [class*="hero-buttons"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary,
+  .btn-primary,
+  .btn-secondary {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 52px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+  }
+
+  .ecd__hero_trust {
+    text-align: center !important;
+    margin-top: 15px !important;
+  }
+
+  /* 7. STATS BAR — Responsive Grid */
+  .ecd-stats-bar {
+    padding: 0 16px !important;
+    margin-top: -30px !important;
+    background: transparent !important;
+  }
+
+  .ecd-stats-inner {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 12px !important;
+    padding: 24px 16px !important;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    height: auto !important;
+    border: 1.5px solid #e4eaf6 !important;
+  }
+
+  .ecd-stat-cell {
+    padding: 12px 6px !important;
+    height: auto !important;
+    margin: 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid #e4eaf6;
+  }
+
+  .ecd-stat-cell:nth-child(odd) {
+    border-right: 1px solid #e4eaf6 !important;
+  }
+
+  .ecd-stat-cell:nth-child(5),
+  .ecd-stat-cell:nth-child(6) {
+    border-bottom: none !important;
+  }
+
+  .ecd-stat-icon { font-size: 18px !important; margin-bottom: 4px !important; }
+  .ecd-stat-num { font-size: 22px !important; margin-bottom: 2px !important; }
+  .ecd-stat-lbl { font-size: 11px !important; }
+
+  /* 8. SITEMAP MARQUEE ROW CAROUSEL Support */
+  .ecd-intro-sitemap-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    gap: 16px !important;
+    margin-top: 24px;
+  }
+
+  .ecd-intro-sitemap-col {
+    width: 220px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* 9. STACK COMPARISON CARDS FOR HIGH MOBILE READABILITY */
+  .ecd-comparison-card {
+    display: grid !important;
+    grid-template-columns: 1fr !important;   /* Column-by-column stacking layout */
+    gap: 16px !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .ecd-compare-col {
+    border: 1.5px solid #e4eaf6 !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+
+  .ecd-head-good { border-left: none !important; }
+  .ecd-row-good { border-left: none !important; }
+
+  /* 10. GRID COLLAPSING overrides */
+  .ecd-services-grid { grid-template-columns: 1fr; }
+  .ecd-results-grid  { grid-template-columns: 1fr; }
+  .ecd-who-grid      { grid-template-columns: repeat(2, 1fr); }
+
+  /* 11. PROCESS SECTION Vertical Timeline Reflow */
+  .ecd-process-track {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+  }
+
+  .ecd-process-step {
+    display: grid !important;
+    grid-template-columns: 80px 1fr !important; /* Node in Column 1, details in Column 2 */
+    text-align: left !important;
+    align-items: start !important;
+    gap: 0 15px !important;
+    margin-bottom: 40px !important;
+    width: 100% !important;
+  }
+
+  .ecd-process-node {
+    grid-column: 1 !important;
+    grid-row: 1 / 5 !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding-top: 5px !important;
+    width: auto !important;
+    height: 100% !important;
+    margin-bottom: 0 !important;
+  }
+
+  .ecd-process-num,
+  .ecd-process-desc {
+    grid-column: 2 !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+  }
+
+  .ecd-process-icon {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    margin: 0 !important;
+    font-size: 22px !important;
+  }
+
+  .ecd-process-num { font-size: 14px; margin-bottom: 4px !important; }
+  .ecd-process-desc { font-size: 13px; line-height: 1.5; }
+  .ecd-process-dash { display: none !important; }
+
+  /* 12. FAQ ACCORDION SIZING */
+  .ecd-faq-list { width: 100% !important; }
+  .ecd-faq-q span:first-child { font-size: 15px !important; }
+
+  /* 13. CTA SECTION & Form Card Optimizations */
+  .ecd-cta-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .ecd-cta-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 32px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .ecd-cta-title {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .ecd-cta-desc {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .ecd-cta-pills {
+    justify-content: center !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .ecd-cta-form-card {
+    width: 100% !important;
+    max-width: 340px !important;             /* Lock boundary width on phones */
+    padding: 24px 20px !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .ecd-form-row {
+    grid-template-columns: 1fr !important;   /* Stacks Name and Email inputs vertically */
+    gap: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .ecd-form-input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .ecd-form-btn {
+    width: 100% !important;
+    height: 50px !important;
+    font-size: 15px !important;
+    margin-top: 6px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   EXTRA SMALL MOBILE DEVIATIONS (Max-width: 480px)
+═══════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .ecd-who-grid      { grid-template-columns: repeat(2, 1fr) !important; }
+  .ecd-stats-inner   { grid-template-columns: repeat(2, 1fr) !important; transform: translateY(-12px); }
+  .ecd-cta-form-card { padding: 28px 20px !important; }
+}
+
+
+
+/* ============================================================
+   REDUCE BREADCRUMB FONT SIZE ON MOBILE (PREVENT CLIPPING)
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Force a smaller, highly compact font size on all breadcrumb text and elements */
+  html body .ecd__wrapper .sp-hero-split .breadcrumb-wrap,
+  html body .ecd__wrapper .sp-hero-split .breadcrumb-wrap *,
+  html body .breadcrumb-wrap,
+  html body .breadcrumb-wrap *,
+  html body div[class*="breadcrumb-wrap"],
+  html body div[class*="breadcrumb-wrap"] * {
+    font-size: 9.5px !important; /* Decreased from 11px to fit standard mobile viewports */
+    letter-spacing: 0.02em !important;
+    line-height: 1.2 !important;
+  }
+}
+
+
+
+
+/* ============================================================
+   CENTER ALIGN WHY-SECTION HEADINGS ON MOBILE
+   ============================================================ */
+@media (max-width: 768px) {
+  /* 1. Force the parent container column to center all its contents */
+  html body .ecd__wrapper .ecd-why-left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* 2. Overrides the inline JSX style and forces the main heading to center */
+  html body .ecd__wrapper .ecd-why-left h2.ecd__heading,
+  html body .ecd__wrapper .ecd-why-left .ecd__heading {
+    text-align: center !important;       /* Knocks out the inline text-align: left */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+  }
+
+  /* 3. Center align the top eyebrow ("Why Stores Underperform") */
+  html body .ecd__wrapper .ecd-why-left .ecd-eyebrow {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: inline-block !important;
+  }
+
+  /* 4. Center align the description paragraph below the heading */
+  html body .ecd__wrapper .ecd-why-left .ecd__description {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+
+
+/* ==========================================================================
+   THE ABSOLUTE MAXIMUM SPECIFICITY OVERRIDE FOR BREADCRUMB FONT
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Targets the inner spans, text nodes, and active links inside the breadcrumb */
+    html body div#__next div[class*="ecd__wrapper"] section.sp-hero-split div.sp-hero-split-content div.breadcrumb-wrap,
+    html body div#__next div[class*="ecd__wrapper"] section.sp-hero-split div.sp-hero-split-content div.breadcrumb-wrap *,
+    html body div#__next div[class*="ecd__wrapper"] section[class*="sp-hero-split"] div[class*="breadcrumb-wrap"] span,
+    html body div div.breadcrumb-wrap span.active,
+    span.active {
+        font-size: 9px !important;
+        white-space: nowrap !important;
+        letter-spacing: 0px !important;
+    }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   POWERFUL SELECTOR OVERRIDE: FORCES MOBILE BREADCRUMB FONT DOWN SIZES
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  html body div.ecd__wrapper div.ecd-hero-custom-context div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+  html body div.ecd__wrapper div.ecd-hero-custom-context div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container *,
+  html body div.ecd__wrapper div.ecd-hero-custom-context span.active {
+    font-size: 8px !important;
+    white-space: normal !important; /* Permits wrapping if screen real-estate runs out */
+    line-height: 1.2 !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   FULL RESPONSIVE ECOMMERCE HERO OPTIMIZATIONS (DESKTOP & MOBILE)
+   ========================================================================== */
+
+/* ── 1. DESKTOP VIEWPORTS (769px and Up) ────────────────────────────────── */
+@media (min-width: 769px) {
+  /* Precise left alignment for breadcrumbs inside the custom hero wrapper */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="breadcrumb"],
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="breadcrumb-wrap"] {
+    font-size: 8px !important;
+    margin-left: 0 !important;   /* Aligns cleanly with the container default layout edge */
+    padding-left: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Force breadcrumb inner labels to fit correctly on desktop */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="breadcrumb"] *,
+  html body .ecd-hero-custom-context div.breadcrumb-wrap * {
+    font-size: 10px !important;
+  }
+
+  /* Pull the hero badge label to align perfectly with the left axis */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div.sp-hero-badge,
+  html body .ecd-hero-custom-context div.sp-hero-split-content [class*="badge"] {
+    margin-left: -55px !important; /* Forces the badge over to hit the left alignment axis */
+    margin-right: auto !important;
+    display: flex !important;
+    max-width: max-content !important;
+    justify-content: flex-start !important;
+  }
+}
+
+/* ── 2. MOBILE VIEWPORTS (768px and Down) ────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Prevent horizontal bleeding inside the hero container on mobile */
+  html body .ecd-hero-custom-context,
+  html body .ecd-hero-custom-context * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Compress empty vertical gaps around the hero section */
+  html body .ecd-hero-custom-context .aiwd__hero_section,
+  html body .ecd-hero-custom-context section.sp-hero-split {
+    padding-top: 35px !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* Center heading, subtitles and descriptions on mobile viewports */
+  html body .ecd-hero-custom-context section.sp-hero-split h1,
+  html body .ecd-hero-custom-context section.sp-hero-split h1 span,
+  html body .ecd-hero-custom-context section.sp-hero-split p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Reduce massive empty gap below description */
+  html body .ecd-hero-custom-context [class*="sp-hero-split-content"] {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Center and size the mobile heading cleanly */
+  html body .ecd-hero-custom-context h1[class*="heading"] {
+    font-size: clamp(26px, 6.5vw, 32px) !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+  }
+
+  /* Centering and formatting of the breadcrumbs */
+  html body .ecd-hero-custom-context div.breadcrumb-wrap,
+  html body .ecd-hero-custom-context div.breadcrumb-container,
+  html body .ecd-hero-custom-context div[class*="breadcrumb-wrap"] {
+    display: flex !important;
+    flex-direction: row !important;       /* Lay out horizontally */
+    flex-wrap: wrap !important;           /* Wrap on small screens */
+    justify-content: center !important;   /* Centers horizontally */
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+  }
+
+  /* Force breadcrumb inner labels to be inline and clear any text wrapping */
+  html body .ecd-hero-custom-context div[class*="breadcrumb"] * {
+    display: inline-flex !important;      /* Align elements next to each other */
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    font-size: 11px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Centering the hero badge/pill */
+  html body .ecd-hero-custom-context section.sp-hero-split div.sp-hero-badge,
+  html body .ecd-hero-custom-context section.sp-hero-split [class*="badge"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transform: translateX(6px) !important; /* Micro-nudge right while staying centered */
+    display: flex !important;
+    max-width: max-content !important;
+  }
+
+  /* Force the checklist container into a clean centered 2x2 grid */
+  html body .ecd-hero-custom-context div[class*="sp-hero-split-features"],
+  html body .ecd-hero-custom-context .sp-hero-split-features,
+  html body .ecd-hero-custom-context [class*="sp-hero-split-features"] {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(130px, max-content)) !important; /* Perfect 2x2 grid */
+    gap: 12px 20px !important;            /* Spacing between grid rows and columns */
+    justify-content: center !important;   /* Centers the grid block horizontally */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px auto 0 auto !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Keep checkmarks and label text inline within each grid cell */
+  html body .ecd-hero-custom-context .sp-hero-split-features > *,
+  html body .ecd-hero-custom-context [class*="sp-hero-split-features"] > * {
+    display: inline-flex !important;
+    flex-direction: row !important;       /* Keeps icon next to text */
+    align-items: center !important;
+    justify-content: flex-start !important; /* Left-align content inside cells */
+    width: auto !important;
+    margin: 0 !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Scale down checklist fonts slightly on small mobile devices */
+  html body .ecd-hero-custom-context .sp-hero-split-features span,
+  html body .ecd-hero-custom-context .sp-hero-split-features svg {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+  }
+
+  /* Shrink top padding and pull the image container upwards closer to the text column */
+  html body .ecd-hero-custom-context .sp-hero-image-wrap {
+    margin-top: -35px !important;         /* Pulls image container upward */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    overflow: visible !important;
+  }
+
+  /* Scale the hero image larger on mobile devices */
+  html body .ecd-hero-custom-context img.sp-hero-image,
+  html body .ecd-hero-custom-context img[src*="ecommerce.png"] {
+    width: 115% !important;
+    max-width: 115% !important;
+    height: auto !important;
+    transform: scale(1.22) !important;
+    transform-origin: center top !important;
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   DESKTOP HERO: SHIFT BREADCRUMBS & BADGE SLIGHTLY TO THE RIGHT
+   ========================================================================== */
+@media (min-width: 769px) {
+  /* 1. Shift the breadcrumb container slightly to the right */
+  html body .ecd__wrapper div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+  html body .ecd__wrapper div.sp-hero-split-content div[class*="breadcrumb"],
+  html body .ecd__wrapper div.sp-hero-split-content div[class*="breadcrumb-wrap"] {
+    margin-left: 75px !important; /* Adjust this value if you need it shifted more or less */
+    padding-left: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  /* 2. Shift the hero badge (pill) to match the exact same vertical axis */
+  html body .ecd__wrapper div.sp-hero-split-content div.sp-hero-badge,
+  html body .ecd__wrapper div.sp-hero-split-content [class*="badge"],
+  html body .ecd__wrapper [class*="sp-hero-split-badge"] {
+    margin-left: 5px !important; /* Match the exact same rightward shift as the breadcrumbs */
+    margin-right: auto !important;
+    display: flex !important;
+    max-width: max-content !important;
+    justify-content: flex-start !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   DESKTOP HERO CHECKLIST: FORCE ALL 3 ITEMS ON A SINGLE HORIZONTAL LINE
+   ========================================================================== */
+@media (min-width: 769px) {
+  /* 1. Force the container to lay out horizontally as a single row with no wrapping */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="sp-hero-split-features"],
+  html body .ecd-hero-custom-context div.sp-hero-split-content .sp-hero-split-features,
+  html body .ecd__wrapper div.sp-hero-split-content div[class*="sp-hero-split-features"],
+  html body .ecd__wrapper div.sp-hero-split-content .sp-hero-split-features,
+  html body [class*="sp-hero-split-features"] {
+    display: flex !important;
+    flex-direction: row !important;       /* Lay out horizontally */
+    flex-wrap: nowrap !important;         /* Prevent items from wrapping to a second line */
+    justify-content: flex-start !important; /* Left-align the row along the layout margin */
+    align-items: center !important;
+    gap: 24px !important;                 /* Balanced spacing between list items */
+    width: max-content !important;        /* Shrink container to match row width */
+    max-width: 100% !important;
+    margin-left: 3px !important;         /* Matches the exact axis of breadcrumbs and badge */
+    margin-right: auto !important;
+  }
+
+  /* 2. Prevent internal label text from wrapping inside the list items */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="sp-hero-split-features"] > *,
+  html body .ecd-hero-custom-context div.sp-hero-split-content .sp-hero-split-features > *,
+  html body .ecd__wrapper div.sp-hero-split-content div[class*="sp-hero-split-features"] > *,
+  html body .ecd__wrapper div.sp-hero-split-content .sp-hero-split-features > *,
+  html body [class*="sp-hero-split-features"] > * {
+    display: inline-flex !important;
+    flex-direction: row !important;       /* Keeps icon next to text */
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: auto !important;
+    white-space: nowrap !important;       /* Keeps each item text strictly on a single line */
+    margin: 0 !important;
+    gap: 8px !important;                  /* Spacing between icon and text */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   MOBILE HERO UPDATES: VERTICAL CENTER-LEFT ALIGNMENT & IMAGE SHIFT
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Tighten the overall empty vertical spacing of the hero container */
+  html body .pg__wrap .aiwd__hero_section,
+  html body .pg__wrap section.sp-hero-split {
+    padding-bottom: 20px !important;
+  }
+
+  /* 2. Center the entire checklist group while keeping items left-aligned inside */
+  html body .pg__wrap .sp-hero-split-features,
+  html body .pg__wrap [class*="sp-hero-split-features"],
+  html body .pg__wrap div.sp-hero-split-content .sp-hero-split-features,
+  html body .pg__wrap div.sp-hero-split-content [class*="sp-hero-split-features"] {
+    display: flex !important;
+    flex-direction: column !important;     /* Stack items vertically */
+    align-items: flex-start !important;     /* Left-align checkmarks and text to the same vertical axis */
+    justify-content: center !important;
+    width: max-content !important;          /* Shrink container size to perfectly fit content */
+    max-width: 100% !important;
+    
+    /* Centering & Spacing:
+       - margin-left/right: auto centers the block horizontally
+       - margin-top: 15px pushes the block downward below the CTA button
+    */
+    margin: 15px auto 0 auto !important;   
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. Ensure checkmarks and label text stay inline and do not wrap */
+  html body .pg__wrap .sp-hero-split-features > *,
+  html body .pg__wrap [class*="sp-hero-split-features"] > *,
+  html body .pg__wrap div.sp-hero-split-content .sp-hero-split-features > *,
+  html body .pg__wrap div.sp-hero-split-content [class*="sp-hero-split-features"] > * {
+    display: inline-flex !important;
+    flex-direction: row !important;       /* Keeps icon next to text */
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: auto !important;
+    margin: 0 !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+  }
+
+  /* 4. Optimize checklist typography scale for mobile devices */
+  html body .pg__wrap .sp-hero-split-features span,
+  html body .pg__wrap .sp-hero-split-features svg,
+  html body .pg__wrap [class*="sp-hero-split-features"] span,
+  html body .pg__wrap [class*="sp-hero-split-features"] svg {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+  }
+
+  /* 5. Pull the 3D robot image container upward to close the vertical empty gap */
+  html body .pg__wrap .sp-hero-image-wrap {
+    margin-top: -35px !important;         /* Shift the image column upward */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    overflow: visible !important;          /* Prevents clipping of the scaled image */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   CONSOLIDATED & COLLISION-FREE ECOMMERCE HERO STYLES
+   ========================================================================== */
+
+/* Container stabilization */
+html body .ecd-hero-custom-context .sp-hero-split .ecd__container,
+html body .ecd-hero-custom-context [class*="container"] {
+  max-width: 1440px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* ─── DESKTOP VIEWPORTS (1025px and Up) ─── */
+@media (min-width: 1025px) {
+  /* Split columns: 40% text on left, 60% image on right */
+  html body .ecd-hero-custom-context [class*="sp-hero-split-grid"] {
+    display: grid !important;
+    grid-template-columns: 40% 60% !important; 
+    align-items: center !important;
+    gap: 20px !important; 
+    transition: none !important; /* Cancel accidental layout shift animations */
+  }
+  
+  /* Image column wrapper layout */
+  html body .ecd-hero-custom-context .sp-hero-image-wrap {
+    display: flex !important;
+    justify-content: flex-start !important; 
+    margin-left: -50px !important; /* Bring graphic slightly closer to text */
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  /* Desktop image rendering size */
+  html body .ecd-hero-custom-context img.sp-hero-image,
+  html body .ecd-hero-custom-context img[src*="ecommerce"],
+  html body .ecd-hero-custom-context .sp-hero-image-wrap img {
+    width: 100% !important;
+    max-width: 760px !important; /* Ideal wide desktop image width */
+    min-width: 520px !important; /* Prevents image getting too small on standard screens */
+    height: auto !important;
+    object-fit: contain !important;
+    
+    /* Cancel conflicting translations/scales */
+    transform: none !important; 
+    transition: none !important;
+    aspect-ratio: 16 / 10 !important; /* Instantly reserves sizing on load to prevent CLS */
+  }
+
+  /* Desktop alignment rules */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container {
+    margin-left: 75px !important;
+    justify-content: flex-start !important;
+  }
+
+  html body .ecd-hero-custom-context div.sp-hero-split-content div.sp-hero-badge,
+  html body .ecd-hero-custom-context div.sp-hero-split-content [class*="badge"] {
+    margin-left: 5px !important;
+    justify-content: flex-start !important;
+    display: flex !important;
+  }
+
+  html body .ecd-hero-custom-context div.sp-hero-split-content .sp-hero-split-features,
+  html body .ecd-hero-custom-context div.sp-hero-split-content [class*="sp-hero-split-features"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 24px !important;
+    margin-left: 3px !important;
+    width: max-content !important;
+  }
+}
+
+/* ─── MOBILE VIEWPORTS (1024px and Down) ─── */
+@media (max-width: 1024px) {
+  /* Vertical flow on tablets and phones */
+  html body .ecd-hero-custom-context [class*="sp-hero-split-grid"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  html body .ecd-hero-custom-context div.breadcrumb-wrap,
+  html body .ecd-hero-custom-context div[class*="breadcrumb-wrap"] {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin: 0 auto 16px auto !important;
+  }
+
+  html body .ecd-hero-custom-context div[class*="breadcrumb"] * {
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+
+  html body .ecd-hero-custom-context section.sp-hero-split div.sp-hero-badge {
+    margin: 0 auto 16px auto !important;
+    display: flex !important;
+  }
+
+  /* Stacked left-aligned checklist block centered on mobile screen */
+  html body .ecd-hero-custom-context .sp-hero-split-features,
+  html body .ecd-hero-custom-context [class*="sp-hero-split-features"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    width: max-content !important;
+    margin: 15px auto 0 auto !important;
+    padding: 0 16px !important;
+  }
+
+  html body .ecd-hero-custom-context .sp-hero-split-features > *,
+  html body .ecd-hero-custom-context [class*="sp-hero-split-features"] > * {
+    display: inline-flex !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Upward shifted mobile image container to eliminate whitespace gaps */
+  html body .ecd-hero-custom-context .sp-hero-image-wrap {
+    margin-top: -15px !important;
+    padding: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    overflow: visible !important;
+  }
+
+  /* Mobile scaled image rendering */
+  html body .ecd-hero-custom-context img.sp-hero-image,
+  html body .ecd-hero-custom-context img[src*="ecommerce"] {
+    width: 90% !important;
+    max-width: 480px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+    transform: none !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ═══════════════════════════════════════════════════════
+   ECOMMERCE HERO IMAGE SIZE INCREASES
+═══════════════════════════════════════════════════════ */
+
+/* ─── DESKTOP VIEWPORTS (1025px and Up) ─── */
+@media (min-width: 1025px) {
+  /* 1. Shift the grid split slightly to allocate 65% of the screen width to the image */
+  html body .ecd-hero-custom-context [class*="sp-hero-split-grid"] {
+    grid-template-columns: 35% 65% !important; /* Gives the image column more room to grow */
+  }
+
+  /* 2. Increase the maximum and minimum width bounds of the graphic */
+  html body .ecd-hero-custom-context img.sp-hero-image,
+  html body .ecd-hero-custom-context img[src*="ecommerce"],
+  html body .ecd-hero-custom-context .sp-hero-image-wrap img {
+    max-width: 850px !important; /* Increased from 760px to expand the image */
+    min-width: 580px !important; /* Increased from 520px to prevent shrinking on laptops */
+  }
+}
+
+/* ─── MOBILE VIEWPORTS (1024px and Down) ─── */
+@media (max-width: 1024px) {
+  /* 3. Scale up the mobile graphic dimensions slightly */
+  html body .ecd-hero-custom-context img.sp-hero-image,
+  html body .ecd-hero-custom-context img[src*="ecommerce"] {
+    width: 95% !important;       /* Increased from 90% */
+    max-width: 540px !important; /* Increased from 480px */
+  }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   CONSOLIDATED & COLLISION-FREE ECOMMERCE HERO STYLES
+   ========================================================================== */
+
+/* Container stabilization - Match AI Website Design container scale */
+html body .ecd__wrapper .sp-hero-split .aiwd-container,
+html body .ecd-hero-custom-context .sp-hero-split .aiwd-container,
+html body .ecd-hero-custom-context [class*="container"] {
+  max-width: 1400px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding-left: 2rem !important; /* Perfect left alignment with navbar logo */
+  padding-right: 2rem !important;
+}
+
+/* ─── DESKTOP VIEWPORTS (1025px and Up) ─── */
+@media (min-width: 1025px) {
+  /* Grid Split: 45% text on left, 55% image on right (Same as AI Website Design) */
+  html body .ecd-hero-custom-context [class*="sp-hero-split-grid"] {
+    display: grid !important;
+    grid-template-columns: 45% 55% !important; 
+    align-items: center !important;
+    gap: 10px !important; 
+    transition: none !important;
+  }
+  
+  /* Image column wrapper layout */
+  html body .ecd-hero-custom-context .sp-hero-image-wrap {
+    display: flex !important;
+    justify-content: flex-start !important; 
+    margin-left: -100px !important; /* Pulls image left closer to text */
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  /* Desktop image rendering size */
+  html body .ecd-hero-custom-context img.sp-hero-image,
+  html body .ecd-hero-custom-context img[src*="ecommerce"],
+  html body .ecd-hero-custom-context .sp-hero-image-wrap img {
+    width: 100% !important;
+    max-width: 760px !important; 
+    min-width: 520px !important; 
+    height: auto !important;
+    object-fit: contain !important;
+    transform: none !important; 
+    transition: none !important;
+    aspect-ratio: 16 / 10 !important; 
+  }
+
+  /* Desktop alignment - align all left edges perfectly to 0px */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="breadcrumb"],
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="breadcrumb-wrap"] {
+    margin-left: 0 !important; /* Perfectly aligned to the left axis */
+    padding-left: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  html body .ecd-hero-custom-context div.sp-hero-split-content div.sp-hero-badge,
+  html body .ecd-hero-custom-context div.sp-hero-split-content [class*="badge"],
+  html body .ecd-hero-custom-context [class*="sp-hero-split-badge"] {
+    margin-left: 0 !important; /* Perfectly aligned to the left axis */
+    justify-content: flex-start !important;
+    display: flex !important;
+  }
+
+  html body .ecd-hero-custom-context div.sp-hero-split-content .sp-hero-split-features,
+  html body .ecd-hero-custom-context div.sp-hero-split-content [class*="sp-hero-split-features"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 24px !important;
+    margin-left: 0 !important; /* Perfectly aligned to the left axis */
+    width: max-content !important;
+  }
+}
+
+/* ─── MOBILE VIEWPORTS (1024px and Down) ─── */
+@media (max-width: 1024px) {
+  /* Vertical flow on tablets and phones */
+  html body .ecd-hero-custom-context [class*="sp-hero-split-grid"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  html body .ecd-hero-custom-context div.breadcrumb-wrap,
+  html body .ecd-hero-custom-context div[class*="breadcrumb-wrap"] {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin: 0 auto 16px auto !important;
+  }
+
+  html body .ecd-hero-custom-context div[class*="breadcrumb"] * {
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+
+  html body .ecd-hero-custom-context section.sp-hero-split div.sp-hero-badge {
+    margin: 0 auto 16px auto !important;
+    display: flex !important;
+  }
+
+  /* Stacked left-aligned checklist block centered on mobile screen */
+  html body .ecd-hero-custom-context .sp-hero-split-features,
+  html body .ecd-hero-custom-context [class*="sp-hero-split-features"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    width: max-content !important;
+    margin: 15px auto 0 auto !important;
+    padding: 0 16px !important;
+  }
+
+  html body .ecd-hero-custom-context .sp-hero-split-features > *,
+  html body .ecd-hero-custom-context [class*="sp-hero-split-features"] > * {
+    display: inline-flex !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Upward shifted mobile image container to eliminate whitespace gaps */
+  html body .ecd-hero-custom-context .sp-hero-image-wrap {
+    margin-top: -15px !important;
+    padding: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    overflow: visible !important;
+  }
+
+  /* Mobile scaled image rendering */
+  html body .ecd-hero-custom-context img.sp-hero-image,
+  html body .ecd-hero-custom-context img[src*="ecommerce"] {
+    width: 90% !important;
+    max-width: 480px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+    transform: none !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+}
+
+
+
+
+
+
+
+/* ─── DESKTOP VIEWPORTS (1025px and Up) ─── */
+@media (min-width: 1025px) {
+  /* 1. Allocate 65% layout space to the image column (widened from 60%) */
+  html body .ecd-hero-custom-context [class*="sp-hero-split-grid"] {
+    display: grid !important;
+    grid-template-columns: 35% 65% !important; 
+    align-items: center !important;
+    gap: 20px !important; 
+    transition: none !important; 
+  }
+  
+  /* Image column wrapper layout */
+  html body .ecd-hero-custom-context .sp-hero-image-wrap {
+    display: flex !important;
+    justify-content: flex-start !important; 
+    margin-left: -50px !important; 
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  /* Desktop image rendering size — ENLARGED */
+  html body .ecd-hero-custom-context img.sp-hero-image,
+  html body .ecd-hero-custom-context img[src*="ecommerce"],
+  html body .ecd-hero-custom-context .sp-hero-image-wrap img {
+    width: 100% !important;
+    max-width: 950px !important;        /* Increased from 830px to allow massive width expansion */
+    min-width: 580px !important;        /* Prevents graphic from shrinking on medium screens */
+    height: auto !important;
+    object-fit: contain !important;
+    transition: none !important;
+    aspect-ratio: 16 / 10 !important; 
+    
+    /* 🔍 HIGH-MAGNIFICATION ZOOM */
+    transform: scale(1.22) !important;  /* Enlarged the graphic elements to 122% */
+    transform-origin: center center !important;
+  }
+
+  /* Desktop alignment — SHIFT ONLY BREADCRUMBS TO THE RIGHT */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div.breadcrumb-wrap div.breadcrumb-container,
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="breadcrumb"],
+  html body .ecd-hero-custom-context div.sp-hero-split-content div[class*="breadcrumb-wrap"] {
+    margin-left: 70px !important;      /* Shifted significantly to the right as indicated by your red arrow */
+    padding-left: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Badge/Pill stays perfectly left-aligned */
+  html body .ecd-hero-custom-context div.sp-hero-split-content div.sp-hero-badge,
+  html body .ecd-hero-custom-context div.sp-hero-split-content [class*="badge"] {
+    margin-left: 0 !important; 
+    justify-content: flex-start !important;
+    display: flex !important;
+  }
+
+  /* Features list stays perfectly left-aligned */
+  html body .ecd-hero-custom-context div.sp-hero-split-content .sp-hero-split-features,
+  html body .ecd-hero-custom-context div.sp-hero-split-content [class*="sp-hero-split-features"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 24px !important;
+    margin-left: 0 !important; 
+    width: max-content !important;
+  }
+}
+
+
+
+
+
+
+
+/* Container stabilization - Match AI Website Design container scale */
+html body .ecd__wrapper .sp-hero-split .aiwd-container,
+html body .ecd-hero-custom-context .sp-hero-split .aiwd-container,
+html body .ecd-hero-custom-context [class*="container"] {
+  max-width: 1400px !important;
+  width: 100% !important;
+  margin: 0 auto !important;        /* 👈 Centers the layout container on the screen */
+  padding-left: 2.5rem !important;  /* 👈 Pushes the left text column to line up with the logo */
+  padding-right: 2.5rem !important;
+}

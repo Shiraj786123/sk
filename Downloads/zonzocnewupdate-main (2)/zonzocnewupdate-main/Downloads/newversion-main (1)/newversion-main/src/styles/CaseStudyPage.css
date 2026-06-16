@@ -1,0 +1,857 @@
+/* Case Study Page — shared styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+.cs__wrapper {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+}
+
+/* HERO */
+.cs__hero {
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  color: #fff;
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.cs__hero_inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.cs__eyebrow {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.cs__hero_title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.cs__hero_sub {
+  font-size: 20px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 32px;
+}
+
+.cs__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.cs__tag {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cs__hero_links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cs__live_btn {
+  background: #ffffff;
+  color: #00448f;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.cs__live_btn:hover {
+  background: #e8f0fb;
+  transform: translateY(-2px);
+}
+
+.cs__outline_btn {
+  background: transparent;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.cs__outline_btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* CONTAINER */
+.cs__section {
+  padding: 100px 24px;
+}
+
+.cs__section--alt {
+  background: #f8faff;
+}
+
+.cs__section--dark {
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  color: #fff;
+}
+
+.cs__container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cs__heading {
+  font-size: 40px;
+  font-weight: 800;
+  color: #0a0a0a;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.cs__heading--white {
+  color: #fff;
+}
+
+.cs__subtext {
+  text-align: center;
+  font-size: 18px;
+  color: #6b7280;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.cs__subtext--white {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* CHALLENGE GRID */
+.cs__challenge_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cs__challenge_box {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.cs__challenge_box h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 1rem;
+}
+
+.cs__challenge_box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs__challenge_box ul li {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.cs__challenge_box ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #00448f;
+  font-weight: 700;
+}
+
+/* BUILT GRID */
+.cs__built_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cs__built_item {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.cs__built_item:hover {
+  border-color: #00448f;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 68, 143, 0.12);
+}
+
+.cs__built_icon {
+  width: 44px;
+  height: 44px;
+  background: #e8f0fb;
+  color: #00448f;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.cs__built_item h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-bottom: 8px;
+}
+
+.cs__built_item p {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* GALLERY */
+.cs__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.cs__gallery_img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cs__gallery_img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.18);
+}
+
+/* RESULTS */
+.cs__results_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cs__result_card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cs__result_number {
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.cs__result_label {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+/* RESULTS CHECKLIST */
+.cs__results_checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 2.5rem;
+}
+
+.cs__check_item {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.4;
+}
+
+/* CTA */
+.cs__cta_section {
+  padding: 100px 24px;
+  background: #f8faff;
+  text-align: center;
+}
+
+.cs__cta_heading {
+  font-size: 40px;
+  font-weight: 800;
+  color: #0a0a0a;
+  margin-bottom: 1rem;
+}
+
+.cs__cta_text {
+  font-size: 18px;
+  color: #6b7280;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.cs__cta_btn {
+  background: #00448f;
+  color: #fff;
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.cs__cta_btn:hover {
+  background: #003070;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 68, 143, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .cs__hero_title {
+    font-size: 42px;
+  }
+
+  .cs__hero_sub {
+    font-size: 18px;
+  }
+
+  .cs__heading {
+    font-size: 32px;
+  }
+
+  .cs__built_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cs__results_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cs__hero {
+    padding: 60px 20px;
+  }
+
+  .cs__hero_title {
+    font-size: 36px;
+  }
+
+  .cs__section {
+    padding: 60px 20px;
+  }
+
+  .cs__heading {
+    font-size: 28px;
+  }
+
+  .cs__challenge_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs__results_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cs__cta_heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cs__results_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+/* ========================================================
+   CASE STUDY HERO (PREMIUM NIGHT NAVY STYLING)
+   ======================================================== */
+.cs__hero {
+  position: relative !important;
+  /* Glowing deep night navy blue gradient matching reference */
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  color: #ffffff !important;
+  padding: 100px 24px 90px 24px !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+.cs__hero_container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+}
+
+/* ================= PILL BADGE LABEL ================= */
+.cs__eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 6px 14px !important;
+  background-color: rgba(56, 189, 248, 0.08) !important; /* Soft sky-blue tint */
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  border-radius: 9999px !important;
+  margin-bottom: 28px !important;
+  color: #38bdf8 !important;
+  font-size: 0.825rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1 !important;
+}
+
+.cs__eyebrow_dot {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: #38bdf8 !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  position: relative !important;
+}
+
+.cs__eyebrow_dot::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  background-color: #38bdf8;
+  animation: csBadgePulse 2s infinite ease-in-out !important;
+}
+
+@keyframes csBadgePulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ================= TYPOGRAPHY ================= */
+.cs__hero_title {
+  font-size: 56px !important;
+  font-weight: 800 !important;
+  line-height: 1.18 !important;
+  color: #ffffff !important;
+  margin-bottom: 24px !important;
+  letter-spacing: -0.02em !important;
+  max-width: 950px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+}
+
+/* Sky-Blue Highlight text */
+.cs__hero_title_highlight {
+  color: #38bdf8 !important;
+  background: transparent !important;
+  display: inline !important;
+}
+
+.cs__hero_sub {
+  font-size: 1.125rem !important;
+  line-height: 1.65 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  max-width: 780px !important;
+  margin: 0 auto 32px auto !important;
+  display: block !important;
+}
+
+/* ================= SUB-PILLS TAGS ================= */
+.cs__tags {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  margin-bottom: 40px !important;
+  flex-wrap: wrap !important;
+}
+
+.cs__tag {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 100px !important;
+  padding: 8px 18px !important;
+  font-size: 0.85rem !important;
+  color: #cbd5e1 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* ================= HERO BUTTONS ================= */
+.cs__hero_links {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+}
+
+/* Primary Live button (Solid Sky Blue, Dark Navy text) */
+.cs__live_btn {
+  display: inline-block !important;
+  background-color: #38bdf8 !important;
+  color: #001f3f !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  padding: 14px 28px !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2) !important;
+}
+
+.cs__live_btn:hover {
+  background-color: #25aff2 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Secondary Button (Outlined, Transparent background) */
+.cs__outline_btn {
+  display: inline-block !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  padding: 14px 28px !important;
+  border: 1.5px solid rgba(73, 188, 244, 0.5) !important; /* Semi-transparent blue border */
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.cs__outline_btn:hover {
+  border-color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.08) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ================= RESPONSIVE VIEWPORT QUERIES ================= */
+
+/* --- Tablets & Large Screens (Up to 1024px) --- */
+@media (max-width: 1024px) {
+  .cs__hero {
+    padding: 80px 24px 70px 24px !important;
+  }
+  .cs__hero_title {
+    font-size: 44px !important;
+  }
+}
+
+/* --- Mobiles & Narrow screens (Up to 768px) --- */
+@media (max-width: 768px) {
+  .cs__hero {
+    padding: 60px 16px 50px 16px !important;
+  }
+  .cs__hero_title {
+    font-size: 32px !important;
+    line-height: 1.25 !important;
+  }
+  .cs__hero_sub {
+    font-size: 0.95rem !important;
+    margin-bottom: 24px !important;
+  }
+  .cs__tags {
+    gap: 10px !important;
+    margin-bottom: 32px !important;
+  }
+  .cs__tag {
+    font-size: 0.8rem !important;
+    padding: 6px 14px !important;
+  }
+}
+
+/* --- Extra Small Devices (Up to 360px) --- */
+@media (max-width: 360px) {
+  .cs__hero_title {
+    font-size: 26px !important;
+  }
+}
+
+
+
+
+
+
+
+/* ========================================================
+   CALL TO ACTION BLOCK (PREMIUM CARD DESIGN)
+   ======================================================== */
+.cs__cta_section {
+  position: relative !important;
+  background-color: #030f26 !important; /* Base Deep Night Navy background */
+  padding: 80px 24px !important;
+  width: 100% !important;
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+/* Inner Card Container styling as shown in your reference image */
+.cs__cta_container {
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+  /* Lighter glowing blue/navy center gradient */
+  background: radial-gradient(circle at 50% 90%, #003d73 0%, #001b3a 100%) !important;
+  border: 1px solid rgba(56, 189, 248, 0.15) !important; /* Subtle blue glow outline */
+  border-radius: 24px !important;
+  padding: 64px 32px !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Typography rules */
+.cs__cta_heading {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin-bottom: 16px !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.25 !important;
+}
+
+.cs__cta_text {
+  font-size: 1.1rem !important;
+  line-height: 1.65 !important;
+  color: #cbd5e1 !important; /* Soft Slate-White */
+  max-width: 650px !important;
+  margin: 0 auto 32px auto !important;
+}
+
+/* Buttons Container */
+.cs__cta_buttons {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  margin-bottom: 24px !important;
+  flex-wrap: wrap !important;
+}
+
+/* Primary Action (Solid White Button, Night Navy Text) */
+.cs__cta_btn_primary {
+  display: inline-block !important;
+  background-color: #ffffff !important;
+  color: #001f3f !important; /* Matching premium dark-navy text */
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  padding: 14px 28px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1) !important;
+}
+
+.cs__cta_btn_primary:hover {
+  background-color: #f1f5f9 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Secondary Action (Outlined Button, Transparent background) */
+.cs__cta_btn_secondary {
+  display: inline-block !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  padding: 14px 28px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.cs__cta_btn_secondary:hover {
+  border-color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Trust checklist footer text */
+.cs__cta_footer_text {
+  font-size: 0.825rem !important;
+  color: #94a3b8 !important; /* Soft Slate-Gray */
+  margin: 0 !important;
+  display: block !important;
+}
+
+/* ================= RESPONSIVE VIEWPORT QUERIES ================= */
+
+/* --- Tablets & iPads (Up to 1024px) --- */
+@media (max-width: 1024px) {
+  .cs__cta_container {
+    padding: 56px 24px !important;
+    border-radius: 20px !important;
+  }
+  .cs__cta_heading {
+    font-size: 1.85rem !important;
+  }
+}
+
+/* --- Mobiles & Narrow screens (Up to 768px) --- */
+@media (max-width: 768px) {
+  .cs__cta_section {
+    padding: 60px 16px !important;
+  }
+  .cs__cta_container {
+    padding: 40px 16px !important;
+  }
+  .cs__cta_heading {
+    font-size: 1.65rem !important;
+  }
+  .cs__cta_text {
+    font-size: 0.95rem !important;
+    margin-bottom: 24px !important;
+  }
+  .cs__cta_buttons {
+    gap: 12px !important;
+    margin-bottom: 20px !important;
+  }
+  .cs__cta_btn_primary,
+  .cs__cta_btn_secondary {
+    width: 100% !important; /* Full width stacking for clean mobile tap targets */
+    box-sizing: border-box !important;
+  }
+}
+
+
+
+
+
+
+/* Breadcrumb Container */
+.cs__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;                 /* Adjust spacing between elements */
+  margin-bottom: 20px;      /* Space between breadcrumb and H1 */
+  font-size: 0.8rem;        /* Small, readable size */
+  font-weight: 700;         /* Bold weight matching the image */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;   /* Slight spacing between letters */
+  text-align:center;
+  justify-content: center;
+}
+
+/* Inactive Links (HOME, CASE STUDIES) */
+.cs__breadcrumb a {
+  color: #8fa0b0;           /* Grayish-blue color */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cs__breadcrumb a:hover {
+  color: #00bcff;           /* Bright blue on hover */
+}
+
+/* Separator ( > ) */
+.cs__breadcrumb_separator {
+  color: #4b6175;           /* Muted divider color */
+  user-select: none;
+}
+
+/* Active Page (ASJ HARDSCAPES) */
+.cs__breadcrumb_active {
+  color: #00bcff;           /* Vibrant light blue matching your screenshot */
+}
+
+
+
+
+.cs__breadcrumb {
+  display: flex;
+  justify-content: center;  /* Centers the breadcrumb elements */
+  align-items: center;
+  gap: 8px;                 
+  margin-bottom: 20px;      
+  font-size: 0.8rem;        
+  font-weight: 700;         
+  text-transform: uppercase;
+  letter-spacing: 0.05em;   
+}
+
+.cs__breadcrumb a {
+  color: #8fa0b0;           
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cs__breadcrumb a:hover {
+  color: #00bcff;           
+}
+
+.cs__breadcrumb_separator {
+  color: #4b6175;           
+  user-select: none;
+}
+
+.cs__breadcrumb_active {
+  color: #00bcff;           
+}

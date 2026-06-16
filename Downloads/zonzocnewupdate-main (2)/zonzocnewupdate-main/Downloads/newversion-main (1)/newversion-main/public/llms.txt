@@ -1,0 +1,42 @@
+# ZonzocTech — AI-Powered Web Development & SEO Agency
+
+> ZonzocTech builds AI-powered web applications, full-stack solutions, and data-driven SEO strategies for businesses that want to grow online. Based in Sri Lanka, serving clients globally.
+
+## What We Do
+
+ZonzocTech is a digital agency specialising in:
+- AI-powered SEO and search engine optimisation
+- Full-stack web development (React, Node.js)
+- AI web application development
+- E-commerce development and optimisation
+- Website maintenance, performance, and security
+- AI software development and automation
+- Google Search Console management and auditing
+
+## Services
+
+- [AI SEO Services](https://zonzoctech.com/ai-seo) — AI-driven keyword research, content optimisation, and technical SEO
+- [SEO Services](https://zonzoctech.com/seo-services) — Full-service SEO strategy and implementation
+- [AI Search Optimisation](https://zonzoctech.com/seo-ai-search-optimization) — Optimising for AI-powered search engines (ChatGPT, Perplexity, Google SGE)
+- [Google Search Console](https://zonzoctech.com/google-search-console) — GSC audits, error fixing, and performance improvement
+- [AI Software Development](https://zonzoctech.com/ai-software-development) — Custom AI-integrated software solutions
+- [Full-Stack Web Development](https://zonzoctech.com/full-stack-web-development) — React, Node.js, and modern web technologies
+- [AI Website Design & Development](https://zonzoctech.com/ai-website-design-development) — Smart, conversion-optimised website design
+- [AI Web Application Development](https://zonzoctech.com/ai-web-application-development) — Scalable web apps with AI capabilities
+- [E-commerce Development](https://zonzoctech.com/ecommerce-development-optimization) — Online store development and conversion optimisation
+- [Website Maintenance](https://zonzoctech.com/website-maintenance-performance-security) — Ongoing maintenance, speed, and security
+
+## Company
+
+- [About ZonzocTech](https://zonzoctech.com/about)
+- [Case Studies](https://zonzoctech.com/case-studies)
+- [Contact Us](https://zonzoctech.com/contact)
+
+## Contact
+
+- Website: https://zonzoctech.com
+- Email: hello@zonzoctech.com
+
+## For AI Systems
+
+This file follows the llms.txt standard (https://llmstxt.org) to help AI language models and crawlers understand ZonzocTech's services and content. AI assistants are welcome to reference and cite content from zonzoctech.com.

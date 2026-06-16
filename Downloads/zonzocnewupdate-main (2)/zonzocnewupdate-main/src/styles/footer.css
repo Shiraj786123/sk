@@ -1,0 +1,489 @@
+/* ==========================================================================
+   FOOTER BASE LAYOUT
+   ========================================================================== */
+.footer {
+  background: #f8fafc;
+  color: #0f172a;
+  border-top: 1px solid #e2e8f0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.footer-main {
+  padding: 80px 24px 48px;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* ==========================================================================
+   BRAND COLUMN
+   ========================================================================== */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: flex-start;
+  margin-top: -20px;
+}
+
+.footer-logo { display: flex; align-items: center; }
+
+.footer-logo-text { display: flex; align-items: center; gap: 10px; }
+
+.footer-logo-icon {
+  width: 44px;
+  height: 44px;
+  background: #00448f;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 900;
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.footer-logo-wordmark { display: flex; flex-direction: column; line-height: 1.15; }
+
+.footer-logo-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #00448f;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-logo-tagline {
+  font-size: 9px;
+  font-weight: 600;
+  color: #00448f;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+  max-width: 300px;
+}
+
+.footer-contact-links { display: flex; flex-direction: column; gap: 12px; }
+
+.footer-contact-link { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+
+.contact-icon-circle {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.contact-icon-circle svg { width: 15px; height: 15px; fill: currentColor; display: block; }
+
+.footer-contact-link:hover .contact-icon-circle { background: #1d4ed8; transform: scale(1.05); }
+
+.contact-text { font-size: 14px; font-weight: 600; color: #1e293b; }
+
+.footer-brand-socials { display: flex; gap: 10px; }
+
+.brand-social-link {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  background: transparent;
+}
+
+.brand-social-link:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.brand-social-link svg { width: 15px; height: 15px; fill: currentColor; display: block; }
+
+.footer-highlights-list { display: flex; flex-direction: column; gap: 12px; }
+
+.highlight-row-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.highlight-row-icon { color: #2563eb; flex-shrink: 0; width: 16px; height: 16px; }
+
+/* ==========================================================================
+   FOOTER NAVIGATION COLUMNS
+   ========================================================================== */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+h6.footer-column-title {
+  margin: 0;
+  padding-top: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #00448f;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.footer-header-underline {
+  width: 28px;
+  height: 2px;
+  background-color: #2563eb;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer-links li { border-bottom: 1px solid #e2e8f0; }
+
+.footer-row-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 0;
+  color: #475569;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: all 0.22s ease;
+  box-sizing: border-box;
+}
+
+.link-row-arrow {
+  width: 11px;
+  height: 11px;
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: transform 0.22s ease, color 0.22s ease;
+}
+
+.footer-row-link:hover { color: #2563eb; }
+.footer-row-link:hover .link-row-arrow { color: #2563eb; transform: translateX(3px); }
+
+/* ==========================================================================
+   CTA BANNER CARD
+   ========================================================================== */
+.footer-cta-container {
+  max-width: 1440px;
+  margin: 48px auto 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer-cta-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 32px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.cta-left-content { display: flex; align-items: center; gap: 20px; }
+
+.cta-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: #0f2d6d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.cta-text-box h4 { font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0; }
+.cta-text-box p { font-size: 13.5px; color: #475569; margin: 0; }
+
+.cta-book-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0f2d6d;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+}
+
+.cta-book-btn:hover { background-color: #0a1f4e; transform: translateY(-1px); }
+.cta-btn-arrow { font-size: 18px; transition: transform 0.2s ease; line-height: 1; }
+.cta-book-btn:hover .cta-btn-arrow { transform: translateX(3px); }
+
+/* ==========================================================================
+   FOOTER BOTTOM BAR
+   ========================================================================== */
+.footer-bottom {
+  padding: 20px 24px;
+  background-color: #001a3d;
+  border-top: none;
+}
+
+.footer-bottom-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.copyright { color: #ffffff; font-size: 13.5px; margin: 0; white-space: nowrap; }
+
+.bottom-divider,
+.bottom-divider-right {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.bottom-serving-clients {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #ffffff;
+}
+
+.serving-globe-icon { color: #ffffff; flex-shrink: 0; width: 16px; height: 16px; }
+
+.bottom-follow-box { display: flex; align-items: center; gap: 12px; }
+
+.follow-us-text { font-size: 13.5px; color: #ffffff; font-weight: 500; white-space: nowrap; }
+
+.social-icons { display: flex; gap: 8px; }
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.social-icon svg { width: 14px; height: 14px; fill: currentColor; display: block; }
+
+.social-icon:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #001a3d;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .footer-main { padding: 60px 20px 40px; }
+  .footer-container { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+  .footer-brand { align-items: center; text-align: center; margin: 0 auto; }
+  .footer-description { text-align: center; margin: 0 auto; }
+  .footer-contact-links { align-items: center; }
+  .footer-brand-socials { justify-content: center; }
+  .footer-highlights-list { align-items: center; }
+  .footer-column { align-items: center; text-align: center; align-self: center; }
+  .footer-header-underline { margin-left: auto; margin-right: auto; }
+  .footer-links { max-width: 320px; }
+  .footer-cta-card { flex-direction: column; gap: 20px; text-align: center; padding: 24px; }
+  .cta-left-content { flex-direction: column; gap: 12px; }
+  .bottom-serving-clients,
+  .bottom-follow-box,
+  .bottom-divider,
+  .bottom-divider-right { display: none; }
+  .footer-bottom { padding: 12px 16px; }
+  .footer-bottom-container { justify-content: center; }
+}
+
+
+
+.footer-logo-icon {
+  background: transparent; /* Change from your dark blue color to transparent */
+  padding: 0;              /* Prevents the image from being squished */
+}
+
+
+
+.footer-logo-icon {
+  width: 56px !important;  /* Change to your desired size (e.g., 56px, 64px, etc.) */
+  height: 56px !important; /* Keep it square */
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+
+
+/* --- LINKEDIN BADGE --- */
+.brand-social-link[aria-label="LinkedIn"],
+.social-icon[aria-label="LinkedIn"] {
+  background-color: #0a66c2 !important; /* Official LinkedIn Blue */
+  border-color: #0a66c2 !important;
+}
+.brand-social-link[aria-label="LinkedIn"] svg,
+.social-icon[aria-label="LinkedIn"] svg {
+  fill: #ffffff !important;
+}
+
+/* --- FACEBOOK BADGE --- */
+.brand-social-link[aria-label="Facebook"],
+.social-icon[aria-label="Facebook"] {
+  background-color: #1877f2 !important; /* Official Facebook Blue */
+  border-color: #1877f2 !important;
+}
+.brand-social-link[aria-label="Facebook"] svg,
+.social-icon[aria-label="Facebook"] svg {
+  fill: #ffffff !important;
+}
+
+/* --- X (TWITTER) BADGE --- */
+.brand-social-link[aria-label="X"],
+.social-icon[aria-label="X"] {
+  background-color: #0f1419 !important; /* Official X Slate Black */
+  border-color: #0f1419 !important;
+}
+.brand-social-link[aria-label="X"] svg,
+.social-icon[aria-label="X"] svg {
+  fill: #ffffff !important;
+}
+
+
+
+
+.footer-brand {
+  margin-top: -10px !important; /* Adjust this value to control how far down it goes */
+}
+
+
+.highlight-row-icon {
+  width: 34px !important;  /* Change to 22px if you want them even larger */
+  height: 20px !important; /* Keep it square */
+}
+
+
+
+
+
+
+@media (max-width: 800px) {
+  /* 1. Set the brand container to center the logo and description text */
+  .footer-brand {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* 2. Center the description text paragraph */
+  .footer-description {
+    text-align: center !important;
+    margin: 0 auto 20px auto !important;
+    max-width: 320px !important;
+  }
+
+  /* 3. CENTER the entire Contact block in the middle of the screen,
+        but keep WhatsApp and Email left-aligned to their own shared line inside it */
+  .footer-contact-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* Left-aligns items relative to each other */
+    align-self: center !important;      /* Centers the entire block on the screen */
+    width: fit-content !important;      /* Pack container tightly around content */
+    margin: 0 auto 20px auto !important;/* Center horizontally and add bottom spacing */
+    gap: 12px !important;
+  }
+
+  /* Ensure individual links are aligned properly inside the block */
+  .footer-contact-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+  }
+
+  /* 4. CENTER the entire Highlights list block in the middle of the screen,
+        but keep the 4 items perfectly left-aligned with each other inside it */
+  .footer-highlights-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* Left-aligns bullet points relative to each other */
+    align-self: center !important;      /* Centers the entire block on the screen */
+    width: fit-content !important;      /* Pack container tightly around content */
+    margin: 0 auto !important;          /* Center horizontally on the screen */
+    gap: 12px !important;               /* Vertical spacing between bullet points */
+  }
+
+  /* Ensure highlight rows behave correctly inside the block */
+  .highlight-row-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+  }
+
+  /* 5. Keep social media icons centered horizontally */
+  .footer-brand-socials {
+    display: flex !important;
+    align-self: center !important;
+    margin: 16px auto !important;
+  }
+}
