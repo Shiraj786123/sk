@@ -1,43 +1,18 @@
 'use client';
+
 import React, { useState } from "react";
-import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Bot, Brain, Search, MessageSquare, Globe, Zap, Shield, TrendingUp,
+  CheckCircle2, Network, BookOpen, Code2, Target, Activity, Users,
+  Award, Clock, ThumbsUp, Database, Layers, BarChart3, ArrowRight,
+  Sparkles, Eye, Link2, FileText, Cpu, Plus, Minus
+} from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
-import ServiceCtaForm from "../components/ServiceCtaForm";
-import { serviceImages } from "../data/serviceImages";
 import "../styles/AIOptimizationPage.css";
-import {
-  Bot,
-  Brain,
-  Search,
-  MessageSquare,
-  Globe,
-  Zap,
-  Shield,
-  TrendingUp,
-  CheckCircle2,
-  Network,
-  BookOpen,
-  Code2,
-  Target,
-  Activity,
-  Users,
-  Award,
-  Clock,
-  ThumbsUp,
-  Database,
-  Layers,
-  BarChart3,
-  ArrowRight,
-  Sparkles,
-  Eye,
-  Link2,
-  FileText,
-  Cpu,
-  Plus,
-  Minus,
-} from "lucide-react";
+import heroImg from "../../public/images/aioptimization.png";
 
 /* ── Inline SVG platform logos ─────────────────────────────────────────── */
 const ChatGPTIcon = () => (
@@ -90,8 +65,6 @@ const BingIcon = () => (
   </svg>
 );
 
-const imgs = serviceImages['ai-seo'];
-
 /* ── Component ──────────────────────────────────────────────────────────── */
 const AISearchOptimization = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -103,6 +76,15 @@ const AISearchOptimization = () => {
     { number: "4.9★", label: "Rating", icon: <ThumbsUp size={18} /> },
     { number: "24/7", label: "Monitoring", icon: <Clock size={18} /> },
     { number: "100%", label: "Transparent", icon: <Shield size={18} /> },
+  ];
+
+  // Modern colorful items for the horizontally moving sitemap cards
+  const introItems = [
+    { title: "Appear in AI-generated answers & citations",     icon: <Award size={32} />,          colorClass: "pink-purple" },
+    { title: "Optimize for ChatGPT, Gemini & Perplexity",       icon: <Bot size={32} />,            colorClass: "cyan-blue" },
+    { title: "Build topical authority AI systems trust",        icon: <Shield size={32} />,          colorClass: "lime-green" },
+    { title: "Future-proof visibility across all search types", icon: <Search size={32} />,          colorClass: "orange-yellow" },
+    { title: "Drive leads from conversational search queries",  icon: <MessageSquare size={32} />,  colorClass: "purple-indigo" }
   ];
 
   const services = [
@@ -170,17 +152,50 @@ const AISearchOptimization = () => {
     <div className="pg__wrap">
       <Navbar />
 
-      <ServicePageHero
-        badge="AI SEARCH OPTIMIZATION SERVICES"
-        title="Get Cited in AI Answers &"
-        titleAccent="Own the Future of Search"
-        subtitle="Search has evolved beyond traditional Google rankings. We help businesses stay visible across AI-powered platforms like ChatGPT, Perplexity, and Google AI Overviews — where customers now get answers directly."
-        primaryCta={{ href: "/contact", label: "Get Free AI Search Audit →" }}
-        secondaryCta={{ href: "#aiso-how", label: "See How It Works ↓" }}
-        features={["GEO & AEO Expertise", "AI Platform Visibility", "Future-Proof Strategy"]}
-        heroImage={imgs.hero}
-        heroAlt={imgs.heroAlt}
-      />
+      {/* ── COMFORTABLE LEFT-ALIGNMENT OVERRIDE WITHOUT CLIPPING OVERFLOWS ── */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        /* 1. EXPAND THE INNER BOUNDS NATURALLY AND CENTER THE CONTAINERS */
+        html body div.pg__wrap .custom-hero-left-align [class*="container"],
+        html body div.pg__wrap .custom-hero-left-align [class*="inner"],
+        html body div.pg__wrap .custom-hero-left-align [class*="wrap"] {
+          max-width: 1360px !important;   /* Expands container bounds so it aligns further left */
+          padding-left: 2rem !important;  /* Safe minimum boundary to prevent running off the screen */
+          padding-right: 2rem !important;
+          margin-left: auto !important;   /* Remains centered within the screen width */
+          margin-right: auto !important;
+        }
+
+        /* 2. REMOVE ADDITIONAL PADDING ON TEXT COLUMNS */
+        html body div.pg__wrap .custom-hero-left-align [class*="left"],
+        html body div.pg__wrap .custom-hero-left-align [class*="content"] {
+          padding-left: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        /* 3. ALIGN BREADCRUMBS SECURELY */
+        html body div.pg__wrap .custom-hero-left-align [class*="bread"],
+        html body div.pg__wrap .custom-hero-left-align [class*="Bread"],
+        html body div.pg__wrap .custom-hero-left-align [class*="crumb"],
+        html body div.pg__wrap .custom-hero-left-align [class*="route"] {
+          padding-left: 0 !important;
+          margin-left: 0 !important;
+        }
+      ` }} />
+
+      {/* ── HERO ── */}
+      <div className="custom-hero-left-align">
+        <ServicePageHero
+          badge="AI SEARCH OPTIMIZATION SERVICES"
+          title="Get Cited in AI Answers &"
+          titleAccent="Own the Future of Search"
+          subtitle="Search has evolved beyond traditional Google rankings. We help businesses stay visible across AI-powered platforms like ChatGPT, Perplexity, and Google AI Overviews — where customers now get answers directly."
+          primaryCta={{ href: "/contact", label: "Get Free AI Search Audit →" }}
+          secondaryCta={{ href: "#aiso-how", label: "See How It Works ↓" }}
+          features={["GEO & AEO Expertise", "AI Platform Visibility", "Future-Proof Strategy"]}
+          heroImage="/images/aioptimization.png"
+          heroAlt="AI Search Optimization and Generative Engine Optimization Diagnostics Setup"
+        />
+      </div>
 
       {/* ── STATS BAR ──────────────────────────────────────────────── */}
       <div className="sb" id="aiso-how">
@@ -198,10 +213,10 @@ const AISearchOptimization = () => {
         </div>
       </div>
 
-      {/* ── WHAT WE DO ─────────────────────────────────────────────── */}
+      {/* ── WHAT WE DO (WITH HORIZONTAL MARQUEE Ticker) ──────────────── */}
       <section className="pg__sec pg__sec--white">
         <div className="pg__cont">
-          <div className="what__grid">
+          <div className="what__grid" style={{ marginBottom: 40 }}>
             <div className="what__left">
               <span className="chip chip--blue">✦ What Is AI Search Optimization</span>
               <h2 className="sec__h2">Search Is Evolving.<br/>Your Strategy Should Too.</h2>
@@ -209,28 +224,9 @@ const AISearchOptimization = () => {
                 AI search engines no longer list links — they generate direct answers.
                 Businesses that aren't optimised for AI platforms are invisible to a growing share of their audience.
               </p>
-              <ul className="check__list">
-                {[
-                  "Appear in AI-generated answers & citations",
-                  "Optimize for ChatGPT, Gemini & Perplexity",
-                  "Build topical authority AI systems trust",
-                  "Future-proof visibility across all search types",
-                  "Drive leads from conversational search queries",
-                ].map((b, i) => (
-                  <li key={i}><CheckCircle2 size={15} className="chk" />{b}</li>
-                ))}
-              </ul>
             </div>
 
             <div className="what__right">
-              <Image
-                src={imgs.intro}
-                alt={imgs.introAlt}
-                width={480}
-                height={360}
-                className="sp-intro-image"
-                style={{ borderRadius: 16, width: '100%', height: 'auto', marginBottom: 20 }}
-              />
               {/* AI Answer Mockup */}
               <div className="mock__card">
                 <div className="mock__bar">
@@ -264,6 +260,42 @@ const AISearchOptimization = () => {
               </div>
             </div>
           </div>
+
+          {/* Sitemap Cards Horizontal Marquee Ticker */}
+          <div className="aiso-intro-marquee-wrapper">
+            <div className="aiso-intro-marquee-track">
+              {[...introItems, ...introItems].map((item, idx) => (
+                <div key={idx} className="aiso-intro-sitemap-col">
+                  <div className="aiso-intro-sitemap-card">
+                    <div className="aiso-intro-sitemap-header-bar">
+                      <span className="aiso-intro-browser-dot"></span>
+                      <span className="aiso-intro-browser-dot"></span>
+                      <span className="aiso-intro-browser-dot"></span>
+                    </div>
+                    <div className="aiso-intro-sitemap-body">
+                      <div className="aiwa-intro-card-left-group">
+                        <CheckCircle2 size={16} className="aiso-intro-check-icon" />
+                        <h4 className="aiso-intro-sitemap-card-title">{item.title}</h4>
+                      </div>
+                      
+                      {/* Modern Colorful Icon container */}
+                      <div className={`aiso-intro-icon-box ${item.colorClass}`}>
+                        {item.icon}
+                      </div>
+                      
+                      <div className="aiso-intro-sitemap-card-footer">
+                        <span>Explore</span>
+                        <ArrowRight size={14} className="aiso-intro-card-arrow" />
+                      </div>
+                    </div>
+                  </div>
+                  {/* Dotted vertical sitemap connector line */}
+                  <div className="aiso-intro-sitemap-line"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -423,53 +455,73 @@ const AISearchOptimization = () => {
         </div>
       </section>
 
-      {/* ── FAQ ────────────────────────────────────────────────────── */}
+      {/* ── FAQ ORIGINAL ACCORDION WITH ANIMATEPRESENCE SLIDE ── */}
       <section className="pg__sec pg__sec--white">
         <div className="pg__cont">
           <div className="sec__head">
             <span className="chip chip--blue">✦ FAQ</span>
             <h2 className="sec__h2">Questions Answered</h2>
           </div>
-          <div className="sp-faq-box-grid">
+          <div className="faq__wrap">
             {faqs.map((f, i) => (
               <div
-                className={`sp-faq-box-item ${openFaq === i ? "active" : ""}`}
+                className={`faq__item ${openFaq === i ? "faq__item--open" : ""}`}
                 key={i}
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
               >
-                <div className="sp-faq-box-q">
-                  <span>{f.q}</span>
-                  {openFaq === i ? <Minus size={17} /> : <Plus size={17} />}
+                <div className="faq__q">
+                  <span>{String(i + 1).padStart(2, "0")}. {f.q}</span>
+                  <span className="faq__tog">{openFaq === i ? "−" : "+"}</span>
                 </div>
-                {openFaq === i && (
-                  <div className="sp-faq-box-a"><p>{f.a}</p></div>
-                )}
+                <AnimatePresence>
+                  {openFaq === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="faq__a"
+                    >
+                      <p>{f.a}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <ServiceCtaForm
-        label="Get Started"
-        title="Ready to Dominate"
-        titleAccent="AI Search?"
-        description="Get a free AI search visibility audit. No commitment — just clarity on where you stand and what to do next."
-        checks={[
-          "Free AI Visibility Audit",
-          "No spam. No obligation.",
-          "Response within 1–3 business hours",
-        ]}
-        serviceOptions={[
-          "Generative Engine Optimization",
-          "ChatGPT & AI Visibility",
-          "Google AI Overview Optimization",
-          "Semantic SEO",
-          "Structured Data & Schema",
-        ]}
-        ctaImage={imgs.cta}
-        ctaAlt={imgs.ctaAlt}
-      />
+      {/* ── ORIGINAL CUSTOM DARK CTA BOX WITH ROTATING PING GRAPHICS ── */}
+      <section className="pg__cta">
+        <div className="pg__cont">
+          <div className="cta__box">
+            <div className="cta__left">
+              <span className="chip chip--light">✦ Get Started</span>
+              <h2 className="cta__h2">Ready to Dominate AI Search?</h2>
+              <p className="cta__p">Get a free AI search visibility audit. No commitment — just clarity on where you stand and what to do next.</p>
+              <div className="cta__btns">
+                <a href="/contact" className="cta__btn--primary">Get Free AI Audit →</a>
+                <a href="/seo-services" className="cta__btn--ghost">View SEO Services</a>
+              </div>
+              <p className="cta__trust">No spam • Response within 1–3 hours</p>
+            </div>
+            <div className="cta__right">
+              <div className="cta__visual">
+                <div className="cta__ring cta__ring--1"/>
+                <div className="cta__ring cta__ring--2"/>
+                <div className="cta__ring cta__ring--3"/>
+                <Search size={40} className="cta__search" />
+                <div className="cta__pings">
+                  {["ChatGPT","Gemini","Perplexity","Claude"].map((pl, i) => (
+                    <span key={i} className={`cta__ping cta__ping--${i}`}>{pl}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>

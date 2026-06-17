@@ -111,16 +111,52 @@ const AIWebAppDev = () => {
 
   return (
     <div className="aiwa__wrapper">
+      {/* ── COMFORTABLE LEFT-ALIGNMENT OVERRIDE WITHOUT CLIPPING OVERFLOWS ── */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        /* 1. EXPAND THE INNER BOUNDS NATURALLY AND CENTER THE CONTAINERS */
+        html body div.aiwa__wrapper .custom-hero-left-align [class*="container"],
+        html body div.aiwa__wrapper .custom-hero-left-align [class*="inner"],
+        html body div.aiwa__wrapper .custom-hero-left-align [class*="wrap"] {
+          max-width: 1360px !important;   /* Expands container bounds so it aligns further left */
+          padding-left: 2rem !important;  /* Safe minimum boundary to prevent running off the screen */
+          padding-right: 2rem !important;
+          margin-left: auto !important;   /* Remains centered within the screen width */
+          margin-right: auto !important;
+        }
+
+        /* 2. REMOVE ADDITIONAL PADDING ON TEXT COLUMNS */
+        html body div.aiwa__wrapper .custom-hero-left-align [class*="left"],
+        html body div.aiwa__wrapper .custom-hero-left-align [class*="content"] {
+          padding-left: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        /* 3. ALIGN BREADCRUMBS SECURELY & PREVENT WRAPPING */
+        html body div.aiwa__wrapper .custom-hero-left-align [class*="bread"],
+        html body div.aiwa__wrapper .custom-hero-left-align [class*="Bread"],
+        html body div.aiwa__wrapper .custom-hero-left-align [class*="crumb"],
+        html body div.aiwa__wrapper .custom-hero-left-align [class*="route"] {
+          padding-left: 0 !important;
+          margin-left: 0 !important;
+          white-space: nowrap !important;  /* Prevents breadcrumb text wrapping */
+          flex-wrap: nowrap !important;   /* Prevents wrapping if layout relies on flex list items */
+        }
+      ` }} />
+
       <Navbar />
-      <ServicePageHero
-        badge="AI Web Application Development"
-        title="Custom AI Web Applications Built for"
-        titleAccent="Automation, Scalability & Growth"
-        subtitle="We design and build intelligent AI web applications that automate workflows, process data, and scale with your business — serving companies across the UK, USA, and worldwide."
-        features={["AI Powered Solutions", "Scalable Architecture", "Secure & Reliable"]}
-        heroImage={heroImg?.src || heroImg} /* Safe URL string extractor */
-        heroAlt="AI Web Application Development"
-      />
+      
+      {/* ── HERO ── */}
+      <div className="custom-hero-left-align">
+        <ServicePageHero
+          badge="AI Web Application Development"
+          title="Custom AI Web Applications Built for"
+          titleAccent="Automation, Scalability & Growth"
+          subtitle="We design and build intelligent AI web applications that automate workflows, process data, and scale with your business — serving companies across the UK, USA, and worldwide."
+          features={["AI Powered Solutions", "Scalable Architecture", "Secure & Reliable"]}
+          heroImage={heroImg?.src || heroImg} /* Safe URL string extractor */
+          heroAlt="AI Web Application Development"
+        />
+      </div>
 
       {/* Intro section, service grid, etc... */}
       <section className="aiwa-intro-section">
@@ -240,6 +276,7 @@ const AIWebAppDev = () => {
         </div>
       </section>
 
+      {/* Feature section */}
       <section className="aiwa-features-section">
         <div className="aiwa__container">
           <div className="aiwa-section-head">
