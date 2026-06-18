@@ -115,42 +115,10 @@ const EcommerceDev = () => {
     <>
       <div className="ecd__wrapper">
         {/* ── COMFORTABLE LEFT-ALIGNMENT OVERRIDE WITHOUT CLIPPING OVERFLOWS ── */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          /* 1. EXPAND THE INNER BOUNDS NATURALLY AND CENTER THE CONTAINERS */
-          html body div.ecd__wrapper .custom-hero-left-align [class*="container"],
-          html body div.ecd__wrapper .custom-hero-left-align [class*="inner"],
-          html body div.ecd__wrapper .custom-hero-left-align [class*="wrap"] {
-            max-width: 1360px !important;   /* Expands container bounds so it aligns further left */
-            padding-left: 2rem !important;  /* Safe minimum boundary to prevent running off the screen */
-            padding-right: 2rem !important;
-            margin-left: auto !important;   /* Remains centered within the screen width */
-            margin-right: auto !important;
-          }
-
-          /* 2. REMOVE ADDITIONAL PADDING ON TEXT COLUMNS */
-          html body div.ecd__wrapper .custom-hero-left-align [class*="left"],
-          html body div.ecd__wrapper .custom-hero-left-align [class*="content"] {
-            padding-left: 0 !important;
-            margin-left: 0 !important;
-          }
-
-          /* 3. ALIGN BREADCRUMBS SECURELY & PREVENT WRAPPING */
-          html body div.ecd__wrapper .custom-hero-left-align [class*="bread"],
-          html body div.ecd__wrapper .custom-hero-left-align [class*="Bread"],
-          html body div.ecd__wrapper .custom-hero-left-align [class*="crumb"],
-          html body div.ecd__wrapper .custom-hero-left-align [class*="route"] {
-            padding-left: 0 !important;
-            margin-left: 0 !important;
-            white-space: nowrap !important;  /* Forces text to remain on a single line */
-            flex-wrap: nowrap !important;   /* Prevents item layout wrapping if styled as flex list items */
-          }
-        ` }} />
-
-        <Navbar />
+<Navbar />
 
         {/* ── HERO CONTEXT WRAPPER FOR PRECISE VISUAL POSITIONING ── */}
-        <div className="ecd-hero-custom-context custom-hero-left-align">
-          <ServicePageHero
+        <ServicePageHero
             badge="ECOMMERCE DEVELOPMENT & OPTIMIZATION"
             title="High-Converting Ecommerce Stores Built for"
             titleAccent="Performance, Scalability & Revenue Growth"
@@ -161,8 +129,6 @@ const EcommerceDev = () => {
             heroImage={heroImg?.src || heroImg} /* Fixed source object string resolution */
             heroAlt="E-commerce Sales Performance Dashboard Analytics Grid"
           />
-        </div>
-
         {/* ── STATS BAR ── */}
         <section className="ecd-stats-bar" id="ecd-work">
           <div className="ecd-stats-inner">

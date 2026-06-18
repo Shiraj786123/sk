@@ -129,58 +129,10 @@ const WebsiteMaintenance = () => {
     <>
       <div className="wm__wrapper">
         {/* ── COMFORTABLE LEFT-ALIGNMENT OVERRIDE WITHOUT CLIPPING OVERFLOWS ── */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          /* 1. EXPAND THE INNER BOUNDS NATURALLY AND CENTER THE CONTAINERS */
-          html body div.wm__wrapper .custom-hero-left-align [class*="container"],
-          html body div.wm__wrapper .custom-hero-left-align [class*="inner"],
-          html body div.wm__wrapper .custom-hero-left-align [class*="wrap"] {
-            max-width: 1360px !important;   /* Expands container bounds so it aligns further left */
-            padding-left: 2rem !important;  /* Safe minimum boundary to prevent running off the screen */
-            padding-right: 2rem !important;
-            margin-left: auto !important;   /* Remains centered within the screen width */
-            margin-right: auto !important;
-          }
-
-          /* 2. REMOVE ADDITIONAL PADDING ON TEXT COLUMNS */
-          html body div.wm__wrapper .custom-hero-left-align [class*="left"],
-          html body div.wm__wrapper .custom-hero-left-align [class*="content"] {
-            padding-left: 0 !important;
-            margin-left: 0 !important;
-          }
-
-          /* 3. ALIGN BREADCRUMBS, SET FONT TO 8PX & PREVENT WRAPPING */
-          html body div.wm__wrapper .custom-hero-left-align [class*="bread"],
-          html body div.wm__wrapper .custom-hero-left-align [class*="Bread"],
-          html body div.wm__wrapper .custom-hero-left-align [class*="crumb"],
-          html body div.wm__wrapper .custom-hero-left-align [class*="route"],
-          html body div.wm__wrapper .custom-hero-left-align [class*="bread"] *,
-          html body div.wm__wrapper .custom-hero-left-align [class*="Bread"] *,
-          html body div.wm__wrapper .custom-hero-left-align [class*="crumb"] *,
-          html body div.wm__wrapper .custom-hero-left-align [class*="route"] * {
-            padding-left: 0 !important;
-            margin-left: 0 !important;
-            white-space: nowrap !important;  /* Prevents breadcrumb text wrapping */
-            flex-wrap: nowrap !important;   /* Prevents wrapping of items */
-            font-size: 9px !important;       /* Forces breadcrumb elements to render at 8px */
-          }
-
-          /* 4. SHIFT THE BREADCRUMBS LEFTWARD ON DESKTOPS TO ALIGN WITH THE HERO CONTENT LINE */
-          @media (min-width: 1024px) {
-            html body div.wm__wrapper .custom-hero-left-align [class*="bread"],
-            html body div.wm__wrapper .custom-hero-left-align [class*="Bread"],
-            html body div.wm__wrapper .custom-hero-left-align [class*="crumb"],
-            html body div.wm__wrapper .custom-hero-left-align [class*="route"] {
-              position: relative !important;
-              left: -66px !important;  /* Pulls the breadcrumbs left. Increase/decrease this value slightly if needed */
-            }
-          }
-        ` }} />
-
-        <Navbar />
+<Navbar />
 
         {/* ── HERO ── */}
-        <div className="custom-hero-left-align">
-          <ServicePageHero
+        <ServicePageHero
             badge="WEBSITE MAINTENANCE & SECURITY"
             title="Website Maintenance, Performance &"
             titleAccent="Security Services for UK, USA & UAE Businesses"
@@ -191,8 +143,6 @@ const WebsiteMaintenance = () => {
             heroImage={imgs.hero?.src || imgs.hero} /* Safeguards static Webpack object resolution */
             heroAlt={imgs.heroAlt}
           />
-        </div>
-
         {/* ── STATS BAR ─────────────────────────────── */}
         <section className="wm-stats-bar" id="wm-services">
           <div className="wm-stats-inner">

@@ -1,13 +1,7 @@
-
 /* ==========================================================================
    AI SEARCH OPTIMIZATION PAGE — FULL STYLESHEET
    Hero unchanged · All subsections redesigned from scratch
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
-
-/* ── RESET / BASE ──────────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 .pg__wrap {
   min-height: 100vh;
@@ -188,10 +182,6 @@
   background: #38bdf8 !important;
   animation: heroPulse 2s infinite ease-out !important;
 }
-@keyframes heroPulse {
-  0%   { transform: scale(1); opacity: .8; }
-  100% { transform: scale(2.6); opacity: 0; }
-}
 .aiso__hero .aiso-hero-badge-text {
   color: #38bdf8 !important;
   font-size: 0.78rem !important;
@@ -202,8 +192,6 @@
   border: none !important;
   padding: 0 !important;
 }
-@media (max-width: 1024px) { .aiso__hero .aiso__hero_title { font-size: 46px !important; } }
-@media (max-width: 640px)  { .aiso__hero .aiso__hero_title { font-size: 32px !important; } }
 
 /* ==========================================================================
    STATS BAR
@@ -258,15 +246,6 @@
   background: #e9eef5;
   flex-shrink: 0;
   align-self: stretch;
-}
-
-@media (max-width: 700px) {
-  .sb__inner { flex-wrap: wrap; }
-  .sb__item  { flex: 0 0 33.33%; border-bottom: 1px solid #e9eef5; }
-  .sb__sep   { display: none; }
-}
-@media (max-width: 420px) {
-  .sb__item { flex: 0 0 50%; }
 }
 
 /* ==========================================================================
@@ -519,15 +498,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .aiso-intro-section {
-    padding: 70px 0;
-  }
-  .aiso-intro-sitemap-line {
-    height: 30px;
-  }
-}
-
 /* ==========================================================================
    WHAT WE DO — 2-column
    ========================================================================== */
@@ -669,10 +639,6 @@
   font-weight: 600;
 }
 
-@media (max-width: 860px) {
-  .what__grid { grid-template-columns: 1fr; gap: 28px; }
-}
-
 /* ==========================================================================
    SERVICES — 4-column grid
    ========================================================================== */
@@ -743,9 +709,6 @@
   color: #64748b;
   line-height: 1.65;
 }
-
-@media (max-width: 1000px) { .srv__grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px)  { .srv__grid { grid-template-columns: 1fr; } }
 
 /* ==========================================================================
    PROCESS — dark horizontal timeline
@@ -826,15 +789,6 @@
 }
 .proc__arrow { color: rgba(99,102,241,0.7); }
 
-@media (max-width: 860px) {
-  .proc__row { flex-direction: column; gap: 0; }
-  .proc__step { flex-direction: row; text-align: left; gap: 16px; align-items: flex-start; padding: 18px 0; }
-  .proc__circle { margin-bottom: 0; flex-shrink: 0; }
-  .proc__line { flex-direction: row; width: auto; height: 28px; padding: 0 0 0 32px; }
-  .proc__dots { width: 2px; height: 100%; background: repeating-linear-gradient(180deg, rgba(99,102,241,0.55) 0, rgba(99,102,241,0.55) 4px, transparent 4px, transparent 10px); }
-  .proc__arrow { transform: rotate(90deg); }
-}
-
 /* ==========================================================================
    TECH STACK
    ========================================================================== */
@@ -913,10 +867,6 @@
   box-shadow: 0 4px 12px rgba(99,102,241,0.25);
 }
 
-@media (max-width: 700px) {
-  .tech__logo { width: 58px; height: 58px; border-radius: 14px; }
-}
-
 /* ==========================================================================
    COMPARISON TABLE
    ========================================================================== */
@@ -955,11 +905,6 @@
 
 .cmp__x   { color: #ef4444; font-weight: 700; flex-shrink: 0; }
 .cmp__chk { color: #6366f1; font-weight: 700; flex-shrink: 0; }
-
-@media (max-width: 600px) {
-  .cmp__head, .cmp__row { grid-template-columns: 1fr; }
-  .cmp__cell--left, .cmp__cell--right { font-size: 0.82rem; }
-}
 
 /* ==========================================================================
    WHY CHOOSE — card grid
@@ -1014,15 +959,6 @@
   line-height: 1.7;
 }
 
-@media (max-width: 860px) {
-  .wc__grid { grid-template-columns: repeat(2, 1fr); }
-  .wc__grid > *:nth-child(4),
-  .wc__grid > *:nth-child(5) { grid-column: auto; }
-}
-@media (max-width: 520px) {
-  .wc__grid { grid-template-columns: 1fr; }
-}
-
 /* ==========================================================================
    WHO WE HELP
    ========================================================================== */
@@ -1075,15 +1011,6 @@
   font-size: 14px;
   color: #64748b;
   line-height: 1.65;
-}
-
-@media (max-width: 860px) {
-  .who__grid { grid-template-columns: repeat(2, 1fr); }
-  .who__grid > *:nth-child(4),
-  .who__grid > *:nth-child(5) { grid-column: auto; }
-}
-@media (max-width: 520px) {
-  .who__grid { grid-template-columns: 1fr; }
 }
 
 /* ==========================================================================
@@ -1239,10 +1166,6 @@
 .cta__ring--1 { width: 80px; height: 80px; animation-delay: 0s; }
 .cta__ring--2 { width: 140px; height: 140px; animation-delay: 0.8s; border-color: rgba(99,102,241,0.18); }
 .cta__ring--3 { width: 200px; height: 200px; animation-delay: 1.6s; border-color: rgba(99,102,241,0.1); }
-@keyframes ringPulse {
-  0%, 100% { transform: scale(1); opacity: 0.7; }
-  50%       { transform: scale(1.06); opacity: 1; }
-}
 .cta__search {
   color: #818cf8;
   position: relative;
@@ -1269,20 +1192,6 @@
 .cta__ping--1 { top: 15%; right: 0;  animation-delay: 1.5s; }
 .cta__ping--2 { bottom: 20%; left: 0;  animation-delay: 3s; }
 .cta__ping--3 { bottom: 8%;  right: 0; animation-delay: 4.5s; }
-@keyframes floatPing {
-  0%, 100% { transform: translateY(0); opacity: 0.85; }
-  50%       { transform: translateY(-6px); opacity: 1; }
-}
-
-@media (max-width: 860px) {
-  .cta__box { grid-template-columns: 1fr; padding: 44px 32px; gap: 32px; }
-  .cta__visual { width: 160px; height: 160px; }
-  .cta__ring--3 { width: 150px; height: 150px; }
-}
-@media (max-width: 520px) {
-  .cta__box { padding: 36px 22px; border-radius: 18px; }
-  .cta__right { display: none; }
-}
 
 /* ==========================================================================
    GLOBAL RESPONSIVE PADDING
@@ -2010,707 +1919,3 @@
     transform: translateX(-50%);
   }
 }
-
-@media (max-width: 768px) {
-  .aiso-intro-section {
-    padding: 70px 0;
-  }
-  .aiso-intro-sitemap-line {
-    height: 30px;
-  }
-}
-
-/* ============================================================
-   MOBILE ONLY BREADCRUMBS & HERO FEATURES OVERRIDES
-   ============================================================ */
-@media (max-width: 768px) {
-  /* 1. Force the outer container to align horizontally and center */
-  html body .pg__wrap .sp-hero-split .breadcrumb-wrap,
-  html body .breadcrumb-wrap,
-  html body div[class*="breadcrumb-wrap"] {
-    display: flex !important;
-    flex-direction: row !important;       /* Forces row direction */
-    flex-wrap: wrap !important;           /* Allows wrapping on extremely narrow screens */
-    justify-content: center !important;   /* Centers horizontally */
-    align-items: center !important;       /* Centers vertically */
-    gap: 8px !important;                  /* Standard gap between links/spacers */
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 0 !important;
-  }
-
-  /* Force every nested tag inside to act as inline elements with auto-width */
-  html body .pg__wrap .sp-hero-split .breadcrumb-wrap *,
-  html body .breadcrumb-wrap *,
-  html body div[class*="breadcrumb-wrap"] * {
-    display: inline-flex !important;      /* Forces elements to line up next to each other */
-    flex-direction: row !important;       /* Ensures flex children inside flow horizontally */
-    align-items: center !important;
-    justify-content: center !important;
-    float: none !important;
-    clear: none !important;
-    width: auto !important;               /* Stops elements from stretching to 100% width and forcing line breaks */
-    max-width: none !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    font-size: 11px !important;           /* Slightly reduces font size */
-    line-height: 1 !important;
-    white-space: nowrap !important;       /* Prevents words from breaking to a new line */
-  }
-
-  /* 2. Force the features container to a single row without wrapping */
-  html body .sp-hero-split-features,
-  html body [class*="sp-hero-split-features"] {
-    display: flex !important;
-    flex-direction: row !important;       /* Forces row direction */
-    flex-wrap: nowrap !important;         /* Prevents breaking into multiple lines */
-    justify-content: center !important;   /* Centers horizontally */
-    align-items: center !important;       /* Centers vertically */
-    gap: 12px !important;                 /* Snug spacing to fit standard screens */
-    width: 100% !important;
-    overflow-x: auto !important;          /* Allows swipe scroll as a fallback on tiny screens */
-    scrollbar-width: none !important;     /* Hides scrollbar on Firefox */
-  }
-
-  /* Hide scrollbar on Chrome/Safari/Webkit for a clean look */
-  html body .sp-hero-split-features::-webkit-scrollbar,
-  html body [class*="sp-hero-split-features"]::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  /* Force each individual checklist item inside to be inline-row with auto-width */
-  html body .sp-hero-split-features > *,
-  html body [class*="sp-hero-split-features"] > * {
-    display: inline-flex !important;
-    flex-direction: row !important;       /* Icon next to text */
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;               /* Stops items from stretching 100% and stacking */
-    flex-shrink: 0 !important;            /* Stops cards from shrinking */
-    white-space: nowrap !important;       /* Keeps text on a single line */
-    margin: 0 !important;
-    gap: 6px !important;                  /* Gap between the green check and text */
-  }
-}
-
-/* ============================================================
-   DESKTOP BREADCRUMB ALIGNMENT & FONT SIZE OVERRIDES (.pg__wrap)
-   ============================================================ */
-
-/* 1. Pull breadcrumbs left to match the red accent line and shrink font size */
-html body div[class*="wrapper"] section[class*="sp-hero-split"] div[class*="breadcrumb-wrap"],
-html body div.pg__wrap section.sp-hero-split div.breadcrumb-wrap,
-html body .pg__wrap .sp-hero-split .breadcrumb-wrap {
-  margin-left: -50px !important; /* Pulls it left to align with the red vertical line */
-  padding-left: 0 !important;
-  font-size: 11px !important;
-}
-
-/* Force font-size on all nested child elements (links, spacers, spans) */
-html body div[class*="wrapper"] section[class*="sp-hero-split"] div[class*="breadcrumb-wrap"] *,
-html body div.pg__wrap section.sp-hero-split div.breadcrumb-wrap *,
-html body .pg__wrap .sp-hero-split .breadcrumb-wrap * {
-  font-size: 11px !important;
-}
-
-
-/* ============================================================
-   WHO WE HELP: SINGLE ROW LAYOUT WITH UNIFORM WIDTH & HEIGHT
-   ============================================================ */
-@media (min-width: 993px) {
-  /* 1. Force all 5 items to sit in a single row with equal heights */
-  html body .pg__wrap .who__grid {
-    display: grid !important;
-    grid-template-columns: repeat(5, 1fr) !important;
-    gap: 20px !important;
-    max-width: 1180px !important; /* Spans the full width of the container */
-    align-items: stretch !important; /* Automatically equalizes heights of all columns */
-  }
-
-  /* Reset sitemap column overrides from previous CSS */
-  html body .pg__wrap .who__grid > * {
-    grid-column: auto !important;
-  }
-
-  /* 2. Format cards into vertical content stacks so text fits cleanly */
-  html body .pg__wrap .who__card {
-    display: flex !important;
-    flex-direction: column !important; /* Number on top, text underneath */
-    align-items: flex-start !important;
-    gap: 16px !important;
-    height: 100% !important; /* Forces all cards to stretch to matching heights */
-    padding: 24px 20px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Prevent elements from wrapping or breaking awkwardly inside */
-  html body .pg__wrap .who__title {
-    font-size: 16px !important;
-    margin-bottom: 6px !important;
-  }
-
-  html body .pg__wrap .who__desc {
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-  }
-}
-
-
-
-
-
-
-
-
-/* ============================================================
-   WHY ZONZOCTECH: SINGLE ROW LAYOUT WITH UNIFORM WIDTH & HEIGHT
-   ============================================================ */
-@media (min-width: 993px) {
-  /* 1. Force the grid to have exactly 5 columns in a single row */
-  html body .pg__wrap .wc__grid {
-    display: grid !important;
-    grid-template-columns: repeat(5, 1fr) !important;
-    gap: 20px !important;
-    max-width: 1180px !important; /* Spans the full container width */
-    align-items: stretch !important; /* Dynamically equalizes the heights of all cards */
-  }
-
-  /* Reset column offsets from previous CSS */
-  html body .pg__wrap .wc__grid > * {
-    grid-column: auto !important;
-  }
-
-  /* 2. Set cards to 100% height to ensure uniform sizing */
-  html body .pg__wrap .wc__card {
-    display: flex !important;
-    flex-direction: column !important;
-    height: 100% !important; /* Forces cards to match the tallest element */
-    min-height: 200px !important;
-    padding: 24px 18px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 3. Adjust spacing and typography to fit the narrower columns beautifully */
-  html body .pg__wrap .wc__title {
-    font-size: 15px !important;
-    margin-bottom: 8px !important;
-  }
-
-  html body .pg__wrap .wc__desc {
-    font-size: 13px !important;
-    line-height: 1.55 !important;
-  }
-}
-
-
-
-
-
-
-/* ============================================================
-   MOBILE: FORCE UNIFORM HEIGHT & WIDTH FOR BOTH CARD SECTIONS
-   ============================================================ */
-@media (max-width: 768px) {
-  /* Force both .who__card and .wc__card to have the exact same layout, height, and width */
-  html body .pg__wrap .who__card,
-  html body .pg__wrap .wc__card {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;        /* Centers icons & text on mobile screens */
-    justify-content: flex-start !important;
-    text-align: center !important;
-    min-height: 180px !important;          /* Forces a uniform minimum height for all cards */
-    width: 100% !important;                /* Guarantees identical 100% container width */
-    box-sizing: border-box !important;
-    padding: 24px 20px !important;
-  }
-
-  /* Ensure the sitemap indicators, headers, and descriptions stretch cleanly inside */
-  html body .pg__wrap .who__card > *,
-  html body .pg__wrap .wc__card > * {
-    width: 100% !important;
-  }
-
-  /* Center inner texts nicely on mobile */
-  html body .pg__wrap .who__title,
-  html body .pg__wrap .wc__title {
-    text-align: center !important;
-  }
-
-  html body .pg__wrap .who__desc,
-  html body .pg__wrap .wc__desc {
-    text-align: center !important;
-  }
-}
-
-
-
-
-
-/* ============================================================
-   MOBILE: FIX WHO__NUM STRETCHING (KEEP COMPACT & ROUND)
-   ============================================================ */
-@media (max-width: 768px) {
-  /* Prevent sitemap step numbers from stretching; force perfect circular shapes */
-  html body .pg__wrap .who__num,
-  html body [class*="who__num"] {
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
-    max-width: 36px !important;
-    border-radius: 50% !important;      /* Forces a perfect round circular shape */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-shrink: 0 !important;
-    background: #2563eb !important;     /* Brand blue */
-    margin-left: auto !important;       /* Centers the circle on mobile */
-    margin-right: auto !important;
-    margin-bottom: 12px !important;     /* Consistent spacing above the title */
-  }
-
-  /* Prevent why-choose icons from stretching; keep them as compact rounded boxes */
-  html body .pg__wrap .wc__ico,
-  html body [class*="wc__ico"] {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    max-width: 38px !important;
-    border-radius: 10px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-shrink: 0 !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-bottom: 12px !important;
-  }
-}
-
-
-
-
-
-/* ============================================================
-   ULTRA-POWERFUL MOBILE RESPONSIVE OVERRIDES FOR .sp-hero-split
-   ============================================================ */
-
-/* ─── BREAKPOINT 1: TABLETS & VERTICAL SCREENS (1024px and below) ─── */
-@media (max-width: 1024px) {
-  /* 1. Collapse the split-grid into a single centered column */
-  html body div[class*="wrapper"] section[class*="sp-hero-split"] div[class*="sp-hero-split-grid"],
-  html body div[class*="wrapper"] [class*="sp-hero-split-grid"],
-  html body [class*="sp-hero-split-grid"] {
-    grid-template-columns: 1fr !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    gap: 32px !important;
-  }
-
-  /* 2. Scale down padding on the hero container */
-  html body div[class*="wrapper"] section[class*="sp-hero-split"],
-  html body div[class*="wrapper"] [class*="sp-hero-split"],
-  html body .sp-hero-split {
-    padding: 60px 0 !important;
-    min-height: auto !important;
-  }
-
-  /* 3. Center the content wrapper column and align all text */
-  html body div[class*="wrapper"] .sp-hero-split-content,
-  html body div[class*="wrapper"] [class*="sp-hero-split-content"],
-  html body [class*="sp-hero-split-content"] {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* 4. Center-align the laptop image wrap container below the text */
-  html body div[class*="wrapper"] .sp-hero-image-wrap,
-  html body div[class*="wrapper"] [class*="sp-hero-image-wrap"],
-  html body [class*="sp-hero-image-wrap"] {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin: 24px auto 0 !important;
-  }
-
-  html body [class*="sp-hero-image-wrap"] img {
-    max-width: 85% !important;
-    height: auto !important;
-    margin: 0 auto !important;
-  }
-}
-
-/* ─── BREAKPOINT 2: MOBILE DEVICES (768px and below) ─── */
-@media (max-width: 768px) {
-  /* Center align the container elements structurally */
-  html body div[class*="wrapper"] section[class*="sp-hero-split"] [class*="content"] {
-    align-items: center !important;
-    text-align: center !important;
-  }
-
-  /* Prevent title clipping and scale title font size cleanly */
-  html body div[class*="wrapper"] .sp-hero-split h1,
-  html body div[class*="wrapper"] [class*="sp-hero-split-title"],
-  html body [class*="sp-hero-split-title"] {
-    font-size: clamp(24px, 6vw, 36px) !important;
-    line-height: 1.22 !important;
-    margin: 0 auto 16px auto !important;
-    text-align: center !important;
-    width: 100% !important;
-  }
-
-  /* Center descriptive paragraph */
-  html body div[class*="wrapper"] .sp-hero-split p,
-  html body div[class*="wrapper"] [class*="sp-hero-split-sub"],
-  html body [class*="sp-hero-split-sub"] {
-    font-size: 15px !important;
-    line-height: 1.65 !important;
-    text-align: center !important;
-    margin: 0 auto 24px auto !important;
-    max-width: 100% !important;
-    padding: 0 10px !important;
-  }
-
-  /* Center badge pill block */
-  html body div[class*="wrapper"] .sp-hero-split [class*="badge"],
-  html body [class*="sp-hero-split-badge"] {
-    margin: 0 auto 20px auto !important;
-    display: inline-flex !important;
-    justify-content: center !important;
-  }
-
-  /* Center and stack the buttons vertically with uniform sizes */
-  html body div[class*="wrapper"] .sp-hero-split [class*="actions"],
-  html body [class*="sp-hero-split-actions"] {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    gap: 12px !important;
-    margin: 24px auto !important;
-  }
-
-  html body div[class*="wrapper"] .sp-hero-split [class*="actions"] > *,
-  html body [class*="sp-hero-split-actions"] > * {
-    width: 100% !important;
-    max-width: 320px !important;
-    height: 52px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-  }
-}
-
-/* ─── BREAKPOINT 3: SMALL SMARTPHONES (480px and below) ─── */
-@media (max-width: 480px) {
-  html body div[class*="wrapper"] section[class*="sp-hero-split"],
-  html body .sp-hero-split {
-    padding: 40px 0 !important;
-  }
-
-  html body div[class*="wrapper"] .sp-hero-split h1,
-  html body [class*="sp-hero-split-title"] {
-    font-size: 24px !important;
-  }
-
-  html body div[class*="wrapper"] .sp-hero-split p,
-  html body [class*="sp-hero-split-sub"] {
-    font-size: 14px !important;
-  }
-}
-
-
-
-
-
-
-
-/* ============================================================
-   FORCE BREADCRUMB TO SINGLE-LINE, CENTERED & TINY ON MOBILE
-   ============================================================ */
-@media (max-width: 768px) {
-  /* Force the navigation wrapper container to align horizontally, center, and allow swipe-scrolling as fallback */
-  html body .pg__wrap .sp-hero-split .breadcrumb-wrap,
-  html body .breadcrumb-wrap,
-  html body div[class*="breadcrumb-wrap"] {
-    display: flex !important;
-    flex-direction: row !important;       /* Forces horizontal alignment */
-    flex-wrap: nowrap !important;         /* Forces all items on a single line (no wrapping) */
-    justify-content: center !important;   /* Centers horizontally */
-    align-items: center !important;       /* Centers vertically */
-    gap: 5px !important;                  /* Tightens gap between elements */
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 0 10px !important;
-    box-sizing: border-box !important;
-    overflow-x: auto !important;          /* Safely handles overflow on narrow viewports via swipe-scroll */
-    scrollbar-width: none !important;     /* Hides scrollbar on Firefox */
-  }
-
-  /* Hide scrollbar on Chrome/Safari/Webkit for a clean look */
-  html body .pg__wrap .sp-hero-split .breadcrumb-wrap::-webkit-scrollbar,
-  html body .breadcrumb-wrap::-webkit-scrollbar,
-  html body div[class*="breadcrumb-wrap"]::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  /* Force all nested elements (links, dividers, spans) to stay inline-row with a tiny font size */
-  html body .pg__wrap .sp-hero-split .breadcrumb-wrap *,
-  html body .breadcrumb-wrap *,
-  html body div[class*="breadcrumb-wrap"] * {
-    display: inline-flex !important;      
-    flex-direction: row !important;       
-    align-items: center !important;
-    justify-content: center !important;
-    float: none !important;
-    clear: none !important;
-    width: auto !important;               /* Prevents blocks from expanding and forcing breaks */
-    flex-shrink: 0 !important;            /* Stops text and dividers from shrinking */
-    white-space: nowrap !important;       /* Forces single line */
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    font-size: 9.5px !important;          /* Reduced size to fit long text strings on standard screens */
-    line-height: 1 !important;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-/* ============================================================
-   ULTRA-POWERFUL BREADCRUMB ROW FORCE (FOR ALL HERO PAGES)
-   ============================================================ */
-@media (max-width: 768px) {
-  /* 1. Force the outer container to align horizontally, center, and allow swipe-overflow as fallback */
-  html body .sp-hero-split .breadcrumb-wrap,
-  html body .breadcrumb-wrap,
-  html body div[class*="breadcrumb-wrap"] {
-    display: flex !important;
-    flex-direction: row !important;       /* Forces row layout */
-    flex-wrap: nowrap !important;         /* Forces all items on a single line (no wrapping) */
-    justify-content: center !important;   /* Centers horizontally */
-    align-items: center !important;       /* Centers vertically */
-    gap: 4px !important;                  /* Tightens gap between elements */
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 0 8px !important;
-    box-sizing: border-box !important;
-    overflow-x: auto !important;          /* Safely handles overflow on narrow viewports via swipe-scroll */
-    scrollbar-width: none !important;     /* Hides scrollbar on Firefox */
-  }
-
-  /* Hide scrollbar on Chrome/Safari/Webkit for a clean look */
-  html body .sp-hero-split .breadcrumb-wrap::-webkit-scrollbar,
-  html body .breadcrumb-wrap::-webkit-scrollbar,
-  html body div[class*="breadcrumb-wrap"]::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  /* 2. Force all nested text, links, and dividers to stay inline-row with a tiny font size */
-  html body .sp-hero-split .breadcrumb-wrap *,
-  html body .breadcrumb-wrap *,
-  html body div[class*="breadcrumb-wrap"] * {
-    display: inline-flex !important;      
-    flex-direction: row !important;       
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;               /* Prevents blocks from expanding and forcing breaks */
-    flex-shrink: 0 !important;            /* Stops text and dividers from shrinking/distorting */
-    white-space: nowrap !important;       /* Forces single line */
-    margin: 0 !important;
-    padding: 0 !important;
-    font-size: 4px !important;            /* Shrunk to fit the entire long sentence on standard 360px-400px screens */
-    line-height: 1 !important;
-    letter-spacing: 0.01em !important;
-  }
-}
-
-
-
-
-
-/* ============================================================
-   ULTRA-POWERFUL RESPONSIVE MOBILE BREADCRUMB OVERRIDE
-   ============================================================ */
-@media (max-width: 768px) {
-  /* Force the navigation wrapper container to align horizontally, center, and allow swipe-scrolling as fallback */
-  html body div[class*="wrapper"] section[class*="sp-hero-split"] div[class*="breadcrumb-wrap"],
-  html body div.pg__wrap section.sp-hero-split div.breadcrumb-wrap,
-  html body .pg__wrap .sp-hero-split .breadcrumb-wrap,
-  html body .breadcrumb-wrap,
-  html body div[class*="breadcrumb-wrap"] {
-    display: flex !important;
-    flex-direction: row !important;       /* Forces horizontal alignment */
-    flex-wrap: nowrap !important;         /* Forces all items on a single line (no wrapping) */
-    justify-content: center !important;   /* Centers horizontally */
-    align-items: center !important;       /* Centers vertically */
-    gap: 4px !important;                  /* Tightens gap between elements */
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 0 10px !important;
-    box-sizing: border-box !important;
-    overflow-x: auto !important;          /* Safely handles overflow on narrow viewports via swipe-scroll */
-    scrollbar-width: none !important;     /* Hides scrollbar on Firefox */
-  }
-
-  /* Hide scrollbar on Chrome/Safari/Webkit for a clean look */
-  html body div[class*="wrapper"] section[class*="sp-hero-split"] div[class*="breadcrumb-wrap"]::-webkit-scrollbar,
-  html body .sp-hero-split .breadcrumb-wrap::-webkit-scrollbar,
-  html body .breadcrumb-wrap::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  /* Force all nested elements (links, dividers, spans) to stay inline-row with a tiny font size (Overriding the 11px desktop rule) */
-  html body div[class*="wrapper"] section[class*="sp-hero-split"] div[class*="breadcrumb-wrap"] *,
-  html body div.pg__wrap section.sp-hero-split div.breadcrumb-wrap *,
-  html body .pg__wrap .sp-hero-split .breadcrumb-wrap *,
-  html body .breadcrumb-wrap *,
-  html body div[class*="breadcrumb-wrap"] * {
-    display: inline-flex !important;      
-    flex-direction: row !important;       
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;               /* Prevents blocks from expanding and forcing breaks */
-    flex-shrink: 0 !important;            /* Stops text and dividers from shrinking/distorting */
-    white-space: nowrap !important;       /* Forces single line */
-    margin: 0 !important;
-    padding: 0 !important;
-    font-size: 8px !important;            /* Shrunk to 8px to override the 11px desktop rule on mobile */
-    line-height: 1 !important;
-    letter-spacing: 0.01em !important;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   MOBILE HERO FEATURES CHECKLIST OVERRIDE
-   Forces the checklist row to wrap cleanly and center on small viewports
-   ========================================================================== */
-@media (max-width: 768px) {
-  /* 1. Target the outer checklist container and force wrapping */
-  html body div.pg__wrap [class*="sp-hero-split-features"],
-  html body div.pg__wrap .sp-hero-split-features,
-  html body div.pg__wrap [class*="features"] {
-    display: flex !important;
-    flex-direction: row !important;       /* Lay out horizontally as a row */
-    flex-wrap: wrap !important;           /* Wrap items when they hit the screen edge */
-    justify-content: center !important;   /* Horizontally center all wrapped lines */
-    align-items: center !important;       /* Vertically align icons and text */
-    gap: 10px 18px !important;            /* Spacing gap between items */
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 20px auto 0 !important;
-    padding: 0 16px !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 2. Style each individual checklist item (icon + text block) */
-  html body div.pg__wrap [class*="sp-hero-split-features"] > *,
-  html body div.pg__wrap .sp-hero-split-features > *,
-  html body div.pg__wrap [class*="features"] > * {
-    display: inline-flex !important;
-    flex-direction: row !important;       /* Keeps icon next to text */
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;               /* Keeps items inline instead of stacking to 100% */
-    flex-shrink: 0 !important;
-    white-space: nowrap !important;       /* Prevents single words from breaking awkwardly */
-    margin: 0 !important;
-    gap: 6px !important;                  /* Spacing between checkmark and text */
-  }
-
-  /* 3. Slightly reduce text and checkmark scale on small viewports */
-  html body div.pg__wrap [class*="sp-hero-split-features"] span,
-  html body div.pg__wrap [class*="sp-hero-split-features"] svg {
-    font-size: 11px !important;
-    font-weight: 700 !important;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   MOBILE HERO IMAGE SIZE OPTIMIZATION
-   ========================================================================== */
-@media (max-width: 768px) {
-  /* Allow the image container column to span fully and prevent clipping */
-  html body .pg__wrap .sp-hero-image-wrap {
-    width: 100% !important;
-    max-width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    overflow: visible !important; /* Ensures the scaled up image is not cut off */
-    padding-top: 15px !important;
-    padding-bottom: 0 !important;
-  }
-
-  /* Increase both layout boundaries and scale of the 3D robot hero image */
-  html body .pg__wrap img.sp-hero-image,
-  html body .pg__wrap img[src*="aiseo.png"] {
-    width: 115% !important;          /* Widen past standard container constraints */
-    max-width: 115% !important;      /* Force override of default max-width limits */
-    height: auto !important;         /* Preserve correct proportions */
-    transform: scale(1.15) !important; /* Scale up visual presentation on mobile screen */
-    transform-origin: center top !important;
-    margin-top: -55px !important;
-    margin-bottom: 20px !important;  /* Add balanced padding below the image block */
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-

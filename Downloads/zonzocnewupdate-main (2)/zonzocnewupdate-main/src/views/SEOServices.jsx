@@ -117,49 +117,10 @@ const SEOServices = () => {
     <>
       <div className="seo-page">
         {/* ── HIGH-PRIORITY INLINE STYLES PREVENTING HYDRATION CONFLICTS ── */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          @media (min-width: 769px) {
-            .seo-page img[alt="Search Engine Optimization Analytics and Targeted Growth Interface"] {
-              max-width: 112% !important;
-              width: 112% !important;
-              transform: scale(1.08) !important;
-              transform-origin: center right !important;
-            }
-          }
-
-          /* ── COMFORTABLE LEFT-ALIGNMENT WITHOUT CLIPPING OVERFLOWS ── */
-          html body .custom-hero-left-align [class*="container"],
-          html body .custom-hero-left-align [class*="inner"],
-          html body .custom-hero-left-align [class*="wrap"] {
-            max-width: 1360px !important;   /* Expands container bounds so it naturally aligns further left */
-            padding-left: 2rem !important;  /* Safe minimum boundary to prevent running off the screen */
-            padding-right: 2rem !important;
-            margin-left: auto !important;   /* Remains centered within the screen width */
-            margin-right: auto !important;
-          }
-
-          /* Targets text content and column wrappers inside custom hero */
-          html body .custom-hero-left-align [class*="left"],
-          html body .custom-hero-left-align [class*="content"] {
-            padding-left: 0 !important;
-            margin-left: 0 !important;
-          }
-
-          /* Targets breadcrumbs inside custom hero */
-          html body .custom-hero-left-align [class*="bread"],
-          html body .custom-hero-left-align [class*="Bread"],
-          html body .custom-hero-left-align [class*="crumb"],
-          html body .custom-hero-left-align [class*="route"] {
-            padding-left: 0 !important;
-            margin-left: 0 !important;
-          }
-        `}} />
-
-        <Navbar />
+<Navbar />
 
         {/* ── HERO ── */}
-        <div className="custom-hero-left-align">
-          <ServicePageHero
+        <ServicePageHero
             badge="SEO SERVICES"
             title="SEO Built for Rankings, Traffic &"
             titleAccent="Sustainable Growth"
@@ -170,8 +131,6 @@ const SEOServices = () => {
             heroImage="/images/seoservices.png"
             heroAlt="Search Engine Optimization Analytics and Targeted Growth Interface"
           />
-        </div>
-
         {/* ── STATS BAR ──────────────────────────────────────────── */}
         <div className="ss-stats-bar" id="seo-results">
           <div className="ss-container">

@@ -153,38 +153,8 @@ const AISearchOptimization = () => {
       <Navbar />
 
       {/* ── COMFORTABLE LEFT-ALIGNMENT OVERRIDE WITHOUT CLIPPING OVERFLOWS ── */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        /* 1. EXPAND THE INNER BOUNDS NATURALLY AND CENTER THE CONTAINERS */
-        html body div.pg__wrap .custom-hero-left-align [class*="container"],
-        html body div.pg__wrap .custom-hero-left-align [class*="inner"],
-        html body div.pg__wrap .custom-hero-left-align [class*="wrap"] {
-          max-width: 1360px !important;   /* Expands container bounds so it aligns further left */
-          padding-left: 2rem !important;  /* Safe minimum boundary to prevent running off the screen */
-          padding-right: 2rem !important;
-          margin-left: auto !important;   /* Remains centered within the screen width */
-          margin-right: auto !important;
-        }
-
-        /* 2. REMOVE ADDITIONAL PADDING ON TEXT COLUMNS */
-        html body div.pg__wrap .custom-hero-left-align [class*="left"],
-        html body div.pg__wrap .custom-hero-left-align [class*="content"] {
-          padding-left: 0 !important;
-          margin-left: 0 !important;
-        }
-
-        /* 3. ALIGN BREADCRUMBS SECURELY */
-        html body div.pg__wrap .custom-hero-left-align [class*="bread"],
-        html body div.pg__wrap .custom-hero-left-align [class*="Bread"],
-        html body div.pg__wrap .custom-hero-left-align [class*="crumb"],
-        html body div.pg__wrap .custom-hero-left-align [class*="route"] {
-          padding-left: 0 !important;
-          margin-left: 0 !important;
-        }
-      ` }} />
-
-      {/* ── HERO ── */}
-      <div className="custom-hero-left-align">
-        <ServicePageHero
+{/* ── HERO ── */}
+      <ServicePageHero
           badge="AI SEARCH OPTIMIZATION SERVICES"
           title="Get Cited in AI Answers &"
           titleAccent="Own the Future of Search"
@@ -195,8 +165,6 @@ const AISearchOptimization = () => {
           heroImage="/images/aioptimization.png"
           heroAlt="AI Search Optimization and Generative Engine Optimization Diagnostics Setup"
         />
-      </div>
-
       {/* ── STATS BAR ──────────────────────────────────────────────── */}
       <div className="sb" id="aiso-how">
         <div className="sb__inner">

@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
 import Breadcrumb from './Breadcrumb';
+import { HERO_CSS } from '../styles/serviceHeroInline';
 
 const DashboardMockup = () => (
   <div className="sp-dashboard-mockup" aria-hidden="true">
@@ -24,17 +25,22 @@ const DashboardMockup = () => (
   </div>
 );
 
-const HeroVisual = ({ heroImage, heroAlt }) => {
+const HeroVisual = ({ heroImage, heroAlt, heroImageTransparent }) => {
   if (heroImage) {
+    const wrapClass = heroImageTransparent
+      ? 'sp-hero-image-wrap sp-hero-image-wrap--transparent'
+      : 'sp-hero-image-wrap';
+
     return (
-      <div className="sp-hero-image-wrap">
+      <div className={wrapClass}>
         <Image
           src={heroImage}
           alt={heroAlt || 'AI technology illustration'}
-          width={560}
-          height={420}
+          width={860}
+          height={680}
           className="sp-hero-image"
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 640px, 720px"
         />
       </div>
     );
@@ -52,11 +58,12 @@ const ServicePageHero = ({
   features = [],
   heroImage,
   heroAlt,
+  heroImageTransparent,
   showDashboard = true,
 }) => (
-  <section className="sp-hero-split">
+  <section className="sp-hero-split" data-sp-hero="1">
     <div className="sp-hero-pattern" aria-hidden="true" />
-    <div className="aiwd-container" style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+    <div className="sp-hero-container">
       <div className="sp-hero-split-grid">
         <div className="sp-hero-split-content">
           <Breadcrumb />
@@ -84,10 +91,11 @@ const ServicePageHero = ({
           )}
         </div>
         {showDashboard || heroImage ? (
-          <HeroVisual heroImage={heroImage} heroAlt={heroAlt} />
+          <HeroVisual heroImage={heroImage} heroAlt={heroAlt} heroImageTransparent={heroImageTransparent} />
         ) : null}
       </div>
     </div>
+    <style suppressHydrationWarning dangerouslySetInnerHTML={{ __html: HERO_CSS }} />
   </section>
 );
 

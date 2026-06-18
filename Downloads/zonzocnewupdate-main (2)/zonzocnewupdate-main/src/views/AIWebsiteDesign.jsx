@@ -15,7 +15,6 @@ import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
 import "../styles/AIWebsiteDesign.css";
 
-// Re-imported the working static reference (2 levels up from src/views/)
 import heroImg from "../../public/images/aiwebdesign.png";
 
 const AIWebsiteDesign = () => {
@@ -116,40 +115,99 @@ const AIWebsiteDesign = () => {
 
   return (
     <div className="aiwd-master-wrapper">
-      
-      {/* SAFE INJECTED CSS THAT RESOLVES SERVER-SIDE HYDRATION MISMATCHES */}
+
       <style dangerouslySetInnerHTML={{ __html: `
-        /* 1. Make the hero container wider to let the image grow to its full size */
-        .aiwd-master-wrapper .aiwd-hero .aiwd-container,
-        .aiwd-master-wrapper .sp-hero-split .aiwd-container {
-          max-width: 1400px !important;
+        /* Align hero content with navbar logo — same 1440px container + 24px padding */
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-container {
+          max-width: 1440px !important;
+          width: 100% !important;
+          margin: 0 auto !important;
+          padding: 0 24px !important;
+          box-sizing: border-box !important;
+        }
+
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-content {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          text-align: left !important;
+          padding: 0 !important;
+          margin: 0 !important;
           width: 100% !important;
         }
 
-        /* 2. Balance the columns: Allocate 45% to text and 55% to the image */
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-content .breadcrumb-wrap,
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-content .breadcrumb-container {
+          justify-content: flex-start !important;
+          margin: 0 0 16px 0 !important;
+          padding: 0 !important;
+          max-width: none !important;
+          width: 100% !important;
+        }
+
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-badge,
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-title,
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-sub,
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-actions,
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-features {
+          text-align: left !important;
+          align-self: flex-start !important;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+        }
+
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-badge {
+          margin-right: auto !important;
+        }
+
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-actions,
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-features {
+          justify-content: flex-start !important;
+        }
+
         @media (min-width: 1025px) {
-          .aiwd-master-wrapper .sp-hero-split-grid {
+          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-grid {
             display: grid !important;
-            grid-template-columns: 45% 55% !important; 
+            grid-template-columns: 45% 55% !important;
             align-items: center !important;
-            gap: 10px !important; /* Kept tight to keep laptop close to text */
+            gap: 10px !important;
           }
-          
-          /* Pull the image wrapper to the left closer to the description text */
-          .aiwd-master-wrapper .sp-hero-image-wrap {
-            justify-content: flex-start !important; 
-            margin-left: -100px !important; 
+
+          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-image-wrap {
+            justify-content: flex-start !important;
+            margin-left: -100px !important;
+          }
+
+          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-content {
+            align-items: flex-start !important;
+            text-align: left !important;
+          }
+
+          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-content .breadcrumb-container {
+            justify-content: flex-start !important;
+          }
+
+          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-badge {
+            margin-left: 0 !important;
+            margin-right: auto !important;
           }
         }
 
-        /* 3. Increase vertical padding of the hero to give the layout breathing room */
-        .aiwd-master-wrapper .sp-hero-split {
+        @media (max-width: 1024px) {
+          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-container {
+            width: 92% !important;
+            max-width: 92% !important;
+            padding: 0 16px !important;
+          }
+        }
+
+        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] {
           padding: 120px 0 100px !important;
         }
 
         /* 4. Complete reset of any borders, backgrounds, shadows, or rounded corners on the wrapper */
         .aiwd-master-wrapper .sp-hero-image-wrap {
-          max-width: 100% !important;         
+          max-width: 100% !important;
           width: 100% !important;
           height: auto !important;
           display: flex !important;
@@ -176,25 +234,15 @@ const AIWebsiteDesign = () => {
           border: none !important;
           box-shadow: none !important;
           object-fit: contain !important;
-          
-          /* Force GPU rendering in Chrome to activate blend modes correctly */
           transform: translate3d(0, 0, 0) !important;
           will-change: transform !important;
-          
-          /* Blends the image background into absolute transparency */
           mix-blend-mode: screen !important;
-          
-          /* FIXED: Restored balanced contrast filters to push the dark blue-gray JPEG background to absolute transparent black */
           filter: brightness(0.85) contrast(1.2) !important;
-          
-          /* FIXED: Soft, wide elliptical mask (95% horizontal, 85% vertical) with solid center up to 60% to completely eliminate "eyebrow" lines */
           mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%) !important;
           -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%) !important;
         }
 
-        /* ═══ HIGH-PRIORITY INLINE MEDIA QUERY OVERRIDES FOR MOBILE ═══ */
         @media (max-width: 768px) {
-          /* Force any container with features inside .sp-hero-split-content into a centered 2x2 grid */
           html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"],
           html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="Features"],
           html body .aiwd-master-wrapper div.sp-hero-split-content .sp-hero-split-features,
@@ -211,7 +259,6 @@ const AIWebsiteDesign = () => {
             box-sizing: border-box !important;
           }
 
-          /* Force individual features items inside the grid to stay horizontal as row cells */
           html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"] > *,
           html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="Features"] > *,
           html body .aiwd-master-wrapper div.sp-hero-split-content .sp-hero-split-features > *,
@@ -227,7 +274,6 @@ const AIWebsiteDesign = () => {
             white-space: nowrap !important;
           }
 
-          /* Mobile scale optimization for checkmark icons and labels */
           html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"] span,
           html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"] svg,
           html body .aiwd-master-wrapper div.sp-hero-split-content > div:last-child span,
@@ -247,8 +293,8 @@ const AIWebsiteDesign = () => {
         titleAccent="Converts Visitors Into Customers"
         subtitle="We build high-performing AI-powered websites for businesses in the UK, USA, and worldwide — combining modern design, smart automation, and conversion-focused development to turn traffic into real results."
         features={heroFeatures}
-        heroImage={heroImg} 
-        heroAlt="AI Website Design & Development"
+        heroImage={heroImg}
+        heroAlt="Futuristic laptop with glowing cyan and magenta holographic AI analytics dashboards, 3D data charts, and neon digital interface elements"
       />
 
       {/* ═══ CUSTOM INTRO SECTION WITH HORIZONTAL MARQUEE TRACK ═══ */}

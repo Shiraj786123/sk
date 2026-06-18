@@ -1074,7 +1074,7 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Hero / intro / CTA real images */
+/* Hero / intro / CTA real images — sizing controlled by ServicePageHero inline CSS */
 .sp-hero-image-wrap,
 .sp-intro-image-wrap,
 .sp-cta-image-wrap {
@@ -1085,17 +1085,10 @@
   justify-content: center;
 }
 
-.sp-hero-image-wrap {
-  max-width: 520px;
-  margin: 0 auto;
-}
-
 .sp-hero-image {
   width: 100%;
   height: auto;
-  border-radius: 16px;
   object-fit: contain;
-  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35));
 }
 
 .sp-intro-image-wrap {

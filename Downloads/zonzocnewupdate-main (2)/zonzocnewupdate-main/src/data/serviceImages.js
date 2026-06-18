@@ -4,10 +4,10 @@ const base = '/images/services';
 
 export const serviceImages = {
   'ai-website-design': {
-    hero: `${base}/website-devices-hero.png`,
+    hero: '/images/aiwebdesign.png',
     intro: `${base}/ai-brain-intro.png`,
     cta: `${base}/ai-neural-profile-cta.png`,
-    heroAlt: 'AI-powered website design on laptop and mobile devices',
+    heroAlt: 'Futuristic laptop with glowing cyan and magenta holographic AI analytics dashboards, 3D data charts, and neon digital interface elements',
     introAlt: 'AI brain chip and modern web technology illustration',
     ctaAlt: 'AI neural network digital profile illustration',
   },
