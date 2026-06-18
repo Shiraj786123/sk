@@ -4,7 +4,7 @@
 
 .whoweare-section {
   background: #f8faff;
-  padding: 100px 0;
+  padding: 64px 0 40px;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
@@ -20,7 +20,7 @@
 .whoweare-header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 50px;
+  margin: 0 auto 36px;
 }
 
 .whoweare-title {
@@ -46,7 +46,7 @@
 .technologystack {
   font-size: 13px;
   color: #00448f;
-  padding-top: 40px;
+  padding-top: 24px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -60,13 +60,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Vertical gap between rows */
+  gap: 20px;
   width: 100%;
   overflow: hidden;
-  padding: 10px 0;
+  padding: 0;
 }
 
-/* Premium gradient fades to blend elements at browser edges */
 .marquee-wrapper::before,
 .marquee-wrapper::after {
   content: "";
@@ -89,25 +88,21 @@
   background: linear-gradient(to left, #f8faff 20%, rgba(248, 250, 255, 0) 100%);
 }
 
-/* Base Horizontal Lane styling */
 .marquee-track {
   display: flex;
-  gap: 20px; /* Horizontal gap between pill badges */
+  gap: 20px;
   width: max-content;
   will-change: transform;
 }
 
-/* Left-moving lane animation */
 .marquee-track-left {
   animation: scroll-left 40s linear infinite;
 }
 
-/* Right-moving lane animation */
 .marquee-track-right {
   animation: scroll-right 40s linear infinite;
 }
 
-/* Pause flow on track hover */
 .marquee-track:hover {
   animation-play-state: paused;
 }
@@ -126,15 +121,14 @@
   padding: 14px 28px;
   height: 60px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-  transition: box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
-              border-color 0.3s ease, 
+  transition: box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.3s ease,
               transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   box-sizing: border-box;
   flex-shrink: 0;
   cursor: pointer;
 }
 
-/* Hover state elevation */
 .tech-pill:hover {
   box-shadow: 0 10px 24px rgba(0, 68, 143, 0.06);
   border-color: #00448f;
@@ -150,39 +144,27 @@
 .tech-pill-label {
   font-size: 14px;
   font-weight: 700;
-  color: #334155; /* Neutral slate tone for text contrast */
+  color: #334155;
   white-space: nowrap;
 }
 
-/* ==========================================================================
-   MARQUEE TRANSLATION KEYFRAMES
-   ========================================================================== */
-
 @keyframes scroll-left {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes scroll-right {
-  0% {
-    transform: translate3d(-50%, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
-
-/* ==========================================================================
-   RESPONSIVE LAYOUT SCALING
-   ========================================================================== */
 
 @media (max-width: 768px) {
   .whoweare-section {
-    padding: 60px 0;
+    padding: 48px 0 32px;
+  }
+
+  .whoweare-header {
+    margin-bottom: 28px;
   }
 
   .whoweare-title {
@@ -191,6 +173,10 @@
 
   .whoweare-description {
     font-size: 15px;
+  }
+
+  .technologystack {
+    padding-top: 20px;
   }
 
   .tech-pill {
@@ -223,18 +209,15 @@
   }
 }
 
+/* Uniform padding on all service pages — beats page.css overrides */
+html body section.whoweare-section {
+  padding-top: 64px !important;
+  padding-bottom: 40px !important;
+}
 
-
-
-
-.whoweare-section {
-  background: #f8faff;
-  /* 
-     Change from: padding: 100px 0; 
-     To: 100px top padding, 0 left/right, and 10px bottom padding 
-  */
-  padding: 100px 0 10px; 
-  overflow: hidden;
-  width: 100%;
-  box-sizing: border-box;
+@media (max-width: 768px) {
+  html body section.whoweare-section {
+    padding-top: 48px !important;
+    padding-bottom: 32px !important;
+  }
 }

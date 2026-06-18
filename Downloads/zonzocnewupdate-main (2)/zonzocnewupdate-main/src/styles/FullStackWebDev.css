@@ -184,7 +184,7 @@
   border: 1.5px solid var(--border);
   border-radius: 16px;
   box-shadow: 0 8px 36px rgba(0, 45, 98, .09);
-  transform: translateY(-34px);
+  transform: translateY(-52px);
   background: #fff;
   overflow: hidden;
 }
@@ -1382,6 +1382,11 @@
   }
 
   /* 10. FAQ & CODE BLOCK */
+  .fswd-faq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
   .fswd-faq-left { order: 1; }
   .fswd-code-card { order: 2; padding: 20px; }
   .fswd-code-pre { font-size: 12px; }
@@ -1461,19 +1466,12 @@
 ═══════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
   .fswd-stats-box {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
   }
+
   .fswd-tech-grid {
     grid-template-columns: 1fr !important;
-  }
-}
-
-/* Override the 480px single-column layout rule */
-@media (max-width: 480px) {
-  .fswd-stats-box {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0 !important;
   }
 }
 

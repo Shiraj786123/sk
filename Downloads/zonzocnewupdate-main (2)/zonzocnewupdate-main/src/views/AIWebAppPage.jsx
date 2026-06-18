@@ -13,62 +13,34 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
+import WhoWeAre from "../components/WhoWeAre";
+import ServicePageCta from "../components/ServicePageCta";
+import ServicePageMobileStyles from "../components/ServicePageMobileStyles";
+import ServiceIndustriesSection from "../components/ServiceIndustriesSection";
+import ServiceProcessSection from "../components/ServiceProcessSection";
+import ServiceIntroMarqueeSection from "../components/ServiceIntroMarqueeSection";
+import ServiceWhyChooseSection from "../components/ServiceWhyChooseSection";
+import { serviceCtaContent } from "../data/serviceCtaContent";
 import { serviceImages } from "../data/serviceImages";
 import "../styles/AIWebAppPage.css";
+import "../styles/service-card-text-fix.css";
 
 import heroImg from "../../public/images/aiwebapp.png";
+
+const cta = serviceCtaContent['ai-web-app'];
 
 const AIWebAppDev = () => {
   const [activeFaq, setActiveFaq] = useState(null);
 
-  const introItems = [
-    { title: "Process large amounts of data",      icon: <Database size={32} />,  colorClass: "pink-purple" },
-    { title: "Automate repetitive tasks",          icon: <RefreshCw size={32} />, colorClass: "cyan-blue" },
-    { title: "Personalize user experiences",       icon: <UserCheck size={32} />, colorClass: "lime-green" },
-    { title: "Generate intelligent insights",      icon: <Sparkles size={32} />,  colorClass: "orange-yellow" },
-    { title: "Improve operational efficiency",     icon: <Settings size={32} />,  colorClass: "purple-indigo" },
-    { title: "Support scalable business workflows", icon: <TrendingUp size={32} />, colorClass: "blue-accent" }
-  ];
-
   const services = [
-    { icon: <Layers size={28} />,       title: "Custom SaaS Development",               desc: "Scalable SaaS platforms with multi-tenant architecture, subscriptions, and secure user management." },
-    { icon: <BarChart3 size={28} />,    title: "AI Dashboard Development",              desc: "Real-time dashboards with powerful analytics, reporting, and data visualization." },
-    { icon: <Settings size={28} />,     title: "Workflow Automation Systems",           desc: "Automate business processes, approvals, notifications, and internal workflows." },
-    { icon: <Bot size={28} />,          title: "AI Chatbot & Virtual Assistant Integration", desc: "Integrate smart AI assistants to enhance customer support and automate interactions." },
-    { icon: <Database size={28} />,     title: "CRM & ERP Web Applications",            desc: "Custom CRM and ERP solutions to manage your operations, customers, and teams." },
-    { icon: <Users size={28} />,        title: "Customer Portals & Admin Systems",        desc: "Secure portals with role-based access for customers, vendors, and internal teams." },
-    { icon: <FileBarChart size={28} />, title: "Data Analytics & Reporting Platforms",      desc: "Advanced analytics, KPI tracking, and automated reporting for smarter decisions." },
-    { icon: <Globe size={28} />,        title: "API & Third-Party Integrations",          desc: "Seamless integration with payment gateways, CRMs, cloud services, and external APIs." },
-  ];
-
-  const whyChoose = [
-    { icon: <Layers size={22} />,  title: "Scalable Architecture",      desc: "Built for performance, flexibility, and long-term growth.",                      colorClass: "wc-cyan"   },
-    { icon: <Cpu size={22} />,    title: "AI & Automation Expertise",  desc: "Smart solutions that automate and optimize business processes.",                      colorClass: "wc-purple" },
-    { icon: <Layout size={22} />,  title: "Modern UI/UX Design",        desc: "Clean, intuitive, and user-focused interfaces that engage.",                         colorClass: "wc-blue"   },
-    { icon: <Shield size={22} />,  title: "Secure & High Performance",  desc: "Security-first development with fast, reliable, and optimized applications.",         colorClass: "wc-green"  },
-    { icon: <Rocket size={22} />,  title: "Business-Focused Solutions", desc: "Solutions designed around your goals, workflows, and real business needs.",          colorClass: "wc-orange" },
-  ];
-
-  const industries = [
-    { icon: <ShoppingCart size={28} />,  label: "Ecommerce"            },
-    { icon: <HeartPulse size={28} />,    label: "Healthcare"           },
-    { icon: <BarChart3 size={28} />,     label: "Finance"              },
-    { icon: <GraduationCap size={28} />, label: "Education"            },
-    { icon: <Truck size={28} />,         label: "Logistics"            },
-    { icon: <Building2 size={28} />,     label: "Real Estate"          },
-    { icon: <Megaphone size={28} />,     label: "Marketing Agencies"   },
-    { icon: <Rocket size={28} />,        label: "SaaS Startups"        },
-    { icon: <Briefcase size={28} />,     label: "Service Businesses"   },
-    { icon: <Globe size={28} />,         label: "Enterprise Operations" },
-  ];
-
-  const processSteps = [
-    { step: "01", icon: <Search size={26} />,   title: "Discovery & Analysis",    desc: "We understand your business, users, and requirements." },
-    { step: "02", icon: <Layout size={26} />,   title: "Planning & Architecture", desc: "We design scalable architecture and plan the perfect solution." },
-    { step: "03", icon: <Sparkles size={26} />, title: "UI/UX Design",            desc: "We create modern, intuitive designs, focused on UX." },
-    { step: "04", icon: <Code2 size={26} />,    title: "Development",            desc: "We build your application using latest technologies." },
-    { step: "05", icon: <Activity size={26} />, title: "Testing & Optimization",  desc: "We test for performance, security, and functionality." },
-    { step: "06", icon: <Rocket size={26} />,   title: "Deployment & Support",    desc: "We deploy, monitor, and provide ongoing support." },
+    { icon: <Layers size={28} />,       title: "Custom SaaS Development",    desc: "Scalable SaaS with subscriptions and secure user access." },
+    { icon: <BarChart3 size={28} />,    title: "AI Dashboard Development",   desc: "Real-time dashboards with analytics and clear reporting." },
+    { icon: <Settings size={28} />,     title: "Workflow Automation",        desc: "Automate processes, approvals, and internal workflows." },
+    { icon: <Bot size={28} />,          title: "AI Chatbot Integration",     desc: "AI assistants to enhance support and automate interactions." },
+    { icon: <Database size={28} />,     title: "CRM & ERP Applications",     desc: "Custom CRM and ERP tools for operations and customers." },
+    { icon: <Users size={28} />,        title: "Customer Portals",           desc: "Secure portals with role-based access for your teams." },
+    { icon: <FileBarChart size={28} />, title: "Analytics Platforms",        desc: "Analytics, KPI tracking, and automated reporting tools." },
+    { icon: <Globe size={28} />,        title: "API Integrations",           desc: "Integrate payments, CRMs, cloud services, and APIs." },
   ];
 
   const aiFeatures = [
@@ -111,43 +83,10 @@ const AIWebAppDev = () => {
 
   return (
     <div className="aiwa__wrapper">
-      {/* ── COMFORTABLE LEFT-ALIGNMENT OVERRIDE WITHOUT CLIPPING OVERFLOWS ── */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        /* 1. EXPAND THE INNER BOUNDS NATURALLY AND CENTER THE CONTAINERS */
-        html body div.aiwa__wrapper .custom-hero-left-align [class*="container"],
-        html body div.aiwa__wrapper .custom-hero-left-align [class*="inner"],
-        html body div.aiwa__wrapper .custom-hero-left-align [class*="wrap"] {
-          max-width: 1360px !important;   /* Expands container bounds so it aligns further left */
-          padding-left: 2rem !important;  /* Safe minimum boundary to prevent running off the screen */
-          padding-right: 2rem !important;
-          margin-left: auto !important;   /* Remains centered within the screen width */
-          margin-right: auto !important;
-        }
-
-        /* 2. REMOVE ADDITIONAL PADDING ON TEXT COLUMNS */
-        html body div.aiwa__wrapper .custom-hero-left-align [class*="left"],
-        html body div.aiwa__wrapper .custom-hero-left-align [class*="content"] {
-          padding-left: 0 !important;
-          margin-left: 0 !important;
-        }
-
-        /* 3. ALIGN BREADCRUMBS SECURELY & PREVENT WRAPPING */
-        html body div.aiwa__wrapper .custom-hero-left-align [class*="bread"],
-        html body div.aiwa__wrapper .custom-hero-left-align [class*="Bread"],
-        html body div.aiwa__wrapper .custom-hero-left-align [class*="crumb"],
-        html body div.aiwa__wrapper .custom-hero-left-align [class*="route"] {
-          padding-left: 0 !important;
-          margin-left: 0 !important;
-          white-space: nowrap !important;  /* Prevents breadcrumb text wrapping */
-          flex-wrap: nowrap !important;   /* Prevents wrapping if layout relies on flex list items */
-        }
-      ` }} />
-
       <Navbar />
-      
+
       {/* ── HERO ── */}
-      <div className="custom-hero-left-align">
-        <ServicePageHero
+      <ServicePageHero
           badge="AI Web Application Development"
           title="Custom AI Web Applications Built for"
           titleAccent="Automation, Scalability & Growth"
@@ -156,65 +95,21 @@ const AIWebAppDev = () => {
           heroImage={heroImg?.src || heroImg} /* Safe URL string extractor */
           heroAlt="AI Web Application Development"
         />
-      </div>
 
-      {/* Intro section, service grid, etc... */}
-      <section className="aiwa-intro-section">
-        <div className="aiwa__container">
-          <div className="aiwa-intro-content">
-            <span className="aiwa-intro-label">What Is AI Web Application Development?</span>
-            <h2 className="aiwa-intro-title">
-              Smarter Applications for <span className="aiwa-text-blue">Modern Businesses</span>
-            </h2>
-            <p className="aiwa-intro-desc">
-              AI web application development combines powerful web technologies with artificial intelligence and automation to create smart, data-driven applications that improve efficiency and user experiences.
-            </p>
-            
-            <div className="aiwa-intro-marquee-wrapper">
-              <div className="aiwa-intro-marquee-track">
-                {[...introItems, ...introItems].map((item, idx) => (
-                  <div key={idx} className="aiwa-intro-sitemap-col">
-                    <div className="aiwa-intro-sitemap-card">
-                      <div className="aiwa-intro-sitemap-header-bar">
-                        <span className="aiwa-intro-browser-dot"></span>
-                        <span className="aiwa-intro-browser-dot"></span>
-                        <span className="aiwa-intro-browser-dot"></span>
-                      </div>
-                      <div className="aiwa-intro-sitemap-body">
-                        <div className="aiwa-intro-card-left-group">
-                          <CheckCircle2 size={16} className="aiwa-intro-check-icon" />
-                          <h4 className="aiwa-intro-sitemap-card-title">{item.title}</h4>
-                        </div>
-                        <div className={`aiwa-intro-icon-box ${item.colorClass}`}>
-                          {item.icon}
-                        </div>
-                        <div className="aiwa-intro-sitemap-card-footer">
-                          <span>Explore</span>
-                          <ArrowRight size={14} className="aiwa-intro-card-arrow" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="aiwa-intro-sitemap-line"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceIntroMarqueeSection serviceKey="ai-web-app" />
 
       <section className="aiwa-services-section">
         <div className="aiwa__container">
           <div className="aiwa-section-head">
             <span className="aiwa-pill">Our Services</span>
-            <h2 className="aiwa-section-title">AI Web Application Development Services</h2>
+            <p className="aiwa-section-title">AI Web Application Development Services</p>
           </div>
           <div className="aiwa-services-grid">
             {services.map((svc, i) => (
               <div key={i} className="aiwa-service-card">
                 <div className="aiwa-service-icon">{svc.icon}</div>
-                <h3>{svc.title}</h3>
-                <p>{svc.desc}</p>
+                <p className="sp-card-title-1l">{svc.title}</p>
+                <p className="sp-card-desc-3l">{svc.desc}</p>
               </div>
             ))}
           </div>
@@ -222,59 +117,11 @@ const AIWebAppDev = () => {
         </div>
       </section>
 
-      <section className="aiwa-why-section">
-        <div className="aiwa__container">
-          <div className="aiwa-section-head">
-            <span className="aiwa-pill-white">Why Businesses Choose ZonzocTech</span>
-          </div>
-          <div className="aiwa-why-grid">
-            {whyChoose.map((item, i) => (
-              <div key={i} className={`aiwa-why-card ${item.colorClass}`}>
-                <div className="aiwa-why-icon">{item.icon}</div>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceWhyChooseSection serviceKey="ai-web-app" />
 
-      <section className="aiwa-industries-section">
-        <div className="aiwa__container">
-          <div className="aiwa-section-head">
-            <span className="aiwa-pill">Industries We Support</span>
-            <h2 className="aiwa-section-title">Solutions for Every Industry</h2>
-          </div>
-          <div className="aiwa-industries-grid">
-            {industries.map((ind, i) => (
-              <div key={i} className="aiwa-industry-item">
-                <div className="aiwa-industry-icon">{ind.icon}</div>
-                <span className="aiwa-industry-label">{ind.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceProcessSection serviceKey="ai-web-app" />
 
-      <section className="aiwa-process-section">
-        <div className="aiwa__container">
-          <div className="aiwa-section-head">
-            <span className="aiwa-pill">Our Development Process</span>
-            <h2 className="aiwa-section-title">Our AI Web Application Development Process</h2>
-          </div>
-          <div className="aiwa-process-row">
-            {processSteps.map((step, i) => (
-              <div key={i} className="aiwa-process-col">
-                {i < processSteps.length - 1 && <div className="aiwa-process-connector" />}
-                <div className="aiwa-process-circle">{step.icon}</div>
-                <span className="aiwa-process-num">{step.step}</span>
-                <h3>{step.title}</h3>
-                <p>{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceIndustriesSection serviceKey="ai-web-app" />
 
       {/* Feature section */}
       <section className="aiwa-features-section">
@@ -293,44 +140,10 @@ const AIWebAppDev = () => {
         </div>
       </section>
 
-      <section className="aiwa-tech-section">
-        <div className="aiwa__container">
-          <div className="aiwa-section-head">
-            <span className="aiwa-pill">Technologies We Work With</span>
-          </div>
-          <div className="aiwa-tech-row">
-            {technologies.map((tech, i) => (
-              <div key={i} className="aiwa-tech-pill">
-                <div className="aiwa-tech-icon-wrap">
-                  {tech.icon ? (
-                    <img
-                      src={tech.icon}
-                      alt={tech.name}
-                      className="aiwa-tech-img"
-                      onError={e => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                  ) : null}
-                  <span
-                    className="aiwa-tech-fallback"
-                    style={{ background: tech.color, display: tech.icon ? 'none' : 'flex' }}
-                  >
-                    {tech.name.charAt(0)}
-                  </span>
-                </div>
-                <span className="aiwa-tech-name">{tech.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="aiwa-faq-section">
         <div className="aiwa__container">
           <div className="aiwa-section-head">
-            <h2 className="aiwa-section-title">Frequently Asked Questions</h2>
+            <p className="aiwa-section-title">Frequently Asked Questions</p>
           </div>
           <div className="aiwa-faq-2col">
             {faqs.map((faq, i) => (
@@ -358,58 +171,10 @@ const AIWebAppDev = () => {
         </div>
       </section>
 
-      <section className="aiwa-cta-section">
-        <div className="aiwa__container">
-          <div className="aiwa-cta-inner">
-            <div className="aiwa-cta-left">
-              <span className="aiwa-cta-top-label">Let's Build Something Amazing</span>
-              <h2 className="aiwa-cta-big-title">
-                Ready to Build Your{" "}
-                <span className="aiwa-text-blue">AI-Powered Web Application?</span>
-              </h2>
-              <p className="aiwa-cta-desc">
-                Let's create a powerful, scalable, and intelligent web application that drives
-                automation, improves efficiency, and grows your business.
-              </p>
-              <div className="aiwa-cta-badges">
-                <div className="aiwa-cta-badge">
-                  <CheckCircle2 size={16} className="aiwa-badge-icon" />
-                  <div><strong>Quick Response</strong><span>We respond within 1-3 business hours</span></div>
-                </div>
-                <div className="aiwa-cta-badge">
-                  <CheckCircle2 size={16} className="aiwa-badge-icon" />
-                  <div><strong>No Obligation</strong><span>Free consultation, no commitment</span></div>
-                </div>
-                <div className="aiwa-cta-badge">
-                  <CheckCircle2 size={16} className="aiwa-badge-icon" />
-                  <div><strong>100% Focused</strong><span>We focus on your success</span></div>
-                </div>
-              </div>
-            </div>
-            <div className="aiwa-cta-right">
-              <div className="aiwa-cta-form">
-                <h3>Get Free Consultation</h3>
-                <div className="aiwa-form-row">
-                  <input type="text"  placeholder="Your Name*"     className="aiwa-form-input" />
-                  <input type="email" placeholder="Email Address*" className="aiwa-form-input" />
-                </div>
-                <input type="tel" placeholder="Phone Number*" className="aiwa-form-input" />
-                <select className="aiwa-form-input">
-                  <option value="">Select a Service</option>
-                  <option>Custom SaaS Development</option>
-                  <option>AI Dashboard</option>
-                  <option>Workflow Automation</option>
-                  <option>AI Chatbot Integration</option>
-                  <option>CRM / ERP Development</option>
-                </select>
-                <button className="aiwa-form-btn">Send Message →</button>
-                <p className="aiwa-form-note">🔒 We respect your privacy. No spam, ever.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhoWeAre />
+      <ServicePageCta {...cta} />
 
+      <ServicePageMobileStyles />
       <Footer />
     </div>
   );

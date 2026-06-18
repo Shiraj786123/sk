@@ -1,16 +1,24 @@
 import ScrollToTop from "@/src/components/ScrollToTop";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import { AuthProvider } from "@/src/context/AuthContext";
 import WhatsappFloat from "@/src/components/WhatsappFloat";
 
 import "@/src/index.css";
 import "@/src/App.css";
 import "@/src/styles/service-shared.css";
+import "@/src/styles/ServiceProcessSection.css";
+import "@/src/styles/ServiceWhyChooseSection.css";
+import "@/src/styles/service-hero.css";
+import "@/src/styles/service-section-spacing.css";
+import "@/src/styles/service-headings.css";
+import "@/src/styles/service-card-text-fix.css";
+import "@/src/styles/whoweare.css";
 import "@/src/styles/navbar.css";
+import "@/src/styles/topbar.css";
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-b",
   display: "swap",
 });
@@ -39,7 +47,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={inter.variable}>
       <head>
         <link
           rel="icon"
@@ -48,7 +56,7 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className={poppins.className}>
+      <body className={inter.className}>
         <AuthProvider>
           {children}
           <WhatsappFloat />

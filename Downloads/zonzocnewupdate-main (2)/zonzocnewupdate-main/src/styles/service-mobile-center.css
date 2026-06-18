@@ -1,0 +1,599 @@
+/* Mobile layout — AI Website Design parity on all service pages (injected inline) */
+
+@media (max-width: 1024px) {
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-title,
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-sub,
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-badge,
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-actions,
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-features {
+    align-self: center !important;
+    text-align: center !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-actions {
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-features {
+    justify-content: center !important;
+    align-self: center !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-content .breadcrumb-wrap {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* ── Page wrappers ── */
+  html body .seo-page,
+  html body .aiwd-master-wrapper,
+  html body .aiwa__wrapper,
+  html body .ecd__wrapper,
+  html body .fswd__wrapper,
+  html body .pg__wrap,
+  html body .wm__wrapper,
+  html body .aiss__wrapper {
+    overflow-x: clip !important;
+    max-width: 100% !important;
+  }
+
+  /* ── Containers (match .aiwd-container mobile) ── */
+  html body .aiwd-container,
+  html body .aiwa__container,
+  html body .ecd__container,
+  html body .fswd__container,
+  html body .aiss__container,
+  html body .aiss-container,
+  html body .wm__container,
+  html body .pg__cont,
+  html body .seo-page .ss-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Intro sections (match .aiwd-intro-section) ── */
+  html body .aiwd-intro-section,
+  html body .aiwa-intro-section,
+  html body .ss-intro-section,
+  html body .aiss-intro-section {
+    padding: 60px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .aiwd-intro-content,
+  html body .aiwa-intro-content,
+  html body .ss-intro-content,
+  html body .aiss-intro-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .aiwd-intro-title,
+  html body .aiwd-intro-desc,
+  html body .aiwa-intro-title,
+  html body .aiwa-intro-desc,
+  html body .ss-intro-title,
+  html body .ss-intro-desc,
+  html body .aiss-intro-title,
+  html body .aiss-intro-desc {
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .aiwd-intro-marquee-wrapper,
+  html body .aiwa-intro-marquee-wrapper,
+  html body .ecd-intro-marquee-wrapper,
+  html body .aiss-intro-marquee-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  html body .aiwd-intro-marquee-track,
+  html body .aiwa-intro-marquee-track,
+  html body .ecd-intro-marquee-track {
+    animation-duration: 18s !important;
+  }
+
+  /* ── Section headings (match .aiwd-section-head) ── */
+  html body .aiwd-section-head,
+  html body .aiwa-section-head,
+  html body .ecd-section-head,
+  html body .aiss-section-head,
+  html body .wm-section-head,
+  html body .ss-section-header,
+  html body .sp-process-row,
+  html body .sp-process-step,
+  html body .sp-process-connector {
+    width: 100% !important;
+  }
+
+  html body .sp-process-header,
+  html body .sp-process-heading,
+  html body .sp-process-subtitle,
+  html body .sp-intro-marquee-content,
+  html body .sp-intro-marquee-title,
+  html body .sp-intro-marquee-desc,
+  html body .sp-industries-header,
+  html body .sp-industries-title,
+  html body .sp-industries-subtitle,
+  html body .pg__section-head {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  html body .fswd-section-heading,
+  html body .fswd-section-center,
+  html body .pg__wrap .sec__h2 {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* ── Services & Why — single column (match .aiwd-services-grid) ── */
+  html body .aiwd-services-grid,
+  html body .aiwd-why-grid,
+  html body .aiwa-services-grid,
+  html body .aiwa-why-grid,
+  html body .aiss-services-grid,
+  html body .aiss-why-grid,
+  html body .ecd-services-grid,
+  html body .ecd-results-grid,
+  html body .fswd-services-grid,
+  html body .fswd-why-grid,
+  html body .fswd-cases-grid,
+  html body .fswd-tech-grid,
+  html body .wm-services-grid,
+  html body .wm-plans-grid,
+  html body .ss-services-grid,
+  html body .pg__wrap .srv__grid,
+  html body .pg__wrap .wc__grid,
+  html body .pg__wrap .who__grid,
+  html body .sp-why-choose-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  html body .aiwd-service-card,
+  html body .aiwd-why-card,
+  html body .aiwa-service-card,
+  html body .aiwa-why-card,
+  html body .aiss-service-card,
+  html body .aiss-why-card,
+  html body .ecd-service-card,
+  html body .ecd-result-card,
+  html body .fswd-service-card,
+  html body .fswd-why-card,
+  html body .wm-service-card,
+  html body .wm-plan-card,
+  html body .ss-service-card,
+  html body .pg__wrap .srv__card,
+  html body .pg__wrap .wc__card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* ── Split / diff / why layouts — stack ── */
+  html body .aiwd-diff-layout,
+  html body .what__grid,
+  html body .ss-why-grid,
+  html body .ecd-why-grid,
+  html body .fswd-why-grid,
+  html body .wm-why-grid,
+  html body .aiss-intro-layout {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  html body .aiwd-diff-left,
+  html body .ecd-why-left,
+  html body .ecd-why-left .ecd__heading,
+  html body .ecd-why-left .ecd__description,
+  html body .ss-why-left,
+  html body .fswd-why-left,
+  html body .wm-why-left,
+  html body .what__left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  html body .aiwd-diff-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  html body .aiwd-diff-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  html body .ecd-comparison-card {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
+
+  /* ── Icon feature grids — 2 per row (match .aiwd-features-grid) ── */
+  html body .aiwd-features-grid,
+  html body .aiwa-features-grid,
+  html body .aiwa-industries-grid,
+  html body .aiss-features-grid,
+  html body .aiss-industry-grid,
+  html body .ss-industries-grid,
+  html body .sp-industries-grid,
+  html body .ecd-who-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
+  html body .aiwd-feature-item,
+  html body .aiwa-feature-item,
+  html body .aiwa-industry-item,
+  html body .aiss-feature-item,
+  html body .aiss-industry-item,
+  html body .sp-industry-item {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* ── Hero features — 2 per row like AI Website Design ── */
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-features {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(130px, max-content)) !important;
+    gap: 12px 20px !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 20px auto 0 !important;
+    padding: 0 16px !important;
+    align-self: center !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-actions {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-btn-primary,
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-btn-secondary {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center !important;
+  }
+
+  /* ── Stats bars — one per row ── */
+  html body .seo-page > section.ss-stats-bar,
+  html body section.ss-stats-bar,
+  html body section.ecd-stats-bar,
+  html body section.wm-stats-bar,
+  html body section.aiss-stats-section,
+  html body section.fswd-stats-section,
+  html body .pg__wrap .sb {
+    padding: 0 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .ss-stats-inner,
+  html body .ecd-stats-inner,
+  html body .fswd-stats-box,
+  html body .aiss-stats-inner,
+  html body .wm-stats-inner,
+  html body .pg__wrap .sb__inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 1100px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 24px 16px !important;
+    transform: none !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .ss-stat-item,
+  html body .ecd-stat-cell,
+  html body .fswd-stat-cell,
+  html body .aiss-stat-item,
+  html body .wm-stat-cell,
+  html body .pg__wrap .sb__item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    border-right: none !important;
+    padding: 12px 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  html body .pg__wrap .sb__sep,
+  html body .ss-stat-sep {
+    display: none !important;
+  }
+
+  /* ── Process — vertical centered (match .aiwd-process-row) ── */
+  html body .ss-process-row,
+  html body .sp-process-row,
+  html body .aiwd-process-row,
+  html body .aiwa-process-row,
+  html body .aiss-process-row,
+  html body .ecd-process-track,
+  html body .fswd-process-track,
+  html body .wm-process-track,
+  html body .pg__wrap .proc__row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 40px !important;
+    width: 100% !important;
+  }
+
+  html body .ss-process-step,
+  html body .sp-process-step,
+  html body .aiwd-process-col,
+  html body .aiwa-process-col,
+  html body .aiss-process-col,
+  html body .ecd-process-step,
+  html body .fswd-process-step,
+  html body .wm-process-step,
+  html body .pg__wrap .proc__step {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
+  }
+
+  html body .ss-process-circle,
+  html body .sp-process-circle,
+  html body .aiwd-process-circle,
+  html body .aiwa-process-circle,
+  html body .aiss-process-circle,
+  html body .ecd-process-node,
+  html body .fswd-process-node-wrap,
+  html body .fswd-process-circle,
+  html body .wm-process-node,
+  html body .pg__wrap .proc__circle {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    margin: 0 auto 14px auto !important;
+  }
+
+  html body .ss-process-title,
+  html body .ss-process-desc,
+  html body .sp-process-title,
+  html body .sp-process-desc,
+  html body .aiwd-process-col h3,
+  html body .aiwd-process-col p,
+  html body .aiwa-process-col h3,
+  html body .aiwa-process-col p,
+  html body .aiss-process-num,
+  html body .aiss-process-col h3,
+  html body .aiss-process-col p,
+  html body .ecd-process-num,
+  html body .ecd-process-desc,
+  html body .fswd-process-num,
+  html body .fswd-process-title,
+  html body .fswd-process-desc,
+  html body .wm-process-num,
+  html body .wm-process-title,
+  html body .wm-process-desc,
+  html body .pg__wrap .proc__title,
+  html body .pg__wrap .proc__desc {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  html body .ss-process-connector,
+  html body .sp-process-connector,
+  html body .aiwd-process-connector,
+  html body .aiwa-process-connector,
+  html body .aiss-process-connector,
+  html body .ecd-process-dash,
+  html body .fswd-process-connector,
+  html body .wm-process-connector,
+  html body .pg__wrap .proc__line {
+    display: none !important;
+  }
+
+  html body .aiwd-process-section,
+  html body .aiwa-process-section,
+  html body .aiss-process-section,
+  html body .ecd-process-section,
+  html body .fswd-process-section,
+  html body .wm-process-section,
+  html body .ss-process-section {
+    text-align: center !important;
+  }
+
+  /* ── FAQ — single column (match .aiwd-faq-2col) ── */
+  html body .aiwd-faq-2col,
+  html body .aiwa-faq-2col,
+  html body .aiss-faq-2col,
+  html body .ss-faq-grid,
+  html body .fswd-faq-grid,
+  html body .sp-faq-box-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  html body .fswd-faq-grid {
+    gap: 30px !important;
+  }
+
+  /* ── CTA — stacked centered (match .aiwd-cta-inner) ── */
+  html body section.aiwd-cta-section .aiwd-cta-inner,
+  html body .ecd-cta-inner,
+  html body .fswd-cta-inner,
+  html body .aiss-cta-inner,
+  html body .wm-cta-inner,
+  html body .pg__wrap .cta__box {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  html body section.aiwd-cta-section .aiwd-cta-left,
+  html body .ecd-cta-left,
+  html body .fswd-cta-left,
+  html body .aiss-cta-left,
+  html body .wm-cta-left,
+  html body .pg__wrap .cta__left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  html body section.aiwd-cta-section .aiwd-cta-checks {
+    align-items: flex-start !important;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+    margin: 0 auto !important;
+  }
+
+  html body section.aiwd-cta-section .aiwd-cta-right,
+  html body .ecd-cta-right {
+    width: 100% !important;
+  }
+
+  html body section.aiwd-cta-section .aiwd-cta-form,
+  html body .ecd-cta-form {
+    padding: 25px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  html body section.aiwd-cta-section .aiwd-form-row,
+  html body .ecd-form-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  html body section.aiwd-cta-section .aiwd-form-input,
+  html body section.aiwd-cta-section .aiwd-form-btn,
+  html body .ecd-form-input {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Platforms strip — stack ── */
+  html body .ecd-platforms-strip {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  html body .ecd-platform-card {
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+
+  html body .fswd-code-card {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    width: 100% !important;
+  }
+
+  html body .pg__wrap .cmp__table {
+    display: block !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .aiwd-container,
+  html body .aiwa__container,
+  html body .ecd__container,
+  html body .fswd__container,
+  html body .aiss__container,
+  html body .wm__container,
+  html body .pg__cont,
+  html body .seo-page .ss-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-btn-primary,
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-btn-secondary {
+    max-width: 100% !important;
+  }
+
+  html body .aiwd-features-grid,
+  html body .aiwa-features-grid,
+  html body .aiwa-industries-grid,
+  html body .aiss-features-grid,
+  html body .aiss-industry-grid,
+  html body .ss-industries-grid,
+  html body .ecd-who-grid,
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-features {
+    grid-template-columns: 1fr !important;
+  }
+}

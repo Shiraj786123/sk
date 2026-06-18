@@ -14,10 +14,20 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
+import WhoWeAre from "../components/WhoWeAre";
+import ServicePageCta from "../components/ServicePageCta";
+import ServicePageMobileStyles from "../components/ServicePageMobileStyles";
+import ServiceIndustriesSection from "../components/ServiceIndustriesSection";
+import ServiceProcessSection from "../components/ServiceProcessSection";
+import ServiceIntroMarqueeSection from "../components/ServiceIntroMarqueeSection";
+import ServiceWhyChooseSection from "../components/ServiceWhyChooseSection";
+import { serviceCtaContent } from "../data/serviceCtaContent";
 import "../styles/AISoftwareServices.css";
+import "../styles/service-card-text-fix.css";
 
-// Static asset import for Next.js build-time processing
 import heroImg from "../../public/images/aisoftware.png";
+
+const cta = serviceCtaContent['ai-software'];
 
 /* ─── DATA ──────────────────────────────────────────── */
 
@@ -31,36 +41,14 @@ const stats = [
 ];
 
 const services = [
-  { icon: <Bot size={28} />,       title: "AI Chatbot Development",         desc: "Build intelligent chatbots and virtual assistants for customer support, lead generation, and automation." },
-  { icon: <Brain size={28} />,     title: "OpenAI & GPT Integration",         desc: "Integrate OpenAI, ChatGPT, and AI APIs into your existing systems and workflows." },
-  { icon: <Workflow size={28} />,  title: "Business Process Automation",      desc: "Automate repetitive tasks, approvals, notifications, reporting systems, and operational processes." },
-  { icon: <BarChart4 size={28} />, title: "AI Analytics & Data Intelligence", desc: "Transform raw data into real-time insights, dashboards, reports, and predictive analytics." },
-  { icon: <Database size={28} />,  title: "CRM & ERP AI Integration",         desc: "Integrate AI-powered automation and smart workflows into CRM, ERP, and internal management systems." },
-  { icon: <Cog size={28} />,       title: "Custom Enterprise AI Systems",     desc: "Develop scalable AI software tailored to your business operations and long-term goals." },
-  { icon: <Zap size={28} />,       title: "AI Workflow Automation",           desc: "Create automated systems to streamline communication, task execution, and operational processes." },
-  { icon: <Plug size={28} />,      title: "AI Integration & API Development", desc: "Integrate third-party platforms, APIs, cloud services, and payment gateways into your ecosystem." },
-];
-
-const whyChoose = [
-  { icon: <Rocket size={22} />,    title: "Business-Focused AI Solutions",         desc: "We build solutions around your workflows, challenges, and business growth objectives.",         color: "wc-blue"   },
-  { icon: <Layers size={22} />,    title: "Scalable & Future-Ready Architecture",  desc: "Flexible and scalable systems designed for growth and expansion.",                             color: "wc-purple" },
-  { icon: <Brain size={22} />,     title: "AI & Automation Expertise",             desc: "We combine AI technologies and automation to deliver smart solutions.",                         color: "wc-cyan"   },
-  { icon: <Shield size={22} />,    title: "Secure & High Performance",             desc: "Built with security, speed, and reliability to support enterprise-level operations.",            color: "wc-green"  },
-  { icon: <Plug size={22} />,      title: "Seamless Integrations",                 desc: "We integrate AI tools, APIs, CRMs, cloud platforms, and automation systems.",                  color: "wc-orange" },
-  { icon: <RefreshCw size={22} />, title: "Dedicated Support & Maintenance",       desc: "Ongoing support, updates, and optimization to keep your systems running.",                     color: "wc-teal"   },
-];
-
-const industries = [
-  { icon: <ShoppingCart size={26} />,  label: "Ecommerce"             },
-  { icon: <HeartPulse size={26} />,    label: "Healthcare"            },
-  { icon: <BarChart3 size={26} />,     label: "Finance"               },
-  { icon: <Building2 size={26} />,     label: "Real Estate"           },
-  { icon: <Truck size={26} />,         label: "Logistics"             },
-  { icon: <GraduationCap size={26} />, label: "Education"             },
-  { icon: <Rocket size={26} />,        label: "SaaS Companies"        },
-  { icon: <Megaphone size={26} />,     label: "Marketing Agencies"    },
-  { icon: <Globe size={26} />,         label: "Enterprise Operations" },
-  { icon: <Briefcase size={26} />,     label: "Service Businesses"    },
+  { icon: <Bot size={28} />,       title: "AI Chatbot Development",  desc: "Intelligent chatbots for support, lead generation, and automation." },
+  { icon: <Brain size={28} />,     title: "OpenAI Integration",      desc: "Integrate OpenAI, ChatGPT, and AI APIs into your workflows." },
+  { icon: <Workflow size={28} />,  title: "Process Automation",      desc: "Automate tasks, approvals, and operational processes." },
+  { icon: <BarChart4 size={28} />, title: "AI Analytics",            desc: "Turn raw data into insights, dashboards, and predictions." },
+  { icon: <Database size={28} />,  title: "CRM & ERP Integration",   desc: "AI automation and smart workflows for CRM and ERP systems." },
+  { icon: <Cog size={28} />,       title: "Enterprise AI Systems",   desc: "Scalable AI software tailored to your operations and goals." },
+  { icon: <Zap size={28} />,       title: "AI Workflows",            desc: "Systems that streamline communication, tasks, and operations." },
+  { icon: <Plug size={28} />,      title: "AI API Development",      desc: "Connect platforms, APIs, cloud services, and payment gateways." },
 ];
 
 const techGroups = [
@@ -96,15 +84,6 @@ const techGroups = [
   },
 ];
 
-const processSteps = [
-  { step: "01", icon: <Search size={26} />,   title: "Business Analysis & AI Strategy",  desc: "We identify automation opportunities, bottlenecks, and AI integration possibilities." },
-  { step: "02", icon: <Layout size={26} />,   title: "Solution Architecture & Planning", desc: "We design scalable software structures, workflows, integrations, and technical roadmaps." },
-  { step: "03", icon: <Sparkles size={26} />, title: "UI/UX & System Design",            desc: "Modern interface design focused on usability and seamless workflows." },
-  { step: "04", icon: <Code2 size={26} />,    title: "Development & AI Integration",     desc: "Custom software development combined with AI models, automation systems, and APIs." },
-  { step: "05", icon: <Activity size={26} />, title: "Testing & Optimization",           desc: "Security testing, workflow validation, AI optimization, and performance monitoring." },
-  { step: "06", icon: <Rocket size={26} />,   title: "Deployment & Ongoing Support",     desc: "Deployment, monitoring, updates, AI improvements, and long-term technical support." },
-];
-
 const aiFeatures = [
   { icon: <Bot size={26} />,          label: "AI Chatbots"                   },
   { icon: <Zap size={26} />,          label: "GPT-Powered Automation"        },
@@ -131,15 +110,6 @@ const faqs = [
 
 const AISoftwareServices = () => {
   const [activeFaq, setActiveFaq] = useState(null);
-
-  const introItems = [
-    { title: "Automate repetitive business tasks",     icon: <RefreshCw size={32} />,  colorClass: "pink-purple" },
-    { title: "Process and analyze large datasets",     icon: <Database size={32} />,   colorClass: "cyan-blue" },
-    { title: "Improve operational efficiency",          icon: <Settings size={32} />,   colorClass: "lime-green" },
-    { title: "Generate intelligent insights",           icon: <Sparkles size={32} />,   colorClass: "orange-yellow" },
-    { title: "Enhance customer experiences",            icon: <UserCheck size={32} />,  colorClass: "purple-indigo" },
-    { title: "Support scalable automation workflows",    icon: <Layers size={32} />,     colorClass: "blue-accent" }
-  ];
 
   return (
     <div className="aiss__wrapper">
@@ -170,69 +140,23 @@ const AISoftwareServices = () => {
         </div>
       </section>
 
-      {/* ═══ CUSTOM INTRO SECTION WITH HORIZONTAL MARQUEE TRACK ═══ */}
-      <section className="aiss-intro-section">
-        <div className="aiss-container">
-          <div className="aiss-intro-content">
-            <span className="aiss-intro-label">What Is AI Software Development?</span>
-            <h2 className="aiss-intro-title">
-              Smarter Software for <span className="aiwa-text-blue">Modern Businesses</span>
-            </h2>
-            <p className="aiss-intro-desc">
-              Custom AI software development involves building intelligent systems tailored to automate business operations, improve decision-making, reduce manual workloads, and integrate seamlessly with existing platforms and workflows.
-            </p>
-            
-            <div className="aiss-intro-marquee-wrapper">
-              <div className="aiss-intro-marquee-track">
-                {[...introItems, ...introItems].map((item, idx) => (
-                  <div key={idx} className="aiss-intro-sitemap-col">
-                    <div className="aiss-intro-sitemap-card">
-                      <div className="aiss-intro-sitemap-header-bar">
-                        <span className="aiss-intro-browser-dot"></span>
-                        <span className="aiss-intro-browser-dot"></span>
-                        <span className="aiss-intro-browser-dot"></span>
-                      </div>
-                      <div className="aiss-intro-sitemap-body">
-                        <div className="aiwa-intro-card-left-group">
-                          <CheckCircle2 size={16} className="aiss-intro-check-icon" />
-                          <h4 className="aiss-intro-sitemap-card-title">{item.title}</h4>
-                        </div>
-                        
-                        <div className={`aiss-intro-icon-box ${item.colorClass}`}>
-                          {item.icon}
-                        </div>
-                        
-                        <div className="aiss-intro-sitemap-card-footer">
-                          <span>Explore</span>
-                          <ArrowRight size={14} className="aiss-intro-card-arrow" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="aiss-intro-sitemap-line"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <ServiceIntroMarqueeSection serviceKey="ai-software" />
 
       {/* ═══ SERVICES GRID ═══ */}
       <section className="aiss-services-section">
         <div className="aiss-container">
           <div className="aiss-section-head">
             <span className="aiss-pill">Our AI Software Development Services</span>
-            <h2 className="aiss-section-title">
+            <p className="aiss-section-title">
               Intelligent Solutions. Smarter Operations. Better Results.
-            </h2>
+            </p>
           </div>
           <div className="aiss-services-grid">
             {services.map((svc, i) => (
               <div key={i} className="aiss-service-card">
                 <div className="aiss-service-icon">{svc.icon}</div>
-                <h3>{svc.title}</h3>
-                <p>{svc.desc}</p>
+                <p className="sp-card-title-1l">{svc.title}</p>
+                <p className="sp-card-desc-3l">{svc.desc}</p>
               </div>
             ))}
           </div>
@@ -240,106 +164,11 @@ const AISoftwareServices = () => {
       </section>
 
       {/* ═══ WHY CHOOSE US ═══ */}
-      <section className="aiss-why-section">
-        <div className="aiss-container">
-          <div className="aiss-section-head">
-            <span className="aiss-pill-white">Why Businesses Choose ZonzocTech</span>
-          </div>
-          <div className="aiss-why-grid">
-            {whyChoose.map((item, i) => (
-              <div key={i} className={`aiss-why-card ${item.color}`}>
-                <div className="aiss-why-icon">{item.icon}</div>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceWhyChooseSection serviceKey="ai-software" />
 
-      {/* ═══ INDUSTRIES + TECHNOLOGIES SPLIT ═══ */}
-      <section className="aiss-split-section">
-        <div className="aiss-container">
-          <div className="aiss-split-layout">
+      <ServiceProcessSection serviceKey="ai-software" />
 
-            {/* Left — Industries */}
-            <div className="aiss-split-col">
-              <span className="aiss-split-label">Industries We Support</span>
-              <div className="aiss-industry-grid">
-                {industries.map((ind, i) => (
-                  <div key={i} className="aiss-industry-item">
-                    <div className="aiss-industry-icon">{ind.icon}</div>
-                    <span>{ind.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="aiss-split-divider" />
-
-            {/* Right — Technologies */}
-            <div className="aiss-split-col">
-              <span className="aiss-split-label">Technologies We Use</span>
-              <div className="aiss-tech-groups">
-                {techGroups.map((group, i) => (
-                  <div key={i} className="aiss-tech-group">
-                    <h4>{group.category}</h4>
-                    <div className="aiss-tech-pills">
-                      {group.items.map((tech, j) => (
-                        <div key={j} className="aiss-tech-pill">
-                          <div className="aiss-tech-icon-wrap">
-                            {tech.icon ? (
-                              <img
-                                src={tech.icon}
-                                alt={tech.name}
-                                className="aiss-tech-img"
-                                onError={e => {
-                                  e.target.style.display = 'none';
-                                  e.target.nextSibling.style.display = 'flex';
-                                }}
-                              />
-                            ) : null}
-                            <span
-                              className="aiss-tech-fallback"
-                              style={{ background: tech.color, display: tech.icon ? 'none' : 'flex' }}
-                            >
-                              {tech.name.charAt(0)}
-                            </span>
-                          </div>
-                          <span className="aiss-tech-name">{tech.name}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ PROCESS SECTION ═══ */}
-      <section className="aiss-process-section">
-        <div className="aiss-container">
-          <div className="aiss-section-head">
-            <span className="aiss-pill">Our AI Software Development Process</span>
-            <h2 className="aiss-section-title">Our AI Software Development Process</h2>
-          </div>
-          <div className="aiss-process-row">
-            {processSteps.map((step, i) => (
-              <div key={i} className="aiss-process-col">
-                {i < processSteps.length - 1 && <div className="aiss-process-connector" />}
-                <div className="aiss-process-circle">{step.icon}</div>
-                <span className="aiss-process-num">{step.step}</span>
-                <h3>{step.title}</h3>
-                <p>{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceIndustriesSection serviceKey="ai-software" />
 
       {/* ═══ AI FEATURES GRID ═══ */}
       <section className="aiss-features-section">
@@ -362,7 +191,7 @@ const AISoftwareServices = () => {
       <section className="aiss-faq-section">
         <div className="aiss-container">
           <div className="aiss-section-head">
-            <h2 className="aiss-section-title">Frequently Asked Questions</h2>
+            <p className="aiss-section-title">Frequently Asked Questions</p>
           </div>
           <div className="aiss-faq-2col">
             {faqs.map((faq, i) => (
@@ -394,56 +223,10 @@ const AISoftwareServices = () => {
         </div>
       </section>
 
-      {/* ═══ CTA SECTION ═══ */}
-      <section className="aiss-cta-section">
-        <div className="aiss-container">
-          <div className="aiss-cta-inner">
+      <WhoWeAre />
+      <ServicePageCta {...cta} />
 
-            {/* Left */}
-            <div className="aiss-cta-left">
-              <span className="aiss-cta-tag">Let's Build Something Amazing</span>
-              <h2 className="aiss-cta-title">
-                Ready to Automate and{" "}
-                <span className="aiss-cta-blue">Scale Your Business with AI?</span>
-              </h2>
-              <p className="aiss-cta-desc">
-                Let's build intelligent AI software solutions that automate operations,
-                improve efficiency, and support long-term business growth.
-              </p>
-              <div className="aiss-cta-actions">
-                <a href="/contact" className="aiss-btn-primary">Get Free Consultation →</a>
-                <a href="/case-studies" className="aiss-btn-secondary">View Our Works →</a>
-              </div>
-              <div className="aiss-cta-trust">
-                <CheckCircle2 size={15} className="aiss-trust-icon" />
-                <span>We usually respond within 1–3 business hours. No commitment.</span>
-              </div>
-            </div>
-
-            {/* Right */}
-            <div className="aiss-cta-visual">
-              <div className="aiss-cta-visual-inner">
-                <div className="aiss-cta-brain-wrap">
-                  <Brain size={80} className="aiss-cta-brain" />
-                </div>
-                <div className="aiss-cta-stats">
-                  <div className="aiss-cta-stat">
-                    <strong>150+</strong><span>Projects</span>
-                  </div>
-                  <div className="aiss-cta-stat">
-                    <strong>10+</strong><span>Years Exp.</span>
-                  </div>
-                  <div className="aiss-cta-stat">
-                    <strong>24/7</strong><span>Support</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
+      <ServicePageMobileStyles />
       <Footer />
     </div>
   );

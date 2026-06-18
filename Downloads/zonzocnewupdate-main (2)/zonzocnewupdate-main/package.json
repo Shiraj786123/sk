@@ -27,7 +27,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "node generate-sitemap.js && node scripts/build-hero-inline.js && next build",
+    "build": "node generate-sitemap.js && node scripts/build-hero-inline.js && node scripts/build-mobile-center-inline.js && node scripts/build-responsive-inline.js && node scripts/build-cta-inline.js && next build",
     "start": "next start",
     "generate-sitemap": "node generate-sitemap.js"
   },

@@ -1,0 +1,133 @@
+/* Shared Why Choose — dark gradient cards */
+
+.sp-why-choose-section {
+  padding: 100px 0;
+  background: linear-gradient(145deg, #001b3a 0%, #003070 60%, #001b3a 100%);
+}
+
+.sp-why-choose-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sp-why-choose-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sp-why-choose-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.sp-why-choose-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.sp-why-choose-grid--5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.sp-why-choose-grid--6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.sp-why-choose-card {
+  border-radius: 16px;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.28s ease;
+}
+
+.sp-why-choose-card:hover {
+  transform: translateY(-5px);
+}
+
+.sp-why-choose-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sp-why-choose-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.sp-why-choose-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Color variants */
+.sp-why-choose-card.wc-cyan,
+.sp-why-choose-card.why-cyan { background: rgba(6, 182, 212, 0.12); border: 1px solid rgba(6, 182, 212, 0.25); }
+.sp-why-choose-card.wc-cyan .sp-why-choose-icon,
+.sp-why-choose-card.why-cyan .sp-why-choose-icon { background: rgba(6, 182, 212, 0.18); color: #22d3ee; }
+
+.sp-why-choose-card.wc-purple,
+.sp-why-choose-card.why-purple { background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.25); }
+.sp-why-choose-card.wc-purple .sp-why-choose-icon,
+.sp-why-choose-card.why-purple .sp-why-choose-icon { background: rgba(139, 92, 246, 0.18); color: #a78bfa; }
+
+.sp-why-choose-card.wc-blue,
+.sp-why-choose-card.why-blue { background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); }
+.sp-why-choose-card.wc-blue .sp-why-choose-icon,
+.sp-why-choose-card.why-blue .sp-why-choose-icon { background: rgba(56, 189, 248, 0.18); color: #38bdf8; }
+
+.sp-why-choose-card.wc-green,
+.sp-why-choose-card.why-green { background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.25); }
+.sp-why-choose-card.wc-green .sp-why-choose-icon,
+.sp-why-choose-card.why-green .sp-why-choose-icon { background: rgba(16, 185, 129, 0.18); color: #34d399; }
+
+.sp-why-choose-card.wc-orange,
+.sp-why-choose-card.why-orange { background: rgba(249, 115, 22, 0.12); border: 1px solid rgba(249, 115, 22, 0.25); }
+.sp-why-choose-card.wc-orange .sp-why-choose-icon,
+.sp-why-choose-card.why-orange .sp-why-choose-icon { background: rgba(249, 115, 22, 0.18); color: #fb923c; }
+
+.sp-why-choose-card.wc-teal { background: rgba(20, 184, 166, 0.12); border: 1px solid rgba(20, 184, 166, 0.25); }
+.sp-why-choose-card.wc-teal .sp-why-choose-icon { background: rgba(20, 184, 166, 0.18); color: #2dd4bf; }
+
+@media (max-width: 1100px) {
+  .sp-why-choose-grid--5,
+  .sp-why-choose-grid--6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-why-choose-section {
+    padding: 60px 0;
+  }
+
+  .sp-why-choose-container {
+    padding: 0 20px;
+  }
+
+  .sp-why-choose-grid--5,
+  .sp-why-choose-grid--6 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,201 @@
+/* Shared service page CTA — matches AI Website Design */
+
+.aiwd-cta-section {
+  padding: 60px 0;
+  background: linear-gradient(145deg, #001b3a 0%, #003070 55%, #001b3a 100%);
+}
+
+.aiwd-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.aiwd-cta-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.aiwd-cta-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 16px;
+}
+
+.aiwd-cta-big-title {
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.18;
+  margin: 0 0 18px;
+}
+
+.service-cta-text-white {
+  color: #ffffff;
+}
+
+.service-cta-text-blue {
+  color: #38bdf8;
+}
+
+/* Beat global heading overrides on dark CTA background */
+html body section.aiwd-cta-section .aiwd-cta-big-title {
+  color: #ffffff !important;
+}
+
+html body section.aiwd-cta-section .service-cta-text-white {
+  color: #ffffff !important;
+}
+
+html body section.aiwd-cta-section .service-cta-text-blue {
+  color: #38bdf8 !important;
+}
+
+.aiwd-cta-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0 0 28px;
+}
+
+.aiwd-cta-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aiwd-cta-check-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.aiwd-check-icon {
+  color: #22c55e;
+  flex-shrink: 0;
+}
+
+.aiwd-cta-form {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.aiwd-cta-form h3,
+.aiwd-cta-form-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #003070;
+  margin: 0 0 4px;
+  text-align: left;
+}
+
+.aiwd-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.aiwd-form-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #003070;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.aiwd-form-input::placeholder {
+  color: #94a3b8;
+}
+
+.aiwd-form-input:focus {
+  border-color: #2563eb;
+  background: #fff;
+}
+
+.aiwd-form-btn {
+  width: 100%;
+  padding: 15px 24px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3);
+  transition: all 0.28s ease;
+}
+
+.aiwd-form-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.4);
+}
+
+.service-cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .aiwd-cta-section {
+    padding: 48px 0;
+  }
+
+  .aiwd-cta-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .aiwd-cta-left {
+    align-items: center;
+  }
+
+  .aiwd-cta-checks {
+    align-items: flex-start;
+    display: inline-flex;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .aiwd-cta-right {
+    width: 100%;
+  }
+
+  .aiwd-cta-form {
+    padding: 25px 20px;
+  }
+
+  .aiwd-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .aiwd-form-input,
+  .aiwd-form-btn {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+}

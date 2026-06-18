@@ -1,0 +1,237 @@
+/* Shared horizontal process section — matches SEO Services layout */
+
+.sp-process-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.sp-process-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sp-process-header {
+  max-width: 860px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.sp-process-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  background: #e8f0fb;
+  color: #00448f;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sp-process-heading {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #0a0a0a;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.sp-process-heading .sp-heading-accent {
+  color: #00448f;
+  background: #e8f0fb;
+  padding: 0 8px;
+  border-radius: 8px;
+  display: inline-block;
+  width: auto;
+}
+
+.sp-industries-title .sp-heading-accent {
+  color: #00448f;
+  background: #e8f0fb;
+  padding: 0 8px;
+  border-radius: 8px;
+  display: inline-block;
+  width: auto;
+}
+
+.sp-process-subtitle {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+.sp-process-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.sp-process-row--wide .sp-process-step {
+  max-width: 170px;
+  padding: 0 6px;
+}
+
+.sp-process-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 10px;
+  max-width: 210px;
+  transition: transform 0.22s ease;
+}
+
+.sp-process-step:hover {
+  transform: translateY(-6px);
+}
+
+.sp-process-circle {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #003070, #00448f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 24px rgba(0, 68, 143, 0.25);
+  transition: all 0.25s ease;
+}
+
+.sp-process-step:hover .sp-process-circle {
+  box-shadow: 0 0 0 10px rgba(0, 68, 143, 0.1), 0 12px 28px rgba(0, 68, 143, 0.3);
+  transform: scale(1.07);
+}
+
+.sp-process-emoji {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.sp-process-number {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ffffff;
+  color: #00448f;
+  font-size: 10px;
+  font-weight: 800;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.sp-process-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.sp-process-step:hover .sp-process-title {
+  color: #00448f;
+}
+
+.sp-process-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.sp-process-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 34px;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.sp-process-dots {
+  width: 36px;
+  height: 2px;
+  background-image: repeating-linear-gradient(90deg, #cbd5e1 0, #cbd5e1 4px, transparent 4px, transparent 8px);
+}
+
+.sp-process-arrow {
+  color: #00448f;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .sp-process-row--wide .sp-process-step {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-process-section {
+    padding: 60px 0;
+  }
+
+  .sp-process-container {
+    padding: 0 20px;
+  }
+
+  .sp-process-heading {
+    font-size: 32px;
+  }
+
+  .sp-process-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .sp-process-step {
+    flex: none;
+    max-width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .sp-process-step:hover {
+    transform: none;
+  }
+
+  .sp-process-circle {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 0;
+  }
+
+  .sp-process-emoji {
+    font-size: 18px;
+  }
+
+  .sp-process-connector {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-process-heading {
+    font-size: 28px;
+  }
+}

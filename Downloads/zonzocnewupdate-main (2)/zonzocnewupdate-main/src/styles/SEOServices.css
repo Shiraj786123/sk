@@ -232,16 +232,21 @@ section.seo-hero .seo-sub {
    STATS BAR
    ========================================================================== */
 .ss-stats-bar {
-  background: #ffffff;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+  background: #fff;
+  padding: 0 24px !important;
 }
 
 .ss-stats-inner {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 36px rgba(0, 45, 98, .09);
+  transform: translateY(-28px);
+  background: #fff;
+  overflow: hidden;
 }
 
 .ss-stat-item {
@@ -249,31 +254,31 @@ section.seo-hero .seo-sub {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 22px 16px;
-  flex: 1;
-  min-width: 120px;
+  padding: 18px 10px 14px;
+  border-right: 1px solid #e2e8f0;
   text-align: center;
+  gap: 3px;
 }
+.ss-stat-item:last-child { border-right: none; }
+.ss-stat-item:hover { background: #f8faff; }
 
 .ss-stat-number {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
   color: #00448f;
   line-height: 1;
-  margin-bottom: 4px;
 }
 
 .ss-stat-label {
-  font-size: 13px;
+  font-size: 11px;
   color: #64748b;
-  font-weight: 500;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .ss-stat-sep {
-  width: 1px;
-  background: #e2e8f0;
-  align-self: stretch;
-  margin: 12px 0;
+  display: none;
 }
 
 /* ==========================================================================
@@ -1136,6 +1141,7 @@ section.seo-hero .seo-sub {
 @media (max-width: 1100px) {
   .ss-services-grid    { grid-template-columns: repeat(2, 1fr); }
   .ss-industries-grid  { grid-template-columns: repeat(5, 1fr); }
+  .ss-stats-inner      { grid-template-columns: repeat(3, 1fr); transform: translateY(-24px); }
 }
 
 /* ============================================================
@@ -1187,11 +1193,19 @@ section.seo-hero .seo-sub {
   }
 
   /* 2. STATS BARS - Grid Layout */
+  .ss-stats-bar {
+    padding: 0 16px !important;
+    margin-top: -30px !important;
+    background: transparent !important;
+  }
+
   .ss-stats-inner, .ecd-stats-inner, .fswd-stats-box, .aiss-stats-inner {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important; /* 2 stats per row */
-    gap: 20px !important;
-    padding: 30px 15px !important;
+    gap: 16px 12px !important;
+    padding: 24px 16px !important;
+    transform: none !important;
+    border-radius: 20px !important;
   }
 
   .ss-stat-sep, .aiss-process-connector, .fswd-process-connector {
@@ -1203,6 +1217,8 @@ section.seo-hero .seo-sub {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    border-right: none !important;
+    padding: 12px 6px !important;
   }
 
   /* 3. PROCESS SECTION - Side-by-Side (Icon Left, Text Right) */
@@ -1259,6 +1275,11 @@ section.seo-hero .seo-sub {
 
   .ss-industries-grid, .ecd-who-grid, .aiss-feature-item {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .ss-faq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
   }
 
   /* 5. CTA SECTION - Centered & Stacked */

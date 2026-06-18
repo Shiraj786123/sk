@@ -200,6 +200,9 @@
   background: #fff;
   border-top: 1px solid #e9eef5;
   border-bottom: 1px solid #e9eef5;
+  margin-top: -28px;
+  position: relative;
+  z-index: 2;
 }
 .sb__inner {
   max-width: 1180px;

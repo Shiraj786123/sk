@@ -8,10 +8,21 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
+import WhoWeAre from "../components/WhoWeAre";
+import ServicePageCta from "../components/ServicePageCta";
+import ServicePageMobileStyles from "../components/ServicePageMobileStyles";
+import ServiceIndustriesSection from "../components/ServiceIndustriesSection";
+import ServiceProcessSection from "../components/ServiceProcessSection";
+import ServiceIntroMarqueeSection from "../components/ServiceIntroMarqueeSection";
+import ServiceWhyChooseSection from "../components/ServiceWhyChooseSection";
+import { serviceCtaContent } from "../data/serviceCtaContent";
 import { serviceImages } from "../data/serviceImages";
 import "../styles/FullStackWebDev.css";
+import "../styles/service-card-text-fix.css";
 
 import heroImg from "../../public/images/fullstack.png";
+
+const cta = serviceCtaContent['full-stack'];
 
 const FullStackWebDev = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -26,22 +37,13 @@ const FullStackWebDev = () => {
     { icon: "✅", number: "100%", label: "On-Time Delivery" },
   ];
 
-  // Modern colorful items for the horizontally moving sitemap cards
-  const introItems = [
-    { title: "Scalable & secure application architecture",      icon: <Shield size={32} />,   colorClass: "pink-purple" },
-    { title: "Modern technologies for high performance",      icon: <Cpu size={32} />,      colorClass: "cyan-blue" },
-    { title: "Clean, maintainable & future-ready code",        icon: <Code2 size={32} />,    colorClass: "lime-green" },
-    { title: "Agile development & transparent communication",  icon: <Users size={32} />,    colorClass: "orange-yellow" },
-    { title: "Ongoing support & long-term partnership",        icon: <Activity size={32} />,   colorClass: "purple-indigo" }
-  ];
-
   const services = [
-    { icon: "💻", title: "Custom Web Applications",  desc: "Tailored solutions to match your business workflows and goals.",                  link: "/web-development" },
-    { icon: "🚀", title: "SaaS Development",          desc: "Scalable SaaS platforms with multi-tenancy, subscriptions and dashboards.",          link: "/saas-development" },
-    { icon: "🎨", title: "Frontend Development",      desc: "Interactive, responsive and fast user interfaces built with modern frameworks.",      link: "/frontend-development" },
-    { icon: "⚙️", title: "Backend Development",       desc: "Robust server-side logic, authentication, databases and business APIs.",             link: "/backend-development" },
-    { icon: "🔌", title: "API Development",           desc: "RESTful & GraphQL APIs and third-party service integrations.",                        link: "/api-development" },
-    { icon: "☁️", title: "Cloud & DevOps",            desc: "Deployment, CI/CD, monitoring and scalable cloud infrastructures.",                   link: "/cloud-devops" },
+    { icon: "💻", title: "Custom Web Apps",       desc: "Tailored apps built to match your workflows and growth plans.",           link: "/web-development" },
+    { icon: "🚀", title: "SaaS Development",      desc: "Scalable SaaS with subscriptions, dashboards, and user management.", link: "/saas-development" },
+    { icon: "🎨", title: "Frontend Development",  desc: "Responsive interfaces built with modern frameworks and practices.", link: "/frontend-development" },
+    { icon: "⚙️", title: "Backend Development",   desc: "Server logic, authentication, databases, and APIs you can rely on.",   link: "/backend-development" },
+    { icon: "🔌", title: "API Development",       desc: "RESTful and GraphQL APIs plus integrations for connected products.",            link: "/api-development" },
+    { icon: "☁️", title: "Cloud & DevOps",        desc: "Deployment, CI/CD, monitoring, and cloud infrastructure for apps.",    link: "/cloud-devops" },
   ];
 
   const techStack = [
@@ -85,15 +87,6 @@ const FullStackWebDev = () => {
         { name: "GitHub",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" },
       ],
     },
-  ];
-
-  const processSteps = [
-    { n: "01", icon: "🔍", title: "Discovery & Planning",    desc: "We analyze your idea, requirements and goals to create the right strategy." },
-    { n: "02", icon: "🎨", title: "Architecture & Design",   desc: "We plan the system architecture, database structure and UI/UX experience." },
-    { n: "03", icon: "</>", title: "Development",            desc: "We build the frontend, backend, APIs and integrations with clean and scalable code." },
-    { n: "04", icon: "🛡️", title: "Testing & QA",           desc: "We test performance, security, compatibility and ensure bug-free delivery." },
-    { n: "05", icon: "🚀", title: "Deployment",              desc: "We deploy your application on a secure and scalable cloud environment." },
-    { n: "06", icon: "🎧", title: "Support & Growth",        desc: "We provide ongoing maintenance, updates and performance optimization." },
   ];
 
   const caseStudies = [
@@ -171,71 +164,21 @@ app.get('/api/health', (req, res) => {
         </div>
       </section>
 
-      {/* ═══ CUSTOM INTRO SECTION WITH HORIZONTAL MARQUEE TRACK (NO IMAGE) ═══ */}
-      <section className="fswd-intro-section">
-        <div className="fswd__container">
-          <div className="fswd-intro-content">
-            <span className="fswd-intro-label">Why Businesses Choose Us</span>
-            <h2 className="fswd-intro-title">
-              End-to-End Development That Powers <span className="aiwa-text-blue">Real Business Growth</span>
-            </h2>
-            <p className="fswd-intro-desc">
-              From idea to deployment, we build robust, scalable and future-ready web applications that drive automation, efficiency and long-term success.
-            </p>
-            
-            {/* Horizontal slider loop wrapper */}
-            <div className="fswd-intro-marquee-wrapper">
-              <div className="fswd-intro-marquee-track">
-                {/* Duplicated items list */}
-                {[...introItems, ...introItems].map((item, idx) => (
-                  <div key={idx} className="fswd-intro-sitemap-col">
-                    <div className="fswd-intro-sitemap-card">
-                      <div className="fswd-intro-sitemap-header-bar">
-                        <span className="fswd-intro-browser-dot"></span>
-                        <span className="fswd-intro-browser-dot"></span>
-                        <span className="fswd-intro-browser-dot"></span>
-                      </div>
-                      <div className="fswd-intro-sitemap-body">
-                        <div className="aiwa-intro-card-left-group">
-                          <CheckCircle2 size={16} className="fswd-intro-check-icon" />
-                          <h4 className="fswd-intro-sitemap-card-title">{item.title}</h4>
-                        </div>
-                        
-                        {/* Modern Colorful Icon container */}
-                        <div className={`fswd-intro-icon-box ${item.colorClass}`}>
-                          {item.icon}
-                        </div>
-                        
-                        <div className="fswd-intro-sitemap-card-footer">
-                          <span>Explore</span>
-                          <ArrowRight size={14} className="fswd-intro-card-arrow" />
-                        </div>
-                      </div>
-                    </div>
-                    {/* Dotted vertical sitemap connector line */}
-                    <div className="fswd-intro-sitemap-line"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <ServiceIntroMarqueeSection serviceKey="full-stack" />
 
       {/* ── SECTION 2 — WHY + SERVICES ───────────────── */}
       <section className="fswd-why-section">
         <div className="fswd__container">
           <div className="fswd-section-center">
             <span className="fswd-eyebrow">Our Services</span>
-            <h2 className="fswd-section-heading">Full Stack Web Development Services</h2>
+            <p className="fswd-section-heading">Full Stack Web Development Services</p>
           </div>
           <div className="fswd-services-grid">
             {services.map((svc, i) => (
               <div key={i} className="fswd-service-card">
                 <div className="fswd-service-icon-box">{svc.icon}</div>
-                <h3 className="fswd-service-title">{svc.title}</h3>
-                <p className="fswd-service-desc">{svc.desc}</p>
+                <p className="fswd-service-title sp-card-title-1l">{svc.title}</p>
+                <p className="fswd-service-desc sp-card-desc-3l">{svc.desc}</p>
                 <a href={svc.link} className="fswd-learn-more">Learn More →</a>
               </div>
             ))}
@@ -243,74 +186,16 @@ app.get('/api/health', (req, res) => {
         </div>
       </section>
 
-      {/* ── TECH STACK ────────────────────────────────── */}
-      <section className="fswd-tech-section">
-        <div className="fswd__container">
-          <div className="fswd-section-center">
-            <span className="fswd-eyebrow">Technologies We Use</span>
-            <h2 className="fswd-section-heading">Modern Tech Stack for Modern Applications</h2>
-          </div>
+      <ServiceWhyChooseSection serviceKey="full-stack" />
 
-          <div className="fswd-tech-grid">
-            {techStack.map((col, ci) => (
-              <div key={ci} className="fswd-tech-col">
-                <div className="fswd-tech-col-head">{col.category}</div>
-                <div className="fswd-tech-icons-row">
-                  {col.techs.map((t, ti) => (
-                    <div key={ti} className="fswd-tech-icon-item">
-                      <div className="fswd-tech-icon-wrap">
-                        <img
-                          src={t.icon}
-                          alt={t.name}
-                          className="fswd-tech-img"
-                          onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
-                        />
-                        <span className="fswd-tech-fallback" style={{ display: 'none' }}>
-                          {t.name.charAt(0)}
-                        </span>
-                      </div>
-                      <span className="fswd-tech-name">{t.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── PROCESS — Dark bg, 6 steps ───────────────── */}
-      <section className="fswd-process-section">
-        <div className="fswd__container">
-          <div className="fswd-section-center">
-            <span className="fswd-eyebrow fswd-eyebrow--light">Our Development Process</span>
-            <h2 className="fswd-section-heading fswd-white">A Clear Process. Predictable Results.</h2>
-          </div>
-
-          <div className="fswd-process-track">
-            {processSteps.map((step, i) => (
-              <div key={i} className="fswd-process-step">
-                <div className="fswd-process-node-wrap">
-                  <div className="fswd-process-circle">
-                    <span className="fswd-process-circle-icon">{step.icon}</span>
-                  </div>
-                  {i < processSteps.length - 1 && <div className="fswd-process-connector"></div>}
-                </div>
-                <span className="fswd-process-num">{step.n}</span>
-                <h4 className="fswd-process-title">{step.title}</h4>
-                <p className="fswd-process-desc">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceProcessSection serviceKey="full-stack" />
 
       {/* ── CASE STUDIES ─────────────────────────────── */}
       <section className="fswd-cases-section">
         <div className="fswd__container">
           <div className="fswd-section-center">
             <span className="fswd-eyebrow">Real Results. Real Impact.</span>
-            <h2 className="fswd-section-heading">Solutions That Deliver Real Business Impact</h2>
+            <p className="fswd-section-heading">Solutions That Deliver Real Business Impact</p>
           </div>
 
           <div className="fswd-cases-grid">
@@ -329,7 +214,7 @@ app.get('/api/health', (req, res) => {
                   </div>
                 </div>
                 <div className="fswd-case-body">
-                  <h4 className="fswd-case-title">{c.title}</h4>
+                  <p className="fswd-case-title">{c.title}</p>
                   <p className="fswd-case-desc">{c.desc}</p>
                   <div className="fswd-case-stats">
                     {c.stats.map((st, si) => (
@@ -347,6 +232,8 @@ app.get('/api/health', (req, res) => {
         </div>
       </section>
 
+      <ServiceIndustriesSection serviceKey="full-stack" />
+
       {/* ── FAQ + CODE BLOCK ─────────────────────────── */}
       <section className="fswd-faq-section">
         <div className="fswd__container">
@@ -355,7 +242,7 @@ app.get('/api/health', (req, res) => {
             {/* Left — accordion */}
             <div className="fswd-faq-left">
               <span className="fswd-eyebrow">Frequently Asked Questions</span>
-              <h2 className="fswd-section-heading">Got Questions? We've Got Answers.</h2>
+              <p className="fswd-section-heading">Got Questions? We've Got Answers.</p>
               <div className="fswd-faq-list">
                 {faqs.map((faq, i) => (
                   <div
@@ -387,7 +274,7 @@ app.get('/api/health', (req, res) => {
 
             {/* Right — code card */}
             <div className="fswd-code-card">
-              <h3 className="fswd-code-heading">Clean Code. Scalable Solutions.</h3>
+              <p className="fswd-code-heading">Clean Code. Scalable Solutions.</p>
               <p className="fswd-code-subtext">
                 We follow best practices to build secure, maintainable and high-performance applications.
               </p>
@@ -405,27 +292,10 @@ app.get('/api/health', (req, res) => {
         </div>
       </section>
 
-      {/* ── CTA BOTTOM ───────────────────────────────── */}
-      <section className="fswd-cta-section">
-        <div className="fswd__container">
-          <div className="fswd-cta-inner">
-            <h2 className="fswd-cta-title">Ready to Build Your Next Big Application?</h2>
-            <p className="fswd-cta-desc">
-              Let's turn your idea into a powerful, scalable and future-ready web application.
-            </p>
-            <div className="fswd-cta-buttons">
-              <a href="/contact" className="fswd-cta-btn-primary">Get Free Consultation →</a>
-              <a href="/case-studies" className="fswd-cta-btn-secondary">View Our Work</a>
-            </div>
-            <div className="fswd-cta-pills">
-              <span>✓ No Obligation</span>
-              <span>✓ Quick Response (1–3 Hours)</span>
-              <span>✓ 100% Confidential</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhoWeAre />
+      <ServicePageCta {...cta} />
 
+      <ServicePageMobileStyles />
       <Footer />
     </div>
   );

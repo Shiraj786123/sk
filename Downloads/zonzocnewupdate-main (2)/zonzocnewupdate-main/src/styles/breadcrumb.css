@@ -11,12 +11,12 @@
 
 .breadcrumb-container {
   width: 100% !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
+  max-width: none !important;
+  margin: 0 !important;
 
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important; /* Horizontally centers the breadcrumbs above your titles */
+  justify-content: flex-start !important;
   gap: 8px !important;
 
   font-size: 0.85rem !important;
@@ -86,12 +86,12 @@
 
 .breadcrumb-container {
   width: 100% !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
+  max-width: none !important;
+  margin: 0 !important;
 
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important; /* Horizontally centers the breadcrumbs above your titles */
+  justify-content: flex-start !important;
   gap: 8px !important;
 
   font-size: 0.85rem !important;

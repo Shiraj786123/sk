@@ -1,0 +1,137 @@
+/* Card text — must load AFTER page CSS (imported at end of each affected view) */
+
+html body .aiwa__wrapper .aiwa-service-card p.sp-card-title-1l,
+html body .aiss__wrapper .aiss-service-card p.sp-card-title-1l,
+html body .fswd__wrapper .fswd-service-title.sp-card-title-1l,
+html body .wm__wrapper .wm-service-title.sp-card-title-1l {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #0a0a0a !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 0 8px !important;
+}
+
+html body .aiwa__wrapper .aiwa-service-card p.sp-card-desc-3l,
+html body .aiss__wrapper .aiss-service-card p.sp-card-desc-3l,
+html body .fswd__wrapper .fswd-service-desc.sp-card-desc-3l,
+html body .wm__wrapper .wm-service-desc.sp-card-desc-3l {
+  font-size: 14px !important;
+  color: #6b7280 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  flex: unset !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  min-height: calc(1.6em * 3) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+html body .aiwa__wrapper .sp-why-choose-section .sp-why-choose-title.sp-card-title-1l,
+html body .aiss__wrapper .sp-why-choose-section .sp-why-choose-title.sp-card-title-1l,
+html body .fswd__wrapper .sp-why-choose-section .sp-why-choose-title.sp-card-title-1l,
+html body .wm__wrapper .sp-why-choose-section .sp-why-choose-title.sp-card-title-1l {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+html body .aiwa__wrapper .sp-why-choose-section .sp-why-choose-desc.sp-card-desc-3l,
+html body .aiss__wrapper .sp-why-choose-section .sp-why-choose-desc.sp-card-desc-3l,
+html body .fswd__wrapper .sp-why-choose-section .sp-why-choose-desc.sp-card-desc-3l,
+html body .wm__wrapper .sp-why-choose-section .sp-why-choose-desc.sp-card-desc-3l {
+  font-size: 13px !important;
+  color: rgba(255, 255, 255, 0.68) !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  min-height: calc(1.55em * 3) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+html body .aiwa__wrapper .sp-process-section .sp-process-title.sp-card-title-1l,
+html body .aiss__wrapper .sp-process-section .sp-process-title.sp-card-title-1l,
+html body .fswd__wrapper .sp-process-section .sp-process-title.sp-card-title-1l,
+html body .wm__wrapper .sp-process-section .sp-process-title.sp-card-title-1l {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #0a0a0a !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 0 6px !important;
+}
+
+html body .aiwa__wrapper .sp-process-section .sp-process-desc.sp-card-desc-3l,
+html body .aiss__wrapper .sp-process-section .sp-process-desc.sp-card-desc-3l,
+html body .fswd__wrapper .sp-process-section .sp-process-desc.sp-card-desc-3l,
+html body .wm__wrapper .sp-process-section .sp-process-desc.sp-card-desc-3l {
+  font-size: 12px !important;
+  color: #64748b !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  min-height: calc(1.55em * 3) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+html body .aiwa__wrapper .aiwa-service-card,
+html body .aiss__wrapper .aiss-service-card,
+html body .fswd__wrapper .fswd-service-card,
+html body .wm__wrapper .wm-service-card,
+html body .aiss__wrapper .sp-why-choose-grid--6 .sp-why-choose-card,
+html body .aiwa__wrapper .sp-process-row--wide .sp-process-step,
+html body .aiss__wrapper .sp-process-row--wide .sp-process-step,
+html body .fswd__wrapper .sp-process-row--wide .sp-process-step,
+html body .wm__wrapper .sp-process-row--wide .sp-process-step {
+  min-width: 0 !important;
+}
+
+html body .aiwa__wrapper .sp-intro-marquee-card-title,
+html body .aiss__wrapper .sp-intro-marquee-card-title,
+html body .fswd__wrapper .sp-intro-marquee-card-title,
+html body .wm__wrapper .sp-intro-marquee-card-title {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  min-height: calc(1.4em * 2) !important;
+  max-width: 100% !important;
+}

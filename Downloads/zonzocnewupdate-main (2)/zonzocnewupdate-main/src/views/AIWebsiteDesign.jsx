@@ -13,76 +13,41 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
+import WhoWeAre from "../components/WhoWeAre";
+import ServicePageCta from "../components/ServicePageCta";
+import ServicePageMobileStyles from "../components/ServicePageMobileStyles";
+import ServiceIndustriesSection from "../components/ServiceIndustriesSection";
+import ServiceProcessSection from "../components/ServiceProcessSection";
+import ServiceIntroMarqueeSection from "../components/ServiceIntroMarqueeSection";
+import ServiceWhyChooseSection from "../components/ServiceWhyChooseSection";
+import { serviceCtaContent } from "../data/serviceCtaContent";
 import "../styles/AIWebsiteDesign.css";
 
 import heroImg from "../../public/images/aiwebdesign.png";
 
+const cta = serviceCtaContent['ai-website-design'];
+
 const AIWebsiteDesign = () => {
   const [activeFaq, setActiveFaq] = useState(null);
 
-  // Modern colorful items for the horizontally moving intro section
-  const introItems = [
-    {
-      title: "Personalized user experiences",
-      icon: <Sparkles size={32} />,
-      colorClass: "pink-purple"
-    },
-    {
-      title: "AI chatbots & smart automation",
-      icon: <Bot size={32} />,
-      colorClass: "cyan-blue"
-    },
-    {
-      title: "SEO-friendly modern design",
-      icon: <Search size={32} />,
-      colorClass: "lime-green"
-    },
-    {
-      title: "High-converting landing pages",
-      icon: <Zap size={32} />,
-      colorClass: "orange-yellow"
-    },
-    {
-      title: "Scalable for long-term growth",
-      icon: <TrendingUp size={32} />,
-      colorClass: "purple-indigo"
-    }
-  ];
-
   const aiDifferences = [
-    { title: "Personalized Content",   description: "Show the right content to the right audience.",                        icon: <Target size={22} />        },
-    { title: "Automate Interactions",  description: "AI chatbots and automation improve customer support.",                 icon: <MessageSquare size={22} />  },
-    { title: "Generate More Leads",    description: "Smart forms and AI tools capture more qualified leads.",               icon: <TrendingUp size={22} />     },
-    { title: "Analyze Behavior",       description: "Track and understand visitor behavior in real-time.",                  icon: <BarChart3 size={22} />      },
-    { title: "Enhance Experience",     description: "AI improves usability and creates smoother user journeys.",            icon: <Sparkles size={22} />       },
-    { title: "Boost Conversions",      description: "Smart features that encourage more actions & sales.",                  icon: <Zap size={22} />            },
+    { title: "Personalized Content",   description: "Show the right content to the right audience.",                        icon: Target,         colorClass: "diff-cyan" },
+    { title: "Automate Interactions",  description: "AI chatbots and automation improve customer support.",                 icon: MessageSquare,  colorClass: "diff-purple" },
+    { title: "Generate More Leads",    description: "Smart forms and AI tools capture more qualified leads.",               icon: TrendingUp,     colorClass: "diff-green" },
+    { title: "Analyze Behavior",       description: "Track and understand visitor behavior in real-time.",                  icon: BarChart3,      colorClass: "diff-blue" },
+    { title: "Enhance Experience",     description: "AI improves usability and creates smoother user journeys.",            icon: Sparkles,       colorClass: "diff-orange" },
+    { title: "Boost Conversions",      description: "Smart features that encourage more actions & sales.",                  icon: Zap,            colorClass: "diff-teal" },
   ];
 
   const services = [
-    { title: "Custom Business Website Design",  icon: <Monitor size={30} />,    description: "Professional, responsive websites designed to represent your brand and convert visitors." },
-    { title: "AI Chatbot Integration",          icon: <Bot size={30} />,        description: "Integrate AI-powered chatbots and virtual assistants to automate customer support." },
-    { title: "SEO-Friendly Development",        icon: <Search size={30} />,     description: "Websites built with SEO best practices for better rankings and long-term visibility." },
-    { title: "Landing Page Design",             icon: <Rocket size={30} />,     description: "High-converting landing pages built to increase leads, inquiries, and conversions." },
-    { title: "Ecommerce Website Development",   icon: <Zap size={30} />,        description: "Modern ecommerce websites designed to improve user experience and increase sales." },
-    { title: "Website Redesign Services",       icon: <RefreshCw size={30} />,  description: "Transform outdated websites into modern, high-performing digital platforms." },
-    { title: "Smart Automation Integration",    icon: <Settings size={30} />,   description: "Automate forms, lead canvas, notifications, workflows, and customer communication." },
-    { title: "Ongoing Support & Maintenance",   icon: <ShieldCheck size={30} />,description: "We keep your website secure, updated, and performing at its best all the time." },
-  ];
-
-  const whyChoose = [
-    { title: "Conversion-Focused Design",   description: "Every element is designed to turn visitors into customers.",                              icon: <BarChart3 size={22} />,  colorClass: "why-cyan"   },
-    { title: "Modern UI/UX Experience",     description: "Clean, intuitive, and engaging designs that improve user satisfaction.",                  icon: <Layers size={22} />,     colorClass: "why-purple" },
-    { title: "SEO & Performance Optimized", description: "Fast-loading, mobile-friendly websites optimized for search engines.",                   icon: <TrendingUp size={22} />, colorClass: "why-green"  },
-    { title: "AI-Powered Features",         description: "Smart technologies that automate, engage and convert more customers.",                    icon: <Bot size={22} />,        colorClass: "why-blue"   },
-    { title: "Built for Long-Term Growth",  description: "Scalable solutions that grow with your business and future requirements.",                icon: <Rocket size={22} />,     colorClass: "why-orange" },
-  ];
-
-  const processSteps = [
-    { step: "01", title: "Discovery & Strategy",   icon: <Microscope size={26} />, description: "We learn about your business, audience, goals, and competitors to create a strategic foundation." },
-    { step: "02", title: "Planning & Wireframing", icon: <Layout size={26} />,     description: "We structure the user experience and website layout before design and development begins." },
-    { step: "03", title: "UI/UX Design",           icon: <Palette size={26} />,    description: "Modern interface design focused on branding, usability, and conversion optimization." },
-    { step: "04", title: "Website Development",    icon: <Code size={26} />,       description: "Clean, responsive development optimized for performance, SEO, and security." },
-    { step: "05", title: "Launch & Optimization",  icon: <Rocket size={26} />,     description: "Deployment, testing, analytics setup, and ongoing optimization for long-term growth." },
+    { title: "Custom Websites",       icon: <Monitor size={30} />,    description: "Responsive sites that represent your brand and convert visitors." },
+    { title: "AI Chatbots",           icon: <Bot size={30} />,        description: "AI chatbots that automate support and capture qualified leads." },
+    { title: "SEO Development",       icon: <Search size={30} />,     description: "SEO-ready sites for better rankings, indexing, and visibility." },
+    { title: "Landing Pages",         icon: <Rocket size={30} />,     description: "Landing pages designed to boost leads and sales from campaigns." },
+    { title: "Ecommerce Sites",       icon: <Zap size={30} />,        description: "Ecommerce sites that improve UX, checkout flow, and sales." },
+    { title: "Website Redesign",      icon: <RefreshCw size={30} />,  description: "Modern redesigns that reflect your brand and drive results." },
+    { title: "Smart Automation",      icon: <Settings size={30} />,   description: "Automate forms, workflows, and messages to save time daily." },
+    { title: "Support & Maintenance", icon: <ShieldCheck size={30} />,description: "Ongoing care to keep your site secure, fast, and up to date." },
   ];
 
   const aiFeatures = [
@@ -117,169 +82,20 @@ const AIWebsiteDesign = () => {
     <div className="aiwd-master-wrapper">
 
       <style dangerouslySetInnerHTML={{ __html: `
-        /* Align hero content with navbar logo — same 1440px container + 24px padding */
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-container {
-          max-width: 1440px !important;
-          width: 100% !important;
-          margin: 0 auto !important;
-          padding: 0 24px !important;
-          box-sizing: border-box !important;
-        }
-
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-content {
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: flex-start !important;
-          text-align: left !important;
-          padding: 0 !important;
-          margin: 0 !important;
-          width: 100% !important;
-        }
-
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-content .breadcrumb-wrap,
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-content .breadcrumb-container {
-          justify-content: flex-start !important;
-          margin: 0 0 16px 0 !important;
-          padding: 0 !important;
-          max-width: none !important;
-          width: 100% !important;
-        }
-
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-badge,
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-title,
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-sub,
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-actions,
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-features {
-          text-align: left !important;
-          align-self: flex-start !important;
-          margin-left: 0 !important;
-          padding-left: 0 !important;
-        }
-
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-badge {
-          margin-right: auto !important;
-        }
-
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-actions,
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-features {
-          justify-content: flex-start !important;
-        }
-
-        @media (min-width: 1025px) {
-          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-grid {
-            display: grid !important;
-            grid-template-columns: 45% 55% !important;
-            align-items: center !important;
-            gap: 10px !important;
-          }
-
-          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-image-wrap {
-            justify-content: flex-start !important;
-            margin-left: -100px !important;
-          }
-
-          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-content {
-            align-items: flex-start !important;
-            text-align: left !important;
-          }
-
-          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-content .breadcrumb-container {
-            justify-content: flex-start !important;
-          }
-
-          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-badge {
-            margin-left: 0 !important;
-            margin-right: auto !important;
-          }
-        }
-
-        @media (max-width: 1024px) {
-          html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] .sp-hero-container {
-            width: 92% !important;
-            max-width: 92% !important;
-            padding: 0 16px !important;
-          }
-        }
-
-        html body div#__next .aiwd-master-wrapper section.sp-hero-split[data-sp-hero="1"] {
-          padding: 120px 0 100px !important;
-        }
-
-        /* 4. Complete reset of any borders, backgrounds, shadows, or rounded corners on the wrapper */
-        .aiwd-master-wrapper .sp-hero-image-wrap {
-          max-width: 100% !important;
-          width: 100% !important;
-          height: auto !important;
-          display: flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          background: transparent !important;
-          border: none !important;
-          box-shadow: none !important;
-          border-radius: 0 !important;
-          padding: 0 !important;
-          margin: 0 !important;
-          overflow: visible !important;
-          isolation: isolate !important;
-        }
-
-        /* 5. Scale up the image, blend seamlessly, and keep central area completely sharp */
-        .aiwd-master-wrapper .sp-hero-image-wrap img,
-        .aiwd-master-wrapper [class*="hero-image-wrap"] img {
-          width: 100% !important;
-          max-width: 100% !important;
-          height: auto !important;
-          display: block !important;
-          border-radius: 0 !important;
-          border: none !important;
-          box-shadow: none !important;
-          object-fit: contain !important;
-          transform: translate3d(0, 0, 0) !important;
-          will-change: transform !important;
-          mix-blend-mode: screen !important;
-          filter: brightness(0.85) contrast(1.2) !important;
-          mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%) !important;
-          -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%) !important;
-        }
-
         @media (max-width: 768px) {
-          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"],
-          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="Features"],
-          html body .aiwd-master-wrapper div.sp-hero-split-content .sp-hero-split-features,
-          html body .aiwd-master-wrapper div.sp-hero-split-content > div:last-child,
-          html body .aiwd-master-wrapper div.sp-hero-split-content > ul:last-child {
+          html body .aiwd-master-wrapper div.sp-hero-split-content .sp-hero-split-features {
             display: grid !important;
             grid-template-columns: repeat(2, minmax(130px, max-content)) !important;
             gap: 12px 20px !important;
             justify-content: center !important;
             width: 100% !important;
-            max-width: 100% !important;
             margin: 20px auto 0 auto !important;
             padding: 0 16px !important;
-            box-sizing: border-box !important;
           }
-
-          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"] > *,
-          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="Features"] > *,
-          html body .aiwd-master-wrapper div.sp-hero-split-content .sp-hero-split-features > *,
-          html body .aiwd-master-wrapper div.sp-hero-split-content > div:last-child > *,
-          html body .aiwd-master-wrapper div.sp-hero-split-content > ul:last-child > * {
-            display: inline-flex !important;
-            flex-direction: row !important;
-            align-items: center !important;
-            justify-content: flex-start !important;
-            width: auto !important;
-            margin: 0 !important;
-            gap: 8px !important;
-            white-space: nowrap !important;
-          }
-
-          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"] span,
-          html body .aiwd-master-wrapper div.sp-hero-split-content div[class*="features"] svg,
-          html body .aiwd-master-wrapper div.sp-hero-split-content > div:last-child span,
-          html body .aiwd-master-wrapper div.sp-hero-split-content > div:last-child svg {
-            font-size: 11px !important;
-            font-weight: 700 !important;
+        }
+        @media (max-width: 480px) {
+          html body .aiwd-master-wrapper div.sp-hero-split-content .sp-hero-split-features {
+            grid-template-columns: 1fr !important;
           }
         }
       ` }} />
@@ -297,54 +113,7 @@ const AIWebsiteDesign = () => {
         heroAlt="Futuristic laptop with glowing cyan and magenta holographic AI analytics dashboards, 3D data charts, and neon digital interface elements"
       />
 
-      {/* ═══ CUSTOM INTRO SECTION WITH HORIZONTAL MARQUEE TRACK ═══ */}
-      <section className="aiwd-intro-section">
-        <div className="aiwd-container">
-          <div className="aiwd-intro-content">
-            <span className="aiwd-intro-label">What Is AI Website Design?</span>
-            <h2 className="aiwd-intro-title">
-              Modern Websites Powered by <span className="aiwd-text-blue">AI Technology</span>
-            </h2>
-            <p className="aiwd-intro-desc">
-              AI website design combines intelligent automation, personalization, and conversion-focused development to create websites that engage visitors and turn them into customers.
-            </p>
-            
-            {/* Seamless Horizontally Moving Grid wrapper */}
-            <div className="aiwd-intro-marquee-wrapper">
-              <div className="aiwd-intro-marquee-track">
-                {[...introItems, ...introItems].map((item, idx) => (
-                  <div key={idx} className="aiwd-intro-sitemap-col">
-                    <div className="aiwd-intro-sitemap-card">
-                      <div className="aiwd-intro-sitemap-header-bar">
-                        <span className="aiwd-intro-browser-dot"></span>
-                        <span className="aiwd-intro-browser-dot"></span>
-                        <span className="aiwd-intro-browser-dot"></span>
-                      </div>
-                      <div className="aiwd-intro-sitemap-body">
-                        <div className="aiwd-intro-card-left-group">
-                          <CheckCircle2 size={16} className="aiwd-intro-check-icon" />
-                          <h4 className="aiwd-intro-sitemap-card-title">{item.title}</h4>
-                        </div>
-                        
-                        <div className={`aiwd-intro-icon-box ${item.colorClass}`}>
-                          {item.icon}
-                        </div>
-                        
-                        <div className="aiwd-intro-sitemap-card-footer">
-                          <span>Explore</span>
-                          <ArrowRight size={14} className="aiwd-intro-card-arrow" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="aiwd-intro-sitemap-line"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <ServiceIntroMarqueeSection serviceKey="ai-website-design" />
 
       {/* ═══ SECTION 1 ═══ */}
       <section className="aiwd-diff-section">
@@ -352,11 +121,11 @@ const AIWebsiteDesign = () => {
           <div className="aiwd-diff-layout">
             <div className="aiwd-diff-left">
               <span className="aiwd-section-pill">Why AI Websites?</span>
-              <h2 className="aiwd-diff-title">
+              <p className="aiwd-diff-title">
                 What Makes{" "}
                 <span className="aiwd-text-blue">AI-Powered Websites</span>{" "}
                 Different?
-              </h2>
+              </p>
               <p className="aiwd-diff-desc">
                 AI-powered websites use smart automation, personalization, and intelligent
                 user experiences to improve customer engagement and increase conversions.
@@ -365,13 +134,18 @@ const AIWebsiteDesign = () => {
             </div>
             <div className="aiwd-diff-right">
               <div className="aiwd-diff-grid">
-                {aiDifferences.map((item, i) => (
+                {aiDifferences.map((item, i) => {
+                  const Icon = item.icon;
+                  return (
                   <div key={i} className="aiwd-diff-card">
-                    <div className="aiwd-diff-card-icon">{item.icon}</div>
-                    <h4>{item.title}</h4>
-                    <p>{item.description}</p>
+                    <div className={`aiwd-diff-card-icon ${item.colorClass}`}>
+                      <Icon size={22} />
+                    </div>
+                    <p className="sp-card-title-1l">{item.title}</p>
+                    <p className="sp-card-desc-3l">{item.description}</p>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -383,61 +157,27 @@ const AIWebsiteDesign = () => {
         <div className="aiwd-container">
           <div className="aiwd-section-head">
             <span className="aiwd-section-pill">Our Services</span>
-            <h2 className="aiwd-section-title">
+            <p className="aiwd-section-title">
               AI Website{" "}
               <span className="aiwd-text-blue">Design &amp; Development</span>{" "}
               Services
-            </h2>
+            </p>
           </div>
           <div className="aiwd-services-grid">
             {services.map((svc, i) => (
               <div key={i} className="aiwd-service-card">
                 <div className="aiwd-service-icon">{svc.icon}</div>
-                <h3>{svc.title}</h3>
-                <p>{svc.description}</p>
+                <p className="sp-card-title-1l">{svc.title}</p>
+                <p className="sp-card-desc-3l">{svc.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 3 ═══ */}
-      <section className="aiwd-why-section">
-        <div className="aiwd-container">
-          <div className="aiwd-section-head">
-            <span className="aiwd-section-pill-white">Why Businesses Choose Us</span>
-          </div>
-          <div className="aiwd-why-grid">
-            {whyChoose.map((item, i) => (
-              <div key={i} className={`aiwd-why-card ${item.colorClass}`}>
-                <div className="aiwd-why-icon-wrap">{item.icon}</div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceWhyChooseSection serviceKey="ai-website-design" />
 
-      {/* ═══ SECTION 4 ═══ */}
-      <section className="aiwd-process-section">
-        <div className="aiwd-container">
-          <div className="aiwd-section-head">
-            <span className="aiwd-section-pill">Our Website Design Process</span>
-          </div>
-          <div className="aiwd-process-row">
-            {processSteps.map((item, i) => (
-              <div key={i} className="aiwd-process-col">
-                {i < processSteps.length - 1 && <div className="aiwd-process-connector" />}
-                <div className="aiwd-process-circle">{item.icon}</div>
-                <span className="aiwd-process-num">{item.step}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceProcessSection serviceKey="ai-website-design" />
 
       {/* ═══ SECTION 5 ═══ */}
       <section className="aiwd-features-section">
@@ -456,11 +196,13 @@ const AIWebsiteDesign = () => {
         </div>
       </section>
 
+      <ServiceIndustriesSection serviceKey="ai-website-design" />
+
       {/* ═══ SECTION 6 ═══ */}
       <section className="aiwd-faq-section">
         <div className="aiwd-container">
           <div className="aiwd-section-head">
-            <h2 className="aiwd-section-title">Frequently Asked Questions</h2>
+            <p className="aiwd-section-title">Frequently Asked Questions</p>
           </div>
           <div className="aiwd-faq-2col">
             {faqs.map((faq, i) => (
@@ -492,60 +234,10 @@ const AIWebsiteDesign = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 7 ═══ */}
-      <section className="aiwd-cta-section">
-        <div className="aiwd-container">
-          <div className="aiwd-cta-inner">
-            <div className="aiwd-cta-left">
-              <span className="aiwd-cta-label">Let's Build Your Success</span>
-              <h2 className="aiwd-cta-big-title">
-                Ready to Build an{" "}
-                <span className="aiwd-text-blue">AI-Powered Website?</span>
-              </h2>
-              <p className="aiwd-cta-desc">
-                Let's create a high-performing website designed to grow your business,
-                improve conversions, and support long-term digital success.
-              </p>
-              <div className="aiwd-cta-checks">
-                <div className="aiwd-cta-check-row">
-                  <CheckCircle2 size={18} className="aiwd-check-icon" />
-                  <span>We usually respond within 1–3 business hours</span>
-                </div>
-                <div className="aiwd-cta-check-row">
-                  <CheckCircle2 size={18} className="aiwd-check-icon" />
-                  <span>No spam. No obligation.</span>
-                </div>
-                <div className="aiwd-cta-check-row">
-                  <CheckCircle2 size={18} className="aiwd-check-icon" />
-                  <span>100% focused on your success.</span>
-                </div>
-              </div>
-            </div>
-            <div className="aiwd-cta-right">
-              <div className="aiwd-cta-form">
-                <h3>Get Free Consultation</h3>
-                <div className="aiwd-form-row">
-                  <input type="text"  placeholder="Your Name*"     className="aiwd-form-input" />
-                  <input type="email" placeholder="Email Address*" className="aiwd-form-input" />
-                </div>
-                <div className="aiwd-form-row">
-                  <input type="tel" placeholder="Phone Number*" className="aiwd-form-input" />
-                  <select className="aiwd-form-input">
-                    <option value="">Select a Service</option>
-                    <option>Business Website Design</option>
-                    <option>Landing Page</option>
-                    <option>E-commerce</option>
-                    <option>AI Integration</option>
-                    <option>Website Redesign</option>
-                  </select>
-                </div>
-                <button className="aiwd-form-btn">Send Message →</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhoWeAre />
+      <ServicePageCta {...cta} />
 
+      <ServicePageMobileStyles />
       <Footer />
     </div>
   );

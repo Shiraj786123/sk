@@ -8,14 +8,22 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
+import WhoWeAre from "../components/WhoWeAre";
+import ServicePageCta from "../components/ServicePageCta";
+import ServicePageMobileStyles from "../components/ServicePageMobileStyles";
+import ServiceIndustriesSection from "../components/ServiceIndustriesSection";
+import ServiceProcessSection from "../components/ServiceProcessSection";
+import ServiceIntroMarqueeSection from "../components/ServiceIntroMarqueeSection";
+import ServiceWhyChooseSection from "../components/ServiceWhyChooseSection";
+import { serviceCtaContent } from "../data/serviceCtaContent";
 import "../styles/EcommercePage.css";
 
-// Static asset import for Next.js build-time processing
 import heroImg from "../../public/images/ecommerce.png";
+
+const cta = serviceCtaContent.ecommerce;
 
 const EcommerceDev = () => {
   const [openFaq, setOpenFaq] = useState(null);
-  const [form, setForm] = useState({ name: '', email: '', website: '', message: '' });
 
   const stats = [
     { icon: "🛒", number: "150+", label: "Stores Launched" },
@@ -44,24 +52,15 @@ const EcommerceDev = () => {
     "More Revenue & Growth",
   ];
 
-  const introItems = [
-    { title: "Slow loading speeds lead to higher bounce rates",     icon: <Zap size={32} />,        colorClass: "pink-purple" },
-    { title: "Poor mobile experience reduces conversions",          icon: <Smartphone size={32} />, colorClass: "cyan-blue" },
-    { title: "Complex checkout causes cart abandonment",            icon: <ShoppingCart size={32} />,colorClass: "lime-green" },
-    { title: "Weak SEO limits organic traffic and visibility",      icon: <Search size={32} />,      colorClass: "orange-yellow" },
-    { title: "Poor user experience lowers customer trust",          icon: <Shield size={32} />,          colorClass: "purple-indigo" },
-    { title: "Lack of optimization hurts long-term growth",         icon: <TrendingUp size={32} />,  colorClass: "blue-accent" }
-  ];
-
   const services = [
-    { icon: "🛍️", title: "Shopify Development",         description: "Custom Shopify stores built for performance, scalability, and high conversions.",     link: "/shopify-development" },
-    { icon: "🧩", title: "WooCommerce Development",      description: "Powerful WooCommerce solutions for growing brands and online businesses.",            link: "/woocommerce-development" },
-    { icon: "🎨", title: "Ecommerce Design",             description: "Modern, conversion-focused designs that enhance customer experience.",                   link: "/ecommerce-design" },
-    { icon: "📈", title: "Conversion Optimization",      description: "Improve product pages, checkout flows, and user journeys to increase sales.",            link: "/cro" },
-    { icon: "📱", title: "Mobile Optimization",          description: "Mobile-first ecommerce experiences that drive more mobile conversions.",                  link: "/mobile-optimization" },
-    { icon: "🔍", title: "Ecommerce SEO",                description: "Technical SEO, product optimization, and strategies to increase organic visibility.",     link: "/ecommerce-seo" },
-    { icon: "⚡", title: "Speed Optimization",           description: "Improve Core Web Vitals, loading speed, and overall website performance.",               link: "/speed-optimization" },
-    { icon: "⚙️", title: "Integrations & Automation",   description: "Payment gateways, CRM, inventory, marketing automation & third-party integrations.",    link: "/integrations" },
+    { icon: "🛍️", title: "Shopify Development",    description: "Custom Shopify stores built for performance, scalability, and conversions.",        link: "/shopify-development" },
+    { icon: "🧩", title: "WooCommerce Dev",        description: "WooCommerce solutions for growing brands and online businesses of every size.",       link: "/woocommerce-development" },
+    { icon: "🎨", title: "Ecommerce Design",         description: "Conversion-focused designs that enhance customer experience and drive sales.",      link: "/ecommerce-design" },
+    { icon: "📈", title: "Conversion Optimization", description: "Improve product pages, checkout flows, and journeys to increase revenue.",       link: "/cro" },
+    { icon: "📱", title: "Mobile Optimization",    description: "Mobile-first stores that drive more conversions from smartphone shoppers.",     link: "/mobile-optimization" },
+    { icon: "🔍", title: "Ecommerce SEO",          description: "Technical and product SEO to grow organic visibility and store traffic.",      link: "/ecommerce-seo" },
+    { icon: "⚡", title: "Speed Optimization",     description: "Improve Core Web Vitals, load speed, and overall store performance.",  link: "/speed-optimization" },
+    { icon: "⚙️", title: "Integrations",           description: "Payment gateways, CRM, inventory, and marketing automation integrations.", link: "/integrations" },
   ];
 
   const platforms = [
@@ -82,27 +81,6 @@ const EcommerceDev = () => {
     { stat: "+31%", label: "Organic Traffic Growth",         sub: "With advanced SEO and technical improvements",   icon: "🔍" },
   ];
 
-  const processSteps = [
-    { number: "01", icon: "🔍", title: "Discovery & Strategy",      description: "We analyze your business, audience, competitors, and goals to create the right ecommerce strategy." },
-    { number: "02", icon: "🎨", title: "UX & Design",               description: "We design intuitive user experiences and stunning visuals that drive engagement and sales." },
-    { number: "03", icon: "</>", title: "Development",              description: "Our developers build fast, secure, scalable, and high-performing ecommerce stores." },
-    { number: "04", icon: "⚙️", title: "Optimization & Testing",   description: "We optimize speed, SEO, checkout, and conversions with rigorous testing." },
-    { number: "05", icon: "🚀", title: "Launch & Growth",           description: "We launch your store and provide ongoing support to ensure long-term growth." },
-  ];
-
-  const whoFor = [
-    { icon: "🛒", label: "Ecommerce Brands" },
-    { icon: "🏪", label: "Online Stores" },
-    { icon: "🛍️", label: "Shopify Businesses" },
-    { icon: "🧩", label: "WooCommerce Stores" },
-    { icon: "👗", label: "Fashion Brands" },
-    { icon: "💄", label: "Beauty & Cosmetics" },
-    { icon: "💻", label: "Electronics Stores" },
-    { icon: "💎", label: "Luxury Brands" },
-    { icon: "🚀", label: "Startup Ecommerce" },
-    { icon: "📈", label: "High-Growth Stores" },
-  ];
-
   const faqs = [
     { question: "How much does ecommerce development cost?",         answer: "Pricing depends on store size, features, integrations, platform requirements, and customization needs. Contact us for a free audit and transparent quote." },
     { question: "Do you build Shopify and WooCommerce stores?",      answer: "Yes. We develop and optimize both Shopify and WooCommerce ecommerce websites for businesses across the UK, USA, and UAE." },
@@ -120,8 +98,8 @@ const EcommerceDev = () => {
         {/* ── HERO CONTEXT WRAPPER FOR PRECISE VISUAL POSITIONING ── */}
         <ServicePageHero
             badge="ECOMMERCE DEVELOPMENT & OPTIMIZATION"
-            title="High-Converting Ecommerce Stores Built for"
-            titleAccent="Performance, Scalability & Revenue Growth"
+            title="High-Converting Ecommerce Stores"
+            titleAccent="Built for Performance, Scalability & Revenue Growth"
             subtitle="We design and develop conversion-focused ecommerce stores that turn traffic into revenue. From Shopify and WooCommerce to fully custom platforms — we build scalable, fast, and sales-driven online stores engineered for growth."
             features={["Conversion-Focused Design", "Shopify & WooCommerce Experts", "Speed & SEO Optimized"]}
             primaryCta={{ href: "/contact", label: "Get Free Ecommerce Audit →" }}
@@ -142,16 +120,18 @@ const EcommerceDev = () => {
           </div>
         </section>
 
+        <ServiceIntroMarqueeSection serviceKey="ecommerce" />
+
         {/* ── WHY STORES UNDERPERFORM ── */}
         <section className="ecd-why-section">
           <div className="ecd__container">
             <div className="ecd-why-grid">
               <div className="ecd-why-left">
                 <span className="ecd-eyebrow">Why Stores Underperform</span>
-                <h2 className="ecd__heading" style={{ textAlign: 'left', marginBottom: '16px' }}>
+                <p className="ecd__heading ecd-why-heading">
                   Great Products Deserve Better Ecommerce Experiences
-                </h2>
-                <p className="ecd__description" style={{ textAlign: 'left', margin: '0' }}>
+                </p>
+                <p className="ecd__description ecd-why-desc">
                   Slow websites, poor design, complicated checkouts, and weak SEO cost businesses thousands of potential customers every month.
                 </p>
               </div>
@@ -183,37 +163,6 @@ const EcommerceDev = () => {
                 </div>
               </div>
             </div>
-
-            {/* Sitemap Ticker */}
-            <div className="ecd-intro-marquee-wrapper">
-              <div className="ecd-intro-marquee-track">
-                {[...introItems, ...introItems].map((item, idx) => (
-                  <div key={idx} className="ecd-intro-sitemap-col">
-                    <div className="ecd-intro-sitemap-card">
-                      <div className="ecd-intro-sitemap-header-bar">
-                        <span className="ecd-intro-browser-dot"></span>
-                        <span className="ecd-intro-browser-dot"></span>
-                        <span className="ecd-intro-browser-dot"></span>
-                      </div>
-                      <div className="ecd-intro-sitemap-body">
-                        <div className="aiwa-intro-card-left-group">
-                          <CheckCircle2 size={16} className="ecd-intro-check-icon" />
-                          <h4 className="ecd-intro-sitemap-card-title">{item.title}</h4>
-                        </div>
-                        <div className={`ecd-intro-icon-box ${item.colorClass}`}>
-                          {item.icon}
-                        </div>
-                        <div className="ecd-intro-sitemap-card-footer">
-                          <span>Explore</span>
-                          <ArrowRight size={14} className="ecd-intro-card-arrow" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="ecd-intro-sitemap-line"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
@@ -222,7 +171,7 @@ const EcommerceDev = () => {
           <div className="ecd__container">
             <div className="ecd-section-head">
               <span className="ecd-eyebrow">Our Services</span>
-              <h2 className="ecd__heading">Ecommerce Development & Optimization Services</h2>
+              <p className="ecd__heading">Ecommerce Development & Optimization Services</p>
               <p className="ecd__subtitle">
                 Complete ecommerce solutions — from new store builds to performance optimization and conversion improvements.
               </p>
@@ -231,14 +180,16 @@ const EcommerceDev = () => {
               {services.map((svc, i) => (
                 <div key={i} className="ecd-service-card">
                   <div className="ecd-service-icon-box">{svc.icon}</div>
-                  <h3 className="ecd-service-title">{svc.title}</h3>
-                  <p className="ecd-service-desc">{svc.description}</p>
+                  <p className="ecd-service-title sp-card-title-1l">{svc.title}</p>
+                  <p className="ecd-service-desc sp-card-desc-3l">{svc.description}</p>
                   <a href={svc.link} className="ecd-learn-more">Learn More →</a>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <ServiceWhyChooseSection serviceKey="ecommerce" />
 
         {/* ── PLATFORMS STRIP ── */}
         <section className="ecd-platforms-section">
@@ -279,7 +230,7 @@ const EcommerceDev = () => {
           <div className="ecd__container">
             <div className="ecd-section-head">
               <span className="ecd-eyebrow ecd-eyebrow--light">Real Results. Real Growth.</span>
-              <h2 className="ecd__heading ecd-white">Ecommerce Success Stories</h2>
+              <p className="ecd__heading ecd-white">Ecommerce Success Stories</p>
             </div>
             <div className="ecd-results-grid">
               {results.map((r, i) => (
@@ -294,55 +245,16 @@ const EcommerceDev = () => {
           </div>
         </section>
 
-        {/* ── PROCESS ── */}
-        <section className="ecd-process-section">
-          <div className="ecd__container">
-            <div className="ecd-section-head">
-              <span className="ecd-eyebrow">Our Proven Process</span>
-              <h2 className="ecd__heading">How We Build & Optimize Ecommerce Stores</h2>
-              <p className="ecd__subtitle">
-                A proven process that takes you from strategy to a live, high-performing ecommerce store.
-              </p>
-            </div>
-            <div className="ecd-process-track">
-              {processSteps.map((step, i) => (
-                <div key={i} className="ecd-process-step">
-                  <div className="ecd-process-node">
-                    <span className="ecd-process-icon">{step.icon}</span>
-                    {i < processSteps.length - 1 && <div className="ecd-process-dash"></div>}
-                  </div>
-                  <span className="ecd-process-num">{step.number}. {step.title}</span>
-                  <p className="ecd-process-desc">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceProcessSection serviceKey="ecommerce" />
 
-        {/* ── WHO FOR ── */}
-        <section className="ecd-who-section">
-          <div className="ecd__container">
-            <div className="ecd-section-head">
-              <span className="ecd-eyebrow">Who It's For</span>
-              <h2 className="ecd__heading">Who Our Ecommerce Solutions Are Built For</h2>
-            </div>
-            <div className="ecd-who-grid">
-              {whoFor.map((item, i) => (
-                <div key={i} className="ecd-who-tile">
-                  <div className="ecd-who-icon">{item.icon}</div>
-                  <span className="ecd-who-label">{item.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceIndustriesSection serviceKey="ecommerce" />
 
         {/* ── FAQ ── */}
         <section className="ecd-faq-section">
           <div className="ecd__container">
             <div className="ecd-section-head">
               <span className="ecd-eyebrow">FAQ</span>
-              <h2 className="ecd__heading">Frequently Asked Questions</h2>
+              <p className="ecd__heading">Frequently Asked Questions</p>
             </div>
             <div className="ecd-faq-list">
               {faqs.map((faq, i) => (
@@ -374,65 +286,10 @@ const EcommerceDev = () => {
           </div>
         </section>
 
-        {/* ── CTA WITH FORM ── */}
-        <section className="ecd-cta-section">
-          <div className="ecd__container">
-            <div className="ecd-cta-inner">
-              <div className="ecd-cta-left">
-                <h2 className="ecd-cta-title">
-                  Ready to Build a High-Converting Ecommerce Store?
-                </h2>
-                <p className="ecd-cta-desc">
-                  Let's create an ecommerce experience that converts visitors into customers and helps your business grow online.
-                </p>
-                <div className="ecd-cta-pills">
-                  <span>✓ Free Consultation</span>
-                  <span>✓ No Obligation</span>
-                  <span>✓ Quick Response (1-3 hours)</span>
-                  <span>✓ 100% Confidential</span>
-                </div>
-              </div>
+        <WhoWeAre />
+        <ServicePageCta {...cta} />
 
-              <div className="ecd-cta-form-card">
-                <h3 className="ecd-form-heading">Get Free Consultation</h3>
-                <div className="ecd-form-row">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="ecd-form-input"
-                    value={form.name}
-                    onChange={e => setForm({ ...form, name: e.target.value })}
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="ecd-form-input"
-                    value={form.email}
-                    onChange={e => setForm({ ...form, email: e.target.value })}
-                  />
-                </div>
-                <div className="ecd-form-row">
-                  <input
-                    type="text"
-                    placeholder="Website (if any)"
-                    className="ecd-form-input"
-                    value={form.website}
-                    onChange={e => setForm({ ...form, website: e.target.value })}
-                  />
-                  <input
-                    type="text"
-                    placeholder="Your Message"
-                    className="ecd-form-input"
-                    value={form.message}
-                    onChange={e => setForm({ ...form, message: e.target.value })}
-                  />
-                </div>
-                <button className="ecd-form-btn">Send Message →</button>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <ServicePageMobileStyles />
         <Footer />
       </div>
     </>

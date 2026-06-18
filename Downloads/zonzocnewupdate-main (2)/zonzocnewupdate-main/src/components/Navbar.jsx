@@ -37,7 +37,6 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
 import "../styles/navbar.css";
-import "../styles/topbar.css";
 
 const Navbar = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);

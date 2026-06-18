@@ -162,6 +162,16 @@ section.aiss__hero {
   box-shadow: 0 4px 20px rgba(0,0,0,.06);
 }
 
+/* Tighter vertical spacing — override global section padding */
+.aiss__wrapper > section.aiss-stats-section {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.aiss__wrapper > section.aiss-stats-section + section.sp-intro-marquee-section {
+  padding-top: 48px !important;
+}
+
 .aiss-stats-inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -177,9 +187,9 @@ section.aiss__hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 28px 12px;
+  padding: 14px 12px;
   border-right: 1px solid #e8eef8;
-  gap: 6px;
+  gap: 4px;
 }
 .aiss-stat-item:last-child { border-right: none; }
 
@@ -1189,4 +1199,90 @@ section.aiss__hero {
   .aiss-features-grid { grid-template-columns: repeat(4, 1fr); }
   .aiss-process-row   { grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .aiss-process-connector { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════
+   MOBILE (768px and below)
+═══════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .aiss-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .aiss-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .aiss-industry-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .aiss-industry-item {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 14px 10px !important;
+  }
+
+  .aiss-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .aiss-process-row {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .aiss-process-col {
+    display: grid !important;
+    grid-template-columns: 70px 1fr !important;
+    text-align: left !important;
+    align-items: start !important;
+    gap: 0 15px !important;
+    margin-bottom: 36px !important;
+    padding: 0 !important;
+  }
+
+  .aiss-process-circle {
+    grid-column: 1 !important;
+    grid-row: 1 / 4 !important;
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 !important;
+  }
+
+  .aiss-process-num,
+  .aiss-process-col h3,
+  .aiss-process-col p {
+    grid-column: 2 !important;
+    text-align: left !important;
+  }
+
+  .aiss-process-connector {
+    display: none !important;
+  }
+
+  .aiss-intro-layout {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 30px !important;
+  }
+
+  .aiss-tech-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .aiss-faq-2col {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .aiss-industry-grid,
+  .aiss-features-grid {
+    grid-template-columns: 1fr !important;
+  }
 }

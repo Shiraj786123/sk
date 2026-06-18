@@ -1,0 +1,510 @@
+/* ═══════════════════════════════════════════════════════
+   SERVICE PAGES — GLOBAL RESPONSIVE OVERRIDES
+   Loaded last on each service view to beat page.css
+   Breakpoints: 1024 · 768 · 480 · 320
+═══════════════════════════════════════════════════════ */
+
+/* ── Prevent horizontal scroll on service pages ── */
+html body .seo-page,
+html body .aiwd-master-wrapper,
+html body .aiwa__wrapper,
+html body .ecd__wrapper,
+html body .fswd__wrapper,
+html body .pg__wrap,
+html body .wm__wrapper,
+html body .aiss__wrapper {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* ── Shared containers ── */
+@media (max-width: 1024px) {
+  html body .aiwd-container,
+  html body .aiwa__container,
+  html body .ecd__container,
+  html body .fswd__container,
+  html body .aiss__container,
+  html body .wm__container,
+  html body .pg__container,
+  html body .seo-page .ss-container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  html body .aiwd-container,
+  html body .aiwa__container,
+  html body .ecd__container,
+  html body .fswd__container,
+  html body .aiss__container,
+  html body .wm__container,
+  html body .pg__container,
+  html body .seo-page .ss-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Section padding reduction */
+  html body .aiwd-diff-section,
+  html body .aiwd-services-section,
+  html body .aiwd-why-section,
+  html body .aiwd-process-section,
+  html body .aiwd-features-section,
+  html body .aiwd-faq-section,
+  html body .aiwa-services-section,
+  html body .aiwa-why-section,
+  html body .aiwa-industries-section,
+  html body .aiwa-process-section,
+  html body .aiwa-features-section,
+  html body .aiwa-faq-section,
+  html body .ecd-services-section,
+  html body .ecd-platforms-section,
+  html body .ecd-results-section,
+  html body .ecd-process-section,
+  html body .ecd-who-section,
+  html body .ecd-faq-section,
+  html body .fswd-services-section,
+  html body .fswd-why-section,
+  html body .fswd-tech-section,
+  html body .fswd-process-section,
+  html body .fswd-cases-section,
+  html body .fswd-faq-section,
+  html body .aiss-services-section,
+  html body .aiss-why-section,
+  html body .aiss-industries-section,
+  html body .aiss-process-section,
+  html body .aiss-features-section,
+  html body .aiss-faq-section,
+  html body .wm-services-section,
+  html body .wm-plans-section,
+  html body .wm-process-section,
+  html body .wm-who-section,
+  html body .wm-faq-section,
+  html body .ss-intro-section,
+  html body .ss-services-section,
+  html body .ss-why-section,
+  html body .ss-process-section,
+  html body .ss-industries-section,
+  html body .ss-faq-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .aiwd-container,
+  html body .aiwa__container,
+  html body .ecd__container,
+  html body .fswd__container,
+  html body .aiss__container,
+  html body .wm__container,
+  html body .pg__container,
+  html body .seo-page .ss-container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   STATS BARS — all service pages
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  html body .wm-stats-inner,
+  html body .ecd-stats-inner {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  html body .seo-page > section.ss-stats-bar .ss-stats-inner,
+  html body .ss-stats-inner,
+  html body .ecd-stats-inner,
+  html body .fswd-stats-box,
+  html body .aiss-stats-inner,
+  html body .wm-stats-inner,
+  html body .pg__wrap .sb__inner {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    transform: none !important;
+    padding: 24px 16px !important;
+  }
+
+  html body .seo-page > section.ss-stats-bar {
+    padding: 0 16px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   FAQ GRIDS — stack on mobile
+═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  html body .ss-faq-grid,
+  html body .fswd-faq-grid,
+  html body .aiwd-faq-2col,
+  html body .aiwa-faq-2col,
+  html body .aiss-faq-2col,
+  html body .sp-faq-box-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  html body .fswd-faq-grid {
+    gap: 30px !important;
+  }
+
+  html body .fswd-code-card {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   SPLIT / COMPARISON LAYOUTS
+═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  html body .aiwd-diff-layout {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    text-align: center !important;
+  }
+
+  html body .aiwd-diff-left {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  html body .aiwd-diff-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  html body .ecd-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  html body .ecd-why-left .ecd__heading,
+  html body .ecd-why-left .ecd__description {
+    text-align: center !important;
+  }
+
+  html body .ecd-comparison-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body .ecd-cta-inner,
+  html body .fswd-cta-inner,
+  html body .aiss-cta-inner,
+  html body .wm-cta-inner {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  html body .ecd-cta-title {
+    font-size: clamp(26px, 6vw, 36px) !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   AI SOFTWARE — missing mobile grids
+═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  html body .aiss-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  html body .aiss-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  html body .aiss-industry-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+
+  html body .aiss-industry-item {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 14px 10px !important;
+  }
+
+  html body .aiss-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+
+  html body .aiss-process-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px !important;
+  }
+
+  html body .aiss-process-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+
+  html body .aiss-process-circle {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    margin: 0 auto 14px auto !important;
+  }
+
+  html body .aiss-process-num,
+  html body .aiss-process-col h3,
+  html body .aiss-process-col p {
+    grid-column: unset !important;
+    text-align: center !important;
+  }
+
+  html body .aiss-process-connector {
+    display: none !important;
+  }
+
+  html body .aiss-intro-layout {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 30px !important;
+  }
+
+  html body .aiss-tech-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .aiss-industry-grid,
+  html body .aiss-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   ECOMMERCE — tablet / mobile gaps
+═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  html body .ecd-stats-inner {
+    transform: none !important;
+  }
+
+  html body .ecd-services-grid,
+  html body .ecd-results-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  html body .ecd-process-track {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px !important;
+  }
+
+  html body .ecd-process-step {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+  }
+
+  html body .ecd-process-node {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    margin: 0 auto 14px auto !important;
+  }
+
+  html body .ecd-process-num,
+  html body .ecd-process-desc {
+    grid-column: unset !important;
+    text-align: center !important;
+  }
+
+  html body .ecd-who-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+
+  html body .ecd-platforms-strip {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+
+  html body .ecd-intro-marquee-wrapper {
+    overflow: hidden !important;
+    width: 100% !important;
+  }
+
+  html body .ecd-intro-marquee-track {
+    animation-duration: 18s !important;
+  }
+
+  html body .ecd-form-row {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  html body .ecd-form-input {
+    width: 100% !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .ecd-who-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body .ecd-stats-inner {
+    transform: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   INTRO MARQUEES — AI Web App + shared
+═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  html body .aiwa-intro-marquee-wrapper,
+  html body .ecd-intro-marquee-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  html body .aiwa-intro-marquee-track {
+    animation-duration: 18s !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   WEBSITE MAINTENANCE — tablet stats
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  html body .wm-who-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  html body .wm-who-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  html body .wm-services-grid,
+  html body .wm-plans-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body .wm-process-track {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .wm-who-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   FULL STACK — stats single column on small mobile
+═══════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  html body .fswd-stats-box {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   AI SEO OPTIMIZATION PAGE
+═══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  html body .pg__wrap .srv__grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  html body .pg__wrap .cmp__table {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  html body .pg__wrap .cmp__row {
+    min-width: 520px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   HERO — extra-small devices
+═══════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  html body section.sp-hero-split[data-sp-hero="1"] {
+    padding: 28px 0 32px !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-title {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-sub {
+    font-size: 15px !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-features {
+    grid-template-columns: 1fr !important;
+    justify-content: stretch !important;
+    padding: 0 12px !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-feature {
+    justify-content: center !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    padding: 0 12px !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-btn-primary,
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-btn-secondary {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] div.sp-hero-image-wrap--screen,
+  html body section.sp-hero-split[data-sp-hero="1"] div.sp-hero-image-wrap--transparent {
+    overflow: hidden !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 320px) {
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-split-title {
+    font-size: 24px !important;
+  }
+
+  html body section.sp-hero-split[data-sp-hero="1"] .sp-hero-container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}

@@ -1,10 +1,32 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
 import Breadcrumb from './Breadcrumb';
 import { HERO_CSS } from '../styles/serviceHeroInline';
+import { HEADING_GUARD_CSS } from '../styles/serviceHeadingInline';
+
+function useEnforceSingleH1() {
+  useEffect(() => {
+    const hero = document.querySelector('section[data-sp-hero="1"]');
+    if (!hero) return;
+
+    const pageRoot =
+      hero.closest('.seo-page') ||
+      hero.closest('.pg__wrap') ||
+      hero.closest('[class*="__wrapper"]') ||
+      hero.closest('[class*="master-wrapper"]');
+    if (!pageRoot) return;
+
+    pageRoot.querySelectorAll('h1:not([data-page-h1="true"])').forEach((el) => {
+      const h2 = document.createElement('h2');
+      h2.className = el.className;
+      h2.innerHTML = el.innerHTML;
+      el.replaceWith(h2);
+    });
+  }, []);
+}
 
 const DashboardMockup = () => (
   <div className="sp-dashboard-mockup" aria-hidden="true">
@@ -29,7 +51,7 @@ const HeroVisual = ({ heroImage, heroAlt, heroImageTransparent }) => {
   if (heroImage) {
     const wrapClass = heroImageTransparent
       ? 'sp-hero-image-wrap sp-hero-image-wrap--transparent'
-      : 'sp-hero-image-wrap';
+      : 'sp-hero-image-wrap sp-hero-image-wrap--screen';
 
     return (
       <div className={wrapClass}>
@@ -60,7 +82,10 @@ const ServicePageHero = ({
   heroAlt,
   heroImageTransparent,
   showDashboard = true,
-}) => (
+}) => {
+  useEnforceSingleH1();
+
+  return (
   <section className="sp-hero-split" data-sp-hero="1">
     <div className="sp-hero-pattern" aria-hidden="true" />
     <div className="sp-hero-container">
@@ -68,7 +93,7 @@ const ServicePageHero = ({
         <div className="sp-hero-split-content">
           <Breadcrumb />
           <span className="sp-hero-split-badge">{badge}</span>
-          <h1 className="sp-hero-split-title">
+          <h1 className="sp-hero-split-title" data-page-h1="true">
             {title}{' '}
             {titleAccent && <span className="sp-hero-split-accent">{titleAccent}</span>}
           </h1>
@@ -95,9 +120,10 @@ const ServicePageHero = ({
         ) : null}
       </div>
     </div>
-    <style suppressHydrationWarning dangerouslySetInnerHTML={{ __html: HERO_CSS }} />
+    <style suppressHydrationWarning dangerouslySetInnerHTML={{ __html: HERO_CSS + HEADING_GUARD_CSS }} />
   </section>
-);
+  );
+};
 
 export { DashboardMockup };
 export default ServicePageHero;

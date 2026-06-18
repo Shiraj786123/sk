@@ -8,8 +8,8 @@
   --color-border: #e2e8f0;
   --color-bg-light: #f8faff;
 
-  /* Use Poppins from next/font */
-  --font-family: var(--font-b), 'Poppins', sans-serif;
+  /* Inter from next/font */
+  --font-family: var(--font-b), 'Inter', sans-serif;
 
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -58,7 +58,7 @@ h6 {
   color: var(--color-black);
 }
 
-h1 {
+h1:not(.sp-hero-split-title) {
   font-size: 56px;
 }
 

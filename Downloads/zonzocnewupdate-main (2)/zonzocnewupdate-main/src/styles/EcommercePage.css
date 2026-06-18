@@ -268,6 +268,21 @@
 
 .ecd-why-left .ecd-eyebrow { margin-bottom: 14px; }
 
+.ecd-why-heading {
+  margin-bottom: 16px;
+}
+
+.ecd-why-desc {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .ecd-why-heading,
+  .ecd-why-desc {
+    text-align: center !important;
+  }
+}
+
 /* Sitemap Cards Row Grid */
 .ecd-intro-marquee-wrapper {
   overflow: hidden;
@@ -1095,9 +1110,94 @@
   .ecd-who-grid      { grid-template-columns: repeat(5, 1fr); }
 }
 
-/* Decreased Desktop Title Scaling */
-section.ecd__hero h1.ecd__hero_title,
-section.ecd__hero .ecd__hero_title,
-h1.ecd__hero_title {
-  font-size: 52px !important;
+@media (max-width: 768px) {
+  .ecd-stats-inner {
+    grid-template-columns: repeat(2, 1fr) !important;
+    transform: translateY(-16px) !important;
+    gap: 16px 12px !important;
+    padding: 24px 16px !important;
+  }
+
+  .ecd-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .ecd-comparison-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ecd-services-grid,
+  .ecd-results-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .ecd-process-track {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .ecd-process-step {
+    display: grid !important;
+    grid-template-columns: 70px 1fr !important;
+    text-align: left !important;
+    margin-bottom: 36px !important;
+  }
+
+  .ecd-process-node {
+    grid-column: 1 !important;
+    grid-row: 1 / 4 !important;
+  }
+
+  .ecd-process-num,
+  .ecd-process-desc {
+    grid-column: 2 !important;
+    text-align: left !important;
+  }
+
+  .ecd-who-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .ecd-cta-inner {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .ecd-cta-title {
+    font-size: clamp(26px, 6vw, 36px) !important;
+  }
+
+  .ecd-platforms-strip {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+
+  .ecd-intro-marquee-track {
+    animation-duration: 18s !important;
+  }
+
+  .ecd-form-row {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .ecd-form-input {
+    width: 100% !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ecd-stats-inner {
+    grid-template-columns: 1fr !important;
+    transform: none !important;
+  }
+
+  .ecd-who-grid {
+    grid-template-columns: 1fr !important;
+  }
 }

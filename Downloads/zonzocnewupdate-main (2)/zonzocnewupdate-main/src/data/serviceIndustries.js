@@ -1,0 +1,146 @@
+export const SEO_INDUSTRIES = [
+  { icon: '🛍️', label: 'Ecommerce' },
+  { icon: '🏥', label: 'Healthcare' },
+  { icon: '🏠', label: 'Real Estate' },
+  { icon: '☁️', label: 'SaaS' },
+  { icon: '🎓', label: 'Education' },
+  { icon: '💰', label: 'Finance' },
+  { icon: '⚖️', label: 'Law Firms' },
+  { icon: '📍', label: 'Local Business' },
+  { icon: '✈️', label: 'Travel' },
+  { icon: '💻', label: 'Technology' },
+];
+
+export const serviceIndustriesContent = {
+  seo: {
+    badge: 'Industries We Support',
+    titleBefore: 'SEO Solutions for',
+    titleAccent: 'Every Industry',
+    subtitle:
+      "We've helped businesses across a wide range of industries improve their search visibility and generate qualified leads.",
+    items: SEO_INDUSTRIES,
+  },
+  'ai-website-design': {
+    badge: 'Services We Provide',
+    titleBefore: 'Website Design',
+    titleAccent: 'Services We Offer',
+    subtitle:
+      'From custom business websites to AI chatbots and ecommerce stores — we deliver every design and development service your brand needs.',
+    items: [
+      { icon: '💻', label: 'Custom Websites' },
+      { icon: '🤖', label: 'AI Chatbots' },
+      { icon: '🔍', label: 'SEO Development' },
+      { icon: '🚀', label: 'Landing Pages' },
+      { icon: '🛒', label: 'Ecommerce Sites' },
+      { icon: '🔄', label: 'Website Redesign' },
+      { icon: '⚙️', label: 'Smart Automation' },
+      { icon: '🛡️', label: 'Support & Maintenance' },
+      { icon: '📝', label: 'Smart Contact Forms' },
+      { icon: '💬', label: 'Live Chat Integration' },
+    ],
+  },
+  'ai-web-app': {
+    badge: 'Services We Provide',
+    titleBefore: 'AI Web App',
+    titleAccent: 'Services We Build',
+    subtitle:
+      'We design and develop intelligent web applications — from SaaS platforms to CRM systems and AI-powered dashboards.',
+    items: [
+      { icon: '☁️', label: 'SaaS Development' },
+      { icon: '📊', label: 'AI Dashboards' },
+      { icon: '⚙️', label: 'Workflow Automation' },
+      { icon: '🤖', label: 'AI Chatbots' },
+      { icon: '🗄️', label: 'CRM & ERP Apps' },
+      { icon: '👥', label: 'Customer Portals' },
+      { icon: '📈', label: 'Analytics Platforms' },
+      { icon: '🔌', label: 'API Integrations' },
+      { icon: '🔔', label: 'Smart Notifications' },
+      { icon: '✨', label: 'AI Content Tools' },
+    ],
+  },
+  'ai-software': {
+    badge: 'Services We Provide',
+    titleBefore: 'AI Software',
+    titleAccent: 'Services We Deliver',
+    subtitle:
+      'From chatbots and GPT integration to enterprise automation — we build AI software that solves real business problems.',
+    items: [
+      { icon: '🤖', label: 'AI Chatbots' },
+      { icon: '🧠', label: 'GPT Integration' },
+      { icon: '⚙️', label: 'Process Automation' },
+      { icon: '📊', label: 'AI Analytics' },
+      { icon: '🗄️', label: 'CRM AI Integration' },
+      { icon: '🏢', label: 'Enterprise AI' },
+      { icon: '⚡', label: 'Workflow Automation' },
+      { icon: '🔌', label: 'API Development' },
+    ],
+  },
+  'full-stack': {
+    badge: 'Services We Provide',
+    titleBefore: 'Full Stack',
+    titleAccent: 'Services We Offer',
+    subtitle:
+      'End-to-end web development — custom applications, SaaS platforms, APIs, and cloud infrastructure built to scale.',
+    items: [
+      { icon: '💻', label: 'Custom Web Apps' },
+      { icon: '🚀', label: 'SaaS Development' },
+      { icon: '🎨', label: 'Frontend Development' },
+      { icon: '⚙️', label: 'Backend Development' },
+      { icon: '🔌', label: 'API Development' },
+      { icon: '☁️', label: 'Cloud & DevOps' },
+      { icon: '🗃️', label: 'Database Design' },
+      { icon: '📱', label: 'Responsive Design' },
+    ],
+  },
+  ecommerce: {
+    badge: 'Services We Provide',
+    titleBefore: 'Ecommerce',
+    titleAccent: 'Services We Offer',
+    subtitle:
+      'Complete ecommerce solutions — store development, design, SEO, speed optimization, and integrations that drive sales.',
+    items: [
+      { icon: '🛍️', label: 'Shopify Development' },
+      { icon: '🧩', label: 'WooCommerce' },
+      { icon: '🎨', label: 'Ecommerce Design' },
+      { icon: '📈', label: 'Conversion Optimization' },
+      { icon: '📱', label: 'Mobile Optimization' },
+      { icon: '🔍', label: 'Ecommerce SEO' },
+      { icon: '⚡', label: 'Speed Optimization' },
+      { icon: '⚙️', label: 'Integrations' },
+    ],
+  },
+  'ai-seo': {
+    badge: 'Services We Provide',
+    titleBefore: 'AI Search',
+    titleAccent: 'Services We Offer',
+    subtitle:
+      'Future-proof your visibility with GEO, ChatGPT optimization, semantic SEO, structured data, and AI content strategy.',
+    items: [
+      { icon: '🧠', label: 'GEO Optimization' },
+      { icon: '💬', label: 'ChatGPT Visibility' },
+      { icon: '⚡', label: 'Google AI Overviews' },
+      { icon: '🕸️', label: 'Semantic SEO' },
+      { icon: '🗄️', label: 'Entity Graph SEO' },
+      { icon: '💻', label: 'Structured Data' },
+      { icon: '📖', label: 'AI Content Strategy' },
+      { icon: '🎯', label: 'Topical Authority' },
+    ],
+  },
+  'website-maintenance': {
+    badge: 'Services We Provide',
+    titleBefore: 'Maintenance',
+    titleAccent: 'Services We Offer',
+    subtitle:
+      'Keep your website fast, secure, and running smoothly with ongoing monitoring, updates, backups, and technical support.',
+    items: [
+      { icon: '🛡️', label: 'Security Monitoring' },
+      { icon: '⚡', label: 'Performance Optimization' },
+      { icon: '🧩', label: 'WordPress Maintenance' },
+      { icon: '🔒', label: 'Malware Protection' },
+      { icon: '💾', label: 'Website Backups' },
+      { icon: '🔧', label: 'Technical Support' },
+      { icon: '📊', label: 'SEO Health Monitoring' },
+      { icon: '📡', label: 'Uptime Monitoring' },
+    ],
+  },
+};

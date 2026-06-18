@@ -8,11 +8,18 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicePageHero from "../components/ServicePageHero";
-import { serviceImages } from "../data/serviceImages";
+import WhoWeAre from "../components/WhoWeAre";
+import ServicePageCta from "../components/ServicePageCta";
+import ServicePageMobileStyles from "../components/ServicePageMobileStyles";
+import ServiceIndustriesSection from "../components/ServiceIndustriesSection";
+import ServiceProcessSection from "../components/ServiceProcessSection";
+import ServiceIntroMarqueeSection from "../components/ServiceIntroMarqueeSection";
+import ServiceWhyChooseSection from "../components/ServiceWhyChooseSection";
+import { serviceCtaContent } from "../data/serviceCtaContent";
 import "../styles/SEOServices.css";
 import heroImg from "../../public/images/seoservices.png";
 
-const imgs = serviceImages['seo'];
+const cta = serviceCtaContent.seo;
 
 const SEOServices = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -26,82 +33,47 @@ const SEOServices = () => {
     { number: "100%", label: "Transparent Reporting" },
   ];
 
-  // Modern colorful items for the horizontally moving sitemap cards
-  const introItems = [
-    { title: "Improve search visibility and brand awareness",     icon: <Search size={32} />,       colorClass: "pink-purple" },
-    { title: "Drive qualified organic traffic that converts",       icon: <TrendingUp size={32} />,      colorClass: "cyan-blue" },
-    { title: "Build trust and credibility with higher rankings",    icon: <Shield size={32} />,          colorClass: "lime-green" },
-    { title: "Outrank competitors and dominate your niche",         icon: <Target size={32} />,          colorClass: "orange-yellow" },
-    { title: "Long-term growth with sustainable SEO strategies",    icon: <Rocket size={32} />,          colorClass: "purple-indigo" }
-  ];
-
   const seoServices = [
     {
       icon: "⚙️",
       title: "Technical SEO",
-      description: "Optimize website structure, indexing, crawlability, Core Web Vitals and technical performance for better rankings.",
+      description: "Fix site structure, indexing, crawlability, and Core Web Vitals for rankings.",
     },
     {
       icon: "📝",
       title: "On-Page SEO",
-      description: "Optimize content, headings, metadata, internal linking and page structure for better search visibility.",
+      description: "Optimize content, headings, metadata, and links for search visibility.",
     },
     {
       icon: "🔍",
       title: "Keyword Research",
-      description: "Data-driven keyword research and strategy to target the right keywords with high search intent.",
+      description: "Data-driven keyword strategy targeting high-intent search terms.",
     },
     {
       icon: "📊",
       title: "SEO Audits",
-      description: "Comprehensive SEO audits to identify issues, opportunities and improvement areas across your site.",
+      description: "Full audits uncovering issues, opportunities, and quick wins for growth.",
     },
     {
       icon: "📍",
       title: "Local SEO",
-      description: "Optimize Google Business Profiles, local citations and location-based keyword targeting for local visibility.",
+      description: "Google Business Profile, citations, and local pages for local rankings.",
     },
     {
       icon: "🛒",
       title: "Ecommerce SEO",
-      description: "Improve product, category and store visibility to drive more organic traffic, rankings and sales.",
+      description: "Product and category SEO to drive organic traffic and online sales.",
     },
     {
       icon: "✍️",
       title: "Content SEO",
-      description: "Create and optimize content that ranks higher and satisfies search intent and user needs.",
-    },
-    {
-      icon: "✍️",
-      title: "Content SEO",
-      description: "Create and optimize content that ranks higher and satisfies search intent and user needs.",
+      description: "Content that ranks higher, matches search intent, and converts leads.",
     },
     {
       icon: "⚡",
       title: "Speed Optimization",
-      description: "Improve website speed, mobile performance and Core Web Vitals for better user experience and rankings.",
+      description: "Faster load times, mobile performance, and Core Web Vitals tuning.",
     },
-  ];
-
-  const process = [
-    { number: "01", icon: "🔍", title: "SEO Audit & Analysis",    description: "We analyze your website structure, competitors, technical issues and keyword opportunities to find the best growth path." },
-    { number: "02", icon: "🧭", title: "Strategy & Planning",      description: "We create a custom SEO strategy based on your business goals, target market and search data." },
-    { number: "03", icon: "⚙️", title: "Optimization",             description: "We implement on-page, technical and content optimizations to improve rankings and visibility." },
-    { number: "04", icon: "📈", title: "Monitoring & Tracking",    description: "We monitor performance, track rankings and analyze results to continuously refine the strategy." },
-    { number: "05", icon: "🚀", title: "Growth & Scaling",         description: "We refine strategies and scale growth to increase traffic, rankings and conversions month over month." },
-  ];
-
-  const industries = [
-    { icon: "🛍️", label: "Ecommerce" },
-    { icon: "🏥", label: "Healthcare" },
-    { icon: "🏠", label: "Real Estate" },
-    { icon: "☁️", label: "SaaS" },
-    { icon: "🎓", label: "Education" },
-    { icon: "💰", label: "Finance" },
-    { icon: "⚖️", label: "Law Firms" },
-    { icon: "📍", label: "Local Business" },
-    { icon: "✈️", label: "Travel" },
-    { icon: "💻", label: "Technology" },
   ];
 
   const faqs = [
@@ -116,37 +88,92 @@ const SEOServices = () => {
   return (
     <>
       <div className="seo-page">
-        {/* ── HIGH-PRIORITY INLINE STYLES PREVENTING HYDRATION CONFLICTS ── */}
-<Navbar />
+        <style dangerouslySetInnerHTML={{ __html: `
+          html body .seo-page > .topbar {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+          }
+
+          html body .seo-page > .topbar .topbar-inner {
+            padding: 8px 24px !important;
+          }
+
+          html body .seo-page > section.ss-stats-bar {
+            padding: 0 24px !important;
+            margin: 0 !important;
+            background: #fff !important;
+          }
+
+          html body .seo-page > section.ss-stats-bar .ss-stats-inner {
+            max-width: 1100px !important;
+            margin: 0 auto !important;
+            display: grid !important;
+            border: 1.5px solid #e2e8f0 !important;
+            border-radius: 16px !important;
+            box-shadow: 0 8px 36px rgba(0, 45, 98, .09) !important;
+            transform: translateY(-28px) !important;
+            background: #fff !important;
+            overflow: hidden !important;
+          }
+
+          @media (min-width: 769px) {
+            html body .seo-page > section.ss-stats-bar .ss-stats-inner {
+              grid-template-columns: repeat(6, 1fr) !important;
+            }
+          }
+
+          @media (max-width: 768px) {
+            html body .seo-page > section.ss-stats-bar {
+              padding: 0 16px !important;
+            }
+
+            html body .seo-page > section.ss-stats-bar .ss-stats-inner {
+              grid-template-columns: 1fr !important;
+              gap: 20px !important;
+              padding: 24px 16px !important;
+              transform: none !important;
+            }
+
+            html body .seo-page > section.ss-stats-bar .ss-stat-item {
+              border-right: none !important;
+              text-align: center !important;
+            }
+          }
+
+          @media (max-width: 480px) {
+            html body .seo-page > section.ss-stats-bar .ss-stats-inner {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        ` }} />
+
+        <Navbar />
 
         {/* ── HERO ── */}
         <ServicePageHero
-            badge="SEO SERVICES"
-            title="SEO Built for Rankings, Traffic &"
-            titleAccent="Sustainable Growth"
-            subtitle="ZonzocTech is an AI SEO agency helping small businesses and startups across the UK and USA grow their organic traffic, attract qualified leads and turn search visibility into real revenue — without the price tag of a big London agency."
-            primaryCta={{ href: "/contact", label: "Get Your Free SEO Audit →" }}
-            secondaryCta={{ href: "#seo-results", label: "See Our Results ↓" }}
-            features={["Higher Rankings", "Qualified Organic Traffic", "Transparent Reporting"]}
-            heroImage="/images/seoservices.png"
-            heroAlt="Search Engine Optimization Analytics and Targeted Growth Interface"
-          />
+          badge="SEO SERVICES"
+          title="SEO Built for Rankings, Traffic &"
+          titleAccent="Sustainable Growth"
+          subtitle="ZonzocTech is an AI SEO agency helping small businesses and startups across the UK and USA grow their organic traffic, attract qualified leads and turn search visibility into real revenue — without the price tag of a big London agency."
+          primaryCta={{ href: "/contact", label: "Get Your Free SEO Audit →" }}
+          secondaryCta={{ href: "#seo-results", label: "See Our Results ↓" }}
+          features={["Higher Rankings", "Qualified Organic Traffic", "Transparent Reporting"]}
+          heroImage={heroImg}
+          heroAlt="Search Engine Optimization Analytics and Targeted Growth Interface"
+        />
         {/* ── STATS BAR ──────────────────────────────────────────── */}
-        <div className="ss-stats-bar" id="seo-results">
-          <div className="ss-container">
-            <div className="ss-stats-inner">
-              {stats.map((s, i) => (
-                <React.Fragment key={i}>
-                  <div className="ss-stat-item">
-                    <span className="ss-stat-number">{s.number}</span>
-                    <span className="ss-stat-label">{s.label}</span>
-                  </div>
-                  {i < stats.length - 1 && <div className="ss-stat-sep" />}
-                </React.Fragment>
-              ))}
-            </div>
+        <section className="ss-stats-bar" id="seo-results">
+          <div className="ss-stats-inner">
+            {stats.map((s, i) => (
+              <div className="ss-stat-item" key={i}>
+                <span className="ss-stat-number">{s.number}</span>
+                <span className="ss-stat-label">{s.label}</span>
+              </div>
+            ))}
           </div>
-        </div>
+        </section>
+
+        <ServiceIntroMarqueeSection serviceKey="seo" />
 
         {/* ── WHY SEO MATTERS ── */}
         <section className="ss-section ss-section--white">
@@ -156,9 +183,9 @@ const SEOServices = () => {
               {/* Left */}
               <div className="ss-why-left">
                 <span className="ss-badge">Why SEO Matters</span>
-                <h2 className="ss-h2">
+                <p className="ss-h2">
                   Get Found. Get Traffic.<br />Grow Your Business.
-                </h2>
+                </p>
                 <p className="ss-p">
                   Search engines are the #1 source of traffic for businesses online. Our SEO
                   strategies help you rank higher, attract the right audience and convert visitors
@@ -200,42 +227,6 @@ const SEOServices = () => {
                 </div>
               </div>
             </div>
-
-            {/* Sitemap Cards Horizontal Marquee Ticker */}
-            <div className="ss-intro-marquee-wrapper">
-              <div className="ss-intro-marquee-track">
-                {[...introItems, ...introItems].map((item, idx) => (
-                  <div key={idx} className="ss-intro-sitemap-col">
-                    <div className="ss-intro-sitemap-card">
-                      <div className="ss-intro-sitemap-header-bar">
-                        <span className="ss-intro-browser-dot"></span>
-                        <span className="ss-intro-browser-dot"></span>
-                        <span className="ss-intro-browser-dot"></span>
-                      </div>
-                      <div className="ss-intro-sitemap-body">
-                        <div className="aiwa-intro-card-left-group">
-                          <CheckCircle2 size={16} className="ss-intro-check-icon" />
-                          <h4 className="ss-intro-sitemap-card-title">{item.title}</h4>
-                        </div>
-                        
-                        {/* Modern Colorful Icon container */}
-                        <div className={`ss-intro-icon-box ${item.colorClass}`}>
-                          {item.icon}
-                        </div>
-                        
-                        <div className="ss-intro-sitemap-card-footer">
-                          <span>Explore</span>
-                          <ArrowRight size={14} className="ss-intro-card-arrow" />
-                        </div>
-                      </div>
-                    </div>
-                    {/* Dotted vertical sitemap connector line */}
-                    <div className="ss-intro-sitemap-line"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
           </div>
         </section>
 
@@ -244,9 +235,9 @@ const SEOServices = () => {
           <div className="ss-container">
             <div className="ss-section-header">
               <span className="ss-badge">Our SEO Services</span>
-              <h2 className="ss-h2">
+              <p className="ss-h2">
                 Complete SEO Solutions to <span>Boost Your Online Presence</span>
-              </h2>
+              </p>
               <p className="ss-subtitle">
                 From technical SEO to content strategy and link building — everything your business
                 needs to rank higher, attract qualified traffic and generate leads.
@@ -259,8 +250,8 @@ const SEOServices = () => {
                     <div className="ss-service-num">{String(i + 1).padStart(2, "0")}</div>
                     <div className="ss-service-icon">{s.icon}</div>
                   </div>
-                  <h3 className="ss-service-title">{s.title}</h3>
-                  <p className="ss-service-desc">{s.description}</p>
+                  <p className="ss-service-title sp-card-title-1l">{s.title}</p>
+                  <p className="ss-service-desc sp-card-desc-3l">{s.description}</p>
                   <a href="/contact" className="ss-learn-more">Learn More →</a>
                 </div>
               ))}
@@ -268,114 +259,20 @@ const SEOServices = () => {
           </div>
         </section>
 
-        {/* ── PROCESS — HORIZONTAL 5-STEP ─────────────────────────── */}
-        <section className="ss-section ss-section--white">
-          <div className="ss-container">
-            <div className="ss-section-header">
-              <span className="ss-badge">Our SEO Process</span>
-              <h2 className="ss-h2">
-                Our Proven SEO Process for <span>Long-Term Results</span>
-              </h2>
-              <p className="ss-subtitle">
-                A structured, transparent workflow that turns SEO into a clear and measurable growth system.
-              </p>
-            </div>
-            <div className="ss-process-row">
-              {process.map((p, i) => (
-                <React.Fragment key={i}>
-                  <div className="ss-process-step">
-                    <div className="ss-process-circle">
-                      <span className="ss-process-emoji">{p.icon}</span>
-                      <span className="ss-process-badge">{p.number}</span>
-                    </div>
-                    <h3 className="ss-process-title">{p.title}</h3>
-                    <p className="ss-process-desc">{p.description}</p>
-                  </div>
-                  {i < process.length - 1 && (
-                    <div className="ss-process-connector">
-                      <div className="ss-process-dots" />
-                      <span className="ss-process-arrow">→</span>
-                    </div>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceWhyChooseSection serviceKey="seo" />
 
-        {/* ── INDUSTRIES WE SUPPORT ───────────────────────────────── */}
-        <section className="ss-section ss-section--gray">
-          <div className="ss-container">
-            <div className="ss-section-header">
-              <span className="ss-badge">Industries We Support</span>
-              <h2 className="ss-h2">
-                SEO Solutions for <span>Every Industry</span>
-              </h2>
-              <p className="ss-subtitle">
-                We've helped businesses across a wide range of industries improve their search
-                visibility and generate qualified leads.
-              </p>
-            </div>
-            <div className="ss-industries-grid">
-              {industries.map((ind, i) => (
-                <div className="ss-industry-item" key={i}>
-                  <div className="ss-industry-icon">{ind.icon}</div>
-                  <span className="ss-industry-label">{ind.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceProcessSection serviceKey="seo" />
 
-        {/* ── ORIGINAL CUSTOM DARK CTA BOX WITH ROCKET VISUAL ── */}
-        <section className="ss-cta-section">
-          <div className="ss-container">
-            <div className="ss-cta-box">
-              <div className="ss-cta-left">
-                <span className="ss-badge ss-badge--light">Get Started</span>
-                <h2 className="ss-cta-h2">
-                  Ready to Improve Your Rankings and Grow Your Business?
-                </h2>
-                <p className="ss-cta-p">
-                  Get a free SEO audit and discover how we can help you rank higher,
-                  get more traffic and grow your business.
-                </p>
-                <a href="/contact" className="ss-cta-btn">Get Free Consultation →</a>
-                <ul className="ss-cta-trust">
-                  <li>✓ Free SEO Audit</li>
-                  <li>✓ Actionable Insights</li>
-                  <li>✓ No Obligation</li>
-                  <li>✓ Quick Response</li>
-                </ul>
-              </div>
-              <div className="ss-cta-right">
-                <div className="ss-rocket-visual">
-                  <div className="ss-rocket-stars">
-                    {[...Array(8)].map((_, i) => (
-                      <div key={i} className={`ss-star ss-star--${i}`}>✦</div>
-                    ))}
-                  </div>
-                  <div className="ss-rocket">🚀</div>
-                  <div className="ss-rocket-clouds">
-                    <div className="ss-cloud ss-cloud--1">☁️</div>
-                    <div className="ss-cloud ss-cloud--2">☁️</div>
-                    <div className="ss-cloud ss-cloud--3">☁️</div>
-                  </div>
-                  <div className="ss-rocket-glow" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServiceIndustriesSection serviceKey="seo" />
 
         {/* ── FAQ ORIGINAL ACCORDION WITH ANIMATEPRESENCE SLIDE ── */}
         <section className="ss-section ss-section--white">
           <div className="ss-container">
             <div className="ss-section-header">
               <span className="ss-badge">Frequently Asked Questions</span>
-              <h2 className="ss-h2">
+              <p className="ss-h2">
                 SEO Services — <span>Frequently Asked Questions</span>
-              </h2>
+              </p>
             </div>
             <div className="ss-faq-grid">
               {faqs.map((f, i) => (
@@ -407,6 +304,10 @@ const SEOServices = () => {
           </div>
         </section>
 
+        <WhoWeAre />
+        <ServicePageCta {...cta} />
+
+        <ServicePageMobileStyles />
         <Footer />
       </div>
     </>

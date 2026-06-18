@@ -7,7 +7,7 @@ section.process-section {
   /* Premium, dark glowing midnight-navy radial gradient background */
   background: radial-gradient(circle at 50% 100%, #061533 0%, #020b1e 100%) !important;
   color: #ffffff !important;
-  padding: 100px 24px 100px 24px !important;
+  padding: 40px 24px 100px !important;
   text-align: center !important;
   overflow: hidden !important;
   font-family: 'Poppins', system-ui, sans-serif !important;
@@ -236,7 +236,7 @@ section.process-section .step-card:hover .step-card-indicator-line {
 
 @media (max-width: 768px) {
   section.process-section {
-    padding: 80px 24px !important;
+    padding: 32px 24px 80px !important;
   }
   section.process-section .steps-grid {
     grid-template-columns: 1fr !important;

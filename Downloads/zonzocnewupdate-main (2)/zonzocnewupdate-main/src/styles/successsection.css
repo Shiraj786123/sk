@@ -1,6 +1,6 @@
 .success-section {
   background: #ffffff;
-  padding: 100px 24px;
+  padding: 40px 24px 40px;
 }
 
 .success-header {
@@ -127,7 +127,7 @@
 
 @media (max-width: 768px) {
   .success-section {
-    padding: 80px 20px;
+    padding: 32px 20px 32px;
   }
 
   .success-title {

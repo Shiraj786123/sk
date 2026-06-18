@@ -1,0 +1,29 @@
+/* Tighter vertical spacing between service page subsections */
+
+@media (min-width: 769px) {
+  .aiwd-master-wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .aiwa__wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .fswd__wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .aiss__wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .seo-page > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section):not(.ss-stats-bar),
+  .ecd__wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .wm__wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .pg__wrap > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section) {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .aiwd-master-wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .aiwa__wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .fswd__wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .aiss__wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .seo-page > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .ecd__wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .wm__wrapper > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section),
+  .pg__wrap > section:not(.sp-hero-split):not(.whoweare-section):not(.aiwd-cta-section) {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}

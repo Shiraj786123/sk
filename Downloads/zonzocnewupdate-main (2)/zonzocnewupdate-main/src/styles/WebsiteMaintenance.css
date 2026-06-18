@@ -1116,12 +1116,12 @@
    RESPONSIVE — hero mobile queries kept identical
 ═══════════════════════════════════════════════════════ */
 @media (max-width: 1100px) {
-  .wm-stats-inner    { grid-template-columns: repeat(5, 1fr); }
+  .wm-stats-inner    { grid-template-columns: repeat(3, 1fr); }
   .wm-services-grid  { grid-template-columns: repeat(2, 1fr); }
   .wm-plans-grid     { grid-template-columns: repeat(2, 1fr); }
   .wm-process-track  { grid-template-columns: repeat(3, 1fr); gap: 28px; }
   .wm-process-connector { display: none; }
-  .wm-who-grid       { grid-template-columns: repeat(5, 1fr); }
+  .wm-who-grid       { grid-template-columns: repeat(3, 1fr); }
 }
 
 

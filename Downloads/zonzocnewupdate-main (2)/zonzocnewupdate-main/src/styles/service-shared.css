@@ -182,7 +182,7 @@
   font-family: 'Inter', sans-serif;
 }
 
-.sp-process-title {
+.sp-process-card .sp-process-card-title {
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
@@ -231,6 +231,38 @@
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.7;
   font-family: 'Inter', sans-serif;
+}
+
+/* Card text — 1-line title, 3-line description (all service sections) */
+.sp-card-title-1l {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.sp-card-desc-3l {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.6;
+  min-height: calc(1.6em * 3);
+}
+
+/* Two-line section headings — line 1 + accent line 2 */
+.sp-heading-2line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.sp-heading-2line .sp-heading-line,
+.sp-heading-2line .sp-heading-accent {
+  display: block;
+  width: 100%;
 }
 
 /* RESPONSIVE */
@@ -842,7 +874,8 @@
 .sp-hero-split {
   position: relative;
   overflow: hidden;
-  padding: 100px 0 80px;
+  padding: 64px 0 32px;
+  min-height: auto;
   background: linear-gradient(135deg, #003070 0%, #00448f 100%);
 }
 
@@ -1471,7 +1504,7 @@
 }
 
 @media (max-width: 1024px) {
-  .sp-hero-split { padding: 80px 0 60px; }
+  .sp-hero-split { padding: 48px 0 40px; }
   .sp-hero-split-grid,
   .sp-intro-2col-grid,
   .sp-cta-split-grid {
@@ -1496,4 +1529,101 @@
 
 @media (max-width: 480px) {
   .sp-why-banner-grid { grid-template-columns: 1fr; }
+}
+
+/* Shared process + why-choose sections — wins over legacy global rules */
+html body .sp-process-section .sp-process-title.sp-card-title-1l {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #0a0a0a !important;
+  margin: 0 0 6px !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: block !important;
+  max-width: 100% !important;
+}
+
+html body .sp-process-section .sp-process-desc.sp-card-desc-3l {
+  font-size: 13px !important;
+  color: #64748b !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  min-height: calc(1.65em * 3) !important;
+}
+
+html body .sp-why-choose-section .sp-why-choose-title.sp-card-title-1l {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: block !important;
+  max-width: 100% !important;
+}
+
+html body .sp-why-choose-section .sp-why-choose-desc.sp-card-desc-3l {
+  font-size: 14px !important;
+  color: rgba(255, 255, 255, 0.68) !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  min-height: calc(1.6em * 3) !important;
+}
+
+html body .sp-card-title-1l {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: block !important;
+  max-width: 100% !important;
+}
+
+html body .sp-card-desc-3l {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  line-height: 1.6 !important;
+  min-height: calc(1.6em * 3) !important;
+}
+
+html body .aiwa-service-card .sp-card-desc-3l,
+html body .aiss-service-card .sp-card-desc-3l,
+html body .aiwd-service-card .sp-card-desc-3l,
+html body .aiwd-diff-card .sp-card-desc-3l,
+html body .ss-service-desc.sp-card-desc-3l,
+html body .fswd-service-desc.sp-card-desc-3l,
+html body .ecd-service-desc.sp-card-desc-3l,
+html body .wm-service-desc.sp-card-desc-3l,
+html body .pg__wrap .srv__desc.sp-card-desc-3l {
+  font-size: 14px !important;
+  color: #6b7280 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+html body .ss-service-title.sp-card-title-1l,
+html body .fswd-service-title.sp-card-title-1l,
+html body .ecd-service-title.sp-card-title-1l,
+html body .wm-service-title.sp-card-title-1l,
+html body .aiwa-service-card .sp-card-title-1l,
+html body .aiss-service-card .sp-card-title-1l,
+html body .aiwd-service-card .sp-card-title-1l,
+html body .pg__wrap .srv__title.sp-card-title-1l {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #0a0a0a !important;
+  line-height: 1.3 !important;
 }
