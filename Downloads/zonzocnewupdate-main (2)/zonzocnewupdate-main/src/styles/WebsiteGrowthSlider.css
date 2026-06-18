@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  font-family: Poppins;
+  font-family: var(--font-b);
 }
 
 .slider-container::before {

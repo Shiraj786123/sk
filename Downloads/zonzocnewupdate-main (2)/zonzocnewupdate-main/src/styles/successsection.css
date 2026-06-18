@@ -13,7 +13,7 @@
   display: inline-block;
   background: #e8f0fb;
   color: #00448f;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   font-size: 12px;
   font-weight: 700;
   padding: 6px 16px;
@@ -24,7 +24,7 @@
 }
 
 .tag2 {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   font-weight: 700;
   color: #00448f;
 }
@@ -34,7 +34,7 @@
   font-weight: 800;
   margin: 12px 0 16px;
   color: #0a0a0a;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   line-height: 1.2;
 }
 
@@ -46,7 +46,7 @@
   font-size: 18px;
   color: #6b7280;
   line-height: 1.7;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   font-weight: 400;
 }
 
@@ -87,7 +87,7 @@
 
 .project-title {
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   font-weight: 700;
   margin-bottom: 10px;
   color: #0a0a0a;
@@ -97,7 +97,7 @@
 .project-desc {
   font-size: 14px;
   color: #6b7280;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   line-height: 1.6;
   margin-bottom: 16px;
 }
@@ -115,7 +115,7 @@
   color: #00448f;
   font-size: 12px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   display: inline-block;
 }
 

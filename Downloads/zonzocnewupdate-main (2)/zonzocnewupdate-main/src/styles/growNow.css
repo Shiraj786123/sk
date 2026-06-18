@@ -20,7 +20,7 @@
   font-size: 40px;
   font-weight: 800;
   margin-bottom: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   color: #ffffff;
   line-height: 1.2;
 }
@@ -29,14 +29,14 @@
   font-size: 18px;
   margin-bottom: 36px;
   color: rgba(255, 255, 255, 0.8);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   line-height: 1.7;
 }
 
 .grow-btn {
   padding: 16px 40px;
   font-size: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   font-weight: 700;
   color: #00448f;
   background: #ffffff;

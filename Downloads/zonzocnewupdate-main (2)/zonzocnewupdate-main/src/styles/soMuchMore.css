@@ -6,10 +6,10 @@
 
 .smm-section-title {
   font-size: 46px;
-  font-family: Poppins;
+  font-family: var(--font-b);
   font-weight: 600;
   margin-bottom: 50px;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-b);
 }
 
 .smm-section-title .highlight {
@@ -51,7 +51,7 @@
 
 .smm-feature-title {
   font-size: 18px;
-  font-family: Poppins;
+  font-family: var(--font-b);
   font-weight: 600;
   margin-bottom: 10px;
   color: #111827;

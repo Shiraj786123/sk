@@ -13,7 +13,7 @@ section.aiss__hero {
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-b);
 }
 
 /* Hide decorative background layers */

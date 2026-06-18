@@ -8,8 +8,8 @@
   --color-border: #e2e8f0;
   --color-bg-light: #f8faff;
 
-  /* Inter from next/font */
-  --font-family: var(--font-b), 'Inter', sans-serif;
+  --font-b: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+  --font-family: var(--font-b);
 
   --radius-sm: 8px;
   --radius-md: 16px;

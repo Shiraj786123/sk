@@ -38,14 +38,28 @@ config.autoAddCss = false;
 
 import "../styles/navbar.css";
 
+const SERVICE_ROUTES = new Set([
+  "/seo-services",
+  "/seo-ai-search-optimization",
+  "/ai-website-design-development",
+  "/ai-web-application-development",
+  "/ai-software-development",
+  "/website-maintenance-performance-security",
+  "/ecommerce-development-optimization",
+  "/full-stack-web-development",
+]);
+
 const Navbar = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileSubCategoryOpen, setMobileSubCategoryOpen] = useState(null);
+  const [navbarSolid, setNavbarSolid] = useState(false);
 
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const isServicePage = SERVICE_ROUTES.has(pathname);
+  const showSolidNavbar = isServicePage || navbarSolid;
 
   // Handles dynamic scroll lock via safe CSS class toggle
   useEffect(() => {
@@ -60,18 +74,16 @@ const Navbar = () => {
   }, [mobileOpen]);
 
   useEffect(() => {
+    if (isServicePage) return;
+
     const handleScroll = () => {
-      const nav = document.querySelector('.navbar');
-      if (window.scrollY > 10) {
-        nav?.classList.add('scrolled');
-      } else {
-        nav?.classList.remove('scrolled');
-      }
+      setNavbarSolid(window.scrollY > 10);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isServicePage]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -148,7 +160,7 @@ const Navbar = () => {
       </div>
 
       {/* NAVBAR CONTAINER */}
-      <nav className="navbar">
+      <nav className={`navbar${showSolidNavbar ? " scrolled" : ""}`}>
         <div className="navbar-inner">
           
           {/* BRAND LOGO */}

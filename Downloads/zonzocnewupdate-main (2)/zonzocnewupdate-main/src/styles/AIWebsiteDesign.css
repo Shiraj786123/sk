@@ -1,7 +1,7 @@
 /* AIWebsiteDesign.css */
 
 .aiwd-master-wrapper {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-b);
   color: #1e293b;
   overflow-x: hidden;
   background: var(--white);

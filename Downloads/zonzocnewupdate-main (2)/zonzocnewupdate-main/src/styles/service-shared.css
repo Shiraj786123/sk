@@ -18,7 +18,7 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .sp-btn:hover {
@@ -40,7 +40,7 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .sp-btn-secondary:hover {
@@ -68,14 +68,14 @@
   font-weight: 800;
   color: #00448f;
   line-height: 1;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .sp-stat-label {
   font-size: 14px;
   color: #6b7280;
   margin-top: 6px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 /* 3. WHY CHOOSE CARDS */
@@ -106,14 +106,14 @@
   font-weight: 700;
   color: #0a0a0a;
   margin-bottom: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .sp-why-card-text {
   font-size: 15px;
   color: #6b7280;
   line-height: 1.7;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 /* 4. TECHNOLOGY SECTION */
@@ -136,7 +136,7 @@
   font-weight: 700;
   color: #00448f;
   margin-bottom: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .sp-tech-pills {
@@ -152,7 +152,7 @@
   padding: 6px 14px;
   font-size: 13px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 /* 5. PROCESS CARDS */
@@ -179,7 +179,7 @@
   color: rgba(255, 255, 255, 0.15);
   line-height: 1;
   margin-bottom: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .sp-process-card .sp-process-card-title {
@@ -187,7 +187,7 @@
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .sp-process-text {
@@ -195,7 +195,7 @@
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
   flex: 1;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 /* 6. WHO IT'S FOR SECTION */
@@ -223,14 +223,14 @@
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .sp-audience-text {
   font-size: 15px;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.7;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 /* Card text — 1-line title, 3-line description (all service sections) */
@@ -345,7 +345,7 @@
   align-items: center;
   gap: 8px;
   transition: 0.2s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .hero-btn-primary:hover {
@@ -367,7 +367,7 @@
   align-items: center;
   gap: 8px;
   transition: 0.2s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .hero-btn-secondary:hover {
@@ -412,7 +412,7 @@
   transition: 0.2s ease;
   text-decoration: none;
   display: inline-block;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 .btn-primary:hover {
   background: #e8f0fb;
@@ -431,7 +431,7 @@
   transition: 0.2s ease;
   text-decoration: none;
   display: inline-block;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 .btn-secondary:hover {
   border-color: #ffffff;
@@ -481,14 +481,14 @@
   color: #00448f;
   line-height: 1;
   display: block;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 .stat-label {
   font-size: 14px;
   color: #6b7280;
   margin-top: 6px;
   display: block;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 @media (max-width: 768px) {
@@ -549,7 +549,7 @@
   font-weight: 700;
   color: #0a0a0a;
   margin-bottom: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .service-card p {
@@ -596,7 +596,7 @@
   font-weight: 700;
   color: #0a0a0a;
   margin-bottom: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .why-choose-card p {
@@ -629,7 +629,7 @@
   color: #ffffff;
   text-align: center;
   margin-bottom: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .process-section-desc {
@@ -663,7 +663,7 @@
   color: rgba(255, 255, 255, 0.15);
   line-height: 1;
   margin-bottom: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .process-card h3 {
@@ -671,7 +671,7 @@
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .process-card p {
@@ -722,7 +722,7 @@
   font-weight: 700;
   color: #0a0a0a;
   margin-bottom: 12px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .faq-item p {
@@ -750,7 +750,7 @@
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .cta-section p {
@@ -821,7 +821,7 @@
   margin-bottom: 16px;
   padding-bottom: 12px;
   border-bottom: 2px solid #e8f0fb;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .tech-items {
@@ -838,7 +838,7 @@
   padding: 6px 14px;
   font-size: 13px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 @media (max-width: 1024px) {
@@ -986,7 +986,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
 }

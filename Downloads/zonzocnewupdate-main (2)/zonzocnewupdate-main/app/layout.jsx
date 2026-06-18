@@ -1,7 +1,7 @@
 import ScrollToTop from "@/src/components/ScrollToTop";
-import { Inter } from "next/font/google";
 import { AuthProvider } from "@/src/context/AuthContext";
 import WhatsappFloat from "@/src/components/WhatsappFloat";
+import { Poppins } from "next/font/google";
 
 import "@/src/index.css";
 import "@/src/App.css";
@@ -16,10 +16,10 @@ import "@/src/styles/whoweare.css";
 import "@/src/styles/navbar.css";
 import "@/src/styles/topbar.css";
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-b",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -47,7 +47,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={poppins.variable}>
       <head>
         <link
           rel="icon"
@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <AuthProvider>
           {children}
           <WhatsappFloat />

@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   background: #f8fafc;
-  font-family: Poppins;
+  font-family: var(--font-b);
 }
 
 /* Header Section */

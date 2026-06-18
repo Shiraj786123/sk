@@ -15,7 +15,7 @@
   color: #0a0a0a;
   margin-bottom: 16px;
   line-height: 1.2;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .solution-subtitle {
@@ -23,7 +23,7 @@
   color: #6b7280;
   margin-bottom: 40px;
   line-height: 1.7;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .solution-tabs {
@@ -44,7 +44,7 @@
   transition: all 0.2s ease;
   background: #f8faff;
   color: #6b7280;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   white-space: nowrap;
 }
 
@@ -63,7 +63,7 @@
 .tab-description {
   font-size: 16px;
   color: #6b7280;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   text-align: center;
   margin-top: 12px;
   margin-bottom: 48px;
@@ -97,7 +97,7 @@
   color: #0a0a0a;
   margin-bottom: 20px;
   text-align: left;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .service-list {
@@ -114,7 +114,7 @@
   align-items: center;
   gap: 10px;
   line-height: 1.5;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   font-weight: 500;
   transition: color 0.2s ease;
 }

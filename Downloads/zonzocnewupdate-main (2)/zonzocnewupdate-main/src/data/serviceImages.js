@@ -28,12 +28,12 @@ export const serviceImages = {
     ctaAlt: 'Futuristic AI robot representing custom software development',
   },
   'website-maintenance': {
-    hero: `${base}/security-shield-hero.png`,
-    intro: `${base}/security-shield-hero.png`,
-    cta: `${base}/security-shield-hero.png`,
-    heroAlt: 'Website security shield protecting your online business',
-    introAlt: 'Cybersecurity and website protection technology',
-    ctaAlt: 'Secure website maintenance and protection services',
+    hero: '/images/aiwebmaintenance.png',
+    intro: '/images/aiwebmaintenance.png',
+    cta: '/images/aiwebmaintenance.png',
+    heroAlt: 'Futuristic web maintenance specialist managing holographic website dashboards and digital interfaces',
+    introAlt: 'AI-powered website maintenance and technical support illustration',
+    ctaAlt: 'Professional website maintenance, security monitoring and performance optimization',
   },
   'ecommerce': {
     hero: `${base}/ecommerce-store-hero.png`,

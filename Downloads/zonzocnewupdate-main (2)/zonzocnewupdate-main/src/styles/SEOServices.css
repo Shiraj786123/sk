@@ -6,7 +6,7 @@
    ========================================================================== */
 
 .seo-page {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-b);
   background-color: #ffffff;
   color: #0f172a;
   line-height: 1.6;

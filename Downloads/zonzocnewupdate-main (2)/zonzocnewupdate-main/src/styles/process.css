@@ -10,7 +10,7 @@ section.process-section {
   padding: 40px 24px 100px !important;
   text-align: center !important;
   overflow: hidden !important;
-  font-family: 'Poppins', system-ui, sans-serif !important;
+  font-family: var(--font-b) !important;
   width: 100% !important;
   display: block !important;
 }

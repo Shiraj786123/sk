@@ -13,7 +13,7 @@
   margin-bottom: 32px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .trust-bar-stats {
@@ -44,14 +44,14 @@
   font-size: 40px;
   font-weight: 800;
   color: #00448f;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   line-height: 1;
 }
 
 .trust-bar-label-text {
   font-size: 14px;
   color: #6b7280;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   font-weight: 500;
 }
 
@@ -124,7 +124,7 @@
   margin-bottom: 32px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
 }
 
 .trust-bar-stats {
@@ -155,7 +155,7 @@
   font-size: 40px;
   font-weight: 800;
   color: #00448f;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   line-height: 1;
   white-space: nowrap; /* Forces "UK & USA" to stay on the same line */
 }
@@ -163,7 +163,7 @@
 .trust-bar-label-text {
   font-size: 14px;
   color: #6b7280;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   font-weight: 500;
 }
 

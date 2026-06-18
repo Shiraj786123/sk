@@ -40,7 +40,7 @@ body.menu-open-scroll-lock .mobile-nav-drawer {
 .mobile-drawer-item-row:visited,
 .mobile-drawer-item-row:active,
 .mobile-drawer-item-row:focus {
-  font-family: var(--font-b), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: var(--font-b) !important;
   -webkit-font-smoothing: antialiased !important;
   text-rendering: optimizeLegibility !important;
 }
@@ -102,7 +102,7 @@ body.menu-open-scroll-lock .mobile-nav-drawer {
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   overflow: visible !important;
 }
 
@@ -167,7 +167,7 @@ body.menu-open-scroll-lock .mobile-nav-drawer {
 }
 
 .get-proposal-button {
-  font-family: var(--font-b), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: var(--font-b) !important;
   background: #00448f;
   color: white;
   border: none;

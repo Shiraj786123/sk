@@ -23,7 +23,7 @@
 
 /* ── Wrapper & shared ─────────────────────────────── */
 .fswd__wrapper {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-b);
   color: #1e293b;
   overflow-x: hidden;
   background: #fff;

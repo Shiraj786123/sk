@@ -2,7 +2,7 @@
   max-width: 1200px;
   margin: auto;
   padding: 60px 20px;
-  font-family: Poppins;
+  font-family: var(--font-b);
 }
 .back-btn {
   display: inline-flex;
