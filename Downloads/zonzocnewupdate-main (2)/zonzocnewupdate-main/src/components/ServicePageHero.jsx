@@ -2,8 +2,8 @@
 
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { CheckCircle2 } from 'lucide-react';
 import Breadcrumb from './Breadcrumb';
+import { normalizeHeroFeatures } from '../data/serviceHeroFeatureIcons';
 import { HERO_CSS } from '../styles/serviceHeroInline';
 import { HEADING_GUARD_CSS } from '../styles/serviceHeadingInline';
 
@@ -84,6 +84,7 @@ const ServicePageHero = ({
   showDashboard = true,
 }) => {
   useEnforceSingleH1();
+  const featureItems = normalizeHeroFeatures(features);
 
   return (
   <section className="sp-hero-split" data-sp-hero="1">
@@ -104,12 +105,14 @@ const ServicePageHero = ({
               <a href={secondaryCta.href} className="sp-hero-split-btn-secondary">{secondaryCta.label}</a>
             )}
           </div>
-          {features.length > 0 && (
+          {featureItems.length > 0 && (
             <div className="sp-hero-split-features">
-              {features.map((f) => (
-                <div key={f} className="sp-hero-split-feature">
-                  <CheckCircle2 size={16} />
-                  <span>{f}</span>
+              {featureItems.map(({ text, icon: Icon }) => (
+                <div key={text} className="sp-hero-split-feature">
+                  <span className="sp-hero-feature-icon" aria-hidden="true">
+                    <Icon size={14} strokeWidth={2.25} />
+                  </span>
+                  <span>{text}</span>
                 </div>
               ))}
             </div>

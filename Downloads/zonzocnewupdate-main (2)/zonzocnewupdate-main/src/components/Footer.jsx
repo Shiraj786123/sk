@@ -1,7 +1,10 @@
+'use client';
+
 import React from "react";
 import {
   Globe, Users, TrendingUp, Clock, ChevronRight, CalendarDays,
 } from "lucide-react";
+import WhatsAppLink from "./WhatsAppLink";
 import "../styles/footer.css";
 
 // Renders your logo from the public directory
@@ -113,10 +116,10 @@ const Footer = () => {
             </p>
 
             <div className="footer-contact-links">
-              <a href="https://wa.me/94740309534" className="footer-contact-link" target="_blank" rel="noopener noreferrer">
+              <WhatsAppLink className="footer-contact-link">
                 <span className="contact-icon-circle"><WhatsAppIcon /></span>
                 <span className="contact-text">WhatsApp Us</span>
-              </a>
+              </WhatsAppLink>
               <a href="mailto:info@zonzoctech.com" className="footer-contact-link">
                 <span className="contact-icon-circle"><MailIcon /></span>
                 <span className="contact-text">info@zonzoctech.com</span>

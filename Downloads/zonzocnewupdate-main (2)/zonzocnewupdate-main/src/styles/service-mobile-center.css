@@ -533,12 +533,41 @@
     gap: 0 !important;
   }
 
+  html body section.aiwd-cta-section .aiwd-form-field {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-bottom: 15px !important;
+  }
+
+  html body section.aiwd-cta-section .aiwd-form-field-icon,
+  html body section.aiwd-cta-section svg.aiwd-form-field-icon {
+    position: static !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    transform: none !important;
+  }
+
+  html body section.aiwd-cta-section .aiwd-form-field .aiwd-form-input {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+    margin-bottom: 0 !important;
+  }
+
   html body section.aiwd-cta-section .aiwd-form-input,
   html body section.aiwd-cta-section .aiwd-form-btn,
   html body .ecd-form-input {
     width: 100% !important;
-    margin-bottom: 15px !important;
     box-sizing: border-box !important;
+  }
+
+  html body section.aiwd-cta-section .aiwd-form-btn {
+    margin-bottom: 0 !important;
   }
 
   /* ── Platforms strip — stack ── */

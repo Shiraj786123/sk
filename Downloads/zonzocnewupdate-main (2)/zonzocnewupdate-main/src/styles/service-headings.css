@@ -42,6 +42,10 @@ html body .sp-intro-marquee-title {
   color: #0a0a0a !important;
 }
 
+html body .ecd__wrapper .ecd__heading.ecd-white {
+  color: #ffffff !important;
+}
+
 /* Card / service item titles */
 html body .seo-page .ss-service-title,
 html body .seo-page .ss-process-title,

@@ -71,10 +71,22 @@ html body section.aiwd-cta-section .service-cta-text-blue {
 .aiwd-cta-check-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: #ffffff;
   font-size: 14px;
   font-weight: 500;
+}
+
+.aiwd-cta-bullet-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
 }
 
 .aiwd-check-icon {
@@ -106,29 +118,78 @@ html body section.aiwd-cta-section .service-cta-text-blue {
   gap: 14px;
 }
 
-.aiwd-form-input {
+.aiwd-form-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   width: 100%;
-  padding: 13px 16px;
   border: 1.5px solid #e2e8f0;
   border-radius: 10px;
+  background: #f8fafc;
+  padding: 0 16px 0 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.aiwd-form-field:focus-within {
+  border-color: #2563eb;
+  background: #fff;
+}
+
+.aiwd-form-field-icon {
+  position: static;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.aiwd-form-field:focus-within .aiwd-form-field-icon {
+  color: #2563eb;
+}
+
+.aiwd-form-input {
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  padding: 13px 0;
+  border: none;
+  border-radius: 0;
   font-size: 15px;
   font-family: inherit;
   color: #003070;
-  background: #f8fafc;
+  background: transparent;
   outline: none;
-  transition: border-color 0.2s ease;
   box-sizing: border-box;
   appearance: none;
   -webkit-appearance: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.aiwd-form-field--select .aiwd-form-input {
+  padding-right: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 16px;
 }
 
 .aiwd-form-input::placeholder {
   color: #94a3b8;
 }
 
+.aiwd-form-field:focus-within .aiwd-form-input {
+  background-color: transparent;
+}
+
 .aiwd-form-input:focus {
-  border-color: #2563eb;
-  background: #fff;
+  outline: none;
 }
 
 .aiwd-form-btn {
@@ -193,9 +254,17 @@ html body section.aiwd-cta-section .service-cta-text-blue {
     gap: 0;
   }
 
+  .aiwd-form-field {
+    margin-bottom: 15px;
+  }
+
   .aiwd-form-input,
   .aiwd-form-btn {
     width: 100% !important;
-    margin-bottom: 15px;
+    margin-bottom: 0;
+  }
+
+  .aiwd-form-btn {
+    margin-bottom: 0;
   }
 }

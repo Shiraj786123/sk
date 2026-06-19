@@ -129,12 +129,12 @@ const ProjectDetails = ({ id }) => {
     <h2>CHALLENGE</h2>
     <p>{project.challenge}</p>
   </div>
-  <img src={project.challengeImg} alt="" />
+  <img src={project.challengeImg} alt={`${project.name} project challenge illustration`} />
 </div>
 
 {/* SOLUTION (REVERSED) */}
 <div className="section-row reverse">
-  <img src={project.solutionImg} alt="" />
+  <img src={project.solutionImg} alt={`${project.name} project solution illustration`} />
   <div className="text">
     <h2>SOLUTION</h2>
     <p>{project.solution}</p>
@@ -147,7 +147,7 @@ const ProjectDetails = ({ id }) => {
     <h2>IMPACT</h2>
     <p>{project.impact}</p>
   </div>
-  <img src={project.impactImg} alt="" />
+  <img src={project.impactImg} alt={`${project.name} project impact results illustration`} />
 </div>
 
 </section>

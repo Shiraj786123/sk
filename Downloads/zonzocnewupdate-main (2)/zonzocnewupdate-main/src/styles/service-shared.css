@@ -985,14 +985,25 @@
 .sp-hero-split-feature {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 14px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
 }
 
+.sp-hero-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
 .sp-hero-split-feature svg {
-  color: #22c55e;
   flex-shrink: 0;
 }
 

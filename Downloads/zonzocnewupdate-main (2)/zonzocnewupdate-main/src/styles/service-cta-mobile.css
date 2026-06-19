@@ -9,6 +9,79 @@ html body section.aiwd-cta-section .service-cta-text-blue {
   color: #38bdf8 !important;
 }
 
+/* Form icons inline with text — flex row (reliable on mobile) */
+html body section.aiwd-cta-section .aiwd-form-field {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  background: #f8fafc !important;
+  padding: 0 16px 0 14px !important;
+  box-sizing: border-box !important;
+}
+
+html body section.aiwd-cta-section .aiwd-form-field:focus-within {
+  border-color: #2563eb !important;
+  background: #fff !important;
+}
+
+html body section.aiwd-cta-section .aiwd-form-field-icon,
+html body section.aiwd-cta-section svg.aiwd-form-field-icon {
+  position: static !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  color: #94a3b8 !important;
+  pointer-events: none !important;
+  transform: none !important;
+  margin: 0 !important;
+}
+
+html body section.aiwd-cta-section .aiwd-form-field:focus-within .aiwd-form-field-icon {
+  color: #2563eb !important;
+}
+
+html body section.aiwd-cta-section .aiwd-form-field .aiwd-form-input {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+  padding: 13px 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+
+html body section.aiwd-cta-section .aiwd-form-field--select .aiwd-form-input {
+  padding-right: 24px !important;
+}
+
+html body section.aiwd-cta-section .aiwd-form-field .aiwd-form-input:focus {
+  background-color: transparent !important;
+  outline: none !important;
+}
+
+html body section.aiwd-cta-section .aiwd-cta-check-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+html body section.aiwd-cta-section .aiwd-cta-bullet-icon {
+  flex-shrink: 0 !important;
+}
+
 @media (max-width: 768px) {
   html body section.aiwd-cta-section {
     padding: 48px 0 !important;
@@ -67,10 +140,14 @@ html body section.aiwd-cta-section .service-cta-text-blue {
     gap: 0 !important;
   }
 
+  html body section.aiwd-cta-section .aiwd-form-field {
+    margin-bottom: 15px !important;
+  }
+
   html body section.aiwd-cta-section .aiwd-form-input,
   html body section.aiwd-cta-section .aiwd-form-btn {
     width: 100% !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 0 !important;
     box-sizing: border-box !important;
   }
 }

@@ -47,7 +47,7 @@ const Signup = () => {
     <div className="auth-figma-container">
       {/* Left Side - Background Image */}
       <div className="auth-figma-left">
-        <img src="/images/login-bg.png" alt="Background" className="auth-bg-image" />
+        <img src="/images/login-bg.png" alt="Abstract login page background" className="auth-bg-image" />
       </div>
 
       {/* Right Side - Form */}

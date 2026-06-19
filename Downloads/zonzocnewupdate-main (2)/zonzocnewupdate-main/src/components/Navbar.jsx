@@ -37,6 +37,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
 import "../styles/navbar.css";
+import { useWhatsAppUrl } from "../hooks/useWhatsAppUrl";
 
 const SERVICE_ROUTES = new Set([
   "/seo-services",
@@ -57,6 +58,7 @@ const Navbar = () => {
   const [navbarSolid, setNavbarSolid] = useState(false);
 
   const pathname = usePathname();
+  const whatsappUrl = useWhatsAppUrl();
   const isHomePage = pathname === "/";
   const isServicePage = SERVICE_ROUTES.has(pathname);
   const showSolidNavbar = isServicePage || navbarSolid;
@@ -146,7 +148,7 @@ const Navbar = () => {
             <span className="topbar-right-divider" style={{ margin: "0 10px", opacity: 0.5 }}>|</span>
             
             <a
-              href="https://wa.me/94740309534"
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="topbar-link wa-btn"
@@ -530,7 +532,7 @@ const Navbar = () => {
                   <FontAwesomeIcon icon={faEnvelope} className="info-card-icon" />
                   <span>info@zonzoctech.com</span>
                 </a>
-                <a href="https://wa.me/94740309534" target="_blank" rel="noopener noreferrer" className="info-card-row">
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="info-card-row">
                   <FontAwesomeIcon icon={faWhatsapp} className="info-card-icon" />
                   <span>WhatsApp Us</span>
                 </a>

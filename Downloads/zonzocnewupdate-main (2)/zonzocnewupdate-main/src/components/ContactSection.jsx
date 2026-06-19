@@ -1,8 +1,10 @@
 'use client';
 import React, { useState } from 'react';
+import { useWhatsAppUrl } from '../hooks/useWhatsAppUrl';
 import '../styles/contact.css';
 
 const ContactSection = () => {
+  const whatsappUrl = useWhatsAppUrl();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -228,7 +230,7 @@ const ContactSection = () => {
 
               {/* 2. WhatsApp Button */}
               <a 
-                href="https://wa.me/94763286116" 
+                href={whatsappUrl} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 style={{ 

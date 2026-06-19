@@ -1,10 +1,9 @@
 'use client';
 import React from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import "../styles/successsection.css";
 
 const SuccessSection = () => {
-  const router = useRouter();
   const projects = [
     {
       slug: "basildon-acr",
@@ -70,11 +69,7 @@ const SuccessSection = () => {
 
       <div className="projects-grid">
         {projects.map((project) => (
-          <div
-            key={project.slug}
-            className="project-card"
-            onClick={() => router.push(`/case-studies/${project.slug}`)}
-          >
+          <div key={project.slug} className="project-card">
             <img
               src={project.img}
               alt={project.name}
@@ -88,6 +83,12 @@ const SuccessSection = () => {
                   <span key={idx}>{tag}</span>
                 ))}
               </div>
+              <Link
+                href={`/case-studies/${project.slug}`}
+                className="project-result-btn"
+              >
+                View Our Results →
+              </Link>
             </div>
           </div>
         ))}

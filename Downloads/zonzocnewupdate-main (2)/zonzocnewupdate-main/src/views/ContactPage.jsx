@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Breadcrumb from "../components/Breadcrumb";
+import { useWhatsAppUrl } from "../hooks/useWhatsAppUrl";
 import "../styles/ContactPage.css";
 
 const ContactPage = () => {
+  const whatsappUrl = useWhatsAppUrl();
   const [formData, setFormData] = useState({ name: "", company: "", phone: "", email: "", project: "" });
   // Updated initial budget state to 500
   const [budget, setBudget] = useState(500);
@@ -125,7 +127,7 @@ const ContactPage = () => {
                 </div>
               </a>
               
-              <a href="https://wa.me/94740309534" className="cp__btn_card cp__whatsapp_card">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="cp__btn_card cp__whatsapp_card">
                 <span className="cp__card_icon text_whatsapp">
                   {/* Official SVG Path for Brand WhatsApp Grid Item */}
                   <svg width="24" height="24" viewBox="0 0 448 512" fill="currentColor" style={{ display: 'block' }}>

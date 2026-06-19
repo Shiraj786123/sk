@@ -1,10 +1,12 @@
 'use client';
 import React, { useState } from "react";
+import { useWhatsAppUrl } from "../hooks/useWhatsAppUrl";
 import "../styles/whatsapp.css";
 
 const WhatsappFloat = () => {
 
   const [showMessage, setShowMessage] = useState(false);
+  const whatsappUrl = useWhatsAppUrl();
 
   return (
     <div className="whatsapp-wrapper">
@@ -29,13 +31,13 @@ const WhatsappFloat = () => {
 
       {/* ICON */}
       <a
-        href="https://wa.me/94740309534"
+        href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-btn"
         onMouseEnter={() => setShowMessage(true)}
       >
-        <img src="/images/whatsapp-circle.png" alt="WhatsApp" className="whatsapp-icon" />
+        <img src="/images/whatsapp-circle.png" alt="Chat with ZonzocTech on WhatsApp" className="whatsapp-icon" />
       </a>
 
     </div>

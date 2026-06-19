@@ -77,7 +77,7 @@ const UserProfile = () => {
               <div className="avatar-block">
                 <img
                   src={user.avatar || "https://via.placeholder.com/90"}
-                  alt="avatar"
+                  alt={`${user.name || "User"} profile photo`}
                 />
                 <div>
                   <h2>{user.name || "User Name"}</h2>
