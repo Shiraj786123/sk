@@ -4,7 +4,7 @@
 
 .whoweare-section {
   background: #f8faff;
-  padding: 64px 0 40px;
+  padding: 64px 0 64px;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
@@ -69,7 +69,7 @@
   gap: 20px;
   width: 100%;
   overflow: hidden;
-  padding: 0;
+  padding: 0 0 16px;
   margin-top: 12px;
 }
 
@@ -167,7 +167,7 @@
 
 @media (max-width: 768px) {
   .whoweare-section {
-    padding: 48px 0 32px;
+    padding: 48px 0 48px;
   }
 
   .whoweare-header {
@@ -219,12 +219,12 @@
 /* Uniform padding on all service pages — beats page.css overrides */
 html body section.whoweare-section {
   padding-top: 64px !important;
-  padding-bottom: 40px !important;
+  padding-bottom: 64px !important;
 }
 
 @media (max-width: 768px) {
   html body section.whoweare-section {
     padding-top: 48px !important;
-    padding-bottom: 32px !important;
+    padding-bottom: 48px !important;
   }
 }

@@ -3,7 +3,7 @@
    ========================================================================== */
 .why-us-section {
   background-color: #ffffff;
-  padding: 40px 20px 60px;
+  padding: 64px 20px 60px;
 }
 
 .why-us-container {
@@ -281,7 +281,7 @@
    ========================================================================== */
 @media (min-width: 1025px) {
   .why-us-section {
-    padding: 40px 48px 100px;
+    padding: 64px 48px 100px;
   }
   
   /* Layout columns align perfectly at matching height */
