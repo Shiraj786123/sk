@@ -33,7 +33,20 @@
   margin-top: -20px;
 }
 
+.footer-brand-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
 .footer-logo { display: flex; align-items: center; }
+
+.footer-logo img {
+  width: var(--header-logo-width);
+  height: auto;
+  display: block;
+}
 
 .footer-logo-text { display: flex; align-items: center; gap: 10px; }
 
@@ -73,7 +86,7 @@
 .footer-description {
   font-size: 14px;
   line-height: 1.6;
-  color: #475569;
+  color: #00448f;
   margin: 0;
   max-width: 300px;
 }
@@ -86,7 +99,7 @@
   width: 37px;
   height: 37px;
   border-radius: 50%;
-  background: #2563eb;
+  background: #00448f;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -97,7 +110,7 @@
 
 .contact-icon-circle svg { width: 15px; height: 15px; fill: currentColor; display: block; }
 
-.footer-contact-link:hover .contact-icon-circle { background: #1d4ed8; transform: scale(1.05); }
+.footer-contact-link:hover .contact-icon-circle { background: #003070; transform: scale(1.05); }
 
 .contact-text { font-size: 14px; font-weight: 600; color: #1e293b; }
 
@@ -337,6 +350,7 @@ h6.footer-column-title {
    ========================================================================== */
 @media (max-width: 1024px) {
   .footer-main { padding: 60px 20px 40px; }
+  .footer-logo img { width: var(--header-logo-width-tablet); }
   .footer-container { grid-template-columns: 1fr; gap: 48px; text-align: center; }
   .footer-brand { align-items: center; text-align: center; margin: 0 auto; }
   .footer-description { text-align: center; margin: 0 auto; }
@@ -424,6 +438,10 @@ h6.footer-column-title {
 
 
 
+
+@media (max-width: 480px) {
+  .footer-logo img { width: var(--header-logo-width-mobile); }
+}
 
 @media (max-width: 800px) {
   /* 1. Set the brand container to center the logo and description text */

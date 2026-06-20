@@ -36,6 +36,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 
 config.autoAddCss = false;
 
+import { Send } from "lucide-react";
 import "../styles/navbar.css";
 import { useWhatsAppUrl } from "../hooks/useWhatsAppUrl";
 
@@ -169,10 +170,10 @@ const Navbar = () => {
           {isHomePage ? (
             <div className="navbar-logo" style={{ cursor: 'default' }}>
               <Image
-                src="/logo/logo2.png"
-                alt="Zonzoctech"
-                width={200}
-                height={60}
+                src="/logo/zonzoc-logo.png"
+                alt="ZonzocTech — AI Web Development Agency"
+                width={170}
+                height={42}
                 priority
               />
             </div>
@@ -183,16 +184,11 @@ const Navbar = () => {
               onClick={closeMobile}
             >
               <Image
-                src="/logo/logo2.png"
-                alt="Zonzoctech"
-                width={200}
-                height={60}
+                src="/logo/zonzoc-logo.png"
+                alt="ZonzocTech — AI Web Development Agency"
+                width={170}
+                height={42}
                 priority
-                style={{
-                  width: "200px",
-                  height: "auto",
-                  display: "block"
-                }}
               />
             </Link>
           )}
@@ -203,8 +199,10 @@ const Navbar = () => {
               <button
                 className="get-proposal-button mobile-nav-cta"
                 onClick={() => setIsPopupOpen(true)}
+                aria-label="Get Free Proposal"
               >
-                Get Free Proposal
+                <Send size={14} className="mobile-nav-cta-icon" aria-hidden="true" />
+                <span>Free Proposal</span>
               </button>
             )}
 
@@ -346,6 +344,7 @@ const Navbar = () => {
             className="get-proposal-button desktop-cta"
             onClick={() => setIsPopupOpen(true)}
           >
+            <Send size={16} aria-hidden="true" />
             Get Free Proposal
           </button>
 

@@ -18,6 +18,10 @@
   font-family: var(--font-b);
 }
 
+.solution-highlight {
+  color: #00448f;
+}
+
 .solution-subtitle {
   font-size: 18px;
   color: #6b7280;
@@ -91,11 +95,12 @@
   transform: translateY(-4px);
 }
 
-.service-card-title {
+.service-card-title,
+.solution-section .service-card h3.service-card-title {
   font-size: 18px;
   font-weight: 700;
-  color: #0a0a0a;
-  margin-bottom: 20px;
+  color: #00448f;
+  margin-bottom: 24px;
   text-align: left;
   font-family: var(--font-b);
 }

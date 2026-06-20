@@ -23,6 +23,10 @@
 
   --container-width: 1200px;
   --section-padding: 100px;
+  --header-left-align: 8px;
+  --header-logo-width: 170px;
+  --header-logo-width-tablet: 115px;
+  --header-logo-width-mobile: 95px;
 }
 
 * {

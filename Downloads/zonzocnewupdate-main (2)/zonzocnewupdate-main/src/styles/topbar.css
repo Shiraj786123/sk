@@ -36,9 +36,7 @@
   display: flex; 
   align-items: center; 
   gap: 8px;
-  /* Use this to pull the text away from the very edge of the screen */
-  /* Increase or decrease this number until it aligns perfectly with your logo */
-  padding-left: 40px; 
+  padding-left: var(--header-left-align);
 }
 
 /* Keeps the globe icon inline and vertically centered with the text line */

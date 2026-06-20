@@ -148,8 +148,8 @@ const WhyChooseUs = () => {
           {/* Dashboard Section */}
           <div className="dashboard-visual-canvas">
             <img 
-              src="https://kvnpromosae.b-cdn.net/wp-content/uploads/2026/04/Analytics-dashboard.jpg" 
-              alt="Business Growth Analytics Dashboard" 
+              src="/images/zonzoctech-dashboard.png" 
+              alt="ZonzocTech analytics dashboard showing business growth metrics" 
               className="dashboard-main-img"
             />
             

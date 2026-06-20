@@ -127,7 +127,13 @@ body.menu-open-scroll-lock .mobile-nav-drawer {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  margin-left: 0px;           
+  margin-left: var(--header-left-align);
+}
+
+.navbar-logo img {
+  width: var(--header-logo-width);
+  height: auto;
+  display: block;
 }
 
 /* ==========================================================================
@@ -178,6 +184,9 @@ body.menu-open-scroll-lock .mobile-nav-drawer {
   cursor: pointer;
   transition: 0.3s ease;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .get-proposal-button:hover {
@@ -366,25 +375,46 @@ body.menu-open-scroll-lock .mobile-nav-drawer {
   }
 
   .navbar-logo img {
-    width: 130px !important;
+    width: var(--header-logo-width-tablet) !important;
+  }
+
+  .navbar-logo {
+    margin-left: 0;
+    min-width: 0;
   }
 
   .navbar-mobile-controls {
     display: flex !important;
     align-items: center !important;
     justify-content: flex-end !important;
-    gap: 8px !important;
+    gap: 10px !important;
     margin-left: auto !important;
+    flex-shrink: 0;
   }
 
   .mobile-nav-cta {
-    display: block !important;
-    padding: 8px 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 8px 14px !important;
     font-size: 12px !important;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+
+  .mobile-nav-cta-icon {
+    flex-shrink: 0;
   }
 
   .hamburger {
-    display: block !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
   }
 
   /* DRAWER CONTAINER WITH STABLE HEIGHT & SCROLL INHERITANCE */
@@ -768,20 +798,46 @@ body.menu-open-scroll-lock .mobile-nav-drawer {
 
 @media (max-width: 480px) {
   .navbar-inner {
-    padding: 0 10px !important;
+    padding: 0 12px !important;
+    width: 94%;
+    max-width: 94%;
   }
 
   .navbar-logo img {
-    width: 110px !important;
+    width: var(--header-logo-width-mobile) !important;
   }
 
   .navbar-mobile-controls {
-    gap: 6px !important;
+    gap: 8px !important;
   }
 
   .mobile-nav-cta {
     font-size: 11px !important;
-    padding: 7px 10px !important;
+    padding: 7px 12px !important;
+    gap: 5px !important;
+  }
+
+  .mobile-nav-cta-icon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .hamburger {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-nav-cta span {
+    display: none;
+  }
+
+  .mobile-nav-cta {
+    padding: 8px !important;
+    min-width: 36px;
+    justify-content: center;
   }
 }
 

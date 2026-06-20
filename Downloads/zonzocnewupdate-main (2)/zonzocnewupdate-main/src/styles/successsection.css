@@ -9,37 +9,31 @@
   margin: 0 auto 64px;
 }
 
-.success-tag {
-  display: inline-block;
-  background: #e8f0fb;
-  color: #00448f;
+.success-eyebrow {
   font-family: var(--font-b);
   font-size: 12px;
   font-weight: 700;
-  padding: 6px 16px;
-  border-radius: 100px;
-  margin-bottom: 16px;
+  color: #00448f;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-}
-
-.tag2 {
-  font-family: var(--font-b);
-  font-weight: 700;
-  color: #00448f;
+  margin: 0 0 16px;
 }
 
 .success-title {
   font-size: 40px;
   font-weight: 800;
   margin: 12px 0 16px;
-  color: #0a0a0a;
+  color: #00448f;
   font-family: var(--font-b);
   line-height: 1.2;
 }
 
 .success-title .highlight {
   color: #00448f;
+}
+
+.success-title-black {
+  color: #0a0a0a;
 }
 
 .success-subtitle {
@@ -96,7 +90,7 @@
   font-family: var(--font-b);
   font-weight: 700;
   margin-bottom: 10px;
-  color: #0a0a0a;
+  color: #00448f;
   line-height: 1.3;
 }
 

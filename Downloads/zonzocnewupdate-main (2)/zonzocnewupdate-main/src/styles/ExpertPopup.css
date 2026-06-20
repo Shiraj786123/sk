@@ -180,7 +180,8 @@
   padding: 20px 0 0 0;
   border-top: 1px solid #e2e8f0;
 }
-.popup-contact span {
+.popup-contact span,
+.popup-contact-link {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -188,8 +189,13 @@
   color: #475569;
   font-weight: 500;
   margin-bottom: 12px;
+  text-decoration: none;
 }
-.popup-contact span:last-child { margin-bottom: 0; }
+.popup-contact-link:hover {
+  color: #00448f;
+}
+.popup-contact span:last-child,
+.popup-contact-link:last-child { margin-bottom: 0; }
 
 /* RIGHT PANEL */
 .popup-right {

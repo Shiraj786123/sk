@@ -151,12 +151,25 @@
   flex-direction: column;
 }
 
+.form-header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: #e8f0fb;
+  color: #00448f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
 .form-title {
   color: #00336b;
   font-size: 26px;
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 24px;
+  text-align: center;
 }
 
 .contact-form {
@@ -228,11 +241,20 @@
 }
 
 .submit-note {
-  color: #7c8e9f;
+  color: #64748b;
   text-align: center;
   font-size: 13px;
   margin-top: 16px;
   margin-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.submit-note-icon {
+  color: #00448f;
+  flex-shrink: 0;
 }
 
 /* Alerts rules styling */

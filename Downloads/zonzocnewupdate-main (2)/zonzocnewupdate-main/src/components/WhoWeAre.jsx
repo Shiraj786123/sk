@@ -70,7 +70,7 @@ const WhoWeAreSection = () => {
         {/* Header */}
         <div className="whoweare-header">
           <h2 className="whoweare-title">
-            Who We Are & Why Choose <span className="highlight">Zonzoctech</span>
+            <span className="highlight">Who We Are &</span> <span className="whoweare-title-black">Why Choose Zonzoctech</span>
           </h2>
           <p className="whoweare-description">
             At Zonzoctech, we're more than just a digital agency—we're your growth partner.

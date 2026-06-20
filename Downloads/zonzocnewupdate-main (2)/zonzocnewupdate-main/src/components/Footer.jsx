@@ -7,16 +7,10 @@ import {
 import WhatsAppLink from "./WhatsAppLink";
 import "../styles/footer.css";
 
-// Renders your logo from the public directory
-const LogoIcon = () => (
-  <img 
-    src="/logo/footerlogo.png" 
-    alt="ZonzocTech Logo" 
-    style={{ 
-      width: "100%", 
-      height: "100%", 
-      objectFit: "contain" 
-    }} 
+const FooterLogo = () => (
+  <img
+    src="/logo/zonzoc-logo.png"
+    alt="ZonzocTech — AI Web Development Agency"
   />
 );
 
@@ -99,21 +93,15 @@ const Footer = () => {
 
           {/* Brand Column */}
           <div className="footer-brand">
-            <div className="footer-logo">
-              <div className="footer-logo-text">
-                <div className="footer-logo-icon">
-                  <LogoIcon />
-                </div>
-                <div className="footer-logo-wordmark">
-                  <span className="footer-logo-name">ZonzocTech</span>
-                  <span className="footer-logo-tagline">AI Web Development Agency</span>
-                </div>
+            <div className="footer-brand-top">
+              <div className="footer-logo">
+                <FooterLogo />
               </div>
-            </div>
 
-            <p className="footer-description">
-              Helping businesses build AI-powered websites, automation systems, and scalable digital solutions.
-            </p>
+              <p className="footer-description">
+                Helping businesses build AI-powered websites, automation systems, and scalable digital solutions.
+              </p>
+            </div>
 
             <div className="footer-contact-links">
               <WhatsAppLink className="footer-contact-link">
