@@ -14,8 +14,8 @@ const ServiceProcessSection = ({ serviceKey, headingTag = 'p' }) => {
       <div className="sp-process-container">
         <div className="sp-process-header">
           <span className="sp-process-badge">{content.badge}</span>
-          <HeadingTag className="sp-process-heading sp-heading-2line">
-            <span className="sp-heading-line">{content.titleBefore}</span>
+          <HeadingTag className="sp-process-heading sp-heading-inline">
+            <span className="sp-heading-line">{content.titleBefore} </span>
             <span className="sp-heading-accent">{content.titleAccent}</span>
           </HeadingTag>
           <p className="sp-process-subtitle">{content.subtitle}</p>

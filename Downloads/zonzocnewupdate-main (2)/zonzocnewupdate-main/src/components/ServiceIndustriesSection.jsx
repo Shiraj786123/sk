@@ -13,8 +13,8 @@ const ServiceIndustriesSection = ({ serviceKey, headingTag = 'p' }) => {
       <div className="sp-industries-container">
         <div className="sp-industries-header">
           <span className="sp-industries-badge">{content.badge}</span>
-          <HeadingTag className="sp-industries-title sp-heading-2line">
-            <span className="sp-heading-line">{content.titleBefore}</span>
+          <HeadingTag className="sp-industries-title sp-heading-inline">
+            <span className="sp-heading-line">{content.titleBefore} </span>
             <span className="sp-heading-accent">{content.titleAccent}</span>
           </HeadingTag>
           <p className="sp-industries-subtitle">{content.subtitle}</p>

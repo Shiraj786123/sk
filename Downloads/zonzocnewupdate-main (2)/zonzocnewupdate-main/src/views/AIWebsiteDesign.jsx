@@ -167,8 +167,8 @@ const AIWebsiteDesign = () => {
         <div className="aiwd-container">
           <div className="aiwd-section-head">
             <span className="aiwd-section-pill">Our Services</span>
-            <h4 className="aiwd-section-title sp-heading-2line">
-              <span className="sp-heading-line">AI Website Design & Development</span>
+            <h4 className="aiwd-section-title sp-heading-inline">
+              <span className="sp-heading-line">AI Website Design & Development </span>
               <span className="sp-heading-accent">Services</span>
             </h4>
           </div>
@@ -196,8 +196,8 @@ const AIWebsiteDesign = () => {
       <section className="aiwd-faq-section">
         <div className="aiwd-container">
           <div className="aiwd-section-head">
-            <h6 className="aiwd-section-title sp-heading-2line">
-              <span className="sp-heading-line">Frequently Asked</span>
+            <h6 className="aiwd-section-title sp-heading-inline">
+              <span className="sp-heading-line">Frequently Asked </span>
               <span className="sp-heading-accent">Questions</span>
             </h6>
           </div>

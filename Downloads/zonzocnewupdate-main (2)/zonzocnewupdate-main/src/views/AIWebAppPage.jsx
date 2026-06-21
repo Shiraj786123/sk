@@ -89,8 +89,8 @@ const AIWebAppDev = () => {
         <div className="aiwa__container">
           <div className="aiwa-section-head">
             <span className="aiwa-pill">Our Services</span>
-            <h3 className="aiwa-section-title sp-heading-2line">
-              <span className="sp-heading-line">AI Web Application</span>
+            <h3 className="aiwa-section-title sp-heading-inline">
+              <span className="sp-heading-line">AI Web Application </span>
               <span className="sp-heading-accent">Development Services</span>
             </h3>
           </div>
@@ -118,8 +118,8 @@ const AIWebAppDev = () => {
       <section className="aiwa-faq-section">
         <div className="aiwa__container">
           <div className="aiwa-section-head">
-            <h6 className="aiwa-section-title sp-heading-2line">
-              <span className="sp-heading-line">Frequently Asked</span>
+            <h6 className="aiwa-section-title sp-heading-inline">
+              <span className="sp-heading-line">Frequently Asked </span>
               <span className="sp-heading-accent">Questions</span>
             </h6>
           </div>

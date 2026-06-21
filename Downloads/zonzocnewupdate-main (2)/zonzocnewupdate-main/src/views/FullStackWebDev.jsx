@@ -146,8 +146,8 @@ app.get('/api/health', (req, res) => {
         <div className="fswd__container">
           <div className="fswd-section-center">
             <span className="fswd-eyebrow">Our Services</span>
-            <h3 className="fswd-section-heading sp-heading-2line">
-              <span className="sp-heading-line">Full Stack Web Development</span>
+            <h3 className="fswd-section-heading sp-heading-inline">
+              <span className="sp-heading-line">Full Stack Web Development </span>
               <span className="sp-heading-accent">Services</span>
             </h3>
           </div>
@@ -222,8 +222,8 @@ app.get('/api/health', (req, res) => {
             {/* Left — accordion */}
             <div className="fswd-faq-left">
               <span className="fswd-eyebrow">Frequently Asked Questions</span>
-              <h6 className="fswd-section-heading sp-heading-2line">
-                <span className="sp-heading-line">Got Questions? We've Got</span>
+              <h6 className="fswd-section-heading sp-heading-inline sp-heading-2line--left">
+                <span className="sp-heading-line">Got Questions? We've Got </span>
                 <span className="sp-heading-accent">Answers.</span>
               </h6>
               <div className="fswd-faq-list">

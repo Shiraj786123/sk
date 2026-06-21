@@ -61,6 +61,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  width: fit-content;
   padding: 5px 13px;
   border-radius: 999px;
   font-size: 12px;
@@ -508,7 +509,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* LEFT */
@@ -516,6 +517,26 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.what__left .chip {
+  align-self: flex-start;
+  width: fit-content;
+}
+
+.what__left .sp-intro-checklist {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 0;
+  width: 100%;
+}
+
+.what__left .sp-intro-check-item svg {
+  color: #00448f;
 }
 .sec__p {
   font-size: 16px;
@@ -543,6 +564,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  height: 100%;
 }
 
 /* AI Answer Mockup */
@@ -615,6 +637,10 @@
   background: #0f172a;
   border-radius: 16px;
   padding: 20px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .why__pill__title {
   font-size: 13px;
@@ -889,6 +915,10 @@
 .cmp__head {
   background: #0f172a;
 }
+.cmp__head .cmp__cell {
+  min-height: 60px;
+  align-items: center;
+}
 .cmp__cell {
   padding: 16px 24px;
   font-size: 0.97rem;
@@ -898,7 +928,7 @@
   line-height: 1.6;
 }
 .cmp__cell--left  { background: #0f172a; color: rgba(255,255,255,0.7); font-weight: 600; font-size: 1rem; }
-.cmp__cell--right { background: linear-gradient(90deg, #6366f1, #4f46e5); color: #fff; font-weight: 700; font-size: 1rem; }
+.cmp__cell--right { background: #00448f; color: #fff; font-weight: 700; font-size: 1rem; }
 .cmp__cell--dim   { background: #fff; color: #64748b; border-top: 1px solid #f1f5f9; }
 .cmp__cell--hi    { background: #fafbff; color: #1e293b; font-weight: 600; border-top: 1px solid #eef2ff; border-left: 1px solid #eef2ff; }
 .cmp__row:nth-child(even) .cmp__cell--dim { background: #f8fafc; }
@@ -1534,6 +1564,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
+  }
+
+  .what__left .sp-intro-checklist {
+    flex: none;
+    justify-content: flex-start;
   }
 
   .sec__p {
@@ -1549,6 +1585,11 @@
 
   .what__right {
     width: 100%;
+    height: auto;
+  }
+
+  .why__pill__card {
+    flex: none;
   }
 
   /* 4. SERVICES GRID - Single Column */

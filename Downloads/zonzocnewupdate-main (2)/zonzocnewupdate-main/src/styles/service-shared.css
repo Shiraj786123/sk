@@ -279,6 +279,30 @@
   color: #00448f;
 }
 
+/* Single-line section headings — black + blue accent inline */
+.sp-heading-inline {
+  display: block;
+  text-align: center;
+}
+
+.sp-heading-inline.sp-heading-2line--left {
+  text-align: left;
+}
+
+.sp-heading-inline .sp-heading-line,
+.sp-heading-inline .sp-heading-accent {
+  display: inline;
+  width: auto;
+}
+
+.sp-heading-inline .sp-heading-line {
+  color: #0a0a0a;
+}
+
+.sp-heading-inline .sp-heading-accent {
+  color: #00448f;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .sp-tech-grid {

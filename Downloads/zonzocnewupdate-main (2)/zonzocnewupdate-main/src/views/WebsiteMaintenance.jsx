@@ -122,8 +122,8 @@ const WebsiteMaintenance = () => {
           <div className="wm-container">
             <div className="wm-section-head">
               <span className="wm-eyebrow">Our Services</span>
-              <h3 className="wm-section-title sp-heading-2line">
-                <span className="sp-heading-line">Comprehensive Website</span>
+              <h3 className="wm-section-title sp-heading-inline">
+                <span className="sp-heading-line">Comprehensive Website </span>
                 <span className="sp-heading-accent">Maintenance Services</span>
               </h3>
               <p className="wm-section-sub">
@@ -190,8 +190,8 @@ const WebsiteMaintenance = () => {
           <div className="wm-container">
             <div className="wm-section-head">
               <span className="wm-eyebrow">FAQ / Help</span>
-              <h6 className="wm-section-title sp-heading-2line">
-                <span className="sp-heading-line">Frequently Asked</span>
+              <h6 className="wm-section-title sp-heading-inline">
+                <span className="sp-heading-line">Frequently Asked </span>
                 <span className="sp-heading-accent">Questions</span>
               </h6>
             </div>

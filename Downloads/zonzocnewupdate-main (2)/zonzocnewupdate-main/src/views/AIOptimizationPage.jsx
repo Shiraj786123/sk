@@ -24,6 +24,13 @@ import heroImg from "../../public/images/aioptimization.png";
 
 const cta = serviceCtaContent['ai-seo'];
 
+const aisoHighlights = [
+  { icon: Sparkles, text: "Visibility across ChatGPT, Gemini, Perplexity & Google AI" },
+  { icon: Brain, text: "GEO & AEO strategies built for AI-generated answers" },
+  { icon: Target, text: "Entity optimization and topical authority AI models trust" },
+  { icon: Zap, text: "Future-proof growth as search shifts from links to answers" },
+];
+
 /* ── Inline SVG platform logos ─────────────────────────────────────────── */
 const ChatGPTIcon = () => (
   <svg viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
@@ -151,6 +158,17 @@ const AISearchOptimization = () => {
                 AI search engines no longer list links — they generate direct answers.
                 Businesses that aren't optimised for AI platforms are invisible to a growing share of their audience.
               </p>
+              <div className="sp-intro-checklist">
+                {aisoHighlights.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.text} className="sp-intro-check-item">
+                      <Icon size={16} />
+                      <span>{item.text}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
             <div className="what__right">
@@ -195,8 +213,8 @@ const AISearchOptimization = () => {
         <div className="pg__cont">
           <div className="sec__head">
             <span className="chip chip--purple">✦ Our Services</span>
-            <h4 className="sec__h2 sp-heading-2line">
-              <span className="sp-heading-line">Comprehensive AI SEO</span>
+            <h4 className="sec__h2 sp-heading-inline">
+              <span className="sp-heading-line">Comprehensive AI SEO </span>
               <span className="sp-heading-accent">Solutions</span>
             </h4>
             <p className="sec__intro">Eight integrated services that cover every dimension of AI search visibility.</p>
@@ -256,8 +274,8 @@ const AISearchOptimization = () => {
         <div className="pg__cont">
           <div className="sec__head">
             <span className="chip chip--blue">✦ FAQ</span>
-            <h6 className="sec__h2 sp-heading-2line">
-              <span className="sp-heading-line">Questions</span>
+            <h6 className="sec__h2 sp-heading-inline">
+              <span className="sp-heading-line">Questions </span>
               <span className="sp-heading-accent">Answered</span>
             </h6>
           </div>

@@ -112,8 +112,8 @@ const AISoftwareServices = () => {
         <div className="aiss-container">
           <div className="aiss-section-head">
             <span className="aiss-pill">Our AI Software Development Services</span>
-            <h3 className="aiss-section-title sp-heading-2line">
-              <span className="sp-heading-line">Intelligent Solutions. Smarter Operations.</span>
+            <h3 className="aiss-section-title sp-heading-inline">
+              <span className="sp-heading-line">Intelligent Solutions. Smarter Operations. </span>
               <span className="sp-heading-accent">Better Results.</span>
             </h3>
           </div>
@@ -142,8 +142,8 @@ const AISoftwareServices = () => {
       <section className="aiss-faq-section">
         <div className="aiss-container">
           <div className="aiss-section-head">
-            <h6 className="aiss-section-title sp-heading-2line">
-              <span className="sp-heading-line">Frequently Asked</span>
+            <h6 className="aiss-section-title sp-heading-inline">
+              <span className="sp-heading-line">Frequently Asked </span>
               <span className="sp-heading-accent">Questions</span>
             </h6>
           </div>

@@ -96,10 +96,17 @@ html body .sp-heading-2line .sp-heading-line {
   color: #0a0a0a !important;
 }
 
+html body .sp-heading-inline .sp-heading-line {
+  color: #0a0a0a !important;
+}
+
+html body .sp-heading-inline .sp-heading-accent {
+  color: #00448f !important;
+}
+
 html body .sp-heading-2line .sp-heading-accent,
 html body .sp-intro-marquee-accent,
 html body .ss-h2 .sp-heading-accent,
-html body .ss-h2 > span,
 html body .aiwd-text-blue,
 html body .aiwa-text-blue,
 html body .ecd__wrapper .ecd__heading .sp-heading-accent,

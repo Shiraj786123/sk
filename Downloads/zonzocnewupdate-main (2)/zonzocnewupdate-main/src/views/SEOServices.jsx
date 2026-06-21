@@ -116,8 +116,8 @@ const SEOServices = () => {
               <div className="ss-why-left">
                 <span className="ss-badge">Why SEO Matters</span>
                 <h3 className="ss-h2 sp-heading-2line sp-heading-2line--left">
-                  <span className="sp-heading-line">Get Found. Get Traffic.</span>
-                  <span className="sp-heading-accent">Grow Your Business.</span>
+                  <span className="sp-heading-line">Get Found.</span>
+                  <span className="sp-heading-accent">Get Traffic. Grow Your Business.</span>
                 </h3>
                 <p className="ss-p">
                   Search engines are the #1 source of traffic for businesses online. Our SEO
@@ -168,8 +168,8 @@ const SEOServices = () => {
           <div className="ss-container">
             <div className="ss-section-header">
               <span className="ss-badge">Our SEO Services</span>
-              <h4 className="ss-h2 sp-heading-2line">
-                <span className="sp-heading-line">Complete SEO Solutions to</span>
+              <h4 className="ss-h2 sp-heading-inline">
+                <span className="sp-heading-line">Complete SEO Solutions to </span>
                 <span className="sp-heading-accent">Boost Your Online Presence</span>
               </h4>
               <p className="ss-subtitle">
@@ -186,7 +186,6 @@ const SEOServices = () => {
                   </div>
                   <p className="ss-service-title sp-card-title-1l">{s.title}</p>
                   <p className="ss-service-desc sp-card-desc-3l">{s.description}</p>
-                  <a href="/contact" className="ss-learn-more">Learn More →</a>
                 </div>
               ))}
             </div>
@@ -204,9 +203,9 @@ const SEOServices = () => {
           <div className="ss-container">
             <div className="ss-section-header">
               <span className="ss-badge">Frequently Asked Questions</span>
-              <h6 className="ss-h2 sp-heading-2line">
-                <span className="sp-heading-line">SEO Services —</span>
-                <span className="sp-heading-accent">Frequently Asked Questions</span>
+              <h6 className="ss-h2 sp-heading-inline">
+                <span className="sp-heading-line">Frequently Asked </span>
+                <span className="sp-heading-accent">Questions</span>
               </h6>
             </div>
             <div className="ss-faq-grid">

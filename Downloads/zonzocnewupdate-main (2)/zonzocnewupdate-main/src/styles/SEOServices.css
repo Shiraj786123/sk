@@ -181,7 +181,8 @@ section.seo-hero .seo-sub {
 
 .ss-badge {
   display: inline-block;
-  padding: 8px 16px;
+  width: fit-content;
+  padding: 8px 14px;
   margin-bottom: 16px;
   background: #e8f0fb;
   color: #00448f;
@@ -206,10 +207,20 @@ section.seo-hero .seo-sub {
   margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
-.ss-h2 span,
-.ss-h2 .sp-heading-accent {
+.ss-h2.sp-heading-2line span,
+.ss-h2.sp-heading-2line .sp-heading-accent {
   color: #00448f;
   display: block;
+}
+
+.ss-h2.sp-heading-inline .sp-heading-line {
+  color: #0a0a0a;
+  display: inline;
+}
+
+.ss-h2.sp-heading-inline .sp-heading-accent {
+  color: #00448f;
+  display: inline;
 }
 
 .ss-subtitle {
@@ -549,6 +560,16 @@ section.seo-hero .seo-sub {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: flex-start;
+}
+
+.ss-why-left .ss-badge {
+  align-self: flex-start;
+  width: fit-content;
+}
+
+.ss-why-left .ss-h2.sp-heading-2line .sp-heading-accent {
+  white-space: nowrap;
 }
 
 .ss-check-list {
@@ -694,6 +715,7 @@ section.seo-hero .seo-sub {
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  height: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -756,19 +778,8 @@ section.seo-hero .seo-sub {
   line-height: 1.7;
   color: #6b7280;
   flex: 1;
-  margin-bottom: 14px;
+  margin: 0;
 }
-
-.ss-learn-more {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 700;
-  color: #00448f;
-  text-decoration: none;
-  transition: letter-spacing 0.2s;
-}
-
-.ss-learn-more:hover { letter-spacing: 0.02em; }
 
 /* ==========================================================================
    PROCESS — HORIZONTAL 5-STEP
@@ -1258,6 +1269,10 @@ section.seo-hero .seo-sub {
   .ss-why-grid, .ecd-why-grid, .fswd-why-grid, .aiss-intro-layout {
     grid-template-columns: 1fr !important;
     text-align: center !important;
+  }
+
+  .ss-why-left .ss-h2.sp-heading-2line .sp-heading-accent {
+    white-space: normal;
   }
 
   .ss-check-list, .ecd-checklist, .fswd-checklist, .aiss-intro-checklist {

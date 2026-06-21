@@ -151,8 +151,8 @@ const EcommerceDev = () => {
           <div className="ecd__container">
             <div className="ecd-section-head">
               <span className="ecd-eyebrow">Our Services</span>
-              <h4 className="ecd__heading sp-heading-2line">
-                <span className="sp-heading-line">Ecommerce Development &</span>
+              <h4 className="ecd__heading sp-heading-inline">
+                <span className="sp-heading-line">Ecommerce Development & </span>
                 <span className="sp-heading-accent">Optimization Services</span>
               </h4>
               <p className="ecd__subtitle">
@@ -239,8 +239,8 @@ const EcommerceDev = () => {
           <div className="ecd__container">
             <div className="ecd-section-head">
               <span className="ecd-eyebrow">FAQ</span>
-              <h6 className="ecd__heading sp-heading-2line">
-                <span className="sp-heading-line">Frequently Asked</span>
+              <h6 className="ecd__heading sp-heading-inline">
+                <span className="sp-heading-line">Frequently Asked </span>
                 <span className="sp-heading-accent">Questions</span>
               </h6>
             </div>
