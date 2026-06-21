@@ -6,19 +6,28 @@ const stats = [
   { number: '150+', label: 'Projects Delivered' },
   { number: '4.9★', label: 'Rated Agency' },
   { number: '35%', label: 'Avg Client Growth' },
-  { number: 'UK & USA', label: 'Focused' },
+  { number: 'UK & USA', label: 'Focused', ampersand: true },
 ];
 
 const TrustBar = () => {
   return (
     <section className="trust-bar">
       <p className="trust-bar-label">
-        Trusted by 120+ businesses across  <span className="sky-blue">UK,USA</span>  & Europe
+        Trusted by 120+ businesses across{' '}
+        <span className="trust-bar-accent">
+          UK, USA <span className="trust-bar-amp">&</span> Europe
+        </span>
       </p>
       <div className="trust-bar-stats">
         {stats.map((stat, i) => (
           <div key={i} className="trust-bar-item">
-            <span className="trust-bar-number">{stat.number}</span>
+            <span className="trust-bar-number">
+              {stat.ampersand ? (
+                <>UK <span className="trust-bar-amp">&</span> USA</>
+              ) : (
+                stat.number
+              )}
+            </span>
             <span className="trust-bar-label-text">{stat.label}</span>
           </div>
         ))}

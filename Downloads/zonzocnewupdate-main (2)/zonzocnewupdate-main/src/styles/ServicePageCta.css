@@ -22,7 +22,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: #38bdf8;
   margin-bottom: 16px;
 }
 
@@ -94,122 +94,67 @@ html body section.aiwd-cta-section .service-cta-text-blue {
   flex-shrink: 0;
 }
 
-.aiwd-cta-form {
-  background: #fff;
-  border-radius: 20px;
-  padding: 36px 32px;
+.aiwd-cta-right {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  align-items: flex-start;
+  width: 100%;
 }
 
-.aiwd-cta-form h3,
-.aiwd-cta-form-title {
+.service-cta-form-card.form-card,
+html body section.aiwd-cta-section .service-cta-form-card.contact-form-card--compact.form-card {
+  width: 100%;
+  height: auto;
+  padding: 36px 32px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+html body section.aiwd-cta-section .service-cta-form-card .form-title {
+  color: #003070 !important;
   font-size: 22px;
   font-weight: 800;
-  color: #003070;
-  margin: 0 0 4px;
+  margin: 0 0 14px;
   text-align: left;
 }
 
-.aiwd-form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+html body section.aiwd-cta-section .service-cta-form-card .contact-form {
   gap: 14px;
 }
 
-.aiwd-form-field {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 10px;
-  background: #f8fafc;
-  padding: 0 16px 0 14px;
-  box-sizing: border-box;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+html body section.aiwd-cta-section .service-cta-form-card .form-grid {
+  gap: 14px;
+  margin-bottom: 0;
 }
 
-.aiwd-form-field:focus-within {
-  border-color: #2563eb;
-  background: #fff;
-}
-
-.aiwd-form-field-icon {
-  position: static;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  color: #94a3b8;
-  pointer-events: none;
-}
-
-.aiwd-form-field:focus-within .aiwd-form-field-icon {
-  color: #2563eb;
-}
-
-.aiwd-form-input {
-  flex: 1;
-  min-width: 0;
-  width: auto;
-  padding: 13px 0;
-  border: none;
-  border-radius: 0;
+html body section.aiwd-cta-section .service-cta-form-card .contact-form input {
+  padding: 13px 12px 13px 42px;
   font-size: 15px;
-  font-family: inherit;
-  color: #003070;
-  background: transparent;
-  outline: none;
-  box-sizing: border-box;
-  appearance: none;
-  -webkit-appearance: none;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  border-radius: 10px;
 }
 
-.aiwd-form-field--select .aiwd-form-input {
-  padding-right: 24px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0 center;
-  background-size: 16px;
+html body section.aiwd-cta-section .service-cta-form-card .form-group.textarea-group {
+  height: 72px;
+  border-radius: 10px;
+  margin-bottom: 0;
 }
 
-.aiwd-form-input::placeholder {
-  color: #94a3b8;
+html body section.aiwd-cta-section .service-cta-form-card .form-group.textarea-group textarea {
+  padding: 10px 12px 10px 42px;
+  font-size: 14px;
 }
 
-.aiwd-form-field:focus-within .aiwd-form-input {
-  background-color: transparent;
+html body section.aiwd-cta-section .service-cta-form-card .textarea-icon {
+  top: 12px !important;
 }
 
-.aiwd-form-input:focus {
-  outline: none;
-}
-
-.aiwd-form-btn {
-  width: 100%;
+html body section.aiwd-cta-section .service-cta-form-card .submit-btn {
   padding: 15px 24px;
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: #fff;
   font-size: 16px;
-  font-weight: 700;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-family: inherit;
-  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3);
-  transition: all 0.28s ease;
+  margin-top: 0;
 }
 
-.aiwd-form-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.4);
+html body section.aiwd-cta-section .service-cta-form-card .contact-form input,
+html body section.aiwd-cta-section .service-cta-form-card .contact-form textarea {
+  color: #003070;
 }
 
 .service-cta-container {
@@ -245,26 +190,11 @@ html body section.aiwd-cta-section .service-cta-text-blue {
     width: 100%;
   }
 
-  .aiwd-cta-form {
-    padding: 25px 20px;
+  html body section.aiwd-cta-section .service-cta-form-card.form-card {
+    padding: 28px 20px;
   }
 
-  .aiwd-form-row {
+  html body section.aiwd-cta-section .service-cta-form-card .form-grid {
     grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .aiwd-form-field {
-    margin-bottom: 15px;
-  }
-
-  .aiwd-form-input,
-  .aiwd-form-btn {
-    width: 100% !important;
-    margin-bottom: 0;
-  }
-
-  .aiwd-form-btn {
-    margin-bottom: 0;
   }
 }

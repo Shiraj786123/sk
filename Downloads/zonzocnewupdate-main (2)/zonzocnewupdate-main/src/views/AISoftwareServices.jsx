@@ -21,6 +21,7 @@ import ServiceIndustriesSection from "../components/ServiceIndustriesSection";
 import ServiceProcessSection from "../components/ServiceProcessSection";
 import ServiceIntroMarqueeSection from "../components/ServiceIntroMarqueeSection";
 import ServiceWhyChooseSection from "../components/ServiceWhyChooseSection";
+import ServiceAiFeaturesSection from "../components/ServiceAiFeaturesSection";
 import { serviceCtaContent } from "../data/serviceCtaContent";
 import "../styles/AISoftwareServices.css";
 import "../styles/service-card-text-fix.css";
@@ -30,15 +31,6 @@ import heroImg from "../../public/images/aisoftware.png";
 const cta = serviceCtaContent['ai-software'];
 
 /* ─── DATA ──────────────────────────────────────────── */
-
-const stats = [
-  { number: "150+",  label: "Projects Delivered" },
-  { number: "120+",  label: "Happy Clients"       },
-  { number: "10+",   label: "Years Experience"    },
-  { number: "4.9★",  label: "Client Rating"       },
-  { number: "100%",  label: "Secure Solutions"    },
-  { number: "24/7",  label: "Support"             },
-];
 
 const services = [
   { icon: <Bot size={28} />,       title: "AI Chatbot Development",  desc: "Intelligent chatbots for support, lead generation, and automation." },
@@ -84,21 +76,6 @@ const techGroups = [
   },
 ];
 
-const aiFeatures = [
-  { icon: <Bot size={26} />,          label: "AI Chatbots"                   },
-  { icon: <Zap size={26} />,          label: "GPT-Powered Automation"        },
-  { icon: <Bell size={26} />,         label: "Smart Notifications"           },
-  { icon: <Workflow size={26} />,     label: "Workflow Automation"           },
-  { icon: <Activity size={26} />,     label: "Predictive Analytics"          },
-  { icon: <Search size={26} />,       label: "AI Search Systems"             },
-  { icon: <Target size={26} />,       label: "Lead Qualification Systems"    },
-  { icon: <FileBarChart size={26} />, label: "Automated Reporting"           },
-  { icon: <Database size={26} />,     label: "CRM Automation"                },
-  { icon: <Sparkles size={26} />,     label: "AI Content Assistance"         },
-  { icon: <UserCheck size={26} />,    label: "User Behavior Tracking"        },
-  { icon: <BarChart3 size={26} />,    label: "Data Visualization Dashboards" },
-];
-
 const faqs = [
   { question: "How much does AI software development cost in the USA, UK, or UAE?",  answer: "Pricing depends on the software scope, AI integrations, automation complexity, and technical requirements. Contact us for a free tailored quote with no hidden fees." },
   { question: "Can you integrate OpenAI or ChatGPT into existing systems?",           answer: "Yes. We integrate OpenAI APIs, ChatGPT, automation tools, and AI workflows into existing software platforms with minimal disruption to your operations." },
@@ -120,25 +97,13 @@ const AISoftwareServices = () => {
       {/* ═══ HERO SECTION (PASSED DIRECT AS OPTIMIZED NEXT.JS RESOURCE REFERENCE) ═══ */}
       <ServicePageHero
         badge="AI Software Development Company"
-        title="Custom AI Software Development That"
-        titleAccent="Automates Operations & Accelerates Growth"
+        title="Custom AI Software Development"
+        titleAccent="That Automates Operations & Accelerates Growth"
         subtitle="We design and build intelligent AI software solutions including custom chatbots, workflow automation systems, GPT-powered tools, and business integrations that reduce manual work and scale with your business."
         features={["Trusted in USA, UK & UAE", "5-Star Client Rating", "Enterprise-Ready Solutions"]}
         heroImage={heroImg?.src || heroImg} /* Safe URL string extractor */
         heroAlt="AI Software Development Performance Dashboards Illustration"
       />
-
-      {/* ═══ STATS BAR ═══ */}
-      <section className="aiss-stats-section">
-        <div className="aiss-stats-inner">
-          {stats.map((s, i) => (
-            <div key={i} className="aiss-stat-item">
-              <span className="aiss-stat-num">{s.number}</span>
-              <span className="aiss-stat-lbl">{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <ServiceIntroMarqueeSection serviceKey="ai-software" />
 
@@ -147,8 +112,9 @@ const AISoftwareServices = () => {
         <div className="aiss-container">
           <div className="aiss-section-head">
             <span className="aiss-pill">Our AI Software Development Services</span>
-            <p className="aiss-section-title">
-              Intelligent Solutions. Smarter Operations. Better Results.
+            <p className="aiss-section-title sp-heading-2line">
+              <span className="sp-heading-line">Intelligent Solutions. Smarter Operations.</span>
+              <span className="sp-heading-accent">Better Results.</span>
             </p>
           </div>
           <div className="aiss-services-grid">
@@ -170,28 +136,16 @@ const AISoftwareServices = () => {
 
       <ServiceIndustriesSection serviceKey="ai-software" />
 
-      {/* ═══ AI FEATURES GRID ═══ */}
-      <section className="aiss-features-section">
-        <div className="aiss-container">
-          <div className="aiss-section-head">
-            <span className="aiss-pill">AI Features We Can Integrate</span>
-          </div>
-          <div className="aiss-features-grid">
-            {aiFeatures.map((f, i) => (
-              <div key={i} className="aiss-feature-item">
-                <div className="aiss-feature-icon">{f.icon}</div>
-                <span className="aiss-feature-label">{f.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceAiFeaturesSection serviceKey="ai-software" />
 
       {/* ═══ FAQ SECTION ═══ */}
       <section className="aiss-faq-section">
         <div className="aiss-container">
           <div className="aiss-section-head">
-            <p className="aiss-section-title">Frequently Asked Questions</p>
+            <p className="aiss-section-title sp-heading-2line">
+              <span className="sp-heading-line">Frequently Asked</span>
+              <span className="sp-heading-accent">Questions</span>
+            </p>
           </div>
           <div className="aiss-faq-2col">
             {faqs.map((faq, i) => (

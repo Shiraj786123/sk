@@ -175,6 +175,71 @@
 .contact-form {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+
+.form-group.textarea-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #ffffff;
+  margin-bottom: 0;
+}
+
+.form-group.textarea-group textarea {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none !important;
+  background: transparent;
+  outline: none;
+  padding: 12px 16px 12px 42px;
+  min-height: 0;
+  box-sizing: border-box;
+  box-shadow: none !important;
+}
+
+.contact-card-footer {
+  margin-top: auto;
+  padding-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.contact-card-footer-label {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.contact-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #25D366;
+  padding: 11px 32px;
+  border-radius: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 240px;
+}
+
+.contact-whatsapp-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.28);
 }
 
 .form-grid {

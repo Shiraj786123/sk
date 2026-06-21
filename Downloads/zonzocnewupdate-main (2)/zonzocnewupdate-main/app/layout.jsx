@@ -1,4 +1,5 @@
 import ScrollToTop from "@/src/components/ScrollToTop";
+import GoogleAnalytics from "@/src/components/GoogleAnalytics";
 import { AuthProvider } from "@/src/context/AuthContext";
 import WhatsappFloat from "@/src/components/WhatsappFloat";
 import { Poppins } from "next/font/google";
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={poppins.className}>
+        <GoogleAnalytics />
         <AuthProvider>
           {children}
           <WhatsappFloat />

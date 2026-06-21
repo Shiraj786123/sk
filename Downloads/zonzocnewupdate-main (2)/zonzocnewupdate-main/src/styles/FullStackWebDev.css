@@ -150,7 +150,7 @@
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: #00448f;
   margin-bottom: 12px;
 }
 .fswd-eyebrow::before { content: '✦ '; opacity: .6; }
@@ -228,7 +228,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: #00448f;
   margin-bottom: 18px;
 }
 
@@ -315,7 +315,7 @@
 
 .fswd-intro-sitemap-card:hover {
   transform: translateY(-6px);
-  border-color: #2563eb;
+  border-color: #00448f;
   box-shadow: 0 16px 36px rgba(37, 99, 235, 0.12);
 }
 
@@ -364,7 +364,7 @@
 }
 
 .fswd-intro-check-icon {
-  color: #2563eb;
+  color: #00448f;
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -412,7 +412,7 @@
 
 .fswd-intro-icon-box.blue-accent {
   background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.15) 100%);
-  color: #2563eb;
+  color: #00448f;
   border: 1px dashed rgba(56, 189, 248, 0.3);
 }
 
@@ -430,7 +430,7 @@
 }
 
 .fswd-intro-card-arrow { transition: transform 0.25s ease; }
-.fswd-intro-sitemap-card:hover .fswd-intro-sitemap-card-footer { color: #2563eb; }
+.fswd-intro-sitemap-card:hover .fswd-intro-sitemap-card-footer { color: #00448f; }
 .fswd-intro-sitemap-card:hover .fswd-intro-card-arrow { transform: translateX(4px); }
 
 .fswd-intro-sitemap-line {

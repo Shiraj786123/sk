@@ -162,14 +162,9 @@ section.aiss__hero {
   box-shadow: 0 4px 20px rgba(0,0,0,.06);
 }
 
-/* Tighter vertical spacing — override global section padding */
-.aiss__wrapper > section.aiss-stats-section {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.aiss__wrapper > section.aiss-stats-section + section.sp-intro-marquee-section {
-  padding-top: 48px !important;
+/* Tighter vertical spacing after hero */
+.aiss__wrapper > section.sp-hero-split + section.sp-intro-marquee-section {
+  padding-top: 100px !important;
 }
 
 .aiss-stats-inner {
@@ -280,7 +275,7 @@ section.aiss__hero {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: #00448f;
   margin-bottom: 18px;
 }
 
@@ -336,7 +331,7 @@ section.aiss__hero {
 
 .aiss-intro-sitemap-card:hover {
   transform: translateY(-6px);
-  border-color: #2563eb;
+  border-color: #00448f;
   box-shadow: 0 16px 36px rgba(37, 99, 235, 0.12);
 }
 
@@ -385,7 +380,7 @@ section.aiss__hero {
 }
 
 .aiss-intro-check-icon {
-  color: #2563eb;
+  color: #00448f;
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -433,7 +428,7 @@ section.aiss__hero {
 
 .aiss-intro-icon-box.blue-accent {
   background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.15) 100%);
-  color: #2563eb;
+  color: #00448f;
   border: 1px dashed rgba(56, 189, 248, 0.3);
 }
 
@@ -456,7 +451,7 @@ section.aiss__hero {
 }
 
 .aiss-intro-sitemap-card:hover .aiss-intro-sitemap-card-footer {
-  color: #2563eb;
+  color: #00448f;
 }
 
 .aiss-intro-sitemap-card:hover .aiwd-intro-card-arrow {
@@ -1173,7 +1168,7 @@ section.aiss__hero {
 
   .aiss-industry-item:hover {
     background: #eff6ff !important;
-    border-color: #2563eb !important;
+    border-color: #00448f !important;
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(0, 48, 112, 0.05);
   }

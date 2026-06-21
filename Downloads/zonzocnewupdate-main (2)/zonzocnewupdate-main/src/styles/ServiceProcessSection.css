@@ -43,19 +43,13 @@
 
 .sp-process-heading .sp-heading-accent {
   color: #00448f;
-  background: #e8f0fb;
-  padding: 0 8px;
-  border-radius: 8px;
-  display: inline-block;
+  display: block;
   width: auto;
 }
 
 .sp-industries-title .sp-heading-accent {
   color: #00448f;
-  background: #e8f0fb;
-  padding: 0 8px;
-  border-radius: 8px;
-  display: inline-block;
+  display: block;
   width: auto;
 }
 

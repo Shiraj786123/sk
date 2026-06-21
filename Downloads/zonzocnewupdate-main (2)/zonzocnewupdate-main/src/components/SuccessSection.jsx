@@ -86,7 +86,7 @@ const SuccessSection = () => {
                 href={`/case-studies/${project.slug}`}
                 className="project-result-btn"
               >
-                View Our Results →
+                view our project
               </Link>
             </div>
           </div>

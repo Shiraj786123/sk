@@ -259,10 +259,24 @@
   gap: 6px;
 }
 
+.sp-heading-2line--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
 .sp-heading-2line .sp-heading-line,
 .sp-heading-2line .sp-heading-accent {
   display: block;
   width: 100%;
+}
+
+.sp-heading-2line .sp-heading-line {
+  color: #0a0a0a;
+}
+
+.sp-heading-2line .sp-heading-accent,
+.sp-intro-marquee-accent {
+  color: #00448f;
 }
 
 /* RESPONSIVE */
@@ -876,7 +890,7 @@
   overflow: hidden;
   padding: 64px 0 32px;
   min-height: auto;
-  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  background: var(--hero-bg);
 }
 
 .sp-hero-split-grid {
@@ -946,9 +960,9 @@
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  background: #1a73e8;
+  background: #38bdf8;
   color: #ffffff;
-  box-shadow: 0 8px 24px rgba(26, 115, 232, 0.35);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.35);
   transition: all 0.2s ease;
 }
 
@@ -1357,7 +1371,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: #38bdf8;
   margin-bottom: 16px;
   display: block;
 }
@@ -1627,7 +1641,6 @@ html body .pg__wrap .srv__desc.sp-card-desc-3l {
 
 html body .ss-service-title.sp-card-title-1l,
 html body .fswd-service-title.sp-card-title-1l,
-html body .ecd-service-title.sp-card-title-1l,
 html body .wm-service-title.sp-card-title-1l,
 html body .aiwa-service-card .sp-card-title-1l,
 html body .aiss-service-card .sp-card-title-1l,
@@ -1637,4 +1650,19 @@ html body .pg__wrap .srv__title.sp-card-title-1l {
   font-weight: 700 !important;
   color: #0a0a0a !important;
   line-height: 1.3 !important;
+}
+
+/* Ecommerce — single-line service titles, no ellipsis */
+html body .ecd__wrapper .ecd-service-title.sp-card-title-1l {
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+/* SEO — show full service titles (no ellipsis) */
+html body .seo-page .ss-service-title.sp-card-title-1l {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  word-wrap: break-word !important;
 }

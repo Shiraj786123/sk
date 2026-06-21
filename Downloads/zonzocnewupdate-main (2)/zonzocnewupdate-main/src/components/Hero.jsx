@@ -11,7 +11,9 @@ const Hero = ({ onCtaClick }) => {
           {/* Top Label / Pill Badge with Safe inline-span wrapper */}
           <span className="hero-badge">
             <span className="hero-badge-dot"></span>
-            <span className="hero-badge-text">Next-Gen Web Solutions</span>
+            <span className="hero-badge-text">
+              Next-Gen <span className="hero-badge-white">Web Solutions</span>
+            </span>
           </span>
 
           <h1 className="hero-main-title">

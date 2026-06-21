@@ -17,22 +17,12 @@ import ServiceIntroMarqueeSection from "../components/ServiceIntroMarqueeSection
 import ServiceWhyChooseSection from "../components/ServiceWhyChooseSection";
 import { serviceCtaContent } from "../data/serviceCtaContent";
 import "../styles/EcommercePage.css";
-
-import heroImg from "../../public/images/ecommerce.png";
+import "../styles/service-card-text-fix.css";
 
 const cta = serviceCtaContent.ecommerce;
 
 const EcommerceDev = () => {
   const [openFaq, setOpenFaq] = useState(null);
-
-  const stats = [
-    { icon: "🛒", number: "150+", label: "Stores Launched" },
-    { icon: "❤️", number: "98%",  label: "Client Satisfaction" },
-    { icon: "💰", number: "50M+", label: "Revenue Generated" },
-    { icon: "👥", number: "90+",  label: "Experts & Developers" },
-    { icon: "🕐", number: "24/7", label: "Support Available" },
-    { icon: "⭐", number: "5+",   label: "Years Experience" },
-  ];
 
   const withoutOpt = [
     "Slow Loading Speed",
@@ -53,14 +43,14 @@ const EcommerceDev = () => {
   ];
 
   const services = [
-    { icon: "🛍️", title: "Shopify Development",    description: "Custom Shopify stores built for performance, scalability, and conversions.",        link: "/shopify-development" },
-    { icon: "🧩", title: "WooCommerce Dev",        description: "WooCommerce solutions for growing brands and online businesses of every size.",       link: "/woocommerce-development" },
-    { icon: "🎨", title: "Ecommerce Design",         description: "Conversion-focused designs that enhance customer experience and drive sales.",      link: "/ecommerce-design" },
-    { icon: "📈", title: "Conversion Optimization", description: "Improve product pages, checkout flows, and journeys to increase revenue.",       link: "/cro" },
-    { icon: "📱", title: "Mobile Optimization",    description: "Mobile-first stores that drive more conversions from smartphone shoppers.",     link: "/mobile-optimization" },
-    { icon: "🔍", title: "Ecommerce SEO",          description: "Technical and product SEO to grow organic visibility and store traffic.",      link: "/ecommerce-seo" },
-    { icon: "⚡", title: "Speed Optimization",     description: "Improve Core Web Vitals, load speed, and overall store performance.",  link: "/speed-optimization" },
-    { icon: "⚙️", title: "Integrations",           description: "Payment gateways, CRM, inventory, and marketing automation integrations.", link: "/integrations" },
+    { icon: "🛍️", title: "Shopify Dev",        description: "Custom Shopify stores built for performance, scalability, and conversions." },
+    { icon: "🧩", title: "WooCommerce",        description: "WooCommerce solutions for growing brands and online businesses of every size." },
+    { icon: "🎨", title: "Store Design",       description: "Conversion-focused designs that enhance customer experience and drive sales." },
+    { icon: "📈", title: "CRO",                description: "Improve product pages, checkout flows, and journeys to increase revenue." },
+    { icon: "📱", title: "Mobile UX",          description: "Mobile-first stores that drive more conversions from smartphone shoppers." },
+    { icon: "🔍", title: "Store SEO",          description: "Technical and product SEO to grow organic visibility and store traffic." },
+    { icon: "⚡", title: "Page Speed",         description: "Improve Core Web Vitals, load speed, and overall store performance." },
+    { icon: "⚙️", title: "Integrations",       description: "Payment gateways, CRM, inventory, and marketing automation integrations." },
   ];
 
   const platforms = [
@@ -104,21 +94,10 @@ const EcommerceDev = () => {
             features={["Conversion-Focused Design", "Shopify & WooCommerce Experts", "Speed & SEO Optimized"]}
             primaryCta={{ href: "/contact", label: "Get Free Ecommerce Audit →" }}
             secondaryCta={{ href: "/case-studies", label: "See Our Works →" }}
-            heroImage={heroImg?.src || heroImg} /* Fixed source object string resolution */
+            heroImage="/images/ecommerce.png"
+            heroImageTransparent
             heroAlt="E-commerce Sales Performance Dashboard Analytics Grid"
           />
-        {/* ── STATS BAR ── */}
-        <section className="ecd-stats-bar" id="ecd-work">
-          <div className="ecd-stats-inner">
-            {stats.map((s, i) => (
-              <div key={i} className="ecd-stat-cell">
-                <span className="ecd-stat-icon">{s.icon}</span>
-                <span className="ecd-stat-num">{s.number}</span>
-                <span className="ecd-stat-lbl">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </section>
 
         <ServiceIntroMarqueeSection serviceKey="ecommerce" />
 
@@ -128,8 +107,9 @@ const EcommerceDev = () => {
             <div className="ecd-why-grid">
               <div className="ecd-why-left">
                 <span className="ecd-eyebrow">Why Stores Underperform</span>
-                <p className="ecd__heading ecd-why-heading">
-                  Great Products Deserve Better Ecommerce Experiences
+                <p className="ecd__heading ecd-why-heading sp-heading-2line sp-heading-2line--left">
+                  <span className="sp-heading-line">Great Products Deserve</span>
+                  <span className="sp-heading-accent">Better Ecommerce Experiences</span>
                 </p>
                 <p className="ecd__description ecd-why-desc">
                   Slow websites, poor design, complicated checkouts, and weak SEO cost businesses thousands of potential customers every month.
@@ -171,7 +151,10 @@ const EcommerceDev = () => {
           <div className="ecd__container">
             <div className="ecd-section-head">
               <span className="ecd-eyebrow">Our Services</span>
-              <p className="ecd__heading">Ecommerce Development & Optimization Services</p>
+              <p className="ecd__heading sp-heading-2line">
+                <span className="sp-heading-line">Ecommerce Development &</span>
+                <span className="sp-heading-accent">Optimization Services</span>
+              </p>
               <p className="ecd__subtitle">
                 Complete ecommerce solutions — from new store builds to performance optimization and conversion improvements.
               </p>
@@ -182,7 +165,6 @@ const EcommerceDev = () => {
                   <div className="ecd-service-icon-box">{svc.icon}</div>
                   <p className="ecd-service-title sp-card-title-1l">{svc.title}</p>
                   <p className="ecd-service-desc sp-card-desc-3l">{svc.description}</p>
-                  <a href={svc.link} className="ecd-learn-more">Learn More →</a>
                 </div>
               ))}
             </div>
@@ -230,7 +212,10 @@ const EcommerceDev = () => {
           <div className="ecd__container">
             <div className="ecd-section-head">
               <span className="ecd-eyebrow ecd-eyebrow--light">Real Results. Real Growth.</span>
-              <p className="ecd__heading ecd-white">Ecommerce Success Stories</p>
+              <p className="ecd__heading ecd-white sp-heading-2line">
+                <span className="sp-heading-line">Ecommerce Success</span>
+                <span className="sp-heading-accent">Stories</span>
+              </p>
             </div>
             <div className="ecd-results-grid">
               {results.map((r, i) => (
@@ -254,7 +239,10 @@ const EcommerceDev = () => {
           <div className="ecd__container">
             <div className="ecd-section-head">
               <span className="ecd-eyebrow">FAQ</span>
-              <p className="ecd__heading">Frequently Asked Questions</p>
+              <p className="ecd__heading sp-heading-2line">
+                <span className="sp-heading-line">Frequently Asked</span>
+                <span className="sp-heading-accent">Questions</span>
+              </p>
             </div>
             <div className="ecd-faq-list">
               {faqs.map((faq, i) => (

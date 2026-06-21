@@ -201,7 +201,7 @@
   justify-content: center !important;
   width: auto !important;
   max-width: 100% !important;
-  font-size: 8px !important;
+  font-size: 11px !important;
   gap: 4px !important;
   letter-spacing: 0.06em !important;
 }
@@ -209,7 +209,7 @@
 .cs__wrapper .breadcrumb-container .separator,
 .abt__wrapper .breadcrumb-container .separator,
 .cp__wrapper .breadcrumb-container .separator {
-  font-size: 8px !important;
+  font-size: 11px !important;
   margin-left: 1px !important;
   margin-right: 1px !important;
 }
@@ -221,6 +221,12 @@
     font-size: 8px !important;
     justify-content: center !important;
     width: auto !important;
+  }
+
+  .cs__wrapper .breadcrumb-container .separator,
+  .abt__wrapper .breadcrumb-container .separator,
+  .cp__wrapper .breadcrumb-container .separator {
+    font-size: 8px !important;
   }
 }
 

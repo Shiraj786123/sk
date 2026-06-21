@@ -20,6 +20,7 @@ import ServiceIndustriesSection from "../components/ServiceIndustriesSection";
 import ServiceProcessSection from "../components/ServiceProcessSection";
 import ServiceIntroMarqueeSection from "../components/ServiceIntroMarqueeSection";
 import ServiceWhyChooseSection from "../components/ServiceWhyChooseSection";
+import ServiceAiFeaturesSection from "../components/ServiceAiFeaturesSection";
 import { serviceCtaContent } from "../data/serviceCtaContent";
 import { serviceImages } from "../data/serviceImages";
 import "../styles/AIWebAppPage.css";
@@ -41,21 +42,6 @@ const AIWebAppDev = () => {
     { icon: <Users size={28} />,        title: "Customer Portals",           desc: "Secure portals with role-based access for your teams." },
     { icon: <FileBarChart size={28} />, title: "Analytics Platforms",        desc: "Analytics, KPI tracking, and automated reporting tools." },
     { icon: <Globe size={28} />,        title: "API Integrations",           desc: "Integrate payments, CRMs, cloud services, and APIs." },
-  ];
-
-  const aiFeatures = [
-    { icon: <Bot size={28} />,           label: "AI Chatbots"                 },
-    { icon: <RefreshCw size={28} />,     label: "Workflow Automation"           },
-    { icon: <Bell size={28} />,          label: "Smart Notifications"           },
-    { icon: <Activity size={28} />,      label: "Predictive Analytics"          },
-    { icon: <Sparkles size={28} />,      label: "AI Content Assistance"         },
-    { icon: <Cpu size={28} />,           label: "Recommendation Systems"        },
-    { icon: <Target size={28} />,        label: "Lead Qualification Systems"    },
-    { icon: <FileBarChart size={28} />,  label: "Automated Reporting"           },
-    { icon: <Users size={28} />,         label: "CRM Automation"                },
-    { icon: <UserCheck size={28} />,     label: "User Behavior Tracking"        },
-    { icon: <BarChart3 size={28} />,     label: "Data Visualization Dashboards" },
-    { icon: <Search size={28} />,        label: "AI Search & Filtering"         },
   ];
 
   const technologies = [
@@ -88,11 +74,12 @@ const AIWebAppDev = () => {
       {/* ── HERO ── */}
       <ServicePageHero
           badge="AI Web Application Development"
-          title="Custom AI Web Applications Built for"
-          titleAccent="Automation, Scalability & Growth"
+          title="Custom AI Web Applications"
+          titleAccent="Built for Automation, Scalability & Growth"
           subtitle="We design and build intelligent AI web applications that automate workflows, process data, and scale with your business — serving companies across the UK, USA, and worldwide."
           features={["AI Powered Solutions", "Scalable Architecture", "Secure & Reliable"]}
           heroImage={heroImg?.src || heroImg} /* Safe URL string extractor */
+          heroImageTransparent
           heroAlt="AI Web Application Development"
         />
 
@@ -102,7 +89,10 @@ const AIWebAppDev = () => {
         <div className="aiwa__container">
           <div className="aiwa-section-head">
             <span className="aiwa-pill">Our Services</span>
-            <p className="aiwa-section-title">AI Web Application Development Services</p>
+            <p className="aiwa-section-title sp-heading-2line">
+              <span className="sp-heading-line">AI Web Application</span>
+              <span className="sp-heading-accent">Development Services</span>
+            </p>
           </div>
           <div className="aiwa-services-grid">
             {services.map((svc, i) => (
@@ -123,27 +113,15 @@ const AIWebAppDev = () => {
 
       <ServiceIndustriesSection serviceKey="ai-web-app" />
 
-      {/* Feature section */}
-      <section className="aiwa-features-section">
-        <div className="aiwa__container">
-          <div className="aiwa-section-head">
-            <span className="aiwa-pill">AI Features We Can Integrate</span>
-          </div>
-          <div className="aiwa-features-grid">
-            {aiFeatures.map((f, i) => (
-              <div key={i} className="aiwa-feature-item">
-                <div className="aiwa-feature-icon">{f.icon}</div>
-                <span className="aiwa-feature-label">{f.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceAiFeaturesSection serviceKey="ai-web-app" />
 
       <section className="aiwa-faq-section">
         <div className="aiwa__container">
           <div className="aiwa-section-head">
-            <p className="aiwa-section-title">Frequently Asked Questions</p>
+            <p className="aiwa-section-title sp-heading-2line">
+              <span className="sp-heading-line">Frequently Asked</span>
+              <span className="sp-heading-accent">Questions</span>
+            </p>
           </div>
           <div className="aiwa-faq-2col">
             {faqs.map((faq, i) => (

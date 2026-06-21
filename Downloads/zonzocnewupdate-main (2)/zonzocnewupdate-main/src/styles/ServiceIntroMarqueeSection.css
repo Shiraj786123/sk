@@ -40,7 +40,7 @@
 .sp-intro-marquee-title {
   font-size: clamp(28px, 4.2vw, 44px);
   font-weight: 800;
-  color: #003070;
+  color: #0a0a0a;
   line-height: 1.15;
   margin: 0 0 20px;
   letter-spacing: -0.02em;
@@ -105,7 +105,7 @@
 
 .sp-intro-marquee-card:hover {
   transform: translateY(-6px);
-  border-color: #2563eb;
+  border-color: #00448f;
   box-shadow: 0 16px 36px rgba(37, 99, 235, 0.12);
 }
 
@@ -155,7 +155,7 @@
 }
 
 .sp-intro-check-icon {
-  color: #2563eb;
+  color: #00448f;
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -202,7 +202,7 @@
 
 .sp-intro-icon-box.blue-accent {
   background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.15) 100%);
-  color: #2563eb;
+  color: #00448f;
   border: 1px dashed rgba(56, 189, 248, 0.3);
 }
 

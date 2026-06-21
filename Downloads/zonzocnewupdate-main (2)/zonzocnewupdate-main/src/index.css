@@ -8,6 +8,8 @@
   --color-border: #e2e8f0;
   --color-bg-light: #f8faff;
 
+  --hero-bg: radial-gradient(circle at 70% 60%, #003d73 0%, #001b3a 60%, #000f21 100%);
+
   --font-b: var(--font-poppins), 'Poppins', system-ui, sans-serif;
   --font-family: var(--font-b);
 

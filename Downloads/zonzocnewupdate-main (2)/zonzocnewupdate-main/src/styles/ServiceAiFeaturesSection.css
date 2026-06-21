@@ -1,0 +1,119 @@
+/* Shared AI Features grid — bordered cards, 6-col layout, blue icon boxes */
+
+.sp-ai-features-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.sp-ai-features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sp-ai-features-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sp-ai-features-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #003070 0%, #00448f 100%);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 100px;
+}
+
+.sp-ai-features-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.sp-ai-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 12px;
+  border: 1.5px solid #e4eaf6;
+  border-radius: 16px;
+  text-align: center;
+  cursor: default;
+  transition: all 0.2s ease;
+  background: #ffffff;
+}
+
+.sp-ai-feature-item:hover {
+  border-color: #00448f;
+  background: #f0f7ff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0, 68, 143, 0.1);
+}
+
+.sp-ai-feature-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #003070 0%, #00448f 100%);
+  color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.sp-ai-feature-item:hover .sp-ai-feature-icon {
+  transform: scale(1.05);
+}
+
+.sp-ai-feature-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  line-height: 1.35;
+  min-height: calc(1.35em * 2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1100px) {
+  .sp-ai-features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sp-ai-features-section {
+    padding: 60px 0;
+  }
+
+  .sp-ai-features-container {
+    padding: 0 20px;
+  }
+
+  .sp-ai-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .sp-ai-feature-item {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-ai-features-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

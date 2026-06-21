@@ -1,7 +1,7 @@
 /* ================= HERO WRAPPER ================= */
 section.hero-section {
   position: relative !important;
-  background: radial-gradient(circle at 70% 60%, #003d73 0%, #001b3a 60%, #000f21 100%) !important;
+  background: var(--hero-bg) !important;
   color: #ffffff !important;
   padding: 105px 24px 95px 24px !important;
   text-align: center !important;
@@ -69,6 +69,10 @@ section.hero-section .hero-badge-text {
   text-transform: uppercase !important;
   letter-spacing: 0.06em !important;
   line-height: 1 !important;
+}
+
+section.hero-section .hero-badge-white {
+  color: #ffffff !important;
 }
 
 /* ================= TYPOGRAPHY ================= */

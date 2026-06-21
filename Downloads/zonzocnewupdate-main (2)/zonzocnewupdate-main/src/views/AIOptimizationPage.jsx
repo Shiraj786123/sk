@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Bot, Brain, Search, MessageSquare, Globe, Zap, Shield, TrendingUp,
-  CheckCircle2, Network, BookOpen, Code2, Target, Activity, Users,
-  Award, Clock, ThumbsUp, Database, Layers, BarChart3, ArrowRight,
+  Bot, Brain, Search, MessageSquare, Globe, Zap,
+  CheckCircle2, Network, BookOpen, Code2, Target, Activity,
+  Database, Layers, BarChart3, ArrowRight,
   Sparkles, Eye, Link2, FileText, Cpu, Plus, Minus
 } from "lucide-react";
 import Navbar from "../components/Navbar";
@@ -79,15 +79,6 @@ const BingIcon = () => (
 const AISearchOptimization = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
-  const stats = [
-    { number: "150+", label: "Projects", icon: <Award size={18} /> },
-    { number: "120+", label: "Clients", icon: <Users size={18} /> },
-    { number: "35%", label: "Avg Growth", icon: <TrendingUp size={18} /> },
-    { number: "4.9★", label: "Rating", icon: <ThumbsUp size={18} /> },
-    { number: "24/7", label: "Monitoring", icon: <Clock size={18} /> },
-    { number: "100%", label: "Transparent", icon: <Shield size={18} /> },
-  ];
-
   const services = [
     { icon: <Brain size={20} />, title: "Generative Engine SEO", abbr: "GEO", desc: "Optimize for AI-generated answers and cite-worthy content across engines." },
     { icon: <MessageSquare size={20} />, title: "ChatGPT Visibility", abbr: "AIO", desc: "Get your brand cited in conversational AI and LLM search platforms." },
@@ -134,39 +125,28 @@ const AISearchOptimization = () => {
       <ServicePageHero
           badge="AI SEARCH OPTIMIZATION SERVICES"
           title="Get Cited in AI Answers"
-          titleAccent="& Own the Future of Search"
+          titleAccent="and Own the Future of Search"
           subtitle="Search has evolved beyond traditional Google rankings. We help businesses stay visible across AI-powered platforms like ChatGPT, Perplexity, and Google AI Overviews — where customers now get answers directly."
           primaryCta={{ href: "/contact", label: "Get Free AI Search Audit →" }}
           secondaryCta={{ href: "#aiso-how", label: "See How It Works ↓" }}
           features={["GEO & AEO Expertise", "AI Platform Visibility", "Future-Proof Strategy"]}
           heroImage="/images/aioptimization.png"
-          heroAlt="AI Search Optimization and Generative Engine Optimization Diagnostics Setup"
+          heroImageTransparent
+          heroAlt="AI Search Optimization — robot and AI platform visibility illustration"
         />
-      {/* ── STATS BAR ──────────────────────────────────────────────── */}
-      <div className="sb" id="aiso-how">
-        <div className="sb__inner">
-          {stats.map((s, i) => (
-            <React.Fragment key={i}>
-              <div className="sb__item">
-                <span className="sb__icon">{s.icon}</span>
-                <strong className="sb__num">{s.number}</strong>
-                <span className="sb__lbl">{s.label}</span>
-              </div>
-              {i < stats.length - 1 && <div className="sb__sep" />}
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
 
       <ServiceIntroMarqueeSection serviceKey="ai-seo" />
 
       {/* ── WHAT WE DO ──────────────── */}
-      <section className="pg__sec pg__sec--white">
+      <section className="pg__sec pg__sec--white" id="aiso-how">
         <div className="pg__cont">
           <div className="what__grid" style={{ marginBottom: 40 }}>
             <div className="what__left">
               <span className="chip chip--blue">✦ What Is AI Search Optimization</span>
-              <p className="sec__h2">Search Is Evolving.<br/>Your Strategy Should Too.</p>
+              <p className="sec__h2 sp-heading-2line sp-heading-2line--left">
+                <span className="sp-heading-line">Search Is Evolving.</span>
+                <span className="sp-heading-accent">Your Strategy Should Too.</span>
+              </p>
               <p className="sec__p">
                 AI search engines no longer list links — they generate direct answers.
                 Businesses that aren't optimised for AI platforms are invisible to a growing share of their audience.
@@ -215,7 +195,10 @@ const AISearchOptimization = () => {
         <div className="pg__cont">
           <div className="sec__head">
             <span className="chip chip--purple">✦ Our Services</span>
-            <p className="sec__h2">Comprehensive AI SEO Solutions</p>
+            <p className="sec__h2 sp-heading-2line">
+              <span className="sp-heading-line">Comprehensive AI SEO</span>
+              <span className="sp-heading-accent">Solutions</span>
+            </p>
             <p className="sec__intro">Eight integrated services that cover every dimension of AI search visibility.</p>
           </div>
           <div className="srv__grid">
@@ -242,7 +225,10 @@ const AISearchOptimization = () => {
         <div className="pg__cont">
           <div className="sec__head">
             <span className="chip chip--purple">✦ Why Switch</span>
-            <p className="sec__h2">Traditional SEO vs AI Search Optimization</p>
+            <p className="sec__h2 sp-heading-2line">
+              <span className="sp-heading-line">Traditional SEO vs</span>
+              <span className="sp-heading-accent">AI Search Optimization</span>
+            </p>
           </div>
           <div className="cmp__table">
             <div className="cmp__head">
@@ -270,7 +256,10 @@ const AISearchOptimization = () => {
         <div className="pg__cont">
           <div className="sec__head">
             <span className="chip chip--blue">✦ FAQ</span>
-            <p className="sec__h2">Questions Answered</p>
+            <p className="sec__h2 sp-heading-2line">
+              <span className="sp-heading-line">Questions</span>
+              <span className="sp-heading-accent">Answered</span>
+            </p>
           </div>
           <div className="faq__wrap">
             {faqs.map((f, i) => (

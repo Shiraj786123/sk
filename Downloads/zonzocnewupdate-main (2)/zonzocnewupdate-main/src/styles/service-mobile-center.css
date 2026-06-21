@@ -265,6 +265,7 @@
     width: 100% !important;
   }
 
+  html body .sp-ai-feature-item,
   html body .aiwd-feature-item,
   html body .aiwa-feature-item,
   html body .aiwa-industry-item,

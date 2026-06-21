@@ -68,7 +68,7 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
-.chip--blue   { background: rgba(37,99,235,0.08);  color: #2563eb; border: 1px solid rgba(37,99,235,0.15); }
+.chip--blue   { background: rgba(0,68,143,0.08);  color: #00448f; border: 1px solid rgba(0,68,143,0.15); }
 .chip--purple { background: rgba(99,102,241,0.09); color: #6366f1; border: 1px solid rgba(99,102,241,0.18); }
 .chip--light  { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.22); }
 
@@ -274,7 +274,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: #00448f;
   margin-bottom: 18px;
 }
 
@@ -330,7 +330,7 @@
 
 .aiso-intro-sitemap-card:hover {
   transform: translateY(-6px);
-  border-color: #2563eb;
+  border-color: #00448f;
   box-shadow: 0 16px 36px rgba(37, 99, 235, 0.12);
 }
 
@@ -379,7 +379,7 @@
 }
 
 .aiso-intro-check-icon {
-  color: #2563eb;
+  color: #00448f;
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -427,7 +427,7 @@
 
 .aiso-intro-icon-box.blue-accent {
   background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.15) 100%);
-  color: #2563eb;
+  color: #00448f;
   border: 1px dashed rgba(56, 189, 248, 0.3);
 }
 
@@ -450,7 +450,7 @@
 }
 
 .aiso-intro-sitemap-card:hover .aiso-intro-sitemap-card-footer {
-  color: #2563eb;
+  color: #00448f;
 }
 
 .aiso-intro-sitemap-card:hover .aiwd-intro-card-arrow {
@@ -664,13 +664,13 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #6366f1, #818cf8);
+  background: linear-gradient(90deg, #003070, #00448f);
   opacity: 0;
   transition: opacity 0.22s;
 }
 .srv__card:hover {
-  border-color: #c7d2fe;
-  box-shadow: 0 8px 28px rgba(99,102,241,0.1);
+  border-color: rgba(0, 68, 143, 0.25);
+  box-shadow: 0 8px 28px rgba(0, 68, 143, 0.1);
   transform: translateY(-4px);
 }
 .srv__card:hover::after { opacity: 1; }
@@ -683,7 +683,7 @@
 }
 .srv__ico {
   width: 40px; height: 40px;
-  background: linear-gradient(135deg, #6366f1, #818cf8);
+  background: linear-gradient(135deg, #003070, #00448f);
   color: #fff;
   border-radius: 10px;
   display: flex;
@@ -694,8 +694,8 @@
 .srv__abbr {
   font-size: 12px;
   font-weight: 800;
-  color: #a5b4fc;
-  background: #eef2ff;
+  color: #00448f;
+  background: #e8f0fb;
   border-radius: 6px;
   padding: 3px 7px;
   letter-spacing: 0.05em;
@@ -988,12 +988,12 @@
 }
 .who__card:hover {
   border-color: #93c5fd;
-  box-shadow: 0 6px 20px rgba(37,99,235,0.09);
+  box-shadow: 0 6px 20px rgba(0,68,143,0.09);
   transform: translateY(-3px);
 }
 .who__num {
   width: 34px; height: 34px;
-  background: #2563eb;
+  background: #00448f;
   color: #fff;
   border-radius: 8px;
   display: flex;
@@ -1702,7 +1702,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #2563eb;
+  color: #00448f;
   margin-bottom: 18px;
 }
 
@@ -1758,7 +1758,7 @@
 
 .aiso-intro-sitemap-card:hover {
   transform: translateY(-6px);
-  border-color: #2563eb;
+  border-color: #00448f;
   box-shadow: 0 16px 36px rgba(37, 99, 235, 0.12);
 }
 
@@ -1807,7 +1807,7 @@
 }
 
 .aiso-intro-check-icon {
-  color: #2563eb;
+  color: #00448f;
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -1872,7 +1872,7 @@
 }
 
 .aiso-intro-sitemap-card:hover .aiso-intro-sitemap-card-footer {
-  color: #2563eb;
+  color: #00448f;
 }
 
 .aiso-intro-sitemap-card:hover .aiwd-intro-card-arrow {

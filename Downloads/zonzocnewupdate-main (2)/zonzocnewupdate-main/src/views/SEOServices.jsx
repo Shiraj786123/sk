@@ -17,21 +17,11 @@ import ServiceIntroMarqueeSection from "../components/ServiceIntroMarqueeSection
 import ServiceWhyChooseSection from "../components/ServiceWhyChooseSection";
 import { serviceCtaContent } from "../data/serviceCtaContent";
 import "../styles/SEOServices.css";
-import heroImg from "../../public/images/seoservices.png";
 
 const cta = serviceCtaContent.seo;
 
 const SEOServices = () => {
   const [openFaq, setOpenFaq] = useState(null);
-
-  const stats = [
-    { number: "150+", label: "Projects Completed" },
-    { number: "98%",  label: "Client Satisfaction" },
-    { number: "50M+", label: "Organic Traffic Generated" },
-    { number: "10+",  label: "Years of Experience" },
-    { number: "24/7", label: "Support Available" },
-    { number: "100%", label: "Transparent Reporting" },
-  ];
 
   const seoServices = [
     {
@@ -97,54 +87,6 @@ const SEOServices = () => {
           html body .seo-page > .topbar .topbar-inner {
             padding: 8px 24px !important;
           }
-
-          html body .seo-page > section.ss-stats-bar {
-            padding: 0 24px !important;
-            margin: 0 !important;
-            background: #fff !important;
-          }
-
-          html body .seo-page > section.ss-stats-bar .ss-stats-inner {
-            max-width: 1100px !important;
-            margin: 0 auto !important;
-            display: grid !important;
-            border: 1.5px solid #e2e8f0 !important;
-            border-radius: 16px !important;
-            box-shadow: 0 8px 36px rgba(0, 45, 98, .09) !important;
-            transform: translateY(-28px) !important;
-            background: #fff !important;
-            overflow: hidden !important;
-          }
-
-          @media (min-width: 769px) {
-            html body .seo-page > section.ss-stats-bar .ss-stats-inner {
-              grid-template-columns: repeat(6, 1fr) !important;
-            }
-          }
-
-          @media (max-width: 768px) {
-            html body .seo-page > section.ss-stats-bar {
-              padding: 0 16px !important;
-            }
-
-            html body .seo-page > section.ss-stats-bar .ss-stats-inner {
-              grid-template-columns: 1fr !important;
-              gap: 20px !important;
-              padding: 24px 16px !important;
-              transform: none !important;
-            }
-
-            html body .seo-page > section.ss-stats-bar .ss-stat-item {
-              border-right: none !important;
-              text-align: center !important;
-            }
-          }
-
-          @media (max-width: 480px) {
-            html body .seo-page > section.ss-stats-bar .ss-stats-inner {
-              grid-template-columns: 1fr !important;
-            }
-          }
         ` }} />
 
         <Navbar />
@@ -152,26 +94,16 @@ const SEOServices = () => {
         {/* ── HERO ── */}
         <ServicePageHero
           badge="SEO SERVICES"
-          title="SEO Built for Rankings, Traffic &"
-          titleAccent="Sustainable Growth"
+          title="SEO Built for Rankings and Traffic"
+          titleAccent="with Sustainable Growth"
           subtitle="ZonzocTech is an AI SEO agency helping small businesses and startups across the UK and USA grow their organic traffic, attract qualified leads and turn search visibility into real revenue — without the price tag of a big London agency."
           primaryCta={{ href: "/contact", label: "Get Your Free SEO Audit →" }}
-          secondaryCta={{ href: "#seo-results", label: "See Our Results ↓" }}
+          secondaryCta={{ href: "/case-studies", label: "See Our Work ↓" }}
           features={["Higher Rankings", "Qualified Organic Traffic", "Transparent Reporting"]}
-          heroImage={heroImg}
-          heroAlt="Search Engine Optimization Analytics and Targeted Growth Interface"
+          heroImage="/images/seoservices.png"
+          heroImageTransparent
+          heroAlt="SEO Services — targeted traffic, lead generation and growth illustration"
         />
-        {/* ── STATS BAR ──────────────────────────────────────────── */}
-        <section className="ss-stats-bar" id="seo-results">
-          <div className="ss-stats-inner">
-            {stats.map((s, i) => (
-              <div className="ss-stat-item" key={i}>
-                <span className="ss-stat-number">{s.number}</span>
-                <span className="ss-stat-label">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </section>
 
         <ServiceIntroMarqueeSection serviceKey="seo" />
 
@@ -183,8 +115,9 @@ const SEOServices = () => {
               {/* Left */}
               <div className="ss-why-left">
                 <span className="ss-badge">Why SEO Matters</span>
-                <p className="ss-h2">
-                  Get Found. Get Traffic.<br />Grow Your Business.
+                <p className="ss-h2 sp-heading-2line sp-heading-2line--left">
+                  <span className="sp-heading-line">Get Found. Get Traffic.</span>
+                  <span className="sp-heading-accent">Grow Your Business.</span>
                 </p>
                 <p className="ss-p">
                   Search engines are the #1 source of traffic for businesses online. Our SEO
@@ -235,8 +168,9 @@ const SEOServices = () => {
           <div className="ss-container">
             <div className="ss-section-header">
               <span className="ss-badge">Our SEO Services</span>
-              <p className="ss-h2">
-                Complete SEO Solutions to <span>Boost Your Online Presence</span>
+              <p className="ss-h2 sp-heading-2line">
+                <span className="sp-heading-line">Complete SEO Solutions to</span>
+                <span className="sp-heading-accent">Boost Your Online Presence</span>
               </p>
               <p className="ss-subtitle">
                 From technical SEO to content strategy and link building — everything your business
@@ -270,8 +204,9 @@ const SEOServices = () => {
           <div className="ss-container">
             <div className="ss-section-header">
               <span className="ss-badge">Frequently Asked Questions</span>
-              <p className="ss-h2">
-                SEO Services — <span>Frequently Asked Questions</span>
+              <p className="ss-h2 sp-heading-2line">
+                <span className="sp-heading-line">SEO Services —</span>
+                <span className="sp-heading-accent">Frequently Asked Questions</span>
               </p>
             </div>
             <div className="ss-faq-grid">

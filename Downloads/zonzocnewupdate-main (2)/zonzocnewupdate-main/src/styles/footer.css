@@ -86,7 +86,7 @@
 .footer-description {
   font-size: 14px;
   line-height: 1.6;
-  color: #00448f;
+  color: #0a0a0a;
   margin: 0;
   max-width: 300px;
 }
@@ -150,7 +150,7 @@
   color: #475569;
 }
 
-.highlight-row-icon { color: #2563eb; flex-shrink: 0; width: 16px; height: 16px; }
+.highlight-row-icon { color: #00448f; flex-shrink: 0; width: 16px; height: 16px; }
 
 /* ==========================================================================
    FOOTER NAVIGATION COLUMNS

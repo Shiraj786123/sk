@@ -20,23 +20,12 @@ import { serviceImages } from "../data/serviceImages";
 import "../styles/FullStackWebDev.css";
 import "../styles/service-card-text-fix.css";
 
-import heroImg from "../../public/images/fullstack.png";
-
 const cta = serviceCtaContent['full-stack'];
 
 const FullStackWebDev = () => {
   const [openFaq, setOpenFaq] = useState(null);
 
   /* ── DATA ─────────────────────────────────────── */
-  const stats = [
-    { icon: "🏆", number: "150+", label: "Projects Delivered" },
-    { icon: "❤️", number: "98%",  label: "Client Satisfaction" },
-    { icon: "👨‍💻", number: "50+",  label: "Expert Developers" },
-    { icon: "📅", number: "10+",  label: "Years Experience" },
-    { icon: "🕐", number: "24/7", label: "Support Available" },
-    { icon: "✅", number: "100%", label: "On-Time Delivery" },
-  ];
-
   const services = [
     { icon: "💻", title: "Custom Web Apps",       desc: "Tailored apps built to match your workflows and growth plans.",           link: "/web-development" },
     { icon: "🚀", title: "SaaS Development",      desc: "Scalable SaaS with subscriptions, dashboards, and user management.", link: "/saas-development" },
@@ -140,29 +129,15 @@ app.get('/api/health', (req, res) => {
       {/* ── HERO SECTION WITH OPTIMIZED NEXT.JS RESOURCE REFERENCE ── */}
       <ServicePageHero
         badge="FULL STACK WEB DEVELOPMENT"
-        title="Custom Full Stack Web Applications Built for"
-        titleAccent="Performance, Scalability & Growth"
+        title="Custom Full Stack Web Applications"
+        titleAccent="Built for Performance, Scalability & Growth"
         subtitle="We design and build bespoke, high-performance web applications, MVPs and SaaS platforms built to scale. We combine senior engineering talent with clean, maintainable code and conversion-focused UI/UX."
         features={["Scalable Architecture", "Modern Tech Stack", "On-Time Delivery"]}
         secondaryCta={{ href: "https://zonzoc-tech.netlify.app/", label: "View Portfolio →" }}
-        heroImage={heroImg?.src || heroImg} /* Safe URL string extractor */
+        heroImage="/images/fullstack.png"
+        heroImageTransparent
         heroAlt="Zonzoc Tech Full Stack Web Development Illustration"
       />
-
-      {/* ── STATS BAR — 6 items ───────────────────────── */}
-      <section className="fswd-stats-section">
-        <div className="fswd__container">
-          <div className="fswd-stats-box">
-            {stats.map((s, i) => (
-              <div key={i} className="fswd-stat-cell">
-                <span className="fswd-stat-icon">{s.icon}</span>
-                <span className="fswd-stat-num">{s.number}</span>
-                <span className="fswd-stat-lbl">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <ServiceIntroMarqueeSection serviceKey="full-stack" />
 
@@ -171,7 +146,10 @@ app.get('/api/health', (req, res) => {
         <div className="fswd__container">
           <div className="fswd-section-center">
             <span className="fswd-eyebrow">Our Services</span>
-            <p className="fswd-section-heading">Full Stack Web Development Services</p>
+            <p className="fswd-section-heading sp-heading-2line">
+              <span className="sp-heading-line">Full Stack Web Development</span>
+              <span className="sp-heading-accent">Services</span>
+            </p>
           </div>
           <div className="fswd-services-grid">
             {services.map((svc, i) => (
@@ -179,7 +157,6 @@ app.get('/api/health', (req, res) => {
                 <div className="fswd-service-icon-box">{svc.icon}</div>
                 <p className="fswd-service-title sp-card-title-1l">{svc.title}</p>
                 <p className="fswd-service-desc sp-card-desc-3l">{svc.desc}</p>
-                <a href={svc.link} className="fswd-learn-more">Learn More →</a>
               </div>
             ))}
           </div>
@@ -195,7 +172,10 @@ app.get('/api/health', (req, res) => {
         <div className="fswd__container">
           <div className="fswd-section-center">
             <span className="fswd-eyebrow">Real Results. Real Impact.</span>
-            <p className="fswd-section-heading">Solutions That Deliver Real Business Impact</p>
+            <p className="fswd-section-heading sp-heading-2line">
+              <span className="sp-heading-line">Solutions That Deliver</span>
+              <span className="sp-heading-accent">Real Business Impact</span>
+            </p>
           </div>
 
           <div className="fswd-cases-grid">
@@ -242,7 +222,10 @@ app.get('/api/health', (req, res) => {
             {/* Left — accordion */}
             <div className="fswd-faq-left">
               <span className="fswd-eyebrow">Frequently Asked Questions</span>
-              <p className="fswd-section-heading">Got Questions? We've Got Answers.</p>
+              <p className="fswd-section-heading sp-heading-2line">
+                <span className="sp-heading-line">Got Questions? We've Got</span>
+                <span className="sp-heading-accent">Answers.</span>
+              </p>
               <div className="fswd-faq-list">
                 {faqs.map((faq, i) => (
                   <div

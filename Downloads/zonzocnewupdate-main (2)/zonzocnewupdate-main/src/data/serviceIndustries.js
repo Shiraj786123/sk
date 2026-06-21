@@ -73,6 +73,8 @@ export const serviceIndustriesContent = {
       { icon: '🏢', label: 'Enterprise AI' },
       { icon: '⚡', label: 'Workflow Automation' },
       { icon: '🔌', label: 'API Development' },
+      { icon: '🧬', label: 'Custom AI Models' },
+      { icon: '📈', label: 'Predictive Analytics' },
     ],
   },
   'full-stack': {
@@ -90,6 +92,8 @@ export const serviceIndustriesContent = {
       { icon: '☁️', label: 'Cloud & DevOps' },
       { icon: '🗃️', label: 'Database Design' },
       { icon: '📱', label: 'Responsive Design' },
+      { icon: '✏️', label: 'UI/UX Design' },
+      { icon: '🧪', label: 'Testing & QA' },
     ],
   },
   ecommerce: {
@@ -107,6 +111,8 @@ export const serviceIndustriesContent = {
       { icon: '🔍', label: 'Ecommerce SEO' },
       { icon: '⚡', label: 'Speed Optimization' },
       { icon: '⚙️', label: 'Integrations' },
+      { icon: '💳', label: 'Payment Gateways' },
+      { icon: '🔄', label: 'Store Migration' },
     ],
   },
   'ai-seo': {
@@ -124,6 +130,8 @@ export const serviceIndustriesContent = {
       { icon: '💻', label: 'Structured Data' },
       { icon: '📖', label: 'AI Content Strategy' },
       { icon: '🎯', label: 'Topical Authority' },
+      { icon: '🔮', label: 'Perplexity Optimization' },
+      { icon: '💬', label: 'AEO Optimization' },
     ],
   },
   'website-maintenance': {

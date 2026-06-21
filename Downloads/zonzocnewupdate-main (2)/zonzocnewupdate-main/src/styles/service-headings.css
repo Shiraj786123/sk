@@ -31,6 +31,7 @@ html body .aiss__wrapper .aiss-section-title,
 html body .aiss__wrapper .aiss-intro-title,
 html body .aiwa__wrapper .aiwa-section-title,
 html body .aiwd-master-wrapper .aiwd-section-head p,
+html body .aiwd-master-wrapper .aiwd-diff-title,
 html body .wm__wrapper .wm-section-title,
 html body .pg__wrap .sec__h2,
 html body .sp-industries-title,
@@ -40,6 +41,35 @@ html body .sp-intro-marquee-title {
   font-weight: 800 !important;
   line-height: 1.2 !important;
   color: #0a0a0a !important;
+}
+
+html body .sp-heading-2line .sp-heading-line {
+  color: #0a0a0a !important;
+}
+
+html body .sp-heading-2line .sp-heading-accent,
+html body .sp-intro-marquee-accent,
+html body .ss-h2 .sp-heading-accent,
+html body .ss-h2 > span,
+html body .aiwd-text-blue,
+html body .aiwa-text-blue,
+html body .ecd__wrapper .ecd__heading .sp-heading-accent,
+html body .pg__wrap .sec__h2 .sp-heading-accent,
+html body .fswd__wrapper .fswd-section-heading .sp-heading-accent,
+html body .aiss__wrapper .aiss-section-title .sp-heading-accent,
+html body .aiwa__wrapper .aiwa-section-title .sp-heading-accent,
+html body .aiwd-master-wrapper .aiwd-section-title .sp-heading-accent,
+html body .aiwd-master-wrapper .aiwd-diff-title .sp-heading-accent,
+html body .wm__wrapper .wm-section-title .sp-heading-accent {
+  color: #00448f !important;
+}
+
+html body .ecd__heading.ecd-white .sp-heading-line {
+  color: #ffffff !important;
+}
+
+html body .ecd__heading.ecd-white .sp-heading-accent {
+  color: #38bdf8 !important;
 }
 
 html body .ecd__wrapper .ecd__heading.ecd-white {

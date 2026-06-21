@@ -6,7 +6,7 @@ import {
   Monitor, Rocket, Zap, RefreshCw, ShieldCheck,
   Search, Layout, Code, Palette, Microscope,
   Plus, Minus, Sparkles, ArrowRight,
-  Bot, Settings, Layers, CheckCircle2,
+  Bot, Settings, Layers,
   MessageSquare, Target, TrendingUp, Users, FileText,
   Calendar, UserCheck, PieChart, BarChart3
 } from "lucide-react";
@@ -20,6 +20,7 @@ import ServiceIndustriesSection from "../components/ServiceIndustriesSection";
 import ServiceProcessSection from "../components/ServiceProcessSection";
 import ServiceIntroMarqueeSection from "../components/ServiceIntroMarqueeSection";
 import ServiceWhyChooseSection from "../components/ServiceWhyChooseSection";
+import ServiceAiFeaturesSection from "../components/ServiceAiFeaturesSection";
 import { serviceCtaContent } from "../data/serviceCtaContent";
 import "../styles/AIWebsiteDesign.css";
 
@@ -29,6 +30,13 @@ const cta = serviceCtaContent['ai-website-design'];
 
 const AIWebsiteDesign = () => {
   const [activeFaq, setActiveFaq] = useState(null);
+
+  const aiDiffHighlights = [
+    { text: "AI-driven personalization that adapts content to each visitor", icon: Target },
+    { text: "Automated lead capture with smart forms and chatbots", icon: Bot },
+    { text: "Real-time behavior tracking and performance analytics", icon: BarChart3 },
+    { text: "Intelligent UX that guides users toward conversion actions", icon: Sparkles },
+  ];
 
   const aiDifferences = [
     { title: "Personalized Content",   description: "Show the right content to the right audience.",                        icon: Target,         colorClass: "diff-cyan" },
@@ -48,18 +56,6 @@ const AIWebsiteDesign = () => {
     { title: "Website Redesign",      icon: <RefreshCw size={30} />,  description: "Modern redesigns that reflect your brand and drive results." },
     { title: "Smart Automation",      icon: <Settings size={30} />,   description: "Automate forms, workflows, and messages to save time daily." },
     { title: "Support & Maintenance", icon: <ShieldCheck size={30} />,description: "Ongoing care to keep your site secure, fast, and up to date." },
-  ];
-
-  const aiFeatures = [
-    { title: "AI Chatbots",                icon: <Bot size={30} />        },
-    { title: "Smart Contact Forms",        icon: <FileText size={30} />   },
-    { title: "Lead Qualification Systems", icon: <Target size={30} />     },
-    { title: "AI Content Assistance",      icon: <Sparkles size={30} />   },
-    { title: "Workflow Automation",        icon: <Settings size={30} />   },
-    { title: "CRM Integrations",           icon: <Users size={30} />      },
-    { title: "Booking & Scheduling",       icon: <Calendar size={30} />   },
-    { title: "Personalized Experiences",   icon: <UserCheck size={30} />  },
-    { title: "Analytics & Tracking",       icon: <PieChart size={30} />   },
   ];
 
   const faqs = [
@@ -105,8 +101,8 @@ const AIWebsiteDesign = () => {
       {/* ═══ HERO ═══ */}
       <ServicePageHero
         badge="AI Website Design & Development Services"
-        title="AI-Powered Website Design That"
-        titleAccent="Converts Visitors Into Customers"
+          title="AI-Powered Website Design"
+          titleAccent="That Converts Visitors Into Customers"
         subtitle="We build high-performing AI-powered websites for businesses in the UK, USA, and worldwide — combining modern design, smart automation, and conversion-focused development to turn traffic into real results."
         features={heroFeatures}
         heroImage={heroImg}
@@ -121,16 +117,30 @@ const AIWebsiteDesign = () => {
           <div className="aiwd-diff-layout">
             <div className="aiwd-diff-left">
               <span className="aiwd-section-pill">Why AI Websites?</span>
-              <p className="aiwd-diff-title">
-                What Makes{" "}
-                <span className="aiwd-text-blue">AI-Powered Websites</span>{" "}
-                Different?
+              <p className="aiwd-diff-title sp-heading-2line sp-heading-2line--left">
+                <span className="sp-heading-line">What Makes AI-Powered Websites</span>
+                <span className="sp-heading-accent">Different?</span>
               </p>
               <p className="aiwd-diff-desc">
                 AI-powered websites use smart automation, personalization, and intelligent
                 user experiences to improve customer engagement and increase conversions.
               </p>
-              <a href="#" className="aiwd-diff-link">Explore the Benefits →</a>
+              <p className="aiwd-diff-desc">
+                From smarter landing pages to automated customer journeys, AI websites help
+                businesses capture more leads, reduce manual work, and deliver experiences
+                that feel tailored to every visitor.
+              </p>
+              <div className="sp-intro-checklist">
+                {aiDiffHighlights.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.text} className="sp-intro-check-item">
+                      <Icon size={16} />
+                      <span>{item.text}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             <div className="aiwd-diff-right">
               <div className="aiwd-diff-grid">
@@ -157,10 +167,9 @@ const AIWebsiteDesign = () => {
         <div className="aiwd-container">
           <div className="aiwd-section-head">
             <span className="aiwd-section-pill">Our Services</span>
-            <p className="aiwd-section-title">
-              AI Website{" "}
-              <span className="aiwd-text-blue">Design &amp; Development</span>{" "}
-              Services
+            <p className="aiwd-section-title sp-heading-2line">
+              <span className="sp-heading-line">AI Website Design & Development</span>
+              <span className="sp-heading-accent">Services</span>
             </p>
           </div>
           <div className="aiwd-services-grid">
@@ -179,22 +188,7 @@ const AIWebsiteDesign = () => {
 
       <ServiceProcessSection serviceKey="ai-website-design" />
 
-      {/* ═══ SECTION 5 ═══ */}
-      <section className="aiwd-features-section">
-        <div className="aiwd-container">
-          <div className="aiwd-section-head">
-            <span className="aiwd-section-pill">AI Features We Can Integrate</span>
-          </div>
-          <div className="aiwd-features-grid">
-            {aiFeatures.map((f, i) => (
-              <div key={i} className="aiwd-feature-item">
-                <div className="aiwd-feature-icon">{f.icon}</div>
-                <span className="aiwd-feature-label">{f.title}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceAiFeaturesSection serviceKey="ai-website-design" />
 
       <ServiceIndustriesSection serviceKey="ai-website-design" />
 
@@ -202,7 +196,10 @@ const AIWebsiteDesign = () => {
       <section className="aiwd-faq-section">
         <div className="aiwd-container">
           <div className="aiwd-section-head">
-            <p className="aiwd-section-title">Frequently Asked Questions</p>
+            <p className="aiwd-section-title sp-heading-2line">
+              <span className="sp-heading-line">Frequently Asked</span>
+              <span className="sp-heading-accent">Questions</span>
+            </p>
           </div>
           <div className="aiwd-faq-2col">
             {faqs.map((faq, i) => (

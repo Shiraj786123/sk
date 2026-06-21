@@ -3,6 +3,7 @@
 html body .aiwa__wrapper .aiwa-service-card p.sp-card-title-1l,
 html body .aiss__wrapper .aiss-service-card p.sp-card-title-1l,
 html body .fswd__wrapper .fswd-service-title.sp-card-title-1l,
+html body .ecd__wrapper .ecd-service-title.sp-card-title-1l,
 html body .wm__wrapper .wm-service-title.sp-card-title-1l {
   font-size: 16px !important;
   font-weight: 700 !important;
@@ -21,6 +22,7 @@ html body .wm__wrapper .wm-service-title.sp-card-title-1l {
 html body .aiwa__wrapper .aiwa-service-card p.sp-card-desc-3l,
 html body .aiss__wrapper .aiss-service-card p.sp-card-desc-3l,
 html body .fswd__wrapper .fswd-service-desc.sp-card-desc-3l,
+html body .ecd__wrapper .ecd-service-desc.sp-card-desc-3l,
 html body .wm__wrapper .wm-service-desc.sp-card-desc-3l {
   font-size: 14px !important;
   color: #6b7280 !important;

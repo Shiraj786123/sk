@@ -22,14 +22,6 @@ const cta = serviceCtaContent['website-maintenance'];
 const WebsiteMaintenance = () => {
   const [activeFaq, setActiveFaq] = useState(null);
 
-  const stats = [
-    { icon: "🖥️", number: "150+", label: "Websites Maintained" },
-    { icon: "😊", number: "120+", label: "Happy Clients" },
-    { icon: "📈", number: "99.9%", label: "Average Uptime" },
-    { icon: "⭐", number: "4.9★", label: "Client Rating" },
-    { icon: "🕐", number: "24/7", label: "Support Available" },
-  ];
-
   const services = [
     { icon: "🛡️", title: "Security Monitoring", description: "24/7 monitoring to detect malware, threats, and vulnerabilities." },
     { icon: "⚡", title: "Performance Tuning", description: "Improve speed, Core Web Vitals, caching, and database performance." },
@@ -113,7 +105,7 @@ const WebsiteMaintenance = () => {
         {/* ── HERO ── */}
         <ServicePageHero
             badge="WEBSITE MAINTENANCE & SECURITY"
-            title="Website Maintenance, Performance &"
+            title="Website Maintenance and Performance"
             titleAccent="Security Services for UK, USA & UAE Businesses"
             subtitle="ZonzocTech provides professional website maintenance, performance and security services for businesses across the UK, USA and UAE. We monitor, protect and optimise your website around the clock — so you can focus on running your business."
             features={["Speed Optimized", "Secure & Protected", "24/7 Monitoring"]}
@@ -122,27 +114,18 @@ const WebsiteMaintenance = () => {
             heroImage={imgs.hero?.src || imgs.hero} /* Safeguards static Webpack object resolution */
             heroAlt={imgs.heroAlt}
           />
-        {/* ── STATS BAR ─────────────────────────────── */}
-        <section className="wm-stats-bar" id="wm-services">
-          <div className="wm-stats-inner">
-            {stats.map((s, i) => (
-              <div key={i} className="wm-stat-cell">
-                <span className="wm-stat-icon">{s.icon}</span>
-                <span className="wm-stat-num">{s.number}</span>
-                <span className="wm-stat-lbl">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </section>
 
         <ServiceIntroMarqueeSection serviceKey="website-maintenance" />
 
         {/* ── SECTION 2 — SERVICES ──────────────────── */}
-        <section className="wm-services-section">
+        <section className="wm-services-section" id="wm-services">
           <div className="wm-container">
             <div className="wm-section-head">
               <span className="wm-eyebrow">Our Services</span>
-              <p className="wm-section-title">Comprehensive Website Maintenance Services</p>
+              <p className="wm-section-title sp-heading-2line">
+                <span className="sp-heading-line">Comprehensive Website</span>
+                <span className="sp-heading-accent">Maintenance Services</span>
+              </p>
               <p className="wm-section-sub">
                 Complete website care covering performance, security, updates and monitoring — everything your website needs to stay fast and stable.
               </p>
@@ -169,7 +152,10 @@ const WebsiteMaintenance = () => {
           <div className="wm-container">
             <div className="wm-section-head">
               <span className="wm-eyebrow wm-eyebrow--blue">Care Plans</span>
-              <p className="wm-section-title">Website Care Plans for Every Business</p>
+              <p className="wm-section-title sp-heading-2line">
+                <span className="sp-heading-line">Website Care Plans for</span>
+                <span className="sp-heading-accent">Every Business</span>
+              </p>
               <p className="wm-section-sub">
                 Choose the plan that fits your website size, traffic, and support needs.
               </p>
@@ -204,7 +190,10 @@ const WebsiteMaintenance = () => {
           <div className="wm-container">
             <div className="wm-section-head">
               <span className="wm-eyebrow">FAQ / Help</span>
-              <p className="wm-section-title">Frequently Asked Questions</p>
+              <p className="wm-section-title sp-heading-2line">
+                <span className="sp-heading-line">Frequently Asked</span>
+                <span className="sp-heading-accent">Questions</span>
+              </p>
             </div>
 
             <div className="sp-faq-box-grid">

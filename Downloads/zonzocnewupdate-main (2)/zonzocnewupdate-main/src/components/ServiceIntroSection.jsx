@@ -2,7 +2,18 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { CheckCircle2, Monitor, Code2 } from 'lucide-react';
+import {
+  Monitor,
+  Code2,
+  Target,
+  Bot,
+  BarChart3,
+  Sparkles,
+  TrendingUp,
+  Shield,
+} from 'lucide-react';
+
+const CHECKLIST_ICONS = [Target, Bot, BarChart3, Sparkles, TrendingUp, Shield];
 
 const ServiceIntroSection = ({
   label,
@@ -44,12 +55,19 @@ const ServiceIntroSection = ({
           </h2>
           <p className="sp-intro-desc">{description}</p>
           <div className="sp-intro-checklist">
-            {checklist.map((item) => (
-              <div key={item} className="sp-intro-check-item">
-                <CheckCircle2 size={17} />
-                <span>{item}</span>
-              </div>
-            ))}
+            {checklist.map((item, index) => {
+              const text = typeof item === 'string' ? item : item.text;
+              const Icon =
+                typeof item === 'object' && item.icon
+                  ? item.icon
+                  : CHECKLIST_ICONS[index % CHECKLIST_ICONS.length];
+              return (
+                <div key={text} className="sp-intro-check-item">
+                  <Icon size={16} />
+                  <span>{text}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

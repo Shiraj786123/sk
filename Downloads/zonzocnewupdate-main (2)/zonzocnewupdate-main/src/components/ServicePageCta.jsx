@@ -1,9 +1,10 @@
 'use client';
 
 import React from 'react';
-import { Clock, ShieldCheck, Target, User, Mail, Phone, Briefcase } from 'lucide-react';
-import { CTA_MOBILE_CSS } from '../styles/serviceCtaInline';
+import { Clock, ShieldCheck, Target } from 'lucide-react';
+import ContactFormCard from './ContactFormCard';
 import '../styles/ServicePageCta.css';
+import '../styles/service-cta-mobile.css';
 
 const DEFAULT_CHECKS = [
   { text: 'We usually respond within 1–3 business hours', icon: Clock },
@@ -28,67 +29,41 @@ const ServicePageCta = ({
   titleBefore,
   titleAccent,
   description,
-  serviceOptions = [],
+  defaultMessage = '',
   checks = DEFAULT_CHECKS,
 }) => {
   const checkItems = normalizeChecks(checks);
+  const prefilledMessage =
+    defaultMessage ||
+    (titleAccent ? `I'm interested in ${titleAccent.replace('?', '').trim()}.` : '');
 
   return (
     <section className="aiwd-cta-section">
-    <div className="service-cta-container">
-      <div className="aiwd-cta-inner">
-        <div className="aiwd-cta-left">
-          <span className="aiwd-cta-label">{label}</span>
-          <p className="aiwd-cta-big-title">
-            <span className="service-cta-text-white">{titleBefore}</span>{' '}
-            {titleAccent && <span className="service-cta-text-blue">{titleAccent}</span>}
-          </p>
-          <p className="aiwd-cta-desc">{description}</p>
-          <div className="aiwd-cta-checks">
-            {checkItems.map(({ text, icon: Icon }) => (
-              <div key={text} className="aiwd-cta-check-row">
-                <span className="aiwd-cta-bullet-icon" aria-hidden="true">
-                  <Icon size={16} strokeWidth={2.25} />
-                </span>
-                <span>{text}</span>
-              </div>
-            ))}
+      <div className="service-cta-container">
+        <div className="aiwd-cta-inner">
+          <div className="aiwd-cta-left">
+            <span className="aiwd-cta-label">{label}</span>
+            <p className="aiwd-cta-big-title">
+              <span className="service-cta-text-white">{titleBefore}</span>{' '}
+              {titleAccent && <span className="service-cta-text-blue">{titleAccent}</span>}
+            </p>
+            <p className="aiwd-cta-desc">{description}</p>
+            <div className="aiwd-cta-checks">
+              {checkItems.map(({ text, icon: Icon }) => (
+                <div key={text} className="aiwd-cta-check-row">
+                  <span className="aiwd-cta-bullet-icon" aria-hidden="true">
+                    <Icon size={16} strokeWidth={2.25} />
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="aiwd-cta-right">
-          <div className="aiwd-cta-form">
-            <p className="aiwd-cta-form-title">Get Free Consultation</p>
-            <div className="aiwd-form-row">
-              <div className="aiwd-form-field">
-                <User className="aiwd-form-field-icon" size={18} aria-hidden="true" />
-                <input type="text" placeholder="Your Name*" className="aiwd-form-input" />
-              </div>
-              <div className="aiwd-form-field">
-                <Mail className="aiwd-form-field-icon" size={18} aria-hidden="true" />
-                <input type="email" placeholder="Email Address*" className="aiwd-form-input" />
-              </div>
-            </div>
-            <div className="aiwd-form-row">
-              <div className="aiwd-form-field">
-                <Phone className="aiwd-form-field-icon" size={18} aria-hidden="true" />
-                <input type="tel" placeholder="Phone Number*" className="aiwd-form-input" />
-              </div>
-              <div className="aiwd-form-field aiwd-form-field--select">
-                <Briefcase className="aiwd-form-field-icon" size={18} aria-hidden="true" />
-                <select className="aiwd-form-input" defaultValue="">
-                  <option value="">Select a Service</option>
-                  {serviceOptions.map((option) => (
-                    <option key={option} value={option}>{option}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-            <button type="button" className="aiwd-form-btn">Send Message →</button>
+          <div className="aiwd-cta-right">
+            <ContactFormCard className="service-cta-form-card" defaultMessage={prefilledMessage} compact />
           </div>
         </div>
       </div>
-    </div>
-      <style suppressHydrationWarning dangerouslySetInnerHTML={{ __html: CTA_MOBILE_CSS }} />
     </section>
   );
 };
