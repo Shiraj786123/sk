@@ -152,8 +152,8 @@ const WebsiteMaintenance = () => {
           <div className="wm-container">
             <div className="wm-section-head">
               <span className="wm-eyebrow wm-eyebrow--blue">Care Plans</span>
-              <h5 className="wm-section-title sp-heading-2line">
-                <span className="sp-heading-line">Website Care Plans for</span>
+              <h5 className="wm-section-title sp-heading-inline">
+                <span className="sp-heading-line">Website Care Plans for </span>
                 <span className="sp-heading-accent">Every Business</span>
               </h5>
               <p className="wm-section-sub">

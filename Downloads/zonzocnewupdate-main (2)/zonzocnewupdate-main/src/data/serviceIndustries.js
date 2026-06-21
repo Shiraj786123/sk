@@ -149,6 +149,8 @@ export const serviceIndustriesContent = {
       { icon: '🔧', label: 'Technical Support' },
       { icon: '📊', label: 'SEO Health Monitoring' },
       { icon: '📡', label: 'Uptime Monitoring' },
+      { icon: '🔄', label: 'Plugin & Theme Updates' },
+      { icon: '🔐', label: 'SSL & HTTPS Management' },
     ],
   },
 };

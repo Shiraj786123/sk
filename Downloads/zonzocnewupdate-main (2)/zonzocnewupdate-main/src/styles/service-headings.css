@@ -226,6 +226,10 @@ html body .pg__wrap .wc__title {
   color: #0a0a0a !important;
 }
 
+html body .wm__wrapper .wm-plan-card--popular .wm-plan-name {
+  color: #ffffff !important;
+}
+
 /* Sub-card / marquee item titles */
 html body .seo-page .ss-intro-sitemap-card-title,
 html body .fswd__wrapper .fswd-intro-sitemap-card-title,
