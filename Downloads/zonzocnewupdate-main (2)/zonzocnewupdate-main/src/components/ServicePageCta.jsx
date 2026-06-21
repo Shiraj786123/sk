@@ -31,8 +31,10 @@ const ServicePageCta = ({
   description,
   defaultMessage = '',
   checks = DEFAULT_CHECKS,
+  headingTag = 'h6',
 }) => {
   const checkItems = normalizeChecks(checks);
+  const HeadingTag = headingTag;
   const prefilledMessage =
     defaultMessage ||
     (titleAccent ? `I'm interested in ${titleAccent.replace('?', '').trim()}.` : '');
@@ -43,10 +45,10 @@ const ServicePageCta = ({
         <div className="aiwd-cta-inner">
           <div className="aiwd-cta-left">
             <span className="aiwd-cta-label">{label}</span>
-            <p className="aiwd-cta-big-title">
+            <HeadingTag className="aiwd-cta-big-title">
               <span className="service-cta-text-white">{titleBefore}</span>{' '}
               {titleAccent && <span className="service-cta-text-blue">{titleAccent}</span>}
-            </p>
+            </HeadingTag>
             <p className="aiwd-cta-desc">{description}</p>
             <div className="aiwd-cta-checks">
               {checkItems.map(({ text, icon: Icon }) => (

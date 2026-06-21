@@ -43,8 +43,13 @@
 }
 
 /* Beat global heading overrides on dark CTA background */
-html body section.aiwd-cta-section .aiwd-cta-big-title {
+html body section.aiwd-cta-section .aiwd-cta-big-title,
+html body section.aiwd-cta-section h6.aiwd-cta-big-title {
   color: #ffffff !important;
+  font-size: clamp(28px, 3.2vw, 40px) !important;
+  font-weight: 800 !important;
+  line-height: 1.18 !important;
+  margin: 0 0 18px !important;
 }
 
 html body section.aiwd-cta-section .service-cta-text-white {

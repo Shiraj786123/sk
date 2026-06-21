@@ -85,9 +85,11 @@ const MarqueeTrack = ({ items }) => (
   </div>
 );
 
-const ServiceIntroMarqueeSection = ({ serviceKey, marqueeOnly = false }) => {
+const ServiceIntroMarqueeSection = ({ serviceKey, marqueeOnly = false, headingTag = 'p' }) => {
   const content = serviceIntroMarqueeContent[serviceKey];
   if (!content?.items?.length) return null;
+
+  const HeadingTag = headingTag;
 
   if (marqueeOnly) {
     return <MarqueeTrack items={content.items} />;
@@ -98,10 +100,10 @@ const ServiceIntroMarqueeSection = ({ serviceKey, marqueeOnly = false }) => {
       <div className="sp-intro-marquee-container">
         <div className="sp-intro-marquee-content">
           <span className="sp-intro-marquee-label">{content.label}</span>
-          <p className="sp-intro-marquee-title sp-heading-2line">
+          <HeadingTag className="sp-intro-marquee-title sp-heading-2line">
             <span className="sp-heading-line">{content.title}</span>
             <span className="sp-intro-marquee-accent sp-heading-accent">{content.titleAccent}</span>
-          </p>
+          </HeadingTag>
           <p className="sp-intro-marquee-desc">{content.description}</p>
           <MarqueeTrack items={content.items} />
         </div>

@@ -105,17 +105,17 @@ const AISoftwareServices = () => {
         heroAlt="AI Software Development Performance Dashboards Illustration"
       />
 
-      <ServiceIntroMarqueeSection serviceKey="ai-software" />
+      <ServiceIntroMarqueeSection serviceKey="ai-software" headingTag="h2" />
 
       {/* ═══ SERVICES GRID ═══ */}
       <section className="aiss-services-section">
         <div className="aiss-container">
           <div className="aiss-section-head">
             <span className="aiss-pill">Our AI Software Development Services</span>
-            <p className="aiss-section-title sp-heading-2line">
+            <h3 className="aiss-section-title sp-heading-2line">
               <span className="sp-heading-line">Intelligent Solutions. Smarter Operations.</span>
               <span className="sp-heading-accent">Better Results.</span>
-            </p>
+            </h3>
           </div>
           <div className="aiss-services-grid">
             {services.map((svc, i) => (
@@ -132,9 +132,9 @@ const AISoftwareServices = () => {
       {/* ═══ WHY CHOOSE US ═══ */}
       <ServiceWhyChooseSection serviceKey="ai-software" />
 
-      <ServiceProcessSection serviceKey="ai-software" />
+      <ServiceProcessSection serviceKey="ai-software" headingTag="h4" />
 
-      <ServiceIndustriesSection serviceKey="ai-software" />
+      <ServiceIndustriesSection serviceKey="ai-software" headingTag="h6" />
 
       <ServiceAiFeaturesSection serviceKey="ai-software" />
 
@@ -142,10 +142,10 @@ const AISoftwareServices = () => {
       <section className="aiss-faq-section">
         <div className="aiss-container">
           <div className="aiss-section-head">
-            <p className="aiss-section-title sp-heading-2line">
+            <h6 className="aiss-section-title sp-heading-2line">
               <span className="sp-heading-line">Frequently Asked</span>
               <span className="sp-heading-accent">Questions</span>
-            </p>
+            </h6>
           </div>
           <div className="aiss-faq-2col">
             {faqs.map((faq, i) => (
@@ -177,8 +177,8 @@ const AISoftwareServices = () => {
         </div>
       </section>
 
-      <WhoWeAre />
-      <ServicePageCta {...cta} />
+      <WhoWeAre headingTag="h6" techStackHeadingTag="h6" />
+      <ServicePageCta {...cta} headingTag="h6" />
 
       <ServicePageMobileStyles />
       <Footer />

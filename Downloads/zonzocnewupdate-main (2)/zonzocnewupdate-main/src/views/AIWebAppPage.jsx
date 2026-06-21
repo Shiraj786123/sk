@@ -83,16 +83,16 @@ const AIWebAppDev = () => {
           heroAlt="AI Web Application Development"
         />
 
-      <ServiceIntroMarqueeSection serviceKey="ai-web-app" />
+      <ServiceIntroMarqueeSection serviceKey="ai-web-app" headingTag="h2" />
 
       <section className="aiwa-services-section">
         <div className="aiwa__container">
           <div className="aiwa-section-head">
             <span className="aiwa-pill">Our Services</span>
-            <p className="aiwa-section-title sp-heading-2line">
+            <h3 className="aiwa-section-title sp-heading-2line">
               <span className="sp-heading-line">AI Web Application</span>
               <span className="sp-heading-accent">Development Services</span>
-            </p>
+            </h3>
           </div>
           <div className="aiwa-services-grid">
             {services.map((svc, i) => (
@@ -109,19 +109,19 @@ const AIWebAppDev = () => {
 
       <ServiceWhyChooseSection serviceKey="ai-web-app" />
 
-      <ServiceProcessSection serviceKey="ai-web-app" />
+      <ServiceProcessSection serviceKey="ai-web-app" headingTag="h4" />
 
-      <ServiceIndustriesSection serviceKey="ai-web-app" />
+      <ServiceIndustriesSection serviceKey="ai-web-app" headingTag="h6" />
 
       <ServiceAiFeaturesSection serviceKey="ai-web-app" />
 
       <section className="aiwa-faq-section">
         <div className="aiwa__container">
           <div className="aiwa-section-head">
-            <p className="aiwa-section-title sp-heading-2line">
+            <h6 className="aiwa-section-title sp-heading-2line">
               <span className="sp-heading-line">Frequently Asked</span>
               <span className="sp-heading-accent">Questions</span>
-            </p>
+            </h6>
           </div>
           <div className="aiwa-faq-2col">
             {faqs.map((faq, i) => (
@@ -149,8 +149,8 @@ const AIWebAppDev = () => {
         </div>
       </section>
 
-      <WhoWeAre />
-      <ServicePageCta {...cta} />
+      <WhoWeAre headingTag="h6" techStackHeadingTag="h6" />
+      <ServicePageCta {...cta} headingTag="h6" />
 
       <ServicePageMobileStyles />
       <Footer />

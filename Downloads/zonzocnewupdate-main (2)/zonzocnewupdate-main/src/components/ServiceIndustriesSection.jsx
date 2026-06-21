@@ -2,19 +2,21 @@ import React from 'react';
 import { serviceIndustriesContent } from '../data/serviceIndustries';
 import '../styles/ServiceIndustriesSection.css';
 
-const ServiceIndustriesSection = ({ serviceKey }) => {
+const ServiceIndustriesSection = ({ serviceKey, headingTag = 'p' }) => {
   const content = serviceIndustriesContent[serviceKey];
   if (!content?.items?.length) return null;
+
+  const HeadingTag = headingTag;
 
   return (
     <section className="sp-industries-section">
       <div className="sp-industries-container">
         <div className="sp-industries-header">
           <span className="sp-industries-badge">{content.badge}</span>
-          <p className="sp-industries-title sp-heading-2line">
+          <HeadingTag className="sp-industries-title sp-heading-2line">
             <span className="sp-heading-line">{content.titleBefore}</span>
             <span className="sp-heading-accent">{content.titleAccent}</span>
-          </p>
+          </HeadingTag>
           <p className="sp-industries-subtitle">{content.subtitle}</p>
         </div>
         <div className="sp-industries-grid">

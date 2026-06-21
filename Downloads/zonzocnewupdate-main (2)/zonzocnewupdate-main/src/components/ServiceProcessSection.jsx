@@ -2,21 +2,22 @@ import React from 'react';
 import { serviceProcessContent } from '../data/serviceProcessContent';
 import '../styles/ServiceProcessSection.css';
 
-const ServiceProcessSection = ({ serviceKey }) => {
+const ServiceProcessSection = ({ serviceKey, headingTag = 'p' }) => {
   const content = serviceProcessContent[serviceKey];
   if (!content?.steps?.length) return null;
 
   const isWide = content.steps.length > 5;
+  const HeadingTag = headingTag;
 
   return (
     <section className="sp-process-section">
       <div className="sp-process-container">
         <div className="sp-process-header">
           <span className="sp-process-badge">{content.badge}</span>
-          <p className="sp-process-heading sp-heading-2line">
+          <HeadingTag className="sp-process-heading sp-heading-2line">
             <span className="sp-heading-line">{content.titleBefore}</span>
             <span className="sp-heading-accent">{content.titleAccent}</span>
-          </p>
+          </HeadingTag>
           <p className="sp-process-subtitle">{content.subtitle}</p>
         </div>
         <div className={`sp-process-row${isWide ? ' sp-process-row--wide' : ''}`}>

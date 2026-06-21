@@ -99,7 +99,7 @@ const EcommerceDev = () => {
             heroAlt="E-commerce Sales Performance Dashboard Analytics Grid"
           />
 
-        <ServiceIntroMarqueeSection serviceKey="ecommerce" />
+        <ServiceIntroMarqueeSection serviceKey="ecommerce" headingTag="h2" />
 
         {/* ── WHY STORES UNDERPERFORM ── */}
         <section className="ecd-why-section">
@@ -107,10 +107,10 @@ const EcommerceDev = () => {
             <div className="ecd-why-grid">
               <div className="ecd-why-left">
                 <span className="ecd-eyebrow">Why Stores Underperform</span>
-                <p className="ecd__heading ecd-why-heading sp-heading-2line sp-heading-2line--left">
+                <h3 className="ecd__heading ecd-why-heading sp-heading-2line sp-heading-2line--left">
                   <span className="sp-heading-line">Great Products Deserve</span>
                   <span className="sp-heading-accent">Better Ecommerce Experiences</span>
-                </p>
+                </h3>
                 <p className="ecd__description ecd-why-desc">
                   Slow websites, poor design, complicated checkouts, and weak SEO cost businesses thousands of potential customers every month.
                 </p>
@@ -151,10 +151,10 @@ const EcommerceDev = () => {
           <div className="ecd__container">
             <div className="ecd-section-head">
               <span className="ecd-eyebrow">Our Services</span>
-              <p className="ecd__heading sp-heading-2line">
+              <h4 className="ecd__heading sp-heading-2line">
                 <span className="sp-heading-line">Ecommerce Development &</span>
                 <span className="sp-heading-accent">Optimization Services</span>
-              </p>
+              </h4>
               <p className="ecd__subtitle">
                 Complete ecommerce solutions — from new store builds to performance optimization and conversion improvements.
               </p>
@@ -212,10 +212,10 @@ const EcommerceDev = () => {
           <div className="ecd__container">
             <div className="ecd-section-head">
               <span className="ecd-eyebrow ecd-eyebrow--light">Real Results. Real Growth.</span>
-              <p className="ecd__heading ecd-white sp-heading-2line">
+              <h5 className="ecd__heading ecd-white sp-heading-2line">
                 <span className="sp-heading-line">Ecommerce Success</span>
                 <span className="sp-heading-accent">Stories</span>
-              </p>
+              </h5>
             </div>
             <div className="ecd-results-grid">
               {results.map((r, i) => (
@@ -230,19 +230,19 @@ const EcommerceDev = () => {
           </div>
         </section>
 
-        <ServiceProcessSection serviceKey="ecommerce" />
+        <ServiceProcessSection serviceKey="ecommerce" headingTag="h6" />
 
-        <ServiceIndustriesSection serviceKey="ecommerce" />
+        <ServiceIndustriesSection serviceKey="ecommerce" headingTag="h6" />
 
         {/* ── FAQ ── */}
         <section className="ecd-faq-section">
           <div className="ecd__container">
             <div className="ecd-section-head">
               <span className="ecd-eyebrow">FAQ</span>
-              <p className="ecd__heading sp-heading-2line">
+              <h6 className="ecd__heading sp-heading-2line">
                 <span className="sp-heading-line">Frequently Asked</span>
                 <span className="sp-heading-accent">Questions</span>
-              </p>
+              </h6>
             </div>
             <div className="ecd-faq-list">
               {faqs.map((faq, i) => (
@@ -274,8 +274,8 @@ const EcommerceDev = () => {
           </div>
         </section>
 
-        <WhoWeAre />
-        <ServicePageCta {...cta} />
+        <WhoWeAre headingTag="h6" techStackHeadingTag="h6" />
+        <ServicePageCta {...cta} headingTag="h6" />
 
         <ServicePageMobileStyles />
         <Footer />

@@ -135,7 +135,7 @@ const AISearchOptimization = () => {
           heroAlt="AI Search Optimization — robot and AI platform visibility illustration"
         />
 
-      <ServiceIntroMarqueeSection serviceKey="ai-seo" />
+      <ServiceIntroMarqueeSection serviceKey="ai-seo" headingTag="h2" />
 
       {/* ── WHAT WE DO ──────────────── */}
       <section className="pg__sec pg__sec--white" id="aiso-how">
@@ -143,10 +143,10 @@ const AISearchOptimization = () => {
           <div className="what__grid" style={{ marginBottom: 40 }}>
             <div className="what__left">
               <span className="chip chip--blue">✦ What Is AI Search Optimization</span>
-              <p className="sec__h2 sp-heading-2line sp-heading-2line--left">
+              <h3 className="sec__h2 sp-heading-2line sp-heading-2line--left">
                 <span className="sp-heading-line">Search Is Evolving.</span>
                 <span className="sp-heading-accent">Your Strategy Should Too.</span>
-              </p>
+              </h3>
               <p className="sec__p">
                 AI search engines no longer list links — they generate direct answers.
                 Businesses that aren't optimised for AI platforms are invisible to a growing share of their audience.
@@ -195,10 +195,10 @@ const AISearchOptimization = () => {
         <div className="pg__cont">
           <div className="sec__head">
             <span className="chip chip--purple">✦ Our Services</span>
-            <p className="sec__h2 sp-heading-2line">
+            <h4 className="sec__h2 sp-heading-2line">
               <span className="sp-heading-line">Comprehensive AI SEO</span>
               <span className="sp-heading-accent">Solutions</span>
-            </p>
+            </h4>
             <p className="sec__intro">Eight integrated services that cover every dimension of AI search visibility.</p>
           </div>
           <div className="srv__grid">
@@ -218,17 +218,17 @@ const AISearchOptimization = () => {
 
       <ServiceWhyChooseSection serviceKey="ai-seo" />
 
-      <ServiceProcessSection serviceKey="ai-seo" />
+      <ServiceProcessSection serviceKey="ai-seo" headingTag="h5" />
 
       {/* ── COMPARISON ─────────────────────────────────────────────── */}
       <section className="pg__sec pg__sec--gray">
         <div className="pg__cont">
           <div className="sec__head">
             <span className="chip chip--purple">✦ Why Switch</span>
-            <p className="sec__h2 sp-heading-2line">
+            <h6 className="sec__h2 sp-heading-2line">
               <span className="sp-heading-line">Traditional SEO vs</span>
               <span className="sp-heading-accent">AI Search Optimization</span>
-            </p>
+            </h6>
           </div>
           <div className="cmp__table">
             <div className="cmp__head">
@@ -249,17 +249,17 @@ const AISearchOptimization = () => {
         </div>
       </section>
 
-      <ServiceIndustriesSection serviceKey="ai-seo" />
+      <ServiceIndustriesSection serviceKey="ai-seo" headingTag="h6" />
 
       {/* ── FAQ ORIGINAL ACCORDION WITH ANIMATEPRESENCE SLIDE ── */}
       <section className="pg__sec pg__sec--white">
         <div className="pg__cont">
           <div className="sec__head">
             <span className="chip chip--blue">✦ FAQ</span>
-            <p className="sec__h2 sp-heading-2line">
+            <h6 className="sec__h2 sp-heading-2line">
               <span className="sp-heading-line">Questions</span>
               <span className="sp-heading-accent">Answered</span>
-            </p>
+            </h6>
           </div>
           <div className="faq__wrap">
             {faqs.map((f, i) => (
@@ -291,8 +291,8 @@ const AISearchOptimization = () => {
         </div>
       </section>
 
-      <WhoWeAre />
-      <ServicePageCta {...cta} />
+      <WhoWeAre headingTag="h6" techStackHeadingTag="h6" />
+      <ServicePageCta {...cta} headingTag="h6" />
 
       <ServicePageMobileStyles />
       <Footer />

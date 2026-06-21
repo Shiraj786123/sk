@@ -105,7 +105,7 @@ const SEOServices = () => {
           heroAlt="SEO Services — targeted traffic, lead generation and growth illustration"
         />
 
-        <ServiceIntroMarqueeSection serviceKey="seo" />
+        <ServiceIntroMarqueeSection serviceKey="seo" headingTag="h2" />
 
         {/* ── WHY SEO MATTERS ── */}
         <section className="ss-section ss-section--white">
@@ -115,10 +115,10 @@ const SEOServices = () => {
               {/* Left */}
               <div className="ss-why-left">
                 <span className="ss-badge">Why SEO Matters</span>
-                <p className="ss-h2 sp-heading-2line sp-heading-2line--left">
+                <h3 className="ss-h2 sp-heading-2line sp-heading-2line--left">
                   <span className="sp-heading-line">Get Found. Get Traffic.</span>
                   <span className="sp-heading-accent">Grow Your Business.</span>
-                </p>
+                </h3>
                 <p className="ss-p">
                   Search engines are the #1 source of traffic for businesses online. Our SEO
                   strategies help you rank higher, attract the right audience and convert visitors
@@ -168,10 +168,10 @@ const SEOServices = () => {
           <div className="ss-container">
             <div className="ss-section-header">
               <span className="ss-badge">Our SEO Services</span>
-              <p className="ss-h2 sp-heading-2line">
+              <h4 className="ss-h2 sp-heading-2line">
                 <span className="sp-heading-line">Complete SEO Solutions to</span>
                 <span className="sp-heading-accent">Boost Your Online Presence</span>
-              </p>
+              </h4>
               <p className="ss-subtitle">
                 From technical SEO to content strategy and link building — everything your business
                 needs to rank higher, attract qualified traffic and generate leads.
@@ -195,19 +195,19 @@ const SEOServices = () => {
 
         <ServiceWhyChooseSection serviceKey="seo" />
 
-        <ServiceProcessSection serviceKey="seo" />
+        <ServiceProcessSection serviceKey="seo" headingTag="h5" />
 
-        <ServiceIndustriesSection serviceKey="seo" />
+        <ServiceIndustriesSection serviceKey="seo" headingTag="h6" />
 
         {/* ── FAQ ORIGINAL ACCORDION WITH ANIMATEPRESENCE SLIDE ── */}
         <section className="ss-section ss-section--white">
           <div className="ss-container">
             <div className="ss-section-header">
               <span className="ss-badge">Frequently Asked Questions</span>
-              <p className="ss-h2 sp-heading-2line">
+              <h6 className="ss-h2 sp-heading-2line">
                 <span className="sp-heading-line">SEO Services —</span>
                 <span className="sp-heading-accent">Frequently Asked Questions</span>
-              </p>
+              </h6>
             </div>
             <div className="ss-faq-grid">
               {faqs.map((f, i) => (
@@ -239,8 +239,8 @@ const SEOServices = () => {
           </div>
         </section>
 
-        <WhoWeAre />
-        <ServicePageCta {...cta} />
+        <WhoWeAre headingTag="h6" techStackHeadingTag="h6" />
+        <ServicePageCta {...cta} headingTag="h6" />
 
         <ServicePageMobileStyles />
         <Footer />

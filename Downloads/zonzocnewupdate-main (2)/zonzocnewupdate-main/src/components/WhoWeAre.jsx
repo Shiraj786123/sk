@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import '../styles/whoweare.css';
 
-const WhoWeAreSection = () => {
+const WhoWeAreSection = ({ headingTag = 'h2', techStackHeadingTag = 'h3' }) => {
   const allTech = [
     // Row 1 items
     { name: 'JavaScript', icon: '/images/javascript.svg' },
@@ -63,21 +63,24 @@ const WhoWeAreSection = () => {
     }
   };
 
+  const HeadingTag = headingTag;
+  const TechStackHeadingTag = techStackHeadingTag;
+
   return (
     <section className="whoweare-section">
       <div className="whoweare-container">
         
         {/* Header */}
         <div className="whoweare-header">
-          <h2 className="whoweare-title">
+          <HeadingTag className="whoweare-title">
             <span className="highlight">Who We Are &</span> <span className="whoweare-title-black">Why Choose Zonzoctech</span>
-          </h2>
+          </HeadingTag>
           <p className="whoweare-description">
             At Zonzoctech, we're more than just a digital agency—we're your growth partner.
             With over a decade of experience, we specialize in building modern websites,
             boosting visibility through smart SEO, and integrating cutting-edge AI technologies.
           </p>
-          <h3 className="technologystack">OUR TECHNOLOGY STACK</h3>
+          <TechStackHeadingTag className="technologystack">OUR TECHNOLOGY STACK</TechStackHeadingTag>
         </div>
       </div>
 

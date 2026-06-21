@@ -139,17 +139,17 @@ app.get('/api/health', (req, res) => {
         heroAlt="Zonzoc Tech Full Stack Web Development Illustration"
       />
 
-      <ServiceIntroMarqueeSection serviceKey="full-stack" />
+      <ServiceIntroMarqueeSection serviceKey="full-stack" headingTag="h2" />
 
       {/* ── SECTION 2 — WHY + SERVICES ───────────────── */}
       <section className="fswd-why-section">
         <div className="fswd__container">
           <div className="fswd-section-center">
             <span className="fswd-eyebrow">Our Services</span>
-            <p className="fswd-section-heading sp-heading-2line">
+            <h3 className="fswd-section-heading sp-heading-2line">
               <span className="sp-heading-line">Full Stack Web Development</span>
               <span className="sp-heading-accent">Services</span>
-            </p>
+            </h3>
           </div>
           <div className="fswd-services-grid">
             {services.map((svc, i) => (
@@ -165,17 +165,17 @@ app.get('/api/health', (req, res) => {
 
       <ServiceWhyChooseSection serviceKey="full-stack" />
 
-      <ServiceProcessSection serviceKey="full-stack" />
+      <ServiceProcessSection serviceKey="full-stack" headingTag="h4" />
 
       {/* ── CASE STUDIES ─────────────────────────────── */}
       <section className="fswd-cases-section">
         <div className="fswd__container">
           <div className="fswd-section-center">
             <span className="fswd-eyebrow">Real Results. Real Impact.</span>
-            <p className="fswd-section-heading sp-heading-2line">
+            <h5 className="fswd-section-heading sp-heading-2line">
               <span className="sp-heading-line">Solutions That Deliver</span>
               <span className="sp-heading-accent">Real Business Impact</span>
-            </p>
+            </h5>
           </div>
 
           <div className="fswd-cases-grid">
@@ -212,7 +212,7 @@ app.get('/api/health', (req, res) => {
         </div>
       </section>
 
-      <ServiceIndustriesSection serviceKey="full-stack" />
+      <ServiceIndustriesSection serviceKey="full-stack" headingTag="h6" />
 
       {/* ── FAQ + CODE BLOCK ─────────────────────────── */}
       <section className="fswd-faq-section">
@@ -222,10 +222,10 @@ app.get('/api/health', (req, res) => {
             {/* Left — accordion */}
             <div className="fswd-faq-left">
               <span className="fswd-eyebrow">Frequently Asked Questions</span>
-              <p className="fswd-section-heading sp-heading-2line">
+              <h6 className="fswd-section-heading sp-heading-2line">
                 <span className="sp-heading-line">Got Questions? We've Got</span>
                 <span className="sp-heading-accent">Answers.</span>
-              </p>
+              </h6>
               <div className="fswd-faq-list">
                 {faqs.map((faq, i) => (
                   <div
@@ -275,8 +275,8 @@ app.get('/api/health', (req, res) => {
         </div>
       </section>
 
-      <WhoWeAre />
-      <ServicePageCta {...cta} />
+      <WhoWeAre headingTag="h6" techStackHeadingTag="h6" />
+      <ServicePageCta {...cta} headingTag="h6" />
 
       <ServicePageMobileStyles />
       <Footer />

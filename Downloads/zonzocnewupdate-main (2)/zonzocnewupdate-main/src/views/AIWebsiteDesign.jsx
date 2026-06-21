@@ -109,7 +109,7 @@ const AIWebsiteDesign = () => {
         heroAlt="Futuristic laptop with glowing cyan and magenta holographic AI analytics dashboards, 3D data charts, and neon digital interface elements"
       />
 
-      <ServiceIntroMarqueeSection serviceKey="ai-website-design" />
+      <ServiceIntroMarqueeSection serviceKey="ai-website-design" headingTag="h2" />
 
       {/* ═══ SECTION 1 ═══ */}
       <section className="aiwd-diff-section">
@@ -117,10 +117,10 @@ const AIWebsiteDesign = () => {
           <div className="aiwd-diff-layout">
             <div className="aiwd-diff-left">
               <span className="aiwd-section-pill">Why AI Websites?</span>
-              <p className="aiwd-diff-title sp-heading-2line sp-heading-2line--left">
+              <h3 className="aiwd-diff-title sp-heading-2line sp-heading-2line--left">
                 <span className="sp-heading-line">What Makes AI-Powered Websites</span>
                 <span className="sp-heading-accent">Different?</span>
-              </p>
+              </h3>
               <p className="aiwd-diff-desc">
                 AI-powered websites use smart automation, personalization, and intelligent
                 user experiences to improve customer engagement and increase conversions.
@@ -167,10 +167,10 @@ const AIWebsiteDesign = () => {
         <div className="aiwd-container">
           <div className="aiwd-section-head">
             <span className="aiwd-section-pill">Our Services</span>
-            <p className="aiwd-section-title sp-heading-2line">
+            <h4 className="aiwd-section-title sp-heading-2line">
               <span className="sp-heading-line">AI Website Design & Development</span>
               <span className="sp-heading-accent">Services</span>
-            </p>
+            </h4>
           </div>
           <div className="aiwd-services-grid">
             {services.map((svc, i) => (
@@ -186,20 +186,20 @@ const AIWebsiteDesign = () => {
 
       <ServiceWhyChooseSection serviceKey="ai-website-design" />
 
-      <ServiceProcessSection serviceKey="ai-website-design" />
+      <ServiceProcessSection serviceKey="ai-website-design" headingTag="h5" />
 
       <ServiceAiFeaturesSection serviceKey="ai-website-design" />
 
-      <ServiceIndustriesSection serviceKey="ai-website-design" />
+      <ServiceIndustriesSection serviceKey="ai-website-design" headingTag="h6" />
 
       {/* ═══ SECTION 6 ═══ */}
       <section className="aiwd-faq-section">
         <div className="aiwd-container">
           <div className="aiwd-section-head">
-            <p className="aiwd-section-title sp-heading-2line">
+            <h6 className="aiwd-section-title sp-heading-2line">
               <span className="sp-heading-line">Frequently Asked</span>
               <span className="sp-heading-accent">Questions</span>
-            </p>
+            </h6>
           </div>
           <div className="aiwd-faq-2col">
             {faqs.map((faq, i) => (
@@ -231,8 +231,8 @@ const AIWebsiteDesign = () => {
         </div>
       </section>
 
-      <WhoWeAre />
-      <ServicePageCta {...cta} />
+      <WhoWeAre headingTag="h6" techStackHeadingTag="h6" />
+      <ServicePageCta {...cta} headingTag="h6" />
 
       <ServicePageMobileStyles />
       <Footer />

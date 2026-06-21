@@ -115,17 +115,17 @@ const WebsiteMaintenance = () => {
             heroAlt={imgs.heroAlt}
           />
 
-        <ServiceIntroMarqueeSection serviceKey="website-maintenance" />
+        <ServiceIntroMarqueeSection serviceKey="website-maintenance" headingTag="h2" />
 
         {/* ── SECTION 2 — SERVICES ──────────────────── */}
         <section className="wm-services-section" id="wm-services">
           <div className="wm-container">
             <div className="wm-section-head">
               <span className="wm-eyebrow">Our Services</span>
-              <p className="wm-section-title sp-heading-2line">
+              <h3 className="wm-section-title sp-heading-2line">
                 <span className="sp-heading-line">Comprehensive Website</span>
                 <span className="sp-heading-accent">Maintenance Services</span>
-              </p>
+              </h3>
               <p className="wm-section-sub">
                 Complete website care covering performance, security, updates and monitoring — everything your website needs to stay fast and stable.
               </p>
@@ -145,17 +145,17 @@ const WebsiteMaintenance = () => {
 
         <ServiceWhyChooseSection serviceKey="website-maintenance" />
 
-        <ServiceProcessSection serviceKey="website-maintenance" />
+        <ServiceProcessSection serviceKey="website-maintenance" headingTag="h4" />
 
         {/* ── SECTION 3 — CARE PLANS ────────────────── */}
         <section className="wm-plans-section">
           <div className="wm-container">
             <div className="wm-section-head">
               <span className="wm-eyebrow wm-eyebrow--blue">Care Plans</span>
-              <p className="wm-section-title sp-heading-2line">
+              <h5 className="wm-section-title sp-heading-2line">
                 <span className="sp-heading-line">Website Care Plans for</span>
                 <span className="sp-heading-accent">Every Business</span>
-              </p>
+              </h5>
               <p className="wm-section-sub">
                 Choose the plan that fits your website size, traffic, and support needs.
               </p>
@@ -183,17 +183,17 @@ const WebsiteMaintenance = () => {
           </div>
         </section>
 
-        <ServiceIndustriesSection serviceKey="website-maintenance" />
+        <ServiceIndustriesSection serviceKey="website-maintenance" headingTag="h6" />
 
         {/* ── SECTION 6 — FAQ ───────────────────────── */}
         <section className="wm-faq-section">
           <div className="wm-container">
             <div className="wm-section-head">
               <span className="wm-eyebrow">FAQ / Help</span>
-              <p className="wm-section-title sp-heading-2line">
+              <h6 className="wm-section-title sp-heading-2line">
                 <span className="sp-heading-line">Frequently Asked</span>
                 <span className="sp-heading-accent">Questions</span>
-              </p>
+              </h6>
             </div>
 
             <div className="sp-faq-box-grid">
@@ -218,8 +218,8 @@ const WebsiteMaintenance = () => {
           </div>
         </section>
 
-        <WhoWeAre />
-        <ServicePageCta {...cta} />
+        <WhoWeAre headingTag="h6" techStackHeadingTag="h6" />
+        <ServicePageCta {...cta} headingTag="h6" />
 
         <ServicePageMobileStyles />
         <Footer />
