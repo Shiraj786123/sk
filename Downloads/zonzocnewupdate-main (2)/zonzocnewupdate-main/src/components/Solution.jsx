@@ -115,9 +115,9 @@ const SolutionSection = () => {
   return (
     <section className="solution-section">
       <div className="solution-hero">
-        <h1 className="solution-title">
+        <h2 className="solution-title">
           <span className="solution-highlight">Everything</span> You Need to Grow Online
-        </h1>
+        </h2>
         <p className="solution-subtitle">
           From search visibility to custom AI systems — we deliver end-to-end digital solutions that generate real, measurable business results for UK & USA businesses.
         </p>

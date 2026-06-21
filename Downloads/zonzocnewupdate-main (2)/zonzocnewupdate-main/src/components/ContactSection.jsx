@@ -33,6 +33,13 @@ const ContactSection = () => {
               Tell us about your project and our team will prepare a tailored, no-obligation strategy and proposal within 24 hours.
             </p>
 
+            <p className="contact-subtitle-extra">
+              Whether you need SEO, a new website, or custom AI tools — we help UK businesses grow with strategies built for real results.
+            </p>
+            <p className="contact-subtitle-extra">
+              No pushy sales pitch. Just clear advice, honest timelines, and a roadmap you can act on straight away.
+            </p>
+
             <h3 className="steps-heading">Here’s What Happens Next</h3>
 
             <div className="contact-steps">

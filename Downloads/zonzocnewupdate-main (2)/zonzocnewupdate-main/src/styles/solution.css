@@ -3,13 +3,19 @@
   padding: 100px 24px 40px;
 }
 
+@media (min-width: 769px) {
+  .solution-section {
+    padding-top: 72px;
+  }
+}
+
 .solution-hero {
   max-width: 1200px;
   margin: 0 auto 60px;
   text-align: center;
 }
 
-.solution-title {
+.solution-section .solution-title {
   font-size: 40px;
   font-weight: 800;
   color: #0a0a0a;
@@ -151,8 +157,9 @@
     padding: 80px 20px 32px;
   }
 
-  .solution-title {
-    font-size: 28px;
+  .solution-section .solution-title {
+    font-size: 28px !important;
+    line-height: 1.25;
   }
 
   .solution-subtitle {
@@ -182,7 +189,8 @@
 }
 
 @media (max-width: 480px) {
-  .solution-title {
-    font-size: 24px;
+  .solution-section .solution-title {
+    font-size: 24px !important;
+    line-height: 1.25;
   }
 }

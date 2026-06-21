@@ -14,14 +14,17 @@
   width: 100%;
   display: flex;
   gap: 60px;
-  align-items: stretch; 
+  align-items: stretch;
 }
 
 /* Left Content Styles */
 .contact-left {
   flex: 1 !important;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  align-self: stretch;
 }
 
 .left-inner-wrapper {
@@ -32,6 +35,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  width: fit-content;
+  align-self: flex-start;
   background-color: rgba(56, 189, 248, 0.08);
   border: 1px solid rgba(56, 189, 248, 0.25);
   padding: 6px 14px;
@@ -42,6 +47,7 @@
   color: #38bdf8;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .contact-title {
@@ -61,8 +67,20 @@
   font-size: 16px;
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.6;
-  margin-bottom: 48px;
+  margin-bottom: 16px;
   max-width: 520px;
+}
+
+.contact-subtitle-extra {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin: 0 0 16px;
+  max-width: 520px;
+}
+
+.contact-subtitle-extra:last-of-type {
+  margin-bottom: 40px;
 }
 
 .steps-heading {
@@ -136,7 +154,10 @@
 .contact-right {
   flex: 1 !important;
   display: flex;
+  flex-direction: column;
   align-items: stretch;
+  align-self: stretch;
+  min-height: 100%;
 }
 
 .form-card {
@@ -144,7 +165,6 @@
   border-radius: 20px;
   padding: 44px;
   width: 100%;
-  height: 100%;
   box-sizing: border-box;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -439,15 +459,124 @@
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1) !important;
 }
 
-/* Responsive break settings */
+/* Desktop: equal-height columns via grid + stretched form card */
+@media (min-width: 1025px) {
+  .contact-section {
+    align-items: flex-start;
+    min-height: auto;
+    padding: 60px 40px;
+  }
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 60px;
+  }
+
+  .contact-left {
+    justify-content: flex-start;
+    align-self: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .contact-left .left-inner-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .contact-right > .form-card,
+  .contact-right > .contact-form-card {
+    flex: 1 1 auto;
+    align-self: stretch;
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
+  }
+
+  .contact-right .contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .contact-right .form-group.textarea-group {
+    flex: 1;
+    min-height: 150px;
+    height: auto;
+  }
+}
+
 @media (max-width: 1024px) {
   .contact-container {
     flex-direction: column;
     align-items: stretch;
     gap: 50px;
   }
+
+  .contact-left {
+    justify-content: flex-start;
+  }
+
+  .contact-right .form-card,
+  .contact-right .contact-form-card {
+    flex: none;
+    height: auto;
+    min-height: 0;
+  }
+
+  .contact-right .contact-form {
+    flex: none;
+  }
+
+  .contact-right .form-group.textarea-group {
+    flex: none;
+    height: 150px;
+  }
+
   .contact-section {
     padding: 60px 24px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 20px;
+  }
+
+  .contact-section .contact-title {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .contact-badge {
+    font-size: 12px;
+    padding: 5px 12px;
+    margin-bottom: 24px;
+    white-space: normal;
+  }
+
+  .contact-subtitle {
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+
+  .steps-heading {
+    font-size: 18px;
+    margin-bottom: 20px;
   }
 }
 
@@ -458,7 +587,15 @@
   .form-card {
     padding: 32px 20px;
   }
-  .contact-title {
-    font-size: 32px;
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 48px 16px;
+  }
+
+  .contact-section .contact-title {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
   }
 }
