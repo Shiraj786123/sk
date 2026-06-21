@@ -156,7 +156,10 @@ html body .wm__wrapper h4.sp-process-heading .sp-heading-accent,
 html body .wm__wrapper h5.wm-section-title .sp-heading-accent,
 html body .wm__wrapper h6.wm-section-title .sp-heading-accent,
 html body .wm__wrapper h6.sp-industries-title .sp-heading-accent,
-html body .wm__wrapper h6.sp-industries-title .sp-heading-accent,
+html body .wm__wrapper .wm-section-title .sp-heading-accent {
+  color: #00448f !important;
+}
+
 html body .fswd__wrapper h6.whoweare-title,
 html body .ecd__wrapper h6.whoweare-title,
 html body .aiwa__wrapper h6.whoweare-title,
@@ -171,8 +174,15 @@ html body .wm__wrapper h6.whoweare-title {
   color: #00448f !important;
 }
 
-html body .wm__wrapper .wm-section-title .sp-heading-accent {
-  color: #00448f !important;
+html body .fswd__wrapper h6.whoweare-title .whoweare-title-black,
+html body .ecd__wrapper h6.whoweare-title .whoweare-title-black,
+html body .aiwa__wrapper h6.whoweare-title .whoweare-title-black,
+html body .aiss__wrapper h6.whoweare-title .whoweare-title-black,
+html body .aiwd-master-wrapper h6.whoweare-title .whoweare-title-black,
+html body .seo-page h6.whoweare-title .whoweare-title-black,
+html body .pg__wrap h6.whoweare-title .whoweare-title-black,
+html body .wm__wrapper h6.whoweare-title .whoweare-title-black {
+  color: #0a0a0a !important;
 }
 
 html body .ecd__heading.ecd-white .sp-heading-line {

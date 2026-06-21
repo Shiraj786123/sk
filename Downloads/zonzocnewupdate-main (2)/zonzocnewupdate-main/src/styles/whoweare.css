@@ -176,7 +176,8 @@ h6.technologystack {
     margin-bottom: 28px;
   }
 
-  .whoweare-title {
+  .whoweare-title,
+  h6.whoweare-title {
     font-size: 28px;
   }
 
@@ -213,7 +214,8 @@ h6.technologystack {
 }
 
 @media (max-width: 480px) {
-  .whoweare-title {
+  .whoweare-title,
+  h6.whoweare-title {
     font-size: 24px;
   }
 }
