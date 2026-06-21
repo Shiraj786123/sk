@@ -52,9 +52,9 @@
 .project-filter-tabs {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-  margin-bottom: 36px;
-  padding-bottom: 4px;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding-bottom: 2px;
   overflow: visible;
 }
 
@@ -64,11 +64,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  min-height: 88px;
-  padding: 12px 10px;
+  gap: 5px;
+  min-height: 0;
+  padding: 10px 8px;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #f8faff;
   color: #00448f;
   font-family: var(--font-b);
@@ -81,8 +81,8 @@
   background: #00448f;
   border-color: #00448f;
   color: #ffffff;
-  box-shadow: 0 6px 20px rgba(0, 68, 143, 0.18);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 68, 143, 0.15);
+  transform: translateY(-1px);
   z-index: 2;
 }
 
@@ -90,12 +90,12 @@
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -14px;
-  width: 18px;
-  height: 14px;
+  bottom: -10px;
+  width: 14px;
+  height: 10px;
   background: #00448f;
   clip-path: polygon(50% 100%, 0 0, 100% 0);
-  transform: translateX(-50%) translateY(-4px) scaleY(0);
+  transform: translateX(-50%) translateY(-3px) scaleY(0);
   transform-origin: top center;
   opacity: 0;
   pointer-events: none;
@@ -114,10 +114,15 @@
   flex-shrink: 0;
 }
 
+.project-filter-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
 .project-filter-label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.2;
   text-align: center;
 }
 
@@ -126,7 +131,7 @@
   overflow: hidden;
   position: relative;
   border-top: 2px solid #e8f0fb;
-  padding-top: 20px;
+  padding-top: 16px;
 }
 
 .projects-marquee-wrapper::before,
@@ -308,16 +313,15 @@
 
   .project-filter-tabs {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
   }
 
   .project-filter-tab {
-    min-height: 76px;
-    padding: 10px 8px;
+    padding: 9px 6px;
   }
 
   .project-filter-label {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .project-card {
