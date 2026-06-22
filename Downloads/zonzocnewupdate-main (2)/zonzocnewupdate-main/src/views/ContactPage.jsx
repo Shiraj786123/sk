@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Breadcrumb from "../components/Breadcrumb";
 import { useWhatsAppUrl } from "../hooks/useWhatsAppUrl";
+import { submitContactForm } from "../utils/submitContactForm";
 import "../styles/ContactPage.css";
 
 const ContactPage = () => {
@@ -14,20 +15,33 @@ const ContactPage = () => {
   const [selectedService, setSelectedService] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const handleInputChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    setSubmitError(false);
+
+    try {
+      await submitContactForm({
+        ...formData,
+        message: formData.project,
+        service: selectedService,
+        budget,
+      });
       setIsSuccess(true);
-      setIsSubmitting(false);
-    }, 1200);
+    } catch {
+      setSubmitError(true);
+    }
+
+    setIsSubmitting(false);
   };
 
   const handleResend = () => {
     setIsSuccess(false);
+    setSubmitError(false);
     setFormData({ name: "", company: "", phone: "", email: "", project: "" });
     setSelectedService("");
     setBudget(500); // Updated reset value to 500
@@ -78,7 +92,12 @@ const ContactPage = () => {
               ) : (
                 <form className="cp__form_actual" onSubmit={handleSubmit}>
                   <h2 className="cp__title_dark">Send Us a Message</h2>
-                  
+
+                  {submitError && (
+                    <div className="alert alert-error" style={{ padding: '14px', borderRadius: '10px', fontSize: '14px', marginBottom: '20px', background: '#fdebeb', color: '#a80000' }}>
+                      ✗ Could not send your message. Please try again or email info@zonzoctech.com directly.
+                    </div>
+                  )}
                   <div className="form_row">
                     <input type="text" name="name" placeholder="Your Name*" value={formData.name} onChange={handleInputChange} required />
                     <input type="email" name="email" placeholder="Email Address*" value={formData.email} onChange={handleInputChange} required />

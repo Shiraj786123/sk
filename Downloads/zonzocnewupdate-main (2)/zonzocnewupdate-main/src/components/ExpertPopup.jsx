@@ -6,6 +6,7 @@ import {
   Bot, TrendingUp, Globe, Clock, Send, ChevronDown,
 } from "lucide-react";
 import { useWhatsAppUrl } from "../hooks/useWhatsAppUrl";
+import { submitContactForm } from "../utils/submitContactForm";
 import "../styles/ExpertPopup.css";
 
 const StarIcon = () => (
@@ -74,22 +75,17 @@ const ExpertPopup = ({ open, onClose, preSelectedService }) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData, message: formData.project, service: selectedService, budget,
-        }),
+      await submitContactForm({
+        ...formData,
+        message: formData.project,
+        service: selectedService,
+        budget,
       });
-      if (res.ok) {
-        setSubmitStatus("success");
-        setFormData({ name: "", company: "", phone: "", email: "", project: "" });
-        setSelectedService("");
-        setBudget(500);
-        setTimeout(() => { onClose(); setSubmitStatus(""); }, 2500);
-      } else {
-        setSubmitStatus("error");
-      }
+      setSubmitStatus("success");
+      setFormData({ name: "", company: "", phone: "", email: "", project: "" });
+      setSelectedService("");
+      setBudget(500);
+      setTimeout(() => { onClose(); setSubmitStatus(""); }, 2500);
     } catch {
       setSubmitStatus("error");
     }

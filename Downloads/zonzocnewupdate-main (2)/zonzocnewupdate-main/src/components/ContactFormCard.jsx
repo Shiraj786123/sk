@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useWhatsAppUrl } from '../hooks/useWhatsAppUrl';
+import { submitContactForm } from '../utils/submitContactForm';
 import '../styles/contact.css';
 
 const ContactFormCard = ({ className = '', defaultMessage = '', compact = false }) => {
@@ -30,18 +31,9 @@ const ContactFormCard = ({ className = '', defaultMessage = '', compact = false 
     setSubmitStatus('');
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (res.ok) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', phone: '', company: '', message: defaultMessage });
-      } else {
-        setSubmitStatus('error');
-      }
+      await submitContactForm(formData);
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', phone: '', company: '', message: defaultMessage });
     } catch (error) {
       console.error(error);
       setSubmitStatus('error');

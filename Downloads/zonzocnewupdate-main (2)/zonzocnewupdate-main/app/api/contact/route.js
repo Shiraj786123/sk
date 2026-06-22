@@ -1,41 +1,40 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { sendContactEmail } from '../../../lib/contactMailer';
+
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export async function POST(req) {
   try {
-    const { name, email, phone, company, message, service, project, budget } = await req.json();
+    let body;
+    try {
+      body = await req.json();
+    } catch {
+      return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
+    }
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    const emailBody = `
-      <h3>New Message from Website</h3>
-      <p><b>Name:</b> ${name}</p>
-      <p><b>Email:</b> ${email}</p>
-      ${phone ? `<p><b>Phone:</b> ${phone}</p>` : ''}
-      ${company ? `<p><b>Company:</b> ${company}</p>` : ''}
-      ${service ? `<p><b>Service:</b> ${service}</p>` : ''}
-      ${budget ? `<p><b>Budget:</b> $${budget}</p>` : ''}
-      ${project ? `<p><b>Project:</b> ${project}</p>` : ''}
-      ${message ? `<p><b>Message:</b> ${message}</p>` : ''}
-    `;
-
-    await transporter.sendMail({
-      from: `"Zonzoctech Website" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
-      replyTo: email,
-      subject: `New message from ${name}`,
-      html: emailBody,
-    });
-
+    await sendContactEmail(body);
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('EMAIL ERROR:', error);
-    return NextResponse.json({ error: 'Email sending failed' }, { status: 500 });
+    console.error('CONTACT API ERROR:', error);
+
+    if (error.code === 'EMAIL_NOT_CONFIGURED') {
+      return NextResponse.json(
+        { error: 'Email service is not configured on the server.' },
+        { status: 503 }
+      );
+    }
+
+    if (error.code === 'INVALID_PAYLOAD') {
+      return NextResponse.json(
+        { error: 'Name and email are required.' },
+        { status: 400 }
+      );
+    }
+
+    return NextResponse.json(
+      { error: 'Failed to send message. Please try again or email info@zonzoctech.com directly.' },
+      { status: 500 }
+    );
   }
 }
