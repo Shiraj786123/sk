@@ -1,5 +1,6 @@
 // app/services/page.jsx
-import ServicesPage from '@/src/components/Servicespage'; // Points to your Servicespage.jsx component
+import ServicesPage from '@/src/components/Servicespage';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Web Development & Digital Marketing Services Powered by AI | ZonzocTech',
@@ -15,5 +16,10 @@ export const metadata = {
 };
 
 export default function ServicesHubPage() {
-  return <ServicesPage />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/services" />
+      <ServicesPage />
+    </>
+  );
 }

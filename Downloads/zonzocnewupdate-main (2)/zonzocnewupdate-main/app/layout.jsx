@@ -2,6 +2,7 @@ import ScrollToTop from "@/src/components/ScrollToTop";
 import GoogleAnalytics from "@/src/components/GoogleAnalytics";
 import { AuthProvider } from "@/src/context/AuthContext";
 import WhatsappFloat from "@/src/components/WhatsappFloat";
+import Chatbot from "@/src/components/Chatbot";
 import { Poppins } from "next/font/google";
 
 import "@/src/index.css";
@@ -61,6 +62,7 @@ export default function RootLayout({ children }) {
         <GoogleAnalytics />
         <AuthProvider>
           {children}
+          <Chatbot />
           <WhatsappFloat />
           <ScrollToTop />
         </AuthProvider>

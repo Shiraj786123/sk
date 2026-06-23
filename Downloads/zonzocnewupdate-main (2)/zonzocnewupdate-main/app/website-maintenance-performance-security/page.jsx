@@ -1,5 +1,5 @@
 import WebsiteMaintenance from '@/src/views/WebsiteMaintenance';
-import Breadcrumb from '@/src/components/Breadcrumb';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Website Maintenance Services UK & USA — Speed, Security & Performance | ZonzocTech',
@@ -15,5 +15,10 @@ export const metadata = {
 };
 
 export default function WebsiteMaintenancePage() {
-  return <WebsiteMaintenance />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/website-maintenance-performance-security" />
+      <WebsiteMaintenance />
+    </>
+  );
 }

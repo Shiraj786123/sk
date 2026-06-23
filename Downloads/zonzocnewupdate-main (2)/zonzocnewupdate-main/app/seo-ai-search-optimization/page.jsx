@@ -1,4 +1,5 @@
 import AIOptimizationPage from '@/src/views/AIOptimizationPage';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'AI SEO & Search Optimization Agency UK — GEO, AEO & AI Search | ZonzocTech',
@@ -14,5 +15,10 @@ export const metadata = {
 };
 
 export default function AiSearchOptimizationPage() {
-  return <AIOptimizationPage />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/seo-ai-search-optimization" />
+      <AIOptimizationPage />
+    </>
+  );
 }

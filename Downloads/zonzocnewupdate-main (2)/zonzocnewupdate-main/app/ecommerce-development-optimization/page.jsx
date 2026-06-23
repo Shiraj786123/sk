@@ -1,4 +1,5 @@
 import EcommercePage from '@/src/views/EcommercePage';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Ecommerce Development Agency UK & USA — Shopify, WooCommerce & Custom Stores | ZonzocTech',
@@ -14,5 +15,10 @@ export const metadata = {
 };
 
 export default function EcommerceDevelopmentPage() {
-  return <EcommercePage />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/ecommerce-development-optimization" />
+      <EcommercePage />
+    </>
+  );
 }

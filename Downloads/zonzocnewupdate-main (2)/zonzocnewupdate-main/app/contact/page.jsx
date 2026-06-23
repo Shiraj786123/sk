@@ -1,4 +1,5 @@
 import ContactPage from '@/src/views/ContactPage';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Contact ZonzocTech — Get Your Free Growth Plan | UK & USA',
@@ -14,5 +15,10 @@ export const metadata = {
 };
 
 export default function ContactPageRoute() {
-  return <ContactPage />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/contact" />
+      <ContactPage />
+    </>
+  );
 }

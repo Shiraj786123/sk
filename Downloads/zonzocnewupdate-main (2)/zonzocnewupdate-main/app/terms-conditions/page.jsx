@@ -1,4 +1,5 @@
 import TermsConditions from '@/src/views/TermsConditions';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: "Terms & Conditions | Zonzoctech Services Agreement",
@@ -14,5 +15,10 @@ export const metadata = {
 };
 
 export default function TermsConditionsPage() {
-  return <TermsConditions />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/terms-conditions" />
+      <TermsConditions />
+    </>
+  );
 }

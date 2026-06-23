@@ -1,4 +1,5 @@
 import AboutUs from '@/src/views/AboutUs';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'About ZonzocTech | AI Web Development Agency Serving UK & USA',
@@ -14,5 +15,10 @@ export const metadata = {
 };
 
 export default function AboutPage() {
-  return <AboutUs />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/about" />
+      <AboutUs />
+    </>
+  );
 }

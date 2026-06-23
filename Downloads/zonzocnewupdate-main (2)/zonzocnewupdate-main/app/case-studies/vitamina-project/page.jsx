@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 import '@/src/styles/CaseStudyPage.css';
 
 export const metadata = {
@@ -12,6 +13,7 @@ export const metadata = {
 export default function VitaminaProjectCaseStudy() {
   return (
     <>
+      <BreadcrumbJsonLd pathname="/case-studies/vitamina-project" />
       <Navbar />
       <div className="cs__wrapper">
 

@@ -1,4 +1,5 @@
 import SEOServices from '@/src/views/SEOServices';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'SEO Agency for Small Business UK & USA | ZonzocTech',
@@ -14,5 +15,10 @@ export const metadata = {
 };
 
 export default function SeoServicesPage() {
-  return <SEOServices />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/seo-services" />
+      <SEOServices />
+    </>
+  );
 }

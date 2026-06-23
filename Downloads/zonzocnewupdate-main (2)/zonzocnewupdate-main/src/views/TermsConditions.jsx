@@ -1,32 +1,11 @@
 'use client';
 import React from "react";
-import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/TermsConditions.css";
 
 const TermsConditions = () => {
   const lastUpdated = "December 20, 2025";
-
-  // Dynamic SEO Structured Schema for Breadcrumbs
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.zonzoctech.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Terms & Conditions",
-        "item": "https://www.zonzoctech.com/terms-conditions"
-      }
-    ]
-  };
 
   const sections = [
     {
@@ -153,13 +132,6 @@ const TermsConditions = () => {
 
   return (
     <>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        />
-      </Head>
-
       <div className="tc__wrapper">
         <Navbar />
 

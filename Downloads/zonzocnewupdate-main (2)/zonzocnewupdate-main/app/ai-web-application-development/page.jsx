@@ -1,5 +1,5 @@
 import AIWebAppPage from '@/src/views/AIWebAppPage';
-import Breadcrumb from '@/src/components/Breadcrumb';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'AI Web Application Development Company UK & USA | ZonzocTech',
@@ -15,5 +15,10 @@ export const metadata = {
 };
 
 export default function AiWebAppPage() {
-  return <AIWebAppPage />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/ai-web-application-development" />
+      <AIWebAppPage />
+    </>
+  );
 }

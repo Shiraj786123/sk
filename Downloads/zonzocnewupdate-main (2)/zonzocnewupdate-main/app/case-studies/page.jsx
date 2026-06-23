@@ -1,4 +1,5 @@
 import CaseStudies from '@/src/views/CaseStudies';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Case Studies | Proven SEO & AI Results',
@@ -14,5 +15,10 @@ export const metadata = {
 };
 
 export default function CaseStudiesPage() {
-  return <CaseStudies />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/case-studies" />
+      <CaseStudies />
+    </>
+  );
 }

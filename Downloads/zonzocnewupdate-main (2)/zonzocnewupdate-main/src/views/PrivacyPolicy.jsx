@@ -1,31 +1,11 @@
 'use client';
 import React from "react";
-import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/PrivacyPolicy.css";
 
 const PrivacyPolicy = () => {
   const lastUpdated = "December 20, 2025";
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.zonzoctech.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Privacy Policy",
-        "item": "https://www.zonzoctech.com/privacy-policy"
-      }
-    ]
-  };
 
   const sections = [
     {
@@ -137,13 +117,6 @@ const PrivacyPolicy = () => {
 
   return (
     <>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        />
-      </Head>
-
       <div className="pp__wrapper">
         <Navbar />
 

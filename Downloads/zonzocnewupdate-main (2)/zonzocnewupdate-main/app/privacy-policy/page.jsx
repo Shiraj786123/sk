@@ -1,4 +1,5 @@
 import PrivacyPolicy from '@/src/views/PrivacyPolicy';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Privacy Policy | Zonzoctech Data Protection Standards',
@@ -14,5 +15,10 @@ export const metadata = {
 };
 
 export default function PrivacyPolicyPage() {
-  return <PrivacyPolicy />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/privacy-policy" />
+      <PrivacyPolicy />
+    </>
+  );
 }

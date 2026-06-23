@@ -1,4 +1,5 @@
 import AIWebsiteDesign from '@/src/views/AIWebsiteDesign';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'AI Website Design Agency UK & USA — High-Converting Websites | ZonzocTech',
@@ -14,5 +15,10 @@ export const metadata = {
 };
 
 export default function AiWebsiteDesignPage() {
-  return <AIWebsiteDesign />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/ai-website-design-development" />
+      <AIWebsiteDesign />
+    </>
+  );
 }

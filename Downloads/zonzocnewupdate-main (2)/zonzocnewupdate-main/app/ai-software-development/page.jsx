@@ -1,4 +1,5 @@
 import AISoftwareServices from '@/src/views/AISoftwareServices';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'AI Software Development Company UK & USA — Automation, Chatbots & GPT Integration | ZonzocTech',
@@ -14,5 +15,10 @@ export const metadata = {
 };
 
 export default function AiSoftwarePage() {
-  return <AISoftwareServices />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/ai-software-development" />
+      <AISoftwareServices />
+    </>
+  );
 }

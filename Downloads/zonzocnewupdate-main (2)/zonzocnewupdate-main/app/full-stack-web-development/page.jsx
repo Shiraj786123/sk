@@ -1,4 +1,5 @@
 import FullStackWebDev from '@/src/views/FullStackWebDev';
+import BreadcrumbJsonLd from '@/src/components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: 'Full Stack Web Development Agency UK & USA | ZonzocTech',
@@ -14,5 +15,10 @@ export const metadata = {
 };
 
 export default function FullStackPage() {
-  return <FullStackWebDev />;
+  return (
+    <>
+      <BreadcrumbJsonLd pathname="/full-stack-web-development" />
+      <FullStackWebDev />
+    </>
+  );
 }
